@@ -1,15 +1,20 @@
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Optional;
 
 public class GUI extends javafx.application.Application {
     private static Stage PrimaryStage;
+    private static Stage FileDirectoryStage;
     private static boolean answer;
 
     public void start(Stage primaryStage) throws IOException {
@@ -23,6 +28,17 @@ public class GUI extends javafx.application.Application {
             event.consume();
             closeProgram();
         });
+
+        HBox top = new HBox(5);
+        Button ImportFile = new Button("Import");
+        ImportFile.setOnAction(event -> {
+            FileChooser importFile = new FileChooser();
+            importFile.setTitle("Open Resource File");
+            importFile.showOpenDialog(FileDirectoryStage);
+        });
+        top.getChildren().addAll(ImportFile);
+
+        border.setTop(top);
         primaryStage.show();
     }
 
