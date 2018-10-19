@@ -1,13 +1,14 @@
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Optional;
@@ -29,16 +30,37 @@ public class GUI extends javafx.application.Application {
             closeProgram();
         });
 
+        /*
         HBox top = new HBox(5);
+
         Button ImportFile = new Button("Import");
         ImportFile.setOnAction(event -> {
+
+        });
+
+        top.getChildren().addAll(ImportFile);
+        */
+
+        MenuBar menuBar = new MenuBar();
+        Menu menuFile = new Menu("File");
+        MenuItem add = new MenuItem("Import");
+        add.setOnAction(event -> {
             FileChooser importFile = new FileChooser();
             importFile.setTitle("Open Resource File");
             importFile.showOpenDialog(FileDirectoryStage);
         });
-        top.getChildren().addAll(ImportFile);
 
-        border.setTop(top);
+        menuFile.getItems().addAll(add);
+        Menu menuEdit = new Menu("Edit");
+        Menu menuView = new Menu("View");
+
+        menuBar.getMenus().addAll(menuFile,menuEdit,menuView);
+
+        VBox topBorder = new VBox(5);
+        topBorder.getChildren().addAll(menuBar);
+
+
+        border.setTop(topBorder);
         primaryStage.show();
     }
 
