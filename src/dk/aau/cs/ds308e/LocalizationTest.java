@@ -1,13 +1,24 @@
 package dk.aau.cs.ds308e;
 
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class LocalizationTest {
 
-    public static void main(String[] args) {
-        Locale enLocale = new Locale("en","US");
-        Locale daLocale = new Locale("da","DK");
+    static ResourceBundle labels;
 
-        System.out.println("test");
+    public static void main(String[] args) {
+        setLocale("en", "US");
+        System.out.println("english: " + labels.getString("tour"));
+
+        setLocale("da", "DA");
+        System.out.println("dansk: " + labels.getString("tour"));
+
+    }
+
+    static void setLocale(String language, String country)
+    {
+        Locale locale = new Locale(language,country);
+        labels = ResourceBundle.getBundle("Labels", locale);
     }
 }
