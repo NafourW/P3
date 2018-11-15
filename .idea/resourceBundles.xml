@@ -3,11 +3,9 @@
   <component name="ResourceBundleManager">
     <file url="file://$PROJECT_DIR$/resources/Labels.properties" />
     <file url="file://$PROJECT_DIR$/resources/Labels_da_DA.properties" />
-    <file url="file://$PROJECT_DIR$/resources/Labels_en_US.properties" />
     <custom-resource-bundle>
       <file value="file://$PROJECT_DIR$/resources/Labels.properties" />
       <file value="file://$PROJECT_DIR$/resources/Labels_da_DA.properties" />
-      <file value="file://$PROJECT_DIR$/resources/Labels_en_US.properties" />
       <base-name>Labels</base-name>
     </custom-resource-bundle>
   </component>

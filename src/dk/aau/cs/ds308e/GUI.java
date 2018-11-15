@@ -73,7 +73,7 @@ public class GUI extends javafx.application.Application {
         alert.setTitle(title);
         alert.setHeaderText(message);
         ButtonType yes = new ButtonType("Yes", ButtonBar.ButtonData.YES);
-        ButtonType no = new ButtonType("No", ButtonBar.ButtonData.NO);
+        ButtonType no = new ButtonType("no", ButtonBar.ButtonData.NO);
         alert.getButtonTypes().setAll(yes, no);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == yes) {

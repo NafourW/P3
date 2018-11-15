@@ -5,20 +5,14 @@ import java.util.ResourceBundle;
 
 public class LocalizationTest {
 
-    static ResourceBundle labels;
-
     public static void main(String[] args) {
-        setLocale("en", "US");
-        System.out.println("english: " + labels.getString("tour"));
+        Locale localeEn = new Locale("en","US");
+        ResourceBundle buttonsEn = ResourceBundle.getBundle("Buttons", localeEn);
+        System.out.println("English: " + buttonsEn.getString("menu_tours"));
 
-        setLocale("da", "DA");
-        System.out.println("dansk: " + labels.getString("tour"));
+        Locale localeDa = new Locale("da","DA");
+        ResourceBundle buttonsDa = ResourceBundle.getBundle("Buttons", localeDa);
+        System.out.println("Dansk: " + buttonsDa.getString("menu_tours"));
 
-    }
-
-    static void setLocale(String language, String country)
-    {
-        Locale locale = new Locale(language,country);
-        labels = ResourceBundle.getBundle("Labels", locale);
     }
 }
