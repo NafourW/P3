@@ -10,84 +10,102 @@ public class ReadFile {//Class that reads CSV files
 
         //String directory = scanner.nextLine().toString();
 
-        String directory = "resources/ordrer_tilvalg.csv";
+        String directory = "resources/ordrer_tilvalg.csv"; //Directory for the file with orders
 
-        ReadFile test = new ReadFile();
+        String directory1 = "resources/T015785_0726018_ordrelinjer.csv"; //Directory for the file with items within an order
 
-        test.orderFile(directory);
+        ReadFile test = new ReadFile(); //test object
 
-        String line = "Dig;";
-        String line2 = "Jeg;har";
+        test.orderFile(directory); //read file with orders
 
-        System.out.println(Arrays.toString(line.split(";")));
-        System.out.println(Arrays.toString(line2.split(";")));
+        test.orderItems(directory1); //read file with items within an order
     }
 
+    //convert xlsx file to csv file
     void xlsxToCSV(File inputFile, File outputFile){
     }
 
     void orderFile(String directory){
-        String inputFile = directory;
+        String line = ""; //this string will be filled with read line
 
-        String line = "";
+        String cvsSplitBy = ";"; //split the read line when encountering ';' which is used in the CSV file to
+                                 //distinguish new information
 
-        String cvsSplitBy = ";";
+        try (BufferedReader br = new BufferedReader(new FileReader(directory))){//create a buffered reader to
+                                                                                //read the file
+            while ((line = br.readLine()) != null){//while the line read by the buffered reader is not empty(null)
 
-        try (BufferedReader br = new BufferedReader(new FileReader(inputFile))){
-            while ((line = br.readLine()) != null){
-                String[] Order = line.split(cvsSplitBy);
+                String[] Order = line.split(cvsSplitBy,-1); //split the line with ';' and keeps the empty parts
+                                                                 //and put the splitted parts into an array
 
-                if(line.trim().indexOf('M') == 0){
-                    continue; //Issue
-                } else {
-                    /*
-                    System.out.println("Order [" +
-                            "Plukrute: " + Order[1] +
-                            ", Ordre: " + Order[2] +
-                            ", Returordre reference: " + Order[3] +
-                            ", Ekspeditionsstatus: " + Order[4] +
-                            ", Navn: " + Order[5] +
-                            ", Ønsket modtagelsesdato: " + Order[6] +
-                            ", Gadenavn: " + Order[7] +
-                            ", Postnummer: " + Order[8] +
-                            ", Følgeseddel: " + Order[9] +
-                            ", Afhentning: " + Order[10] +
-                            ", Afhentningsdato: " + Order[11] +
-                            ", Leverings UGE: " + Order[12] +
-                            ", Lagersted: " + Order[13] +
-                            ", Ordrekategori: " + Order[14] +
-                            ", Flådeejer: " + Order[15] +
-                            ", Udskrevet: " + Order[16] +
-                            ", Rute: " + Order[17] +
-                            ", FV: " + Order[18] +
-                            ", Projekt: " + Order[19] +
-                            "]");
-                            */
+                if (Order[0].contains("M")){//skips the first line, that only contains the names of categories
+                    continue;
                 }
+
+                //print out the array with splitted parts
+                System.out.println("Order [" +
+                        "Plukrute: " + Order[1] +
+                        ", Order: " + Order[2] +
+                        ", Returordre reference: " + Order[3] +
+                        ", Ekspeditionsstatus: " + Order[4] +
+                        ", Navn: " + Order[5] +
+                        ", Ønsket modtagelsesdato: " + Order[6] +
+                        ", Gadenavn: " + Order[7] +
+                        ", Postnummer: " + Order[8] +
+                        ", Følgeseddel: " + Order[9] +
+                        ", Afhentning: " + Order[10] +
+                        ", Afhentningsdato: " + Order[11] +
+                        ", Leverings UGE: " + Order[12] +
+                        ", Lagersted: " + Order[13] +
+                        ", Ordrekategori: " + Order[14] +
+                        ", Flådeejer: " + Order[15] +
+                        ", Udskrevet: " + Order[16] +
+                        ", Rute: " + Order[17] +
+                        ", FV: " + Order[18] +
+                        ", Projekt: " + Order[19] +
+                        "]");
             }
         } catch (IOException e){
             e.printStackTrace();
         }
-
     }
 
-    void orderItems(String directory){
+    void orderItems(String directory){//same function as "orderFile" method
         String inputFile = directory;
 
         String line = "";
 
         String cvsSplitBy = ";";
 
+        int lines = 0;
+
         try (BufferedReader br = new BufferedReader(new FileReader(inputFile))){
             while ((line = br.readLine()) != null){
-                String[] Items = line.split(cvsSplitBy);
 
-                System.out.println("Item [" + Items[0]);
+                String[] Items = line.split(cvsSplitBy, -1);
+
+                if(Items[0].contains("O")){
+                    continue;
+                }
+
+                System.out.print("\nItem [" +
+                        "Order: " + Items[0] +
+                        ", Varenummer: " + Items[1] +
+                        ", Varenavn: " + Items[2] +
+                        ", Labels: " + Items[3] +
+                        ", Leveret: " + Items[4] +
+                        ", Inidivid: " + Items[5] +
+                        ", Klargøring: " + Items[6] +
+                        ", Individ varenummer: " + Items[7] +
+                        ", Model: " + Items[8] +
+                        ", Navn: " + Items[9] +
+                        "]");
+                lines += 1;
             }
+
+                System.out.println("\n" + lines);
         } catch (IOException e){
             e.printStackTrace();
         }
-
     }
-
 }
