@@ -77,8 +77,6 @@ public class ReadFile {//Class that reads CSV files
 
         String cvsSplitBy = ";";
 
-        int lines = 0;
-
         try (BufferedReader br = new BufferedReader(new FileReader(inputFile))){
             while ((line = br.readLine()) != null){
 
@@ -87,7 +85,6 @@ public class ReadFile {//Class that reads CSV files
                 if(Items[0].matches("^[^\\d].*")){
                     continue;
                 }
-
                 System.out.print("\nItem [" +
                         "Order: " + Items[0] +
                         ", Varenummer: " + Items[1] +
@@ -100,10 +97,7 @@ public class ReadFile {//Class that reads CSV files
                         ", Model: " + Items[8] +
                         ", Navn: " + Items[9] +
                         "]");
-                lines += 1;
             }
-
-                System.out.println("\n" + lines);
         } catch (IOException e){
             e.printStackTrace();
         }
