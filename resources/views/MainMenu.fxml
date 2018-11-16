@@ -10,13 +10,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="" alignment="CENTER" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e.MainMenuController">
    <children>
       <HBox alignment="CENTER_LEFT" fillHeight="false" maxHeight="150.0" prefWidth="200.0" VBox.vgrow="SOMETIMES">
          <children>
             <ImageView fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@logo_vibocold.png" />
+                  <Image url="@../images/logo_vibocold.png" />
                </image></ImageView>
          </children>
          <padding>
@@ -47,7 +47,7 @@
                      <graphic>
                         <ImageView>
                            <image>
-                              <Image url="@icon_truck.png" />
+                              <Image url="@../images/icon_truck.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -62,18 +62,18 @@
                      <graphic>
                         <ImageView>
                            <image>
-                              <Image url="@icon_list.png" />
+                              <Image url="@../images/icon_list.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                   <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Button minHeight="100.0" minWidth="180.0" mnemonicParsing="false" style="-fx-background-color: #ddd;" text="%button_menu_settings">
+                        <Button minHeight="100.0" minWidth="180.0" mnemonicParsing="false" onAction="#settingsButtonAction" style="-fx-background-color: #ddd;" text="%button_menu_settings">
                            <graphic>
                               <ImageView>
                                  <image>
-                                    <Image url="@icon_settings.png" />
+                                    <Image url="@../images/icon_settings.png" />
                                  </image></ImageView>
                            </graphic>
                            <font>

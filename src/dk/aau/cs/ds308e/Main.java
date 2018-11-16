@@ -10,24 +10,26 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class Main extends Application {
+    public static FXMLLoader loader;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Locale locale = new Locale("en","US");
 //      Locale locale = new Locale("da","DA");
+        ResourceBundle localStrings = ResourceBundle.getBundle("InternationalizedStrings", locale);
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/gui.fxml"));
-        loader.setResources(ResourceBundle.getBundle("InternationalizedStrings", locale));
+        loader = new FXMLLoader(getClass().getResource("/views/MainMenu.fxml"));
+        loader.setResources(localStrings);
 
-        Parent root = loader.load();// FXMLLoader.load(getClass().getResource("gui.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
 
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle(localStrings.getString("label_title_app"));
         primaryStage.setMinWidth(800);
         primaryStage.setMinHeight(620);
-        primaryStage.setScene(new Scene(root, 1280, 720));
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);
