@@ -84,7 +84,7 @@ public class ReadFile {//Class that reads CSV files
 
                 String[] Items = line.split(cvsSplitBy, -1);
 
-                if(Items[0].contains("O")){
+                if(Items[0].matches("^[^\\d].*")){
                     continue;
                 }
 
