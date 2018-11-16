@@ -16,15 +16,16 @@ public class Main extends Application {
 //      Locale locale = new Locale("da","DA");
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("gui.fxml"));
+        loader.setLocation(getClass().getResource("/gui.fxml"));
         loader.setResources(ResourceBundle.getBundle("InternationalizedStrings", locale));
 
         Parent root = loader.load();// FXMLLoader.load(getClass().getResource("gui.fxml"));
 
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.setMinWidth(800);
+        primaryStage.setMinHeight(620);
+        primaryStage.setScene(new Scene(root, 1280, 720));
         primaryStage.show();
-
     }
 
 
