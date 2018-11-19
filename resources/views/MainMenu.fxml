@@ -10,7 +10,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<VBox fx:id="" alignment="CENTER" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e.MainMenuController">
+<VBox fx:id="" alignment="CENTER" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e.gui.controllers.MainMenuController">
    <children>
       <HBox alignment="CENTER_LEFT" fillHeight="false" maxHeight="150.0" prefWidth="200.0" VBox.vgrow="SOMETIMES">
          <children>
