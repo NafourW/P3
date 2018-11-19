@@ -1,9 +1,10 @@
 package dk.aau.cs.ds308e18;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    List<Item> items;
+    ArrayList<Ware> wares;
 
     String adress;
 

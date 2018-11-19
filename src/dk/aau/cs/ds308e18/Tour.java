@@ -4,15 +4,21 @@ import java.util.ArrayList;
 
 public class Tour {
 
-    ArrayList<Order> OrderList;
+    ArrayList<Order> Orders;
 
     String name;
+
     String Region;
+
+    String RegionDetail;
+
     String driver;
 
+    float tourDate;
+
+    float packingDate;
+
     float breakTime;
-
-
 
 
     void generateTour(){

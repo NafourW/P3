@@ -1,6 +1,7 @@
 package dk.aau.cs.ds308e18;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ReadFile {//Class that reads CSV files
@@ -11,13 +12,13 @@ public class ReadFile {//Class that reads CSV files
 
         String directory = "resources/ordrer_tilvalg.csv"; //Directory for the file with orders
 
-        String directory1 = "resources/T015785_0726018_ordrelinjer.csv"; //Directory for the file with items within an order
+        String directory1 = "resources/T015785_0726018_ordrelinjer.csv"; //Directory for the file with wares within an order
 
         ReadFile test = new ReadFile(); //test object
 
         test.orderFile(directory); //read file with orders
 
-        test.orderItems(directory1); //read file with items within an order
+        test.orderItems(directory1); //read file with wares within an order
     }
 
     //convert xlsx file to csv file
@@ -84,7 +85,7 @@ public class ReadFile {//Class that reads CSV files
                 if(Items[0].matches("^[^\\d].*")){
                     continue;
                 }
-                System.out.print("\nItem [" +
+                System.out.print("\nWare [" +
                         "Order: " + Items[0] +
                         ", Varenummer: " + Items[1] +
                         ", Varenavn: " + Items[2] +
