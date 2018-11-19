@@ -37,7 +37,7 @@
                </font></Label>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="2000.0" style="-fx-background-color: #003867;" text="%button_menu_tours" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#toursButtonAction" prefHeight="150.0" prefWidth="2000.0" style="-fx-background-color: #003867;" text="%button_menu_tours" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
@@ -52,7 +52,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="2000.0" style="-fx-background-color: #003867;" text="%button_menu_orders" textFill="WHITE">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ordersButtonAction" prefHeight="150.0" prefWidth="2000.0" style="-fx-background-color: #003867;" text="%button_menu_orders" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
