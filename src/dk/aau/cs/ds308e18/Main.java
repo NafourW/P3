@@ -1,6 +1,6 @@
-package dk.aau.cs.ds308e;
+package dk.aau.cs.ds308e18;
 
-import dk.aau.cs.ds308e.gui.GUI;
+import dk.aau.cs.ds308e18.gui.GUI;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

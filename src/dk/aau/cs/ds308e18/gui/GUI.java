@@ -1,4 +1,4 @@
-package dk.aau.cs.ds308e.gui;
+package dk.aau.cs.ds308e18.gui;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

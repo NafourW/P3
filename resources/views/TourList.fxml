@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e.gui.controllers.TourListController">
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e18.gui.controllers.TourListController">
    <children>
       <Label text="%label_list_of_created_tours">
          <VBox.margin>

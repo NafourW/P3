@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e.gui.controllers.OrderListController">
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e18.gui.controllers.OrderListController">
    <children>
       <Label text="%label_list_of_unplaced_orders">
          <font>

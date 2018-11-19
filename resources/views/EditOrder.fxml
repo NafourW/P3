@@ -8,7 +8,7 @@
 
 <VBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="dk.aau.cs.ds308e18.gui.controllers.WareListController"
+            fx:controller="dk.aau.cs.ds308e18.gui.controllers.EditOrderController"
             prefHeight="600.0" prefWidth="800.0">
 
 </VBox>

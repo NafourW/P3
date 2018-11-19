@@ -1,6 +1,6 @@
-package dk.aau.cs.ds308e.gui.controllers;
+package dk.aau.cs.ds308e18.gui.controllers;
 
-import dk.aau.cs.ds308e.Main;
+import dk.aau.cs.ds308e18.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
