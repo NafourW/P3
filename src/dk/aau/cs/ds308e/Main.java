@@ -29,5 +29,6 @@ public class Main extends Application {
 
         //Display main menu
         gui.changeView("MainMenu");
+        primaryStage.show();
     }
 }

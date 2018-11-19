@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="dk.aau.cs.ds308e.gui.controllers.OrderListController"
-            prefHeight="600.0" prefWidth="800.0">
 
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e.gui.controllers.OrderListController">
+   <children>
+      <Label text="%label_list_of_unplaced_orders">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Label>
+      <ScrollPane VBox.vgrow="ALWAYS">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        </content>
+      </ScrollPane>
+      <HBox alignment="BOTTOM_LEFT">
+         <children>
+            <Button mnemonicParsing="false" onAction="#tourListButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_view_tour_list" />
+            <VBox alignment="BOTTOM_RIGHT" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="BOTTOM_RIGHT">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="%button_generate_tours">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="%button_create_order">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="%button_edit_order">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#backButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_back">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
 </VBox>

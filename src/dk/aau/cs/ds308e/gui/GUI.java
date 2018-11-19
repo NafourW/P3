@@ -3,6 +3,7 @@ package dk.aau.cs.ds308e.gui;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.util.Locale;
@@ -15,6 +16,8 @@ public class GUI {
     private Stage window;
     private String currentView;
 
+    private boolean first = true;
+
     public GUI(){
         //TODO: load previously selected language
         setLanguage(new Locale("en","US"));
@@ -23,6 +26,7 @@ public class GUI {
     //Set the main window
     public void setWindow(Stage window){
         this.window = window;
+        this.window.setScene(new Scene(new VBox()));
     }
 
     //Set the application language
@@ -36,14 +40,11 @@ public class GUI {
         return localStrings.getString(key);
     }
 
-    //Change the current application view by loading FXML and replacing the current scene
+    //Change the current application view by loading FXML and replacing the scene's root
     public void changeView(String view) throws Exception{
         currentView = view;
         Parent root = FXMLLoader.load(getClass().getResource("/views/" + currentView + ".fxml"), localStrings);
-        Scene scene = new Scene(root);
-
-        window.setScene(scene);
-        window.show();
+        window.getScene().setRoot(root);
     }
 
     //Loads the current view again

@@ -8,7 +8,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e.gui.controllers.TourListController">
    <children>
       <Label text="%label_list_of_created_tours">
@@ -31,7 +30,7 @@
             </ScrollPane>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button minHeight="50.0" minWidth="120.0" mnemonicParsing="false" text="%button_create_empty_tour" />
+                  <Button minHeight="50.0" minWidth="120.0" mnemonicParsing="false" text="%button_create_empty_tour" textAlignment="CENTER" />
                   <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
                         <GridPane alignment="BOTTOM_LEFT" maxHeight="110.0" minWidth="250.0">
@@ -44,22 +43,22 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button layoutX="10.0" layoutY="10.0" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" text="%button_edit_tour" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                              <Button layoutX="10.0" layoutY="10.0" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" text="%button_edit_tour" textAlignment="CENTER" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>
                               </Button>
-                              <Button layoutX="10.0" layoutY="10.0" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" text="%button_print_tour" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                              <Button layoutX="10.0" layoutY="10.0" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" text="%button_print_tour" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>
                               </Button>
-                              <Button layoutX="10.0" layoutY="10.0" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" text="%button_delete_tour" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                              <Button layoutX="10.0" layoutY="10.0" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" text="%button_delete_tour" textAlignment="CENTER" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>
                               </Button>
-                              <Button layoutX="10.0" layoutY="10.0" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" text="%button_release_tour" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                              <Button layoutX="10.0" layoutY="10.0" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" text="%button_release_tour" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>
@@ -91,14 +90,14 @@
       </ScrollPane>
       <HBox alignment="BOTTOM_LEFT" VBox.vgrow="NEVER">
          <children>
-            <Button minHeight="50.0" minWidth="120.0" mnemonicParsing="false" text="%button_view_order_list">
+            <Button minHeight="50.0" minWidth="120.0" mnemonicParsing="false" onAction="#orderListButtonAction" text="%button_view_order_list" textAlignment="CENTER">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
             <VBox alignment="BOTTOM_RIGHT" HBox.hgrow="ALWAYS">
                <children>
-                  <Button minHeight="50.0" minWidth="120.0" mnemonicParsing="false" onAction="#backButtonAction" text="%button_back" />
+                  <Button minHeight="50.0" minWidth="120.0" mnemonicParsing="false" onAction="#backButtonAction" text="%button_back" textAlignment="CENTER" />
                </children>
             </VBox>
          </children>
