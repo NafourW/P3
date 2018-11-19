@@ -5,8 +5,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-
-    public static GUI gui;
+    public static GUI gui; //Used by view-controllers to access GUI methods
 
     public static void main(String[] args) {
         launch(args);
@@ -14,18 +13,21 @@ public class Main extends Application {
 
     @Override
     public void init() throws Exception {
+        //Initialize GUI
         gui = new GUI();
-        gui.setLanguage("en", "US");
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        //GUI needs a reference to the main window
+        gui.setWindow(primaryStage);
+
+        //Setup main window
         primaryStage.setTitle(gui.getLocalString("label_title_app"));
         primaryStage.setMinWidth(800);
         primaryStage.setMinHeight(620);
 
-        gui.setWindow(primaryStage);
+        //Display main menu
         gui.changeView("MainMenu");
     }
-
 }
