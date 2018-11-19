@@ -28,7 +28,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <ComboBox prefHeight="40.0" prefWidth="150.0" />
+            <ComboBox fx:id="languageSelector" onAction="#languageComboBoxAction" prefHeight="40.0" prefWidth="150.0" promptText="%label_settings_choose_language" />
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
