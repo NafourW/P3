@@ -14,11 +14,17 @@ public class ReadFile {//Class that reads CSV files
 
         String directory1 = "resources/T015785_0726018_ordrelinjer.csv"; //Directory for the file with wares within an order
 
+        String directory2 = "resources/varedata.csv"; //Directory for the file with existing ware types
+
         ReadFile test = new ReadFile(); //test object
 
         test.orderFile(directory); //read file with orders
 
         test.orderItems(directory1); //read file with wares within an order
+
+        System.out.println("\n\n");
+
+        test.itemTypes(directory2); //read file with existing ware types
     }
 
     //convert xlsx file to csv file
@@ -96,6 +102,41 @@ public class ReadFile {//Class that reads CSV files
                         ", Individ varenummer: " + Items[7] +
                         ", Model: " + Items[8] +
                         ", Navn: " + Items[9] +
+                        "]");
+            }
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    void itemTypes(String directory){
+        String inputFile = directory;
+
+        String line = "";
+
+        String cvsSplitBy = ";";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(inputFile))){
+            while ((line = br.readLine()) != null){
+
+                String[] Type = line.split(cvsSplitBy, -1);
+
+                if(Type[0].matches("^[^\\d].*")){
+                    continue;
+                }
+                System.out.print("\nItem [" +
+                        "Leverandør:" + Type[0] +
+                        ", Varenummer: " + Type[1] +
+                        ", Højde: " + Type[2] +
+                        ", Dybde: " + Type[3] +
+                        ", Bruttohøjde: " + Type[4] +
+                        ", Bruttodybde: " + Type[5] +
+                        ", Bruttobredde: " + Type[6] +
+                        ", Bredde: " + Type[7] +
+                        ", Varenavn: " + Type[8] +
+                        ", Søgenavn: " + Type[9] +
+                        ", Varegruppe: " + Type[10] +
+                        ", Varetype: " + Type[11] +
                         "]");
             }
         } catch (IOException e){
