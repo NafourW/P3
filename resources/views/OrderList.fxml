@@ -8,7 +8,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e18.gui.controllers.OrderListController">
    <children>
       <Label text="%label_list_of_unplaced_orders">
@@ -31,17 +30,17 @@
                <children>
                   <HBox alignment="BOTTOM_RIGHT">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="%button_generate_tours">
+                        <Button mnemonicParsing="false" onAction="#generateToursButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_generate_tours">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="%button_create_order">
+                        <Button mnemonicParsing="false" onAction="#createOrderButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_create_order">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="%button_edit_order">
+                        <Button mnemonicParsing="false" onAction="#editOrderButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_edit_order">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>

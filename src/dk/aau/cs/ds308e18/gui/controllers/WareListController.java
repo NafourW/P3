@@ -7,6 +7,6 @@ import javafx.fxml.FXML;
 public class WareListController {
     @FXML
     private void backButtonAction(ActionEvent event) throws Exception{
-        Main.gui.changeView("MainMenu");
+        Main.gui.changeView("EditOrder");
     }
 }
