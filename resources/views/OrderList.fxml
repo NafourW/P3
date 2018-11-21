@@ -18,10 +18,29 @@
             <Insets bottom="10.0" />
          </VBox.margin>
       </Label>
-      <ScrollPane VBox.vgrow="ALWAYS">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-        </content>
+      <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
+         <content>
+            <TableView minWidth="1200.0">
+               <columns>
+                  <TableColumn maxWidth="25.0" prefWidth="25.0" />
+                  <TableColumn prefWidth="100.0" text="%label_order_id" />
+                  <TableColumn prefWidth="100.0" text="%label_order_date" />
+                  <TableColumn prefWidth="100.0" text="%label_order_region" />
+                  <TableColumn prefWidth="150.0" text="%label_order_address" />
+                  <TableColumn prefWidth="75.0" text="%label_order_zip_code" />
+                  <TableColumn prefWidth="150.0" text="%label_order_customer_name" />
+                  <TableColumn prefWidth="100.0" text="%label_order_pluck_route" />
+                  <TableColumn prefWidth="100.0" text="%label_order_reference" />
+                  <TableColumn prefWidth="100.0" text="%label_order_status" />
+                  <TableColumn prefWidth="100.0" text="%label_order_receipt" />
+                  <TableColumn prefWidth="100.0" text="%label_order_warehouse" />
+                  <TableColumn prefWidth="120.0" text="%label_order_category" />
+                  <TableColumn prefWidth="120.0" text="%label_order_fleet_owner" />
+                  <TableColumn prefWidth="100.0" text="%label_order_printed" />
+                  <TableColumn prefWidth="100.0" text="%label_order_project" />
+               </columns>
+            </TableView>
+         </content>
       </ScrollPane>
       <HBox alignment="BOTTOM_LEFT">
          <children>

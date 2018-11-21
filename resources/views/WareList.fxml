@@ -7,7 +7,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e18.gui.controllers.WareListController">
    <children>
       <Label text="%label_list_of_wares">
@@ -15,13 +14,25 @@
             <Insets bottom="10.0" />
          </VBox.margin>
       </Label>
-      <ScrollPane VBox.vgrow="ALWAYS">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-        </content>
+      <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets bottom="30.0" />
          </VBox.margin>
+         <content>
+            <TableView prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="100.0" text="varenummer" />
+                  <TableColumn prefWidth="75.0" text="varetype" />
+                  <TableColumn prefWidth="120.0" text="varenavn" />
+                  <TableColumn prefWidth="120.0" text="søgenavn" />
+                <TableColumn prefWidth="120.0" text="leverandør" />
+                  <TableColumn prefWidth="50.0" text="højde" />
+                  <TableColumn prefWidth="50.0" text="dybde" />
+                  <TableColumn prefWidth="50.0" text="bredde" />
+                  <TableColumn prefWidth="75.0" text="varegruppe" />
+              </columns>
+            </TableView>
+         </content>
       </ScrollPane>
       <HBox alignment="BOTTOM_RIGHT">
          <children>

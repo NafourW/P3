@@ -20,13 +20,22 @@
       </Label>
       <HBox prefHeight="250.0" VBox.vgrow="ALWAYS">
          <children>
-            <ScrollPane HBox.hgrow="ALWAYS">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-              </content>
+            <ScrollPane fitToHeight="true" fitToWidth="true" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
+               <content>
+                  <TableView prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="%label_tour_date" />
+                      <TableColumn prefWidth="75.0" text="%label_tour_id" />
+                        <TableColumn prefWidth="75.0" text="%label_tour_region" />
+                        <TableColumn prefWidth="75.0" text="%label_tour_driver" />
+                        <TableColumn prefWidth="75.0" text="%label_tour_status" />
+                        <TableColumn prefWidth="100.0" text="%label_tour_consignor" />
+                    </columns>
+                  </TableView>
+               </content>
             </ScrollPane>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
@@ -80,13 +89,20 @@
             <Insets bottom="10.0" top="10.0" />
          </VBox.margin>
       </HBox>
-      <ScrollPane VBox.vgrow="ALWAYS">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-        </content>
+      <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets bottom="10.0" />
          </VBox.margin>
+         <content>
+            <TableView prefHeight="200.0" prefWidth="200.0">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="%label_order_id" />
+                  <TableColumn prefWidth="120.0" text="%label_order_customer_name" />
+                  <TableColumn prefWidth="120.0" text="%label_order_address" />
+                  <TableColumn prefWidth="75.0" text="%label_order_zip_code" />
+               </columns>
+            </TableView>
+         </content>
       </ScrollPane>
       <HBox alignment="BOTTOM_LEFT" VBox.vgrow="NEVER">
          <children>

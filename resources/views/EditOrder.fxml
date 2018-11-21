@@ -145,10 +145,22 @@
                      </children>
                   </HBox>
                   <Label text="%label_order_wares_on_order" />
-                  <ScrollPane VBox.vgrow="ALWAYS">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-                    </content>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
+                     <content>
+                        <TableView prefHeight="200.0" prefWidth="200.0">
+                           <columns>
+                              <TableColumn prefWidth="100.0" text="varenummer" />
+                              <TableColumn prefWidth="75.0" text="varetype" />
+                              <TableColumn prefWidth="120.0" text="varenavn" />
+                              <TableColumn prefWidth="120.0" text="søgenavn" />
+                              <TableColumn prefWidth="120.0" text="leverandør" />
+                              <TableColumn prefWidth="50.0" text="højde" />
+                              <TableColumn prefWidth="50.0" text="dybde" />
+                              <TableColumn prefWidth="50.0" text="bredde" />
+                              <TableColumn prefWidth="75.0" text="varegruppe" />
+                           </columns>
+                        </TableView>
+                     </content>
                   </ScrollPane>
                   <HBox VBox.vgrow="NEVER">
                      <children>

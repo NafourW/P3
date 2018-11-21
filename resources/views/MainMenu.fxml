@@ -25,7 +25,7 @@
       </HBox>
       <HBox prefWidth="200.0" VBox.vgrow="NEVER">
          <children>
-            <Label alignment="TOP_LEFT" prefHeight="1000.0" prefWidth="400.0" style="-fx-border-color: #ddd; -fx-border-width: 2px;" text="%label_main_menu_info" HBox.hgrow="NEVER">
+            <Label alignment="TOP_LEFT" prefHeight="1000.0" prefWidth="400.0" style="-fx-border-color: #ddd; -fx-border-width: 2px;" text="%label_main_menu_info" wrapText="true" HBox.hgrow="NEVER">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" top="10.0" />
                </HBox.margin>
