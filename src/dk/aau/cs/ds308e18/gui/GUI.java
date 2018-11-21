@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
 
 public class GUI {
     private Locale currentLocale;
@@ -21,11 +22,8 @@ public class GUI {
     private Stage window;
     private String currentView;
 
-    private boolean first = true;
-
     public GUI(){
-        //TODO: load previously selected language
-        setLanguage(new Locale("en","US"));
+        initLanguage();
     }
 
     //Set the main window
@@ -34,10 +32,29 @@ public class GUI {
         this.window.setScene(new Scene(new VBox()));
     }
 
+    //Loads preferred language, or defaults to english
+    private void initLanguage() {
+        Preferences prefs = Preferences.userNodeForPackage(dk.aau.cs.ds308e18.Main.class);
+
+        String defaultLanguage = "en_US";
+        String languageValue = prefs.get("language", defaultLanguage);
+
+        setLanguage(languageValue);
+    }
+
     //Set the application language
-    public void setLanguage(Locale language) {
-        currentLocale = language;
+    public void setLanguage(Locale locale) {
+        currentLocale = locale;
         localStrings = ResourceBundle.getBundle("InternationalizedStrings", currentLocale);
+
+        Preferences prefs = Preferences.userNodeForPackage(dk.aau.cs.ds308e18.Main.class);
+
+        prefs.put("language", locale.toString());
+    }
+
+    public void setLanguage(String language) {
+        Locale locale = new Locale(language);
+        setLanguage(locale);
     }
 
     //Get a translated string from the resource bundle
