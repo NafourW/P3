@@ -13,7 +13,7 @@
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
    <children>
-      <Label text="%label_edit_tour">
+      <Label text="%label_title_edit_tour">
          <font>
             <Font size="24.0" />
          </font>
@@ -78,21 +78,21 @@
       </HBox>
       <HBox alignment="BOTTOM_LEFT">
          <children>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="%button_add_order">
+            <Button mnemonicParsing="false" onAction="#addOrderButtonAction" prefHeight="40.0" prefWidth="120.0" text="%button_add_order">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin></Button>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="%button_remove_order">
+            <Button mnemonicParsing="false" onAction="#removeOrderButtonAction" prefHeight="40.0" prefWidth="120.0" text="%button_remove_order">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin></Button>
-            <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="%button_move_order_to_tour">
+            <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#moveOrderToTourButtonAction" prefHeight="40.0" prefWidth="120.0" text="%button_move_order_to_tour">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin></Button>
             <VBox alignment="BOTTOM_RIGHT" HBox.hgrow="ALWAYS">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="%button_done" />
+                  <Button mnemonicParsing="false" onAction="#doneButtonAction" prefHeight="40.0" prefWidth="120.0" text="%button_done" />
                </children>
             </VBox>
          </children>

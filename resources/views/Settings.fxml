@@ -102,7 +102,7 @@
       </HBox>
       <HBox alignment="BOTTOM_LEFT" VBox.vgrow="ALWAYS">
          <children>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: faa;" text="%button_settings_clear_all_tours">
+            <Button mnemonicParsing="false" onAction="#clearAllToursButtonAction" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: faa;" text="%button_settings_clear_all_tours">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
