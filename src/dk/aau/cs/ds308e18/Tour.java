@@ -69,5 +69,4 @@ public class Tour {
     void generateTourList(){//Generates a list of all tour plans
 
     }
-
 }
