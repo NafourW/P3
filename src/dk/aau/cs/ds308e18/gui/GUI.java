@@ -59,7 +59,11 @@ public class GUI {
 
     //Get a translated string from the resource bundle
     public String getLocalString(String key) {
-        return localStrings.getString(key);
+        String value = localStrings.getString(key);
+        if (!value.isEmpty())
+            return value;
+        else
+            return key;
     }
 
     //Change the current application view by loading FXML and replacing the scene's root
