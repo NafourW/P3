@@ -67,7 +67,7 @@
                                     <Insets />
                                  </GridPane.margin>
                               </Button>
-                              <Button layoutX="10.0" layoutY="10.0" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" onAction="#deleteTourButtonAction" text="%button_delete_tour" textAlignment="CENTER" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                              <Button fx:id="deleteTourButton" layoutX="10.0" layoutY="10.0" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" onAction="#deleteTourButtonAction" text="%button_delete_tour" textAlignment="CENTER" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>

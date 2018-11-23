@@ -9,12 +9,14 @@ import java.io.IOException;
 
 public class TourListController {
 
-    @FXML
-    private Button editTourButton;
+    @FXML private Button editTourButton;
+
+    @FXML private Button deleteTourButton;
 
     @FXML
     private void initialize(){
         editTourButton.setDisable(true);
+        deleteTourButton.setDisable(true);
     }
 
     @FXML
