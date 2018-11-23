@@ -38,6 +38,8 @@ public class Tour {
         }
     }
 
+    /*
+
     void generateTour(String directory) throws IOException {//Only generate one tour plan
 
         FileWriter writer = new FileWriter(directory);
@@ -48,15 +50,16 @@ public class Tour {
                 new Order()
         );
 
+
         CSVUtils.writeLine(writer, Arrays.asList("", "", ""));
 
         for (Order o : orders){
             List<String> list = new ArrayList<>();
-            /*
+
             list.add(o.);
             list.add(o.);
             list.add(o.);
-            */
+
 
             CSVUtils.writeLine(writer, list);
         }
@@ -65,7 +68,7 @@ public class Tour {
         writer.close();
 
     }
-
+    */
     void generateTourList(){//Generates a list of all tour plans
 
     }
