@@ -18,6 +18,11 @@ public class MainMenuController {
     }
 
     @FXML
+    private void waresButtonAction(ActionEvent event) throws IOException{
+        Main.gui.changeView("WareList");
+    }
+
+    @FXML
     private void settingsButtonAction(ActionEvent event) throws IOException{
         Main.gui.changeView("Settings");
     }

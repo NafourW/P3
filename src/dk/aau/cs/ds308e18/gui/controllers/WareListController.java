@@ -9,6 +9,9 @@ import java.io.IOException;
 public class WareListController {
     @FXML
     private void backButtonAction(ActionEvent event) throws IOException {
-        Main.gui.changeView("EditOrder");
+        //if from order
+        //Main.gui.changeView("EditOrder");
+        //else
+        Main.gui.changeView("MainMenu");
     }
 }

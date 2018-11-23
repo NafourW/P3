@@ -37,7 +37,7 @@
                </font></Label>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Button mnemonicParsing="false" onAction="#toursButtonAction" prefHeight="150.0" prefWidth="2000.0" style="-fx-background-color: #003867;" text="%button_menu_tours" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#toursButtonAction" prefHeight="200.0" prefWidth="2000.0" style="-fx-background-color: #003867;" text="%button_menu_tours" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
@@ -52,7 +52,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ordersButtonAction" prefHeight="150.0" prefWidth="2000.0" style="-fx-background-color: #003867;" text="%button_menu_orders" textFill="WHITE">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ordersButtonAction" prefHeight="200.0" prefWidth="2000.0" style="-fx-background-color: #003867;" text="%button_menu_orders" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
@@ -63,6 +63,18 @@
                         <ImageView>
                            <image>
                               <Image url="@../images/icon_list.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="20.0" layoutY="190.0" mnemonicParsing="false" onAction="#waresButtonAction" prefHeight="200.0" prefWidth="2000.0" style="-fx-background-color: #003867;" text="%button_menu_wares" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../images/icon_fridge.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -81,6 +93,9 @@
                            </font>
                         </Button>
                      </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
                   </HBox>
                </children>
                <padding>
