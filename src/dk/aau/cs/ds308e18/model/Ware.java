@@ -1,6 +1,6 @@
 package dk.aau.cs.ds308e18;
 
-public class Item {
+public class Ware {
 
     String name;
     String model;
@@ -20,7 +20,7 @@ public class Item {
 
     boolean CarriableByOne;
 
-    float itemMoveTime(Item item){
+    float itemMoveTime(Ware ware){
         float time = 0;
 
 

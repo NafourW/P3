@@ -1,9 +1,9 @@
 package dk.aau.cs.ds308e18;
 
+import dk.aau.cs.ds308e18.model.Order;
+
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class ReadFile {//Class that reads CSV files
     public static void main(String[] args) {
