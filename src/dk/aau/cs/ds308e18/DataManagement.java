@@ -10,7 +10,7 @@ public class DataManagement {
      */
     private Connection establishConnectionToDatabase() {
         String host = "jdbc:mysql://localhost:3306/vibocold_db";
-        String uName = "";
+        String uName = "root";
         String uPass = "";
         try {
             return DriverManager.getConnection(host, uName, uPass);
@@ -39,7 +39,7 @@ public class DataManagement {
         Connection conn = establishConnectionToDatabase();
         try {
             Statement stmt = conn.createStatement();
-            stmt.executeQuery("CREATE TABLE Orders ");
+            stmt.executeQuery("CREATE TABLE orders ");
 
         } catch(SQLException e) {
             e.printStackTrace();
@@ -50,7 +50,7 @@ public class DataManagement {
         Connection conn = establishConnectionToDatabase();
         try {
             Statement stmt = conn.createStatement();
-            stmt.executeQuery("INSERT INTO Orders (ordername) VALUES (Test1)");
+            stmt.executeUpdate("INSERT INTO orders (name) VALUES ('Test1')");
 
         } catch(SQLException e) {
             e.printStackTrace();
@@ -61,10 +61,10 @@ public class DataManagement {
         Connection conn = establishConnectionToDatabase();
         try {
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM Orders");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM orders");
 
             while (rs.next()) {
-                System.out.println(rs);
+                System.out.println(rs.getString(1));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -78,8 +78,6 @@ public class DataManagement {
 
     public static void main(String[] args) {
         DataManagement db = new DataManagement();
-        db.createDatabase();
-        db.createOrderTable();
 
         db.createOrder();
         db.exportOrders();

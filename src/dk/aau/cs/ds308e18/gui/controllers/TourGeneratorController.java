@@ -17,6 +17,7 @@ public class TourGeneratorController {
 
     @FXML private VBox root;
 
+    @FXML private ChoiceBox<TourGenerator.planningMethod> planningChoiceBox;
     @FXML private ChoiceBox<String> regionChoiceBox;
     @FXML private CheckBox allRegionsCheckBox;
     @FXML private DatePicker datePicker;
@@ -29,6 +30,9 @@ public class TourGeneratorController {
     @FXML
     public void initialize() {
         tourGen = new TourGenerator();
+
+        planningChoiceBox.getItems().setAll(TourGenerator.planningMethod.values());
+        planningChoiceBox.setValue(TourGenerator.planningMethod.distance);
 
         regions.addAll(Main.regions);
         regionChoiceBox.setItems(regions);
