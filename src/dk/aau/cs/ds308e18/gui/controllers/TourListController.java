@@ -41,8 +41,8 @@ public class TourListController {
     }
 
     @FXML
-    private void editTourButtonAction(ActionEvent event) {
-
+    private void editTourButtonAction(ActionEvent event) throws IOException {
+        Main.gui.changeView("EditTour");
     }
 
     @FXML
