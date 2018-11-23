@@ -30,7 +30,7 @@ public class TourGeneratorController {
     public void initialize() {
         tourGen = new TourGenerator();
 
-        regions.addAll("Jylland", "Fyn", "Sjælland");
+        regions.addAll(Main.regions);
         regionChoiceBox.setItems(regions);
         regionChoiceBox.getSelectionModel().selectFirst();
 
