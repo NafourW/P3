@@ -9,8 +9,8 @@ public class DataManagement {
     Without this function, the rest in the class won't work.
      */
     private Connection establishConnectionToDatabase() {
-        String host = "jdbc:mysql://localhost:3306/VibocoldDatabase";
-        String uName = "root";
+        String host = "jdbc:mysql://localhost:3306/vibocold_db";
+        String uName = "";
         String uPass = "";
         try {
             return DriverManager.getConnection(host, uName, uPass);
@@ -28,7 +28,7 @@ public class DataManagement {
         Connection conn = establishConnectionToDatabase();
         try {
             Statement stmt = conn.createStatement();
-            stmt.executeQuery("CREATE DATABASE VibocoldDB");
+            stmt.executeQuery("CREATE DATABASE vibocold_db");
 
         } catch(SQLException e) {
             e.printStackTrace();
