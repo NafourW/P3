@@ -62,7 +62,7 @@
                                     <Insets />
                                  </GridPane.margin>
                               </Button>
-                              <Button layoutX="10.0" layoutY="10.0" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" onAction="#printTourButtonAction" text="%button_print_tour" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                              <Button fx:id="printTourButton" layoutX="10.0" layoutY="10.0" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" onAction="#printTourButtonAction" text="%button_print_tour" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>
@@ -72,7 +72,7 @@
                                     <Insets />
                                  </GridPane.margin>
                               </Button>
-                              <Button layoutX="10.0" layoutY="10.0" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" onAction="#releaseTourButtonAction" text="%button_release_tour" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                              <Button fx:id="releaseTourButton" layoutX="10.0" layoutY="10.0" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" onAction="#releaseTourButtonAction" text="%button_release_tour" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>

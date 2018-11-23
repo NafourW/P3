@@ -13,10 +13,16 @@ public class TourListController {
 
     @FXML private Button deleteTourButton;
 
+    @FXML private Button printTourButton;
+
+    @FXML private Button releaseTourButton;
+
     @FXML
     private void initialize(){
         editTourButton.setDisable(true);
         deleteTourButton.setDisable(true);
+        printTourButton.setDisable(true);
+        releaseTourButton.setDisable(true);
     }
 
     @FXML
