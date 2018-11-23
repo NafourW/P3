@@ -3,8 +3,12 @@ package dk.aau.cs.ds308e18;
 import java.time.LocalDate;
 
 public class TourGenerator {
-    LocalDate date;
-    String region;
+    public enum planningMethod{
+      distance,
+      fuel
+    };
+    private LocalDate date;
+    private String region;
 
     public void setDate(LocalDate date){
         this.date = date;
