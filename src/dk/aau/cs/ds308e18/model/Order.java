@@ -1,7 +1,6 @@
-package dk.aau.cs.ds308e18;
+package dk.aau.cs.ds308e18.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Order {
     ArrayList<Ware> wares;

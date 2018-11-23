@@ -1,4 +1,4 @@
-package dk.aau.cs.ds308e18;
+package dk.aau.cs.ds308e18.function;
 
 import java.time.LocalDate;
 

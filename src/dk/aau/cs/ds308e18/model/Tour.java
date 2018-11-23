@@ -1,12 +1,8 @@
-package dk.aau.cs.ds308e18;
+package dk.aau.cs.ds308e18.model;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Tour {
 
