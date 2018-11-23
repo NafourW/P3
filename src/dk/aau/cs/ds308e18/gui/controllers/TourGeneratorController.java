@@ -11,12 +11,18 @@ public class TourGeneratorController {
 
     @FXML private VBox root;
 
+    private TourGenerator tourGen;
+
+    @FXML
+    public void initialize() {
+        tourGen = new TourGenerator();
+    }
+
     @FXML
     private void generateToursButtonAction(ActionEvent event) {
         boolean confirmed = Main.gui.showYesNoDialog("label_tourgen_confirmation_title", "message_tourgen_confirmation");
 
         if (confirmed) {
-            TourGenerator tourGen = new TourGenerator();
             tourGen.generateTours();
             close();
         }
