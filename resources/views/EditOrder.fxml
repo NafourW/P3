@@ -179,7 +179,7 @@
                               <Insets right="10.0" top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#removeWareButtonAction" prefHeight="40.0" prefWidth="120.0" text="%button_remove_ware">
+                        <Button fx:id="removeWareButton" mnemonicParsing="false" onAction="#removeWareButtonAction" prefHeight="40.0" prefWidth="120.0" text="%button_remove_ware">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>

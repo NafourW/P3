@@ -9,12 +9,13 @@ import java.io.IOException;
 
 public class EditOrderController {
 
-    @FXML
-    private Button cancelOrderButton;
+    @FXML private Button cancelOrderButton;
+    @FXML private Button removeWareButton;
 
     @FXML
     public void initialize() {
         cancelOrderButton.setDisable(true);
+        removeWareButton.setDisable(true);
     }
     @FXML
     private void viewWareListButtonAction(ActionEvent event) throws IOException {
