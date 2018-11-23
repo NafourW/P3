@@ -3,10 +3,20 @@ package dk.aau.cs.ds308e18.gui.controllers;
 import dk.aau.cs.ds308e18.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 
 import java.io.IOException;
 
 public class OrderListController {
+
+    @FXML
+    private Button editOrderButton;
+
+    @FXML
+    public void initialize() {
+        editOrderButton.setDisable(true);
+    }
+
     @FXML
     private void tourListButtonAction(ActionEvent event) throws IOException{
         Main.gui.changeView("TourList");
