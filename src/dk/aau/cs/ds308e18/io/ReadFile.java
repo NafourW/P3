@@ -7,20 +7,16 @@ import java.util.ArrayList;
 
 public class ReadFile {//Class that reads CSV files
     public static void main(String[] args) {
-
-        ArrayList<Order> OrderList = new ArrayList<>();
-
-        String directory = "resources/ordrer_tilvalg.csv"; //Directory for the file with orders
-
         String directory1 = "resources/T015785_0726018_ordrelinjer.csv"; //Directory for the file with wares within an order
 
         String directory2 = "resources/varedata.csv"; //Directory for the file with existing ware types
 
         ReadFile test = new ReadFile(); //test object
+        ArrayList<Order> orderList = test.orderFile();
 
-        test.orderFile(directory, OrderList); //read file with orders
+        test.orderFile(); //read file with orders
 
-        System.out.print(OrderList);
+        System.out.print(orderList);
         /*
 
         test.orderItems(directory1); //read file with wares within an order
@@ -35,8 +31,9 @@ public class ReadFile {//Class that reads CSV files
     void xlsxToCSV(File inputFile, File outputFile){
     }
 
-    ArrayList orderFile(String directory, ArrayList<Order> orderList){
-
+    public ArrayList<Order> orderFile(){
+        String directory = "resources/ordrer_tilvalg.csv"; //Directory for the file with orders
+        ArrayList<Order> orderList = new ArrayList<>();
         String line = ""; //this string will be filled with read line
 
         String cvsSplitBy = ";"; //split the read line when encountering ';' which is used in the CSV file to
