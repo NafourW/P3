@@ -2,21 +2,35 @@ package dk.aau.cs.ds308e18.model;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Tour {
 
-    ArrayList<Order> Orders;
+    ArrayList<Order> orders;
 
-    String name;
-    String Region;
-    String RegionDetail;
-    String driver;
+    private LocalDate tourDate;
+    private LocalDate packingDate;
+    private Integer id;
+    private String region;
+    private String regionDetail;
+    private String driver;
+    private String status;
+    private Boolean consignor;
+
     String directory = "resources/GenerateTour.csv";
-    float tourDate;
-    float packingDate;
     float breakTime;
 
+    public Tour() {
+        id = 0;
+        tourDate = LocalDate.now();
+        packingDate = LocalDate.now();
+        orders = new ArrayList<>();
+    }
+
+    public void addOrder(Order order) {
+        orders.add(order);
+    }
 
     void CreateCSVFile(String tourName){
         File csvFile = new File(tourName + ".csv");
@@ -58,7 +72,39 @@ public class Tour {
 
     }
     */
-    void generateTourList(){//Generates a list of all tour plans
+    public ArrayList<Order> getOrders() {
+        return orders;
+    }
 
+    public String getTourDate() {
+        return tourDate.toString();
+    }
+
+    public String getPackingDate() {
+        return packingDate.toString();
+    }
+
+    public String getDriver() {
+        return driver;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public Integer getID() {
+        return id;
+    }
+
+    public Boolean getConsignor() {
+        return consignor;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getRegionDetail() {
+        return regionDetail;
     }
 }
