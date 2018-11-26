@@ -2,6 +2,7 @@ package dk.aau.cs.ds308e18.gui.controllers;
 
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.function.TourGenerator;
+import dk.aau.cs.ds308e18.model.Order;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,6 +13,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class TourGeneratorController {
 
@@ -62,9 +64,9 @@ public class TourGeneratorController {
         boolean confirmed = Main.gui.showYesNoDialog("label_tourgen_confirmation_title", "message_tourgen_confirmation");
 
         if (confirmed) {
-            tourGen.setRegion((allRegionsCheckBox.isSelected()) ? null : regionChoiceBox.getValue());
-            tourGen.setDate((allDatesCheckBox.isSelected()) ? null :datePicker.getValue());
-            tourGen.generateTours();
+            //tourGen.setRegion((allRegionsCheckBox.isSelected()) ? null : regionChoiceBox.getValue());
+            //tourGen.setDate((allDatesCheckBox.isSelected()) ? null :datePicker.getValue());
+            tourGen.generateTours(new ArrayList<Order>());
             close();
         }
     }

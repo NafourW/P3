@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Tour {
 
-    ArrayList<Order> Orders;
+    ArrayList<Order> orders;
 
     String name;
 
@@ -24,6 +24,13 @@ public class Tour {
 
     float breakTime;
 
+    public Tour() {
+        orders = new ArrayList<>();
+    }
+
+    public void addOrder(Order order) {
+        orders.add(order);
+    }
 
     void CreateCSVFile(String tourName){
         File csvFile = new File(tourName + ".csv");
@@ -65,7 +72,7 @@ public class Tour {
 
     }
     */
-    void generateTourList(){//Generates a list of all tour plans
-
+    public ArrayList<Order> getOrders() {
+        return orders;
     }
 }
