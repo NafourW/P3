@@ -13,11 +13,7 @@ public class TourGeneratorTest {
         ArrayList<Order> orders = new ArrayList<>();
         TourGenerator tourGenerator = new TourGenerator();
 
-        Order order = new Order(0,"","",
-                "","","","",
-                0,0,false,"",
-                0,"","","",
-                false,"",false,"");
+        Order order = new Order();
         orders.add(order);
 
         ArrayList<Tour> tours = tourGenerator.generateTours(orders);
