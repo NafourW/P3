@@ -17,13 +17,13 @@ public class Order {
     */
 
     private long plukrute;
-    private String order;
+    private int id;
     private String returordreReference;
     private String ekspeditionsStatus;
-    private String navn;
+    private String customerName;
     private String modtagelsesDato;
-    private String gadeNavn;
-    private long postNummer;
+    private String address;
+    private long zipCode;
     private long receipt;
     private boolean afhentning;
     private String sfhentningsDato;
@@ -38,13 +38,13 @@ public class Order {
 
     public Order() {
         plukrute = 0;
-        order = "";
+        id = 0;
         returordreReference = "";
         ekspeditionsStatus = "";
-        navn = "";
+        customerName = "";
         modtagelsesDato = "";
-        gadeNavn = "";
-        postNummer = 0;
+        address = "";
+        zipCode = 0;
         receipt = 0;
         afhentning = false;
         sfhentningsDato = "";
@@ -58,18 +58,18 @@ public class Order {
         projekt = "";
     }
 
-    public Order(long plukrute, String order, String returordreReference, String ekspeditionsStatus, String navn,
-                 String modtagelsesDato, String gadeNavn, long postNummer, long receipt, boolean afhentning,
+    public Order(long plukrute, int id, String returordreReference, String ekspeditionsStatus, String customerName,
+                 String modtagelsesDato, String address, long zipCode, long receipt, boolean afhentning,
                  String sfhentningsDato, int leveringsUge, String lagerSted, String ordreKategori, String fleetOwner,
                  boolean udskrevet, String rute, boolean FV, String projekt) {
         this.plukrute = plukrute;
-        this.order = order;
+        this.id = id;
         this.returordreReference = returordreReference;
         this.ekspeditionsStatus = ekspeditionsStatus;
-        this.navn = navn;
+        this.customerName = customerName;
         this.modtagelsesDato = modtagelsesDato;
-        this.gadeNavn = gadeNavn;
-        this.postNummer = postNummer;
+        this.address = address;
+        this.zipCode = zipCode;
         this.receipt = receipt;
         this.afhentning = afhentning;
         this.sfhentningsDato = sfhentningsDato;
@@ -81,5 +81,21 @@ public class Order {
         this.rute = rute;
         this.FV = FV;
         this.projekt = projekt;
+    }
+
+    public int getID() {
+        return id;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public long getZipCode() {
+        return zipCode;
     }
 }

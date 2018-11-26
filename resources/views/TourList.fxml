@@ -106,10 +106,10 @@
          <content>
             <TableView fx:id="tourOrdersTable" prefHeight="200.0" prefWidth="200.0">
                <columns>
-                  <TableColumn prefWidth="75.0" text="%label_order_id" />
-                  <TableColumn prefWidth="120.0" text="%label_order_customer_name" />
-                  <TableColumn prefWidth="120.0" text="%label_order_address" />
-                  <TableColumn prefWidth="75.0" text="%label_order_zip_code" />
+                  <TableColumn fx:id="orderIDColumn" prefWidth="75.0" text="%label_order_id" />
+                  <TableColumn fx:id="orderNameColumn" prefWidth="120.0" text="%label_order_customer_name" />
+                  <TableColumn fx:id="orderAddressColumn" prefWidth="120.0" text="%label_order_address" />
+                  <TableColumn fx:id="orderZipCodeColumn" prefWidth="75.0" text="%label_order_zip_code" />
                </columns>
             </TableView>
          </content>

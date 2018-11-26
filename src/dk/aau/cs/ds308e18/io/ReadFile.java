@@ -79,6 +79,8 @@ public class ReadFile {//Class that reads CSV files
 
                 long plukrute = Long.valueOf(Order[1]);
 
+                int id = Integer.valueOf(Order[2]);
+
                 long postNummer;
                 if(Order[8].matches("[0-9]+") && Order[8].length() > 2)
                 {
@@ -133,7 +135,7 @@ public class ReadFile {//Class that reads CSV files
                 //16 = boolean, done
                 //18 = boolean
 
-                Order order = new Order(plukrute, Order[2], Order[3], Order[4], Order[5], Order[6], Order[7],
+                Order order = new Order(plukrute, id, Order[3], Order[4], Order[5], Order[6], Order[7],
                         postNummer, receipt, afhentning, Order[11], leveringsUge, Order[13], Order[14], Order[15],
                         udskrevet, Order[17], FV, Order[19]);
 

@@ -92,7 +92,7 @@ public class Tour {
         return region;
     }
 
-    public Integer getId() {
+    public Integer getID() {
         return id;
     }
 

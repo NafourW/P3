@@ -21,8 +21,6 @@ public class TourListController {
     @FXML private Button releaseTourButton;
 
     @FXML private TableView<Tour> tourListTable;
-    @FXML private TableView<Order> tourOrdersTable;
-
     @FXML private TableColumn<Tour, String> tourDateColumn;
     @FXML private TableColumn<Tour, Integer> tourIDColumn;
     @FXML private TableColumn<Tour, String> tourRegionColumn;
@@ -30,17 +28,38 @@ public class TourListController {
     @FXML private TableColumn<Tour, Boolean> tourStatusColumn;
     @FXML private TableColumn<Tour, Boolean> tourConsignorColumn;
 
+    @FXML private TableView<Order> tourOrdersTable;
+    @FXML private TableColumn<Tour, Integer> orderIDColumn;
+    @FXML private TableColumn<Tour, String> orderNameColumn;
+    @FXML private TableColumn<Tour, String> orderAddressColumn;
+    @FXML private TableColumn<Tour, Integer> orderZipCodeColumn;
+
     private TableManager tourListManager;
     private TableManager tourOrdersManager;
 
     @FXML
     private void initialize(){
         tourDateColumn.setCellValueFactory(new PropertyValueFactory<>("TourDate"));
-        tourIDColumn.setCellValueFactory(new PropertyValueFactory<>("Id"));
+        tourIDColumn.setCellValueFactory(new PropertyValueFactory<>("ID"));
         tourRegionColumn.setCellValueFactory(new PropertyValueFactory<>("Region"));
         tourDriverColumn.setCellValueFactory(new PropertyValueFactory<>("Driver"));
         tourStatusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
         tourConsignorColumn.setCellValueFactory(new PropertyValueFactory<>("Consignor"));
+
+        tourListTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                tourOrdersTable.getSelectionModel().clearSelection();
+                tourOrdersTable.getItems().clear();
+
+                Order order = new Order();
+                tourOrdersTable.getItems().add(order);
+            }
+        });
+
+        orderIDColumn.setCellValueFactory(new PropertyValueFactory<>("ID"));
+        orderNameColumn.setCellValueFactory(new PropertyValueFactory<>("CustomerName"));
+        orderAddressColumn.setCellValueFactory(new PropertyValueFactory<>("Address"));
+        orderZipCodeColumn.setCellValueFactory(new PropertyValueFactory<>("ZipCode"));
 
         tourListManager = new TableManager(tourListTable);
         tourOrdersManager = new TableManager(tourOrdersTable);
