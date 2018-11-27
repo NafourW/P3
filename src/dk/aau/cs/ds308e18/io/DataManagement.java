@@ -185,6 +185,25 @@ public class DataManagement {
         }
     }
 
+    public ArrayList<String> exportRegionNames() {
+        ArrayList<String> regionList = new ArrayList<>();
+        Connection conn = establishConnectionToDatabase();
+        try {
+            if (conn != null) {
+                Statement stmt = conn.createStatement();
+                ResultSet regions = stmt.executeQuery("SELECT * FROM regions");
+
+                while (regions.next()) {
+                    regionList.add(regions.getString(2));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return regionList;
+    }
+
     /*
     Insert an order into the order table.
     */
