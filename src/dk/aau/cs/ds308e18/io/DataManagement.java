@@ -156,20 +156,31 @@ public class DataManagement {
     Export everything from the order table.
     Print them in the terminal
     */
-    private void exportOrders() {
+    private ArrayList<Order> exportOrders() {
+        ArrayList<Order> orderList = new ArrayList<>();
         Connection conn = establishConnectionToDatabase();
         try {
             if (conn != null) {
                 Statement stmt = conn.createStatement();
                 ResultSet orders = stmt.executeQuery("SELECT * FROM orders");
 
+                // As long as there is a "next row" in the table, create an order based on that row
                 while (orders.next()) {
-                    System.out.println(orders.getString(1));
+                    //TODO Hjælp den her funktion
+                    Order order = new Order(orders.getLong(1), orders.getInt(2), orders.getString(3),
+                            orders.getString(4), orders.getString(5), orders.getString(6),
+                            orders.getString(7), orders.getLong(8),
+                            orders.getLong(9), orders.getBoolean(10), orders.getString(11),
+                            orders.getString(12), orders.getString(13), orders.getBoolean(14),
+                            orders.getString(15), orders.getBoolean(16), orders.getString(17));
+                    orderList.add(order);
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        return orderList;
     }
 
     /*
@@ -196,5 +207,6 @@ public class DataManagement {
         DataManagement db = new DataManagement();
         db.databaseSetup();
         db.importOrders();
+        db.exportOrders();
     }
 }
