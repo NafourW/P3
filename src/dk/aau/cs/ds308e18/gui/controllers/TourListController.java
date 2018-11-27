@@ -34,15 +34,15 @@ public class TourListController {
     @FXML private TableColumn<Tour, String> orderAddressColumn;
     @FXML private TableColumn<Tour, Integer> orderZipCodeColumn;
 
-    private TableManager tourListManager;
-    private TableManager tourOrdersManager;
+    private TableManager<Tour> tourListManager;
+    private TableManager<Order> tourOrdersManager;
 
     private Tour selectedTour;
 
     @FXML
     private void initialize(){
         //setup tables
-        tourListManager = new TableManager(tourListTable);
+        tourListManager = new TableManager<>(tourListTable);
         tourListManager.setupColumn(tourDateColumn, "TourDate");
         tourListManager.setupColumn(tourIDColumn, "ID");
         tourListManager.setupColumn(tourRegionColumn, "Region");
@@ -50,7 +50,7 @@ public class TourListController {
         tourListManager.setupColumn(tourStatusColumn, "Status");
         tourListManager.setupColumn(tourConsignorColumn, "Consignor");
 
-        tourOrdersManager = new TableManager(tourOrdersTable);
+        tourOrdersManager = new TableManager<>(tourOrdersTable);
         tourOrdersManager.setupColumn(orderIDColumn, "ID");
         tourOrdersManager.setupColumn(orderNameColumn, "CustomerName");
         tourOrdersManager.setupColumn(orderAddressColumn, "Address");
@@ -76,17 +76,18 @@ public class TourListController {
     private void onTourSelected(ObservableValue<? extends Tour> obs, Tour oldSelection, Tour newSelection) {
         selectedTour = newSelection;
 
-        if (selectedTour == null) {
-            setTourButtonsDisabled(true);
+        if (oldSelection == newSelection) {
+            return;
         }
-        else {
-            tourOrdersTable.getSelectionModel().clearSelection();
-            tourOrdersTable.getItems().clear();
 
+        tourOrdersManager.clearSelection();
+        tourOrdersManager.clearItems();
+
+        setTourButtonsDisabled((selectedTour == null));
+
+        if (selectedTour != null){
             Order order = new Order();
-            tourOrdersTable.getItems().add(order);
-
-            setTourButtonsDisabled(false);
+            tourOrdersManager.addItem(order);
         }
     }
 
@@ -113,7 +114,9 @@ public class TourListController {
 
     @FXML
     private void deleteTourButtonAction(ActionEvent event) {
-
+        tourListManager.removeItem(selectedTour);
+        onTourSelected(null, selectedTour,null);
+        tourListManager.clearSelection();
     }
 
     @FXML
