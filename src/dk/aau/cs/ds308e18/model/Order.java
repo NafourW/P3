@@ -16,13 +16,14 @@ public class Order {
     float timeRequired;
     */
 
-    private long pluckroute;
+    private long pluckRoute;
     private int id;
     private String orderReference;
     private String expeditionStatus;
     private String customerName;
     private String date;
     private String address;
+    private String region;
     private long zipCode;
     private long receipt;
     private boolean pickup;
@@ -35,7 +36,7 @@ public class Order {
     private String project;
 
     public Order() {
-        pluckroute = 0;
+        pluckRoute = 0;
         id = 0;
         orderReference = "";
         expeditionStatus = "";
@@ -54,11 +55,11 @@ public class Order {
         project = "";
     }
 
-    public Order(long pluckroute, int id, String orderReference, String expeditionStatus, String customerName,
+    public Order(long pluckRoute, int id, String orderReference, String expeditionStatus, String customerName,
                  String date, String address, long zipCode, long receipt, boolean pickup,
                  String warehouse, String category, String fleetOwner,
                  boolean printed, String route, boolean FV, String project) {
-        this.pluckroute = pluckroute;
+        this.pluckRoute = pluckRoute;
         this.id = id;
         this.orderReference = orderReference;
         this.expeditionStatus= expeditionStatus;
@@ -93,8 +94,8 @@ public class Order {
         return zipCode;
     }
 
-    public long getPluckroute() {
-        return pluckroute;
+    public long getPluckRoute() {
+        return pluckRoute;
     }
 
     public String getOrderReference() {
@@ -148,5 +149,9 @@ public class Order {
 
     public String getProject() {
         return project;
+    }
+
+    public String getRegion() {
+        return region;
     }
 }
