@@ -1,6 +1,7 @@
 package dk.aau.cs.ds308e18.io;
 
 import dk.aau.cs.ds308e18.model.Order;
+import dk.aau.cs.ds308e18.model.Ware;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -12,6 +13,8 @@ public class ReadFile {//Class that reads CSV files
         String directory2 = "resources/varedata.csv"; //Directory for the file with existing ware types
 
         ReadFile test = new ReadFile(); //test object
+
+
         //test.orderFile(); //read file with orders
 
         /*
@@ -22,8 +25,6 @@ public class ReadFile {//Class that reads CSV files
 
         test.itemTypes(directory2); //read file with existing ware types
         */
-
-        test.itemTypes(directory2);
     }
 
     //convert xlsx file to csv file
@@ -139,7 +140,10 @@ public class ReadFile {//Class that reads CSV files
         }
     }
 
-    void itemTypes(String directory){
+    ArrayList<Ware> wareTypes(String directory){
+
+        ArrayList<Ware> wareList = new ArrayList<>();
+
         String inputFile = directory;
 
         String line = "";
@@ -171,9 +175,14 @@ public class ReadFile {//Class that reads CSV files
                         ", Løfter værktøj: " + Type[13] +
                         ", Flytte tid: " + Type [14] +
                         "]");
+
+                Ware ware = new Ware();
+
+                wareList.add(ware);
             }
         } catch (IOException e){
             e.printStackTrace();
         }
+        return wareList;
     }
 }
