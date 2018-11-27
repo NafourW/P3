@@ -73,19 +73,27 @@ public class TourListController {
         releaseTourButton.setDisable(disabled);
     }
 
+    //Called when a tour is selected in the tour list
     private void onTourSelected(ObservableValue<? extends Tour> obs, Tour oldSelection, Tour newSelection) {
+        //the selected item is assigned to selectedTour
         selectedTour = newSelection;
 
-        if (oldSelection == newSelection) {
+        //if the same thing was selected: do nothing
+        if (oldSelection == newSelection)
             return;
-        }
 
+        //clear the order list
         tourOrdersManager.clearSelection();
         tourOrdersManager.clearItems();
 
+        //enable/disable tour buttons,
+        //depending on whether a tour is selected
         setTourButtonsDisabled((selectedTour == null));
 
+        //if a tour is selected,
+        //display its orders in the order list
         if (selectedTour != null){
+            //TODO: get orders from tour
             Order order = new Order();
             tourOrdersManager.addItem(order);
         }
@@ -105,10 +113,12 @@ public class TourListController {
     private void createEmptyTourButtonAction(ActionEvent event) {
         Tour tour = new Tour();
         tourListTable.getItems().add(tour);
+        //TODO: add tour to database
     }
 
     @FXML
     private void editTourButtonAction(ActionEvent event) throws IOException {
+        //TODO: use selectedTour
         Main.gui.changeView("EditTour");
     }
 
@@ -117,6 +127,7 @@ public class TourListController {
         tourListManager.removeItem(selectedTour);
         onTourSelected(null, selectedTour,null);
         tourListManager.clearSelection();
+        //TODO: remove tour from database
     }
 
     @FXML
