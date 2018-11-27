@@ -4,16 +4,22 @@ import java.util.ArrayList;
 
 import dk.aau.cs.ds308e18.model.Order;
 
+import javax.xml.crypto.Data;
+
 public class DataManagement {
 
-    /*
-    Establish connection to the Local Database.
-    This is needed for any form of Database management such as "SELECT" and "INSERT".
-    For every method, it's needed to call this function for the SQL statements to work.
+    public DataManagement() {
+        databaseSetup();
+    }
 
-    The Local Database has to be up and running for this function to work.
-    Without this function, the rest in the class won't work.
-    */
+    /*
+        Establish connection to the Local Database.
+        This is needed for any form of Database management such as "SELECT" and "INSERT".
+        For every method, it's needed to call this function for the SQL statements to work.
+
+        The Local Database has to be up and running for this function to work.
+        Without this function, the rest in the class won't work.
+        */
     private Connection establishConnectionToDatabase() {
         String host = "jdbc:mysql://localhost:3306/vibocold_db";
         String uName = "root";
@@ -60,25 +66,23 @@ public class DataManagement {
         try {
             if (conn != null) {
                 String sql = "CREATE TABLE orders (" +
-                        "plukrute INT, " +
-                        "order1 VARCHAR(255), " +
-                        "returordreReference VARCHAR(255), " +
-                        "ekspeditionsStatus VARCHAR(255), " +
-                        "navn VARCHAR(255), " +
-                        "modtagelsesDato VARCHAR(255), " +
-                        "gadeNavn VARCHAR(255), " +
-                        "postNummer INT, " +
-                        "receipt INT, " +
-                        "afhentning VARCHAR(255), " +
-                        "afhentningsDato VARCHAR(255), " +
-                        "leveringsUge INT, " +
-                        "lagerSted VARCHAR(255), " +
-                        "ordreKategori VARCHAR(255), " +
-                        "fleetOwner VARCHAR(255), " +
-                        "udskrevet VARCHAR(255), " +
-                        "rute VARCHAR(255), " +
-                        "FV VARCHAR(255), " +
-                        "projekt VARCHAR(255))";
+                        "pluckRoute INT," +
+                        "id INT," +
+                        "orderReference VARCHAR(255)," +
+                        "expeditionStatus VARCHAR(255)," +
+                        "customerName VARCHAR(255)," +
+                        "orderDate VARCHAR(255)," +
+                        "address VARCHAR(255)," +
+                        "zipCode INT," +
+                        "receipt INT," +
+                        "pickup VARCHAR(255)," +
+                        "warehouse VARCHAR(255)," +
+                        "category VARCHAR(255)," +
+                        "fleetOwner VARCHAR(255)," +
+                        "printed VARCHAR(255)," +
+                        "route VARCHAR(255)," +
+                        "FV VARCHAR(255)," +
+                        "project VARCHAR(255))";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
             }
@@ -95,9 +99,9 @@ public class DataManagement {
             Connection conn = establishConnectionToDatabase();
             if(conn != null) {
                 PreparedStatement stmt = conn.prepareStatement("INSERT INTO orders (" +
-                        "plukrute, order1, returordreReference, ekspeditionsStatus, navn, modtagelsesDato, gadeNavn, " +
-                        "postNummer, receipt, afhentning, afhentningsDato, leveringsUge, lagerSted, ordreKategori, " +
-                        "fleetOwner, udskrevet, rute, FV, projekt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                        "pluckRoute, id, orderReference, expeditionStatus, customerName, orderDate, address, " +
+                        "zipCode, receipt, pickup, warehouse, category, fleetOwner, printed, " +
+                        "route, FV, project) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
                 //TODO Fix det her med en hjælpe funktion
                 stmt.setString(1, String.valueOf(order.getPluckRoute()));
@@ -110,15 +114,13 @@ public class DataManagement {
                 stmt.setString(8, String.valueOf(order.getZipCode()));
                 stmt.setString(9, String.valueOf(order.getReceipt()));
                 stmt.setString(10, String.valueOf(order.isPickup()));
-                stmt.setString(11, String.valueOf(order.getDate()));
-                stmt.setString(12, String.valueOf(order.getWeekNumber()));
-                stmt.setString(13, String.valueOf(order.getWarehouse()));
-                stmt.setString(14, String.valueOf(order.getCategory()));
-                stmt.setString(15, String.valueOf(order.getFleetOwner()));
-                stmt.setString(16, String.valueOf(order.isPrinted()));
-                stmt.setString(17, String.valueOf(order.getRoute()));
-                stmt.setString(18, String.valueOf(order.isFV()));
-                stmt.setString(19, String.valueOf(order.getProject()));
+                stmt.setString(11, String.valueOf(order.getWarehouse()));
+                stmt.setString(12, String.valueOf(order.getCategory()));
+                stmt.setString(13, String.valueOf(order.getFleetOwner()));
+                stmt.setString(14, String.valueOf(order.isPrinted()));
+                stmt.setString(15, String.valueOf(order.getRoute()));
+                stmt.setString(16, String.valueOf(order.isFV()));
+                stmt.setString(17, String.valueOf(order.getProject()));
 
                 return stmt;
             }
@@ -156,7 +158,7 @@ public class DataManagement {
     Export everything from the order table.
     Print them in the terminal
     */
-    private ArrayList<Order> exportOrders() {
+    public ArrayList<Order> exportOrders() {
         ArrayList<Order> orderList = new ArrayList<>();
         Connection conn = establishConnectionToDatabase();
         try {
@@ -167,12 +169,15 @@ public class DataManagement {
                 // As long as there is a "next row" in the table, create an order based on that row
                 while (orders.next()) {
                     //TODO Hjælp den her funktion
-                    Order order = new Order(orders.getLong(1), orders.getInt(2), orders.getString(3),
-                            orders.getString(4), orders.getString(5), orders.getString(6),
+                    Order order = new Order(orders.getLong(1), orders.getInt(2),
+                            orders.getString(3), orders.getString(4),
+                            orders.getString(5), orders.getString(6),
                             orders.getString(7), orders.getLong(8),
-                            orders.getLong(9), orders.getBoolean(10), orders.getString(11),
-                            orders.getString(12), orders.getString(13), orders.getBoolean(14),
-                            orders.getString(15), orders.getBoolean(16), orders.getString(17));
+                            orders.getLong(9), orders.getBoolean(10),
+                            orders.getString(11), orders.getString(12),
+                            orders.getString(13), orders.getBoolean(14),
+                            orders.getString(15), orders.getBoolean(16),
+                            orders.getString(17));
                     orderList.add(order);
                 }
             }
@@ -205,7 +210,6 @@ public class DataManagement {
 
     public static void main(String[] args) {
         DataManagement db = new DataManagement();
-        db.databaseSetup();
         db.importOrders();
         db.exportOrders();
     }

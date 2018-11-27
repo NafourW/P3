@@ -23,7 +23,6 @@ public class Order {
     private String customerName;
     private String date;
     private String address;
-    private String region;
     private long zipCode;
     private long receipt;
     private boolean pickup;
@@ -151,14 +150,10 @@ public class Order {
         return project;
     }
 
-    public String getRegion() {
-        return region;
-    }
-
     @Override
     public String toString() {
         return pluckRoute + "," + id + "," + orderReference + "," + expeditionStatus + "," +
-                customerName + "," + date + "," + address + "," + region + "," + zipCode + "," +
+                customerName + "," + date + "," + address + "," + zipCode + "," +
                 receipt + "," + pickup + "," + warehouse + "," + category + "," + fleetOwner + "," +
                 printed + "," + route + "," + FV + "," + project;
     }
