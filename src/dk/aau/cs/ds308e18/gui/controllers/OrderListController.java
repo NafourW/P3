@@ -10,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class OrderListController {
 
@@ -17,20 +18,20 @@ public class OrderListController {
 
     @FXML private TableView orderListTable;
     @FXML private TableColumn selectedColumn;
-    @FXML private TableColumn idColumn;
-    @FXML private TableColumn dateColumn;
-    @FXML private TableColumn regionColumn;
-    @FXML private TableColumn addressColumn;
-    @FXML private TableColumn zipCodeColumn;
-    @FXML private TableColumn customerNameColumn;
-    @FXML private TableColumn pluckRouteColumn;
-    @FXML private TableColumn orderReferenceColumn;
-    @FXML private TableColumn receiptColumn;
-    @FXML private TableColumn warehouseColumn;
-    @FXML private TableColumn categoryColumn;
-    @FXML private TableColumn fleetOwnerColumn;
-    @FXML private TableColumn printedColumn;
-    @FXML private TableColumn projectColumn;
+    @FXML private TableColumn<Order, Integer> idColumn;
+    @FXML private TableColumn<Order, LocalDate> dateColumn;
+    @FXML private TableColumn<Order, String> regionColumn;
+    @FXML private TableColumn<Order, String> addressColumn;
+    @FXML private TableColumn<Order, Integer> zipCodeColumn;
+    @FXML private TableColumn<Order, String> customerNameColumn;
+    @FXML private TableColumn<Order, Integer> pluckRouteColumn;
+    @FXML private TableColumn<Order, String> orderReferenceColumn;
+    @FXML private TableColumn<Order, Integer> receiptColumn;
+    @FXML private TableColumn<Order, String> warehouseColumn;
+    @FXML private TableColumn<Order, String> categoryColumn;
+    @FXML private TableColumn<Order, String> fleetOwnerColumn;
+    @FXML private TableColumn<Order, Boolean> printedColumn;
+    @FXML private TableColumn<Order, String> projectColumn;
 
     private TableManager orderListManager;
 
