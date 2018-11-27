@@ -100,25 +100,25 @@ public class DataManagement {
                         "fleetOwner, udskrevet, rute, FV, projekt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
                 //TODO Fix det her med en hjælpe funktion
-                stmt.setString(1, String.valueOf(order.plukrute));
-                stmt.setString(2, String.valueOf(order.order));
-                stmt.setString(3, String.valueOf(order.returordreReference));
-                stmt.setString(4, String.valueOf(order.ekspeditionsStatus));
-                stmt.setString(5, String.valueOf(order.navn));
-                stmt.setString(6, String.valueOf(order.modtagelsesDato));
-                stmt.setString(7, String.valueOf(order.gadeNavn));
-                stmt.setString(8, String.valueOf(order.postNummer));
-                stmt.setString(9, String.valueOf(order.receipt));
-                stmt.setString(10, String.valueOf(order.afhentning));
-                stmt.setString(11, String.valueOf(order.afhentningsDato));
-                stmt.setString(12, String.valueOf(order.leveringsUge));
-                stmt.setString(13, String.valueOf(order.lagerSted));
-                stmt.setString(14, String.valueOf(order.ordreKategori));
-                stmt.setString(15, String.valueOf(order.fleetOwner));
-                stmt.setString(16, String.valueOf(order.udskrevet));
-                stmt.setString(17, String.valueOf(order.rute));
-                stmt.setString(18, String.valueOf(order.FV));
-                stmt.setString(19, String.valueOf(order.projekt));
+                stmt.setString(1, String.valueOf(order.getPluckroute()));
+                stmt.setString(2, String.valueOf(order.getID()));
+                stmt.setString(3, String.valueOf(order.getOrderReference()));
+                stmt.setString(4, String.valueOf(order.getExpeditionStatus()));
+                stmt.setString(5, String.valueOf(order.getCustomerName()));
+                stmt.setString(6, String.valueOf(order.getDate()));
+                stmt.setString(7, String.valueOf(order.getAddress()));
+                stmt.setString(8, String.valueOf(order.getZipCode()));
+                stmt.setString(9, String.valueOf(order.getReceipt()));
+                stmt.setString(10, String.valueOf(order.isPickup()));
+                stmt.setString(11, String.valueOf(order.getDate()));
+                stmt.setString(12, String.valueOf(order.getWeekNumber()));
+                stmt.setString(13, String.valueOf(order.getWarehouse()));
+                stmt.setString(14, String.valueOf(order.getCategory()));
+                stmt.setString(15, String.valueOf(order.getFleetOwner()));
+                stmt.setString(16, String.valueOf(order.isPrinted()));
+                stmt.setString(17, String.valueOf(order.getRoute()));
+                stmt.setString(18, String.valueOf(order.isFV()));
+                stmt.setString(19, String.valueOf(order.getProject()));
 
                 return stmt;
             }

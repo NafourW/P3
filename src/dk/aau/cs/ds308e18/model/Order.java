@@ -16,71 +16,65 @@ public class Order {
     float timeRequired;
     */
 
-    private long plukrute;
+    private long pluckroute;
     private int id;
-    private String returordreReference;
-    private String ekspeditionsStatus;
+    private String orderReference;
+    private String expeditionStatus;
     private String customerName;
-    private String modtagelsesDato;
+    private String date;
     private String address;
     private long zipCode;
     private long receipt;
-    private boolean afhentning;
-    private String sfhentningsDato;
-    private int leveringsUge;
-    private String lagerSted;
-    private String ordreKategori;
+    private boolean pickup;
+    private String warehouse;
+    private String category;
     private String fleetOwner;
-    private boolean udskrevet;
-    private String rute;
+    private boolean printed;
+    private String route;
     private boolean FV;
-    private String projekt;
+    private String project;
 
     public Order() {
-        plukrute = 0;
+        pluckroute = 0;
         id = 0;
-        returordreReference = "";
-        ekspeditionsStatus = "";
+        orderReference = "";
+        expeditionStatus = "";
         customerName = "";
-        modtagelsesDato = "";
+        date = "";
         address = "";
         zipCode = 0;
         receipt = 0;
-        afhentning = false;
-        sfhentningsDato = "";
-        leveringsUge = 0;
-        lagerSted = "";
-        ordreKategori = "";
+        pickup = false;
+        warehouse = "";
+        category = "";
         fleetOwner = "";
-        udskrevet = false;
-        rute = "";
+        printed = false;
+        route = "";
         FV = false;
-        projekt = "";
+        project = "";
     }
 
-    public Order(long plukrute, int id, String returordreReference, String ekspeditionsStatus, String customerName,
-                 String modtagelsesDato, String address, long zipCode, long receipt, boolean afhentning,
-                 String sfhentningsDato, int leveringsUge, String lagerSted, String ordreKategori, String fleetOwner,
-                 boolean udskrevet, String rute, boolean FV, String projekt) {
-        this.plukrute = plukrute;
+    public Order(long pluckroute, int id, String orderReference, String expeditionStatus, String customerName,
+                 String date, String address, long zipCode, long receipt, boolean pickup,
+                 String warehouse, String category, String fleetOwner,
+                 boolean printed, String route, boolean FV, String project) {
+        this.pluckroute = pluckroute;
         this.id = id;
-        this.returordreReference = returordreReference;
-        this.ekspeditionsStatus = ekspeditionsStatus;
+        this.orderReference = orderReference;
+        this.expeditionStatus= expeditionStatus;
         this.customerName = customerName;
-        this.modtagelsesDato = modtagelsesDato;
+        this.date = date;
         this.address = address;
         this.zipCode = zipCode;
         this.receipt = receipt;
-        this.afhentning = afhentning;
-        this.afhentningsDato = afhentningsDato;
-        this.leveringsUge = leveringsUge;
-        this.lagerSted = lagerSted;
-        this.ordreKategori = ordreKategori;
+        this.pickup = pickup;
+        this.warehouse = warehouse;
+        this.category = category;
         this.fleetOwner = fleetOwner;
-        this.udskrevet = udskrevet;
-        this.rute = rute;
+        this.printed = printed;
+        this.route = route;
         this.FV = FV;
-        this.projekt = projekt;
+        this.project = project;
     }
 
     public int getID() {
@@ -97,5 +91,62 @@ public class Order {
 
     public long getZipCode() {
         return zipCode;
+    }
+
+    public long getPluckroute() {
+        return pluckroute;
+    }
+
+    public String getOrderReference() {
+        return orderReference;
+    }
+
+    public String getExpeditionStatus() {
+        return expeditionStatus;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public int getWeekNumber() {
+        //TODO: Convert date to week number
+        return 0;
+    }
+
+    public long getReceipt() {
+        return receipt;
+    }
+
+    public boolean isPickup() {
+        return pickup;
+    }
+
+    public String getWarehouse() {
+        return warehouse;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getFleetOwner() {
+        return fleetOwner;
+    }
+
+    public boolean isPrinted() {
+        return printed;
+    }
+
+    public String getRoute() {
+        return route;
+    }
+
+    public boolean isFV() {
+        return FV;
+    }
+
+    public String getProject() {
+        return project;
     }
 }

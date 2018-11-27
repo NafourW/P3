@@ -74,16 +74,16 @@ public class ReadFile {//Class that reads CSV files
                         "]");
                         */
 
-                long plukrute = Long.valueOf(Order[1]);
+                long pluckRoute = Long.valueOf(Order[1]);
 
                 int id = Integer.valueOf(Order[2]);
 
-                long postNummer;
+                long zipCode;
                 if(Order[8].matches("[0-9]+") && Order[8].length() > 2)
                 {
-                    postNummer = Long.valueOf(Order[8]);
+                    zipCode = Long.valueOf(Order[8]);
                 } else {
-                    postNummer = 0;
+                    zipCode = 0;
                 }
 
                 long receipt;
@@ -94,27 +94,27 @@ public class ReadFile {//Class that reads CSV files
                     receipt = 0;
                 }
 
-                boolean afhentning;
+                boolean pickup;
                 if(Order[10].toLowerCase().equals("ja")){
-                    afhentning = true;
+                    pickup = true;
                 } else {
-                    afhentning = false;
+                    pickup = false;
                 }
 
-                String leveringsUgeString = Order[12].replace(",", ".");
-                float leveringsUgeFloat;
-                int leveringsUge = 0;
+                //String leveringsUgeString = Order[12].replace(",", ".");
+                //float leveringsUgeFloat;
+                //int leveringsUge = 0;
+                //
+                //if(!(Order[12].isEmpty())){
+                //    leveringsUgeFloat = Float.valueOf(leveringsUgeString);
+                //    leveringsUge = (int) leveringsUgeFloat;
+                //}
 
-                if(!(Order[12].isEmpty())){
-                    leveringsUgeFloat = Float.valueOf(leveringsUgeString);
-                    leveringsUge = (int) leveringsUgeFloat;
-                }
-
-                boolean udskrevet;
+                boolean printed;
                 if (Order[16].toLowerCase().equals("ja")){
-                    udskrevet = true;
+                    printed = true;
                 } else {
-                    udskrevet = false;
+                    printed = false;
                 }
 
                 boolean FV;
@@ -132,9 +132,9 @@ public class ReadFile {//Class that reads CSV files
                 //16 = boolean, done
                 //18 = boolean
 
-                Order order = new Order(plukrute, id, Order[3], Order[4], Order[5], Order[6], Order[7],
-                        postNummer, receipt, afhentning, Order[11], leveringsUge, Order[13], Order[14], Order[15],
-                        udskrevet, Order[17], FV, Order[19]);
+                Order order = new Order(pluckRoute, id, Order[3], Order[4], Order[5], Order[6], Order[7],
+                        zipCode, receipt, pickup, Order[13], Order[14], Order[15],
+                        printed, Order[17], FV, Order[19]);
 
                 orderList.add(order);
             }
