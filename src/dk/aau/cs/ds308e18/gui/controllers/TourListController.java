@@ -96,9 +96,9 @@ public class TourListController {
         //display its orders in the order list
         if (selectedTour != null){
             //TODO: get orders from tour
-            for (Order order : Main.db.exportOrders()) {
-                tourOrdersManager.addItem(order);
-            }
+            //for (Order order : selectedTour.getOrders()) {
+            //    tourOrdersManager.addItem(order);
+            //}
         }
     }
 

@@ -30,7 +30,7 @@ public class Order {
     private String category;
     private String fleetOwner;
     private boolean printed;
-    private String route;
+    private String region;
     private boolean FV;
     private String project;
 
@@ -49,7 +49,7 @@ public class Order {
         category = "";
         fleetOwner = "";
         printed = false;
-        route = "";
+        region = "";
         FV = false;
         project = "";
     }
@@ -57,7 +57,7 @@ public class Order {
     public Order(long pluckRoute, int id, String orderReference, String expeditionStatus, String customerName,
                  String date, String address, long zipCode, long receipt, boolean pickup,
                  String warehouse, String category, String fleetOwner,
-                 boolean printed, String route, boolean FV, String project) {
+                 boolean printed, String region, boolean FV, String project) {
         this.pluckRoute = pluckRoute;
         this.id = id;
         this.orderReference = orderReference;
@@ -72,7 +72,7 @@ public class Order {
         this.category = category;
         this.fleetOwner = fleetOwner;
         this.printed = printed;
-        this.route = route;
+        this.region = region;
         this.FV = FV;
         this.project = project;
     }
@@ -138,8 +138,8 @@ public class Order {
         return printed;
     }
 
-    public String getRoute() {
-        return route;
+    public String getRegion() {
+        return region;
     }
 
     public boolean isFV() {
@@ -155,6 +155,6 @@ public class Order {
         return pluckRoute + "," + id + "," + orderReference + "," + expeditionStatus + "," +
                 customerName + "," + date + "," + address + "," + zipCode + "," +
                 receipt + "," + pickup + "," + warehouse + "," + category + "," + fleetOwner + "," +
-                printed + "," + route + "," + FV + "," + project;
+                printed + "," + region + "," + FV + "," + project;
     }
 }

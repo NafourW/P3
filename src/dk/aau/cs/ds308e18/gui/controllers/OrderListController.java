@@ -53,6 +53,10 @@ public class OrderListController {
         orderListManager.setupColumn(projectColumn, "Project");
 
         editOrderButton.setDisable(true);
+
+        for (Order order : Main.db.exportOrders()) {
+            orderListManager.addItem(order);
+        }
     }
 
     @FXML
