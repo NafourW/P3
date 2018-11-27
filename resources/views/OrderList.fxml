@@ -28,20 +28,20 @@
       <TableView fx:id="orderListTable" VBox.vgrow="ALWAYS">
          <columns>
             <TableColumn fx:id="selectedColumn" maxWidth="25.0" prefWidth="25.0" />
-            <TableColumn fx:id="idColumn" prefWidth="100.0" text="%label_order_id" />
-            <TableColumn fx:id="dateColumn" prefWidth="100.0" text="%label_order_date" />
-            <TableColumn fx:id="regionColumn" prefWidth="100.0" text="%label_order_region" />
-            <TableColumn fx:id="addressColumn" prefWidth="150.0" text="%label_order_address" />
-            <TableColumn fx:id="zipCodeColumn" prefWidth="75.0" text="%label_order_zip_code" />
-            <TableColumn fx:id="customerNameColumn" prefWidth="150.0" text="%label_order_customer_name" />
-            <TableColumn fx:id="pluckRouteColumn" prefWidth="100.0" text="%label_order_pluck_route" />
-            <TableColumn fx:id="orderReferenceColumn" prefWidth="100.0" text="%label_order_reference" />
-            <TableColumn fx:id="receiptColumn" prefWidth="100.0" text="%label_order_receipt" />
-            <TableColumn fx:id="warehouseColumn" prefWidth="100.0" text="%label_order_warehouse" />
-            <TableColumn fx:id="categoryColumn" prefWidth="120.0" text="%label_order_category" />
-            <TableColumn fx:id="fleetOwnerColumn" prefWidth="120.0" text="%label_order_fleet_owner" />
-            <TableColumn fx:id="printedColumn" prefWidth="100.0" text="%label_order_printed" />
-            <TableColumn fx:id="projectColumn" prefWidth="100.0" text="%label_order_project" />
+            <TableColumn fx:id="idColumn" prefWidth="60.0" text="%label_order_id" />
+            <TableColumn fx:id="dateColumn" prefWidth="68.0" text="%label_order_date" />
+            <TableColumn fx:id="regionColumn" prefWidth="87.0" text="%label_order_region" />
+            <TableColumn fx:id="addressColumn" prefWidth="195.0" text="%label_order_address" />
+            <TableColumn fx:id="zipCodeColumn" prefWidth="38.0" text="%label_order_zip_code" />
+            <TableColumn fx:id="customerNameColumn" prefWidth="187.0" text="%label_order_customer_name" />
+            <TableColumn fx:id="pluckRouteColumn" prefWidth="66.0" text="%label_order_pluck_route" />
+            <TableColumn fx:id="orderReferenceColumn" prefWidth="66.0" text="%label_order_reference" />
+            <TableColumn fx:id="receiptColumn" prefWidth="66.0" text="%label_order_receipt" />
+            <TableColumn fx:id="warehouseColumn" prefWidth="50.0" text="%label_order_warehouse" />
+            <TableColumn fx:id="categoryColumn" prefWidth="87.0" text="%label_order_category" />
+            <TableColumn fx:id="fleetOwnerColumn" prefWidth="90.0" text="%label_order_fleet_owner" />
+            <TableColumn fx:id="printedColumn" prefWidth="66.0" text="%label_order_printed" />
+            <TableColumn fx:id="projectColumn" prefWidth="66.0" text="%label_order_project" />
          </columns>
       </TableView>
       <HBox alignment="BOTTOM_LEFT">
