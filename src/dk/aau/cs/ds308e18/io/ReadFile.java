@@ -12,8 +12,6 @@ public class ReadFile {//Class that reads CSV files
         String directory2 = "resources/varedata.csv"; //Directory for the file with existing ware types
 
         ReadFile test = new ReadFile(); //test object
-        ArrayList<Order> orderList = test.orderFile();
-
         //test.orderFile(); //read file with orders
 
         /*
@@ -33,97 +31,68 @@ public class ReadFile {//Class that reads CSV files
     }
 
     public ArrayList<Order> orderFile(){
-        String directory = "resources/ordrer_tilvalg.csv"; //Directory for the file with orders
+        //Directory for the file with orders
+        String directory = "resources/ordrer_tilvalg.csv";
+
         ArrayList<Order> orderList = new ArrayList<>();
-        String line = ""; //this string will be filled with read line
 
-        String cvsSplitBy = ";"; //split the read line when encountering ';' which is used in the CSV file to
-                                 //distinguish new information
+        //This string will be filled with read line
+        String line = "";
 
-        try (BufferedReader br = new BufferedReader(new FileReader(directory))){//create a buffered reader to
-                                                                                //read the file
-            while ((line = br.readLine()) != null){//while the line read by the buffered reader is not empty(null)
+        // Split the read line when encountering ';' which is used in the CSV file to distinguish new information
+        String cvsSplitBy = ";";
 
-                String[] Order = line.split(cvsSplitBy,-1); //split the line with ';' and keeps the empty parts
-                                                                 //and put the splitted parts into an array
+        //create a buffered reader to read the file
+        try (BufferedReader br = new BufferedReader(new FileReader(directory))){
 
-                if (Order[0].contains("M")){//skips the first line, that only contains the names of categories
+            // While the line read by the buffered reader is not empty(null)
+            while ((line = br.readLine()) != null){
+
+                //Split the line with ';' and keeps the empty parts
+                //and put the splitted parts into an array
+                String[] Order = line.split(cvsSplitBy,-1);
+
+                // Skips the first line, that only contains the names of categories
+                if (Order[0].contains("M"))
                     continue;
-                }
-                /*
-                //print out the array with splitted parts
-                System.out.println("Order [" +
-                        "Plukrute: " + Order[1] +
-                        ", Order: " + Order[2] +
-                        ", Returordre reference: " + Order[3] +
-                        ", Ekspeditionsstatus: " + Order[4] +
-                        ", Navn: " + Order[5] +
-                        ", Ønsket modtagelsesdato: " + Order[6] +
-                        ", Gadenavn: " + Order[7] +
-                        ", Postnummer: " + Order[8] +
-                        ", Følgeseddel: " + Order[9] +
-                        ", Afhentning: " + Order[10] +
-                        ", Afhentningsdato: " + Order[11] +
-                        ", Leverings UGE: " + Order[12] +
-                        ", Lagersted: " + Order[13] +
-                        ", Ordrekategori: " + Order[14] +
-                        ", Flådeejer: " + Order[15] +
-                        ", Udskrevet: " + Order[16] +
-                        ", Rute: " + Order[17] +
-                        ", FV: " + Order[18] +
-                        ", Projekt: " + Order[19] +
-                        "]");
-                        */
 
                 long pluckRoute = Long.valueOf(Order[1]);
-
                 int id = Integer.valueOf(Order[2]);
+
+                // Returordre reference = Order[3]
+                // Ekspeditionsstatus = Order[4]
+                // Navn = Order[5]
+                // Ønsket modtagelsesdato = Order[6]
+                // Gadenavn = Order[7]
 
                 long zipCode;
                 if(Order[8].matches("[0-9]+") && Order[8].length() > 2)
-                {
                     zipCode = Long.valueOf(Order[8]);
-                } else {
+                else
                     zipCode = 0;
-                }
 
                 long receipt;
-
-                if (!(Order[9].isEmpty())){
+                if (!(Order[9].isEmpty()))
                     receipt = Long.valueOf(Order[9]);
-                } else {
+                else
                     receipt = 0;
-                }
 
                 boolean pickup;
-                if(Order[10].toLowerCase().equals("ja")){
-                    pickup = true;
-                } else {
-                    pickup = false;
-                }
+                pickup = Order[10].toLowerCase().equals("ja");
 
-                //String leveringsUgeString = Order[12].replace(",", ".");
-                //float leveringsUgeFloat;
-                //int leveringsUge = 0;
-                //
-                //if(!(Order[12].isEmpty())){
-                //    leveringsUgeFloat = Float.valueOf(leveringsUgeString);
-                //    leveringsUge = (int) leveringsUgeFloat;
-                //}
+                // Afhentningsdato = Order[11]
+                // Leverings UGE = Order[12]
+                // Lagersted = Order[13]
+                // Ordrekategori = Order[14]
+                // Flådeejer = Order[15]
 
                 boolean printed;
-                if (Order[16].toLowerCase().equals("ja")){
-                    printed = true;
-                } else {
-                    printed = false;
-                }
+                printed = Order[16].toLowerCase().equals("ja");
+
+                // Rute = Order[17]
 
                 boolean FV;
-                if(Order[18].toLowerCase().equals("ja")){
-                    FV = true;
-                } else {
-                    FV = false;
-                }
+                FV = Order[18].toLowerCase().equals("ja");
 
                 Order order = new Order(pluckRoute, id, Order[3], Order[4], Order[5], Order[6], Order[7],
                         zipCode, receipt, pickup, Order[13], Order[14], Order[15],
