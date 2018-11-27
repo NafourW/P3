@@ -38,6 +38,8 @@ public class DataManagement {
     private void databaseSetup() {
         createDatabase();
         createOrderTable();
+        createTourTable();
+        createWareTable();
     }
 
     /*
@@ -58,7 +60,7 @@ public class DataManagement {
     }
 
     /*
-    Create a table called "orders".
+    Create a table called "orders" with all the attributes associated with the class "Order".
     If it already exists, it'll print a response.
     */
     private void createOrderTable() {
@@ -83,6 +85,49 @@ public class DataManagement {
                         "route VARCHAR(255)," +
                         "FV VARCHAR(255)," +
                         "project VARCHAR(255))";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.executeUpdate();
+            }
+        } catch(SQLException e) {
+            System.out.println("The table already exists.");
+        }
+    }
+
+    /*
+    Create a table called "tours" with all the attributes associated with the class "tour".
+    If it already exists, it'll print a response.
+    */
+    private void createTourTable() {
+        Connection conn = establishConnectionToDatabase();
+        try {
+            if (conn != null) {
+                String sql = "CREATE TABLE tours (" +
+                        "tourDate VARCHAR(255)," +
+                        "packingDate VARCHAR(255)," +
+                        "id INT," +
+                        "region VARCHAR(255)," +
+                        "regionDetail VARCHAR(255)," +
+                        "driver VARCHAR(255)," +
+                        "status VARCHAR(255)," +
+                        "consignor INT)";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.executeUpdate();
+            }
+        } catch(SQLException e) {
+            System.out.println("The table already exists.");
+        }
+    }
+
+    /*
+    Create a table called "wares" with all the attributes associated with the class "Ware".
+    If it already exists, it'll print a response.
+    */
+    private void createWareTable() {
+        Connection conn = establishConnectionToDatabase();
+        try {
+            if (conn != null) {
+                String sql = "CREATE TABLE wares (" +
+                        "id INT)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
             }
