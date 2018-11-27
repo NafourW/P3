@@ -18,6 +18,10 @@ public class Ware {
     private boolean liftingTools;
     private float moveTime;
 
+    public Ware() {
+
+    }
+
     public Ware(long supplier, String wareNumber, float height, float depth, float grossHeight, float grossDepth, float grossWidth, float width, String wareName, String searchName, int wareGroup, String wareType, boolean liftAlone, boolean liftingTools, float moveTime) {
         this.supplier = supplier;
         this.wareNumber = wareNumber;

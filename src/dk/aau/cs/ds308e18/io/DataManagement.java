@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 import dk.aau.cs.ds308e18.model.Order;
 
-import javax.xml.crypto.Data;
-
 public class DataManagement {
 
     public DataManagement() {
@@ -216,7 +214,7 @@ public class DataManagement {
                     //TODO Hjælp den her funktion
                     Order order = new Order(orders.getLong(1), orders.getInt(2),
                             orders.getString(3), orders.getString(4),
-                            orders.getString(5), orders.getString(6),
+                            orders.getString(5), orders.getDate(6).toLocalDate(),
                             orders.getString(7), orders.getLong(8),
                             orders.getLong(9), orders.getBoolean(10),
                             orders.getString(11), orders.getString(12),
