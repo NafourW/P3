@@ -40,6 +40,8 @@ public class DataManagement {
         createOrderTable();
         createTourTable();
         createWareTable();
+        createRegionTable();
+        importRegionNames();
     }
 
     /*
@@ -133,6 +135,55 @@ public class DataManagement {
             }
         } catch(SQLException e) {
             System.out.println("The table already exists.");
+        }
+    }
+
+    private void createRegionTable() {
+        Connection conn = establishConnectionToDatabase();
+        try {
+            if (conn != null) {
+                String sql = "CREATE TABLE regions (" +
+                        "id INT PRIMARY KEY AUTO_INCREMENT," +
+                        "regionName VARCHAR(255))";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.executeUpdate();
+            }
+        } catch(SQLException e) {
+            System.out.println("The table already exists.");
+        }
+    }
+
+    private void importRegionNames() {
+        ArrayList<String> regions = new ArrayList<>();
+        regions.add("Øer");                 //01, 05, 06, 07, 14
+        regions.add("Nord Jylland");        //01
+        regions.add("Midt Nord Jylland");   //01, 02, 03
+        regions.add("Nord Vest Jylland");   //01, 03, 15
+        regions.add("Djursland");           //02
+        regions.add("Øst Jylland");         //02, 05
+        regions.add("Mors Thy");            //03
+        regions.add("Vest Jylland");        //04, 06, 15
+        regions.add("Syd Øst Jylland");     //05, 15
+        regions.add("Sønderjylland");       //06
+        regions.add("Midt Nord Fyn");       //07
+        regions.add("Syd Fyn");             //07
+        regions.add("København");           //08, 09, 10, 11
+        regions.add("Nord Sjælland");       //11, 12
+        regions.add("Vest Sjælland");       //12, 13, 14
+        regions.add("Syd Sjælland");        //14
+        regions.add("Bornholm");            //16
+        Connection conn = establishConnectionToDatabase();
+        try {
+            if (conn != null) {
+                String sql = "INSERT INTO regions (regionName) VALUES (?)";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                for(String region : regions) {
+                    stmt.setString(1, region);
+                    stmt.executeUpdate();
+                }
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -251,11 +302,5 @@ public class DataManagement {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        DataManagement db = new DataManagement();
-        db.importOrders();
-        db.exportOrders();
     }
 }
