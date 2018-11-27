@@ -5,6 +5,8 @@ import dk.aau.cs.ds308e18.model.Ware;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
 public class ReadFile {//Class that reads CSV files
@@ -67,9 +69,16 @@ public class ReadFile {//Class that reads CSV files
                 // Ønsket modtagelsesdato = Order[6]
                 // Gadenavn = Order[7]
 
-                LocalDate date = LocalDate.now();
-                //TODO: Make this work instead:
-                // LocalDate date = LocalDate.parse(Order[6]);
+                LocalDate date;
+                try {
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                    date = LocalDate.parse(Order[6], formatter);
+                }
+                catch (DateTimeParseException exc) {
+                    System.out.printf("date %s is not parsable!%n", Order[6]);
+                    System.out.println(exc);
+                    date = LocalDate.now();
+                }
 
                 long zipCode;
                 if(Order[8].matches("[0-9]+") && Order[8].length() > 2)
