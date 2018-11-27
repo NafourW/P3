@@ -26,6 +26,7 @@ public class Main extends Application {
     public void init() {
         //Initialize database
         db = new DataManagement();
+        db.importOrders();
 
         //Initialize GUI
         gui = new GUI();

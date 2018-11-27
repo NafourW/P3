@@ -178,7 +178,7 @@ public class DataManagement {
     /*
     ....
     */
-    private void importOrders() {
+    public void importOrders() {
         ReadFile readFileObject = new ReadFile();
         ArrayList<Order> orderList = readFileObject.orderFile();
         Connection conn = establishConnectionToDatabase();
