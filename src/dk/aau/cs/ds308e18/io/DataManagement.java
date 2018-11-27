@@ -247,6 +247,7 @@ public class DataManagement {
     ....
     */
     public void importOrders() {
+        System.out.println("Importing Orders...");
         ReadFile readFileObject = new ReadFile();
         ArrayList<Order> orderList = readFileObject.orderFile();
         Connection conn = establishConnectionToDatabase();
@@ -265,6 +266,8 @@ public class DataManagement {
         catch (SQLException e) {
             e.printStackTrace();
         }
+
+        System.out.println("Orders imported.");
     }
 
     /*

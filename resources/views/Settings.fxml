@@ -36,7 +36,7 @@
       </HBox>
       <HBox alignment="BOTTOM_LEFT">
          <children>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #003867;" text="%button_settings_import_data" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#importDataButtonAction" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #003867;" text="%button_settings_import_data" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -69,7 +69,7 @@
       </HBox>
       <HBox alignment="BOTTOM_LEFT">
          <children>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #003867;" text="%button_settings_export_data" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#exportDataButtonAction" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #003867;" text="%button_settings_export_data" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
