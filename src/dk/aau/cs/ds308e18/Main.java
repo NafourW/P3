@@ -9,7 +9,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main extends Application {
-    public static GUI gui; //Used by view-controllers to access GUI methods
+    //Used by view-controllers to access GUI methods
+    public static GUI gui;
+
+    //Used for interacting with the database
     public static DataManagement db;
 
     //TODO: Don't do this
@@ -21,6 +24,12 @@ public class Main extends Application {
 
     @Override
     public void init() {
+        //Initialize database
+        db = new DataManagement();
+
+        //Initialize GUI
+        gui = new GUI();
+
         //TODO: I repeat: Don't do this
         regions.add("Øer");                 //01, 05, 06, 07, 14
         regions.add("Nord Jylland");        //01
@@ -39,13 +48,6 @@ public class Main extends Application {
         regions.add("Vest Sjælland");       //12, 13, 14
         regions.add("Syd Sjælland");        //14
         regions.add("Bornholm");            //16
-
-        //Setup database
-        db = new DataManagement();
-        //db.databaseSetup();
-
-        //Initialize GUI
-        gui = new GUI();
     }
 
     @Override
