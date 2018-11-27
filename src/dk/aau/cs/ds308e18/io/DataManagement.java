@@ -163,7 +163,7 @@ public class DataManagement {
                 stmt.setString(12, String.valueOf(order.getCategory()));
                 stmt.setString(13, String.valueOf(order.getFleetOwner()));
                 stmt.setString(14, String.valueOf(order.isPrinted()));
-                stmt.setString(15, String.valueOf(order.getRoute()));
+                stmt.setString(15, String.valueOf(order.getRegion()));
                 stmt.setString(16, String.valueOf(order.isFV()));
                 stmt.setString(17, String.valueOf(order.getProject()));
 
@@ -178,7 +178,7 @@ public class DataManagement {
     /*
     ....
     */
-    private void importOrders() {
+    public void importOrders() {
         ReadFile readFileObject = new ReadFile();
         ArrayList<Order> orderList = readFileObject.orderFile();
         Connection conn = establishConnectionToDatabase();
