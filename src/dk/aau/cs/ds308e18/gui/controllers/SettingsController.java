@@ -39,6 +39,16 @@ public class SettingsController {
     }
 
     @FXML
+    private void importDataButtonAction(ActionEvent event) {
+        Main.db.importOrders();
+    }
+
+    @FXML
+    private void exportDataButtonAction(ActionEvent event) {
+
+    }
+
+    @FXML
     private void clearAllToursButtonAction(ActionEvent event) {
         Main.gui.showYesNoDialog("label_are_you_sure", "message_clear_tours_confirmation");
     }

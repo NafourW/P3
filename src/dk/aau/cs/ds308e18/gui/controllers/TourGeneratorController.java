@@ -36,7 +36,7 @@ public class TourGeneratorController {
         planningChoiceBox.getItems().setAll(TourGenerator.planningMethod.values());
         planningChoiceBox.setValue(TourGenerator.planningMethod.distance);
 
-        regions.addAll(Main.regions);
+        regions.addAll(Main.db.exportRegionNames());
         regionChoiceBox.setItems(regions);
         regionChoiceBox.getSelectionModel().selectFirst();
 
