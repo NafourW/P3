@@ -4,7 +4,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-//Class that handles a TableView which shows items with type S
+/*
+Class that handles a TableView which shows items with type S
+*/
 public class TableManager<S> {
     TableView table;
 
@@ -12,8 +14,10 @@ public class TableManager<S> {
         this.table = table;
     }
 
-    //Makes the TableColumn automatically retrieve data from the table item
-    //using the .get[x]() method from S where [x] is replaced with the getter String
+    /*
+    Makes the TableColumn automatically retrieve data from the table item
+    using the .get[x]() method from S where [x] is replaced with the getter String
+    */
     public void setupColumn(TableColumn col, String getter) {
         col.setCellValueFactory(new PropertyValueFactory<>(getter));
     }

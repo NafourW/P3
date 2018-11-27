@@ -26,13 +26,17 @@ public class GUI {
         initLanguage();
     }
 
-    //Set the main window
+    /*
+    Set the main window
+    */
     public void setWindow(Stage window){
         this.window = window;
         this.window.setScene(new Scene(new VBox()));
     }
 
-    //Loads preferred language, or defaults to english
+    /*
+    Loads preferred language, or defaults to english
+    */
     private void initLanguage() {
         Preferences prefs = Preferences.userNodeForPackage(dk.aau.cs.ds308e18.Main.class);
 
@@ -42,7 +46,9 @@ public class GUI {
         setLanguage(languageValue);
     }
 
-    //Set the application language
+    /*
+    Set the application language
+    */
     public void setLanguage(Locale locale) {
         currentLocale = locale;
         localStrings = ResourceBundle.getBundle("InternationalizedStrings", currentLocale);
@@ -57,7 +63,9 @@ public class GUI {
         setLanguage(locale);
     }
 
-    //Get a translated string from the resource bundle
+    /*
+    Get a translated string from the resource bundle
+    */
     public String getLocalString(String key) {
         String value = localStrings.getString(key);
         if (!value.isEmpty())
@@ -66,19 +74,25 @@ public class GUI {
             return key;
     }
 
-    //Change the current application view by loading FXML and replacing the scene's root
+    /*
+    Change the current application view by loading FXML and replacing the scene's root
+    */
     public void changeView(String view) throws IOException{
         currentView = view;
         Parent root = FXMLLoader.load(getClass().getResource("/views/" + currentView + ".fxml"), localStrings);
         window.getScene().setRoot(root);
     }
 
-    //Loads the current view again
+    /*
+    Loads the current view again
+    */
     public void refreshView() throws IOException{
         changeView(currentView);
     }
 
-    //Opens a new non-resizable window with the given view
+    /*
+    Opens a new non-resizable window with the given view
+    */
     public void openWindow(String view, String titleKey) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/views/" + view + ".fxml"), localStrings);
 
@@ -91,12 +105,19 @@ public class GUI {
         newWindow.show();
     }
 
-    //Closes the window of a given stage
+    /*
+    Closes the window of a given stage
+    */
     public void closeWindow(Stage window)
     {
         window.close();
     }
 
+    /*
+    Displays a dialog box with yes and no options
+    "Yes", "No", title and content are all localized strings
+    Returns true/false depending on user choice
+    */
     public boolean showYesNoDialog(String titleKey, String contentKey) {
         boolean answer = false;
 
