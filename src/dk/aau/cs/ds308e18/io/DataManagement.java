@@ -156,49 +156,20 @@ public class DataManagement {
     Export everything from the order table.
     Print them in the terminal
     */
-    private ArrayList<Order> exportOrders() {
-        ArrayList<Order> orderList = new ArrayList<>();
-
-        long pluckroute;
-        int id;
-        String orderReference;
-        String expeditionStatus;
-        String customerName;
-        String date;
-        String address;
-        long zipCode;
-        long receipt;
-        boolean pickup;
-        String warehouse;
-        String category;
-        String fleetOwner;
-        boolean printed;
-        String route;
-        boolean FV;
-        String project;
-
+    private void exportOrders() {
         Connection conn = establishConnectionToDatabase();
         try {
             if (conn != null) {
                 Statement stmt = conn.createStatement();
                 ResultSet orders = stmt.executeQuery("SELECT * FROM orders");
-                ResultSet rsLength = stmt.executeQuery("SELECT COUNT(*) FROM orders");
-                int length = rsLength.getRow();
 
-                while(orders.next()) {
-                    for(int i = 1; i < length; i++) {
-                        System.out.println(orders.getString(i));
-                    }
+                while (orders.next()) {
+                    System.out.println(orders.getString(1));
                 }
             }
-
-
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        return orderList;
     }
 
     /*
@@ -225,6 +196,5 @@ public class DataManagement {
         DataManagement db = new DataManagement();
         db.databaseSetup();
         db.importOrders();
-        db.exportOrders();
     }
 }
