@@ -14,9 +14,8 @@ public class ReadFile {//Class that reads CSV files
         ReadFile test = new ReadFile(); //test object
         ArrayList<Order> orderList = test.orderFile();
 
-        test.orderFile(); //read file with orders
+        //test.orderFile(); //read file with orders
 
-        System.out.print(orderList);
         /*
 
         test.orderItems(directory1); //read file with wares within an order
@@ -25,6 +24,8 @@ public class ReadFile {//Class that reads CSV files
 
         test.itemTypes(directory2); //read file with existing ware types
         */
+
+        test.itemTypes(directory2);
     }
 
     //convert xlsx file to csv file
@@ -124,14 +125,6 @@ public class ReadFile {//Class that reads CSV files
                     FV = false;
                 }
 
-                //1 = long, done
-                //3 = long, done
-                //8 = long, done
-                //9 = long, done
-                //10 = boolean, done
-                //16 = boolean, done
-                //18 = boolean
-
                 Order order = new Order(pluckRoute, id, Order[3], Order[4], Order[5], Order[6], Order[7],
                         zipCode, receipt, pickup, Order[13], Order[14], Order[15],
                         printed, Order[17], FV, Order[19]);
@@ -205,6 +198,9 @@ public class ReadFile {//Class that reads CSV files
                         ", Søgenavn: " + Type[9] +
                         ", Varegruppe: " + Type[10] +
                         ", Varetype: " + Type[11] +
+                        ", Løftes alene: " + Type[12] +
+                        ", Løfter værktøj: " + Type[13] +
+                        ", Flytte tid: " + Type [14] +
                         "]");
             }
         } catch (IOException e){
