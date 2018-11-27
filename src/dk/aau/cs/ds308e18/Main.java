@@ -1,6 +1,7 @@
 package dk.aau.cs.ds308e18;
 
 import dk.aau.cs.ds308e18.gui.GUI;
+import dk.aau.cs.ds308e18.io.DataManagement;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 
 public class Main extends Application {
     public static GUI gui; //Used by view-controllers to access GUI methods
+    public static DataManagement db;
 
     //TODO: Don't do this
     public static ArrayList<String> regions = new ArrayList<String>();
@@ -37,6 +39,10 @@ public class Main extends Application {
         regions.add("Vest Sjælland");       //12, 13, 14
         regions.add("Syd Sjælland");        //14
         regions.add("Bornholm");            //16
+
+        //Setup database
+        db = new DataManagement();
+        //db.databaseSetup();
 
         //Initialize GUI
         gui = new GUI();

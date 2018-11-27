@@ -73,7 +73,9 @@ public class TourListController {
         releaseTourButton.setDisable(disabled);
     }
 
-    //Called when a tour is selected in the tour list
+    /*
+    Called when a tour is selected in the tour list
+    */
     private void onTourSelected(ObservableValue<? extends Tour> obs, Tour oldSelection, Tour newSelection) {
         //the selected item is assigned to selectedTour
         selectedTour = newSelection;

@@ -18,6 +18,7 @@ public class SettingsController {
 
     @FXML
     public void initialize() {
+        //Add english and danish to language combobox
         languages.addAll(new Locale("en","US"), new Locale("da","DA"));
         languageSelector.setItems(languages);
     }
@@ -29,8 +30,11 @@ public class SettingsController {
 
     @FXML
     private void languageComboBoxAction(ActionEvent event) throws IOException {
+        //Get selected language from combobox
         Locale selectedLanguage = languageSelector.getSelectionModel().getSelectedItem();
+        //Set selected language in GUI
         Main.gui.setLanguage(selectedLanguage);
+        //Refresh the GUI with the new language
         Main.gui.refreshView();
     }
 
