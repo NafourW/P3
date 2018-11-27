@@ -154,4 +154,12 @@ public class Order {
     public String getRegion() {
         return region;
     }
+
+    @Override
+    public String toString() {
+        return pluckRoute + "," + id + "," + orderReference + "," + expeditionStatus + "," +
+                customerName + "," + date + "," + address + "," + region + "," + zipCode + "," +
+                receipt + "," + pickup + "," + warehouse + "," + category + "," + fleetOwner + "," +
+                printed + "," + route + "," + FV + "," + project;
+    }
 }
