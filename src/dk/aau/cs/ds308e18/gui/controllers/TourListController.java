@@ -4,12 +4,12 @@ import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.gui.TableManager;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 
@@ -37,37 +37,57 @@ public class TourListController {
     private TableManager tourListManager;
     private TableManager tourOrdersManager;
 
+    private Tour selectedTour;
+
     @FXML
     private void initialize(){
-        tourDateColumn.setCellValueFactory(new PropertyValueFactory<>("TourDate"));
-        tourIDColumn.setCellValueFactory(new PropertyValueFactory<>("ID"));
-        tourRegionColumn.setCellValueFactory(new PropertyValueFactory<>("Region"));
-        tourDriverColumn.setCellValueFactory(new PropertyValueFactory<>("Driver"));
-        tourStatusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
-        tourConsignorColumn.setCellValueFactory(new PropertyValueFactory<>("Consignor"));
-
-        tourListTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
-            if (newSelection != null) {
-                tourOrdersTable.getSelectionModel().clearSelection();
-                tourOrdersTable.getItems().clear();
-
-                Order order = new Order();
-                tourOrdersTable.getItems().add(order);
-            }
-        });
-
-        orderIDColumn.setCellValueFactory(new PropertyValueFactory<>("ID"));
-        orderNameColumn.setCellValueFactory(new PropertyValueFactory<>("CustomerName"));
-        orderAddressColumn.setCellValueFactory(new PropertyValueFactory<>("Address"));
-        orderZipCodeColumn.setCellValueFactory(new PropertyValueFactory<>("ZipCode"));
-
+        //setup tables
         tourListManager = new TableManager(tourListTable);
-        tourOrdersManager = new TableManager(tourOrdersTable);
+        tourListManager.setupColumn(tourDateColumn, "TourDate");
+        tourListManager.setupColumn(tourIDColumn, "ID");
+        tourListManager.setupColumn(tourRegionColumn, "Region");
+        tourListManager.setupColumn(tourDriverColumn, "Driver");
+        tourListManager.setupColumn(tourStatusColumn, "Status");
+        tourListManager.setupColumn(tourConsignorColumn, "Consignor");
 
-        editTourButton.setDisable(true);
-        deleteTourButton.setDisable(true);
-        printTourButton.setDisable(true);
-        releaseTourButton.setDisable(true);
+        tourOrdersManager = new TableManager(tourOrdersTable);
+        tourOrdersManager.setupColumn(orderIDColumn, "ID");
+        tourOrdersManager.setupColumn(orderNameColumn, "CustomerName");
+        tourOrdersManager.setupColumn(orderAddressColumn, "Address");
+        tourOrdersManager.setupColumn(orderZipCodeColumn, "ZipCode");
+
+        //disable tour buttons
+        setTourButtonsDisabled(true);
+
+        //setup onTourSelected method
+        tourListTable.getSelectionModel().selectedItemProperty().addListener(this::onTourSelected);
+
+        //no tour currently selected
+        selectedTour = null;
+    }
+
+    private void setTourButtonsDisabled(boolean disabled) {
+        editTourButton.setDisable(disabled);
+        deleteTourButton.setDisable(disabled);
+        printTourButton.setDisable(disabled);
+        releaseTourButton.setDisable(disabled);
+    }
+
+    private void onTourSelected(ObservableValue<? extends Tour> obs, Tour oldSelection, Tour newSelection) {
+        selectedTour = newSelection;
+
+        if (selectedTour == null) {
+            setTourButtonsDisabled(true);
+        }
+        else {
+            tourOrdersTable.getSelectionModel().clearSelection();
+            tourOrdersTable.getItems().clear();
+
+            Order order = new Order();
+            tourOrdersTable.getItems().add(order);
+
+            setTourButtonsDisabled(false);
+        }
     }
 
     @FXML
