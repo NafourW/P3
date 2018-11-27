@@ -1,5 +1,6 @@
 package dk.aau.cs.ds308e18.gui;
 
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -40,5 +41,12 @@ public class TableManager<S> {
 
     public void clearSelection() {
         table.getSelectionModel().clearSelection();
+    }
+
+    public void setMultiSelectEnabled(boolean enabled) {
+        if (enabled)
+            table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        else
+            table.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 }

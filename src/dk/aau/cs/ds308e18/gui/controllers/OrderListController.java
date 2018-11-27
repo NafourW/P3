@@ -38,6 +38,7 @@ public class OrderListController {
     @FXML
     public void initialize() {
         orderListManager = new TableManager(orderListTable);
+        orderListManager.setMultiSelectEnabled(true);
         orderListManager.setupColumn(idColumn, "ID");
         orderListManager.setupColumn(dateColumn, "Date");
         orderListManager.setupColumn(regionColumn, "Region");
