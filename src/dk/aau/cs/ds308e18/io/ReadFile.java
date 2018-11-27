@@ -1,6 +1,7 @@
 package dk.aau.cs.ds308e18.io;
 
 import dk.aau.cs.ds308e18.model.Order;
+import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Ware;
 
 import java.io.*;
@@ -77,13 +78,13 @@ public class ReadFile {//Class that reads CSV files
                 else
                     zipCode = 0;
 
-                long receipt;
+                long receipt; //Convert content inside the list to long
                 if (!(Order[9].isEmpty()))
                     receipt = Long.valueOf(Order[9]);
                 else
                     receipt = 0;
 
-                boolean pickup;
+                boolean pickup; //Convert content inside the list to boolean
                 pickup = Order[10].toLowerCase().equals("ja");
 
                 // Afhentningsdato = Order[11]
@@ -92,12 +93,12 @@ public class ReadFile {//Class that reads CSV files
                 // Ordrekategori = Order[14]
                 // Flådeejer = Order[15]
 
-                boolean printed;
+                boolean printed; //Convert content inside the list to boolean
                 printed = Order[16].toLowerCase().equals("ja");
 
                 // Rute = Order[17]
 
-                boolean FV;
+                boolean FV; //Convert content inside the list to boolean
                 FV = Order[18].toLowerCase().equals("ja");
 
                 Order order = new Order(pluckRoute, id, Order[3], Order[4], Order[5], date,
@@ -112,7 +113,10 @@ public class ReadFile {//Class that reads CSV files
         return orderList;
     }
 
-    void orderItems(String directory){//same function as "orderFile" method
+    ArrayList<OrderLine> orderItems(String directory){//same function as "orderFile" method
+
+        ArrayList<OrderLine> wareList = new ArrayList<>();
+
         String inputFile = directory;
 
         String line = "";
@@ -127,27 +131,46 @@ public class ReadFile {//Class that reads CSV files
                 if(Items[0].matches("^[^\\d].*")){
                     continue;
                 }
-                System.out.print("\nWare [" +
-                        "Order: " + Items[0] +
-                        ", Varenummer: " + Items[1] +
-                        ", Varenavn: " + Items[2] +
-                        ", Labels: " + Items[3] +
-                        ", Leveret: " + Items[4] +
-                        ", Inidivid: " + Items[5] +
-                        ", Klargøring: " + Items[6] +
-                        ", Individ varenummer: " + Items[7] +
-                        ", Model: " + Items[8] +
-                        ", Navn: " + Items[9] +
-                        "]");
+
+                //Order = Items[0]
+                //Varenummer = Items[1]
+                //Varenavn = Items[2]
+
+                int labels; //Convert content inside the list to integer
+                if(Items[3].matches("[0-9]+") && Items[3].length() > 2)
+                    labels = Integer.valueOf(Items[3]);
+                else
+                    labels = 0;
+
+                int delivered; //Convert content inside the list to integer
+                if(Items[4].matches("[0-9]+") && Items[4].length() > 2)
+                    delivered = Integer.valueOf(Items[4]);
+                else
+                    delivered = 0;
+
+                //Inidivid = Items[5]
+
+                boolean preparing;
+                preparing = Items[6].toLowerCase().equals("ja");
+
+                //Individ varenummer = Items[7]
+                //Model = Items[8]
+                //Navn = Items[9]
+
+                OrderLine orderline = new OrderLine(Items[0], Items[1], Items[2], labels, delivered, Items[5],
+                        preparing, Items[7], Items[8], Items[9]);
+
+                wareList.add(orderline);
             }
         } catch (IOException e){
             e.printStackTrace();
         }
+        return  wareList;
     }
 
     ArrayList<Ware> wareTypes(String directory){
 
-        ArrayList<Ware> wareList = new ArrayList<>();
+        ArrayList<Ware> wareTypes = new ArrayList<>();
 
         String inputFile = directory;
 
@@ -163,31 +186,82 @@ public class ReadFile {//Class that reads CSV files
                 if(Type[0].matches("^[^\\d].*")){
                     continue;
                 }
-                System.out.print("\nItem [" +
-                        "Leverandør:" + Type[0] +
-                        ", Varenummer: " + Type[1] +
-                        ", Højde: " + Type[2] +
-                        ", Dybde: " + Type[3] +
-                        ", Bruttohøjde: " + Type[4] +
-                        ", Bruttodybde: " + Type[5] +
-                        ", Bruttobredde: " + Type[6] +
-                        ", Bredde: " + Type[7] +
-                        ", Varenavn: " + Type[8] +
-                        ", Søgenavn: " + Type[9] +
-                        ", Varegruppe: " + Type[10] +
-                        ", Varetype: " + Type[11] +
-                        ", Løftes alene: " + Type[12] +
-                        ", Løfter værktøj: " + Type[13] +
-                        ", Flytte tid: " + Type [14] +
-                        "]");
 
-                Ware ware = new Ware();
+                long supplier; //Convert content inside the list to integer
+                if(Type[0].matches("[0-9]+") && Type[0].length() > 2)
+                    supplier = Long.valueOf(Type[0]);
+                else
+                    supplier = 0;
 
-                wareList.add(ware);
+                //Varenummer = Type[1]
+
+                int height; //Convert content inside the list to integer
+                if(Type[2].matches("[0-9]+") && Type[2].length() > 2)
+                    height = Integer.valueOf(Type[2]);
+                else
+                    height = 0;
+
+                int depth; //Convert content inside the list to integer
+                if(Type[3].matches("[0-9]+") && Type[3].length() > 2)
+                    depth = Integer.valueOf(Type[3]);
+                else
+                    depth = 0;
+
+                int grossHeight; //Convert content inside the list to integer
+                if(Type[4].matches("[0-9]+") && Type[4].length() > 2)
+                    grossHeight = Integer.valueOf(Type[4]);
+                else
+                    grossHeight = 0;
+
+                int grossDepth; //Convert content inside the list to integer
+                if(Type[5].matches("[0-9]+") && Type[5].length() > 2)
+                    grossDepth = Integer.valueOf(Type[5]);
+                else
+                    grossDepth = 0;
+
+                int grossWidth; //Convert content inside the list to integer
+                if(Type[6].matches("[0-9]+") && Type[6].length() > 2)
+                    grossWidth = Integer.valueOf(Type[6]);
+                else
+                    grossWidth = 0;
+
+                int width; //Convert content inside the list to integer
+                if(Type[7].matches("[0-9]+") && Type[7].length() > 2)
+                    width = Integer.valueOf(Type[7]);
+                else
+                    width = 0;
+
+                //Varenavn = Type[8]
+                //Søgenavn = Type[9]
+
+                int wareGroup; //Convert content inside the list to integer
+                if(Type[10].matches("[0-9]+") && Type[10].length() > 2)
+                    wareGroup = Integer.valueOf(Type[10]);
+                else
+                    wareGroup = 0;
+
+                //Varetype = Type[11]
+
+                boolean liftAlone; //Convert content inside the list to boolean
+                liftAlone = Type[12].toLowerCase().equals("ja");
+
+                boolean liftingTools; //Convert content inside the list to boolean
+                liftingTools = Type[13].toLowerCase().equals("ja");
+
+                float moveTime; //Convert content inside the list to float
+                if(Type[14].matches("[0-9]+") && Type[14].length() > 2)
+                    moveTime = Float.valueOf(Type[14]);
+                else
+                    moveTime = 0;
+
+                Ware ware = new Ware(supplier, Type[1], height, depth, grossHeight, grossDepth, grossWidth, width,
+                        Type[8], Type[9], wareGroup, Type[11], liftAlone, liftingTools, moveTime);
+
+                wareTypes.add(ware);
             }
         } catch (IOException e){
             e.printStackTrace();
         }
-        return wareList;
+        return wareTypes;
     }
 }
