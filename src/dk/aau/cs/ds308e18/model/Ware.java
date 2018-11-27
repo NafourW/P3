@@ -4,12 +4,12 @@ public class Ware {
 
     private long supplier;
     private String wareNumber;
-    private float height;
-    private float depth;
-    private float grossHeight;
-    private float grossDepth;
-    private float grossWidth;
-    private float width;
+    private int height;
+    private int depth;
+    private int grossHeight;
+    private int grossDepth;
+    private int grossWidth;
+    private int width;
     private String wareName;
     private String searchName;
     private int wareGroup;
@@ -18,11 +18,9 @@ public class Ware {
     private boolean liftingTools;
     private float moveTime;
 
-    public Ware() {
-
-    }
-
-    public Ware(long supplier, String wareNumber, float height, float depth, float grossHeight, float grossDepth, float grossWidth, float width, String wareName, String searchName, int wareGroup, String wareType, boolean liftAlone, boolean liftingTools, float moveTime) {
+    public Ware(long supplier, String wareNumber, int height, int depth, int grossHeight, int grossDepth,
+                int grossWidth, int width, String wareName, String searchName, int wareGroup, String wareType,
+                boolean liftAlone, boolean liftingTools, float moveTime) {
         this.supplier = supplier;
         this.wareNumber = wareNumber;
         this.height = height;
