@@ -189,10 +189,10 @@ public class DataManagement {
         try {
             if (conn != null) {
                 Statement stmt = conn.createStatement();
-                ResultSet regions = stmt.executeQuery("SELECT * FROM regions");
+                ResultSet regions = stmt.executeQuery("SELECT regionName FROM regions");
 
                 while (regions.next()) {
-                    regionList.add(regions.getString(2));
+                    regionList.add(regions.getString(1));
                 }
             }
         } catch (SQLException e) {
