@@ -1,5 +1,6 @@
 package dk.aau.cs.ds308e18.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Order {
@@ -21,7 +22,7 @@ public class Order {
     private String orderReference;
     private String expeditionStatus;
     private String customerName;
-    private String date;
+    private LocalDate date;
     private String address;
     private long zipCode;
     private long receipt;
@@ -40,7 +41,7 @@ public class Order {
         orderReference = "";
         expeditionStatus = "";
         customerName = "";
-        date = "";
+        date = LocalDate.now();
         address = "";
         zipCode = 0;
         receipt = 0;
@@ -55,7 +56,7 @@ public class Order {
     }
 
     public Order(long pluckRoute, int id, String orderReference, String expeditionStatus, String customerName,
-                 String date, String address, long zipCode, long receipt, boolean pickup,
+                 LocalDate date, String address, long zipCode, long receipt, boolean pickup,
                  String warehouse, String category, String fleetOwner,
                  boolean printed, String region, boolean FV, String project) {
         this.pluckRoute = pluckRoute;
@@ -105,7 +106,7 @@ public class Order {
         return expeditionStatus;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 

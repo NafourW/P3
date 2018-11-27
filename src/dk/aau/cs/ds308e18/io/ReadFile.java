@@ -1,8 +1,10 @@
 package dk.aau.cs.ds308e18.io;
 
 import dk.aau.cs.ds308e18.model.Order;
+import dk.aau.cs.ds308e18.model.Ware;
 
 import java.io.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ReadFile {//Class that reads CSV files
@@ -12,6 +14,8 @@ public class ReadFile {//Class that reads CSV files
         String directory2 = "resources/varedata.csv"; //Directory for the file with existing ware types
 
         ReadFile test = new ReadFile(); //test object
+
+
         //test.orderFile(); //read file with orders
 
         /*
@@ -22,8 +26,6 @@ public class ReadFile {//Class that reads CSV files
 
         test.itemTypes(directory2); //read file with existing ware types
         */
-
-        test.itemTypes(directory2);
     }
 
     //convert xlsx file to csv file
@@ -65,6 +67,10 @@ public class ReadFile {//Class that reads CSV files
                 // Ønsket modtagelsesdato = Order[6]
                 // Gadenavn = Order[7]
 
+                LocalDate date = LocalDate.now();
+                //TODO: Make this work instead:
+                // LocalDate date = LocalDate.parse(Order[6]);
+
                 long zipCode;
                 if(Order[8].matches("[0-9]+") && Order[8].length() > 2)
                     zipCode = Long.valueOf(Order[8]);
@@ -94,8 +100,8 @@ public class ReadFile {//Class that reads CSV files
                 boolean FV;
                 FV = Order[18].toLowerCase().equals("ja");
 
-                Order order = new Order(pluckRoute, id, Order[3], Order[4], Order[5], Order[6], Order[7],
-                        zipCode, receipt, pickup, Order[13], Order[14], Order[15],
+                Order order = new Order(pluckRoute, id, Order[3], Order[4], Order[5], date,
+                        Order[7], zipCode, receipt, pickup, Order[13], Order[14], Order[15],
                         printed, Order[17], FV, Order[19]);
 
                 orderList.add(order);
@@ -139,7 +145,10 @@ public class ReadFile {//Class that reads CSV files
         }
     }
 
-    void itemTypes(String directory){
+    ArrayList<Ware> wareTypes(String directory){
+
+        ArrayList<Ware> wareList = new ArrayList<>();
+
         String inputFile = directory;
 
         String line = "";
@@ -171,9 +180,14 @@ public class ReadFile {//Class that reads CSV files
                         ", Løfter værktøj: " + Type[13] +
                         ", Flytte tid: " + Type [14] +
                         "]");
+
+                Ware ware = new Ware();
+
+                wareList.add(ware);
             }
         } catch (IOException e){
             e.printStackTrace();
         }
+        return wareList;
     }
 }
