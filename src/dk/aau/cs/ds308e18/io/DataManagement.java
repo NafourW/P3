@@ -100,7 +100,7 @@ public class DataManagement {
                         "fleetOwner, udskrevet, rute, FV, projekt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
                 //TODO Fix det her med en hjælpe funktion
-                stmt.setString(1, String.valueOf(order.getPluckroute()));
+                stmt.setString(1, String.valueOf(order.getPluckRoute()));
                 stmt.setString(2, String.valueOf(order.getID()));
                 stmt.setString(3, String.valueOf(order.getOrderReference()));
                 stmt.setString(4, String.valueOf(order.getExpeditionStatus()));

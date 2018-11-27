@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -10,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e18.gui.controllers.OrderListController">
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e18.gui.controllers.OrderListController">
    <children>
       <Label text="%label_list_of_unplaced_orders">
          <font>
@@ -20,30 +25,25 @@
             <Insets bottom="10.0" />
          </VBox.margin>
       </Label>
-      <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
-         <content>
-            <TableView minWidth="1200.0">
-               <columns>
-                  <TableColumn maxWidth="25.0" prefWidth="25.0" />
-                  <TableColumn prefWidth="100.0" text="%label_order_id" />
-                  <TableColumn prefWidth="100.0" text="%label_order_date" />
-                  <TableColumn prefWidth="100.0" text="%label_order_region" />
-                  <TableColumn prefWidth="150.0" text="%label_order_address" />
-                  <TableColumn prefWidth="75.0" text="%label_order_zip_code" />
-                  <TableColumn prefWidth="150.0" text="%label_order_customer_name" />
-                  <TableColumn prefWidth="100.0" text="%label_order_pluck_route" />
-                  <TableColumn prefWidth="100.0" text="%label_order_reference" />
-                  <TableColumn prefWidth="100.0" text="%label_order_status" />
-                  <TableColumn prefWidth="100.0" text="%label_order_receipt" />
-                  <TableColumn prefWidth="100.0" text="%label_order_warehouse" />
-                  <TableColumn prefWidth="120.0" text="%label_order_category" />
-                  <TableColumn prefWidth="120.0" text="%label_order_fleet_owner" />
-                  <TableColumn prefWidth="100.0" text="%label_order_printed" />
-                  <TableColumn prefWidth="100.0" text="%label_order_project" />
-               </columns>
-            </TableView>
-         </content>
-      </ScrollPane>
+      <TableView fx:id="orderListTable" VBox.vgrow="ALWAYS">
+         <columns>
+            <TableColumn fx:id="selectedColumn" maxWidth="25.0" prefWidth="25.0" />
+            <TableColumn fx:id="idColumn" prefWidth="100.0" text="%label_order_id" />
+            <TableColumn fx:id="dateColumn" prefWidth="100.0" text="%label_order_date" />
+            <TableColumn fx:id="regionColumn" prefWidth="100.0" text="%label_order_region" />
+            <TableColumn fx:id="addressColumn" prefWidth="150.0" text="%label_order_address" />
+            <TableColumn fx:id="zipCodeColumn" prefWidth="75.0" text="%label_order_zip_code" />
+            <TableColumn fx:id="customerNameColumn" prefWidth="150.0" text="%label_order_customer_name" />
+            <TableColumn fx:id="pluckRouteColumn" prefWidth="100.0" text="%label_order_pluck_route" />
+            <TableColumn fx:id="orderReferenceColumn" prefWidth="100.0" text="%label_order_reference" />
+            <TableColumn fx:id="receiptColumn" prefWidth="100.0" text="%label_order_receipt" />
+            <TableColumn fx:id="warehouseColumn" prefWidth="100.0" text="%label_order_warehouse" />
+            <TableColumn fx:id="categoryColumn" prefWidth="120.0" text="%label_order_category" />
+            <TableColumn fx:id="fleetOwnerColumn" prefWidth="120.0" text="%label_order_fleet_owner" />
+            <TableColumn fx:id="printedColumn" prefWidth="100.0" text="%label_order_printed" />
+            <TableColumn fx:id="projectColumn" prefWidth="100.0" text="%label_order_project" />
+         </columns>
+      </TableView>
       <HBox alignment="BOTTOM_LEFT">
          <children>
             <Button mnemonicParsing="false" onAction="#tourListButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_view_tour_list" />
