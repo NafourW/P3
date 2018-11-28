@@ -4,6 +4,8 @@ import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.gui.ISelectionController;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Ware;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -20,7 +22,8 @@ public class EditOrderController implements ISelectionController {
     @FXML private TextField zipCodeField;
 
     @FXML private DatePicker datePicker;
-    @FXML private ComboBox regionComboBox;
+    @FXML private ComboBox<String> regionComboBox;
+    private ObservableList<String> regions = FXCollections.observableArrayList();
     @FXML private ComboBox orderCategoryComboBox;
 
     @FXML private TextArea commentsArea;
@@ -47,15 +50,18 @@ public class EditOrderController implements ISelectionController {
     public void initialize() {
         cancelOrderButton.setDisable(true);
         removeWareButton.setDisable(true);
+
+        regions.addAll(Main.db.exportRegionNames());
+        regionComboBox.setItems(regions);
     }
 
     private void populateFields(){
         customerNameField.setText(selectedOrder.getCustomerName());
         addressField.setText(selectedOrder.getAddress());
-        //zipCodeField.setText(selectedOrder.getZipCode());
+        zipCodeField.setText(String.valueOf(selectedOrder.getZipCode()));
 
         //datePicker;
-        //regionComboBox;
+        regionComboBox.getSelectionModel().select(selectedOrder.getRegion());
         //orderCategoryComboBox;
 
         commentsArea.setText("");
@@ -105,7 +111,6 @@ public class EditOrderController implements ISelectionController {
     @Override
     public void setSelectedObject(Object obj) {
         selectedOrder = (Order)obj;
-
         populateFields();
     }
 }

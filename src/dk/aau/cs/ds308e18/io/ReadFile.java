@@ -61,7 +61,7 @@ public class ReadFile {//Class that reads CSV files
                 if (Order[0].contains("M"))
                     continue;
 
-                long pluckRoute = Long.valueOf(Order[1]);
+                int pluckRoute = Integer.valueOf(Order[1]);
                 int id = Integer.valueOf(Order[2]);
 
                 // Returordre reference = Order[3]
@@ -81,15 +81,15 @@ public class ReadFile {//Class that reads CSV files
                     date = LocalDate.now();
                 }
 
-                long zipCode;
+                int zipCode;
                 if(Order[8].matches("[0-9]+") && Order[8].length() > 2)
-                    zipCode = Long.valueOf(Order[8]);
+                    zipCode = Integer.valueOf(Order[8]);
                 else
                     zipCode = 0;
 
-                long receipt; //Convert content inside the list to long
+                int receipt; //Convert content inside the list to long
                 if (!(Order[9].isEmpty()))
-                    receipt = Long.valueOf(Order[9]);
+                    receipt = Integer.valueOf(Order[9]);
                 else
                     receipt = 0;
 

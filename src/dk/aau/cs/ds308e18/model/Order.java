@@ -17,15 +17,15 @@ public class Order {
     float timeRequired;
     */
 
-    private long pluckRoute;
+    private int pluckRoute;
     private int id;
     private String orderReference;
     private String expeditionStatus;
     private String customerName;
     private LocalDate date;
     private String address;
-    private long zipCode;
-    private long receipt;
+    private int zipCode;
+    private int receipt;
     private boolean pickup;
     private String warehouse;
     private String category;
@@ -55,8 +55,8 @@ public class Order {
         project = "";
     }
 
-    public Order(long pluckRoute, int id, String orderReference, String expeditionStatus, String customerName,
-                 LocalDate date, String address, long zipCode, long receipt, boolean pickup,
+    public Order(int pluckRoute, int id, String orderReference, String expeditionStatus, String customerName,
+                 LocalDate date, String address, int zipCode, int receipt, boolean pickup,
                  String warehouse, String category, String fleetOwner,
                  boolean printed, String region, boolean FV, String project) {
         this.pluckRoute = pluckRoute;
@@ -90,11 +90,11 @@ public class Order {
         return address;
     }
 
-    public long getZipCode() {
+    public int getZipCode() {
         return zipCode;
     }
 
-    public long getPluckRoute() {
+    public int getPluckRoute() {
         return pluckRoute;
     }
 
@@ -115,7 +115,7 @@ public class Order {
         return 0;
     }
 
-    public long getReceipt() {
+    public int getReceipt() {
         return receipt;
     }
 

@@ -319,11 +319,11 @@ public class DataManagement {
                 // As long as there is a "next row" in the table, create an order based on that row
                 while (orders.next()) {
                     //TODO Hjælp den her funktion
-                    Order order = new Order(orders.getLong(1), orders.getInt(2),
+                    Order order = new Order(orders.getInt(1), orders.getInt(2),
                             orders.getString(3), orders.getString(4),
                             orders.getString(5), orders.getDate(6).toLocalDate(),
-                            orders.getString(7), orders.getLong(8),
-                            orders.getLong(9), orders.getBoolean(10),
+                            orders.getString(7), orders.getInt(8),
+                            orders.getInt(9), orders.getBoolean(10),
                             orders.getString(11), orders.getString(12),
                             orders.getString(13), orders.getBoolean(14),
                             orders.getString(15), orders.getBoolean(16),
