@@ -94,8 +94,10 @@ public class GUI {
     public void changeView(String view, Object selection) throws IOException{
         currentView = view;
 
-        //Load the view
+        //Get the view
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/" + currentView + ".fxml"), localStrings);
+
+        //Load the view
         Parent root = fxmlLoader.load();
 
         //Get the view's controller
