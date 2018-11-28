@@ -95,10 +95,9 @@ public class TourListController {
         //if a tour is selected,
         //display its orders in the order list
         if (selectedTour != null){
-            //TODO: get orders from tour
-            //for (Order order : selectedTour.getOrders()) {
-            //    tourOrdersManager.addItem(order);
-            //}
+            for (Order order : selectedTour.getOrders()) {
+                tourOrdersManager.addItem(order);
+            }
         }
     }
 
@@ -121,8 +120,7 @@ public class TourListController {
 
     @FXML
     private void editTourButtonAction(ActionEvent event) throws IOException {
-        //TODO: use selectedTour
-        Main.gui.changeView("EditTour");
+        Main.gui.changeView("EditTour", selectedTour);
     }
 
     @FXML

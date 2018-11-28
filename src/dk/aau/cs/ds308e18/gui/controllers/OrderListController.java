@@ -3,6 +3,7 @@ package dk.aau.cs.ds308e18.gui.controllers;
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.gui.TableManager;
 import dk.aau.cs.ds308e18.model.Order;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -16,7 +17,7 @@ public class OrderListController {
 
     @FXML private Button editOrderButton;
 
-    @FXML private TableView orderListTable;
+    @FXML private TableView<Order> orderListTable;
     @FXML private TableColumn selectedColumn;
     @FXML private TableColumn<Order, Integer> idColumn;
     @FXML private TableColumn<Order, LocalDate> dateColumn;
@@ -33,11 +34,13 @@ public class OrderListController {
     @FXML private TableColumn<Order, Boolean> printedColumn;
     @FXML private TableColumn<Order, String> projectColumn;
 
-    private TableManager orderListManager;
+    private TableManager<Order> orderListManager;
+
+    private Order selectedOrder;
 
     @FXML
     public void initialize() {
-        orderListManager = new TableManager(orderListTable);
+        orderListManager = new TableManager<>(orderListTable);
         orderListManager.setMultiSelectEnabled(true);
         orderListManager.setupColumn(idColumn, "ID");
         orderListManager.setupColumn(dateColumn, "Date");
@@ -56,9 +59,28 @@ public class OrderListController {
 
         editOrderButton.setDisable(true);
 
+        //setup onOrderSelected method
+        orderListTable.getSelectionModel().selectedItemProperty().addListener(this::onOrderSelected);
+
         for (Order order : Main.db.exportOrders()) {
             orderListManager.addItem(order);
         }
+    }
+
+    /*
+    Called when an order is selected in the order list
+    */
+    private void onOrderSelected(ObservableValue<? extends Order> obs, Order oldSelection, Order newSelection) {
+        //the selected item is assigned to selectedOrder
+        selectedOrder = newSelection;
+
+        //if the same thing was selected: do nothing
+        if (oldSelection == newSelection)
+            return;
+
+        //enable/disable edit order button,
+        //depending on whether an order is selected
+        editOrderButton.setDisable(selectedOrder == null);
     }
 
     @FXML
@@ -73,15 +95,13 @@ public class OrderListController {
 
     @FXML
     private void createOrderButtonAction(ActionEvent event) throws IOException{
-        //1. create order
-        //2. select order
-        //3.
-        Main.gui.changeView("EditOrder");
+        selectedOrder = new Order();
+        Main.gui.changeView("EditOrder", selectedOrder);
     }
 
     @FXML
     private void editOrderButtonAction(ActionEvent event) throws IOException{
-        Main.gui.changeView("EditOrder");
+        Main.gui.changeView("EditOrder", selectedOrder);
     }
 
     @FXML

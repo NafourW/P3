@@ -79,7 +79,32 @@ public class GUI {
     */
     public void changeView(String view) throws IOException{
         currentView = view;
+
+        //Load the view
         Parent root = FXMLLoader.load(getClass().getResource("/views/" + currentView + ".fxml"), localStrings);
+
+        //Display the view
+        window.getScene().setRoot(root);
+    }
+
+    /*
+    Change the current application view by loading FXML and replacing the scene's root
+    Also passes the currently selected object to the next view
+    */
+    public void changeView(String view, Object selection) throws IOException{
+        currentView = view;
+
+        //Load the view
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/" + currentView + ".fxml"), localStrings);
+        Parent root = fxmlLoader.load();
+
+        //Get the view's controller
+        ISelectionController controller = fxmlLoader.getController();
+
+        //Pass the selected object to the controller
+        controller.setSelectedObject(selection);
+
+        //Display the view
         window.getScene().setRoot(root);
     }
 
