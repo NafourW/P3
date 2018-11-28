@@ -6,6 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 import dk.aau.cs.ds308e18.model.Order;
+import dk.aau.cs.ds308e18.model.Tour;
 
 public class DataManagement {
 
@@ -14,13 +15,13 @@ public class DataManagement {
     }
 
     /*
-        Establish connection to the Local Database.
-        This is needed for any form of Database management such as "SELECT" and "INSERT".
-        For every method, it's needed to call this function for the SQL statements to work.
+    Establish connection to the Local Database.
+    This is needed for any form of Database management such as "SELECT" and "INSERT".
+    For every method, it's needed to call this function for the SQL statements to work.
 
-        The Local Database has to be up and running for this function to work.
-        Without this function, the rest in the class won't work.
-        */
+    The Local Database has to be up and running for this function to work.
+    Without this function, the rest in the class won't work.
+    */
     private Connection establishConnectionToDatabase() {
         String host = "jdbc:mysql://localhost:3306/vibocold_db";
         String uName = "root";
@@ -139,6 +140,9 @@ public class DataManagement {
         }
     }
 
+    /*
+    ....
+    */
     private void createRegionTable() {
         Connection conn = establishConnectionToDatabase();
         try {
@@ -153,7 +157,9 @@ public class DataManagement {
             System.out.println("The table already exists.");
         }
     }
-
+    /*
+    ....
+    */
     private void importRegionNames() {
         ArrayList<String> regions = new ArrayList<>();
 
@@ -183,6 +189,9 @@ public class DataManagement {
         }
     }
 
+    /*
+    ....
+    */
     public ArrayList<String> exportRegionNames() {
         ArrayList<String> regionList = new ArrayList<>();
         Connection conn = establishConnectionToDatabase();
@@ -205,7 +214,7 @@ public class DataManagement {
     /*
     Insert an order into the order table.
     */
-    private PreparedStatement createOrder(Order order) {
+    private void createOrder(Order order) {
         try {
             Connection conn = establishConnectionToDatabase();
             if(conn != null) {
@@ -233,12 +242,39 @@ public class DataManagement {
                 stmt.setString(16, String.valueOf(order.isFV()));
                 stmt.setString(17, String.valueOf(order.getProject()));
 
-                return stmt;
+                stmt.executeUpdate();
             }
         } catch(SQLException e) {
             e.printStackTrace();
         }
-        return null;
+    }
+
+    /*
+    Insert a tour into the database.
+    */
+    public void createTour(Tour tour) {
+        Connection conn = establishConnectionToDatabase();
+        String sql = "INSERT INTO tours (tourDate, packingDate, id, region, regionDetail, " +
+                "driver, status, consignor) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+        try {
+            if (conn != null) {
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.setString(1, tour.getTourDate());
+                stmt.setString(2, tour.getPackingDate());
+                stmt.setString(3, tour.getID().toString());
+                stmt.setString(4, tour.getRegion());
+                stmt.setString(5, tour.getRegionDetail());
+                stmt.setString(6, tour.getDriver());
+                stmt.setString(7, tour.getStatus());
+                stmt.setString(8, tour.getConsignor().toString());
+
+                stmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /*
@@ -247,25 +283,20 @@ public class DataManagement {
     public void importOrders() {
         System.out.println("Importing Orders...");
         ReadFile readFileObject = new ReadFile();
+
+        // Grab orders from "orderFile" method and put them into "orderList"
         ArrayList<Order> orderList = readFileObject.orderFile();
+
         Connection conn = establishConnectionToDatabase();
 
-        try {
-            if (conn != null) {
-                for(Order order : orderList) {
-                    PreparedStatement stmt;
-                    stmt = createOrder(order);
+        if (conn != null) {
 
-                    if (stmt != null)
-                        stmt.executeUpdate();
-                }
+            // For every order, put the order in the database
+            for (Order order : orderList) {
+                createOrder(order);
             }
+            System.out.println("Orders imported.");
         }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println("Orders imported.");
     }
 
     /*
