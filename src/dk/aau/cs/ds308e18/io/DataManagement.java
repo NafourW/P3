@@ -43,7 +43,6 @@ public class DataManagement {
         createTourTable();
         createWareTable();
         createRegionTable();
-        importRegionNames();
     }
 
     /*
@@ -152,6 +151,11 @@ public class DataManagement {
                         "regionName VARCHAR(255))";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
+
+                /* Import region names into the table ONLY if doesn't exist
+                to avoid importing the names every time the program is executed.
+                */
+                importRegionNames();
             }
         } catch(SQLException e) {
             System.out.println("The table already exists.");
@@ -179,6 +183,7 @@ public class DataManagement {
             if (conn != null) {
                 String sql = "INSERT INTO regions (regionName) VALUES (?)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
+                
                 for(String region : regions) {
                     stmt.setString(1, region);
                     stmt.executeUpdate();
