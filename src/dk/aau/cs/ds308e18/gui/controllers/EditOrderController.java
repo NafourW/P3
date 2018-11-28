@@ -9,13 +9,20 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
 public class EditOrderController implements ISelectionController {
 
-    @FXML private Button cancelOrderButton;
+    @FXML private HBox buttonBar;
+    @FXML private VBox buttonBarLeft;
+
     @FXML private Button removeWareButton;
+    @FXML private Button cancelOrderButton;
+    @FXML private Button addOrderButton;
+    @FXML private Button doneButton;
 
     @FXML private TextField customerNameField;
     @FXML private TextField addressField;
@@ -48,7 +55,6 @@ public class EditOrderController implements ISelectionController {
 
     @FXML
     public void initialize() {
-        cancelOrderButton.setDisable(true);
         removeWareButton.setDisable(true);
 
         regions.addAll(Main.db.exportRegionNames());
@@ -84,17 +90,29 @@ public class EditOrderController implements ISelectionController {
     }
 
     @FXML
+    private void  cancelOrderButtonAction(ActionEvent event){
+
+    }
+
+    @FXML
     private void viewWareListButtonAction(ActionEvent event) throws IOException {
         Main.gui.changeView("WareList");
     }
 
     @FXML
-    private void addOrderButtonAction(ActionEvent event) {
-
+    private void addOrderButtonAction(ActionEvent event) throws IOException {
+        //TODO: Add order
+        Main.gui.changeView("OrderList");
     }
 
     @FXML
-    private void cancelButtonAction(ActionEvent event) throws IOException{
+    private void doneButtonAction(ActionEvent event) throws IOException {
+        //TODO: save changes to order
+        Main.gui.changeView("OrderList");
+    }
+
+    @FXML
+    private void backButtonAction(ActionEvent event) throws IOException{
         Main.gui.changeView("OrderList");
     }
 
@@ -109,8 +127,15 @@ public class EditOrderController implements ISelectionController {
     }
 
     @Override
-    public void setSelectedObject(Object obj) {
+    public void setSelectedObject(Object obj, boolean isNew) {
         selectedOrder = (Order)obj;
         populateFields();
+        if (isNew) {
+            buttonBarLeft.getChildren().remove(cancelOrderButton);
+            buttonBar.getChildren().remove(doneButton);
+        }
+        else {
+            buttonBar.getChildren().remove(addOrderButton);
+        }
     }
 }

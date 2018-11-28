@@ -90,8 +90,11 @@ public class GUI {
     /*
     Change the current application view by loading FXML and replacing the scene's root
     Also passes the currently selected object to the next view
+
+    isNew is true when the selected object is a newly created object,
+    and false when "edit x" was picked
     */
-    public void changeView(String view, Object selection) throws IOException{
+    public void changeView(String view, Object selection, boolean isNew) throws IOException{
         currentView = view;
 
         //Get the view
@@ -104,7 +107,7 @@ public class GUI {
         ISelectionController controller = fxmlLoader.getController();
 
         //Pass the selected object to the controller
-        controller.setSelectedObject(selection);
+        controller.setSelectedObject(selection, isNew);
 
         //Display the view
         window.getScene().setRoot(root);

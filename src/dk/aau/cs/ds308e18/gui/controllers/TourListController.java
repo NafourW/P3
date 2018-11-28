@@ -120,7 +120,7 @@ public class TourListController {
 
     @FXML
     private void editTourButtonAction(ActionEvent event) throws IOException {
-        Main.gui.changeView("EditTour", selectedTour);
+        Main.gui.changeView("EditTour", selectedTour, false);
     }
 
     @FXML

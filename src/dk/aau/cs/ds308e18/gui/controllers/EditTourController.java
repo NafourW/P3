@@ -39,7 +39,7 @@ public class EditTourController implements ISelectionController {
     }
 
     @Override
-    public void setSelectedObject(Object obj) {
+    public void setSelectedObject(Object obj, boolean isNew) {
         selectedTour = (Tour)obj;
     }
 }

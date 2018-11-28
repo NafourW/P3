@@ -233,20 +233,25 @@
             </VBox>
          </children>
       </HBox>
-      <HBox alignment="BOTTOM_RIGHT">
+      <HBox fx:id="buttonBar" alignment="BOTTOM_RIGHT">
          <children>
-            <VBox alignment="BOTTOM_LEFT" HBox.hgrow="ALWAYS">
+            <VBox fx:id="buttonBarLeft" alignment="BOTTOM_LEFT" HBox.hgrow="ALWAYS">
                <children>
-                  <Button fx:id="cancelOrderButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="%button_cancel_order" />
+                  <Button fx:id="cancelOrderButton" mnemonicParsing="false" onAction="#cancelOrderButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_cancel_order" />
                </children>
             </VBox>
             <Button mnemonicParsing="false" onAction="#viewWareListButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_view_ware_list" />
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addOrderButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_add_order">
+            <Button fx:id="addOrderButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addOrderButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_add_order">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>
             </Button>
-            <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_cancel">
+            <Button fx:id="doneButton" layoutX="540.0" layoutY="10.0" mnemonicParsing="false" onAction="#doneButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_done">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#backButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_back">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>

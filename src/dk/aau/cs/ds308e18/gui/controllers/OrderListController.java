@@ -96,12 +96,12 @@ public class OrderListController {
     @FXML
     private void createOrderButtonAction(ActionEvent event) throws IOException{
         selectedOrder = new Order();
-        Main.gui.changeView("EditOrder", selectedOrder);
+        Main.gui.changeView("EditOrder", selectedOrder, true);
     }
 
     @FXML
     private void editOrderButtonAction(ActionEvent event) throws IOException{
-        Main.gui.changeView("EditOrder", selectedOrder);
+        Main.gui.changeView("EditOrder", selectedOrder, false);
     }
 
     @FXML
