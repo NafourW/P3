@@ -11,37 +11,14 @@ import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
 public class ReadFile {//Class that reads CSV files
-    public static void main(String[] args) {
-        String directory1 = "resources/T015785_0726018_ordrelinjer.csv"; //Directory for the file with wares within an order
-
-        String directory2 = "resources/varedata.csv"; //Directory for the file with existing ware types
-
-        ReadFile test = new ReadFile(); //test object
-
-
-        //test.orderFile(); //read file with orders
-
-        /*
-
-        test.orderItems(directory1); //read file with wares within an order
-
-        System.out.println("\n\n");
-
-        test.itemTypes(directory2); //read file with existing ware types
-        */
-    }
-
-    //convert xlsx file to csv file
-    void xlsxToCSV(File inputFile, File outputFile){
-    }
 
     public ArrayList<Order> orderFile(){
-        //Directory for the file with orders
+        // Directory for the file with orders
         String directory = "resources/ordrer_tilvalg.csv";
 
         ArrayList<Order> orderList = new ArrayList<>();
 
-        //This string will be filled with read line
+        // This string will be filled with read line
         String line = "";
 
         // Split the read line when encountering ';' which is used in the CSV file to distinguish new information

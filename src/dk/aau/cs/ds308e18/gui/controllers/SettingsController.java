@@ -6,11 +6,20 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
 
 public class SettingsController {
+
+    @FXML
+    private VBox settingMenuID;
+
     @FXML
     private ComboBox<Locale> languageSelector;
 
@@ -41,7 +50,30 @@ public class SettingsController {
     @FXML
     private void importDataButtonAction(ActionEvent event) {
         Main.db.importOrders();
+        final DirectoryChooser directoryChooser = new DirectoryChooser();
+
+        File selectedDirectory = directoryChooser.showDialog(null);
+
+        Stage stage = (Stage) settingMenuID.getScene().getWindow();
+
+        if (selectedDirectory != null){
+            selectedDirectory.getAbsolutePath();
+        }
     }
+
+    /*
+    final Button browseButton = new Button("...");
+    browseButton.setOnAction(
+        (final ActionEvent e) -> {
+        final DirectoryChooser directoryChooser
+        new DirectoryChooser();
+        final File selectedDirectory =
+                directoryChooser.showDialog(stage);
+        if (selectedDirectory != null) {
+            selectedDirectory.getAbsolutePath();
+        }
+    });
+    */
 
     @FXML
     private void exportDataButtonAction(ActionEvent event) {
