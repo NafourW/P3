@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
+import dk.aau.cs.ds308e18.model.Ware;
 
 public class DataManagement {
 
@@ -130,7 +131,20 @@ public class DataManagement {
         try {
             if (conn != null) {
                 String sql = "CREATE TABLE wares (" +
-                        "id INT)";
+                        "supplier INT," +
+                        "wareNumber VARCHAR(255)," +
+                        "height INT," +
+                        "depth INT," +
+                        "grossHeight INT," +
+                        "grossDepth INT," +
+                        "grossWidth INT," +
+                        "width INT," +
+                        "wareName VARCHAR(255)," +
+                        "searchName VARCHAR(255)," +
+                        "wareGroup INT," +
+                        "wareType VARCHAR(255)," +
+                        "liftAlone INT," +
+                        "liftingTools INT)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
             }
@@ -279,7 +293,40 @@ public class DataManagement {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
 
+    /*
+    ....
+    */
+    public void createWare(Ware ware) {
+        Connection conn = establishConnectionToDatabase();
+        String sql = "INSERT INTO wares (supplier, wareNumber, height, depth, grossHeight, " +
+                "grossDepth, grossWidth, width, wareName, searchName, wareGroup, wareType, " +
+                "liftAlone, liftingTools) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        try {
+            if (conn != null) {
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.setString(1, String.valueOf(ware.getSupplier()));
+                stmt.setString(2, String.valueOf(ware.getWareNumber()));
+                stmt.setString(3, String.valueOf(ware.getHeight()));
+                stmt.setString(4, String.valueOf(ware.getDepth()));
+                stmt.setString(5, String.valueOf(ware.getGrossHeight()));
+                stmt.setString(6, String.valueOf(ware.getGrossDepth()));
+                stmt.setString(7, String.valueOf(ware.getGrossWidth()));
+                stmt.setString(8, String.valueOf(ware.getWidth()));
+                stmt.setString(9, String.valueOf(ware.getWareName()));
+                stmt.setString(10, String.valueOf(ware.getSearchName()));
+                stmt.setString(11, String.valueOf(ware.getWareGroup()));
+                stmt.setString(12, String.valueOf(ware.getWareType()));
+                stmt.setString(13, String.valueOf(ware.isLiftAlone()));
+                stmt.setString(14, String.valueOf(ware.isLiftingTools()));
+
+                stmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /*
@@ -301,6 +348,28 @@ public class DataManagement {
                 createOrder(order);
             }
             System.out.println("Orders imported.");
+        }
+    }
+
+    /*
+    ....
+    */
+    public void importWares() {
+        System.out.println("Importing Wares...");
+        ReadFile readFileObject = new ReadFile();
+
+        // Grab wares from "wareTypes" method and put them into "wareList"
+        ArrayList<Ware> wareList = readFileObject.wareTypes();
+
+        Connection conn = establishConnectionToDatabase();
+
+        if (conn != null) {
+
+            // For every ware, put the ware in the database
+            for (Ware ware : wareList) {
+                createWare(ware);
+            }
+            System.out.println("Wares imported.");
         }
     }
 

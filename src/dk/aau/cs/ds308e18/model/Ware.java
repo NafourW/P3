@@ -37,4 +37,64 @@ public class Ware {
         this.liftingTools = liftingTools;
         this.moveTime = moveTime;
     }
+
+    public long getSupplier() {
+        return supplier;
+    }
+
+    public String getWareNumber() {
+        return wareNumber;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getDepth() {
+        return depth;
+    }
+
+    public int getGrossHeight() {
+        return grossHeight;
+    }
+
+    public int getGrossDepth() {
+        return grossDepth;
+    }
+
+    public int getGrossWidth() {
+        return grossWidth;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public String getWareName() {
+        return wareName;
+    }
+
+    public String getSearchName() {
+        return searchName;
+    }
+
+    public int getWareGroup() {
+        return wareGroup;
+    }
+
+    public String getWareType() {
+        return wareType;
+    }
+
+    public boolean isLiftAlone() {
+        return liftAlone;
+    }
+
+    public boolean isLiftingTools() {
+        return liftingTools;
+    }
+
+    public float getMoveTime() {
+        return moveTime;
+    }
 }
