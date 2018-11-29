@@ -32,6 +32,9 @@ public class Main extends Application {
         //GUI needs a reference to the main window
         gui.setWindow(primaryStage);
 
+        //Load stylesheet
+        gui.initStyle();
+
         //Setup main window
         primaryStage.setTitle(gui.getLocalString("label_title_app"));
         primaryStage.setMinWidth(850);

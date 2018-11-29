@@ -66,7 +66,7 @@ public class EditOrderController implements ISelectionController {
         addressField.setText(selectedOrder.getAddress());
         zipCodeField.setText(String.valueOf(selectedOrder.getZipCode()));
 
-        //datePicker;
+        datePicker.setValue(selectedOrder.getDate());
         regionComboBox.getSelectionModel().select(selectedOrder.getRegion());
         //orderCategoryComboBox;
 
@@ -86,7 +86,7 @@ public class EditOrderController implements ISelectionController {
         amountField.setText("");
         priceField.setText("");
 
-        //wareTable;
+        wareTable.getItems().addAll(selectedOrder.getWares());
     }
 
     @FXML

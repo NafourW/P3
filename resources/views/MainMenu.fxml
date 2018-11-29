@@ -53,7 +53,7 @@
             </VBox>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Button mnemonicParsing="false" onAction="#toursButtonAction" prefHeight="200.0" prefWidth="3000.0" style="-fx-background-color: #003867;" text="%button_menu_tours" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#toursButtonAction" prefHeight="200.0" prefWidth="3000.0" styleClass="button-blue" text="%button_menu_tours">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
@@ -68,7 +68,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ordersButtonAction" prefHeight="200.0" prefWidth="3000.0" style="-fx-background-color: #003867;" text="%button_menu_orders" textFill="WHITE">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ordersButtonAction" prefHeight="200.0" prefWidth="3000.0" styleClass="button-blue" text="%button_menu_orders">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
@@ -83,7 +83,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="20.0" layoutY="190.0" mnemonicParsing="false" onAction="#waresButtonAction" prefHeight="200.0" prefWidth="3000.0" style="-fx-background-color: #003867;" text="%button_menu_wares" textFill="WHITE">
+                  <Button layoutX="20.0" layoutY="190.0" mnemonicParsing="false" onAction="#waresButtonAction" prefHeight="200.0" prefWidth="3000.0" styleClass="button-blue" text="%button_menu_wares">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
@@ -97,7 +97,7 @@
                   </Button>
                   <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Button minHeight="100.0" minWidth="180.0" mnemonicParsing="false" onAction="#settingsButtonAction" style="-fx-background-color: #ddd;" text="%button_menu_settings">
+                        <Button minHeight="100.0" minWidth="180.0" mnemonicParsing="false" onAction="#settingsButtonAction" text="%button_menu_settings">
                            <graphic>
                               <ImageView>
                                  <image>

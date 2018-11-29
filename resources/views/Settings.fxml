@@ -36,7 +36,7 @@
       </HBox>
       <HBox alignment="BOTTOM_LEFT">
          <children>
-            <Button mnemonicParsing="false" onAction="#importDataButtonAction" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #003867;" text="%button_settings_import_data" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#importDataButtonAction" prefHeight="40.0" prefWidth="200.0" styleClass="button-blue" text="%button_settings_import_data">
                <font>
                   <Font size="24.0" />
                </font>
@@ -69,7 +69,7 @@
       </HBox>
       <HBox alignment="BOTTOM_LEFT">
          <children>
-            <Button mnemonicParsing="false" onAction="#exportDataButtonAction" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #003867;" text="%button_settings_export_data" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#exportDataButtonAction" prefHeight="40.0" prefWidth="200.0" styleClass="button-blue" text="%button_settings_export_data">
                <font>
                   <Font size="24.0" />
                </font>
@@ -102,7 +102,7 @@
       </HBox>
       <HBox alignment="BOTTOM_LEFT" VBox.vgrow="ALWAYS">
          <children>
-            <Button mnemonicParsing="false" onAction="#clearAllToursButtonAction" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: faa;" text="%button_settings_clear_all_tours">
+            <Button mnemonicParsing="false" onAction="#clearAllToursButtonAction" prefHeight="40.0" prefWidth="180.0" styleClass="button-red" text="%button_settings_clear_all_tours">
                <HBox.margin>
                   <Insets />
                </HBox.margin>

@@ -47,6 +47,13 @@ public class GUI {
     }
 
     /*
+    Loads default stylesheet
+    */
+    public void initStyle() {
+        this.window.getScene().getStylesheets().add("styles/default.css");
+    }
+
+    /*
     Set the application language
     */
     public void setLanguage(Locale locale) {
