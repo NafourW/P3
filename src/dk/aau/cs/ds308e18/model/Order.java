@@ -4,94 +4,88 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Order {
-    ArrayList<Ware> wares;
-
-    /*
-    String adress;
-    String moreInfo;
-    long orderNumber;
-    long zipCode;
-    long receiptNumber;
-    float receiveDate;
-    float pickupDate;
-    float timeRequired;
-    */
-
-    private int pluckRoute;
     private int id;
+    private int receipt;
+    private int pluckRoute;
     private String orderReference;
-    private String expeditionStatus;
+    private String warehouse;
+    private String fleetOwner;
+    private String project;
+    private String category;
+
     private String customerName;
-    private LocalDate date;
+    private String region;
     private String address;
     private int zipCode;
-    private int receipt;
-    private boolean pickup;
-    private String warehouse;
-    private String category;
-    private String fleetOwner;
+    private LocalDate date;
+
     private boolean printed;
-    private String region;
+    private String expeditionStatus;
+
+    private boolean pickup;
     private boolean FV;
-    private String project;
+
+    ArrayList<Ware> wares;
 
     public Order() {
-        pluckRoute = 0;
         id = 0;
+        receipt = 0;
+        pluckRoute = 0;
         orderReference = "";
-        expeditionStatus = "";
+        warehouse = "";
+        fleetOwner = "";
+        project = "";
+        category = "";
+
         customerName = "";
-        date = LocalDate.now();
+        region = "";
         address = "";
         zipCode = 0;
-        receipt = 0;
-        pickup = false;
-        warehouse = "";
-        category = "";
-        fleetOwner = "";
+        date = LocalDate.now();
+
         printed = false;
-        region = "";
+        expeditionStatus = "";
+
+        pickup = false;
         FV = false;
-        project = "";
+
+        wares = new ArrayList<>();
     }
 
     public Order(int pluckRoute, int id, String orderReference, String expeditionStatus, String customerName,
                  LocalDate date, String address, int zipCode, int receipt, boolean pickup,
                  String warehouse, String category, String fleetOwner,
                  boolean printed, String region, boolean FV, String project) {
-        this.pluckRoute = pluckRoute;
         this.id = id;
+        this.receipt = receipt;
+        this.pluckRoute = pluckRoute;
         this.orderReference = orderReference;
-        this.expeditionStatus= expeditionStatus;
+        this.warehouse = warehouse;
+        this.fleetOwner = fleetOwner;
+        this.project = project;
+        this.category = category;
+
         this.customerName = customerName;
-        this.date = date;
+        this.region = region;
         this.address = address;
         this.zipCode = zipCode;
-        this.receipt = receipt;
-        this.pickup = pickup;
-        this.warehouse = warehouse;
-        this.category = category;
-        this.fleetOwner = fleetOwner;
+        this.date = date;
+
         this.printed = printed;
-        this.region = region;
+        this.expeditionStatus= expeditionStatus;
+
+        this.pickup = pickup;
         this.FV = FV;
-        this.project = project;
+
+        wares = new ArrayList<>();
     }
 
     public int getID() {
         return id;
     }
 
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public int getZipCode() {
-        return zipCode;
+    public int getReceipt() {
+        return receipt;
     }
 
     public int getPluckRoute() {
@@ -102,8 +96,37 @@ public class Order {
         return orderReference;
     }
 
-    public String getExpeditionStatus() {
-        return expeditionStatus;
+    public String getWarehouse() {
+        return warehouse;
+    }
+
+    public String getFleetOwner() {
+        return fleetOwner;
+    }
+
+    public String getProject() {
+        return project;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public int getZipCode() {
+        return zipCode;
     }
 
     public LocalDate getDate() {
@@ -115,47 +138,32 @@ public class Order {
         return 0;
     }
 
-    public int getReceipt() {
-        return receipt;
+
+    public boolean isPrinted() {
+        return printed;
+    }
+
+    public String getExpeditionStatus() {
+        return expeditionStatus;
     }
 
     public boolean isPickup() {
         return pickup;
     }
 
-    public String getWarehouse() {
-        return warehouse;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public String getFleetOwner() {
-        return fleetOwner;
-    }
-
-    public boolean isPrinted() {
-        return printed;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
     public boolean isFV() {
         return FV;
     }
 
-    public String getProject() {
-        return project;
+    public ArrayList<Ware> getWares() {
+        return wares;
     }
 
     @Override
     public String toString() {
-        return pluckRoute + "," + id + "," + orderReference + "," + expeditionStatus + "," +
-                customerName + "," + date + "," + address + "," + zipCode + "," +
-                receipt + "," + pickup + "," + warehouse + "," + category + "," + fleetOwner + "," +
-                printed + "," + region + "," + FV + "," + project;
+        return id + "," + receipt + "," + pluckRoute + "," + orderReference + "," +
+                warehouse + "," + fleetOwner + "," + project + "," + category + "," +
+                customerName + "," + region + "," + address + "," + zipCode + "," + date + "," +
+                printed + "," + expeditionStatus + "," + pickup + "," + FV;
     }
 }
