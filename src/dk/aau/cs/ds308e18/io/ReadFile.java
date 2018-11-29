@@ -122,7 +122,7 @@ public class ReadFile {//Class that reads CSV files
         return orderList;
     }
 
-    ArrayList<OrderLine> orderItems(String directory){//same function as "orderFile" method
+    public ArrayList<OrderLine> orderItems(String directory){//same function as "orderFile" method
 
         ArrayList<OrderLine> wareList = new ArrayList<>();
 
@@ -177,11 +177,11 @@ public class ReadFile {//Class that reads CSV files
         return  wareList;
     }
 
-    ArrayList<Ware> wareTypes(String directory){
+    public ArrayList<Ware> wareTypes(){
 
         ArrayList<Ware> wareTypes = new ArrayList<>();
 
-        String inputFile = directory;
+        String inputFile = "resources/varedata.csv";
 
         String line = "";
 
