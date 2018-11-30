@@ -68,7 +68,15 @@ public class SettingsController {
 
     @FXML
     private void exportDataButtonAction(ActionEvent event) {
+        final DirectoryChooser directoryChooser = new DirectoryChooser();
 
+        Stage stage = (Stage) settingMenuID.getScene().getWindow();
+
+        File selectedDirectory = directoryChooser.showDialog(stage);
+
+        if (selectedDirectory != null){
+            destinationField.setText(selectedDirectory.getAbsolutePath());
+        }
     }
 
     @FXML
