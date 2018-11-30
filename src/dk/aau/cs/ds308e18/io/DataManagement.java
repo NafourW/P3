@@ -332,12 +332,12 @@ public class DataManagement {
     /*
     ....
     */
-    public void importOrders() {
+    public void importOrders(String sourcePath) {
         System.out.println("Importing Orders...");
         ReadFile readFileObject = new ReadFile();
 
         // Grab orders from "orderFile" method and put them into "orderList"
-        ArrayList<Order> orderList = readFileObject.orderFile();
+        ArrayList<Order> orderList = readFileObject.orderFile(sourcePath);
 
         Connection conn = establishConnectionToDatabase();
 
