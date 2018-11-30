@@ -154,11 +154,11 @@ public class ReadFile {//Class that reads CSV files
         return  wareList;
     }
 
-    public ArrayList<Ware> wareTypes(){
+    public ArrayList<Ware> wareTypes(String sourcePath){
 
         ArrayList<Ware> wareTypes = new ArrayList<>();
 
-        String inputFile = "resources/varedata.csv";
+        String inputFile = sourcePath + "/varedata.csv";
 
         String line = "";
 
@@ -240,7 +240,7 @@ public class ReadFile {//Class that reads CSV files
                 else
                     moveTime = 0;
 
-                Ware ware = new Ware(supplier, Type[1], height, depth, grossHeight, grossDepth, grossWidth, width,
+                Ware ware = new Ware(Type[0], Type[1], height, depth, grossHeight, grossDepth, grossWidth, width,
                         Type[8], Type[9], wareGroup, Type[11], liftAlone, liftingTools, moveTime);
 
                 wareTypes.add(ware);

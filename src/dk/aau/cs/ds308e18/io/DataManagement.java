@@ -372,12 +372,12 @@ public class DataManagement {
     /*
     ....
     */
-    public void importWares() {
+    public void importWares(String sourcePath) {
         System.out.println("Importing Wares...");
         ReadFile readFileObject = new ReadFile();
 
         // Grab wares from "wareTypes" method and put them into "wareList"
-        ArrayList<Ware> wareList = readFileObject.wareTypes();
+        ArrayList<Ware> wareList = readFileObject.wareTypes(sourcePath);
 
         try {
             Connection conn = establishConnectionToDatabase();
