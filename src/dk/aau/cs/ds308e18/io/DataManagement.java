@@ -113,7 +113,7 @@ public class DataManagement {
                         "regionDetail VARCHAR(255)," +
                         "driver VARCHAR(255)," +
                         "status VARCHAR(255)," +
-                        "consignor INT)";
+                        "consignor VARCHAR(255))";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
             }
@@ -143,8 +143,8 @@ public class DataManagement {
                         "searchName VARCHAR(255)," +
                         "wareGroup INT," +
                         "wareType VARCHAR(255)," +
-                        "liftAlone INT," +
-                        "liftingTools INT)";
+                        "liftAlone VARCHAR(255)," +
+                        "liftingTools VARCHAR(255))";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
             }
