@@ -57,12 +57,12 @@ public class SettingsController {
     private void sourceBrowseButtonAction(ActionEvent event) {
         final DirectoryChooser directoryChooser = new DirectoryChooser();
 
-        File selectedDirectory = directoryChooser.showDialog(null);
-
         Stage stage = (Stage) settingMenuID.getScene().getWindow();
 
+        File selectedDirectory = directoryChooser.showDialog(stage);
+
         if (selectedDirectory != null){
-            selectedDirectory.getAbsolutePath();
+            sourceField.setText(selectedDirectory.getAbsolutePath());
         }
     }
 
