@@ -30,6 +30,7 @@
             <TableColumn fx:id="selectedColumn" maxWidth="25.0" prefWidth="25.0" resizable="false" />
             <TableColumn fx:id="idColumn" prefWidth="60.0" text="%label_order_id" />
             <TableColumn fx:id="dateColumn" prefWidth="68.0" text="%label_order_date" />
+            <TableColumn fx:id="weekColumn" prefWidth="68.0" text="%label_order_week_number" />
             <TableColumn fx:id="regionColumn" prefWidth="87.0" text="%label_order_region" />
             <TableColumn fx:id="addressColumn" prefWidth="195.0" text="%label_order_address" />
             <TableColumn fx:id="zipCodeColumn" prefWidth="38.0" text="%label_order_zip_code" />

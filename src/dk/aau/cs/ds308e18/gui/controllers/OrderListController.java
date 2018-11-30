@@ -21,7 +21,7 @@ public class OrderListController {
     @FXML private TableColumn selectedColumn;
     @FXML private TableColumn<Order, Integer> idColumn;
     @FXML private TableColumn<Order, LocalDate> dateColumn;
-    @FXML private TableColumn<Order, LocalDate> weekColumn;
+    @FXML private TableColumn<Order, Integer> weekColumn;
     @FXML private TableColumn<Order, String> regionColumn;
     @FXML private TableColumn<Order, String> addressColumn;
     @FXML private TableColumn<Order, Integer> zipCodeColumn;
