@@ -68,6 +68,11 @@ public class SettingsController {
 
     @FXML
     private void exportDataButtonAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    private void destinationBrowseButtonAction(ActionEvent event) {
         final DirectoryChooser directoryChooser = new DirectoryChooser();
 
         Stage stage = (Stage) settingMenuID.getScene().getWindow();
@@ -77,11 +82,6 @@ public class SettingsController {
         if (selectedDirectory != null){
             destinationField.setText(selectedDirectory.getAbsolutePath());
         }
-    }
-
-    @FXML
-    private void destinationBrowseButtonAction(ActionEvent event) {
-
     }
 
     @FXML
