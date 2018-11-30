@@ -24,6 +24,8 @@ public class SettingsController {
     @FXML private TextField sourceField;
     @FXML private TextField destinationField;
 
+    private String sourcePath;
+
     private ObservableList<Locale> languages = FXCollections.observableArrayList();
 
     @FXML
@@ -50,7 +52,7 @@ public class SettingsController {
 
     @FXML
     private void importDataButtonAction(ActionEvent event) {
-        Main.db.importOrders();
+        Main.db.importOrders(sourcePath);
     }
 
     @FXML
@@ -64,6 +66,8 @@ public class SettingsController {
         if (selectedDirectory != null){
             sourceField.setText(selectedDirectory.getAbsolutePath());
         }
+
+        sourcePath = selectedDirectory.getAbsolutePath();
     }
 
     @FXML

@@ -12,9 +12,9 @@ import java.util.ArrayList;
 
 public class ReadFile {//Class that reads CSV files
 
-    public ArrayList<Order> orderFile(){
+    public ArrayList<Order> orderFile(String sourcePath){
         // Directory for the file with orders
-        String directory = "resources/ordrer_tilvalg.csv";
+        String directory = sourcePath + "/ordrer_tilvalg.csv";
 
         ArrayList<Order> orderList = new ArrayList<>();
 
