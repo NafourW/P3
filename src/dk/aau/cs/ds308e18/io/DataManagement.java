@@ -58,6 +58,7 @@ public class DataManagement {
             Connection conn = DriverManager.getConnection(host, uName, uPass);
             Statement stmt = conn.createStatement();
             stmt.executeUpdate("CREATE DATABASE vibocold_db");
+            conn.close();
         } catch(SQLException e) {
             System.out.println("The database already exists.");
         }
@@ -91,6 +92,7 @@ public class DataManagement {
                         "project VARCHAR(255))";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
+                conn.close();
             }
         } catch(SQLException e) {
             System.out.println("The table already exists.");
@@ -116,6 +118,7 @@ public class DataManagement {
                         "consignor VARCHAR(255))";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
+                conn.close();
             }
         } catch(SQLException e) {
             System.out.println("The table already exists.");
@@ -148,6 +151,7 @@ public class DataManagement {
                         "moveTime FLOAT)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
+                conn.close();
             }
         } catch(SQLException e) {
             System.out.println("The table already exists.");
@@ -171,6 +175,7 @@ public class DataManagement {
                 to avoid importing the names every time the program is executed.
                 */
                 importRegionNames();
+                conn.close();
             }
         } catch(SQLException e) {
             System.out.println("The table already exists.");
@@ -193,8 +198,8 @@ public class DataManagement {
         }
 
         // Insert all regions from the arraylist
-        Connection conn = establishConnectionToDatabase();
         try {
+            Connection conn = establishConnectionToDatabase();
             if (conn != null) {
                 String sql = "INSERT INTO regions (regionName) VALUES (?)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
@@ -203,6 +208,7 @@ public class DataManagement {
                     stmt.setString(1, region);
                     stmt.executeUpdate();
                 }
+                conn.close();
             }
         } catch(SQLException e) {
             e.printStackTrace();
@@ -223,6 +229,7 @@ public class DataManagement {
                 while (regions.next()) {
                     regionList.add(regions.getString(1));
                 }
+                conn.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -263,6 +270,7 @@ public class DataManagement {
                 stmt.setString(17, String.valueOf(order.getProject()));
 
                 stmt.executeUpdate();
+                conn.close();
             }
         } catch(SQLException e) {
             e.printStackTrace();
@@ -290,6 +298,7 @@ public class DataManagement {
                 stmt.setString(8, tour.getConsignor().toString());
 
                 stmt.executeUpdate();
+                conn.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -326,6 +335,8 @@ public class DataManagement {
                 stmt.setString(15, String.valueOf(ware.getMoveTime()));
 
                 stmt.executeUpdate();
+
+                conn.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -341,16 +352,19 @@ public class DataManagement {
 
         // Grab orders from "orderFile" method and put them into "orderList"
         ArrayList<Order> orderList = readFileObject.orderFile(sourcePath);
+        try {
+            Connection conn = establishConnectionToDatabase();
 
-        Connection conn = establishConnectionToDatabase();
-
-        if (conn != null) {
-
-            // For every order, put the order in the database
-            for (Order order : orderList) {
-                createOrder(order);
+            if (conn != null) {
+                // For every order, put the order in the database
+                for (Order order : orderList) {
+                    createOrder(order);
+                }
+                System.out.println("Orders imported.");
+                conn.close();
             }
-            System.out.println("Orders imported.");
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -364,15 +378,20 @@ public class DataManagement {
         // Grab wares from "wareTypes" method and put them into "wareList"
         ArrayList<Ware> wareList = readFileObject.wareTypes();
 
-        Connection conn = establishConnectionToDatabase();
+        try {
+            Connection conn = establishConnectionToDatabase();
 
-        if (conn != null) {
+            if (conn != null) {
 
-            // For every ware, put the ware in the database
-            for (Ware ware : wareList) {
-                createWare(ware);
+                // For every ware, put the ware in the database
+                for (Ware ware : wareList) {
+                    createWare(ware);
+                }
+                System.out.println("Wares imported.");
+                conn.close();
             }
-            System.out.println("Wares imported.");
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -402,6 +421,7 @@ public class DataManagement {
                             orders.getString(17));
                     orderList.add(order);
                 }
+                conn.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
