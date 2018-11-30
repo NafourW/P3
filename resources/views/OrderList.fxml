@@ -27,7 +27,7 @@
       </Label>
       <TableView fx:id="orderListTable" VBox.vgrow="ALWAYS">
          <columns>
-            <TableColumn fx:id="selectedColumn" maxWidth="25.0" prefWidth="25.0" />
+            <TableColumn fx:id="selectedColumn" maxWidth="25.0" prefWidth="25.0" resizable="false" />
             <TableColumn fx:id="idColumn" prefWidth="60.0" text="%label_order_id" />
             <TableColumn fx:id="dateColumn" prefWidth="68.0" text="%label_order_date" />
             <TableColumn fx:id="regionColumn" prefWidth="87.0" text="%label_order_region" />

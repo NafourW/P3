@@ -21,6 +21,7 @@ public class OrderListController {
     @FXML private TableColumn selectedColumn;
     @FXML private TableColumn<Order, Integer> idColumn;
     @FXML private TableColumn<Order, LocalDate> dateColumn;
+    @FXML private TableColumn<Order, LocalDate> weekColumn;
     @FXML private TableColumn<Order, String> regionColumn;
     @FXML private TableColumn<Order, String> addressColumn;
     @FXML private TableColumn<Order, Integer> zipCodeColumn;
@@ -44,6 +45,7 @@ public class OrderListController {
         orderListManager.setMultiSelectEnabled(true);
         orderListManager.setupColumn(idColumn, "ID");
         orderListManager.setupColumn(dateColumn, "Date");
+        orderListManager.setupColumn(weekColumn, "WeekNumber");
         orderListManager.setupColumn(regionColumn, "Region");
         orderListManager.setupColumn(addressColumn, "Address");
         orderListManager.setupColumn(zipCodeColumn, "ZipCode");

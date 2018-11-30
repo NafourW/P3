@@ -8,8 +8,7 @@ import javafx.scene.control.Button;
 
 public class EditTourController implements ISelectionController {
 
-    @FXML
-    private Button removeOrderButton;
+    @FXML private Button removeOrderButton;
 
     private Tour selectedTour;
 

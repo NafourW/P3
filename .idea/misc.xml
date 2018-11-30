@@ -4,6 +4,6 @@
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="PropertiesSeparatorManager">
-    <file url="file://$PROJECT_DIR$/resources/InternationalizedStrings" separator="\u005f" />
+    <file url="file://$PROJECT_DIR$/resources/InternationalizedStrings" separator="\u002e" />
   </component>
 </project>

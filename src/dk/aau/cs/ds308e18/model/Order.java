@@ -1,6 +1,7 @@
 package dk.aau.cs.ds308e18.model;
 
 import java.time.LocalDate;
+import java.time.temporal.WeekFields;
 import java.util.ArrayList;
 
 public class Order {
@@ -134,8 +135,9 @@ public class Order {
     }
 
     public int getWeekNumber() {
-        //TODO: Convert date to week number
-        return 0;
+        WeekFields weekFields = WeekFields.ISO;
+        int weekNumber = date.get(weekFields.weekOfWeekBasedYear());
+        return weekNumber;
     }
 
 
