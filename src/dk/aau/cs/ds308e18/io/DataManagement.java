@@ -272,11 +272,11 @@ public class DataManagement {
     Insert a tour into the database.
     */
     public void createTour(Tour tour) {
-        Connection conn = establishConnectionToDatabase();
         String sql = "INSERT INTO tours (tourDate, packingDate, id, region, regionDetail, " +
                 "driver, status, consignor) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
+            Connection conn = establishConnectionToDatabase();
             if (conn != null) {
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.setString(1, tour.getTourDate());
@@ -299,12 +299,13 @@ public class DataManagement {
     ....
     */
     public void createWare(Ware ware) {
-        Connection conn = establishConnectionToDatabase();
         String sql = "INSERT INTO wares (supplier, wareNumber, height, depth, grossHeight, " +
                 "grossDepth, grossWidth, width, wareName, searchName, wareGroup, wareType, " +
                 "liftAlone, liftingTools) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
+            Connection conn = establishConnectionToDatabase();
+
             if (conn != null) {
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.setString(1, String.valueOf(ware.getSupplier()));
