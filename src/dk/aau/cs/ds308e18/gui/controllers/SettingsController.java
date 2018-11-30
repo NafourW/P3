@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
+import java.util.prefs.Preferences;
 
 public class SettingsController {
 
@@ -25,6 +26,7 @@ public class SettingsController {
     @FXML private TextField destinationField;
 
     private String sourcePath;
+    private String destinationPath;
 
     private ObservableList<Locale> languages = FXCollections.observableArrayList();
 
@@ -33,6 +35,27 @@ public class SettingsController {
         //Add english and danish to language combobox
         languages.addAll(new Locale("en","US"), new Locale("da","DA"));
         languageSelector.setItems(languages);
+
+        //Use previous values for import/export directories
+        Preferences prefs = Preferences.userNodeForPackage(dk.aau.cs.ds308e18.Main.class);
+        setSourcePath(prefs.get("dataImportSourceDirectory", ""));
+        setDestinationPath(prefs.get("dataExportDestinationDirectory", ""));
+    }
+
+    private void setSourcePath(String path) {
+        sourcePath = path;
+        sourceField.setText(path);
+
+        Preferences prefs = Preferences.userNodeForPackage(dk.aau.cs.ds308e18.Main.class);
+        prefs.put("dataImportSourceDirectory", path);
+    }
+
+    private void setDestinationPath(String path) {
+        destinationPath = path;
+        destinationField.setText(path);
+
+        Preferences prefs = Preferences.userNodeForPackage(dk.aau.cs.ds308e18.Main.class);
+        prefs.put("dataExportDestinationDirectory", path);
     }
 
     @FXML
@@ -64,11 +87,8 @@ public class SettingsController {
 
         File selectedDirectory = directoryChooser.showDialog(stage);
 
-        if (selectedDirectory != null){
-            sourceField.setText(selectedDirectory.getAbsolutePath());
-        }
-
-        sourcePath = selectedDirectory.getAbsolutePath();
+        if (selectedDirectory != null)
+            setSourcePath(selectedDirectory.getAbsolutePath());
     }
 
     @FXML
@@ -84,9 +104,8 @@ public class SettingsController {
 
         File selectedDirectory = directoryChooser.showDialog(stage);
 
-        if (selectedDirectory != null){
-            destinationField.setText(selectedDirectory.getAbsolutePath());
-        }
+        if (selectedDirectory != null)
+            setDestinationPath(selectedDirectory.getAbsolutePath());
     }
 
     @FXML
