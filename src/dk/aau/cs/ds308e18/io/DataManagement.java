@@ -144,7 +144,8 @@ public class DataManagement {
                         "wareGroup INT," +
                         "wareType VARCHAR(255)," +
                         "liftAlone VARCHAR(255)," +
-                        "liftingTools VARCHAR(255))";
+                        "liftingTools VARCHAR(255)," +
+                        "moveTime FLOAT)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
             }
@@ -301,7 +302,7 @@ public class DataManagement {
     public void createWare(Ware ware) {
         String sql = "INSERT INTO wares (supplier, wareNumber, height, depth, grossHeight, " +
                 "grossDepth, grossWidth, width, wareName, searchName, wareGroup, wareType, " +
-                "liftAlone, liftingTools) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "liftAlone, liftingTools, moveTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             Connection conn = establishConnectionToDatabase();
@@ -322,6 +323,7 @@ public class DataManagement {
                 stmt.setString(12, String.valueOf(ware.getWareType()));
                 stmt.setString(13, String.valueOf(ware.isLiftAlone()));
                 stmt.setString(14, String.valueOf(ware.isLiftingTools()));
+                stmt.setString(15, String.valueOf(ware.getMoveTime()));
 
                 stmt.executeUpdate();
             }
