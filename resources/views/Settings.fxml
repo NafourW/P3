@@ -21,7 +21,7 @@
             <Font size="48.0" />
          </font>
          <VBox.margin>
-            <Insets bottom="20.0" />
+            <Insets bottom="20.0" left="5.0" />
          </VBox.margin>
       </Label>
       <HBox>
@@ -37,88 +37,92 @@
             <ComboBox fx:id="languageSelector" onAction="#languageComboBoxAction" prefHeight="30.0" prefWidth="150.0" promptText="%label_settings_choose_language" />
          </children>
          <VBox.margin>
-            <Insets bottom="50.0" />
+            <Insets bottom="50.0" left="20.0" right="20.0" />
          </VBox.margin>
       </HBox>
-      <HBox alignment="BOTTOM_LEFT">
+      <VBox>
          <children>
             <Button mnemonicParsing="false" onAction="#importDataButtonAction" prefHeight="40.0" prefWidth="200.0" styleClass="button-blue" text="%button_settings_import_data">
                <font>
                   <Font size="24.0" />
                </font>
-               <HBox.margin>
-                  <Insets right="10.0" />
-               </HBox.margin>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
             </Button>
-            <VBox>
+            <HBox alignment="BOTTOM_LEFT">
                <children>
-                  <Label prefHeight="20.0" prefWidth="200.0" text="%label_settings_import_src">
+                  <Label prefHeight="30.0" prefWidth="90.0" text="%label_settings_import_src">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="sourceField" prefHeight="30.0" prefWidth="500.0" />
+                  <TextField fx:id="sourceField" prefHeight="30.0" prefWidth="520.0" />
+                  <Button minWidth="100.0" mnemonicParsing="false" onAction="#sourceBrowseButtonAction" prefHeight="30.0" text="%label_settings_browse">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
                </children>
-            </VBox>
-            <Button minWidth="100.0" mnemonicParsing="false" onAction="#sourceBrowseButtonAction" prefHeight="30.0" text="%label_settings_browse">
-               <HBox.margin>
-                  <Insets left="10.0" />
-               </HBox.margin>
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
          </children>
          <VBox.margin>
-            <Insets bottom="20.0" />
+            <Insets bottom="30.0" left="20.0" right="20.0" />
          </VBox.margin>
-      </HBox>
-      <HBox alignment="BOTTOM_LEFT">
+      </VBox>
+      <VBox>
          <children>
             <Button mnemonicParsing="false" onAction="#exportDataButtonAction" prefHeight="40.0" prefWidth="200.0" styleClass="button-blue" text="%button_settings_export_data">
                <font>
                   <Font size="24.0" />
                </font>
-               <HBox.margin>
-                  <Insets right="10.0" />
-               </HBox.margin>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
             </Button>
-            <VBox>
+            <HBox alignment="BOTTOM_LEFT">
                <children>
-                  <Label prefHeight="20.0" prefWidth="200.0" text="%label_settings_export_dest">
+                  <Label prefHeight="30.0" prefWidth="90.0" text="%label_settings_export_dest">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="destinationField" prefHeight="30.0" prefWidth="500.0" />
+                  <TextField fx:id="destinationField" prefHeight="30.0" prefWidth="520.0" />
+                  <Button layoutX="187.0" layoutY="10.0" minWidth="100.0" mnemonicParsing="false" onAction="#destinationBrowseButtonAction" prefHeight="30.0" text="%label_settings_browse">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
                </children>
-            </VBox>
-            <Button layoutX="187.0" layoutY="10.0" minWidth="100.0" mnemonicParsing="false" onAction="#destinationBrowseButtonAction" prefHeight="30.0" text="%label_settings_browse">
-               <HBox.margin>
-                  <Insets left="10.0" />
-               </HBox.margin>
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-         </children>
-         <VBox.margin>
-            <Insets bottom="50.0" />
-         </VBox.margin>
-      </HBox>
-      <HBox alignment="BOTTOM_LEFT" VBox.vgrow="ALWAYS">
-         <children>
-            <Button mnemonicParsing="false" onAction="#clearAllToursButtonAction" prefHeight="40.0" prefWidth="180.0" styleClass="button-red" text="%button_settings_clear_all_tours">
-               <HBox.margin>
+               <VBox.margin>
                   <Insets />
-               </HBox.margin>
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
+               </VBox.margin>
+            </HBox>
          </children>
          <VBox.margin>
-            <Insets />
+            <Insets bottom="50.0" left="20.0" right="20.0" />
+         </VBox.margin>
+      </VBox>
+      <Button mnemonicParsing="false" onAction="#clearAllToursButtonAction" prefHeight="40.0" prefWidth="180.0" styleClass="button-red" text="%button_settings_clear_all_tours">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="20.0" />
+         </VBox.margin>
+      </Button>
+      <HBox alignment="BOTTOM_LEFT" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" />
          </VBox.margin>
       </HBox>
       <HBox alignment="BOTTOM_RIGHT">
