@@ -23,6 +23,7 @@ public class DataManagement {
     The Local Database has to be up and running for this function to work.
     Without this function, the rest in the class won't work.
     */
+    //TODO ADD FINALLY TO ALL TRY-CATCH (CLOSE CONNECTION)
     private Connection establishConnectionToDatabase() {
         String host = "jdbc:mysql://localhost:3306/vibocold_db";
         String uName = "root";
@@ -134,7 +135,7 @@ public class DataManagement {
         try {
             if (conn != null) {
                 String sql = "CREATE TABLE wares (" +
-                        "supplier INT," +
+                        "supplier VARCHAR(255)," +
                         "wareNumber VARCHAR(255)," +
                         "height INT," +
                         "depth INT," +

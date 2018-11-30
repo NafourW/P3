@@ -2,7 +2,7 @@ package dk.aau.cs.ds308e18.model;
 
 public class Ware {
 
-    private long supplier;
+    private String supplier;
     private String wareNumber;
     private int height;
     private int depth;
@@ -18,7 +18,7 @@ public class Ware {
     private boolean liftingTools;
     private float moveTime;
 
-    public Ware(long supplier, String wareNumber, int height, int depth, int grossHeight, int grossDepth,
+    public Ware(String supplier, String wareNumber, int height, int depth, int grossHeight, int grossDepth,
                 int grossWidth, int width, String wareName, String searchName, int wareGroup, String wareType,
                 boolean liftAlone, boolean liftingTools, float moveTime) {
         this.supplier = supplier;
@@ -38,7 +38,7 @@ public class Ware {
         this.moveTime = moveTime;
     }
 
-    public long getSupplier() {
+    public String getSupplier() {
         return supplier;
     }
 
