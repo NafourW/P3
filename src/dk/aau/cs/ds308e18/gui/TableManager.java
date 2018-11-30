@@ -1,5 +1,6 @@
 package dk.aau.cs.ds308e18.gui;
 
+import javafx.collections.ObservableList;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -21,6 +22,17 @@ public class TableManager<S> {
     */
     public void setupColumn(TableColumn col, String getter) {
         col.setCellValueFactory(new PropertyValueFactory<>(getter));
+    }
+
+    /*
+    Makes the TableColumns automatically retrieve data from the table item
+    Uses the .get[x]() method from the item's class where [x] is replaced with the column id
+    */
+    public void setupColumns() {
+        ObservableList<TableColumn> columns = table.getColumns();
+        for (int i = 0; i < table.getColumns().size(); i++){
+            columns.get(i).setCellValueFactory(new PropertyValueFactory<>(columns.get(i).getId()));
+        }
     }
 
     public void addItem(S item) {
