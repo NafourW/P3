@@ -6,9 +6,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -17,11 +17,12 @@ import java.util.Locale;
 
 public class SettingsController {
 
-    @FXML
-    private VBox settingMenuID;
+    @FXML private VBox settingMenuID;
 
-    @FXML
-    private ComboBox<Locale> languageSelector;
+    @FXML private ComboBox<Locale> languageSelector;
+
+    @FXML private TextField sourceField;
+    @FXML private TextField destinationField;
 
     private ObservableList<Locale> languages = FXCollections.observableArrayList();
 
@@ -50,6 +51,10 @@ public class SettingsController {
     @FXML
     private void importDataButtonAction(ActionEvent event) {
         Main.db.importOrders();
+    }
+
+    @FXML
+    private void sourceBrowseButtonAction(ActionEvent event) {
         final DirectoryChooser directoryChooser = new DirectoryChooser();
 
         File selectedDirectory = directoryChooser.showDialog(null);
@@ -61,22 +66,13 @@ public class SettingsController {
         }
     }
 
-    /*
-    final Button browseButton = new Button("...");
-    browseButton.setOnAction(
-        (final ActionEvent e) -> {
-        final DirectoryChooser directoryChooser
-        new DirectoryChooser();
-        final File selectedDirectory =
-                directoryChooser.showDialog(stage);
-        if (selectedDirectory != null) {
-            selectedDirectory.getAbsolutePath();
-        }
-    });
-    */
-
     @FXML
     private void exportDataButtonAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    private void destinationBrowseButtonAction(ActionEvent event) {
 
     }
 

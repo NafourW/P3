@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -9,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="settingMenuID" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="783.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e18.gui.controllers.SettingsController">
+<VBox fx:id="settingMenuID" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="783.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e18.gui.controllers.SettingsController">
    <children>
       <Label alignment="TOP_LEFT" text="%label_title_settings">
          <font>
@@ -52,10 +57,10 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="30.0" prefWidth="500.0" />
+                  <TextField fx:id="sourceField" prefHeight="30.0" prefWidth="500.0" />
                </children>
             </VBox>
-            <Button minWidth="100.0" mnemonicParsing="false" prefHeight="30.0" text="%label_settings_browse">
+            <Button minWidth="100.0" mnemonicParsing="false" onAction="#sourceBrowseButtonAction" prefHeight="30.0" text="%label_settings_browse">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>
@@ -85,10 +90,10 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="30.0" prefWidth="500.0" />
+                  <TextField fx:id="destinationField" prefHeight="30.0" prefWidth="500.0" />
                </children>
             </VBox>
-            <Button layoutX="187.0" layoutY="10.0" minWidth="100.0" mnemonicParsing="false" prefHeight="30.0" text="%label_settings_browse">
+            <Button layoutX="187.0" layoutY="10.0" minWidth="100.0" mnemonicParsing="false" onAction="#destinationBrowseButtonAction" prefHeight="30.0" text="%label_settings_browse">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>
