@@ -194,8 +194,12 @@ public class ReadFile {//Class that reads CSV files
                     depth = 0;
 
                 int grossHeight; //Convert content inside the list to integer
-                if(Type[4].matches("[0-9]+") && Type[4].length() > 2)
+                //if the content does not contain letters
+                if(!Type[4].matches(".*[a-zA-Z]+.*")/* && Type[4].length() > 2*/){
+                    Type[4].replace(",00", "");
+                    Type[4].replace(".", "");
                     grossHeight = Integer.valueOf(Type[4]);
+                }
                 else
                     grossHeight = 0;
 
@@ -206,7 +210,7 @@ public class ReadFile {//Class that reads CSV files
                     grossDepth = 0;
 
                 int grossWidth; //Convert content inside the list to integer
-                if(Type[6].matches("[0-9]+") && Type[6].length() > 2)
+                if(Type[6].matches("\".*[a-zA-Z]+.*\"") && Type[6].length() > 2)
                     grossWidth = Integer.valueOf(Type[6]);
                 else
                     grossWidth = 0;
@@ -248,6 +252,10 @@ public class ReadFile {//Class that reads CSV files
         } catch (IOException e){
             e.printStackTrace();
         }
+        for (Ware w: wareTypes) {
+            System.out.println(w.getGrossHeight());
+        }
+
         return wareTypes;
     }
 }

@@ -135,21 +135,21 @@ public class DataManagement {
         try {
             if (conn != null) {
                 String sql = "CREATE TABLE wares (" +
-                        "supplier VARCHAR(255)," +
-                        "wareNumber VARCHAR(255)," +
-                        "height INT," +
-                        "depth INT," +
-                        "grossHeight INT," +
-                        "grossDepth INT," +
-                        "grossWidth INT," +
-                        "width INT," +
-                        "wareName VARCHAR(255)," +
-                        "searchName VARCHAR(255)," +
-                        "wareGroup INT," +
-                        "wareType VARCHAR(255)," +
-                        "liftAlone VARCHAR(255)," +
-                        "liftingTools VARCHAR(255)," +
-                        "moveTime FLOAT)";
+                        "supplier VARCHAR(255)," + //1
+                        "wareNumber VARCHAR(255)," + //2
+                        "height INT," + //3
+                        "depth INT," + //4
+                        "grossHeight INT," + //5
+                        "grossDepth INT," + //6
+                        "grossWidth INT," + //7
+                        "width INT," + //8
+                        "wareName VARCHAR(255)," + //9
+                        "searchName VARCHAR(255)," + //10
+                        "wareGroup INT," + //11
+                        "wareType VARCHAR(255)," + //12
+                        "liftAlone VARCHAR(255)," + //13
+                        "liftingTools VARCHAR(255)," + //14
+                        "moveTime FLOAT)"; //15
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
                 conn.close();
@@ -429,6 +429,33 @@ public class DataManagement {
         }
 
         return orderList;
+    }
+
+    public ArrayList<Ware> exportWares() {
+        ArrayList<Ware> wareList = new ArrayList<>();
+        Connection conn = establishConnectionToDatabase();
+        try {
+            if (conn != null) {
+                Statement stmt = conn.createStatement();
+                ResultSet wares = stmt.executeQuery("SELECT * FROM wares");
+
+                // As long as there is a "next row" in the table, create an order based on that row
+                while (wares.next()) {
+                    //TODO Hjælp den her funktion
+                    Ware ware = new Ware(wares.getString(1), wares.getString(2),
+                            wares.getInt(3), wares.getInt(4), wares.getInt(5),
+                            wares.getInt(6), wares.getInt(7), wares.getInt(8),
+                            wares.getString(9), wares.getString(10), wares.getInt(11),
+                            wares.getString(12), wares.getBoolean(13), wares.getBoolean(14),
+                            wares.getFloat(15));
+                    wareList.add(ware);
+                }
+                conn.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return wareList;
     }
 
     /*
