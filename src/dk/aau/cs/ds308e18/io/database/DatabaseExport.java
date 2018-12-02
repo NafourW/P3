@@ -1,6 +1,7 @@
 package dk.aau.cs.ds308e18.io.database;
 
 import dk.aau.cs.ds308e18.model.Order;
+import dk.aau.cs.ds308e18.model.Ware;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -69,6 +70,33 @@ public class DatabaseExport {
         }
 
         return orderList;
+    }
+
+    public ArrayList<Ware> exportWares() {
+        ArrayList<Ware> wareList = new ArrayList<>();
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                Statement stmt = conn.createStatement();
+                ResultSet wares = stmt.executeQuery("SELECT * FROM wares");
+
+                // As long as there is a "next row" in the table, create an order based on that row
+                while (wares.next()) {
+                    //TODO Hjælp den her funktion
+                    Ware ware = new Ware(wares.getString(1), wares.getString(2),
+                            wares.getInt(3), wares.getInt(4), wares.getInt(5),
+                            wares.getInt(6), wares.getInt(7), wares.getInt(8),
+                            wares.getString(9), wares.getString(10), wares.getInt(11),
+                            wares.getString(12), wares.getBoolean(13), wares.getBoolean(14),
+                            wares.getFloat(15));
+                    wareList.add(ware);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return wareList;
     }
 
     /*
