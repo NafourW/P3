@@ -12,7 +12,6 @@ public class TourManagement {
     /*
     Insert a tour into the database.
     */
-    //TODO ADD FINALLY TO ALL TRY-CATCH (CLOSE CONNECTION)
     public void createTour(Tour tour) {
         DatabaseConnection dbConn = new DatabaseConnection();
         String sql = "INSERT INTO tours (tourDate, packingDate, id, region, regionDetail, " +
