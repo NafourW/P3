@@ -1,7 +1,9 @@
 package dk.aau.cs.ds308e18;
 
 import dk.aau.cs.ds308e18.gui.GUI;
-import dk.aau.cs.ds308e18.io.DataManagement;
+import dk.aau.cs.ds308e18.io.database.DatabaseExport;
+import dk.aau.cs.ds308e18.io.database.DatabaseImport;
+import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -12,7 +14,8 @@ public class Main extends Application {
     public static GUI gui;
 
     //Used for interacting with the database
-    public static DataManagement db;
+    public static DatabaseImport dbImport;
+    public static DatabaseExport dbExport;
 
     public static void main(String[] args) {
         launch(args);
@@ -21,7 +24,9 @@ public class Main extends Application {
     @Override
     public void init() {
         //Initialize database
-        db = new DataManagement();
+        DatabaseSetup dbSetup = new DatabaseSetup();
+        dbImport = new DatabaseImport();
+        dbExport = new DatabaseExport();
 
         //Initialize GUI
         gui = new GUI();

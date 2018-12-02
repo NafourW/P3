@@ -1,5 +1,6 @@
-package dk.aau.cs.ds308e18.function;
+package dk.aau.cs.ds308e18.io.database.management;
 
+import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 import dk.aau.cs.ds308e18.model.Tour;
 
 import java.sql.Connection;

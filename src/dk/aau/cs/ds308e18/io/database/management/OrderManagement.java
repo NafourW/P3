@@ -1,5 +1,6 @@
-package dk.aau.cs.ds308e18.function;
+package dk.aau.cs.ds308e18.io.database.management;
 
+import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 import dk.aau.cs.ds308e18.model.Order;
 
 import java.sql.Connection;
@@ -11,7 +12,7 @@ public class OrderManagement {
     /*
     Insert an order into the order table.
     */
-    private void createOrder(Order order) {
+    public void createOrder(Order order) {
         DatabaseConnection dbConn = new DatabaseConnection();
         try {
             Connection conn = dbConn.establishConnectionToDatabase();

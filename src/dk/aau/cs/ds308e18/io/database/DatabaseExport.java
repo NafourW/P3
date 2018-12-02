@@ -1,4 +1,4 @@
-package dk.aau.cs.ds308e18.function;
+package dk.aau.cs.ds308e18.io.database;
 
 import dk.aau.cs.ds308e18.model.Order;
 
@@ -76,7 +76,7 @@ public class DatabaseExport {
     Export everything from the tour table.
     Print them in the terminal
     */
-    private void exportTours() {
+    public void exportTours() {
         DatabaseConnection dbConn = new DatabaseConnection();
         Connection conn = dbConn.establishConnectionToDatabase();
         try {

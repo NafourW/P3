@@ -57,7 +57,7 @@ public class EditOrderController implements ISelectionController {
     public void initialize() {
         removeWareButton.setDisable(true);
 
-        regions.addAll(Main.db.exportRegionNames());
+        regions.addAll(Main.dbExport.exportRegionNames());
         regionComboBox.setItems(regions);
     }
 
