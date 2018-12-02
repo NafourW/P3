@@ -193,23 +193,44 @@ public class ReadFile {//Class that reads CSV files
                 else
                     depth = 0;
 
+                String grossHeightString;
+                String grossHeightString2;
                 int grossHeight; //Convert content inside the list to integer
-                if(Type[4].matches("[0-9]+") && Type[4].length() > 2)
-                    grossHeight = Integer.valueOf(Type[4]);
-                else
+
+                grossHeightString = Type[4].replace(",00", "");
+                grossHeightString2 = grossHeightString.replace(".","");
+
+                if (Type[4].isEmpty()){
                     grossHeight = 0;
+                } else {
+                    grossHeight = Integer.valueOf(grossHeightString2);
+                }
 
+                String grossDepthString;
+                String grossDepthString2;
                 int grossDepth; //Convert content inside the list to integer
-                if(Type[5].matches("[0-9]+") && Type[5].length() > 2)
-                    grossDepth = Integer.valueOf(Type[5]);
-                else
-                    grossDepth = 0;
 
+                grossDepthString = Type[5].replace(",00","");
+                grossDepthString2 = grossDepthString.replace(".","");
+
+                if (Type[5].isEmpty()){
+                    grossDepth = 0;
+                }
+                else{
+                    grossDepth = Integer.valueOf(grossDepthString2);
+                }
+
+                String grossWidthString;
+                String grossWidthString2;
                 int grossWidth; //Convert content inside the list to integer
-                if(Type[6].matches("[0-9]+") && Type[6].length() > 2)
-                    grossWidth = Integer.valueOf(Type[6]);
-                else
+
+                grossWidthString = Type[5].replace(",00","");
+                grossWidthString2 = grossWidthString.replace(".","");
+
+                if(Type[6].isEmpty())
                     grossWidth = 0;
+                else
+                    grossWidth = Integer.valueOf(grossWidthString2);
 
                 int width; //Convert content inside the list to integer
                 if(Type[7].matches("[0-9]+") && Type[7].length() > 2)
@@ -234,11 +255,18 @@ public class ReadFile {//Class that reads CSV files
                 boolean liftingTools; //Convert content inside the list to boolean
                 liftingTools = Type[13].toLowerCase().equals("ja");
 
-                float moveTime; //Convert content inside the list to float
-                if(Type[14].matches("[0-9]+") && Type[14].length() > 2)
-                    moveTime = Float.valueOf(Type[14]);
-                else
+                String moveTimeString;
+                String moveTimeString2;
+                int moveTime; //Convert content inside the list to float
+
+                moveTimeString = Type[14].replace(",00","");
+                moveTimeString2 = moveTimeString.replace(".","");
+
+
+                if(Type[14].isEmpty())
                     moveTime = 0;
+                else
+                    moveTime = Integer.valueOf(moveTimeString2);
 
                 Ware ware = new Ware(Type[0], Type[1], height, depth, grossHeight, grossDepth, grossWidth, width,
                         Type[8], Type[9], wareGroup, Type[11], liftAlone, liftingTools, moveTime);
@@ -248,6 +276,12 @@ public class ReadFile {//Class that reads CSV files
         } catch (IOException e){
             e.printStackTrace();
         }
+        /*
+        for (Ware w: wareTypes) {
+            System.out.println("Gross Height: " + w.getGrossHeight() + " Gross Depth: " + w.getGrossDepth() +
+                    " Gross Width: " + w.getGrossWidth() + " Move time: " + w.getMoveTime());
+        }
+        */
         return wareTypes;
     }
 }

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e18.gui.controllers.WareListController">
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e18.gui.controllers.WareListController">
    <children>
       <Label text="%label_list_of_wares">
          <VBox.margin>
@@ -19,17 +21,20 @@
             <Insets bottom="30.0" />
          </VBox.margin>
          <content>
-            <TableView prefHeight="200.0" prefWidth="200.0">
+            <TableView fx:id="wareListTable" prefHeight="200.0" prefWidth="200.0">
               <columns>
-                <TableColumn prefWidth="100.0" text="varenummer" />
-                  <TableColumn prefWidth="75.0" text="varetype" />
-                  <TableColumn prefWidth="120.0" text="varenavn" />
-                  <TableColumn prefWidth="120.0" text="søgenavn" />
-                <TableColumn prefWidth="120.0" text="leverandør" />
-                  <TableColumn prefWidth="50.0" text="højde" />
-                  <TableColumn prefWidth="50.0" text="dybde" />
-                  <TableColumn prefWidth="50.0" text="bredde" />
-                  <TableColumn prefWidth="75.0" text="varegruppe" />
+                <TableColumn fx:id="WareNumber" prefWidth="100.0" text="varenummer" />
+                  <TableColumn fx:id="WareType" prefWidth="75.0" text="varetype" />
+                  <TableColumn fx:id="WareName" prefWidth="120.0" text="varenavn" />
+                  <TableColumn fx:id="SearchName" prefWidth="120.0" text="søgenavn" />
+                <TableColumn fx:id="Supplier" prefWidth="120.0" text="leverandør" />
+                  <TableColumn fx:id="GrossHeight" prefWidth="50.0" text="højde" />
+                  <TableColumn fx:id="GrossDepth" prefWidth="50.0" text="dybde" />
+                  <TableColumn fx:id="GrossWidth" prefWidth="50.0" text="bredde" />
+                  <TableColumn fx:id="WareGroup" prefWidth="75.0" text="varegruppe" />
+                  <TableColumn fx:id="LiftAlone" prefWidth="75.0" text="Løft alene" />
+                  <TableColumn fx:id="LiftingTools" prefWidth="75.0" text="Løfteanordning" />
+                  <TableColumn fx:id="MoveTime" prefWidth="75.0" text="Flytte tid" />
               </columns>
             </TableView>
          </content>
