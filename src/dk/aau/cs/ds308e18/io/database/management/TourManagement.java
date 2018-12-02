@@ -18,8 +18,7 @@ public class TourManagement {
         String sql = "INSERT INTO tours (tourDate, packingDate, id, region, regionDetail, " +
                 "driver, status, consignor) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try {
-            Connection conn = dbConn.establishConnectionToDatabase();
+        try (Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.setString(1, tour.getTourDate());
@@ -32,7 +31,6 @@ public class TourManagement {
                 stmt.setString(8, tour.getConsignor().toString());
 
                 stmt.executeUpdate();
-                conn.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();

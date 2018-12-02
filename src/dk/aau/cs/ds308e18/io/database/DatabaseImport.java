@@ -34,8 +34,7 @@ public class DatabaseImport {
         }
 
         // Insert all regions from the arraylist
-        try {
-            Connection conn = dbConn.establishConnectionToDatabase();
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 String sql = "INSERT INTO regions (regionName) VALUES (?)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
@@ -44,7 +43,6 @@ public class DatabaseImport {
                     stmt.setString(1, region);
                     stmt.executeUpdate();
                 }
-                conn.close();
             }
         } catch(SQLException e) {
             e.printStackTrace();

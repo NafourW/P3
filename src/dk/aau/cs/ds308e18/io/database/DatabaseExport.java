@@ -17,8 +17,8 @@ public class DatabaseExport {
         ArrayList<String> regionList = new ArrayList<>();
 
         DatabaseConnection dbConn = new DatabaseConnection();
-        Connection conn = dbConn.establishConnectionToDatabase();
-        try {
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 Statement stmt = conn.createStatement();
                 ResultSet regions = stmt.executeQuery("SELECT regionName FROM regions");
@@ -26,7 +26,6 @@ public class DatabaseExport {
                 while (regions.next()) {
                     regionList.add(regions.getString(1));
                 }
-                conn.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -41,8 +41,8 @@ public class DatabaseSetup {
     */
     private void createOrderTable() {
         DatabaseConnection dbConn = new DatabaseConnection();
-        Connection conn = dbConn.establishConnectionToDatabase();
-        try {
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 String sql = "CREATE TABLE orders (" +
                         "pluckRoute INT," +
@@ -64,7 +64,6 @@ public class DatabaseSetup {
                         "project VARCHAR(255))";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
-                conn.close();
             }
         } catch(SQLException e) {
             System.out.println("The table already exists.");

@@ -14,8 +14,7 @@ public class OrderManagement {
     */
     public void createOrder(Order order) {
         DatabaseConnection dbConn = new DatabaseConnection();
-        try {
-            Connection conn = dbConn.establishConnectionToDatabase();
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if(conn != null) {
                 PreparedStatement stmt = conn.prepareStatement("INSERT INTO orders (" +
                         "pluckRoute, id, orderReference, expeditionStatus, customerName, orderDate, address, " +
@@ -42,7 +41,6 @@ public class OrderManagement {
                 stmt.setString(17, String.valueOf(order.getProject()));
 
                 stmt.executeUpdate();
-                conn.close();
             }
         } catch(SQLException e) {
             e.printStackTrace();

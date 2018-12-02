@@ -18,8 +18,7 @@ public class WareManagement {
                 "grossDepth, grossWidth, width, wareName, searchName, wareGroup, wareType, " +
                 "liftAlone, liftingTools, moveTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try {
-            Connection conn = dbConn.establishConnectionToDatabase();
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
 
             if (conn != null) {
                 PreparedStatement stmt = conn.prepareStatement(sql);
@@ -40,8 +39,6 @@ public class WareManagement {
                 stmt.setString(15, String.valueOf(ware.getMoveTime()));
 
                 stmt.executeUpdate();
-
-                conn.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
