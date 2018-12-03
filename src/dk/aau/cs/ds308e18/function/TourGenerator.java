@@ -1,5 +1,6 @@
 package dk.aau.cs.ds308e18.function;
 
+import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 
@@ -18,6 +19,8 @@ public class TourGenerator {
     public static ArrayList<Tour> generateTours(ArrayList<Order> orders){
         ArrayList<Tour> generatedTours = new ArrayList<>();
         ArrayList<Tour> filledTours = new ArrayList<>();
+
+        OrderManagement orderMan = new OrderManagement();
 
         //currently focused tour
         Tour tour = null;
@@ -70,6 +73,7 @@ public class TourGenerator {
             for (Order o : t.getOrders()) {
                 o.setTourID(t.getID());
             }
+            orderMan.applyTourID(t);
         }
 
         return generatedTours;

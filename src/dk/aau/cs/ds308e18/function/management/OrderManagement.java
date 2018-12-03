@@ -3,6 +3,7 @@ package dk.aau.cs.ds308e18.function.management;
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 import dk.aau.cs.ds308e18.model.Order;
+import dk.aau.cs.ds308e18.model.Tour;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,11 +22,11 @@ public class OrderManagement {
                 PreparedStatement stmt = conn.prepareStatement("INSERT INTO orders (" +
                         "pluckRoute, id, orderReference, expeditionStatus, customerName, orderDate, address, " +
                         "zipCode, receipt, pickup, warehouse, category, fleetOwner, printed, " +
-                        "route, FV, project) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                        "route, FV, project, tourID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
                 //TODO Fix det her med en hjælpe funktion
                 stmt.setString(1, String.valueOf(order.getPluckRoute()));
-                stmt.setString(2, String.valueOf(order.getOrderID()));
+                stmt.setString(2, String.valueOf(order.getID()));
                 stmt.setString(3, String.valueOf(order.getOrderReference()));
                 stmt.setString(4, String.valueOf(order.getExpeditionStatus()));
                 stmt.setString(5, String.valueOf(order.getCustomerName()));
@@ -41,10 +42,33 @@ public class OrderManagement {
                 stmt.setString(15, String.valueOf(order.getRegion()));
                 stmt.setString(16, String.valueOf(order.isFV()));
                 stmt.setString(17, String.valueOf(order.getProject()));
+                stmt.setString(18, String.valueOf(order.getTourID()));
 
                 stmt.executeUpdate();
             }
         } catch(SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void applyTourID(Tour tour) {
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "UPDATE orders SET tourID = ? WHERE ID = ?";
+
+                ArrayList<Order> orderList = tour.getOrders();
+
+                for(Order order : orderList) {
+                    PreparedStatement stmt = conn.prepareStatement(sql);
+                    stmt.setString(1, String.valueOf(tour.getTourID()));
+                    stmt.setString(2, String.valueOf(order.getID()));
+
+                    stmt.executeUpdate();
+                }
+            }
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
