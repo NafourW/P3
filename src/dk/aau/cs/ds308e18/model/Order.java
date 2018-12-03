@@ -26,7 +26,7 @@ public class Order {
     private boolean pickup;
     private boolean FV;
 
-    ArrayList<Ware> wares;
+    ArrayList<OrderLine> wareList;
 
     public Order() {
         id = 0;
@@ -50,7 +50,7 @@ public class Order {
         pickup = false;
         FV = false;
 
-        wares = new ArrayList<>();
+        wareList = new ArrayList<>();
     }
 
     public Order(int pluckRoute, int id, String orderReference, String expeditionStatus, String customerName,
@@ -78,7 +78,7 @@ public class Order {
         this.pickup = pickup;
         this.FV = FV;
 
-        wares = new ArrayList<>();
+        wareList = new ArrayList<>();
     }
 
     public int getOrderID() {
@@ -159,8 +159,8 @@ public class Order {
         return FV;
     }
 
-    public ArrayList<Ware> getWares() {
-        return wares;
+    public ArrayList<OrderLine> getWares() {
+        return wareList;
     }
 
     @Override
