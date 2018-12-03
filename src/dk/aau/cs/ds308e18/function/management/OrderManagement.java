@@ -78,6 +78,6 @@ public class OrderManagement {
     }
 
     public static ArrayList<Order> getUnassignedOrders() {
-        return Main.dbExport.exportOrders();
+        return Main.dbExport.exportUnassignedOrders();
     }
 }
