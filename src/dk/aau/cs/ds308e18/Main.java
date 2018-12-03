@@ -25,7 +25,6 @@ public class Main extends Application {
     @Override
     public void init() {
         //Initialize database
-        DatabaseSetup dbSetup = new DatabaseSetup();
         dbImport = new DatabaseImport();
         dbExport = new DatabaseExport();
         dbSetup = new DatabaseSetup();
