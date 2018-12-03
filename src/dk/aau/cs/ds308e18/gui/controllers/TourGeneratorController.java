@@ -67,7 +67,7 @@ public class TourGeneratorController {
             //tourGen.setRegion((allRegionsCheckBox.isSelected()) ? null : regionChoiceBox.getValue());
             //tourGen.setDate((allDatesCheckBox.isSelected()) ? null :datePicker.getValue());
 
-            ArrayList<Tour> tours = TourGenerator.generateTours(OrderManagement.getOrders());
+            ArrayList<Tour> tours = TourGenerator.generateTours(OrderManagement.getUnassignedOrders());
 
             System.out.println("Generated " + tours.size() + " tours:");
             for (Tour tour : tours) {
