@@ -22,14 +22,14 @@ public class TourManagement {
         try (Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 PreparedStatement stmt = conn.prepareStatement(sql);
-                stmt.setString(1, tour.getTourDate().toString());
-                stmt.setString(2, tour.getPackingDate().toString());
-                stmt.setString(3, tour.getID().toString());
-                stmt.setString(4, tour.getRegion());
-                stmt.setString(5, tour.getRegionDetail());
-                stmt.setString(6, tour.getDriver());
-                stmt.setString(7, tour.getStatus());
-                stmt.setString(8, tour.getConsignor().toString());
+                stmt.setString(1, String.valueOf(tour.getTourDate()));
+                stmt.setString(2, String.valueOf(tour.getPackingDate()));
+                stmt.setString(3, String.valueOf(tour.getID()));
+                stmt.setString(4, String.valueOf(tour.getRegion()));
+                stmt.setString(5, String.valueOf(tour.getRegionDetail()));
+                stmt.setString(6, String.valueOf(tour.getDriver()));
+                stmt.setString(7, String.valueOf(tour.getStatus()));
+                stmt.setString(8, String.valueOf(tour.getConsignor()));
 
                 stmt.executeUpdate();
             }
