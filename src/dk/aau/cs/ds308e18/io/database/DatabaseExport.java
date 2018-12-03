@@ -1,6 +1,7 @@
 package dk.aau.cs.ds308e18.io.database;
 
 import dk.aau.cs.ds308e18.model.Order;
+import dk.aau.cs.ds308e18.model.Tour;
 import dk.aau.cs.ds308e18.model.Ware;
 
 import java.sql.Connection;
@@ -103,7 +104,9 @@ public class DatabaseExport {
     Export everything from the tour table.
     Print them in the terminal
     */
-    public void exportTours() {
+    public ArrayList<Tour> exportTours() {
+        ArrayList<Tour> tourList = new ArrayList<>();
+
         DatabaseConnection dbConn = new DatabaseConnection();
         Connection conn = dbConn.establishConnectionToDatabase();
         try {
@@ -113,10 +116,13 @@ public class DatabaseExport {
 
                 while (tours.next()) {
                     System.out.println(tours.getString(1));
+                    Tour tour = new Tour();
+                    tourList.add(tour);
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return tourList;
     }
 }

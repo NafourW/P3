@@ -37,7 +37,7 @@ public class WareListController {
         wareListManager.setMultiSelectEnabled(true);
         wareListManager.setupColumns();;
 
-        for (Ware ware : Main.dbExport.exportWares()) {
+        for (Ware ware : Main.wares.getWares()) {
             wareListManager.addItem(ware);
         }
     }

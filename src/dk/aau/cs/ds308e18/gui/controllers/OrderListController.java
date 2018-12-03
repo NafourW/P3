@@ -51,7 +51,7 @@ public class OrderListController {
         //setup onOrderSelected method
         orderListTable.getSelectionModel().selectedItemProperty().addListener(this::onOrderSelected);
 
-        for (Order order : Main.dbExport.exportOrders()) {
+        for (Order order : Main.orders.getOrders()) {
             orderListManager.addItem(order);
         }
     }

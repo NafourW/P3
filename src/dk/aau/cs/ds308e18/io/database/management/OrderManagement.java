@@ -1,11 +1,13 @@
 package dk.aau.cs.ds308e18.io.database.management;
 
+import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 import dk.aau.cs.ds308e18.model.Order;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class OrderManagement {
 
@@ -45,5 +47,9 @@ public class OrderManagement {
         } catch(SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public ArrayList<Order> getOrders() {
+        return Main.dbExport.exportOrders();
     }
 }
