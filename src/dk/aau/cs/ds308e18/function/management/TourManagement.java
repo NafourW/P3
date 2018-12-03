@@ -14,7 +14,7 @@ public class TourManagement {
     /*
     Insert a tour into the database.
     */
-    public void createTour(Tour tour) {
+    public static void createTour(Tour tour) {
         DatabaseConnection dbConn = new DatabaseConnection();
         String sql = "INSERT INTO tours (tourDate, packingDate, id, region, regionDetail, " +
                 "driver, status, consignor) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -38,7 +38,7 @@ public class TourManagement {
         }
     }
 
-    public ArrayList<Tour> getTours(){
+    public static ArrayList<Tour> getTours(){
         return Main.dbExport.exportTours();
     }
 }

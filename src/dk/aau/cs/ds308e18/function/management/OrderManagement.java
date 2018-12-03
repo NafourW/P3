@@ -14,7 +14,7 @@ public class OrderManagement {
     /*
     Insert an order into the order table.
     */
-    public void createOrder(Order order) {
+    public static void createOrder(Order order) {
         DatabaseConnection dbConn = new DatabaseConnection();
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if(conn != null) {
@@ -49,7 +49,7 @@ public class OrderManagement {
         }
     }
 
-    public ArrayList<Order> getOrders() {
+    public static ArrayList<Order> getOrders() {
         return Main.dbExport.exportOrders();
     }
 }

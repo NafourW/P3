@@ -13,7 +13,7 @@ public class TourGenerator {
         mostEconomic
     }
 
-    public ArrayList<Tour> generateTours(ArrayList<Order> orders){
+    public static ArrayList<Tour> generateTours(ArrayList<Order> orders){
         ArrayList<Tour> generatedTours = new ArrayList<>();
 
         //temporary variables

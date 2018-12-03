@@ -1,6 +1,7 @@
 package dk.aau.cs.ds308e18.gui.controllers;
 
 import dk.aau.cs.ds308e18.Main;
+import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.gui.TableManager;
 import dk.aau.cs.ds308e18.model.Order;
 import javafx.beans.value.ObservableValue;
@@ -51,7 +52,7 @@ public class OrderListController {
         //setup onOrderSelected method
         orderListTable.getSelectionModel().selectedItemProperty().addListener(this::onOrderSelected);
 
-        for (Order order : Main.orders.getOrders()) {
+        for (Order order : OrderManagement.getOrders()) {
             orderListManager.addItem(order);
         }
     }

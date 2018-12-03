@@ -14,7 +14,7 @@ public class WareManagement {
     /*
     ....
     */
-    public void createWare(Ware ware) {
+    public static void createWare(Ware ware) {
         DatabaseConnection dbConn = new DatabaseConnection();
         String sql = "INSERT INTO wares (supplier, wareNumber, height, depth, grossHeight, " +
                 "grossDepth, grossWidth, width, wareName, searchName, wareGroup, wareType, " +
@@ -47,7 +47,7 @@ public class WareManagement {
         }
     }
 
-    public ArrayList<Ware> getWares(){
+    public static ArrayList<Ware> getWares(){
         return Main.dbExport.exportWares();
     }
 }

@@ -2,6 +2,7 @@ package dk.aau.cs.ds308e18.gui.controllers;
 
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.function.TourGenerator;
+import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 import javafx.collections.FXCollections;
@@ -28,12 +29,8 @@ public class TourGeneratorController {
 
     private ObservableList<String> regions = FXCollections.observableArrayList();
 
-    private TourGenerator tourGen;
-
     @FXML
     public void initialize() {
-        tourGen = new TourGenerator();
-
         planningChoiceBox.getItems().setAll(TourGenerator.planningMethod.values());
         planningChoiceBox.setValue(TourGenerator.planningMethod.leastTime);
 
@@ -70,7 +67,7 @@ public class TourGeneratorController {
             //tourGen.setRegion((allRegionsCheckBox.isSelected()) ? null : regionChoiceBox.getValue());
             //tourGen.setDate((allDatesCheckBox.isSelected()) ? null :datePicker.getValue());
 
-            ArrayList<Tour> tours = tourGen.generateTours(Main.orders.getOrders());
+            ArrayList<Tour> tours = TourGenerator.generateTours(OrderManagement.getOrders());
 
             System.out.println("Generated " + tours.size() + " tours:");
             for (Tour tour : tours) {
