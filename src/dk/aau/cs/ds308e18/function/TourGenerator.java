@@ -64,6 +64,14 @@ public class TourGenerator {
 
         //add the filled tours to the list that is returned
         generatedTours.addAll(filledTours);
+
+        //Update tour ids on orders
+        for (Tour t : generatedTours) {
+            for (Order o : t.getOrders()) {
+                o.setTourID(t.getID());
+            }
+        }
+
         return generatedTours;
     }
 }

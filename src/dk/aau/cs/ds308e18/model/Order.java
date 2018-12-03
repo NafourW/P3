@@ -26,6 +26,8 @@ public class Order {
     private boolean pickup;
     private boolean FV;
 
+    private int tourID;
+
     ArrayList<Ware> wares;
 
     public Order() {
@@ -49,6 +51,8 @@ public class Order {
 
         pickup = false;
         FV = false;
+
+        tourID = 0;
 
         wares = new ArrayList<>();
     }
@@ -158,6 +162,10 @@ public class Order {
     public boolean isFV() {
         return FV;
     }
+
+    public int getTourID() {return tourID;}
+
+    public void setTourID(int tourID) {this.tourID = tourID;}
 
     public ArrayList<Ware> getWares() {
         return wares;

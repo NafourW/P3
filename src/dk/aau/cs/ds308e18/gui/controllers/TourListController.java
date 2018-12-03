@@ -49,7 +49,6 @@ public class TourListController {
         tourOrdersManager = new TableManager<>(tourOrdersTable);
         tourOrdersManager.setupColumns();
 
-
         //disable tour buttons
         setTourButtonsDisabled(true);
 
