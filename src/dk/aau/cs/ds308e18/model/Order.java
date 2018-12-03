@@ -134,6 +134,10 @@ public class Order {
         return date;
     }
 
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
     public int getWeekNumber() {
         WeekFields weekFields = WeekFields.ISO;
         int weekNumber = date.get(weekFields.weekOfWeekBasedYear());
