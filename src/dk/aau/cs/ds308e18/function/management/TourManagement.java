@@ -2,6 +2,7 @@ package dk.aau.cs.ds308e18.function.management;
 
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
+import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 
 import java.sql.*;
@@ -34,13 +35,77 @@ public class TourManagement {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        //Assign the tourID created by the database to the tour object.
+        tour.setTourId(assignTourID());
+
+        //Assign the tourID of the tour to all orders under the tour.
+        updateOrderTourID(tour);
     }
 
-    public static void updateTourID(ArrayList<Tour> tourList) {
-        int counter = 1;
-        for(Tour tour : tourList) {
-            tour.setTourId(counter);
-            counter++;
+    /*
+    Select and return the last tourID in the tour table given by createTour.
+    (createTour automatically assigns a tourID to a tour but this number is not given to the tour object.
+    That is what this method makes sure happens.)
+    */
+    private static int assignTourID() {
+        DatabaseConnection dbConn = new DatabaseConnection();
+        String sql = "SELECT tourID FROM tours ORDER BY tourID DESC LIMIT 1";
+
+        try (Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql);
+
+                if(rs.next())
+                    return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    /*
+    Update tourID for orders on the given tour to match them.
+    */
+    private static void updateOrderTourID(Tour tour) {
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+
+                // If there are any orders on the tour - update their tourID
+                if(!(tour.getOrders().isEmpty())) {
+                    ArrayList<Order> orderList = tour.getOrders();
+                    for(Order order : orderList) {
+                        updateTourID(tour.getTourID(), order.getOrderID());
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*
+    Helping method.
+    Excutes the actul update for each order passed from the previous method.
+    */
+    private static void updateTourID(int tourID, int orderID) {
+        DatabaseConnection dbConn = new DatabaseConnection();
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "UPDATE orders SET tourID = ? WHERE orderID = ?";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+
+                stmt.setInt(1, tourID);
+                stmt.setInt(2, orderID);
+
+                stmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 

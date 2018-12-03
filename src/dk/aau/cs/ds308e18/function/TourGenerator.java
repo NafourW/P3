@@ -71,8 +71,6 @@ public class TourGenerator {
         for (Tour t : generatedTours) {
             TourManagement.createTour(t);
         }
-        TourManagement.updateTourID(generatedTours);
-        OrderManagement.applyTourID(generatedTours);
 
         return generatedTours;
     }
