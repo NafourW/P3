@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Locale;
+import java.util.MissingResourceException;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
@@ -75,11 +76,17 @@ public class GUI {
     Get a translated string from the resource bundle
     */
     public String getLocalString(String key) {
-        String value = localStrings.getString(key);
-        if (!value.isEmpty())
-            return value;
-        else
+        String value = null;
+        try {
+            value = localStrings.getString(key);
+        }
+        catch (MissingResourceException e) {
+
+        }
+        if (value == null || value.isEmpty())
             return key;
+
+        return value;
     }
 
     /*

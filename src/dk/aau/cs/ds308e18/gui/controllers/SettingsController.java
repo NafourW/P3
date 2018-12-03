@@ -112,4 +112,10 @@ public class SettingsController {
     private void clearAllToursButtonAction(ActionEvent event) {
         Main.gui.showYesNoDialog("label_are_you_sure", "message_clear_tours_confirmation");
     }
+
+    @FXML
+    private void refreshDatabaseButtonAction(ActionEvent event) {
+        Main.gui.showYesNoDialog("label_are_you_sure", "message_refresh_database_confirmation");
+        // Drop database
+    }
 }

@@ -120,6 +120,14 @@
             <Insets left="20.0" />
          </VBox.margin>
       </Button>
+      <Button layoutX="40.0" layoutY="452.0" mnemonicParsing="false" onAction="#refreshDatabaseButtonAction" prefHeight="40.0" prefWidth="180.0" styleClass="button-red" text="Refresh Database">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="20.0" top="10.0" />
+         </VBox.margin>
+      </Button>
       <HBox alignment="BOTTOM_LEFT" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets left="20.0" right="20.0" />
