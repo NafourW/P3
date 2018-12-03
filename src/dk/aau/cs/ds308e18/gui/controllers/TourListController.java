@@ -130,10 +130,10 @@ public class TourListController {
 
     @FXML
     private void deleteTourButtonAction(ActionEvent event) {
+        TourManagement.removeTour(selectedTour);
         tourListManager.removeItem(selectedTour);
         onTourSelected(null, selectedTour,null);
         tourListManager.clearSelection();
-        //TODO: remove tour from database
     }
 
     @FXML

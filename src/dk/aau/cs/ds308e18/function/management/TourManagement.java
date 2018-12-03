@@ -38,6 +38,11 @@ public class TourManagement {
         }
     }
 
+    public static void removeTour(Tour tour){
+        //TODO: 1. Find all orders with this tourID and set it to 0
+        //      2. Delete tour
+    }
+
     public static ArrayList<Tour> getTours(){
         return Main.dbExport.exportTours();
     }
