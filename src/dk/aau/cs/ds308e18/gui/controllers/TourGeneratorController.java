@@ -3,6 +3,7 @@ package dk.aau.cs.ds308e18.gui.controllers;
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.function.TourGenerator;
 import dk.aau.cs.ds308e18.model.Order;
+import dk.aau.cs.ds308e18.model.Tour;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -34,7 +35,7 @@ public class TourGeneratorController {
         tourGen = new TourGenerator();
 
         planningChoiceBox.getItems().setAll(TourGenerator.planningMethod.values());
-        planningChoiceBox.setValue(TourGenerator.planningMethod.distance);
+        planningChoiceBox.setValue(TourGenerator.planningMethod.leastTime);
 
         regions.addAll(Main.dbExport.exportRegionNames());
         regionChoiceBox.setItems(regions);
@@ -64,9 +65,21 @@ public class TourGeneratorController {
         boolean confirmed = Main.gui.showYesNoDialog("label_tourgen_confirmation_title", "message_tourgen_confirmation");
 
         if (confirmed) {
+            System.out.println("Generating tours...");
+
             //tourGen.setRegion((allRegionsCheckBox.isSelected()) ? null : regionChoiceBox.getValue());
             //tourGen.setDate((allDatesCheckBox.isSelected()) ? null :datePicker.getValue());
-            tourGen.generateTours(new ArrayList<Order>());
+
+            ArrayList<Tour> tours = tourGen.generateTours(Main.orders.getOrders());
+
+            System.out.println("Generated " + tours.size() + " tours:");
+            for (Tour tour : tours) {
+                System.out.println(tour.getTourDate() + " - " + tour.getOrders().size() + " orders");
+                //for (Order o : tour.getOrders()) {
+                //    System.out.println("    " + o);
+                //}
+            }
+
             close();
         }
     }

@@ -28,6 +28,13 @@ public class Tour {
         orders = new ArrayList<>();
     }
 
+    public Tour(LocalDate date) {
+        id = 0;
+        tourDate = date;
+        packingDate = date;
+        orders = new ArrayList<>();
+    }
+
     public void addOrder(Order order) {
         orders.add(order);
     }
@@ -76,12 +83,12 @@ public class Tour {
         return orders;
     }
 
-    public String getTourDate() {
-        return tourDate.toString();
+    public LocalDate getTourDate() {
+        return tourDate;
     }
 
-    public String getPackingDate() {
-        return packingDate.toString();
+    public LocalDate getPackingDate() {
+        return packingDate;
     }
 
     public String getDriver() {

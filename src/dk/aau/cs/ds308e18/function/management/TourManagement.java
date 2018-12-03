@@ -22,8 +22,8 @@ public class TourManagement {
         try (Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 PreparedStatement stmt = conn.prepareStatement(sql);
-                stmt.setString(1, tour.getTourDate());
-                stmt.setString(2, tour.getPackingDate());
+                stmt.setString(1, tour.getTourDate().toString());
+                stmt.setString(2, tour.getPackingDate().toString());
                 stmt.setString(3, tour.getID().toString());
                 stmt.setString(4, tour.getRegion());
                 stmt.setString(5, tour.getRegionDetail());
