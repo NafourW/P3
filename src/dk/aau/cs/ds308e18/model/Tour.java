@@ -11,12 +11,14 @@ public class Tour {
 
     private LocalDate tourDate;
     private LocalDate packingDate;
-    private Integer id;
+    private int id;
     private String region;
     private String regionDetail;
     private String driver;
     private String status;
     private Boolean consignor;
+
+    private int tourID;
 
     String directory = "resources/GenerateTour.csv";
     float breakTime;
@@ -99,7 +101,7 @@ public class Tour {
         return region;
     }
 
-    public Integer getID() {
+    public int getID() {
         return id;
     }
 
@@ -113,5 +115,9 @@ public class Tour {
 
     public String getRegionDetail() {
         return regionDetail;
+    }
+
+    public int getTourID() {
+        return tourID;
     }
 }

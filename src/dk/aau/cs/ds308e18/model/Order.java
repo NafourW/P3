@@ -26,6 +26,7 @@ public class Order {
     private boolean pickup;
     private boolean FV;
 
+    private int orderID;
     private int tourID;
 
     ArrayList<OrderLine> wareList;
@@ -52,6 +53,7 @@ public class Order {
         pickup = false;
         FV = false;
 
+        orderID = 0;
         tourID = 0;
 
         wareList = new ArrayList<>();
@@ -86,6 +88,10 @@ public class Order {
     }
 
     public int getOrderID() {
+        return orderID;
+    }
+
+    public int getID() {
         return id;
     }
 
