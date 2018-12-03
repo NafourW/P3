@@ -2,6 +2,7 @@ package dk.aau.cs.ds308e18.function.management;
 
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
+import dk.aau.cs.ds308e18.io.database.DatabaseExport;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 
@@ -51,21 +52,26 @@ public class OrderManagement {
         }
     }
 
-    public static void applyTourID(Tour tour) {
+    public static void applyTourID() {
         DatabaseConnection dbConn = new DatabaseConnection();
+
+        DatabaseExport dataExport = new DatabaseExport();
+        ArrayList<Tour> tourList = dataExport.exportTours();
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
-                String sql = "UPDATE orders SET tourID = ? WHERE ID = ?";
+                String sql = "UPDATE orders SET tourID = ? WHERE orderID = ?";
 
-                ArrayList<Order> orderList = tour.getOrders();
+                for(Tour tour : tourList) {
+                    ArrayList<Order> orderList = tour.getOrders();
+                    PreparedStatement stmt;
+                    for(Order order : orderList) {
+                        stmt = conn.prepareStatement(sql);
+                        stmt.setInt(1, tour.getTourID());
+                        stmt.setInt(2, order.getID());
 
-                for(Order order : orderList) {
-                    PreparedStatement stmt = conn.prepareStatement(sql);
-                    stmt.setString(1, String.valueOf(tour.getTourID()));
-                    stmt.setString(2, String.valueOf(order.getID()));
-
-                    stmt.executeUpdate();
+                        stmt.executeUpdate();
+                    }
                 }
             }
         } catch (SQLException e) {

@@ -36,7 +36,7 @@ public class WareListController {
     public void initialize() {
         wareListManager = new TableManager<>(wareListTable);
         wareListManager.setMultiSelectEnabled(true);
-        wareListManager.setupColumns();;
+        wareListManager.setupColumns();
 
         for (Ware ware : WareManagement.getWares()) {
             wareListManager.addItem(ware);

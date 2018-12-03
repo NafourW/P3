@@ -70,8 +70,8 @@ public class TourGenerator {
         //Update tour ids on orders
         for (Tour t : generatedTours) {
             TourManagement.createTour(t);
-            OrderManagement.applyTourID(t);
         }
+        OrderManagement.applyTourID();
 
         return generatedTours;
     }

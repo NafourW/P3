@@ -34,6 +34,21 @@ public class DatabaseSetup {
         }
     }
 
+    public void reloadDatabase() {
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                Statement stmt = conn.createStatement();
+                stmt.executeUpdate("DROP DATABASE vibocold_db");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        databaseSetup();
+    }
+
     /*
     Create a table called "orders" with all the attributes associated with the class "Order".
     If it already exists, it'll print a response.

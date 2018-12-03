@@ -120,4 +120,8 @@ public class Tour {
     public int getTourID() {
         return tourID;
     }
+
+    public void setTourId(int tourID) {
+        this.tourID = tourID;
+    }
 }

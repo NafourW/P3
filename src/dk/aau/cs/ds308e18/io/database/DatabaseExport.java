@@ -101,8 +101,8 @@ public class DatabaseExport {
                 ResultSet tours = stmt.executeQuery("SELECT * FROM tours");
 
                 while (tours.next()) {
-                    System.out.println(tours.getString(1));
                     Tour tour = new Tour();
+                    tour.setTourId(tours.getInt(1));
                     tourList.add(tour);
                 }
             }

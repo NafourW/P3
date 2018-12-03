@@ -16,6 +16,7 @@ public class Main extends Application {
     //Used for interacting with the database
     public static DatabaseImport dbImport;
     public static DatabaseExport dbExport;
+    public static DatabaseSetup dbSetup;
 
     public static void main(String[] args) {
         launch(args);
@@ -27,6 +28,7 @@ public class Main extends Application {
         DatabaseSetup dbSetup = new DatabaseSetup();
         dbImport = new DatabaseImport();
         dbExport = new DatabaseExport();
+        dbSetup = new DatabaseSetup();
 
         //Initialize GUI
         gui = new GUI();

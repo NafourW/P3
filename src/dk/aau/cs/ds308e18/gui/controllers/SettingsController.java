@@ -115,7 +115,9 @@ public class SettingsController {
 
     @FXML
     private void refreshDatabaseButtonAction(ActionEvent event) {
-        Main.gui.showYesNoDialog("label_are_you_sure", "message_refresh_database_confirmation");
-        // Drop database
+        boolean confirmed = Main.gui.showYesNoDialog("label_are_you_sure", "message_refresh_database_confirmation");
+        // Reload database
+        if(confirmed)
+            Main.dbSetup.reloadDatabase();
     }
 }
