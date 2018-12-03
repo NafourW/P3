@@ -14,6 +14,7 @@ public class DatabaseSetup {
         createOrderTable();
         createTourTable();
         createWareTable();
+        createWareListTable();
         createRegionTable();
     }
 
@@ -25,11 +26,9 @@ public class DatabaseSetup {
         String host = "jdbc:mysql://localhost:3306/";
         String uName = "root";
         String uPass = "";
-        try {
-            Connection conn = DriverManager.getConnection(host, uName, uPass);
+        try(Connection conn = DriverManager.getConnection(host, uName, uPass)) {
             Statement stmt = conn.createStatement();
             stmt.executeUpdate("CREATE DATABASE vibocold_db");
-            conn.close();
         } catch(SQLException e) {
             System.out.println("The database already exists.");
         }
@@ -45,6 +44,8 @@ public class DatabaseSetup {
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 String sql = "CREATE TABLE orders (" +
+                        "orderID INT PRIMARY KEY AUTO_INCREMENT," +
+                        "tourID INT," +
                         "pluckRoute INT," +
                         "id INT," +
                         "orderReference VARCHAR(255)," +
@@ -76,10 +77,10 @@ public class DatabaseSetup {
     */
     private void createTourTable() {
         DatabaseConnection dbConn = new DatabaseConnection();
-        Connection conn = dbConn.establishConnectionToDatabase();
-        try {
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 String sql = "CREATE TABLE tours (" +
+                        "tourID INT PRIMARY KEY AUTO_INCREMENT," +
                         "tourDate VARCHAR(255)," +
                         "packingDate VARCHAR(255)," +
                         "id INT," +
@@ -90,7 +91,6 @@ public class DatabaseSetup {
                         "consignor VARCHAR(255))";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
-                conn.close();
             }
         } catch(SQLException e) {
             System.out.println("The table already exists.");
@@ -98,15 +98,37 @@ public class DatabaseSetup {
     }
 
     /*
-    Create a table called "wares" with all the attributes associated with the class "Ware".
-    If it already exists, it'll print a response.
+    Create a table called "wares" that holds the ID for the order that the ware is on
+    and an ID that references a ware in the "warelist" table seen below.
+    Lastly it holds an amount of that specific ware.
     */
     private void createWareTable() {
         DatabaseConnection dbConn = new DatabaseConnection();
-        Connection conn = dbConn.establishConnectionToDatabase();
-        try {
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 String sql = "CREATE TABLE wares (" +
+                        "orderID INT," +
+                        "wareID INT," +
+                        "amount INT)";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.executeUpdate();
+            }
+        } catch(SQLException e) {
+            System.out.println("The table already exists.");
+        }
+    }
+
+    /*
+    Create a table called "warelist" with all the attributes associated with the class "Ware".
+    If it already exists, it'll print a response.
+    */
+    private void createWareListTable() {
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "CREATE TABLE warelist (" +
+                        "wareID INT PRIMARY KEY AUTO_INCREMENT," +
                         "supplier VARCHAR(255)," +
                         "wareNumber VARCHAR(255)," +
                         "height INT," +
@@ -124,7 +146,6 @@ public class DatabaseSetup {
                         "moveTime FLOAT)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
-                conn.close();
             }
         } catch(SQLException e) {
             System.out.println("The table already exists.");
@@ -137,8 +158,8 @@ public class DatabaseSetup {
     private void createRegionTable() {
         DatabaseConnection dbConn = new DatabaseConnection();
         DatabaseImport dbImpo = new DatabaseImport();
-        Connection conn = dbConn.establishConnectionToDatabase();
-        try {
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 String sql = "CREATE TABLE regions (" +
                         "id INT PRIMARY KEY AUTO_INCREMENT," +
@@ -150,7 +171,6 @@ public class DatabaseSetup {
                 to avoid importing the names every time the program is executed.
                 */
                 dbImpo.importRegionNames();
-                conn.close();
             }
         } catch(SQLException e) {
             System.out.println("The table already exists.");

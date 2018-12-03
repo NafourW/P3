@@ -16,7 +16,7 @@ public class WareManagement {
     */
     public static void createWare(Ware ware) {
         DatabaseConnection dbConn = new DatabaseConnection();
-        String sql = "INSERT INTO wares (supplier, wareNumber, height, depth, grossHeight, " +
+        String sql = "INSERT INTO warelist (supplier, wareNumber, height, depth, grossHeight, " +
                 "grossDepth, grossWidth, width, wareName, searchName, wareGroup, wareType, " +
                 "liftAlone, liftingTools, moveTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
