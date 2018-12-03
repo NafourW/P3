@@ -25,7 +25,7 @@ public class OrderManagement {
 
                 //TODO Fix det her med en hjælpe funktion
                 stmt.setString(1, String.valueOf(order.getPluckRoute()));
-                stmt.setString(2, String.valueOf(order.getID()));
+                stmt.setString(2, String.valueOf(order.getOrderID()));
                 stmt.setString(3, String.valueOf(order.getOrderReference()));
                 stmt.setString(4, String.valueOf(order.getExpeditionStatus()));
                 stmt.setString(5, String.valueOf(order.getCustomerName()));
@@ -50,6 +50,10 @@ public class OrderManagement {
     }
 
     public static ArrayList<Order> getOrders() {
+        return Main.dbExport.exportOrders();
+    }
+
+    public static ArrayList<Order> getUnassignedOrders() {
         return Main.dbExport.exportOrders();
     }
 }

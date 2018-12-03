@@ -6,6 +6,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.util.ArrayList;
+
 /*
 Class that handles a TableView which shows items with type S
 */
@@ -37,6 +39,10 @@ public class TableManager<S> {
 
     public void addItem(S item) {
         table.getItems().add(item);
+    }
+
+    public void addItems(ArrayList<S> items) {
+        table.getItems().addAll(items);
     }
 
     public void removeItem(S item) {

@@ -37,12 +37,12 @@
                <content>
                   <TableView fx:id="tourListTable" prefHeight="200.0" prefWidth="200.0">
                     <columns>
-                      <TableColumn fx:id="tourDateColumn" prefWidth="75.0" text="%label_tour_date" />
-                      <TableColumn fx:id="tourIDColumn" prefWidth="75.0" text="%label_tour_id" />
-                        <TableColumn fx:id="tourRegionColumn" prefWidth="75.0" text="%label_tour_region" />
-                        <TableColumn fx:id="tourDriverColumn" prefWidth="75.0" text="%label_tour_driver" />
-                        <TableColumn fx:id="tourStatusColumn" prefWidth="75.0" text="%label_tour_status" />
-                        <TableColumn fx:id="tourConsignorColumn" prefWidth="100.0" text="%label_tour_consignor" />
+                      <TableColumn fx:id="TourDate" prefWidth="75.0" text="%label_tour_date" />
+                      <TableColumn fx:id="ID" prefWidth="75.0" text="%label_tour_id" />
+                        <TableColumn fx:id="Region" prefWidth="75.0" text="%label_tour_region" />
+                        <TableColumn fx:id="Driver" prefWidth="75.0" text="%label_tour_driver" />
+                        <TableColumn fx:id="Status" prefWidth="75.0" text="%label_tour_status" />
+                        <TableColumn fx:id="Consignor" prefWidth="100.0" text="%label_tour_consignor" />
                     </columns>
                   </TableView>
                </content>
@@ -106,10 +106,10 @@
          <content>
             <TableView fx:id="tourOrdersTable" prefHeight="200.0" prefWidth="200.0">
                <columns>
-                  <TableColumn fx:id="orderIDColumn" prefWidth="75.0" text="%label_order_id" />
-                  <TableColumn fx:id="orderNameColumn" prefWidth="120.0" text="%label_order_customer_name" />
-                  <TableColumn fx:id="orderAddressColumn" prefWidth="120.0" text="%label_order_address" />
-                  <TableColumn fx:id="orderZipCodeColumn" prefWidth="75.0" text="%label_order_zip_code" />
+                  <TableColumn fx:id="OrderID" prefWidth="75.0" text="%label_order_id" />
+                  <TableColumn fx:id="CustomerName" prefWidth="120.0" text="%label_order_customer_name" />
+                  <TableColumn fx:id="Address" prefWidth="120.0" text="%label_order_address" />
+                  <TableColumn fx:id="ZipCode" prefWidth="75.0" text="%label_order_zip_code" />
                </columns>
             </TableView>
          </content>
@@ -123,7 +123,16 @@
             </Button>
             <VBox alignment="BOTTOM_RIGHT" HBox.hgrow="ALWAYS">
                <children>
-                  <Button minHeight="50.0" minWidth="120.0" mnemonicParsing="false" onAction="#backButtonAction" text="%button_back" textAlignment="CENTER" />
+                  <HBox alignment="CENTER_RIGHT">
+                     <children>
+                        <Button minHeight="50.0" minWidth="120.0" mnemonicParsing="false" onAction="#generateToursButtonAction" text="%button_generate_tours" textAlignment="CENTER">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="50.0" minWidth="120.0" mnemonicParsing="false" onAction="#backButtonAction" text="%button_back" textAlignment="CENTER" />
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </children>

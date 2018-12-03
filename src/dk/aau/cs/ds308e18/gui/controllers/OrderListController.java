@@ -21,7 +21,7 @@ public class OrderListController {
     @FXML private TableView<Order> orderListTable;
 
     //Columns
-    @FXML private TableColumn<Order, Integer> ID;
+    @FXML private TableColumn<Order, Integer> OrderID;
     @FXML private TableColumn<Order, LocalDate> Date;
     @FXML private TableColumn<Order, Integer> WeekNumber;
     @FXML private TableColumn<Order, String> Region;
@@ -52,9 +52,7 @@ public class OrderListController {
         //setup onOrderSelected method
         orderListTable.getSelectionModel().selectedItemProperty().addListener(this::onOrderSelected);
 
-        for (Order order : OrderManagement.getOrders()) {
-            orderListManager.addItem(order);
-        }
+        refreshOrderList();
     }
 
     /*
@@ -73,6 +71,11 @@ public class OrderListController {
         editOrderButton.setDisable(selectedOrder == null);
     }
 
+    private void refreshOrderList(){
+        orderListManager.clearItems();
+        orderListManager.addItems(OrderManagement.getUnassignedOrders());
+    }
+
     @FXML
     private void tourListButtonAction(ActionEvent event) throws IOException{
         Main.gui.changeView("TourList");
@@ -81,6 +84,7 @@ public class OrderListController {
     @FXML
     private void generateToursButtonAction(ActionEvent event) throws IOException {
         Main.gui.openWindow("TourGenerator", "label_tourgen_title");
+        refreshOrderList();
     }
 
     @FXML

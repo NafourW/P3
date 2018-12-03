@@ -81,7 +81,7 @@ public class Order {
         wares = new ArrayList<>();
     }
 
-    public int getID() {
+    public int getOrderID() {
         return id;
     }
 

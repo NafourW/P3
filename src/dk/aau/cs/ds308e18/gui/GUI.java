@@ -7,6 +7,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -128,7 +129,9 @@ public class GUI {
     }
 
     /*
-    Opens a new non-resizable window with the given view
+    Opens a new non-resizable window with the given view.
+    While the window is active, the main window can not be used,
+    and the program waits until the new window is closed.
     */
     public void openWindow(String view, String titleKey) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/views/" + view + ".fxml"), localStrings);
@@ -136,10 +139,11 @@ public class GUI {
         Scene newScene = new Scene(root);
         Stage newWindow = new Stage();
 
+        newWindow.initModality(Modality.APPLICATION_MODAL);
         newWindow.setScene(newScene);
         newWindow.setResizable(false);
         newWindow.setTitle(getLocalString(titleKey));
-        newWindow.show();
+        newWindow.showAndWait();
     }
 
     /*

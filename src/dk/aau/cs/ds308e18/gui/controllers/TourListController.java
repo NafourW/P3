@@ -1,6 +1,7 @@
 package dk.aau.cs.ds308e18.gui.controllers;
 
 import dk.aau.cs.ds308e18.Main;
+import dk.aau.cs.ds308e18.function.management.TourManagement;
 import dk.aau.cs.ds308e18.gui.TableManager;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
@@ -21,40 +22,33 @@ public class TourListController {
     @FXML private Button releaseTourButton;
 
     @FXML private TableView<Tour> tourListTable;
-    @FXML private TableColumn<Tour, String> tourDateColumn;
-    @FXML private TableColumn<Tour, Integer> tourIDColumn;
-    @FXML private TableColumn<Tour, String> tourRegionColumn;
-    @FXML private TableColumn<Tour, String> tourDriverColumn;
-    @FXML private TableColumn<Tour, Boolean> tourStatusColumn;
-    @FXML private TableColumn<Tour, Boolean> tourConsignorColumn;
+    @FXML private TableColumn<Tour, String> TourDate;
+    @FXML private TableColumn<Tour, Integer> ID;
+    @FXML private TableColumn<Tour, String> Region;
+    @FXML private TableColumn<Tour, String> Driver;
+    @FXML private TableColumn<Tour, Boolean> Status;
+    @FXML private TableColumn<Tour, Boolean> Consignor;
 
     @FXML private TableView<Order> tourOrdersTable;
-    @FXML private TableColumn<Tour, Integer> orderIDColumn;
-    @FXML private TableColumn<Tour, String> orderNameColumn;
-    @FXML private TableColumn<Tour, String> orderAddressColumn;
-    @FXML private TableColumn<Tour, Integer> orderZipCodeColumn;
+    @FXML private TableColumn<Tour, Integer> OrderID;
+    @FXML private TableColumn<Tour, String> CustomerName;
+    @FXML private TableColumn<Tour, String> Address;
+    @FXML private TableColumn<Tour, Integer> ZipCode;
 
     private TableManager<Tour> tourListManager;
     private TableManager<Order> tourOrdersManager;
 
-    private Tour selectedTour;
+    private Tour selectedTour = null;
 
     @FXML
     private void initialize(){
         //setup tables
         tourListManager = new TableManager<>(tourListTable);
-        tourListManager.setupColumn(tourDateColumn, "TourDate");
-        tourListManager.setupColumn(tourIDColumn, "ID");
-        tourListManager.setupColumn(tourRegionColumn, "Region");
-        tourListManager.setupColumn(tourDriverColumn, "Driver");
-        tourListManager.setupColumn(tourStatusColumn, "Status");
-        tourListManager.setupColumn(tourConsignorColumn, "Consignor");
+        tourListManager.setupColumns();
 
         tourOrdersManager = new TableManager<>(tourOrdersTable);
-        tourOrdersManager.setupColumn(orderIDColumn, "ID");
-        tourOrdersManager.setupColumn(orderNameColumn, "CustomerName");
-        tourOrdersManager.setupColumn(orderAddressColumn, "Address");
-        tourOrdersManager.setupColumn(orderZipCodeColumn, "ZipCode");
+        tourOrdersManager.setupColumns();
+
 
         //disable tour buttons
         setTourButtonsDisabled(true);
@@ -62,8 +56,7 @@ public class TourListController {
         //setup onTourSelected method
         tourListTable.getSelectionModel().selectedItemProperty().addListener(this::onTourSelected);
 
-        //no tour currently selected
-        selectedTour = null;
+        refreshTourList();
     }
 
     private void setTourButtonsDisabled(boolean disabled) {
@@ -101,9 +94,22 @@ public class TourListController {
         }
     }
 
+    private void refreshTourList() {
+        tourListManager.clearItems();
+        tourListManager.addItems(TourManagement.getTours());
+
+        onTourSelected(null, selectedTour,null);
+        tourListManager.clearSelection();
+    }
+
     @FXML
     private void orderListButtonAction(ActionEvent event) throws IOException {
         Main.gui.changeView("OrderList");
+    }
+
+    @FXML
+    private void generateToursButtonAction(ActionEvent event) throws IOException {
+        Main.gui.openWindow("TourGenerator", "label_tourgen_title");
     }
 
     @FXML
