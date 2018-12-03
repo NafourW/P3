@@ -113,7 +113,6 @@ public class Order {
         return category;
     }
 
-
     public String getCustomerName() {
         return customerName;
     }
@@ -143,7 +142,6 @@ public class Order {
         int weekNumber = date.get(weekFields.weekOfWeekBasedYear());
         return weekNumber;
     }
-
 
     public boolean isPrinted() {
         return printed;

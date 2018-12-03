@@ -1,327 +1,332 @@
 ﻿Leverandør;Varenummer;Højde;Dybde;Bruttohøjde;Bruttodybde;Bruttobredde;Bredde;Varenavn;Søgenavn;Varegruppe;Varetype;LøftesAlene;Løfter;FlytteTid;Fyld (m3)
-866266060;AHT AC W FLOWER;;;1.495,00;766,00;914,00;;AHT AC Flower - blomsterkøler med 2 hylder;Blomsterkøler;1030;Vare;Ja;Ja;5,00;1,04668538
-866266060;AHT MINI;;;1.220,00;527,00;460,00;;Skaffe vare - AHT MINI - convenience køler - 82L;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,2957524
-866266060;AHT MINI STARBUCKS;;;1.220,00;527,00;460,00;;Skaffe vare - Convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,2957524
-91518801;AIDA 120 BO M;;;1.300,00;770,00;1.200,00;;AIDA 120 BO M - SORT - Convenience køler - BAKE OFF;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,2012
-91518801;AIDA 120 HC M;;;1.300,00;770,00;1.200,00;;AIDA 120 HC M - SORT - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,2012
-91518801;AIDA 120 HC M GULD;;;1.300,00;770,00;1.200,00;;AIDA 120 HC M - GULD - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,2012
-91518801;AIDA 120 HC M GULD S;;;1.300,00;770,00;1.200,00;;AIDA 120 HC M - GULD - Convenience køler - ombygget;Conveniencekøler;1030;Stykliste;Nej;Ja;10,00;1,2012
-91518801;AIDA 120 HC STS;;;1.300,00;770,00;1.200,00;;AIDA 120 HC M - Rustfri - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,2012
-91518801;AIDA 120 SO A;;;1.300,00;770,00;1.200,00;;AIDA 120 SO A -  SORT - Convenience - Neutral;Convenience;1030;Vare;Nej;Ja;10,00;1,2012
-91518801;AIDA 120 SO M;;;1.300,00;770,00;1.200,00;;AIDA 120 SO M - SORT - Convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,2012
-91518801;AIDA 120 SO M HC RET;;;1.300,00;700,00;1.200,00;;AIDA 120 HC M - SORT - Convenience køler - konfekture;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,092
-91518801;AIDA 120 SO M REM S;;;1.300,00;700,00;1.200,00;;AIDA 120 SO M REMOTE - Kagedisk med LED lys;Conveniencekøler;1030;Stykliste;Nej;Ja;10,00;1,092
-91518801;AIDA 120 SO M REMOTE;;;1.300,00;700,00;1.200,00;;AIDA 120 SO M REMOTE - Kagedisk med LED lys;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,092
-91518801;AIDA 120 SO M RETRO;;;1.300,00;770,00;1.200,00;;AIDO 120 SO M - SORT - Convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,2012
-91518801;AIDA 120 SO M STS;;;1.300,00;770,00;1.200,00;;AIDO 120 SO M - RUSTFRI - Convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,2012
-91518801;AIDA 120 SS 0;;;1.300,00;770,00;1.200,00;;AIDA 120 SS 0 - SORT - Convenience køler;Convenience køler;1030;Vare;Nej;Ja;10,00;1,2012
-91518801;AIDA 120 SS 0 STS;;;1.300,00;770,00;1.200,00;;AIDA 120 SS M - RUSTFRI - Convenience køler;Convenience køler;1030;Vare;Nej;Ja;10,00;1,2012
-91518801;AIDA 120 SS M;;;1.300,00;770,00;1.200,00;;AIDA 120 SS M - SORT - Convenience - Selvbetjeningskøler;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,2012
-91518801;AIDA 120 SS SO RETRO;;;1.300,00;770,00;1.200,00;;AIDO 120 SO/SF  M - SORT - Convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,2012
-91518801;AIDA 120 SSO M;;;1.300,00;770,00;1.200,00;;AIDA 120 SO M - SORT - Convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,2012
-91518801;AIDA 150 HC M;;;1.300,00;770,00;1.500,00;;AIDA 150 HC M - SORT - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,5015
-91518801;AIDA 150 HC M GULD;;;1.300,00;770,00;1.500,00;;AIDA 150 HC - GULD - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,5015
-91518801;AIDA 150 SO A;;;1.300,00;770,00;1.500,00;;AIDA 150 SO A - Kagedisk med LED lys;Convenience;1030;Vare;Nej;Ja;10,00;1,5015
-91518801;AIDA 150 SO HC RETRO;;;1.300,00;770,00;1.500,00;;AIDA 150 HC M - SORT - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,5015
-91518801;AIDA 150 SO M;;;1.300,00;770,00;1.500,00;;AIDA 150 SO M - Kagedisk med LED lys;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,5015
-91518801;AIDA 150 SO M RETRO;;;1.300,00;770,00;1.500,00;;AIDA 150 SO M RETRO - Kagedisk med LED lys;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,5015
-91518801;AIDA 60 BO A;;;1.300,00;770,00;600,00;;AIDA 60 BO A -  SORT - Convenience - Neutral;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,6006
-91518801;AIDA 60 BO M;;;1.300,00;770,00;600,00;;AIDA 60 BO M - SORT - Convenience køler - BAKE OFF;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,6006
-91518801;AIDA 60 SO 0 STS;;;1.300,00;770,00;600,00;;AIDA 60 SO M - RUSTFRI - Convenience køler;Convenience køler;1030;Vare;Ja;Ja;5,00;0,6006
-91518801;AIDA 60 SO A;;;1.300,00;770,00;600,00;;AIDA 60 SO A -  SORT - Convenience - Neutral;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,6006
-91518801;AIDA 60 SO A STS;;;1.300,00;770,00;600,00;;AIDA 60 SO A STS - Betjeningsdisk - RUSTFRI -  LED lys;Convenience køler;1030;Vare;Ja;Ja;5,00;0,6006
-91518801;AIDA 60 SO M;;;1.300,00;770,00;600,00;;AIDA 60 SO M - SORT - Convenience køler;Convenience køler;1030;Vare;Ja;Ja;5,00;0,6006
-91518801;AIDA 60 SO M RETRO;;;1.300,00;770,00;600,00;;AIDA 60 SO M RETRO - SORT - Convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,6006
-91518801;AIDA 60 SO M STS;;;1.300,00;770,00;600,00;;AIDA 60 SO M - RUSTFRI - Convenience køler;Convenience køler;1030;Vare;Ja;Ja;5,00;0,6006
-91518801;AIDA 90 BO A;;;1.300,00;770,00;900,00;;AIDA 90 BO - SORT - Convenience - Neutral - BAKE-OFF;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9009
-91518801;AIDA 90 BO M;;;1.300,00;770,00;900,00;;AIDA 90 BO M - SORT - Convenience køler - BAKE OFF;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9009
-91518801;AIDA 90 HC M;;;1.300,00;770,00;900,00;;AIDA 90 HC M - SORT - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9009
-91518801;AIDA 90 HC M GULD;;;1.300,00;770,00;900,00;;AIDA 90 HC M - GULD - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9009
-91518801;AIDA 90 HC M GULD S;;;1.300,00;770,00;900,00;;AIDA 90 HC M - GULD - Convenience køler - ombygget;Conveniencekøler;1030;Stykliste;Ja;Ja;5,00;0,9009
-91518801;AIDA 90 HC STS;;;1.300,00;770,00;900,00;;AIDA 90 HC M - rustfri - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9009
-91518801;AIDA 90 SO A;;;1.300,00;770,00;900,00;;AIDA 90 SO A - SORT - Convenience - Neutral;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9009
-91518801;AIDA 90 SO A STS;;;1.300,00;770,00;900,00;;AIDA 90 SO A - RUSTFRI - Convenience - Neutral;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9009
-91518801;AIDA 90 SO M;;;1.300,00;770,00;900,00;;AIDA 90 SO M - SORT - Convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9009
-91518801;AIDA 90 SO M HC RET;;;1.300,00;770,00;900,00;;AIDA 90 SO HC RETRO - Chokolade disk - Sort - LED lys;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9009
-91518801;AIDA 90 SO M RETRO;;;1.300,00;770,00;900,00;;AIDA 90 SO M - SORT - Convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9009
-91518801;AIDA 90 SS 0 STS;;;1.300,00;770,00;900,00;;AIDA 90 SS M - RUSTFRI - Convenience køler;Convenience køler;1030;Vare;Ja;Ja;5,00;0,9009
-91518801;AIDA 90 SS M;;;1.300,00;770,00;900,00;;AIDA 90 SS M HE - SORT - Convenience - Selvbetjeningskøler;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9009
-91518801;AIDA 90 SS STS;;;1.300,00;770,00;900,00;;AIDA 90 SS M HE - RUSTFRI - Convenience -Selvbetjeningskøler;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9009
-657038870;BAKE-OFF 60CM 711;;;1.340,00;750,00;900,00;;Rustfri Bake-off disk 60 cm - model 711;S866000;1030;Vare;Nej;Ja;5,00;0,9045
-657038870;BAKE-OFF 60CM OKE;;;1.340,00;750,00;900,00;;Rustfri bake-off disk 60 cm model OK;S866053;1030;Vare;Nej;Ja;5,00;0,9045
-657038870;BAKE-OFF 60CM XO;;;1.340,00;750,00;900,00;;Krom Bake-off disk 60 cm - model XO/REITAN;S866043;1030;Vare;Nej;Ja;5,00;0,9045
-657038870;BAKE-OFF 90CM 711 S;;;1.340,00;750,00;900,00;;Rustfri bake-off disk 90 cm - model 711 - S869000;869000;1030;Stykliste;Nej;Ja;5,00;0,9045
-657038870;BAKE-OFF 90CM 711E;;;1.340,00;750,00;900,00;;Rustfri bake-off disk 90 cm - model 711;S869000;1030;Vare;Nej;Ja;5,00;0,9045
-657038870;BAKE-OFF 90CM 711E S;;;1.340,00;750,00;900,00;;Rustfri bake-off disk 90 cm - model 711 med afdækning;S869000;1030;Stykliste;Nej;Ja;5,00;0,9045
-657038870;BAKE-OFF 90CM EXT;;;1.340,00;750,00;900,00;;Rustfri bake-off disk 90 cm - model 711 u/kompressor;S869002;1030;Vare;Nej;Ja;5,00;0,9045
-657038870;BAKE-OFF 90CM OK;;;1.340,00;750,00;900,00;;Rustfri bake-off disk 90 cm - model OK;S869053;1030;Vare;Nej;Ja;5,00;0,9045
-657038870;BAKE-OFF 90CM OK S;;;1.340,00;750,00;900,00;;Rustfri bake-off disk 90 cm - model OK med afdækning;S869053;1030;Stykliste;Nej;Ja;5,00;0,9045
-657038870;BAKE-OFF 90CM OKE;;;1.340,00;750,00;900,00;;Rustfri bake-off disk 90 cm - model OK;S869053;1030;Vare;Nej;Ja;5,00;0,9045
-657038870;BAKE-OFF 90CM OKE S;;;1.340,00;750,00;900,00;;Rustfri bake-off disk 90 cm - model OK med afdækning;S869053;1030;Stykliste;Nej;Ja;5,00;0,9045
-657038870;BAKE-OFF 90CM XO;;;1.340,00;750,00;900,00;;Krom Bake-off disk 90 cm - model XO/REITAN;S869043;1030;Vare;Nej;Ja;5,00;0,9045
-657038870;BAKE-OFF OPEN 90CME;;;1.340,00;750,00;900,00;;Rustfri combi disk 90 cm;S869058;1030;Vare;Nej;Ja;5,00;0,9045
-0406170001;BASSO 90;;;1.360,00;665,00;860,00;;BASSO 90 - Convenience køler - Standard;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,777784
-0406170001;BELLA 1200 9006;;;1.440,00;750,00;1.200,00;;BELLA 1200 SO M - GRÅ - Convenience køler 3 hylder;Convenience køler;1030;Vare;Nej;Ja;10,00;1,296
-0406170001;BELLA 600 9006;;;1.440,00;750,00;600,00;;BELLA 600 SO M - GRÅ - Convenience køler 3 hylder;Convenience køler;1030;Vare;Ja;Ja;5,00;0,648
-0406170001;BELLA 900 9006;;;1.440,00;750,00;900,00;;BELLA 900 SO M - GRÅ - Convenience køler 3 hylder;Convenience køler;1030;Vare;Ja;Ja;5,00;0,972
-761266061;CAKETOWER 53E;;;20,00;355,00;410,00;;CakeTower 53-E - køletårn til kager - luft 2°;Køletårn;1030;Vare;Ja;Ja;5,00;0,002911
-3727400664;COLLY FLOWER 1600;;;1.440,00;750,00;1.600,00;;COLLYFLOWER1600 - blomster køler glas 3 sider - 2 hylder;COLLY FLOWER;1030;Vare;Nej;Ja;15,00;1,728
-3727400664;COLLY FLOWER 2000;;;1.440,00;750,00;2.000,00;;COLLYFLOWER2000 - blomster køler glas 3 sider - 2 hylder;COLLY FLOWER;1030;Vare;Nej;Ja;15,00;2,16
-657038870;COMBI 90CM 711E;;;1.340,00;750,00;900,00;;Rustfri combi disk 90 cm - model 711;S869017;1030;Vare;Ja;Ja;5,00;0,9045
-003234582958;Coolio Plus;;;1.440,00;750,00;900,00;;Coolio Plus;CoolioPlus;1030;Vare;Ja;Ja;5,00;0,972
-003234582958;COOLIO PLUS LED;;;1.440,00;750,00;900,00;;Køleenhed;Køleenhed;1030;Vare;Ja;Ja;5,00;0,972
-558442331;CUBE 1000 9006;;;1.324,00;725,00;985,00;;Georgia Cube 1000 - convenience køler - lige glas - basis mo;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9455015
-558442331;CUBE 1000 II 9005;;;1.324,00;725,00;985,00;;Georgia Cube 1000 - SORT - convenience køler - lige glas;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9455015
-558442331;CUBE 1000 II 9005 SP;;;1.324,00;725,00;985,00;;Georgia Cube 1000 - SORT - convenience køler - lige glas;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9455015
-558442331;CUBE 1000 II 9006;;;1.324,00;725,00;985,00;;Georgia Cube 1000 - convenience køler - lige glas;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9455015
-558442331;CUBE 1000 II SS 9005;;;1.324,00;725,00;985,00;;Georgia Cube 1000 - convenience - 9005 -lige glas self s;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9455015
-558442331;CUBE 1000 II SS 9006;;;1.324,00;725,00;985,00;;Georgia Cube 1000 - convenience køler-lige glas self service;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9455015
-558442331;CUBE 1000 II SS 9010;;;1.324,00;725,00;985,00;;Georgia Cube 1000 - convenience køler-self service - hvid gl;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9455015
-558442331;CUBE 1000 INOX;;;1.324,00;725,00;985,00;;Georgia Cube 1000 - convenience køler - lige glas - basis mo;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,9455015
-558442331;CUBE 1000 S;;;1.324,00;725,00;985,00;;Georgia Cube 1000 REMOTE - convenience køler - lige glas;Conveniencekøler;1030;Stykliste;Ja;Ja;5,00;0,9455015
-558442331;CUBE 1500;;;1.324,00;725,00;1.485,00;;Georgia Cube 1500 - convenience køler - lige glas;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,4254515
-558442331;CUBE 1500 II;;;1.324,00;725,00;1.485,00;;Georgia Cube 1500 - convenience køler - lige glas;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,4254515
-558442331;CUBE 1500 II 9005;;;1.324,00;725,00;1.485,00;;Georgia Cube 1500 - convenience køler - lige glas  - sort;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,4254515
-558442331;CUBE 1500 II SS;;;1.324,00;725,00;1.485,00;;Georgia Cube 1500 Self service - convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,4254515
-558442331;CUBE 1500 II SS 9005;;;1.324,00;725,00;1.485,00;;Georgia Cube 1500 Self service - SORT - convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,4254515
-558442331;CUBE 1500 RE S;;;1.324,00;725,00;1.485,00;;Georgia Cube 1500 REMOTE - convenience køler - lige glas;Conveniencekøler;1030;Stykliste;Nej;Ja;15,00;1,4254515
-558442331;CUBE 1500 SS RE S;;;1.324,00;725,00;1.485,00;;Georgia Cube 1500  REMOTE SS - convenience - self service;Conveniencekøler;1030;Stykliste;Nej;Ja;15,00;1,4254515
-558442331;CUBE 600 II;;;1.324,00;725,00;585,00;;Georgia Cube 600 - convenience køler - lige glas;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5615415
-558442331;CUBE 600 II 9005;;;1.324,00;725,00;585,00;;CUBE 600II - convenience køler - lige glas - LED lys;Conveniece;1030;Vare;Ja;Ja;5,00;0,5615415
-558442331;CUBE 600 INOX;;;1.324,00;725,00;585,00;;Georgia Cube 600 - convenience køler - lige glas;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5615415
-558442331;CUBE 600II 9005 MEAT;;;1.324,00;725,00;585,00;;CUBE 600II - convenience køler - lige glas - lys 4000 Kelvin;Conveniece;1030;Vare;Ja;Ja;5,00;0,5615415
-558442331;CUBE JEWELRY 1000;;;1.200,00;736,00;985,00;;CUBE JEWELRY 1000 - udstillingsdisk;Betjeningsdiske;1030;Vare;Ja;Ja;5,00;0,869952
-91518801;DELI 135-120;;;1.350,00;660,00;1.200,00;;DELI 135-120 - convenience køler - standard;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,0692
-91518801;DELI 135-120 0088;;;1.350,00;660,00;1.200,00;;DELI 135-120 - convenience køler - hvid/RAL 0088;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,0692
-91518801;DELI 135-120 9005;;;1.350,00;660,00;1.200,00;;DELI 135-120 - convenience køler - sort/RAL 9005;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,0692
-91518801;DELI 135-120 9005 DS;;;1.350,00;660,00;1.200,00;;DELi 135-120 9005 - incl. 2 skydedøre monteret;Convenience;1030;Stykliste;Nej;Ja;10,00;1,0692
-91518801;DELI 135-120 9006 DS;;;1.350,00;660,00;1.200,00;;DELi 135-120 - incl. 2 skydedøre monteret;Convenience;1030;Stykliste;Nej;Ja;10,00;1,0692
-91518801;DELI 135-120 9010;;;1.350,00;660,00;1.200,00;;DELI 135-120 - convenience køler - hvid/RAL 9010;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,0692
-91518801;DELI 135-120 MP;;;1.350,00;660,00;1.200,00;;DELI 135-120 - convenience køler - MULTIPLEXING;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,0692
-91518801;DELI 135-120 MP 9005;;;1.350,00;660,00;1.200,00;;DELI 135-120 - convenience køler - MULTIPLEXING;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,0692
-91518801;DELI 135-120 ROSES;;;1.350,00;660,00;1.200,00;;DELI 135-120 - blomster convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,0692
-91518801;DELI 135-60;;;1.350,00;660,00;600,00;;DELI 135-060 - convenience køler - standard;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 0 S;;;1.350,00;660,00;600,00;;DELI 135-060 - REMOTE ombygget internt -  convenience køler;Conveniencekøler;1030;Stykliste;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 0088;;;1.350,00;660,00;600,00;;DELI 135-60 - convenience køler - hvid/RAL 0088;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 7016;;;1.350,00;660,00;600,00;;DELI 135-060 - Convenience køler - RAL 7016;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 7043;;;1.350,00;660,00;600,00;;DELI 135-060 - Convenience køler - RAL 7043;conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 9005;;;1.350,00;660,00;600,00;;DELI 135-60 - convenience køler - Sort/RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 9010;;;1.350,00;660,00;600,00;;DELI 135-060 - convenience køler - hvid/RAL 9010;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 EGEKILDE;;;1.350,00;660,00;600,00;;DELI 135-60 - convenience køler - silver RAL 9006;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 FAXE;;;1.350,00;660,00;600,00;;DELI 135-60 - convenience køler - silver RAL 9006;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 GAL/PRES;;;1.350,00;660,00;600,00;;DELI 135-060 - convenience køler - standard;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 KARO;;;1.350,00;660,00;600,00;;DELI 135-60 - med Karoline K dekoration - hvid/RAL 0088;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 MP 9005;;;1.350,00;660,00;600,00;;DELI 135-60 - conveniencekøler -  MULTIPLEX  RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 NYD;;;1.350,00;660,00;600,00;;DELI 135-60 - convenience køler - hvid/RAL 0088;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 PEPSI;;;1.350,00;660,00;600,00;;DELI 135-60 - convenience køler - silver RAL 9006;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 REMOTE;;;1.350,00;660,00;600,00;;DELI 135-060 - REMOTE -  convenience køler - standard;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 SIDE;;;1.350,00;660,00;600,00;;DELI 135-60 - convenience køler - side/ø placering;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-60 SPEC;;;1.350,00;660,00;600,00;;DELI 135-60 - convenience køler - sort/hjul/DK-stik;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5346
-91518801;DELI 135-90;;;1.350,00;666,00;880,00;;DELI 135-090 - convenience køler - standard;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,791208
-91518801;DELI 135-90 0088;;;1.350,00;666,00;880,00;;DELI 135-090 - convenience køler - RAL 0088;DELI135900088;1030;Vare;Ja;Ja;5,00;0,791208
-91518801;DELI 135-90 7016;;;1.350,00;666,00;880,00;;DELI 135-90 - Convenience køler - RAL 7016;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,791208
-91518801;DELI 135-90 7043;;;1.350,00;660,00;880,00;;DELI 135-090 - Convenience køler - RAL 7043;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,78408
-91518801;DELI 135-90 9005;;;1.350,00;660,00;880,00;;DELI 135-090 - convenience køler - sort/RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,78408
-91518801;DELI 135-90 9010;;;1.350,00;660,00;880,00;;DELI 135-090 - convenience køler - hvid/RAL 9010;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,78408
-91518801;DELI 135-90 FAXE;;;1.350,00;660,00;880,00;;DELI 135-90 - med  Faxe Kondi dekoration - RAL 9006;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,78408
-91518801;DELI 135-90 FAXE  S;;;1.350,00;660,00;880,00;;DELI 135-90 - med  Faxe Kondi dekoration - RAL 9006;Conveniencekøler;1030;Stykliste;Ja;Ja;5,00;0,78408
-91518801;DELI 135-90 KARO;;;1.350,00;660,00;880,00;;DELI 135-90 - med Karoline K dekoration - hvid/RAL 0088;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,78408
-91518801;DELI 135-90 MP 9005;;;1.350,00;660,00;880,00;;DELI 135-90 - conveniencekøler -  MULTIPLEX  RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,78408
-91518801;DELI 135-90 MP9005 H;;;1.350,00;660,00;880,00;;DELI 135-90 - conveniencekøler - højre - MULTIPLEX  RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,78408
-91518801;DELI 135-90 MP9005 V;;;1.350,00;660,00;880,00;;DELI 135-90 - conveniencekøler - venst - MULTIPLEX  RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,78408
-91518801;DELI 135-90 PEP M S;;;1.350,00;660,00;880,00;;DELI 135-90 - med  Pepsi Max dekoration - RAL 9006;Conveniencekøler;1030;Stykliste;Ja;Ja;5,00;0,78408
-91518801;DELI 135-90 PEPSI;;;1.350,00;660,00;880,00;;DELI 135-90 - med  Pepsi dekoration - RAL 9006;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,78408
-91518801;DELI 135-90 ROSES;;;1.350,00;660,00;880,00;;DELI 135-090 - blomster convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,78408
-91518801;DELI 175-120;;;1.750,00;660,00;1.200,00;;DELI 175-120 - convenience køler RAL 9006;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,386
-91518801;DELI 175-120 0088;;;1.750,00;660,00;1.200,00;;DELI 175-120 - HVID - convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,386
-91518801;DELI 175-120 0088 S;;;1.750,00;660,00;1.200,00;;DELI 175-120 - HVID med døre - convenience køler;Conveniencekøler;1030;Stykliste;Nej;Ja;15,00;1,386
-91518801;DELI 175-120 9005;;;1.750,00;660,00;1.200,00;;DELI 175-120 - sort/RAL 9005 - convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,386
-91518801;DELI 175-120 9005 S;;;1.750,00;660,00;1.200,00;;DELI 175-120 - sort med døre - convenience køler;conveniencekøler;1030;Stykliste;Nej;Ja;15,00;1,386
-91518801;DELI 175-90;;;1.750,00;660,00;880,00;;DELI 175-090 - Convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;10,00;1,0164
-91518801;DELI 175-90 0088;;;1.750,00;660,00;880,00;;DELI 175-90 - Convenience køler - Hvid;Conveniencekøler;1030;Vare;Ja;Ja;10,00;1,0164
-91518801;DELI 175-90 5013;;;1.750,00;660,00;880,00;;DELI 175-090 - convenience køler - RAL 5013;Conveniencekøler;1030;Vare;Ja;Ja;10,00;1,0164
-91518801;DELI 175-90 9004;;;1.750,00;660,00;880,00;;DELI 175-090 - convenience køler - RAL 9004;Conveniencekøler;1030;Vare;Ja;Ja;10,00;1,0164
-91518801;DELI 175-90 9005;;;1.750,00;660,00;880,00;;DELI 175-090 - Convenience køler - Sort/RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;10,00;1,0164
-91518801;DELI 175-90 9005 TRO;;;1.750,00;660,00;880,00;;DELI 175-090 - convenience køler - RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;10,00;1,0164
-91518801;DELI 175-90 DO 9005S;;;1.750,00;660,00;880,00;;DELI 175-090 - RAL 9005 - convenience køler med glasdøre;Conveniencekøler;1030;Stykliste;Ja;Ja;10,00;1,0164
-91518801;DELI 175-90 DO S;;;1.750,00;660,00;880,00;;DELI 175-090 - convenience køler med glasdøre;Conveniencekøler;1030;Stykliste;Ja;Ja;10,00;1,0164
-91518801;DELI 175-90 HJ 9005;;;1.750,00;660,00;880,00;;DELI 175-090 - Convenience køler m/hjul - Sort/RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;10,00;1,0164
-91518801;DELI 175-90 MP 9005;;;1.750,00;660,00;880,00;;DELI 175-090 - convenience køler - RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;10,00;1,0164
-769111700;EASY REACH EXPRESS;;;1.429,00;710,00;654,00;;Easy Reach Express HC LM - brutto 214L;Convenienskøler;1030;Vare;Ja;Ja;5,00;0,66354186
-39043485385;ELEGANCE 2GN;;;830,00;700,00;800,00;;ELEGANCE 2GN - drop in unit med 3 hylder - lige glas/brønd;CONVENIENCE;1030;Vare;Ja;Ja;5,00;0,4648
-39043485385;ELEGANCE 2GN AMB;;;830,00;700,00;800,00;;ELEGANCE 2GN NEUTRAL - disk unit med 3 hylder - lige glas;CONVENIENCE;1030;Vare;Ja;Ja;5,00;0,4648
-39043485385;ELEGANCE 2GN AMB LED;;;830,00;700,00;800,00;;ELEGANCE 2GN NEUTRAL - disk unit med 3 hylder/LED -lige glas;CONVENIENCE;1030;Vare;Ja;Ja;5,00;0,4648
-39043485385;ELEGANCE 2GN REMOTE;;;830,00;700,00;800,00;;ELEGANCE 2GN REMOTE - drop in unit med 3 hylder - lige glas;CONVENIENCE;1030;Vare;Ja;Ja;5,00;0,4648
-39043485385;ELEGANCE 2GN SS AMB;;;830,00;700,00;800,00;;ELEGANCE 2GN NEUTRAL - disk unit med 3 hylder - lige glas;CONVENIENCE;1030;Vare;Ja;Ja;5,00;0,4648
-39043485385;ELEGANCE 2GN SSTOP 3;;;830,00;700,00;800,00;;ELEGANCE 2GN - drop in unit, 3 hylder - lige glas  - SS;CONVENIENCE;1030;Vare;Ja;Ja;5,00;0,4648
-39043485385;ELEGANCE 2GN TOP 2;;;830,00;700,00;800,00;;ELEGANCE 2GN - drop in unit med 2 hylder - lige glas;CONVENIENCE;1030;Vare;Ja;Ja;5,00;0,4648
-39043485385;ELEGANCE 2GN TOP 3;;;830,00;700,00;800,00;;ELEGANCE 2GN - drop in unit 3 hylder - lige glas - lukket;CONVENIENCE;1030;Vare;Ja;Ja;5,00;0,4648
-39043485385;ELEGANCE 3GN;;;830,00;700,00;800,00;;ELEGANCE 3GN - drop in unit med 3 hylder - lige glas/brønd;CONVENIENCE;1030;Vare;Ja;Ja;5,00;0,4648
-39043485385;ELEGANCE 3GN TOP 2;;;830,00;700,00;800,00;;ELEGANCE 3GN - drop in unit med 2 hylder - lige glas;CONVENIENCE;1030;Vare;Ja;Ja;5,00;0,4648
-39043485385;ELEGANCE 3GN TOP 3;;;830,00;700,00;800,00;;ELEGANCE 3GN - drop in unit med 3 hylder - ingen brønd;CONVENIENCE;1030;Vare;Ja;Ja;5,00;0,4648
-39043485385;ELEGANCE 3GNSSTOP 3;;;830,00;700,00;800,00;;ELEGANCE 3GN - drop in unit, 3 hylder - lige glas  - SS;CONVENIENCE;1030;Vare;Ja;Ja;5,00;0,4648
-4071000;FLOWER COOLER;;;1.200,00;800,00;1.200,00;;AJO Flower cooler - blomster convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;10,00;1,152
-397580171;FOS 100;;;1.200,00;800,00;1.200,00;;Åben convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,152
-935377911;GENIUS 2-1027;;;1.460,00;720,00;1.027,00;;GENIUS 2 H145 - convenience køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;10,00;1,0795824
-935377911;GENIUS 2-640;;;1.460,00;720,00;640,00;;GENIUS 2 H145 - convenience køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,672768
-558442331;GEORGIA 1500 COMBI;;;1.320,00;750,00;1.500,00;;GEORGIA 1500 COMBI - selfservice/servering -2 rum;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,485
-558442331;GEORGIA 1500 SPLIT;;;1.320,00;750,00;1.497,00;;GEORGIA 1500 SPLIT - 2 seperate kølerum;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,48203
-558442331;GEORGIA III 1000 EXT;;;1.340,00;750,00;1.000,00;;Georgia III - 1000 - for ekstern komp. - rustfri - 60hz;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,005
-558442331;GEORGIA SQUARE 1000;;;1.340,00;750,00;1.000,00;;GEORGIA SQUARE 1000 - rustfri disk med lige glas, 3 hylder;Convenience;1030;Vare;Nej;Ja;10,00;1,005
-522683246;GILDA 1;;;1.195,00;763,00;586,00;;GILDA 1  - chokoladekøler til 1 x EN;Ckokolade;1030;Vare;Ja;Ja;5,00;0,53430601
-522683246;GILDA 2;;;1.195,00;763,00;986,00;;GILDA 2  - chokoladekøler til 2 x EN;Chokolade;1030;Vare;Ja;Ja;5,00;0,89902001
-522683246;GILDA 3;;;1.195,00;763,00;1.386,00;;GILDA 3  - chokoladekøler til 3 x EN;Chokolade;1030;Vare;Nej;Ja;10,00;1,26373401
-522683246;GILDA 4;;;1.195,00;763,00;1.786,00;;GILDA 4  - chokoladekøler til 4 x EN;Chokolade;1030;Vare;Nej;Ja;15,00;1,62844801
-390331960474;GLASSY 800 SPEC;;;1.195,00;763,00;1.786,00;;GLASSY 800 - special lavet chokolade skab 15-18°;Glassy;1030;Vare;Nej;Ja;15,00;1,62844801
-98522222;GLE 40 115/60 PAP S;;;1.195,00;763,00;1.786,00;;GLE 40 115V/60HZ pap emb. - 45 grader - statisk frys 360 L;LAB FRYSEBOKS ÷45°;1030;Stykliste;Nej;Ja;15,00;1,62844801
-405954088;HARMONY 135-50 9005;;;1.195,00;763,00;1.786,00;;HARMONY 135 SORT - Impuls køler med 3 hylder;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,62844801
-405954088;HARMONY 135-50 UNI;;;1.195,00;763,00;1.786,00;;HARMONY 135 UNI - Impuls køler med 2 hylder;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,62844801
-405954088;HARMONY 135-60 9005;;;1.195,00;763,00;1.786,00;;HARMONY 135-60 - Impuls køler med 2 hylder SORT;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,62844801
-405954088;HARMONY 135-60 9007;;;1.350,00;700,00;598,00;;HARMONY 135 GRÅ - Impuls køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,56511
-405954088;HARMONY 135-60 COCIO;;;1.350,00;700,00;598,00;;HARMONY 135 COCIO - Impuls køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,56511
-405954088;HARMONY 135-60 EGEKI;;;1.350,00;700,00;598,00;;HARMONY 135-60 - Impuls køler med 2 hylder SORT;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,56511
-405954088;HARMONY 135-60 FIT;;;1.350,00;700,00;598,00;;HARMONY 135-60 - Impuls køler med 3 hylder SORT;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,56511
-405954088;HARMONY 135-60 NOCCO;;;1.350,00;700,00;598,00;;HARMONY 135 COCIO - Impuls køler med 2 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,56511
-405954088;HARMONY 135-60 VITAM;;;1.350,00;700,00;598,00;;HARMONY 135 VITAM - Impuls køler med;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,56511
-405954088;HARMONY 135-87 FIT;;;1.350,00;700,00;598,00;;HARMONY 135-87 - Impuls køler med 3 hylder SORT;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,56511
-405954088;HARMONY 135-87 VITAM;;;1.350,00;700,00;598,00;;HARMONY 135-87 - Impuls køler med 2 hylder SORT;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,56511
-405954088;HARMONY 146-60;;;1.350,00;700,00;598,00;;HARMONY 146 - Impuls køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,56511
-405954088;HARMONY 170 9005;;;1.350,00;700,00;598,00;;HARMONY 170 SORT - OPEN FRONT køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,56511
-405954088;HARMONY 170 BAREBELL;;;1.350,00;700,00;598,00;;HARMONY 170 GRÅ - OPEN FRONT køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,56511
-405954088;HARMONY 170 NOCCO;;;1.350,00;700,00;598,00;;HARMONY 170 GRÅ - OPEN FRONT køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,56511
-405954088;HARMONY 170 VITAMIN;;;1.350,00;700,00;598,00;;HARMONY 170 GRÅ - OPEN FRONT køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,56511
-48122844141;JUK 1200;;;1.400,00;705,00;1.200,00;;SMART 120 - Convenience køler m/ 2 hylder - sort;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,1844
-48122844141;JUK 700;;;1.400,00;705,00;700,00;;SMART 70 - Convenience køler m/ 2 hylder - sort;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,6909
-48122844141;JUK 700 9006;;;1.400,00;705,00;700,00;;SMART 70 - Convenience køler m/ 2 hylder - Grå RAL 9006;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,6909
-48122844141;JUK 900;;;1.400,00;705,00;900,00;;SMART 90 - Convenience køler m/ 2 hylder - sort;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,8883
-558442331;KENTUCKY COLD 3GN;;;585,00;775,00;1.076,00;;KENTUCKY COLD 3GN - Diskmontre m/ 1 hylde 1140130;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,4878315
-558442331;KENTUCKY COLD 3XGN60;;;585,00;775,00;1.076,00;;KENTUCKY COLD 3GN 60 Diskmontre m/2 hylder ombygget til 60hz;Conveniencekøler;1030;Stykliste;Ja;Ja;5,00;0,4878315
-558442331;KENTUCKY COLD ICE 2;;;585,00;775,00;722,00;;KENTUCKY COLD 2 - Ice Cream diskmontre 2 GN -  1140420;Scoopicefryser;1030;Vare;Ja;Ja;5,00;0,32733675
-657038870;KOLEDISK 60CM XOE;;;585,00;775,00;722,00;;Rustfri køledisk 60 cm;S866040C DK;1030;Vare;Ja;Ja;5,00;0,32733675
-657038870;KOLEDISK 60CME;;;585,00;775,00;722,00;;Rustfri køle disk 60 cm;S866050;1030;Vare;Ja;Ja;5,00;0,32733675
-657038870;KOLEDISK 90CM 711;;;585,00;775,00;722,00;;Rustfri køledisk 90 cm - model 711;S869004;1030;Vare;Ja;Ja;5,00;0,32733675
-657038870;KOLEDISK 90CM XOE;;;585,00;775,00;722,00;;Rustfri køledisk 90 cm;S869050E DK;1030;Vare;Ja;Ja;5,00;0,32733675
-390721200270;MIX 135-100 RETRO;;;585,00;775,00;722,00;;MIX 135 100 RETRO - køledisk i ventileret køl med 2 glashyl;Convenience;1030;Vare;Ja;Ja;5,00;0,32733675
-390721200270;MIX 135-100 RETRO ST;;;585,00;775,00;722,00;;MIX 135 100 RETRO - køledisk i statisk køl med 2 glashylder;Convenience;1030;Vare;Ja;Ja;5,00;0,32733675
-390721200270;MIX 135-125 RETRO AM;;;585,00;775,00;722,00;;MIX 135 125 RETRO AM - disk i neutral med 2 glashylder;Convenience;1030;Vare;Ja;Ja;5,00;0,32733675
-657038870;NEUTRAL 120CM XOE;;;585,00;775,00;722,00;;Rustfri neutral disk 120 cm;S9012050;1030;Vare;Ja;Ja;5,00;0,32733675
-;NEUTRAL 60CM OKE S;;;585,00;775,00;722,00;;Rustfri neutral disk 60 cm med inddækning;S906053;1030;Stykliste;Ja;Ja;5,00;0,32733675
-657038870;NEUTRAL 60CM XOE;;;585,00;775,00;722,00;;Rustfri neutral disk 60 cm;S906050;1030;Vare;Ja;Ja;5,00;0,32733675
-657038870;NEUTRAL 90CM 711E;;;585,00;775,00;722,00;;Rustfri neutral disk 90 cm - model 7-11;S909001;1030;Vare;Ja;Ja;5,00;0,32733675
-;NEUTRAL 90CM OK S;;;585,00;775,00;722,00;;Rustfri neutral disk 90 cm OK med inddækning;S909053;1030;Stykliste;Ja;Ja;5,00;0,32733675
-657038870;NEUTRAL 90CM OKE;;;585,00;775,00;722,00;;Rustfri neutral disk 90 cm med brødhylde;S909053;1030;Vare;Ja;Ja;5,00;0,32733675
-657038870;NEUTRAL 90CM XOE;;;585,00;775,00;722,00;;Rustfri neutral disk 90 cm;S909050;1030;Vare;Ja;Ja;5,00;0,32733675
-657038870;NEUTRAL BO 60CM OKE;;;585,00;775,00;722,00;;Rustfri neutral disk 60 cm med brødhylde;S906053;1030;Vare;Ja;Ja;5,00;0,32733675
-657038870;NEUTRAL BO 90CM 711E;;;585,00;775,00;722,00;;Rustfri neutral bake off disk 90 cm model 7-11;S909000;1030;Vare;Ja;Ja;5,00;0,32733675
-86614106;NEUTRAL DISK 1300;;;585,00;775,00;722,00;;Neutral pølsedisk 1300 mm - træ;Pølsedisk;1030;Vare;Ja;Ja;5,00;0,32733675
-86614106;NEUTRAL DISK 1300 S;;;585,00;775,00;722,00;;Neutral pølsedisk 1300 mm - træ;Pølsedisk;1030;Stykliste;Ja;Ja;5,00;0,32733675
-86614106;NEUTRAL DISK 950;;;585,00;775,00;722,00;;Neutral sandwich 950 mm - træ UDEN indmad;sandwich;1030;Vare;Ja;Ja;5,00;0,32733675
-86614106;NEUTRAL DISK 950 S;;;585,00;775,00;722,00;;Neutral sandwich 950 mm - træ UDEN indmad;AIDA;1030;Stykliste;Ja;Ja;5,00;0,32733675
-91518801;NORCON 120 HVID;;;585,00;775,00;722,00;;Norcon 120 - hvid - 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,32733675
-91518801;NORCON 120 RYNKEBY S;;;585,00;775,00;722,00;;NORCON 120 RYNKEBY S;Conveniencekøler;1030;Stykliste;Ja;Ja;5,00;0,32733675
-91518801;NORCON 120 SILVER;;;1.300,00;660,00;1.200,00;;Norcon 120 - silver - 3 hylder;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,0296
-91518801;NORCON 120A M RF;;;1.300,00;660,00;1.200,00;;Norcon 120 - rustfri - 3 hylder;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,0296
-91518801;NORCON 150 120A SILV;;;1.300,00;660,00;1.200,00;;Norcon 150 120a silver;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,0296
-91518801;NORCON 60 HVID;;;1.300,00;660,00;1.200,00;;Norcon 60 - hvid - 3 hylder;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,0296
-91518801;NORCON 60 RYNKE S;;;1.300,00;660,00;1.200,00;;NORCON 60 RYNKE S;Conveniencekøler;1030;Stykliste;Nej;Ja;10,00;1,0296
-91518801;NORCON 60 SILVER;;;1.300,00;660,00;600,00;;Norcon 60 - silver - 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5148
-91518801;NORCON 60 TROPI S;;;1.300,00;660,00;600,00;;NORCON 60 TROPI S;Conveniencekøler;1030;Stykliste;Ja;Ja;5,00;0,5148
-91518801;NORCON 90 7031;;;1.300,00;660,00;600,00;;NORCON 90 7031 - ral 7031;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5148
-91518801;NORCON 90 HVID;;;1.300,00;660,00;600,00;;Norcon 90 - hvid - 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5148
-91518801;NORCON 90 RYNKE S;;;1.300,00;660,00;600,00;;NORCON 90 RYNKE S;Conveniencekøler;1030;Stykliste;Ja;Ja;5,00;0,5148
-91518801;NORCON 90 SILVER;;;1.300,00;660,00;880,00;;Norcon 90 - silver - 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,75504
-91518801;NORCON 90 TROPI S;;;1.300,00;660,00;880,00;;NORCON 90 TROPI S;Conveniencekøler;1030;Stykliste;Ja;Ja;5,00;0,75504
-91518801;NORCON 90A M RF;;;1.300,00;660,00;880,00;;Norcon 90 - rustfri - 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,75504
-91518801;NORCON 90A M RF A;;;1.300,00;660,00;880,00;;Norcon 90A M RF ombygget til Saga højde;Conveniencekøler;1030;Stykliste;Ja;Ja;5,00;0,75504
-91518801;NORCON-150-90A-M HVI;;;1.300,00;660,00;880,00;;NORCON-150-90-M - højde 150 - hvid;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,75504
-91518801;NORCON-150-90A-M SIL;;;1.300,00;660,00;880,00;;NORCON-150-90-M - højde 150 - silver;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,75504
-72425571;OFC 140 COCIO;;;1.300,00;660,00;880,00;;OFC 140 - Convenience køler med 3 hylder;Convenience køler;1030;Vare;Ja;Ja;5,00;0,75504
-72425571;OFC 190;;;1.473,00;700,00;780,00;;OFC 190 med 2 hylder - 260L;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,804258
-72425571;OFC 220;;;1.750,00;600,00;494,00;;OFC 220 med 3 hylder - 250L;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5187
-43961960;OFC 220 CULT S;;;1.750,00;600,00;494,00;;OFC 220 - CULT dekoration lystop;OFC220/CULT;1030;Stykliste;Ja;Ja;5,00;0,5187
-72425571;OFC 220 S WISH S;;;1.750,00;600,00;494,00;;OFC 220 med dekoration WISH og 3 hylder - 250L;Conveniencekøler;1030;Stykliste;Ja;Ja;5,00;0,5187
-72425571;OFC 220 VITZ S;;;1.750,00;600,00;494,00;;OFC 220 med 3 hylder - 250L - dekoration VITZ;Conveniencekøler;1030;Stykliste;Ja;Ja;5,00;0,5187
-72425571;OFC 380;;;1.750,00;600,00;494,00;;OFC 380 med 3 hylder - 380L;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,5187
-558442331;OHIO LEFT;;;635,00;630,00;1.210,00;;OHIO diskkøler - komp. venstre side - 2 hylder;Convenience;1030;Vare;Nej;Ja;5,00;0,4840605
-558442331;OHIO SS RIGHT;;;635,00;630,00;1.210,00;;OHIO diskkøler - komp. højre side - 2 hylder - SS;Convenience;1030;Vare;Nej;Ja;5,00;0,4840605
-657038870;OPEN FR 90CM;;;635,00;630,00;1.210,00;;Rustfri open front disk 90 cm;S869056;1030;Vare;Nej;Ja;5,00;0,4840605
-657038870;OPEN FR 90CM 711;;;635,00;630,00;1.210,00;;Rustfri open front disk 90 cm - model 711;S869007;1030;Vare;Nej;Ja;5,00;0,4840605
-657038870;OPEN FR 90CM 711E;;;635,00;630,00;1.210,00;;Rustfri open front disk 90 cm - model 711;S869007;1030;Vare;Nej;Ja;5,00;0,4840605
-657038870;OPEN FR 90CM XOE;;;635,00;630,00;1.210,00;;Rustfri open front disk 90 cm;S869051;1030;Vare;Nej;Ja;5,00;0,4840605
-48146149348;OPERA 1200;;;1.221,00;700,00;1.200,00;;OPERA 1200 SP - sandwich med skrå køleopsats;OPERA;1030;Vare;Nej;Ja;10,00;1,02564
-48146149348;OPERA 1200 B CR L;;;1.221,00;700,00;1.200,00;;OPERA 1200 B - Chrome - RET GLAS - 7-11 - 5 skuffer/1 dør;Pølsedisk;1030;Vare;Nej;Ja;10,00;1,02564
-48146149348;OPERA 1200 BO M 9005;;;1.360,00;745,00;1.200,00;;OPERA 1200 BO M - SORT - Convenience køler - BAKE OFF;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,21584
-48146149348;OPERA 1200 BO M HVID;;;1.360,00;745,00;1.200,00;;OPERA 1200 BO M -HVID - Convenience køler - BAKE OFF;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,21584
-48146149348;OPERA 1200 BO M KROM;;;1.360,00;745,00;1.200,00;;OPERA 1200 BO M - KROM - Convenience køler - BAKE OFF;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,21584
-48146149348;OPERA 1200 SO M RETR;;;1.360,00;745,00;1.200,00;;OPERA 1200 SO M RETRO - sort convenience disk RETRO;Convenience;1030;Vare;Nej;Ja;10,00;1,21584
-48146149348;OPERA 1200 SP_T;;;1.360,00;745,00;1.200,00;;OPERA 1200 SP/T - pølsedisk med skrå glas - rustfri;Pølsedisk;1030;Vare;Nej;Ja;10,00;1,21584
-48146149348;OPERA 1200 SR-T CR;;;1.360,00;745,00;1.200,00;;OPERA 1200 SR/T - pølsedisk med skrå glas - Chrome - PLUG IN;Pølsedisk;1030;Vare;Nej;Ja;10,00;1,21584
-48146149348;OPERA 1200 SR-T CR R;;;1.360,00;745,00;1.200,00;;OPERA 1200 SR/T - pølsedisk med skrå glas - Chrome - REMOTE;Pølsedisk;1030;Vare;Nej;Ja;10,00;1,21584
-48146149348;OPERA 1200 SR-T CR S;;;1.360,00;745,00;1.200,00;;OPERA 1200 SR/T - pølsedisk med skrå glas - Chrome - PLUG IN;Pølsedisk;1030;Stykliste;Nej;Ja;10,00;1,21584
-0406170001;OPERA 1200 SS M HVID;;;1.360,00;745,00;1.200,00;;OPERA 1200 SS M - HVID - Convenience selvbetjeningskøler;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,21584
-0406170001;OPERA 1200 SSO M9005;;;1.360,00;745,00;1.200,00;;OPERA 1200 SSO M - SORT - Convenience selvbetjeningskøler;Conveniencekøler;1030;Vare;Nej;Ja;10,00;1,21584
-48146149348;OPERA 1600;;;1.360,00;745,00;1.600,00;;OPERA 1600 - pølsedisk med lige glas - rustfri;Pølsedisk/OPERA;1030;Vare;Nej;Ja;15,00;1,62112
-48146149348;OPERA 1600 FRONT;;;1.360,00;745,00;1.600,00;;Opera 1600 - frontkøler til pølsedisk;OPERA;1030;Vare;Nej;Ja;15,00;1,62112
-48146149348;OPERA 1600 REM;;;1.360,00;745,00;1.600,00;;OPERA 1600 REMOTE - pølsedisk med lige glas - rustfri;Pølsedisk/OPERA;1030;Vare;Nej;Ja;15,00;1,62112
-48146149348;OPERA 1600 SP_T;;;1.360,00;745,00;1.600,00;;OPERA 1600 SP/T - pølsedisk med skrå glas - rustfri;Pølsedisk;1030;Vare;Nej;Ja;15,00;1,62112
-48146149348;OPERA 2000 FRONT;;;1.360,00;745,00;2.000,00;;Opera 2000 - frontkøler til pølsedisk;OPERA;1030;Vare;Nej;Ja;15,00;2,0264
-48146149348;OPERA 2000 HOTDOG;;;1.360,00;745,00;2.000,00;;OPERA 2000 HOTDOG - pølsedisk med lige forkant;Pølsedisk;1030;Vare;Nej;Ja;15,00;2,0264
-558442331;OPERA 600 BO KROM;;;1.360,00;745,00;600,00;;OPERA 600 BO KROM - 3 hylder og LED lys;Convenience;1030;Vare;Ja;Ja;5,00;0,60792
-0406170001;OPERA 600 BOM CH RET;;;1.360,00;745,00;600,00;;Opera 600 BO - Bake-off - Chrome - RET GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,60792
-0406170001;OPERA 600 BOM CH TIL;;;1.360,00;745,00;600,00;;Opera 600 BO - Bake-off - Chrome - SKRÅ GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,60792
-0406170001;OPERA 600 HOT CH RET;;;1.360,00;745,00;600,00;;OPERA 600 HOT - Chrome - RET GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,60792
-0406170001;OPERA 600 HOT CH TIL;;;1.360,00;745,00;600,00;;OPERA 600 HOT - Chrome - TILTET GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,60792
-0406170001;OPERA 600 SOM CH RET;;;1.360,00;745,00;600,00;;Opera 600 SO - køledisk - Chrom - RET GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,60792
-558442331;OPERA 600 SOM KROM;;;1.360,00;745,00;600,00;;OPERA 600 SOM KROM - 3 hylder og LED lys;Convenience;1030;Vare;Ja;Ja;5,00;0,60792
-558442331;OPERA 900 BO KROM;;;1.360,00;750,00;900,00;;OPERA 900 BO KROM - 3 hylder og LED lys;Convenience;1030;Vare;Ja;Ja;10,00;0,918
-0406170001;OPERA 900 BO M 9005;;;1.360,00;745,00;900,00;;OPERA 90 BO M -SORT - Convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,91188
-0406170001;OPERA 900 BO M CH BR;;;1.360,00;745,00;900,00;;OPERA 900 BO Chrome med skrå glas - REMOTE;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,91188
-0406170001;OPERA 900 BO M CR L;;;1.360,00;745,00;900,00;;Opera 900 BO - Bake-off - Chrome - RET GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,91188
-0406170001;OPERA 900 BO M HVID;;;1.360,00;745,00;900,00;;OPERA 90 BO M -HVID - Convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,91188
-0406170001;OPERA 900 BO M KROM;;;1.360,00;745,00;900,00;;OPERA 900 BO M - KROM med skrå frontglas;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,91188
-0406170001;OPERA 900 HOT CR B;;;1.360,00;745,00;900,00;;OPERA 900 HOT - Chrome - SKRÅ GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,91188
-0406170001;OPERA 900 HOT CR L;;;1.360,00;745,00;900,00;;OPERA 900 HOT - Chrome - RET GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,91188
-558442331;OPERA 900 HOT KROM;;;1.360,00;745,00;900,00;;OPERA 900 HOT KROM - 3 hylder og lys 830;Convenience;1030;Vare;Ja;Ja;10,00;0,91188
-0406170001;OPERA 900 SO M 9005;;;1.360,00;745,00;900,00;;OPERA 900 SO M -SORT - Convenience køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,91188
-0406170001;OPERA 900 SO M HVID;;;1.360,00;745,00;900,00;;OPERA 900 SO M -HVID - Convenience køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,91188
-0406170001;OPERA 900 SO M KROM;;;1.360,00;745,00;900,00;;Opera 900 SO - køledisk - KROM - RET GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,91188
-558442331;OPERA 900 SOM KROM;;;1.360,00;750,00;900,00;;OPERA 900 SOM KROM - 3 hylder og LED lys;Convenience;1030;Vare;Ja;Ja;10,00;0,918
-0406170001;OPERA 900 SS M HVID;;;1.360,00;745,00;900,00;;OPERA 900 SS M - HVID - Convenience selvbetjeningskøler;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,91188
-0406170001;OPERA 900 SS M KROM;;;1.360,00;745,00;900,00;;OPERA 900 SS M - KROM - Convenience selvbetjeningskøler;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,91188
-0406170001;OPERA 900 SSO M 9005;;;1.360,00;745,00;900,00;;OPERA 900 SSO M - SORT - Convenience selvbetjeningskøler;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,91188
-0406170001;OPERA 900 SSO M STS;;;1.360,00;745,00;900,00;;OPERA 900 SSO M - Rustfri - Convenience selvbetjeningskøler;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,91188
-657038870;POLSEDISK 120CM;;;1.360,00;745,00;1.200,00;;Rustfri pølsedisk 120 cm - S851242;S851242;1030;Vare;Nej;Ja;15,00;1,21584
-657038870;POLSEDISK 120CM 711;;;1.360,00;745,00;1.200,00;;Rustfri pølsedisk 120 cm - model 711;S851246;1030;Vare;Nej;Ja;15,00;1,21584
-657038870;POLSEDISK 120CM XO;;;1.360,00;745,00;1.200,00;;Pølsedisk 120 cm - Krom med 6 x 1/9GN - 100;S851248;1030;Vare;Nej;Ja;15,00;1,21584
-657038870;POLSEDISK 120CME;;;1.360,00;745,00;1.200,00;;Rustfri pølsedisk 120 cm - S851244;S851244;1030;Vare;Nej;Ja;15,00;1,21584
-657038870;POLSEDISK 160CM 711;;;1.360,00;745,00;1.600,00;;Rustfri pølsedisk 160 cm - model 711;S861674;1030;Vare;Nej;Ja;15,00;1,62112
-;RS909100 S;;;950,00;750,00;900,00;;Neutral disk model OK;RS909100;1030;Stykliste;Ja;Ja;5,00;0,64125
-2323767223;S 300 RYSG;;;950,00;750,00;900,00;;S 300 RYSG  - kølemontre med 2 skydedøre i front - lukket ba;Conveniencekøler;1030;Vare;Ja;Ja;5,00;0,64125
-91518801;SAGA 135M EG GULD;;;1.256,00;770,00;1.350,00;;Saga 135 M - 3 flytbare hylder - EG/GULD;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,305612
-91518801;SAGA 135M RUSTFRI;;;1.350,00;770,00;1.350,00;;Saga 135 M - 3 flytbare hylder - RUSTFRI;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,403325
-91518801;SAGA 135M-HC EG GULD;;;1.256,00;770,00;1.350,00;;Saga 135 M - 3 flytbare hylder - EG/GULD - fugtighedsstyring;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,305612
-91518801;SAGA 135M-HC RUSTFRI;;;1.256,00;770,00;1.350,00;;Saga 135 M - 3 flytbare hylder - RUSTFRI - fugtighedsstyring;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,305612
-91518801;SAGA 135MW RUSTFRI S;;;1.256,00;770,00;1.350,00;;SAGA 135MW - RUSTFRI - combi;SAGA135;1030;Stykliste;Nej;Ja;15,00;1,305612
-91518801;SAGA 135W EG GULD;;;1.256,00;770,00;1.350,00;;Saga 135 M - 3 flytbare hylder - EG/GULD;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,305612
-91518801;SAGA 135W RUSTFRI;;;1.256,00;770,00;1.350,00;;Saga 135 W - 3 flytbare hylder - RUSTFRI;Conveniencekøler;1030;Vare;Nej;Ja;15,00;1,305612
-91518801;SAGA 135W RUSTFRI S;;;1.256,00;770,00;1.350,00;;Saga 135 W - 3 flytbare hylder - RUSTFRI - med køleplader;Conveniencekøler;1030;Stykliste;Nej;Ja;15,00;1,305612
-91518801;SAGA 90 M 0 STS;;;1.256,00;770,00;900,00;;Saga 90 M - 3 flytbare hylder - RUSTFRI;Convenience køler;1030;Vare;Ja;Ja;10,00;0,870408
-91518801;SAGA 90 M 0 STS S;;;1.256,00;770,00;900,00;;SAGA 90 M STS - REMOTE ombygget internt -  convenience køler;Convenience;1030;Stykliste;Ja;Ja;10,00;0,870408
-91518801;SAGA 90 M SELVBETJ.;;;1.256,00;770,00;900,00;;Saga 90 M - 3 flytbare hylder - RUSTFRI - selvbetjent;Convenience;1030;Vare;Ja;Ja;10,00;0,870408
-91518801;SAGA 90 W RUSTFRI;;;1.256,00;770,00;900,00;;Saga 90 W - 3 flytbare hylder - RUSTFRI;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,870408
-91518801;SAGA 90H EG GULD;;;1.256,00;770,00;900,00;;SAGA 90H EG GULD - 3 flytbare hylder - EG/GULD;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,870408
-91518801;SAGA 90H RUSTFRI S;;;1.256,00;770,00;900,00;;Saga 90 HOT - 3 flytbare hylder - RUSTFRI - ombygget;Conveniencekøler;1030;Stykliste;Ja;Ja;10,00;0,870408
-91518801;SAGA 90M EG GULD;;;1.256,00;770,00;900,00;;Saga 90 M - 3 flytbare hylder - EG/GULD;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,870408
-91518801;SAGA 90M RUSTFRI;;;1.256,00;770,00;990,00;;Saga 90 M - 3 flytbare hylder - RUSTFRI;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,9574488
-91518801;SAGA 90M-HC EG GULD;;;1.256,00;770,00;900,00;;Saga 90 M - 3 flytbare hylder - EG/GULD - fugtighedsstyring;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,870408
-91518801;SAGA 90M-HC RUSTFRI;;;1.256,00;770,00;900,00;;Saga 90 M - 3 flytbare hylder - RUSTFRI - fugtighedsstyring;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,870408
-91518801;SAGA 90W EG GULD;;;1.256,00;770,00;900,00;;Saga 90 M - 3 flytbare hylder - EG/GULD;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,870408
-91518801;SAGA-EA-45-W RUSTFRI;;;1.256,00;770,00;900,00;;Saga-EA-45-W RUSTFRI - neutralt hjørne;Conveniencedisk;1030;Vare;Ja;Ja;10,00;0,870408
-48122844141;SMART 90 HVID;;;1.400,00;705,00;900,00;;SMART 90 - Convenience køler m/ 2 hylder - hvid;Conveniencekøler;1030;Vare;Ja;Ja;10,00;0,8883
-34935151415;VELA;;;640,00;620,00;700,00;;VELA - Disk montre - LED lys - 5 Hylder;Diskmontre;1030;Vare;Ja;Ja;10,00;0,27776
-558442331;VIRGINIA 1000 SO;;;1.095,00;743,00;990,00;;VIRGINIA 1000 - convenience disk med 3 hylder;Convenience;1030;Vare;Ja;Ja;10,00;0,80544915
-558442331;VIRGINIA 1000 SO DI;;;1.095,00;743,00;990,00;;VIRGINIA 1000 - convenience DROP-IN disk;Convenience;1030;Vare;Ja;Ja;10,00;0,80544915
-558442331;VIRGINIA 1000 SO LOW;;;1.095,00;743,00;990,00;;VIRGINIA 1000 - convenience disk med 2 hylder;Convenience;1030;Vare;Ja;Ja;10,00;0,80544915
-558442331;VIRGINIA 1000 SS;;;1.095,00;743,00;990,00;;VIRGINIA 1000 - convenience selvbetjeningsdisk med 3 hylder;Convenience;1030;Vare;Ja;Ja;10,00;0,80544915
-39043485385;WALL 3GN RETRO;;;1.095,00;743,00;990,00;;WALL 3GN - drop in unit med 3 hylder - lige glas;CONVENIENCE;1030;Vare;Ja;Ja;10,00;0,80544915
-39043485385;WALL 3GN TOP;;;1.095,00;743,00;990,00;;WALL TOP 3GN - drop in unit med 3 hylder - ingen brønd;CONVENIENCE;1030;Vare;Ja;Ja;10,00;0,80544915
+866266060;AHT AC W FLOWER;;;1.495,00;766;914;;AHT AC Flower - blomsterkøler med 2 hylder;Blomsterkøler;1030;Vare;Ja;Ja;5;1,04668538
+866266060;AHT MINI;;;1.220,00;527;460;;Skaffe vare - AHT MINI - convenience køler - 82L;Conveniencekøler;1030;Vare;Ja;Ja;5;0,2957524
+866266060;AHT MINI STARBUCKS;;;1.220,00;527;460;;Skaffe vare - Convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;5;0,2957524
+91518801;AIDA 120 BO M;;;1.300,00;770;1.200,00;;AIDA 120 BO M - SORT - Convenience køler - BAKE OFF;Conveniencekøler;1030;Vare;Nej;Ja;10;1,2012
+91518801;AIDA 120 HC M;;;1.300,00;770;1.200,00;;AIDA 120 HC M - SORT - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Nej;Ja;10;1,2012
+91518801;AIDA 120 HC M GULD;;;1.300,00;770;1.200,00;;AIDA 120 HC M - GULD - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Nej;Ja;10;1,2012
+91518801;AIDA 120 HC M GULD S;;;1.300,00;770;1.200,00;;AIDA 120 HC M - GULD - Convenience køler - ombygget;Conveniencekøler;1030;Stykliste;Nej;Ja;10;1,2012
+91518801;AIDA 120 HC STS;;;1.300,00;770;1.200,00;;AIDA 120 HC M - Rustfri - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Nej;Ja;10;1,2012
+91518801;AIDA 120 SO A;;;1.300,00;770;1.200,00;;AIDA 120 SO A -  SORT - Convenience - Neutral;Convenience;1030;Vare;Nej;Ja;10;1,2012
+91518801;AIDA 120 SO M;;;1.300,00;770;1.200,00;;AIDA 120 SO M - SORT - Convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;10;1,2012
+91518801;AIDA 120 SO M HC RET;;;1.300,00;700;1.200,00;;AIDA 120 HC M - SORT - Convenience køler - konfekture;Conveniencekøler;1030;Vare;Nej;Ja;10;1,092
+91518801;AIDA 120 SO M REM S;;;1.300,00;700;1.200,00;;AIDA 120 SO M REMOTE - Kagedisk med LED lys;Conveniencekøler;1030;Stykliste;Nej;Ja;10;1,092
+91518801;AIDA 120 SO M REMOTE;;;1.300,00;700;1.200,00;;AIDA 120 SO M REMOTE - Kagedisk med LED lys;Conveniencekøler;1030;Vare;Nej;Ja;10;1,092
+91518801;AIDA 120 SO M RETRO;;;1.300,00;770;1.200,00;;AIDO 120 SO M - SORT - Convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;10;1,2012
+91518801;AIDA 120 SO M STS;;;1.300,00;770;1.200,00;;AIDO 120 SO M - RUSTFRI - Convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;10;1,2012
+91518801;AIDA 120 SS 0;;;1.300,00;770;1.200,00;;AIDA 120 SS 0 - SORT - Convenience køler;Convenience køler;1030;Vare;Nej;Ja;10;1,2012
+91518801;AIDA 120 SS 0 STS;;;1.300,00;770;1.200,00;;AIDA 120 SS M - RUSTFRI - Convenience køler;Convenience køler;1030;Vare;Nej;Ja;10;1,2012
+91518801;AIDA 120 SS M;;;1.300,00;770;1.200,00;;AIDA 120 SS M - SORT - Convenience - Selvbetjeningskøler;Conveniencekøler;1030;Vare;Nej;Ja;10;1,2012
+91518801;AIDA 120 SS SO RETRO;;;1.300,00;770;1.200,00;;AIDO 120 SO/SF  M - SORT - Convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;10;1,2012
+91518801;AIDA 120 SSO M;;;1.300,00;770;1.200,00;;AIDA 120 SO M - SORT - Convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;10;1,2012
+91518801;AIDA 150 HC M;;;1.300,00;770;1.500,00;;AIDA 150 HC M - SORT - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Nej;Ja;10;1,5015
+91518801;AIDA 150 HC M GULD;;;1.300,00;770;1.500,00;;AIDA 150 HC - GULD - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Nej;Ja;10;1,5015
+91518801;AIDA 150 SO A;;;1.300,00;770;1.500,00;;AIDA 150 SO A - Kagedisk med LED lys;Convenience;1030;Vare;Nej;Ja;10;1,5015
+91518801;AIDA 150 SO HC RETRO;;;1.300,00;770;1.500,00;;AIDA 150 HC M - SORT - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Nej;Ja;10;1,5015
+91518801;AIDA 150 SO M;;;1.300,00;770;1.500,00;;AIDA 150 SO M - Kagedisk med LED lys;Conveniencekøler;1030;Vare;Nej;Ja;10;1,5015
+91518801;AIDA 150 SO M RETRO;;;1.300,00;770;1.500,00;;AIDA 150 SO M RETRO - Kagedisk med LED lys;Conveniencekøler;1030;Vare;Nej;Ja;10;1,5015
+91518801;AIDA 60 BO A;;;1.300,00;770;600;;AIDA 60 BO A -  SORT - Convenience - Neutral;Conveniencekøler;1030;Vare;Ja;Ja;5;0,6006
+91518801;AIDA 60 BO M;;;1.300,00;770;600;;AIDA 60 BO M - SORT - Convenience køler - BAKE OFF;Conveniencekøler;1030;Vare;Ja;Ja;5;0,6006
+91518801;AIDA 60 SO 0 STS;;;1.300,00;770;600;;AIDA 60 SO M - RUSTFRI - Convenience køler;Convenience køler;1030;Vare;Ja;Ja;5;0,6006
+91518801;AIDA 60 SO A;;;1.300,00;770;600;;AIDA 60 SO A -  SORT - Convenience - Neutral;Conveniencekøler;1030;Vare;Ja;Ja;5;0,6006
+91518801;AIDA 60 SO A STS;;;1.300,00;770;600;;AIDA 60 SO A STS - Betjeningsdisk - RUSTFRI -  LED lys;Convenience køler;1030;Vare;Ja;Ja;5;0,6006
+91518801;AIDA 60 SO M;;;1.300,00;770;600;;AIDA 60 SO M - SORT - Convenience køler;Convenience køler;1030;Vare;Ja;Ja;5;0,6006
+91518801;AIDA 60 SO M RETRO;;;1.300,00;770;600;;AIDA 60 SO M RETRO - SORT - Convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;5;0,6006
+91518801;AIDA 60 SO M STS;;;1.300,00;770;600;;AIDA 60 SO M - RUSTFRI - Convenience køler;Convenience køler;1030;Vare;Ja;Ja;5;0,6006
+91518801;AIDA 90 BO A;;;1.300,00;770;900;;AIDA 90 BO - SORT - Convenience - Neutral - BAKE-OFF;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9009
+91518801;AIDA 90 BO M;;;1.300,00;770;900;;AIDA 90 BO M - SORT - Convenience køler - BAKE OFF;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9009
+91518801;AIDA 90 HC M;;;1.300,00;770;900;;AIDA 90 HC M - SORT - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9009
+91518801;AIDA 90 HC M GULD;;;1.300,00;770;900;;AIDA 90 HC M - GULD - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9009
+91518801;AIDA 90 HC M GULD S;;;1.300,00;770;900;;AIDA 90 HC M - GULD - Convenience køler - ombygget;Conveniencekøler;1030;Stykliste;Ja;Ja;5;0,9009
+91518801;AIDA 90 HC STS;;;1.300,00;770;900;;AIDA 90 HC M - rustfri - Convenience køler - Konfekture;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9009
+91518801;AIDA 90 SO A;;;1.300,00;770;900;;AIDA 90 SO A - SORT - Convenience - Neutral;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9009
+91518801;AIDA 90 SO A STS;;;1.300,00;770;900;;AIDA 90 SO A - RUSTFRI - Convenience - Neutral;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9009
+91518801;AIDA 90 SO M;;;1.300,00;770;900;;AIDA 90 SO M - SORT - Convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9009
+91518801;AIDA 90 SO M HC RET;;;1.300,00;770;900;;AIDA 90 SO HC RETRO - Chokolade disk - Sort - LED lys;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9009
+91518801;AIDA 90 SO M RETRO;;;1.300,00;770;900;;AIDA 90 SO M - SORT - Convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9009
+91518801;AIDA 90 SS 0 STS;;;1.300,00;770;900;;AIDA 90 SS M - RUSTFRI - Convenience køler;Convenience køler;1030;Vare;Ja;Ja;5;0,9009
+91518801;AIDA 90 SS M;;;1.300,00;770;900;;AIDA 90 SS M HE - SORT - Convenience - Selvbetjeningskøler;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9009
+91518801;AIDA 90 SS STS;;;1.300,00;770;900;;AIDA 90 SS M HE - RUSTFRI - Convenience -Selvbetjeningskøler;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9009
+657038870;BAKE-OFF 60CM 711;;;1.340,00;750;900;;Rustfri Bake-off disk 60 cm - model 711;S866000;1030;Vare;Nej;Ja;5;0,9045
+657038870;BAKE-OFF 60CM OKE;;;1.340,00;750;900;;Rustfri bake-off disk 60 cm model OK;S866053;1030;Vare;Nej;Ja;5;0,9045
+657038870;BAKE-OFF 60CM XO;;;1.340,00;750;900;;Krom Bake-off disk 60 cm - model XO/REITAN;S866043;1030;Vare;Nej;Ja;5;0,9045
+657038870;BAKE-OFF 90CM 711 S;;;1.340,00;750;900;;Rustfri bake-off disk 90 cm - model 711 - S869000;869000;1030;Stykliste;Nej;Ja;5;0,9045
+657038870;BAKE-OFF 90CM 711E;;;1.340,00;750;900;;Rustfri bake-off disk 90 cm - model 711;S869000;1030;Vare;Nej;Ja;5;0,9045
+657038870;BAKE-OFF 90CM 711E S;;;1.340,00;750;900;;Rustfri bake-off disk 90 cm - model 711 med afdækning;S869000;1030;Stykliste;Nej;Ja;5;0,9045
+657038870;BAKE-OFF 90CM EXT;;;1.340,00;750;900;;Rustfri bake-off disk 90 cm - model 711 u/kompressor;S869002;1030;Vare;Nej;Ja;5;0,9045
+657038870;BAKE-OFF 90CM OK;;;1.340,00;750;900;;Rustfri bake-off disk 90 cm - model OK;S869053;1030;Vare;Nej;Ja;5;0,9045
+657038870;BAKE-OFF 90CM OK S;;;1.340,00;750;900;;Rustfri bake-off disk 90 cm - model OK med afdækning;S869053;1030;Stykliste;Nej;Ja;5;0,9045
+657038870;BAKE-OFF 90CM OKE;;;1.340,00;750;900;;Rustfri bake-off disk 90 cm - model OK;S869053;1030;Vare;Nej;Ja;5;0,9045
+657038870;BAKE-OFF 90CM OKE S;;;1.340,00;750;900;;Rustfri bake-off disk 90 cm - model OK med afdækning;S869053;1030;Stykliste;Nej;Ja;5;0,9045
+657038870;BAKE-OFF 90CM XO;;;1.340,00;750;900;;Krom Bake-off disk 90 cm - model XO/REITAN;S869043;1030;Vare;Nej;Ja;5;0,9045
+657038870;BAKE-OFF OPEN 90CME;;;1.340,00;750;900;;Rustfri combi disk 90 cm;S869058;1030;Vare;Nej;Ja;5;0,9045
+406170001;BASSO 90;;;1.360,00;665;860;;BASSO 90 - Convenience køler - Standard;Conveniencekøler;1030;Vare;Ja;Ja;5;0,777784
+406170001;BELLA 1200 9006;;;1.440,00;750;1.200,00;;BELLA 1200 SO M - GRÅ - Convenience køler 3 hylder;Convenience køler;1030;Vare;Nej;Ja;10;1,296
+406170001;BELLA 600 9006;;;1.440,00;750;600;;BELLA 600 SO M - GRÅ - Convenience køler 3 hylder;Convenience køler;1030;Vare;Ja;Ja;5;0,648
+406170001;BELLA 900 9006;;;1.440,00;750;900;;BELLA 900 SO M - GRÅ - Convenience køler 3 hylder;Convenience køler;1030;Vare;Ja;Ja;5;0,972
+761266061;CAKETOWER 53E;;;20;355;410;;CakeTower 53-E - køletårn til kager - luft 2°;Køletårn;1030;Vare;Ja;Ja;5;0,002911
+3727400664;COLLY FLOWER 1600;;;1.440,00;750;1.600,00;;COLLYFLOWER1600 - blomster køler glas 3 sider - 2 hylder;COLLY FLOWER;1030;Vare;Nej;Ja;15;1,728
+3727400664;COLLY FLOWER 2000;;;1.440,00;750;2.000,00;;COLLYFLOWER2000 - blomster køler glas 3 sider - 2 hylder;COLLY FLOWER;1030;Vare;Nej;Ja;15;2,16
+657038870;COMBI 90CM 711E;;;1.340,00;750;900;;Rustfri combi disk 90 cm - model 711;S869017;1030;Vare;Ja;Ja;5;0,9045
+3234582958;Coolio Plus;;;1.440,00;750;900;;Coolio Plus;CoolioPlus;1030;Vare;Ja;Ja;5;0,972
+3234582958;COOLIO PLUS LED;;;1.440,00;750;900;;Køleenhed;Køleenhed;1030;Vare;Ja;Ja;5;0,972
+558442331;CUBE 1000 9006;;;1.324,00;725;985;;Georgia Cube 1000 - convenience køler - lige glas - basis mo;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9455015
+558442331;CUBE 1000 II 9005;;;1.324,00;725;985;;Georgia Cube 1000 - SORT - convenience køler - lige glas;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9455015
+558442331;CUBE 1000 II 9005 SP;;;1.324,00;725;985;;Georgia Cube 1000 - SORT - convenience køler - lige glas;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9455015
+558442331;CUBE 1000 II 9006;;;1.324,00;725;985;;Georgia Cube 1000 - convenience køler - lige glas;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9455015
+558442331;CUBE 1000 II SS 9005;;;1.324,00;725;985;;Georgia Cube 1000 - convenience - 9005 -lige glas self s;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9455015
+558442331;CUBE 1000 II SS 9006;;;1.324,00;725;985;;Georgia Cube 1000 - convenience køler-lige glas self service;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9455015
+558442331;CUBE 1000 II SS 9010;;;1.324,00;725;985;;Georgia Cube 1000 - convenience køler-self service - hvid gl;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9455015
+558442331;CUBE 1000 INOX;;;1.324,00;725;985;;Georgia Cube 1000 - convenience køler - lige glas - basis mo;Conveniencekøler;1030;Vare;Ja;Ja;5;0,9455015
+558442331;CUBE 1000 S;;;1.324,00;725;985;;Georgia Cube 1000 REMOTE - convenience køler - lige glas;Conveniencekøler;1030;Stykliste;Ja;Ja;5;0,9455015
+558442331;CUBE 1500;;;1.324,00;725;1.485,00;;Georgia Cube 1500 - convenience køler - lige glas;Conveniencekøler;1030;Vare;Nej;Ja;15;1,4254515
+558442331;CUBE 1500 II;;;1.324,00;725;1.485,00;;Georgia Cube 1500 - convenience køler - lige glas;Conveniencekøler;1030;Vare;Nej;Ja;15;1,4254515
+558442331;CUBE 1500 II 9005;;;1.324,00;725;1.485,00;;Georgia Cube 1500 - convenience køler - lige glas  - sort;Conveniencekøler;1030;Vare;Nej;Ja;15;1,4254515
+558442331;CUBE 1500 II SS;;;1.324,00;725;1.485,00;;Georgia Cube 1500 Self service - convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;15;1,4254515
+558442331;CUBE 1500 II SS 9005;;;1.324,00;725;1.485,00;;Georgia Cube 1500 Self service - SORT - convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;15;1,4254515
+558442331;CUBE 1500 RE S;;;1.324,00;725;1.485,00;;Georgia Cube 1500 REMOTE - convenience køler - lige glas;Conveniencekøler;1030;Stykliste;Nej;Ja;15;1,4254515
+558442331;CUBE 1500 SS RE S;;;1.324,00;725;1.485,00;;Georgia Cube 1500  REMOTE SS - convenience - self service;Conveniencekøler;1030;Stykliste;Nej;Ja;15;1,4254515
+558442331;CUBE 600 II;;;1.324,00;725;585;;Georgia Cube 600 - convenience køler - lige glas;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5615415
+558442331;CUBE 600 II 9005;;;1.324,00;725;585;;CUBE 600II - convenience køler - lige glas - LED lys;Conveniece;1030;Vare;Ja;Ja;5;0,5615415
+558442331;CUBE 600 INOX;;;1.324,00;725;585;;Georgia Cube 600 - convenience køler - lige glas;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5615415
+558442331;CUBE 600II 9005 MEAT;;;1.324,00;725;585;;CUBE 600II - convenience køler - lige glas - lys 4000 Kelvin;Conveniece;1030;Vare;Ja;Ja;5;0,5615415
+558442331;CUBE JEWELRY 1000;;;1.200,00;736;985;;CUBE JEWELRY 1000 - udstillingsdisk;Betjeningsdiske;1030;Vare;Ja;Ja;5;0,869952
+91518801;DELI 135-120;;;1.350,00;660;1.200,00;;DELI 135-120 - convenience køler - standard;Conveniencekøler;1030;Vare;Nej;Ja;10;1,0692
+91518801;DELI 135-120 0088;;;1.350,00;660;1.200,00;;DELI 135-120 - convenience køler - hvid/RAL 0088;Conveniencekøler;1030;Vare;Nej;Ja;10;1,0692
+91518801;DELI 135-120 9005;;;1.350,00;660;1.200,00;;DELI 135-120 - convenience køler - sort/RAL 9005;Conveniencekøler;1030;Vare;Nej;Ja;10;1,0692
+91518801;DELI 135-120 9005 DS;;;1.350,00;660;1.200,00;;DELi 135-120 9005 - incl. 2 skydedøre monteret;Convenience;1030;Stykliste;Nej;Ja;10;1,0692
+91518801;DELI 135-120 9006 DS;;;1.350,00;660;1.200,00;;DELi 135-120 - incl. 2 skydedøre monteret;Convenience;1030;Stykliste;Nej;Ja;10;1,0692
+91518801;DELI 135-120 9010;;;1.350,00;660;1.200,00;;DELI 135-120 - convenience køler - hvid/RAL 9010;Conveniencekøler;1030;Vare;Nej;Ja;10;1,0692
+91518801;DELI 135-120 MP;;;1.350,00;660;1.200,00;;DELI 135-120 - convenience køler - MULTIPLEXING;Conveniencekøler;1030;Vare;Nej;Ja;10;1,0692
+91518801;DELI 135-120 MP 9005;;;1.350,00;660;1.200,00;;DELI 135-120 - convenience køler - MULTIPLEXING;Conveniencekøler;1030;Vare;Nej;Ja;10;1,0692
+91518801;DELI 135-120 ROSES;;;1.350,00;660;1.200,00;;DELI 135-120 - blomster convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;10;1,0692
+91518801;DELI 135-60;;;1.350,00;660;600;;DELI 135-060 - convenience køler - standard;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-60 0 S;;;1.350,00;660;600;;DELI 135-060 - REMOTE ombygget internt -  convenience køler;Conveniencekøler;1030;Stykliste;Ja;Ja;5;0,5346
+91518801;DELI 135-60 0088;;;1.350,00;660;600;;DELI 135-60 - convenience køler - hvid/RAL 0088;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-60 7016;;;1.350,00;660;600;;DELI 135-060 - Convenience køler - RAL 7016;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-60 7043;;;1.350,00;660;600;;DELI 135-060 - Convenience køler - RAL 7043;conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-60 9005;;;1.350,00;660;600;;DELI 135-60 - convenience køler - Sort/RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-60 9010;;;1.350,00;660;600;;DELI 135-060 - convenience køler - hvid/RAL 9010;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-60 EGEKILDE;;;1.350,00;660;600;;DELI 135-60 - convenience køler - silver RAL 9006;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-60 FAXE;;;1.350,00;660;600;;DELI 135-60 - convenience køler - silver RAL 9006;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-60 GAL/PRES;;;1.350,00;660;600;;DELI 135-060 - convenience køler - standard;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-60 KARO;;;1.350,00;660;600;;DELI 135-60 - med Karoline K dekoration - hvid/RAL 0088;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-60 MP 9005;;;1.350,00;660;600;;DELI 135-60 - conveniencekøler -  MULTIPLEX  RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-60 NYD;;;1.350,00;660;600;;DELI 135-60 - convenience køler - hvid/RAL 0088;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-60 PEPSI;;;1.350,00;660;600;;DELI 135-60 - convenience køler - silver RAL 9006;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-60 REMOTE;;;1.350,00;660;600;;DELI 135-060 - REMOTE -  convenience køler - standard;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-60 SIDE;;;1.350,00;660;600;;DELI 135-60 - convenience køler - side/ø placering;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-60 SPEC;;;1.350,00;660;600;;DELI 135-60 - convenience køler - sort/hjul/DK-stik;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5346
+91518801;DELI 135-90;;;1.350,00;666;880;;DELI 135-090 - convenience køler - standard;Conveniencekøler;1030;Vare;Ja;Ja;5;0,791208
+91518801;DELI 135-90 0088;;;1.350,00;666;880;;DELI 135-090 - convenience køler - RAL 0088;DELI135900088;1030;Vare;Ja;Ja;5;0,791208
+91518801;DELI 135-90 7016;;;1.350,00;666;880;;DELI 135-90 - Convenience køler - RAL 7016;Conveniencekøler;1030;Vare;Ja;Ja;5;0,791208
+91518801;DELI 135-90 7043;;;1.350,00;660;880;;DELI 135-090 - Convenience køler - RAL 7043;Conveniencekøler;1030;Vare;Ja;Ja;5;0,78408
+91518801;DELI 135-90 9005;;;1.350,00;660;880;;DELI 135-090 - convenience køler - sort/RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;5;0,78408
+91518801;DELI 135-90 9010;;;1.350,00;660;880;;DELI 135-090 - convenience køler - hvid/RAL 9010;Conveniencekøler;1030;Vare;Ja;Ja;5;0,78408
+91518801;DELI 135-90 FAXE;;;1.350,00;660;880;;DELI 135-90 - med  Faxe Kondi dekoration - RAL 9006;Conveniencekøler;1030;Vare;Ja;Ja;5;0,78408
+91518801;DELI 135-90 FAXE  S;;;1.350,00;660;880;;DELI 135-90 - med  Faxe Kondi dekoration - RAL 9006;Conveniencekøler;1030;Stykliste;Ja;Ja;5;0,78408
+91518801;DELI 135-90 KARO;;;1.350,00;660;880;;DELI 135-90 - med Karoline K dekoration - hvid/RAL 0088;Conveniencekøler;1030;Vare;Ja;Ja;5;0,78408
+91518801;DELI 135-90 MP 9005;;;1.350,00;660;880;;DELI 135-90 - conveniencekøler -  MULTIPLEX  RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;5;0,78408
+91518801;DELI 135-90 MP9005 H;;;1.350,00;660;880;;DELI 135-90 - conveniencekøler - højre - MULTIPLEX  RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;5;0,78408
+91518801;DELI 135-90 MP9005 V;;;1.350,00;660;880;;DELI 135-90 - conveniencekøler - venst - MULTIPLEX  RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;5;0,78408
+91518801;DELI 135-90 PEP M S;;;1.350,00;660;880;;DELI 135-90 - med  Pepsi Max dekoration - RAL 9006;Conveniencekøler;1030;Stykliste;Ja;Ja;5;0,78408
+91518801;DELI 135-90 PEPSI;;;1.350,00;660;880;;DELI 135-90 - med  Pepsi dekoration - RAL 9006;Conveniencekøler;1030;Vare;Ja;Ja;5;0,78408
+91518801;DELI 135-90 ROSES;;;1.350,00;660;880;;DELI 135-090 - blomster convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;5;0,78408
+91518801;DELI 175-120;;;1.750,00;660;1.200,00;;DELI 175-120 - convenience køler RAL 9006;Conveniencekøler;1030;Vare;Nej;Ja;15;1,386
+91518801;DELI 175-120 0088;;;1.750,00;660;1.200,00;;DELI 175-120 - HVID - convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;15;1,386
+91518801;DELI 175-120 0088 S;;;1.750,00;660;1.200,00;;DELI 175-120 - HVID med døre - convenience køler;Conveniencekøler;1030;Stykliste;Nej;Ja;15;1,386
+91518801;DELI 175-120 9005;;;1.750,00;660;1.200,00;;DELI 175-120 - sort/RAL 9005 - convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;15;1,386
+91518801;DELI 175-120 9005 S;;;1.750,00;660;1.200,00;;DELI 175-120 - sort med døre - convenience køler;conveniencekøler;1030;Stykliste;Nej;Ja;15;1,386
+91518801;DELI 175-90;;;1.750,00;660;880;;DELI 175-090 - Convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;10;1,0164
+91518801;DELI 175-90 0088;;;1.750,00;660;880;;DELI 175-90 - Convenience køler - Hvid;Conveniencekøler;1030;Vare;Ja;Ja;10;1,0164
+91518801;DELI 175-90 5013;;;1.750,00;660;880;;DELI 175-090 - convenience køler - RAL 5013;Conveniencekøler;1030;Vare;Ja;Ja;10;1,0164
+91518801;DELI 175-90 9004;;;1.750,00;660;880;;DELI 175-090 - convenience køler - RAL 9004;Conveniencekøler;1030;Vare;Ja;Ja;10;1,0164
+91518801;DELI 175-90 9005;;;1.750,00;660;880;;DELI 175-090 - Convenience køler - Sort/RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;10;1,0164
+91518801;DELI 175-90 9005 TRO;;;1.750,00;660;880;;DELI 175-090 - convenience køler - RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;10;1,0164
+91518801;DELI 175-90 DO 9005S;;;1.750,00;660;880;;DELI 175-090 - RAL 9005 - convenience køler med glasdøre;Conveniencekøler;1030;Stykliste;Ja;Ja;10;1,0164
+91518801;DELI 175-90 DO S;;;1.750,00;660;880;;DELI 175-090 - convenience køler med glasdøre;Conveniencekøler;1030;Stykliste;Ja;Ja;10;1,0164
+91518801;DELI 175-90 HJ 9005;;;1.750,00;660;880;;DELI 175-090 - Convenience køler m/hjul - Sort/RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;10;1,0164
+91518801;DELI 175-90 MP 9005;;;1.750,00;660;880;;DELI 175-090 - convenience køler - RAL 9005;Conveniencekøler;1030;Vare;Ja;Ja;10;1,0164
+769111700;EASY REACH EXPRESS;;;1.429,00;710;654;;Easy Reach Express HC LM - brutto 214L;Convenienskøler;1030;Vare;Ja;Ja;5;0,66354186
+39043485385;ELEGANCE 2GN;;;830;700;800;;ELEGANCE 2GN - drop in unit med 3 hylder - lige glas/brønd;CONVENIENCE;1030;Vare;Ja;Ja;5;0,4648
+39043485385;ELEGANCE 2GN AMB;;;830;700;800;;ELEGANCE 2GN NEUTRAL - disk unit med 3 hylder - lige glas;CONVENIENCE;1030;Vare;Ja;Ja;5;0,4648
+39043485385;ELEGANCE 2GN AMB LED;;;830;700;800;;ELEGANCE 2GN NEUTRAL - disk unit med 3 hylder/LED -lige glas;CONVENIENCE;1030;Vare;Ja;Ja;5;0,4648
+39043485385;ELEGANCE 2GN REMOTE;;;830;700;800;;ELEGANCE 2GN REMOTE - drop in unit med 3 hylder - lige glas;CONVENIENCE;1030;Vare;Ja;Ja;5;0,4648
+39043485385;ELEGANCE 2GN SS AMB;;;830;700;800;;ELEGANCE 2GN NEUTRAL - disk unit med 3 hylder - lige glas;CONVENIENCE;1030;Vare;Ja;Ja;5;0,4648
+39043485385;ELEGANCE 2GN SSTOP 3;;;830;700;800;;ELEGANCE 2GN - drop in unit, 3 hylder - lige glas  - SS;CONVENIENCE;1030;Vare;Ja;Ja;5;0,4648
+39043485385;ELEGANCE 2GN TOP 2;;;830;700;800;;ELEGANCE 2GN - drop in unit med 2 hylder - lige glas;CONVENIENCE;1030;Vare;Ja;Ja;5;0,4648
+39043485385;ELEGANCE 2GN TOP 3;;;830;700;800;;ELEGANCE 2GN - drop in unit 3 hylder - lige glas - lukket;CONVENIENCE;1030;Vare;Ja;Ja;5;0,4648
+39043485385;ELEGANCE 3GN;;;830;700;800;;ELEGANCE 3GN - drop in unit med 3 hylder - lige glas/brønd;CONVENIENCE;1030;Vare;Ja;Ja;5;0,4648
+39043485385;ELEGANCE 3GN TOP 2;;;830;700;800;;ELEGANCE 3GN - drop in unit med 2 hylder - lige glas;CONVENIENCE;1030;Vare;Ja;Ja;5;0,4648
+39043485385;ELEGANCE 3GN TOP 3;;;830;700;800;;ELEGANCE 3GN - drop in unit med 3 hylder - ingen brønd;CONVENIENCE;1030;Vare;Ja;Ja;5;0,4648
+39043485385;ELEGANCE 3GNSSTOP 3;;;830;700;800;;ELEGANCE 3GN - drop in unit, 3 hylder - lige glas  - SS;CONVENIENCE;1030;Vare;Ja;Ja;5;0,4648
+4071000;FLOWER COOLER;;;1.200,00;800;1.200,00;;AJO Flower cooler - blomster convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;10;1,152
+397580171;FOS 100;;;1.200,00;800;1.200,00;;Åben convenience køler;Conveniencekøler;1030;Vare;Nej;Ja;10;1,152
+935377911;GENIUS 2-1027;;;1.460,00;720;1.027,00;;GENIUS 2 H145 - convenience køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;10;1,0795824
+935377911;GENIUS 2-640;;;1.460,00;720;640;;GENIUS 2 H145 - convenience køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5;0,672768
+558442331;GEORGIA 1500 COMBI;;;1.320,00;750;1.500,00;;GEORGIA 1500 COMBI - selfservice/servering -2 rum;Conveniencekøler;1030;Vare;Nej;Ja;15;1,485
+558442331;GEORGIA 1500 SPLIT;;;1.320,00;750;1.497,00;;GEORGIA 1500 SPLIT - 2 seperate kølerum;Conveniencekøler;1030;Vare;Nej;Ja;15;1,48203
+558442331;GEORGIA III 1000 EXT;;;1.340,00;750;1.000,00;;Georgia III - 1000 - for ekstern komp. - rustfri - 60hz;Conveniencekøler;1030;Vare;Nej;Ja;10;1,005
+558442331;GEORGIA SQUARE 1000;;;1.340,00;750;1.000,00;;GEORGIA SQUARE 1000 - rustfri disk med lige glas, 3 hylder;Convenience;1030;Vare;Nej;Ja;10;1,005
+522683246;GILDA 1;;;1.195,00;763;586;;GILDA 1  - chokoladekøler til 1 x EN;Ckokolade;1030;Vare;Ja;Ja;5;0,53430601
+522683246;GILDA 2;;;1.195,00;763;986;;GILDA 2  - chokoladekøler til 2 x EN;Chokolade;1030;Vare;Ja;Ja;5;0,89902001
+522683246;GILDA 3;;;1.195,00;763;1.386,00;;GILDA 3  - chokoladekøler til 3 x EN;Chokolade;1030;Vare;Nej;Ja;10;1,26373401
+522683246;GILDA 4;;;1.195,00;763;1.786,00;;GILDA 4  - chokoladekøler til 4 x EN;Chokolade;1030;Vare;Nej;Ja;15;1,62844801
+3,90E+11;GLASSY 800 SPEC;;;1.195,00;763;1.786,00;;GLASSY 800 - special lavet chokolade skab 15-18°;Glassy;1030;Vare;Nej;Ja;15;1,62844801
+98522222;GLE 40 115/60 PAP S;;;1.195,00;763;1.786,00;;GLE 40 115V/60HZ pap emb. - 45 grader - statisk frys 360 L;LAB FRYSEBOKS ÷45°;1030;Stykliste;Nej;Ja;15;1,62844801
+405954088;HARMONY 135-50 9005;;;1.195,00;763;1.786,00;;HARMONY 135 SORT - Impuls køler med 3 hylder;Conveniencekøler;1030;Vare;Nej;Ja;15;1,62844801
+405954088;HARMONY 135-50 UNI;;;1.195,00;763;1.786,00;;HARMONY 135 UNI - Impuls køler med 2 hylder;Conveniencekøler;1030;Vare;Nej;Ja;15;1,62844801
+405954088;HARMONY 135-60 9005;;;1.195,00;763;1.786,00;;HARMONY 135-60 - Impuls køler med 2 hylder SORT;Conveniencekøler;1030;Vare;Nej;Ja;15;1,62844801
+405954088;HARMONY 135-60 9007;;;1.350,00;700;598;;HARMONY 135 GRÅ - Impuls køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5;0,56511
+405954088;HARMONY 135-60 COCIO;;;1.350,00;700;598;;HARMONY 135 COCIO - Impuls køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5;0,56511
+405954088;HARMONY 135-60 EGEKI;;;1.350,00;700;598;;HARMONY 135-60 - Impuls køler med 2 hylder SORT;Conveniencekøler;1030;Vare;Ja;Ja;5;0,56511
+405954088;HARMONY 135-60 FIT;;;1.350,00;700;598;;HARMONY 135-60 - Impuls køler med 3 hylder SORT;Conveniencekøler;1030;Vare;Ja;Ja;5;0,56511
+405954088;HARMONY 135-60 NOCCO;;;1.350,00;700;598;;HARMONY 135 COCIO - Impuls køler med 2 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5;0,56511
+405954088;HARMONY 135-60 VITAM;;;1.350,00;700;598;;HARMONY 135 VITAM - Impuls køler med;Conveniencekøler;1030;Vare;Ja;Ja;5;0,56511
+405954088;HARMONY 135-87 FIT;;;1.350,00;700;598;;HARMONY 135-87 - Impuls køler med 3 hylder SORT;Conveniencekøler;1030;Vare;Ja;Ja;5;0,56511
+405954088;HARMONY 135-87 VITAM;;;1.350,00;700;598;;HARMONY 135-87 - Impuls køler med 2 hylder SORT;Conveniencekøler;1030;Vare;Ja;Ja;5;0,56511
+405954088;HARMONY 146-60;;;1.350,00;700;598;;HARMONY 146 - Impuls køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5;0,56511
+405954088;HARMONY 170 9005;;;1.350,00;700;598;;HARMONY 170 SORT - OPEN FRONT køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5;0,56511
+405954088;HARMONY 170 BAREBELL;;;1.350,00;700;598;;HARMONY 170 GRÅ - OPEN FRONT køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5;0,56511
+405954088;HARMONY 170 NOCCO;;;1.350,00;700;598;;HARMONY 170 GRÅ - OPEN FRONT køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5;0,56511
+405954088;HARMONY 170 VITAMIN;;;1.350,00;700;598;;HARMONY 170 GRÅ - OPEN FRONT køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5;0,56511
+48122844141;JUK 1200;;;1.400,00;705;1.200,00;;SMART 120 - Convenience køler m/ 2 hylder - sort;Conveniencekøler;1030;Vare;Nej;Ja;10;1,1844
+48122844141;JUK 700;;;1.400,00;705;700;;SMART 70 - Convenience køler m/ 2 hylder - sort;Conveniencekøler;1030;Vare;Ja;Ja;5;0,6909
+48122844141;JUK 700 9006;;;1.400,00;705;700;;SMART 70 - Convenience køler m/ 2 hylder - Grå RAL 9006;Conveniencekøler;1030;Vare;Ja;Ja;5;0,6909
+48122844141;JUK 900;;;1.400,00;705;900;;SMART 90 - Convenience køler m/ 2 hylder - sort;Conveniencekøler;1030;Vare;Ja;Ja;5;0,8883
+558442331;KENTUCKY COLD 3GN;;;585;775;1.076,00;;KENTUCKY COLD 3GN - Diskmontre m/ 1 hylde 1140130;Conveniencekøler;1030;Vare;Ja;Ja;5;0,4878315
+558442331;KENTUCKY COLD 3XGN60;;;585;775;1.076,00;;KENTUCKY COLD 3GN 60 Diskmontre m/2 hylder ombygget til 60hz;Conveniencekøler;1030;Stykliste;Ja;Ja;5;0,4878315
+558442331;KENTUCKY COLD ICE 2;;;585;775;722;;KENTUCKY COLD 2 - Ice Cream diskmontre 2 GN -  1140420;Scoopicefryser;1030;Vare;Ja;Ja;5;0,32733675
+657038870;KOLEDISK 60CM XOE;;;585;775;722;;Rustfri køledisk 60 cm;S866040C DK;1030;Vare;Ja;Ja;5;0,32733675
+657038870;KOLEDISK 60CME;;;585;775;722;;Rustfri køle disk 60 cm;S866050;1030;Vare;Ja;Ja;5;0,32733675
+657038870;KOLEDISK 90CM 711;;;585;775;722;;Rustfri køledisk 90 cm - model 711;S869004;1030;Vare;Ja;Ja;5;0,32733675
+657038870;KOLEDISK 90CM XOE;;;585;775;722;;Rustfri køledisk 90 cm;S869050E DK;1030;Vare;Ja;Ja;5;0,32733675
+3,91E+11;MIX 135-100 RETRO;;;585;775;722;;MIX 135 100 RETRO - køledisk i ventileret køl med 2 glashyl;Convenience;1030;Vare;Ja;Ja;5;0,32733675
+3,91E+11;MIX 135-100 RETRO ST;;;585;775;722;;MIX 135 100 RETRO - køledisk i statisk køl med 2 glashylder;Convenience;1030;Vare;Ja;Ja;5;0,32733675
+3,91E+11;MIX 135-125 RETRO AM;;;585;775;722;;MIX 135 125 RETRO AM - disk i neutral med 2 glashylder;Convenience;1030;Vare;Ja;Ja;5;0,32733675
+657038870;NEUTRAL 120CM XOE;;;585;775;722;;Rustfri neutral disk 120 cm;S9012050;1030;Vare;Ja;Ja;5;0,32733675
+;NEUTRAL 60CM OKE S;;;585;775;722;;Rustfri neutral disk 60 cm med inddækning;S906053;1030;Stykliste;Ja;Ja;5;0,32733675
+657038870;NEUTRAL 60CM XOE;;;585;775;722;;Rustfri neutral disk 60 cm;S906050;1030;Vare;Ja;Ja;5;0,32733675
+657038870;NEUTRAL 90CM 711E;;;585;775;722;;Rustfri neutral disk 90 cm - model 7-11;S909001;1030;Vare;Ja;Ja;5;0,32733675
+;NEUTRAL 90CM OK S;;;585;775;722;;Rustfri neutral disk 90 cm OK med inddækning;S909053;1030;Stykliste;Ja;Ja;5;0,32733675
+657038870;NEUTRAL 90CM OKE;;;585;775;722;;Rustfri neutral disk 90 cm med brødhylde;S909053;1030;Vare;Ja;Ja;5;0,32733675
+657038870;NEUTRAL 90CM XOE;;;585;775;722;;Rustfri neutral disk 90 cm;S909050;1030;Vare;Ja;Ja;5;0,32733675
+657038870;NEUTRAL BO 60CM OKE;;;585;775;722;;Rustfri neutral disk 60 cm med brødhylde;S906053;1030;Vare;Ja;Ja;5;0,32733675
+657038870;NEUTRAL BO 90CM 711E;;;585;775;722;;Rustfri neutral bake off disk 90 cm model 7-11;S909000;1030;Vare;Ja;Ja;5;0,32733675
+86614106;NEUTRAL DISK 1300;;;585;775;722;;Neutral pølsedisk 1300 mm - træ;Pølsedisk;1030;Vare;Ja;Ja;5;0,32733675
+86614106;NEUTRAL DISK 1300 S;;;585;775;722;;Neutral pølsedisk 1300 mm - træ;Pølsedisk;1030;Stykliste;Ja;Ja;5;0,32733675
+86614106;NEUTRAL DISK 950;;;585;775;722;;Neutral sandwich 950 mm - træ UDEN indmad;sandwich;1030;Vare;Ja;Ja;5;0,32733675
+86614106;NEUTRAL DISK 950 S;;;585;775;722;;Neutral sandwich 950 mm - træ UDEN indmad;AIDA;1030;Stykliste;Ja;Ja;5;0,32733675
+91518801;NORCON 120 HVID;;;585;775;722;;Norcon 120 - hvid - 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5;0,32733675
+91518801;NORCON 120 RYNKEBY S;;;585;775;722;;NORCON 120 RYNKEBY S;Conveniencekøler;1030;Stykliste;Ja;Ja;5;0,32733675
+91518801;NORCON 120 SILVER;;;1.300,00;660;1.200,00;;Norcon 120 - silver - 3 hylder;Conveniencekøler;1030;Vare;Nej;Ja;10;1,0296
+91518801;NORCON 120A M RF;;;1.300,00;660;1.200,00;;Norcon 120 - rustfri - 3 hylder;Conveniencekøler;1030;Vare;Nej;Ja;10;1,0296
+91518801;NORCON 150 120A SILV;;;1.300,00;660;1.200,00;;Norcon 150 120a silver;Conveniencekøler;1030;Vare;Nej;Ja;10;1,0296
+91518801;NORCON 60 HVID;;;1.300,00;660;1.200,00;;Norcon 60 - hvid - 3 hylder;Conveniencekøler;1030;Vare;Nej;Ja;10;1,0296
+91518801;NORCON 60 RYNKE S;;;1.300,00;660;1.200,00;;NORCON 60 RYNKE S;Conveniencekøler;1030;Stykliste;Nej;Ja;10;1,0296
+91518801;NORCON 60 SILVER;;;1.300,00;660;600;;Norcon 60 - silver - 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5148
+91518801;NORCON 60 TROPI S;;;1.300,00;660;600;;NORCON 60 TROPI S;Conveniencekøler;1030;Stykliste;Ja;Ja;5;0,5148
+91518801;NORCON 90 7031;;;1.300,00;660;600;;NORCON 90 7031 - ral 7031;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5148
+91518801;NORCON 90 HVID;;;1.300,00;660;600;;Norcon 90 - hvid - 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5148
+91518801;NORCON 90 RYNKE S;;;1.300,00;660;600;;NORCON 90 RYNKE S;Conveniencekøler;1030;Stykliste;Ja;Ja;5;0,5148
+91518801;NORCON 90 SILVER;;;1.300,00;660;880;;Norcon 90 - silver - 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5;0,75504
+91518801;NORCON 90 TROPI S;;;1.300,00;660;880;;NORCON 90 TROPI S;Conveniencekøler;1030;Stykliste;Ja;Ja;5;0,75504
+91518801;NORCON 90A M RF;;;1.300,00;660;880;;Norcon 90 - rustfri - 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;5;0,75504
+91518801;NORCON 90A M RF A;;;1.300,00;660;880;;Norcon 90A M RF ombygget til Saga højde;Conveniencekøler;1030;Stykliste;Ja;Ja;5;0,75504
+91518801;NORCON-150-90A-M HVI;;;1.300,00;660;880;;NORCON-150-90-M - højde 150 - hvid;Conveniencekøler;1030;Vare;Ja;Ja;5;0,75504
+91518801;NORCON-150-90A-M SIL;;;1.300,00;660;880;;NORCON-150-90-M - højde 150 - silver;Conveniencekøler;1030;Vare;Ja;Ja;5;0,75504
+72425571;OFC 140 COCIO;;;1.300,00;660;880;;OFC 140 - Convenience køler med 3 hylder;Convenience køler;1030;Vare;Ja;Ja;5;0,75504
+72425571;OFC 190;;;1.473,00;700;780;;OFC 190 med 2 hylder - 260L;Conveniencekøler;1030;Vare;Ja;Ja;5;0,804258
+72425571;OFC 220;;;1.750,00;600;494;;OFC 220 med 3 hylder - 250L;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5187
+43961960;OFC 220 CULT S;;;1.750,00;600;494;;OFC 220 - CULT dekoration lystop;OFC220/CULT;1030;Stykliste;Ja;Ja;5;0,5187
+72425571;OFC 220 S WISH S;;;1.750,00;600;494;;OFC 220 med dekoration WISH og 3 hylder - 250L;Conveniencekøler;1030;Stykliste;Ja;Ja;5;0,5187
+72425571;OFC 220 VITZ S;;;1.750,00;600;494;;OFC 220 med 3 hylder - 250L - dekoration VITZ;Conveniencekøler;1030;Stykliste;Ja;Ja;5;0,5187
+72425571;OFC 380;;;1.750,00;600;494;;OFC 380 med 3 hylder - 380L;Conveniencekøler;1030;Vare;Ja;Ja;5;0,5187
+558442331;OHIO LEFT;;;635;630;1.210,00;;OHIO diskkøler - komp. venstre side - 2 hylder;Convenience;1030;Vare;Nej;Ja;5;0,4840605
+558442331;OHIO SS RIGHT;;;635;630;1.210,00;;OHIO diskkøler - komp. højre side - 2 hylder - SS;Convenience;1030;Vare;Nej;Ja;5;0,4840605
+657038870;OPEN FR 90CM;;;635;630;1.210,00;;Rustfri open front disk 90 cm;S869056;1030;Vare;Nej;Ja;5;0,4840605
+657038870;OPEN FR 90CM 711;;;635;630;1.210,00;;Rustfri open front disk 90 cm - model 711;S869007;1030;Vare;Nej;Ja;5;0,4840605
+657038870;OPEN FR 90CM 711E;;;635;630;1.210,00;;Rustfri open front disk 90 cm - model 711;S869007;1030;Vare;Nej;Ja;5;0,4840605
+657038870;OPEN FR 90CM XOE;;;635;630;1.210,00;;Rustfri open front disk 90 cm;S869051;1030;Vare;Nej;Ja;5;0,4840605
+48146149348;OPERA 1200;;;1.221,00;700;1.200,00;;OPERA 1200 SP - sandwich med skrå køleopsats;OPERA;1030;Vare;Nej;Ja;10;1,02564
+48146149348;OPERA 1200 B CR L;;;1.221,00;700;1.200,00;;OPERA 1200 B - Chrome - RET GLAS - 7-11 - 5 skuffer/1 dør;Pølsedisk;1030;Vare;Nej;Ja;10;1,02564
+48146149348;OPERA 1200 BO M 9005;;;1.360,00;745;1.200,00;;OPERA 1200 BO M - SORT - Convenience køler - BAKE OFF;Conveniencekøler;1030;Vare;Nej;Ja;10;1,21584
+48146149348;OPERA 1200 BO M HVID;;;1.360,00;745;1.200,00;;OPERA 1200 BO M -HVID - Convenience køler - BAKE OFF;Conveniencekøler;1030;Vare;Nej;Ja;10;1,21584
+48146149348;OPERA 1200 BO M KROM;;;1.360,00;745;1.200,00;;OPERA 1200 BO M - KROM - Convenience køler - BAKE OFF;Conveniencekøler;1030;Vare;Nej;Ja;10;1,21584
+48146149348;OPERA 1200 SO M RETR;;;1.360,00;745;1.200,00;;OPERA 1200 SO M RETRO - sort convenience disk RETRO;Convenience;1030;Vare;Nej;Ja;10;1,21584
+48146149348;OPERA 1200 SP_T;;;1.360,00;745;1.200,00;;OPERA 1200 SP/T - pølsedisk med skrå glas - rustfri;Pølsedisk;1030;Vare;Nej;Ja;10;1,21584
+48146149348;OPERA 1200 SR-T CR;;;1.360,00;745;1.200,00;;OPERA 1200 SR/T - pølsedisk med skrå glas - Chrome - PLUG IN;Pølsedisk;1030;Vare;Nej;Ja;10;1,21584
+48146149348;OPERA 1200 SR-T CR R;;;1.360,00;745;1.200,00;;OPERA 1200 SR/T - pølsedisk med skrå glas - Chrome - REMOTE;Pølsedisk;1030;Vare;Nej;Ja;10;1,21584
+48146149348;OPERA 1200 SR-T CR S;;;1.360,00;745;1.200,00;;OPERA 1200 SR/T - pølsedisk med skrå glas - Chrome - PLUG IN;Pølsedisk;1030;Stykliste;Nej;Ja;10;1,21584
+406170001;OPERA 1200 SS M HVID;;;1.360,00;745;1.200,00;;OPERA 1200 SS M - HVID - Convenience selvbetjeningskøler;Conveniencekøler;1030;Vare;Nej;Ja;10;1,21584
+406170001;OPERA 1200 SSO M9005;;;1.360,00;745;1.200,00;;OPERA 1200 SSO M - SORT - Convenience selvbetjeningskøler;Conveniencekøler;1030;Vare;Nej;Ja;10;1,21584
+48146149348;OPERA 1600;;;1.360,00;745;1.600,00;;OPERA 1600 - pølsedisk med lige glas - rustfri;Pølsedisk/OPERA;1030;Vare;Nej;Ja;15;1,62112
+48146149348;OPERA 1600 FRONT;;;1.360,00;745;1.600,00;;Opera 1600 - frontkøler til pølsedisk;OPERA;1030;Vare;Nej;Ja;15;1,62112
+48146149348;OPERA 1600 REM;;;1.360,00;745;1.600,00;;OPERA 1600 REMOTE - pølsedisk med lige glas - rustfri;Pølsedisk/OPERA;1030;Vare;Nej;Ja;15;1,62112
+48146149348;OPERA 1600 SP_T;;;1.360,00;745;1.600,00;;OPERA 1600 SP/T - pølsedisk med skrå glas - rustfri;Pølsedisk;1030;Vare;Nej;Ja;15;1,62112
+48146149348;OPERA 2000 FRONT;;;1.360,00;745;2.000,00;;Opera 2000 - frontkøler til pølsedisk;OPERA;1030;Vare;Nej;Ja;15;2,0264
+48146149348;OPERA 2000 HOTDOG;;;1.360,00;745;2.000,00;;OPERA 2000 HOTDOG - pølsedisk med lige forkant;Pølsedisk;1030;Vare;Nej;Ja;15;2,0264
+558442331;OPERA 600 BO KROM;;;1.360,00;745;600;;OPERA 600 BO KROM - 3 hylder og LED lys;Convenience;1030;Vare;Ja;Ja;5;0,60792
+406170001;OPERA 600 BOM CH RET;;;1.360,00;745;600;;Opera 600 BO - Bake-off - Chrome - RET GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;5;0,60792
+406170001;OPERA 600 BOM CH TIL;;;1.360,00;745;600;;Opera 600 BO - Bake-off - Chrome - SKRÅ GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;5;0,60792
+406170001;OPERA 600 HOT CH RET;;;1.360,00;745;600;;OPERA 600 HOT - Chrome - RET GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;5;0,60792
+406170001;OPERA 600 HOT CH TIL;;;1.360,00;745;600;;OPERA 600 HOT - Chrome - TILTET GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;5;0,60792
+406170001;OPERA 600 SOM CH RET;;;1.360,00;745;600;;Opera 600 SO - køledisk - Chrom - RET GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;5;0,60792
+558442331;OPERA 600 SOM KROM;;;1.360,00;745;600;;OPERA 600 SOM KROM - 3 hylder og LED lys;Convenience;1030;Vare;Ja;Ja;5;0,60792
+558442331;OPERA 900 BO KROM;;;1.360,00;750;900;;OPERA 900 BO KROM - 3 hylder og LED lys;Convenience;1030;Vare;Ja;Ja;10;0,918
+406170001;OPERA 900 BO M 9005;;;1.360,00;745;900;;OPERA 90 BO M -SORT - Convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;10;0,91188
+406170001;OPERA 900 BO M CH BR;;;1.360,00;745;900;;OPERA 900 BO Chrome med skrå glas - REMOTE;Conveniencekøler;1030;Vare;Ja;Ja;10;0,91188
+406170001;OPERA 900 BO M CR L;;;1.360,00;745;900;;Opera 900 BO - Bake-off - Chrome - RET GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;10;0,91188
+406170001;OPERA 900 BO M HVID;;;1.360,00;745;900;;OPERA 90 BO M -HVID - Convenience køler;Conveniencekøler;1030;Vare;Ja;Ja;10;0,91188
+406170001;OPERA 900 BO M KROM;;;1.360,00;745;900;;OPERA 900 BO M - KROM med skrå frontglas;Conveniencekøler;1030;Vare;Ja;Ja;10;0,91188
+406170001;OPERA 900 HOT CR B;;;1.360,00;745;900;;OPERA 900 HOT - Chrome - SKRÅ GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;10;0,91188
+406170001;OPERA 900 HOT CR L;;;1.360,00;745;900;;OPERA 900 HOT - Chrome - RET GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;10;0,91188
+558442331;OPERA 900 HOT KROM;;;1.360,00;745;900;;OPERA 900 HOT KROM - 3 hylder og lys 830;Convenience;1030;Vare;Ja;Ja;10;0,91188
+406170001;OPERA 900 SO M 9005;;;1.360,00;745;900;;OPERA 900 SO M -SORT - Convenience køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;10;0,91188
+406170001;OPERA 900 SO M HVID;;;1.360,00;745;900;;OPERA 900 SO M -HVID - Convenience køler med 3 hylder;Conveniencekøler;1030;Vare;Ja;Ja;10;0,91188
+406170001;OPERA 900 SO M KROM;;;1.360,00;745;900;;Opera 900 SO - køledisk - KROM - RET GLAS - 7-11;Conveniencekøler;1030;Vare;Ja;Ja;10;0,91188
+558442331;OPERA 900 SOM KROM;;;1.360,00;750;900;;OPERA 900 SOM KROM - 3 hylder og LED lys;Convenience;1030;Vare;Ja;Ja;10;0,918
+406170001;OPERA 900 SS M HVID;;;1.360,00;745;900;;OPERA 900 SS M - HVID - Convenience selvbetjeningskøler;Conveniencekøler;1030;Vare;Ja;Ja;10;0,91188
+406170001;OPERA 900 SS M KROM;;;1.360,00;745;900;;OPERA 900 SS M - KROM - Convenience selvbetjeningskøler;Conveniencekøler;1030;Vare;Ja;Ja;10;0,91188
+406170001;OPERA 900 SSO M 9005;;;1.360,00;745;900;;OPERA 900 SSO M - SORT - Convenience selvbetjeningskøler;Conveniencekøler;1030;Vare;Ja;Ja;10;0,91188
+406170001;OPERA 900 SSO M STS;;;1.360,00;745;900;;OPERA 900 SSO M - Rustfri - Convenience selvbetjeningskøler;Conveniencekøler;1030;Vare;Ja;Ja;10;0,91188
+657038870;POLSEDISK 120CM;;;1.360,00;745;1.200,00;;Rustfri pølsedisk 120 cm - S851242;S851242;1030;Vare;Nej;Ja;15;1,21584
+657038870;POLSEDISK 120CM 711;;;1.360,00;745;1.200,00;;Rustfri pølsedisk 120 cm - model 711;S851246;1030;Vare;Nej;Ja;15;1,21584
+657038870;POLSEDISK 120CM XO;;;1.360,00;745;1.200,00;;Pølsedisk 120 cm - Krom med 6 x 1/9GN - 100;S851248;1030;Vare;Nej;Ja;15;1,21584
+657038870;POLSEDISK 120CME;;;1.360,00;745;1.200,00;;Rustfri pølsedisk 120 cm - S851244;S851244;1030;Vare;Nej;Ja;15;1,21584
+657038870;POLSEDISK 160CM 711;;;1.360,00;745;1.600,00;;Rustfri pølsedisk 160 cm - model 711;S861674;1030;Vare;Nej;Ja;15;1,62112
+;RS909100 S;;;950;750;900;;Neutral disk model OK;RS909100;1030;Stykliste;Ja;Ja;5;0,64125
+2323767223;S 300 RYSG;;;950;750;900;;S 300 RYSG  - kølemontre med 2 skydedøre i front - lukket ba;Conveniencekøler;1030;Vare;Ja;Ja;5;0,64125
+91518801;SAGA 135M EG GULD;;;1.256,00;770;1.350,00;;Saga 135 M - 3 flytbare hylder - EG/GULD;Conveniencekøler;1030;Vare;Nej;Ja;15;1,305612
+91518801;SAGA 135M RUSTFRI;;;1.350,00;770;1.350,00;;Saga 135 M - 3 flytbare hylder - RUSTFRI;Conveniencekøler;1030;Vare;Nej;Ja;15;1,403325
+91518801;SAGA 135M-HC EG GULD;;;1.256,00;770;1.350,00;;Saga 135 M - 3 flytbare hylder - EG/GULD - fugtighedsstyring;Conveniencekøler;1030;Vare;Nej;Ja;15;1,305612
+91518801;SAGA 135M-HC RUSTFRI;;;1.256,00;770;1.350,00;;Saga 135 M - 3 flytbare hylder - RUSTFRI - fugtighedsstyring;Conveniencekøler;1030;Vare;Nej;Ja;15;1,305612
+91518801;SAGA 135MW RUSTFRI S;;;1.256,00;770;1.350,00;;SAGA 135MW - RUSTFRI - combi;SAGA135;1030;Stykliste;Nej;Ja;15;1,305612
+91518801;SAGA 135W EG GULD;;;1.256,00;770;1.350,00;;Saga 135 M - 3 flytbare hylder - EG/GULD;Conveniencekøler;1030;Vare;Nej;Ja;15;1,305612
+91518801;SAGA 135W RUSTFRI;;;1.256,00;770;1.350,00;;Saga 135 W - 3 flytbare hylder - RUSTFRI;Conveniencekøler;1030;Vare;Nej;Ja;15;1,305612
+91518801;SAGA 135W RUSTFRI S;;;1.256,00;770;1.350,00;;Saga 135 W - 3 flytbare hylder - RUSTFRI - med køleplader;Conveniencekøler;1030;Stykliste;Nej;Ja;15;1,305612
+91518801;SAGA 90 M 0 STS;;;1.256,00;770;900;;Saga 90 M - 3 flytbare hylder - RUSTFRI;Convenience køler;1030;Vare;Ja;Ja;10;0,870408
+91518801;SAGA 90 M 0 STS S;;;1.256,00;770;900;;SAGA 90 M STS - REMOTE ombygget internt -  convenience køler;Convenience;1030;Stykliste;Ja;Ja;10;0,870408
+91518801;SAGA 90 M SELVBETJ.;;;1.256,00;770;900;;Saga 90 M - 3 flytbare hylder - RUSTFRI - selvbetjent;Convenience;1030;Vare;Ja;Ja;10;0,870408
+91518801;SAGA 90 W RUSTFRI;;;1.256,00;770;900;;Saga 90 W - 3 flytbare hylder - RUSTFRI;Conveniencekøler;1030;Vare;Ja;Ja;10;0,870408
+91518801;SAGA 90H EG GULD;;;1.256,00;770;900;;SAGA 90H EG GULD - 3 flytbare hylder - EG/GULD;Conveniencekøler;1030;Vare;Ja;Ja;10;0,870408
+91518801;SAGA 90H RUSTFRI S;;;1.256,00;770;900;;Saga 90 HOT - 3 flytbare hylder - RUSTFRI - ombygget;Conveniencekøler;1030;Stykliste;Ja;Ja;10;0,870408
+91518801;SAGA 90M EG GULD;;;1.256,00;770;900;;Saga 90 M - 3 flytbare hylder - EG/GULD;Conveniencekøler;1030;Vare;Ja;Ja;10;0,870408
+91518801;SAGA 90M RUSTFRI;;;1.256,00;770;990;;Saga 90 M - 3 flytbare hylder - RUSTFRI;Conveniencekøler;1030;Vare;Ja;Ja;10;0,9574488
+91518801;SAGA 90M-HC EG GULD;;;1.256,00;770;900;;Saga 90 M - 3 flytbare hylder - EG/GULD - fugtighedsstyring;Conveniencekøler;1030;Vare;Ja;Ja;10;0,870408
+91518801;SAGA 90M-HC RUSTFRI;;;1.256,00;770;900;;Saga 90 M - 3 flytbare hylder - RUSTFRI - fugtighedsstyring;Conveniencekøler;1030;Vare;Ja;Ja;10;0,870408
+91518801;SAGA 90W EG GULD;;;1.256,00;770;900;;Saga 90 M - 3 flytbare hylder - EG/GULD;Conveniencekøler;1030;Vare;Ja;Ja;10;0,870408
+91518801;SAGA-EA-45-W RUSTFRI;;;1.256,00;770;900;;Saga-EA-45-W RUSTFRI - neutralt hjørne;Conveniencedisk;1030;Vare;Ja;Ja;10;0,870408
+48122844141;SMART 90 HVID;;;1.400,00;705;900;;SMART 90 - Convenience køler m/ 2 hylder - hvid;Conveniencekøler;1030;Vare;Ja;Ja;10;0,8883
+34935151415;VELA;;;640;620;700;;VELA - Disk montre - LED lys - 5 Hylder;Diskmontre;1030;Vare;Ja;Ja;10;0,27776
+558442331;VIRGINIA 1000 SO;;;1.095,00;743;990;;VIRGINIA 1000 - convenience disk med 3 hylder;Convenience;1030;Vare;Ja;Ja;10;0,80544915
+558442331;VIRGINIA 1000 SO DI;;;1.095,00;743;990;;VIRGINIA 1000 - convenience DROP-IN disk;Convenience;1030;Vare;Ja;Ja;10;0,80544915
+558442331;VIRGINIA 1000 SO LOW;;;1.095,00;743;990;;VIRGINIA 1000 - convenience disk med 2 hylder;Convenience;1030;Vare;Ja;Ja;10;0,80544915
+558442331;VIRGINIA 1000 SS;;;1.095,00;743;990;;VIRGINIA 1000 - convenience selvbetjeningsdisk med 3 hylder;Convenience;1030;Vare;Ja;Ja;10;0,80544915
+39043485385;WALL 3GN RETRO;;;1.095,00;743;990;;WALL 3GN - drop in unit med 3 hylder - lige glas;CONVENIENCE;1030;Vare;Ja;Ja;10;0,80544915
+39043485385;WALL 3GN TOP;;;1.095,00;743;990;;WALL TOP 3GN - drop in unit med 3 hylder - ingen brønd;CONVENIENCE;1030;Vare;Ja;Ja;10;0,80544915
+;BA 20 S;;;900;520;900;;BA 20 S - Backbar - 2 Skyde døre - 196L;;1030;Vare;Ja;Ja;5;
+;VCK 7210 M BAGKANT;;;980;700;1360;;VCK 7210 - Kølebord med bagkant - 2 Døre - 205L;;1030;Vare;Nej;Ja;15;
+;OFC 220;;;1.750,00;600;494;;Åben Køler m/ 3 flytbare hylder og Froosh deko;Conveniencekøler;1030;Vare;Ja;Ja;10;
+;BCDv 4313;;;1.990,00;644;600;;Disp. køleskab, 5 hylder, LED lys, og lås. 600x644x1990 mm;;1030;Vare;Ja;Ja;10;
+;FKDV 4503 VW S;;;2.027,00;696;600;;Displaykøleskab 600x696x2027, 6 hylder, Vitamin Well deko;;1030;Vare;Ja;Ja;10;
