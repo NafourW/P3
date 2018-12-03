@@ -1,4 +1,4 @@
-package dk.aau.cs.ds308e18.io.database.management;
+package dk.aau.cs.ds308e18.function.management;
 
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;

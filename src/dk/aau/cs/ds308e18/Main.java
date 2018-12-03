@@ -4,9 +4,9 @@ import dk.aau.cs.ds308e18.gui.GUI;
 import dk.aau.cs.ds308e18.io.database.DatabaseExport;
 import dk.aau.cs.ds308e18.io.database.DatabaseImport;
 import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
-import dk.aau.cs.ds308e18.io.database.management.OrderManagement;
-import dk.aau.cs.ds308e18.io.database.management.TourManagement;
-import dk.aau.cs.ds308e18.io.database.management.WareManagement;
+import dk.aau.cs.ds308e18.function.management.OrderManagement;
+import dk.aau.cs.ds308e18.function.management.TourManagement;
+import dk.aau.cs.ds308e18.function.management.WareManagement;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

@@ -6,8 +6,8 @@ import java.sql.*;
 import java.util.ArrayList;
 
 import dk.aau.cs.ds308e18.io.ReadFile;
-import dk.aau.cs.ds308e18.io.database.management.OrderManagement;
-import dk.aau.cs.ds308e18.io.database.management.WareManagement;
+import dk.aau.cs.ds308e18.function.management.OrderManagement;
+import dk.aau.cs.ds308e18.function.management.WareManagement;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Ware;
 
