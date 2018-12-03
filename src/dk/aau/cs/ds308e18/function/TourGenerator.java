@@ -17,46 +17,53 @@ public class TourGenerator {
 
     public static ArrayList<Tour> generateTours(ArrayList<Order> orders){
         ArrayList<Tour> generatedTours = new ArrayList<>();
+        ArrayList<Tour> filledTours = new ArrayList<>();
 
-        //temporary variables
-        LocalDate date = null;
+        //currently focused tour
         Tour tour = null;
 
         //iterate through each order
         for (Order o : orders) {
-            //use the order's date
-            date = o.getDate();
+            //get the order's date
+            LocalDate orderDate = o.getDate();
 
             boolean dateAlreadyUsed = false;
-            boolean orderLimitExceeded = false;
 
             //iterate through each tour
             for (Tour t : generatedTours) {
                 //check if this date was already used by a previous tour
-                if (date.equals(t.getTourDate()))
+                if (orderDate.equals(t.getTourDate()))
                     dateAlreadyUsed = true;
 
-                //check if tour has reached the max orders limit
-                if (t.getOrders().size() >= MAX_ORDERS_PER_TOUR)
-                    orderLimitExceeded = true;
-
                 //if the date is used by another tour, and that tour has not reached the order limit,
-                //use the previous tour
-                if (dateAlreadyUsed && !orderLimitExceeded)
+                if (dateAlreadyUsed) {
+                    //use the previous tour
                     tour = t;
+                    break;
+                }
             }
 
-            //if no tour has used this date (or max orders has been reached)
-            //make a new tour
-            if (!dateAlreadyUsed || orderLimitExceeded) {
-                tour = new Tour(date);
+            //if no tour has used this date,
+            if (!dateAlreadyUsed) {
+                //make a new tour
+                tour = new Tour(orderDate);
+                //add it to the list of generated tours
                 generatedTours.add(tour);
             }
 
             //add the order to the tour
             tour.addOrder(o);
+
+            //if the tour is full, move it to the filled tours list
+            if (tour.getOrders().size() >= MAX_ORDERS_PER_TOUR){
+                generatedTours.remove(tour);
+                filledTours.add(tour);
+                tour = null;
+            }
         }
 
+        //add the filled tours to the list that is returned
+        generatedTours.addAll(filledTours);
         return generatedTours;
     }
 }

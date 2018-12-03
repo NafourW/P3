@@ -47,4 +47,9 @@ public class TourGeneratorTest {
                 fail("Tour has too many orders (" + t.getOrders().size() + "/" + TourGenerator.MAX_ORDERS_PER_TOUR + ")");
         }
     }
+
+    @Test
+    void TestToursHaveMoreThanOneOrder(){
+
+    }
 }
