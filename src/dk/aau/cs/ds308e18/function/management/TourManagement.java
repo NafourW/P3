@@ -4,9 +4,7 @@ import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 import dk.aau.cs.ds308e18.model.Tour;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class TourManagement {
@@ -35,6 +33,14 @@ public class TourManagement {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void updateTourID(ArrayList<Tour> tourList) {
+        int counter = 1;
+        for(Tour tour : tourList) {
+            tour.setTourId(counter);
+            counter++;
         }
     }
 

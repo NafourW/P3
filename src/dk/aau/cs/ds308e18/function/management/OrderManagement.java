@@ -52,27 +52,35 @@ public class OrderManagement {
         }
     }
 
-    public static void applyTourID() {
+    public static void applyTourID(ArrayList<Tour> tourList) {
         DatabaseConnection dbConn = new DatabaseConnection();
-
-        DatabaseExport dataExport = new DatabaseExport();
-        ArrayList<Tour> tourList = dataExport.exportTours();
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
-                String sql = "UPDATE orders SET tourID = ? WHERE orderID = ?";
-
                 for(Tour tour : tourList) {
                     ArrayList<Order> orderList = tour.getOrders();
-                    PreparedStatement stmt;
-                    for(Order order : orderList) {
-                        stmt = conn.prepareStatement(sql);
-                        stmt.setInt(1, tour.getTourID());
-                        stmt.setInt(2, order.getID());
 
-                        stmt.executeUpdate();
+                    for(Order order : orderList) {
+                        updateTourID(tour.getTourID(), order.getOrderID());
                     }
                 }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void updateTourID(int tourID, int orderID) {
+        DatabaseConnection dbConn = new DatabaseConnection();
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "UPDATE orders SET tourID = ? WHERE orderID = ?";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+
+                stmt.setInt(1, tourID);
+                stmt.setInt(2, orderID);
+
+                stmt.executeUpdate();
             }
         } catch (SQLException e) {
             e.printStackTrace();

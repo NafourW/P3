@@ -152,7 +152,6 @@ public class DatabaseExport {
                 ResultSet orders = stmt.executeQuery("SELECT * FROM orders WHERE tourID = 0");
 
                 orderList = createOrderObject(orders);
-                conn.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
