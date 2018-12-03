@@ -38,34 +38,18 @@ public class DatabaseExport {
 
     /*
     Export everything from the order table.
-    Print them in the terminal
     */
     public ArrayList<Order> exportOrders() {
         ArrayList<Order> orderList = new ArrayList<>();
 
         DatabaseConnection dbConn = new DatabaseConnection();
-        Connection conn = dbConn.establishConnectionToDatabase();
-        try {
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 Statement stmt = conn.createStatement();
                 ResultSet orders = stmt.executeQuery("SELECT * FROM orders");
 
-                // As long as there is a "next row" in the table, create an order based on that row
-                while (orders.next()) {
-                    //TODO Hjælp den her funktion
-                    Order order = new Order(orders.getInt(3), orders.getInt(4),
-                            orders.getString(5), orders.getString(6),
-                            orders.getString(7), orders.getDate(8).toLocalDate(),
-                            orders.getString(9), orders.getInt(10),
-                            orders.getInt(11), orders.getBoolean(12),
-                            orders.getString(13), orders.getString(14),
-                            orders.getString(15), orders.getBoolean(16),
-                            orders.getString(17), orders.getBoolean(18),
-                            orders.getString(19));
-                    order.setOrderID(orders.getInt(1));
-                    order.setTourID(orders.getInt(2));
-                    orderList.add(order);
-                }
+                orderList = createOrderObject(orders);
                 conn.close();
             }
         } catch (SQLException e) {
@@ -110,8 +94,8 @@ public class DatabaseExport {
         ArrayList<Tour> tourList = new ArrayList<>();
 
         DatabaseConnection dbConn = new DatabaseConnection();
-        Connection conn = dbConn.establishConnectionToDatabase();
-        try {
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 Statement stmt = conn.createStatement();
                 ResultSet tours = stmt.executeQuery("SELECT * FROM tours");
@@ -126,5 +110,54 @@ public class DatabaseExport {
             e.printStackTrace();
         }
         return tourList;
+    }
+
+    private ArrayList<Order> createOrderObject(ResultSet orders) {
+        ArrayList<Order> orderList = new ArrayList<>();
+
+        try {
+            // As long as there is a "next row" in the table, create an order based on that row
+            while (orders.next()) {
+                //TODO Hjælp den her funktion
+                Order order = new Order(orders.getInt(3), orders.getInt(4),
+                        orders.getString(5), orders.getString(6),
+                        orders.getString(7), orders.getDate(8).toLocalDate(),
+                        orders.getString(9), orders.getInt(10),
+                        orders.getInt(11), orders.getBoolean(12),
+                        orders.getString(13), orders.getString(14),
+                        orders.getString(15), orders.getBoolean(16),
+                        orders.getString(17), orders.getBoolean(18),
+                        orders.getString(19));
+                order.setOrderID(orders.getInt(1));
+                order.setTourID(orders.getInt(2));
+                orderList.add(order);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return orderList;
+    }
+
+    /*
+    Export all orders that are unassigned to a tour (tourID = 0).
+    */
+    public ArrayList<Order> exportUnassignedOrders() {
+        ArrayList<Order> orderList = new ArrayList<>();
+
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                Statement stmt = conn.createStatement();
+                ResultSet orders = stmt.executeQuery("SELECT * FROM orders WHERE tourID = 0");
+
+                orderList = createOrderObject(orders);
+                conn.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return orderList;
     }
 }
