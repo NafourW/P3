@@ -51,7 +51,7 @@ public class OrderManagement {
         }
     }
 
-    public void applyTourID(Tour tour) {
+    public static void applyTourID(Tour tour) {
         DatabaseConnection dbConn = new DatabaseConnection();
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {

@@ -86,7 +86,8 @@ public class EditOrderController implements ISelectionController {
         amountField.setText("");
         priceField.setText("");
 
-        wareTable.getItems().addAll(selectedOrder.getWares());
+        //TODO: make orderlines wares again
+        //wareTable.getItems().addAll(selectedOrder.getWares());
     }
 
     @FXML
