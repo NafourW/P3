@@ -20,8 +20,6 @@ public class TourGenerator {
         ArrayList<Tour> generatedTours = new ArrayList<>();
         ArrayList<Tour> filledTours = new ArrayList<>();
 
-        OrderManagement orderMan = new OrderManagement();
-
         //currently focused tour
         Tour tour = null;
 
@@ -70,10 +68,7 @@ public class TourGenerator {
 
         //Update tour ids on orders
         for (Tour t : generatedTours) {
-            for (Order o : t.getOrders()) {
-                o.setTourID(t.getID());
-            }
-            orderMan.applyTourID(t);
+            OrderManagement.applyTourID(t);
         }
 
         return generatedTours;
