@@ -109,9 +109,50 @@ public class TourManagement {
         }
     }
 
+    /*
+    Remove tour (from database).
+    Sets all Order's orderIDs on the tour to 0 and delete the tour from the database.
+    */
     public static void removeTour(Tour tour){
-        //TODO: 1. Find all orders with this tourID and set it to 0
-        //      2. Delete tour
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "UPDATE orders SET tourID = 0 WHERE orderID = ?";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+
+                // If there are any orders in the tour - set their tourID to 0
+                if(!(tour.getOrders().isEmpty())) {
+                    for(Order order : tour.getOrders()) {
+                        stmt.setInt(1, order.getOrderID());
+                        stmt.executeUpdate();
+                    }
+                }
+
+                // Delete the tour from the database
+                deleteTourFromDatabase(tour);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*
+    Delete the specific tour from the database.
+    */
+    private static void deleteTourFromDatabase(Tour tour) {
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "DELETE FROM tours WHERE tourID = ?";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+
+                stmt.setInt(1, tour.getTourID());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public static ArrayList<Tour> getTours(){
