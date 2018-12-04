@@ -30,13 +30,6 @@ public class Tour {
         orders = new ArrayList<>();
     }
 
-    public Tour(LocalDate date) {
-        id = 0;
-        tourDate = date;
-        packingDate = date;
-        orders = new ArrayList<>();
-    }
-
     public void addOrder(Order order) {
         orders.add(order);
     }
@@ -87,6 +80,10 @@ public class Tour {
 
     public LocalDate getTourDate() {
         return tourDate;
+    }
+
+    public void setTourDate(LocalDate tourDate) {
+        this.tourDate = tourDate;
     }
 
     public LocalDate getPackingDate() {
