@@ -21,16 +21,15 @@ public class GraphhopperTest {
         GraphHopper hopper = new GraphHopper().forServer();
 
         ClassLoader classLoader = GraphhopperTest.class.getClassLoader();
-        
 
         hopper.setOSMFile(classLoader.getResource("europe_denmark-gh").getFile());
 
-// where to store graphhopper files?
+        // where to store graphhopper files?
         hopper.setGraphHopperLocation("graphFolder");
         hopper.setEncodingManager(new EncodingManager("car"));
 
-// now this can take minutes if it imports or a few seconds for loading
-// of course this is dependent on the area you import
+        // now this can take minutes if it imports or a few seconds for loading
+        // of course this is dependent on the area you import
         hopper.importOrLoad();
 
         // simple configuration of the request object, see the GraphHopperServlet classs for more possibilities.
@@ -40,7 +39,7 @@ public class GraphhopperTest {
                 setLocale(Locale.US);
         GHResponse rsp = hopper.route(req);
 
-// first check for errors
+        // first check for errors
         if (rsp.hasErrors()) {
             // handle them!
             // rsp.getErrors()
@@ -53,7 +52,7 @@ public class GraphhopperTest {
         long timeInMs = rsp.getMillis();
 
         InstructionList il = rsp.getInstructions();
-// iterate over every turn instruction
+        // iterate over every turn instruction
         for (Instruction instruction : il) {
             instruction.getDistance();
 
