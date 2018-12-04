@@ -78,6 +78,10 @@ public class Tour {
         return orders;
     }
 
+    public int getOrderAmount() {
+        return orders.size();
+    }
+
     public LocalDate getTourDate() {
         return tourDate;
     }
@@ -96,6 +100,10 @@ public class Tour {
 
     public String getRegion() {
         return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 
     public int getID() {

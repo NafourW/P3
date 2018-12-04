@@ -27,28 +27,27 @@ public class TourGenerator {
         for (Order o : orders) {
             //get the order's date
             LocalDate orderDate = o.getDate();
+            String orderRegion = o.getRegion();
 
-            boolean dateAlreadyUsed = false;
+            boolean assignedToPrevioustour = false;
 
             //iterate through each tour
             for (Tour t : generatedTours) {
-                //check if this date was already used by a previous tour
-                if (orderDate.equals(t.getTourDate()))
-                    dateAlreadyUsed = true;
-
-                //if the date is used by another tour, and that tour has not reached the order limit,
-                if (dateAlreadyUsed) {
+                //this date was already used by a previous tour, and that tour has the same region,
+                if (orderDate.equals(t.getTourDate()) && orderRegion.equals(t.getRegion())) {
                     //use the previous tour
                     tour = t;
+                    assignedToPrevioustour = true;
                     break;
                 }
             }
 
-            //if no tour has used this date,
-            if (!dateAlreadyUsed) {
+            //if the order was not assigned to a previous tour,
+            if (!assignedToPrevioustour) {
                 //make a new tour
                 tour = new Tour();
                 tour.setTourDate(orderDate);
+                tour.setRegion(orderRegion);
                 //add it to the list of generated tours
                 generatedTours.add(tour);
             }

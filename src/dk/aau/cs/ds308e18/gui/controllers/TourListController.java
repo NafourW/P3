@@ -28,6 +28,7 @@ public class TourListController {
     @FXML private TableColumn<Tour, String> Driver;
     @FXML private TableColumn<Tour, Boolean> Status;
     @FXML private TableColumn<Tour, Boolean> Consignor;
+    @FXML private TableColumn<Tour, Integer> OrderAmount;
 
     @FXML private TableView<Order> tourOrdersTable;
     @FXML private TableColumn<Tour, Integer> OrderID;

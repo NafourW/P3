@@ -104,8 +104,9 @@ public class DatabaseExport {
 
                 while (tours.next()) {
                     Tour tour = new Tour();
-                    tour.setTourDate(tours.getDate(2).toLocalDate());
                     tour.setTourId(tours.getInt(1));
+                    tour.setTourDate(tours.getDate(2).toLocalDate());
+                    tour.setRegion(tours.getString(5));
 
                     // Find all orders with that tourID and put them on the tour
                     ArrayList<Order> ordersOnTour = ordersOnTour(tour);
