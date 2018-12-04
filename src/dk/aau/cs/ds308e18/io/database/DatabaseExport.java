@@ -4,10 +4,7 @@ import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 import dk.aau.cs.ds308e18.model.Ware;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class DatabaseExport {
@@ -129,8 +126,12 @@ public class DatabaseExport {
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
-                Statement stmt = conn.createStatement();
-                ResultSet ordersOnTour = stmt.executeQuery("SELECT * FROM orders WHERE tourID = ?");
+                String sql = "SELECT * FROM orders WHERE tourID = ?";
+
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.setInt(1, tour.getTourID());
+                
+                ResultSet ordersOnTour = stmt.executeQuery(sql);
 
                 ordersOnTourList = createOrderObject(ordersOnTour);
             }
