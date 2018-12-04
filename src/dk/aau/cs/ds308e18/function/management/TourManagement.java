@@ -150,6 +150,8 @@ public class TourManagement {
                 PreparedStatement stmt = conn.prepareStatement(sql);
 
                 stmt.setInt(1, tour.getTourID());
+
+                stmt.executeUpdate();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -158,5 +160,14 @@ public class TourManagement {
 
     public static ArrayList<Tour> getTours(){
         return Main.dbExport.exportTours();
+    }
+
+    /*
+    Execute removeTour on all tours in the database
+    */
+    public static void deleteAllTours() {
+        for (Tour tour : Main.dbExport.exportTours()) {
+            removeTour(tour);
+        }
     }
 }

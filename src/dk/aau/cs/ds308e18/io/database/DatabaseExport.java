@@ -4,10 +4,7 @@ import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 import dk.aau.cs.ds308e18.model.Ware;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class DatabaseExport {
@@ -104,6 +101,13 @@ public class DatabaseExport {
                     Tour tour = new Tour();
                     tour.setTourDate(tours.getDate(2).toLocalDate());
                     tour.setTourId(tours.getInt(1));
+
+                    // Find all orders with that tourID and put them on the tour
+                    ArrayList<Order> ordersOnTour = ordersOnTour(tour);
+                    for(Order order : ordersOnTour) {
+                        tour.addOrder(order);
+                    }
+
                     tourList.add(tour);
                 }
             }
@@ -113,6 +117,35 @@ public class DatabaseExport {
         return tourList;
     }
 
+    /*
+    Find all orders on a specific tour. Return a list of those orders.
+    */
+    private ArrayList<Order> ordersOnTour(Tour tour) {
+        ArrayList<Order> ordersOnTourList = new ArrayList<>();
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "SELECT * FROM orders WHERE tourID = ?";
+
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.setInt(1, tour.getTourID());
+                
+                ResultSet ordersOnTour = stmt.executeQuery();
+
+                ordersOnTourList = createOrderObject(ordersOnTour);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return ordersOnTourList;
+    }
+
+    /*
+    Create a list of orders based on a ResultSet from a SQL Query.
+    Return them.
+    */
     private ArrayList<Order> createOrderObject(ResultSet orders) {
         ArrayList<Order> orderList = new ArrayList<>();
 
