@@ -1,6 +1,7 @@
 package dk.aau.cs.ds308e18.gui.controllers;
 
 import dk.aau.cs.ds308e18.Main;
+import dk.aau.cs.ds308e18.function.management.TourManagement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -110,7 +111,10 @@ public class SettingsController {
 
     @FXML
     private void clearAllToursButtonAction(ActionEvent event) {
-        Main.gui.showYesNoDialog("label_are_you_sure", "message_clear_tours_confirmation");
+        boolean confirmed = Main.gui.showYesNoDialog("label_are_you_sure", "message_clear_tours_confirmation");
+        //Delete all tours
+        if (confirmed)
+            TourManagement.deleteAllTours();
     }
 
     @FXML

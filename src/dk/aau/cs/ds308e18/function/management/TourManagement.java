@@ -161,4 +161,13 @@ public class TourManagement {
     public static ArrayList<Tour> getTours(){
         return Main.dbExport.exportTours();
     }
+
+    /*
+    Execute removeTour on all tours in the database
+    */
+    public static void deleteAllTours() {
+        for (Tour tour : Main.dbExport.exportTours()) {
+            removeTour(tour);
+        }
+    }
 }
