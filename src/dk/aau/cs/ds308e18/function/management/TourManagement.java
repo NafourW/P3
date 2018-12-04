@@ -124,17 +124,18 @@ public class TourManagement {
                 // If there are any orders in the tour - set their tourID to 0
                 if(!(tour.getOrders().isEmpty())) {
                     for(Order order : tour.getOrders()) {
-                        stmt.setInt(1, order.getOrderID());
-                        stmt.executeUpdate();
+                        updateTourID(0, order.getOrderID());
                     }
                 }
 
-                // Delete the tour from the database
-                deleteTourFromDatabase(tour);
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        // Delete the tour from the database
+        deleteTourFromDatabase(tour);
     }
 
     /*
