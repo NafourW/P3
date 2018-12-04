@@ -1,10 +1,10 @@
 package dk.aau.cs.ds308e18.gui.controllers;
 
 import dk.aau.cs.ds308e18.Main;
+import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.gui.ISelectionController;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
-import dk.aau.cs.ds308e18.model.Ware;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,6 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class EditOrderController implements ISelectionController {
 
@@ -90,6 +91,36 @@ public class EditOrderController implements ISelectionController {
         orderLineTable.getItems().addAll(selectedOrder.getOrderLines());
     }
 
+    private void transferFieldsToOrder() {
+        selectedOrder.setCustomerName(customerNameField.getText());
+        selectedOrder.setAddress(addressField.getText());
+        selectedOrder.setZipCode(Integer.valueOf(zipCodeField.getText()));
+
+        selectedOrder.setDate(datePicker.getValue());
+        selectedOrder.setRegion(regionComboBox.getValue());
+        //orderCategoryComboBox;
+
+        commentsArea.getText();
+
+        //wareTypeComboBox;
+        //searchNameComboBox;
+        wareNameField.getText();
+        supplierField.getText();
+
+        wareNumberField.getText();
+        lengthField.getText();
+        widthField.getText();
+        heightField.getText();
+        weightField.getText();
+
+        amountField.getText();
+        priceField.getText();
+
+        ArrayList<OrderLine> orderLines = new ArrayList<OrderLine>();
+        orderLines.addAll(orderLineTable.getItems());
+        selectedOrder.setOrderLines(orderLines);
+    }
+
     @FXML
     private void  cancelOrderButtonAction(ActionEvent event){
 
@@ -102,7 +133,7 @@ public class EditOrderController implements ISelectionController {
 
     @FXML
     private void addOrderButtonAction(ActionEvent event) throws IOException {
-        //TODO: Add order
+        OrderManagement.createOrder(selectedOrder);
         Main.gui.changeView("OrderList");
     }
 
