@@ -2,10 +2,12 @@ package dk.aau.cs.ds308e18.function.management;
 
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
+import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Ware;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -45,6 +47,63 @@ public class WareManagement {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static ArrayList<String> getOrderlineWare(ArrayList<OrderLine> orderWareList) {
+        ArrayList<String> information = new ArrayList<>();
+
+        DatabaseConnection dbConn = new DatabaseConnection();
+        String sql = "SELECT liftAlone, liftingTools, moveTime FROM warelist WHERE wareNumber = ?";
+
+        /*
+        warenumber = warenumber
+        individual = warenumber
+        individual warenumber = warenumber
+         */
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+
+            if (conn != null) {
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                for(OrderLine ware : orderWareList) {
+
+                    //TODO Send help to this function
+                    stmt.setString(1, ware.getWareNumber());
+                    ResultSet rs1 = stmt.executeQuery();
+
+                    if(!(rs1.next())) {
+                        stmt.setString(1, ware.getIndividual());
+                        ResultSet rs2 = stmt.executeQuery();
+
+                        if(!(rs2.next())) {
+                            stmt.setString(1, ware.getIndividualNumber());
+                            ResultSet rs3 = stmt.executeQuery();
+
+                            while(rs3.next()) {
+                                information.add(rs3.getString(1));
+                                information.add(rs3.getString(2));
+                                information.add(rs3.getString(3));
+                            }
+                        }
+                        while(rs2.next()) {
+                            information.add(rs2.getString(1));
+                            information.add(rs2.getString(2));
+                            information.add(rs2.getString(3));
+                        }
+                    }
+                    while(rs1.next()) {
+                        information.add(rs1.getString(1));
+                        information.add(rs1.getString(2));
+                        information.add(rs1.getString(3));
+                    }
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return information;
     }
 
     public static ArrayList<Ware> getWares(){
