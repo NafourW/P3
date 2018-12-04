@@ -131,7 +131,7 @@ public class DatabaseExport {
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.setInt(1, tour.getTourID());
                 
-                ResultSet ordersOnTour = stmt.executeQuery(sql);
+                ResultSet ordersOnTour = stmt.executeQuery();
 
                 ordersOnTourList = createOrderObject(ordersOnTour);
             }
