@@ -103,6 +103,13 @@ public class DatabaseExport {
                 while (tours.next()) {
                     Tour tour = new Tour();
                     tour.setTourId(tours.getInt(1));
+
+                    // Find all orders with that tourID and put them on the tour
+                    ArrayList<Order> ordersOnTour = ordersOnTour(tour);
+                    for(Order order : ordersOnTour) {
+                        tour.addOrder(order);
+                    }
+
                     tourList.add(tour);
                 }
             }
@@ -112,6 +119,31 @@ public class DatabaseExport {
         return tourList;
     }
 
+    /*
+    Find all orders on a specific tour. Return a list of those orders.
+    */
+    private ArrayList<Order> ordersOnTour(Tour tour) {
+        ArrayList<Order> ordersOnTourList = new ArrayList<>();
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                Statement stmt = conn.createStatement();
+                ResultSet ordersOnTour = stmt.executeQuery("SELECT * FROM orders WHERE tourID = ?");
+
+                ordersOnTourList = createOrderObject(ordersOnTour);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return ordersOnTourList;
+    }
+
+    /*
+    Create a list of orders based on a ResultSet from a SQL Query.
+    Return them.
+    */
     private ArrayList<Order> createOrderObject(ResultSet orders) {
         ArrayList<Order> orderList = new ArrayList<>();
 
