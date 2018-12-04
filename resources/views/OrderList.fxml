@@ -28,6 +28,7 @@
       <TableView fx:id="orderListTable" VBox.vgrow="ALWAYS">
          <columns>
             <TableColumn fx:id="OrderID" prefWidth="60.0" text="%label_order_id" />
+            <TableColumn fx:id="ID" prefWidth="60.0" text="ID" />
             <TableColumn fx:id="Date" prefWidth="68.0" text="%label_order_date" />
             <TableColumn fx:id="WeekNumber" prefWidth="68.0" text="%label_order_week" />
             <TableColumn fx:id="Region" prefWidth="87.0" text="%label_order_region" />

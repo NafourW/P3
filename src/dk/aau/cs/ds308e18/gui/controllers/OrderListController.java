@@ -22,6 +22,7 @@ public class OrderListController {
 
     //Columns
     @FXML private TableColumn<Order, Integer> OrderID;
+    @FXML private TableColumn<Order, Integer> ID;
     @FXML private TableColumn<Order, LocalDate> Date;
     @FXML private TableColumn<Order, Integer> WeekNumber;
     @FXML private TableColumn<Order, String> Region;
