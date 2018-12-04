@@ -38,7 +38,7 @@
                   <TableView fx:id="tourListTable" prefHeight="200.0" prefWidth="200.0">
                     <columns>
                       <TableColumn fx:id="TourDate" prefWidth="75.0" text="%label_tour_date" />
-                      <TableColumn fx:id="ID" prefWidth="75.0" text="%label_tour_id" />
+                      <TableColumn fx:id="TourID" prefWidth="75.0" text="%label_tour_id" />
                         <TableColumn fx:id="Region" prefWidth="75.0" text="%label_tour_region" />
                         <TableColumn fx:id="Driver" prefWidth="75.0" text="%label_tour_driver" />
                         <TableColumn fx:id="Status" prefWidth="75.0" text="%label_tour_status" />

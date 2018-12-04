@@ -23,7 +23,7 @@ public class TourListController {
 
     @FXML private TableView<Tour> tourListTable;
     @FXML private TableColumn<Tour, String> TourDate;
-    @FXML private TableColumn<Tour, Integer> ID;
+    @FXML private TableColumn<Tour, Integer> TourID;
     @FXML private TableColumn<Tour, String> Region;
     @FXML private TableColumn<Tour, String> Driver;
     @FXML private TableColumn<Tour, Boolean> Status;
@@ -109,6 +109,7 @@ public class TourListController {
     @FXML
     private void generateToursButtonAction(ActionEvent event) throws IOException {
         Main.gui.openWindow("TourGenerator", "label_tourgen_title");
+        refreshTourList();
     }
 
     @FXML
@@ -120,7 +121,7 @@ public class TourListController {
     private void createEmptyTourButtonAction(ActionEvent event) {
         Tour tour = new Tour();
         tourListTable.getItems().add(tour);
-        //TODO: add tour to database
+        TourManagement.createTour(tour);
     }
 
     @FXML

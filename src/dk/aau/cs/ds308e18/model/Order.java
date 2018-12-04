@@ -29,7 +29,7 @@ public class Order {
     private int orderID;
     private int tourID;
 
-    ArrayList<OrderLine> wareList;
+    ArrayList<OrderLine> orderLines;
 
     public Order() {
         id = 0;
@@ -56,7 +56,7 @@ public class Order {
         orderID = 0;
         tourID = 0;
 
-        wareList = new ArrayList<>();
+        orderLines = new ArrayList<>();
     }
 
     public Order(int pluckRoute, int id, String orderReference, String expeditionStatus, String customerName,
@@ -84,7 +84,7 @@ public class Order {
         this.pickup = pickup;
         this.FV = FV;
 
-        wareList = new ArrayList<>();
+        orderLines = new ArrayList<>();
     }
 
     public int getOrderID() {
@@ -177,8 +177,8 @@ public class Order {
 
     public void setTourID(int tourID) {this.tourID = tourID;}
 
-    public ArrayList<OrderLine> getWares() {
-        return wareList;
+    public ArrayList<OrderLine> getOrderLines() {
+        return orderLines;
     }
 
     @Override
