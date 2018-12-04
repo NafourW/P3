@@ -22,5 +22,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="graphhopper-tools-0.4.1-jar-with-dependencies" level="project" />
   </component>
 </module>
