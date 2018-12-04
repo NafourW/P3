@@ -142,14 +142,14 @@ public class ReadFile {//Class that reads CSV files
                         e.printStackTrace();
                     }
                 }
-                //test
+                /*
                 ArrayList<OrderLine> orderLines = order.getOrderLines();
 
                 for (OrderLine ol: orderLines) {
                     System.out.println("Order: " + ol.getOrder() + " Warenumber: " + ol.getWareNumber() +
                             " Individual: " + ol.getIndividual() + " Name: " + ol.getName());
                 }
-
+                */
                 orderList.add(order);
             }
         } catch (IOException e){
