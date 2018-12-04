@@ -48,7 +48,8 @@ public class TourGenerator {
             //if no tour has used this date,
             if (!dateAlreadyUsed) {
                 //make a new tour
-                tour = new Tour(orderDate);
+                tour = new Tour();
+                tour.setTourDate(orderDate);
                 //add it to the list of generated tours
                 generatedTours.add(tour);
             }
