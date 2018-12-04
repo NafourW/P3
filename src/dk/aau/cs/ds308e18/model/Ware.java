@@ -97,4 +97,12 @@ public class Ware {
     public float getMoveTime() {
         return moveTime;
     }
+
+    @Override
+    public String toString() {
+        return supplier + "," + wareNumber + "," + height + "," + depth + "," +
+                grossHeight + "," + grossDepth + "," + grossWidth + "," + width + "," +
+                wareName + "," + searchName + "," + wareGroup + "," + wareType + "," +
+                liftAlone + "," + liftingTools + "," + moveTime;
+    }
 }

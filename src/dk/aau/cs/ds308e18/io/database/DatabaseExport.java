@@ -68,12 +68,17 @@ public class DatabaseExport {
                 // As long as there is a "next row" in the table, create an order based on that row
                 while (wares.next()) {
                     //TODO Hjælp den her funktion
-                    Ware ware = new Ware(wares.getString(1), wares.getString(2),
-                            wares.getInt(3), wares.getInt(4), wares.getInt(5),
-                            wares.getInt(6), wares.getInt(7), wares.getInt(8),
-                            wares.getString(9), wares.getString(10), wares.getInt(11),
-                            wares.getString(12), wares.getBoolean(13), wares.getBoolean(14),
-                            wares.getFloat(15));
+                    Ware ware = new Ware(
+                            wares.getString(2), wares.getString(3),
+
+                            wares.getInt(4), wares.getInt(5), wares.getInt(6),
+                            wares.getInt(7), wares.getInt(8), wares.getInt(9),
+
+                            wares.getString(10), wares.getString(11),
+                            wares.getInt(12),
+                            wares.getString(13),
+                            wares.getBoolean(14), wares.getBoolean(15),
+                            wares.getFloat(16));
                     wareList.add(ware);
                 }
             }
