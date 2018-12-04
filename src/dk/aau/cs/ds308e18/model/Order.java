@@ -127,16 +127,32 @@ public class Order {
         return customerName;
     }
 
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
     public String getRegion() {
         return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 
     public String getAddress() {
         return address;
     }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public int getZipCode() {
         return zipCode;
+    }
+
+    public void setZipCode(int zipCode) {
+        this.zipCode = zipCode;
     }
 
     public LocalDate getDate() {
@@ -179,6 +195,10 @@ public class Order {
 
     public ArrayList<OrderLine> getOrderLines() {
         return orderLines;
+    }
+
+    public void setOrderLines(ArrayList<OrderLine> orderLines) {
+        this.orderLines = orderLines;
     }
 
     @Override
