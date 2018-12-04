@@ -121,7 +121,7 @@ public class TourListController {
     private void createEmptyTourButtonAction(ActionEvent event) {
         Tour tour = new Tour();
         tourListTable.getItems().add(tour);
-        //TODO: add tour to database
+        TourManagement.createTour(tour);
     }
 
     @FXML
