@@ -109,6 +109,7 @@ public class TourListController {
     @FXML
     private void generateToursButtonAction(ActionEvent event) throws IOException {
         Main.gui.openWindow("TourGenerator", "label_tourgen_title");
+        refreshTourList();
     }
 
     @FXML
