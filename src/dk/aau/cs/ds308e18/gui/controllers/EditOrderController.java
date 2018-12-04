@@ -63,7 +63,7 @@ public class EditOrderController implements ISelectionController {
         regionComboBox.setItems(regions);
     }
 
-    private void populateFields(){
+    private void populateOrderFields(){
         customerNameField.setText(selectedOrder.getCustomerName());
         addressField.setText(selectedOrder.getAddress());
         zipCodeField.setText(String.valueOf(selectedOrder.getZipCode()));
@@ -74,6 +74,10 @@ public class EditOrderController implements ISelectionController {
 
         commentsArea.setText("");
 
+        orderLineTable.getItems().addAll(selectedOrder.getOrderLines());
+    }
+
+    private void populateWareFields(){
         //wareTypeComboBox;
         //searchNameComboBox;
         wareNameField.setText("");
@@ -87,8 +91,6 @@ public class EditOrderController implements ISelectionController {
 
         amountField.setText("");
         priceField.setText("");
-
-        orderLineTable.getItems().addAll(selectedOrder.getOrderLines());
     }
 
     private void transferFieldsToOrder() {
@@ -102,23 +104,11 @@ public class EditOrderController implements ISelectionController {
 
         commentsArea.getText();
 
-        //wareTypeComboBox;
-        //searchNameComboBox;
-        wareNameField.getText();
-        supplierField.getText();
-
-        wareNumberField.getText();
-        lengthField.getText();
-        widthField.getText();
-        heightField.getText();
-        weightField.getText();
-
-        amountField.getText();
-        priceField.getText();
-
         ArrayList<OrderLine> orderLines = new ArrayList<OrderLine>();
         orderLines.addAll(orderLineTable.getItems());
         selectedOrder.setOrderLines(orderLines);
+
+        OrderManagement.overrideOrder(selectedOrder);
     }
 
     @FXML
@@ -139,7 +129,7 @@ public class EditOrderController implements ISelectionController {
 
     @FXML
     private void doneButtonAction(ActionEvent event) throws IOException {
-        //TODO: save changes to order
+        transferFieldsToOrder();
         Main.gui.changeView("OrderList");
     }
 
@@ -161,7 +151,7 @@ public class EditOrderController implements ISelectionController {
     @Override
     public void setSelectedObject(Object obj, boolean isNew) {
         selectedOrder = (Order)obj;
-        populateFields();
+        populateOrderFields();
         if (isNew) {
             buttonBarLeft.getChildren().remove(cancelOrderButton);
             buttonBar.getChildren().remove(doneButton);

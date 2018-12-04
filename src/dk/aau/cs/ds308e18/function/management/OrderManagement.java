@@ -52,6 +52,13 @@ public class OrderManagement {
         }
     }
 
+    /*
+    Replace an order in the database with this order (both should have the same orderID)
+    */
+    public static void overrideOrder(Order order) {
+        //TODO: hjælp
+    }
+
     public static ArrayList<Order> getOrders() {
         return Main.dbExport.exportOrders();
     }
