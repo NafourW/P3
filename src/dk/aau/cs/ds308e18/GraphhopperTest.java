@@ -9,6 +9,7 @@ import com.graphhopper.util.Instruction;
 import com.graphhopper.util.InstructionList;
 import com.graphhopper.util.PointList;
 
+import java.io.File;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -22,10 +23,13 @@ public class GraphhopperTest {
 
         ClassLoader classLoader = GraphhopperTest.class.getClassLoader();
 
-        hopper.setOSMFile(classLoader.getResource("europe_denmark-gh").getFile());
+        //File osm = new File("C:/Users/the_p/Desktop/graphhopper/europe_denmark.osm");
+
+        //hopper.setOSMFile(osm.getAbsolutePath());
+
 
         // where to store graphhopper files?
-        hopper.setGraphHopperLocation("graphFolder");
+        hopper.setGraphHopperLocation("resources/graphFolder");
         hopper.setEncodingManager(new EncodingManager("car"));
 
         // now this can take minutes if it imports or a few seconds for loading
