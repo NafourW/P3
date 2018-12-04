@@ -194,7 +194,7 @@
                   <Label text="%label_order_wares_on_order" />
                   <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
                      <content>
-                        <TableView fx:id="wareTable" prefHeight="200.0" prefWidth="200.0">
+                        <TableView fx:id="orderLineTable" prefHeight="200.0" prefWidth="200.0">
                            <columns>
                               <TableColumn prefWidth="100.0" text="varenummer" />
                               <TableColumn prefWidth="75.0" text="varetype" />

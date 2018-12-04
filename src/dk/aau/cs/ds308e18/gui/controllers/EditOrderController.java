@@ -3,6 +3,7 @@ package dk.aau.cs.ds308e18.gui.controllers;
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.gui.ISelectionController;
 import dk.aau.cs.ds308e18.model.Order;
+import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Ware;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -49,7 +50,7 @@ public class EditOrderController implements ISelectionController {
     @FXML private TextField amountField;
     @FXML private TextField priceField;
 
-    @FXML private TableView<Ware> wareTable;
+    @FXML private TableView<OrderLine> orderLineTable;
 
     private Order selectedOrder;
 
