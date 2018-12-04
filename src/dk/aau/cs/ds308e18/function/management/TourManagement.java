@@ -150,6 +150,8 @@ public class TourManagement {
                 PreparedStatement stmt = conn.prepareStatement(sql);
 
                 stmt.setInt(1, tour.getTourID());
+
+                stmt.executeUpdate();
             }
         } catch (SQLException e) {
             e.printStackTrace();
