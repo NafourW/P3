@@ -5,6 +5,9 @@ import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Ware;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -87,9 +90,65 @@ public class ReadFile {//Class that reads CSV files
                 boolean FV; //Convert content inside the list to boolean
                 FV = Order[18].toLowerCase().equals("ja");
 
-                Order order = new Order(pluckRoute, id, Order[3], Order[4], Order[5], date,
+                Order order = new Order(pluckRoute, Order[2], Order[3], Order[4], Order[5], date,
                         Order[7], zipCode, receipt, pickup, Order[13], Order[14], Order[15],
                         printed, Order[17], FV, Order[19]);
+
+                String orderLinePath = sourcePath + "/" + order.getID() + "_ordrelinjer.csv";
+
+                Path path = Paths.get(orderLinePath);
+
+                if (Files.exists(path)){
+                    try (BufferedReader br2 = new BufferedReader(new FileReader(orderLinePath))){
+                        while ((line = br2.readLine()) != null){
+
+                            String[] Items = line.split(cvsSplitBy, -1);
+
+                            if(Items[0].matches("^[^\\d].*")){
+                                continue;
+                            }
+
+                            //Order = Items[0]
+                            //Varenummer = Items[1]
+                            //Varenavn = Items[2]
+
+                            int labels; //Convert content inside the list to integer
+                            if(Items[3].matches("[0-9]+") && Items[3].length() > 2)
+                                labels = Integer.valueOf(Items[3]);
+                            else
+                                labels = 0;
+
+                            int delivered; //Convert content inside the list to integer
+                            if(Items[4].matches("[0-9]+") && Items[4].length() > 2)
+                                delivered = Integer.valueOf(Items[4]);
+                            else
+                                delivered = 0;
+
+                            //Inidivid = Items[5]
+
+                            boolean preparing;
+                            preparing = Items[6].toLowerCase().equals("ja");
+
+                            //Individ varenummer = Items[7]
+                            //Model = Items[8]
+                            //Navn = Items[9]
+
+                            OrderLine orderline = new OrderLine(Items[0], Items[1], Items[2], labels, delivered,
+                                    Items[5], preparing, Items[7], Items[8], Items[9]);
+
+                            order.addOrderLine(orderline);
+                        }
+                    } catch (IOException e){
+                        e.printStackTrace();
+                    }
+                }
+                //test
+                ArrayList<OrderLine> orderLines = order.getOrderLines();
+
+                for (OrderLine ol: orderLines) {
+                    System.out.println("Order: " + ol.getOrder() + " Warenumber: " + ol.getWareNumber() +
+                            " Individual: " + ol.getIndividual() + " Name: " + ol.getName());
+                }
 
                 orderList.add(order);
             }
@@ -97,61 +156,6 @@ public class ReadFile {//Class that reads CSV files
             e.printStackTrace();
         }
         return orderList;
-    }
-
-    public ArrayList<OrderLine> orderItems(String directory){//same function as "orderFile" method
-
-        ArrayList<OrderLine> wareList = new ArrayList<>();
-
-        String inputFile = directory;
-
-        String line = "";
-
-        String cvsSplitBy = ";";
-
-        try (BufferedReader br = new BufferedReader(new FileReader(inputFile))){
-            while ((line = br.readLine()) != null){
-
-                String[] Items = line.split(cvsSplitBy, -1);
-
-                if(Items[0].matches("^[^\\d].*")){
-                    continue;
-                }
-
-                //Order = Items[0]
-                //Varenummer = Items[1]
-                //Varenavn = Items[2]
-
-                int labels; //Convert content inside the list to integer
-                if(Items[3].matches("[0-9]+") && Items[3].length() > 2)
-                    labels = Integer.valueOf(Items[3]);
-                else
-                    labels = 0;
-
-                int delivered; //Convert content inside the list to integer
-                if(Items[4].matches("[0-9]+") && Items[4].length() > 2)
-                    delivered = Integer.valueOf(Items[4]);
-                else
-                    delivered = 0;
-
-                //Inidivid = Items[5]
-
-                boolean preparing;
-                preparing = Items[6].toLowerCase().equals("ja");
-
-                //Individ varenummer = Items[7]
-                //Model = Items[8]
-                //Navn = Items[9]
-
-                OrderLine orderline = new OrderLine(Items[0], Items[1], Items[2], labels, delivered, Items[5],
-                        preparing, Items[7], Items[8], Items[9]);
-
-                wareList.add(orderline);
-            }
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-        return  wareList;
     }
 
     public ArrayList<Ware> wareTypes(String sourcePath){

@@ -158,7 +158,7 @@ public class DatabaseExport {
             // As long as there is a "next row" in the table, create an order based on that row
             while (orders.next()) {
                 //TODO Hjælp den her funktion
-                Order order = new Order(orders.getInt(3), orders.getInt(4),
+                Order order = new Order(orders.getInt(3), orders.getString(4),
                         orders.getString(5), orders.getString(6),
                         orders.getString(7), orders.getDate(8).toLocalDate(),
                         orders.getString(9), orders.getInt(10),

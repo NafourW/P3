@@ -5,7 +5,7 @@ import java.time.temporal.WeekFields;
 import java.util.ArrayList;
 
 public class Order {
-    private int id;
+    private String id;
     private int receipt;
     private int pluckRoute;
     private String orderReference;
@@ -32,7 +32,7 @@ public class Order {
     ArrayList<OrderLine> orderLines;
 
     public Order() {
-        id = 0;
+        id = null;
         receipt = 0;
         pluckRoute = 0;
         orderReference = "";
@@ -59,7 +59,7 @@ public class Order {
         orderLines = new ArrayList<>();
     }
 
-    public Order(int pluckRoute, int id, String orderReference, String expeditionStatus, String customerName,
+    public Order(int pluckRoute, String id, String orderReference, String expeditionStatus, String customerName,
                  LocalDate date, String address, int zipCode, int receipt, boolean pickup,
                  String warehouse, String category, String fleetOwner,
                  boolean printed, String region, boolean FV, String project) {
@@ -91,7 +91,7 @@ public class Order {
         return orderID;
     }
 
-    public int getID() {
+    public String getID() {
         return id;
     }
 
@@ -199,6 +199,10 @@ public class Order {
 
     public void setOrderLines(ArrayList<OrderLine> orderLines) {
         this.orderLines = orderLines;
+    }
+
+    public void addOrderLine(OrderLine orderLine){
+        orderLines.add(orderLine);
     }
 
     @Override
