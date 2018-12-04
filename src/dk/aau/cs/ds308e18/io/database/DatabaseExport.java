@@ -102,6 +102,7 @@ public class DatabaseExport {
 
                 while (tours.next()) {
                     Tour tour = new Tour();
+                    tour.setTourDate(tours.getDate(2).toLocalDate());
                     tour.setTourId(tours.getInt(1));
                     tourList.add(tour);
                 }
