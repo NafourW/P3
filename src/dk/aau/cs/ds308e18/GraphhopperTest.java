@@ -20,7 +20,7 @@ public class GraphhopperTest {
         // create singleton
         GraphHopper hopper = new GraphHopper().forServer();
 
-        ClassLoader classLoader = getClass().getClassLoader();
+        ClassLoader classLoader = GraphhopperTest.class.getClassLoader();
         
 
         hopper.setOSMFile(classLoader.getResource("europe_denmark-gh").getFile());
