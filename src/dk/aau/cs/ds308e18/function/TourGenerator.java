@@ -14,6 +14,7 @@ public class TourGenerator {
         mostEconomic
     }
 
+    public static final int MIN_ORDERS_PER_TOUR = 2;
     public static final int MAX_ORDERS_PER_TOUR = 20;
 
     public static ArrayList<Tour> generateTours(ArrayList<Order> orders){
@@ -66,9 +67,23 @@ public class TourGenerator {
         //add the filled tours to the list that is returned
         generatedTours.addAll(filledTours);
 
-        //Update tour ids on orders
+        ArrayList<Tour> invalidTours = new ArrayList<>();
+
         for (Tour t : generatedTours) {
-            TourManagement.createTour(t);
+            //If tour does not have enough orders
+            if (t.getOrders().size() < MIN_ORDERS_PER_TOUR) {
+                //Mark as invalid
+                invalidTours.add(t);
+            }
+            else{
+                //Update tour ids on orders
+                TourManagement.createTour(t);
+            }
+        }
+
+        //Remove all invalid tours from tour list
+        for (Tour t : invalidTours) {
+            generatedTours.remove(t);
         }
 
         return generatedTours;
