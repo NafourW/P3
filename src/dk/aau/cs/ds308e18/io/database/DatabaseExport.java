@@ -67,18 +67,7 @@ public class DatabaseExport {
 
                 // As long as there is a "next row" in the table, create an order based on that row
                 while (wares.next()) {
-                    //TODO Hjælp den her funktion
-                    Ware ware = new Ware(
-                            wares.getString(2), wares.getString(3),
-
-                            wares.getInt(4), wares.getInt(5), wares.getInt(6),
-                            wares.getInt(7), wares.getInt(8), wares.getInt(9),
-
-                            wares.getString(10), wares.getString(11),
-                            wares.getInt(12),
-                            wares.getString(13),
-                            wares.getBoolean(14), wares.getBoolean(15),
-                            wares.getFloat(16));
+                    Ware ware = createWareFromResultSet(wares);
                     wareList.add(ware);
                 }
             }
@@ -103,10 +92,7 @@ public class DatabaseExport {
                 ResultSet tours = stmt.executeQuery("SELECT * FROM tours");
 
                 while (tours.next()) {
-                    Tour tour = new Tour();
-                    tour.setTourId(tours.getInt(1));
-                    tour.setTourDate(tours.getDate(2).toLocalDate());
-                    tour.setRegion(tours.getString(5));
+                    Tour tour = createTourFromResultSet(tours);
 
                     // Find all orders with that tourID and put them on the tour
                     ArrayList<Order> ordersOnTour = ordersOnTour(tour);
@@ -158,18 +144,7 @@ public class DatabaseExport {
         try {
             // As long as there is a "next row" in the table, create an order based on that row
             while (orders.next()) {
-                //TODO Hjælp den her funktion
-                Order order = new Order(orders.getInt(3), orders.getString(4),
-                        orders.getString(5), orders.getString(6),
-                        orders.getString(7), orders.getDate(8).toLocalDate(),
-                        orders.getString(9), orders.getInt(10),
-                        orders.getInt(11), orders.getBoolean(12),
-                        orders.getString(13), orders.getString(14),
-                        orders.getString(15), orders.getBoolean(16),
-                        orders.getString(17), orders.getBoolean(18),
-                        orders.getString(19));
-                order.setOrderID(orders.getInt(1));
-                order.setTourID(orders.getInt(2));
+                Order order = createOrderFromResultSet(orders);
                 orderList.add(order);
             }
         } catch (SQLException e) {
@@ -198,5 +173,78 @@ public class DatabaseExport {
         }
 
         return orderList;
+    }
+
+    private Tour createTourFromResultSet(ResultSet resultSet) {
+        Tour tour = new Tour();
+
+        try {
+            tour.setTourId  (resultSet.getInt   (1));
+            tour.setTourDate(resultSet.getDate  (2).toLocalDate());
+            tour.setRegion  (resultSet.getString(5));
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return tour;
+    }
+
+    private Order createOrderFromResultSet(ResultSet resultSet) {
+        Order order = new Order();
+
+        try {
+            order.setOrderID         (resultSet.getInt    (1));
+            order.setTourID          (resultSet.getInt    (2));
+            order.setPluckRoute      (resultSet.getInt    (3));
+            order.setID              (resultSet.getString (4));
+            order.setOrderReference  (resultSet.getString (5));
+            order.setExpeditionStatus(resultSet.getString (6));
+            order.setCustomerName    (resultSet.getString (7));
+            order.setDate            (resultSet.getDate   (8).toLocalDate());
+            order.setAddress         (resultSet.getString (9));
+            order.setZipCode         (resultSet.getInt    (10));
+            order.setReceipt         (resultSet.getInt    (11));
+            order.setPickup          (resultSet.getBoolean(12));
+            order.setWarehouse       (resultSet.getString (13));
+            order.setCategory        (resultSet.getString (14));
+            order.setFleetOwner      (resultSet.getString (15));
+            order.setPrinted         (resultSet.getBoolean(16));
+            order.setRegion          (resultSet.getString (17));
+            order.setFV              (resultSet.getBoolean(18));
+            order.setProject         (resultSet.getString (19));
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return order;
+    }
+
+    private Ware createWareFromResultSet(ResultSet resultSet) {
+        Ware ware = new Ware();
+
+        try {
+            ware.setSupplier    (resultSet.getString (2));
+            ware.setWareNumber  (resultSet.getString (3));
+            ware.setHeight      (resultSet.getInt    (4));
+            ware.setDepth       (resultSet.getInt    (5));
+            ware.setGrossHeight (resultSet.getInt    (6));
+            ware.setGrossDepth  (resultSet.getInt    (7));
+            ware.setGrossWidth  (resultSet.getInt    (8));
+            ware.setWidth       (resultSet.getInt    (9));
+            ware.setWareName    (resultSet.getString (10));
+            ware.setSearchName  (resultSet.getString (11));
+            ware.setWareGroup   (resultSet.getInt    (12));
+            ware.setWareType    (resultSet.getString (13));
+            ware.setLiftAlone   (resultSet.getBoolean(14));
+            ware.setLiftingTools(resultSet.getBoolean(15));
+            ware.setMoveTime    (resultSet.getFloat  (16));
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return ware;
     }
 }

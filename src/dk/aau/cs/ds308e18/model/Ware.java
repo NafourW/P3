@@ -18,24 +18,22 @@ public class Ware {
     private boolean liftingTools;
     private float moveTime;
 
-    public Ware(String supplier, String wareNumber, int height, int depth, int grossHeight, int grossDepth,
-                int grossWidth, int width, String wareName, String searchName, int wareGroup, String wareType,
-                boolean liftAlone, boolean liftingTools, float moveTime) {
-        this.supplier = supplier;
-        this.wareNumber = wareNumber;
-        this.height = height;
-        this.depth = depth;
-        this.grossHeight = grossHeight;
-        this.grossDepth = grossDepth;
-        this.grossWidth = grossWidth;
-        this.width = width;
-        this.wareName = wareName;
-        this.searchName = searchName;
-        this.wareGroup = wareGroup;
-        this.wareType = wareType;
-        this.liftAlone = liftAlone;
-        this.liftingTools = liftingTools;
-        this.moveTime = moveTime;
+    public Ware(){
+        this.supplier = "";
+        this.wareNumber = "";
+        this.height = 0;
+        this.depth = 0;
+        this.grossHeight = 0;
+        this.grossDepth = 0;
+        this.grossWidth = 0;
+        this.width = 0;
+        this.wareName = "";
+        this.searchName = "";
+        this.wareGroup = 0;
+        this.wareType = "";
+        this.liftAlone = false;
+        this.liftingTools = false;
+        this.moveTime = 0;
     }
 
     public String getSupplier() {
@@ -96,6 +94,66 @@ public class Ware {
 
     public float getMoveTime() {
         return moveTime;
+    }
+
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
+    }
+
+    public void setWareNumber(String wareNumber) {
+        this.wareNumber = wareNumber;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public void setDepth(int depth) {
+        this.depth = depth;
+    }
+
+    public void setGrossHeight(int grossHeight) {
+        this.grossHeight = grossHeight;
+    }
+
+    public void setGrossDepth(int grossDepth) {
+        this.grossDepth = grossDepth;
+    }
+
+    public void setGrossWidth(int grossWidth) {
+        this.grossWidth = grossWidth;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setWareName(String wareName) {
+        this.wareName = wareName;
+    }
+
+    public void setSearchName(String searchName) {
+        this.searchName = searchName;
+    }
+
+    public void setWareGroup(int wareGroup) {
+        this.wareGroup = wareGroup;
+    }
+
+    public void setWareType(String wareType) {
+        this.wareType = wareType;
+    }
+
+    public void setLiftAlone(boolean liftAlone) {
+        this.liftAlone = liftAlone;
+    }
+
+    public void setLiftingTools(boolean liftingTools) {
+        this.liftingTools = liftingTools;
+    }
+
+    public void setMoveTime(float moveTime) {
+        this.moveTime = moveTime;
     }
 
     @Override

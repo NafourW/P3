@@ -90,9 +90,25 @@ public class ReadFile {//Class that reads CSV files
                 boolean FV; //Convert content inside the list to boolean
                 FV = Order[18].toLowerCase().equals("ja");
 
-                Order order = new Order(pluckRoute, Order[2], Order[3], Order[4], Order[5], date,
-                        Order[7], zipCode, receipt, pickup, Order[13], Order[14], Order[15],
-                        printed, Order[17], FV, Order[19]);
+                Order order = new Order();
+
+                order.setPluckRoute      (pluckRoute);
+                order.setID              (Order[2]);
+                order.setOrderReference  (Order[3]);
+                order.setExpeditionStatus(Order[4]);
+                order.setCustomerName    (Order[5]);
+                order.setDate            (date);
+                order.setAddress         (Order[7]);
+                order.setZipCode         (zipCode);
+                order.setReceipt         (receipt);
+                order.setPickup          (pickup);
+                order.setWarehouse       (Order[13]);
+                order.setCategory        (Order[14]);
+                order.setFleetOwner      (Order[15]);
+                order.setPrinted         (printed);
+                order.setRegion          (Order[17]);
+                order.setFV              (FV);
+                order.setProject         (Order[19]);
 
                 String orderLinePath = sourcePath + "/" + order.getID() + "_ordrelinjer.csv";
 
@@ -272,8 +288,23 @@ public class ReadFile {//Class that reads CSV files
                 else
                     moveTime = Integer.valueOf(moveTimeString2);
 
-                Ware ware = new Ware(Type[0], Type[1], height, depth, grossHeight, grossDepth, grossWidth, width,
-                        Type[8], Type[9], wareGroup, Type[11], liftAlone, liftingTools, moveTime);
+                Ware ware = new Ware();
+
+                ware.setSupplier    (Type[0]);
+                ware.setWareNumber  (Type[1]);
+                ware.setHeight      (height);
+                ware.setDepth       (depth);
+                ware.setWidth       (width);
+                ware.setGrossHeight (grossHeight);
+                ware.setGrossDepth  (grossDepth);
+                ware.setGrossWidth  (grossWidth);
+                ware.setWareName    (Type[8]);
+                ware.setSearchName  (Type[9]);
+                ware.setWareGroup   (wareGroup);
+                ware.setWareType    (Type[11]);
+                ware.setLiftAlone   (liftAlone);
+                ware.setLiftingTools(liftingTools);
+                ware.setMoveTime    (moveTime);
 
                 wareTypes.add(ware);
             }

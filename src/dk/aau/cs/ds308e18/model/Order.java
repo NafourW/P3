@@ -59,68 +59,76 @@ public class Order {
         orderLines = new ArrayList<>();
     }
 
-    public Order(int pluckRoute, String id, String orderReference, String expeditionStatus, String customerName,
-                 LocalDate date, String address, int zipCode, int receipt, boolean pickup,
-                 String warehouse, String category, String fleetOwner,
-                 boolean printed, String region, boolean FV, String project) {
-        this.id = id;
-        this.receipt = receipt;
-        this.pluckRoute = pluckRoute;
-        this.orderReference = orderReference;
-        this.warehouse = warehouse;
-        this.fleetOwner = fleetOwner;
-        this.project = project;
-        this.category = category;
-
-        this.customerName = customerName;
-        this.region = region;
-        this.address = address;
-        this.zipCode = zipCode;
-        this.date = date;
-
-        this.printed = printed;
-        this.expeditionStatus= expeditionStatus;
-
-        this.pickup = pickup;
-        this.FV = FV;
-
-        orderLines = new ArrayList<>();
-    }
-
     public int getOrderID() {
         return orderID;
+    }
+
+    public void setOrderID(int orderID) {
+        this.orderID = orderID;
     }
 
     public String getID() {
         return id;
     }
 
+    public void setID(String id) {
+        this.id = id;
+    }
+
     public int getReceipt() {
         return receipt;
+    }
+
+    public void setReceipt(int receipt) {
+        this.receipt = receipt;
     }
 
     public int getPluckRoute() {
         return pluckRoute;
     }
 
+    public void setPluckRoute(int pluckRoute) {
+        this.pluckRoute = pluckRoute;
+    }
+
     public String getOrderReference() {
         return orderReference;
+    }
+
+    public void setOrderReference(String orderReference) {
+        this.orderReference = orderReference;
     }
 
     public String getWarehouse() {
         return warehouse;
     }
 
+    public void setWarehouse(String warehouse) {
+        this.warehouse = warehouse;
+    }
+
     public String getFleetOwner() {
         return fleetOwner;
+    }
+
+    public void setFleetOwner(String fleetOwner) {
+        this.fleetOwner = fleetOwner;
     }
 
     public String getProject() {
         return project;
     }
 
+    public void setProject(String project) {
+        this.project = project;
+    }
+
     public String getCategory() {
         return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getCustomerName() {
@@ -173,23 +181,35 @@ public class Order {
         return printed;
     }
 
+    public void setPrinted(boolean printed) {
+        this.printed = printed;
+    }
+
     public String getExpeditionStatus() {
         return expeditionStatus;
+    }
+
+    public void setExpeditionStatus(String expeditionStatus) {
+        this.expeditionStatus = expeditionStatus;
     }
 
     public boolean isPickup() {
         return pickup;
     }
 
+    public void setPickup(boolean pickup) {
+        this.pickup = pickup;
+    }
+
     public boolean isFV() {
         return FV;
     }
 
-    public int getTourID() {return tourID;}
-
-    public void setOrderID(int orderID) {
-        this.orderID = orderID;
+    public void setFV(boolean FV) {
+        this.FV = FV;
     }
+
+    public int getTourID() {return tourID;}
 
     public void setTourID(int tourID) {this.tourID = tourID;}
 
