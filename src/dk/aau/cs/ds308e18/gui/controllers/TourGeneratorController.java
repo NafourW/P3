@@ -78,7 +78,7 @@ public class TourGeneratorController {
             TourGeneratorSettings settings = new TourGeneratorSettings();
             settings.method = planningChoiceBox.getValue();
             settings.breakTime = Integer.valueOf(breakTimeField.getText());
-            settings.forceOrdersOnTour = forceOrdersCheckBox.getState();
+            settings.forceOrdersOnTour = forceOrdersCheckBox.isSelected();
 
             //Generate tours
             System.out.println("Generating tours...");
