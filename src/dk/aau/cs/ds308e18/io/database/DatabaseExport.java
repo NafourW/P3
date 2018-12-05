@@ -46,7 +46,12 @@ public class DatabaseExport {
                 Statement stmt = conn.createStatement();
                 ResultSet orders = stmt.executeQuery("SELECT * FROM orders");
 
-                orderList = createOrderObject(orders);
+                // As long as there is a "next row" in the table, create an order based on that row
+                while (orders.next()) {
+                    Order order = createOrderFromResultSet(orders);
+                    orderList.add(order);
+                }
+
                 conn.close();
             }
         } catch (SQLException e) {
@@ -125,32 +130,17 @@ public class DatabaseExport {
                 
                 ResultSet ordersOnTour = stmt.executeQuery();
 
-                ordersOnTourList = createOrderObject(ordersOnTour);
+                // As long as there is a "next row" in the table, create an order based on that row
+                while (ordersOnTour.next()) {
+                    Order order = createOrderFromResultSet(ordersOnTour);
+                    ordersOnTourList.add(order);
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return ordersOnTourList;
-    }
-
-    /*
-    Create a list of orders based on a ResultSet from a SQL Query.
-    Return them.
-    */
-    private ArrayList<Order> createOrderObject(ResultSet orders) {
-        ArrayList<Order> orderList = new ArrayList<>();
-
-        try {
-            // As long as there is a "next row" in the table, create an order based on that row
-            while (orders.next()) {
-                Order order = createOrderFromResultSet(orders);
-                orderList.add(order);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return orderList;
     }
 
     /*
@@ -166,7 +156,11 @@ public class DatabaseExport {
                 Statement stmt = conn.createStatement();
                 ResultSet orders = stmt.executeQuery("SELECT * FROM orders WHERE tourID = 0");
 
-                orderList = createOrderObject(orders);
+                // As long as there is a "next row" in the table, create an order based on that row
+                while (orders.next()) {
+                    Order order = createOrderFromResultSet(orders);
+                    orderList.add(order);
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -175,6 +169,10 @@ public class DatabaseExport {
         return orderList;
     }
 
+    /*
+    Create a tour based on a ResultSet from a SQL Query.
+    Return it.
+    */
     private Tour createTourFromResultSet(ResultSet resultSet) {
         Tour tour = new Tour();
 
@@ -190,6 +188,10 @@ public class DatabaseExport {
         return tour;
     }
 
+    /*
+    Create an order based on a ResultSet from a SQL Query.
+    Return it.
+    */
     private Order createOrderFromResultSet(ResultSet resultSet) {
         Order order = new Order();
 
@@ -221,6 +223,10 @@ public class DatabaseExport {
         return order;
     }
 
+    /*
+    Create a ware based on a ResultSet from a SQL Query.
+    Return it.
+    */
     private Ware createWareFromResultSet(ResultSet resultSet) {
         Ware ware = new Ware();
 
