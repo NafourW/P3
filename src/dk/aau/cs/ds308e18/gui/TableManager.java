@@ -45,6 +45,10 @@ public class TableManager<S> {
         table.getItems().addAll(items);
     }
 
+    public ObservableList<S> getItems() {
+        return table.getItems();
+    }
+
     public void removeItem(S item) {
         table.getItems().remove(item);
     }

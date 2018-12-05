@@ -134,8 +134,11 @@ public class TourListController {
     private void deleteTourButtonAction(ActionEvent event) {
         TourManagement.removeTour(selectedTour);
         tourListManager.removeItem(selectedTour);
-        onTourSelected(null, selectedTour,null);
-        tourListManager.clearSelection();
+
+        if (tourListManager.getItems().size() < 1) {
+            onTourSelected(null, selectedTour,null);
+            tourListManager.clearSelection();
+        }
     }
 
     @FXML
