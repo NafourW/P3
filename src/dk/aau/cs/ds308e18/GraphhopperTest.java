@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-public class GraphhopperTestMain {
+public class GraphhopperTest {
 
     public static void main(String[] args) throws MalformedURLException {
 
@@ -27,7 +27,7 @@ public class GraphhopperTestMain {
         // create singleton
         GraphHopper hopper = new GraphHopper().forServer();
 
-        ClassLoader classLoader = GraphhopperTestMain.class.getClassLoader();
+        ClassLoader classLoader = GraphhopperTest.class.getClassLoader();
 
         //File osm = new File("C:/Users/the_p/Desktop/graphhopper/europe_denmark.osm");
 
