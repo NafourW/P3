@@ -1,7 +1,10 @@
 package dk.aau.cs.ds308e18.function.tourgen;
 
+import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -9,6 +12,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class TourGeneratorTest {
+
+    @BeforeAll @AfterAll
+    static void RefreshDatabaseBefore() {
+        DatabaseSetup databaseSetup = new DatabaseSetup();
+        databaseSetup.reloadDatabase();
+    }
+    
     @Test
     void TestToursHaveAtLeastMinimumOrders(){
         ArrayList<Order> orders = new ArrayList<>();
