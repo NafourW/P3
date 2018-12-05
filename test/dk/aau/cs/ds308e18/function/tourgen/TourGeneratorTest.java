@@ -99,17 +99,20 @@ public class TourGeneratorTest {
         }
     }
 
-    /*  This test is no longer relevant,
-        since all orders don't have to be assigned a tour.
     @Test
     void TestAllOrdersAssignedToTour() {
         ArrayList<Order> orders = new ArrayList<>();
 
         TourGeneratorSettings settings = new TourGeneratorSettings();
         settings.method = TourGeneratorSettings.planningMethod.leastTime;
+        settings.forceOrdersOnTour = true;
 
-        Order order = new Order();
-        orders.add(order);
+        for (int i = 0; i < TourGenerator.MAX_ORDERS_PER_TOUR + 1; i++) {
+            Order order = new Order();
+            order.setDate(LocalDate.now());
+            order.setRegion("København");
+            orders.add(order);
+        }
 
         ArrayList<Tour> tours = TourGenerator.generateTours(orders, settings);
 
@@ -124,5 +127,4 @@ public class TourGeneratorTest {
                 fail("Order has not been assigned to a tour");
         }
     }
-    */
 }

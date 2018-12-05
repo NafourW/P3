@@ -65,8 +65,8 @@ public class TourGenerator {
         ArrayList<Tour> invalidTours = new ArrayList<>();
 
         for (Tour t : generatedTours) {
-            //If tour does not have enough orders
-            if (t.getOrders().size() < MIN_ORDERS_PER_TOUR) {
+            //If tour does not have enough orders, and we don't force all orders on tours
+            if (t.getOrders().size() < MIN_ORDERS_PER_TOUR && !settings.forceOrdersOnTour) {
                 //Mark as invalid
                 invalidTours.add(t);
             }
