@@ -1,4 +1,4 @@
-package dk.aau.cs.ds308e18.function;
+package dk.aau.cs.ds308e18.function.tourgen;
 
 import dk.aau.cs.ds308e18.function.management.TourManagement;
 import dk.aau.cs.ds308e18.model.Order;
@@ -8,16 +8,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class TourGenerator {
-    public enum planningMethod{
-        leastTime,
-        shortestDistance,
-        mostEconomic
-    }
 
     public static final int MIN_ORDERS_PER_TOUR = 2;
     public static final int MAX_ORDERS_PER_TOUR = 20;
 
-    public static ArrayList<Tour> generateTours(ArrayList<Order> orders, planningMethod method){
+    public static ArrayList<Tour> generateTours(ArrayList<Order> orders, TourGeneratorSettings settings){
         ArrayList<Tour> generatedTours = new ArrayList<>();
         ArrayList<Tour> filledTours = new ArrayList<>();
 

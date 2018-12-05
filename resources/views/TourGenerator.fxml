@@ -18,62 +18,92 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label prefHeight="25.0" prefWidth="150.0" text="%label_tourgen_planning">
-         <font>
-            <Font size="14.0" />
-         </font>
-         <VBox.margin>
-            <Insets bottom="10.0" />
-         </VBox.margin>
-      </Label>
       <HBox>
          <children>
-            <ChoiceBox fx:id="planningChoiceBox" prefHeight="25.0" prefWidth="150.0" />
-         </children>
-         <VBox.margin>
-            <Insets bottom="20.0" left="10.0" />
-         </VBox.margin>
-      </HBox>
-      <Label prefHeight="25.0" prefWidth="150.0" text="%label_tourgen_region">
-         <font>
-            <Font size="14.0" />
-         </font>
-         <VBox.margin>
-            <Insets bottom="10.0" />
-         </VBox.margin>
-      </Label>
-      <HBox layoutX="10.0" layoutY="27.0">
-         <children>
-            <ChoiceBox fx:id="regionChoiceBox" prefWidth="150.0">
+            <VBox>
+               <children>
+                  <Label prefHeight="25.0" prefWidth="150.0" text="%label_tourgen_planning">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox>
+                     <children>
+                        <ChoiceBox fx:id="planningChoiceBox" prefHeight="25.0" prefWidth="150.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label prefHeight="25.0" prefWidth="150.0" text="%label_tourgen_region">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox>
+                     <children>
+                        <ChoiceBox fx:id="regionChoiceBox" prefWidth="150.0">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                        <CheckBox fx:id="allRegionsCheckBox" mnemonicParsing="false" onAction="#allRegionsCheckBoxAction" prefHeight="25.0" text="%label_tourgen_all_regions" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label prefHeight="25.0" prefWidth="150.0" text="%label_tourgen_date">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <DatePicker fx:id="datePicker" prefWidth="150.0">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </DatePicker>
+                        <CheckBox fx:id="allDatesCheckBox" mnemonicParsing="false" onAction="#allDatesCheckBoxAction" prefHeight="25.0" text="%label_tourgen_all_dates" />
+                     </children>
+                  </HBox>
+               </children>
                <HBox.margin>
-                  <Insets right="10.0" />
-               </HBox.margin></ChoiceBox>
-            <CheckBox fx:id="allRegionsCheckBox" mnemonicParsing="false" onAction="#allRegionsCheckBoxAction" prefHeight="25.0" text="%label_tourgen_all_regions" />
-         </children>
-         <VBox.margin>
-            <Insets bottom="20.0" left="10.0" />
-         </VBox.margin>
-      </HBox>
-      <Label prefHeight="25.0" prefWidth="150.0" text="%label_tourgen_date">
-         <font>
-            <Font size="14.0" />
-         </font>
-         <VBox.margin>
-            <Insets bottom="10.0" />
-         </VBox.margin>
-      </Label>
-      <HBox layoutX="20.0" layoutY="120.0">
-         <children>
-            <DatePicker fx:id="datePicker" prefWidth="150.0">
-               <HBox.margin>
-                  <Insets right="10.0" />
+                  <Insets left="30.0" right="40.0" />
                </HBox.margin>
-            </DatePicker>
-            <CheckBox fx:id="allDatesCheckBox" layoutX="280.0" layoutY="10.0" mnemonicParsing="false" onAction="#allDatesCheckBoxAction" prefHeight="25.0" text="%label_tourgen_all_dates" />
+            </VBox>
+            <VBox>
+               <children>
+                  <Label prefHeight="25.0" prefWidth="150.0" text="%label_tourgen_break_time">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="breakTimeField">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <CheckBox fx:id="forceOrdersCheckBox" mnemonicParsing="false" text="%label_tourgen_force_orders_on_tours" />
+               </children>
+            </VBox>
          </children>
-         <VBox.margin>
-            <Insets left="10.0" />
-         </VBox.margin>
       </HBox>
       <HBox alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="127.0" VBox.vgrow="ALWAYS">
          <children>

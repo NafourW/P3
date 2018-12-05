@@ -1,8 +1,9 @@
 package dk.aau.cs.ds308e18.gui.controllers;
 
 import dk.aau.cs.ds308e18.Main;
-import dk.aau.cs.ds308e18.function.TourGenerator;
+import dk.aau.cs.ds308e18.function.tourgen.TourGenerator;
 import dk.aau.cs.ds308e18.function.management.OrderManagement;
+import dk.aau.cs.ds308e18.function.tourgen.TourGeneratorSettings;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 import javafx.collections.FXCollections;
@@ -12,8 +13,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.awt.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -21,18 +25,20 @@ public class TourGeneratorController {
 
     @FXML private VBox root;
 
-    @FXML private ChoiceBox<TourGenerator.planningMethod> planningChoiceBox;
+    @FXML private ChoiceBox<TourGeneratorSettings.planningMethod> planningChoiceBox;
     @FXML private ChoiceBox<String> regionChoiceBox;
     @FXML private CheckBox allRegionsCheckBox;
     @FXML private DatePicker datePicker;
     @FXML private CheckBox allDatesCheckBox;
+    @FXML private TextField breakTimeField;
+    @FXML private Checkbox forceOrdersCheckBox;
 
     private ObservableList<String> regions = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
-        planningChoiceBox.getItems().setAll(TourGenerator.planningMethod.values());
-        planningChoiceBox.setValue(TourGenerator.planningMethod.leastTime);
+        planningChoiceBox.getItems().setAll(TourGeneratorSettings.planningMethod.values());
+        planningChoiceBox.setValue(TourGeneratorSettings.planningMethod.leastTime);
 
         regions.addAll(Main.dbExport.exportRegionNames());
         regionChoiceBox.setItems(regions);
@@ -62,15 +68,22 @@ public class TourGeneratorController {
         boolean confirmed = Main.gui.showYesNoDialog("label_tourgen_confirmation_title", "message_tourgen_confirmation");
 
         if (confirmed) {
-
+            //Get orders
             String region = (allRegionsCheckBox.isSelected()) ? null : regionChoiceBox.getValue();
             LocalDate date = (allDatesCheckBox.isSelected()) ? null :datePicker.getValue();
 
             System.out.println("Fetching orders...");
             ArrayList<Order> orders = OrderManagement.getUnassignedOrders(region, date);
 
+            //Get settings
+            TourGeneratorSettings settings = new TourGeneratorSettings();
+            settings.method = planningChoiceBox.getValue();
+            settings.breakTime = Integer.valueOf(breakTimeField.getText());
+            settings.forceOrdersOnTour = forceOrdersCheckBox.getState();
+
+            //Generate tours
             System.out.println("Generating tours...");
-            ArrayList<Tour> tours = TourGenerator.generateTours(orders, planningChoiceBox.getValue());
+            ArrayList<Tour> tours = TourGenerator.generateTours(orders, settings);
 
             System.out.println("Generated " + tours.size() + " tours:");
             for (Tour tour : tours)

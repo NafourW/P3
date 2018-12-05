@@ -1,4 +1,4 @@
-package dk.aau.cs.ds308e18.function;
+package dk.aau.cs.ds308e18.function.tourgen;
 
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
@@ -11,8 +11,10 @@ import java.util.ArrayList;
 public class TourGeneratorTest {
     @Test
     void TestToursHaveAtLeastMinimumOrders(){
-        TourGenerator.planningMethod method = TourGenerator.planningMethod.leastTime;
         ArrayList<Order> orders = new ArrayList<>();
+
+        TourGeneratorSettings settings = new TourGeneratorSettings();
+        settings.method = TourGeneratorSettings.planningMethod.leastTime;
 
         for (int i = 0; i < 100; i++) {
             Order order = new Order();
@@ -20,7 +22,7 @@ public class TourGeneratorTest {
             orders.add(order);
         }
 
-        ArrayList<Tour> tours = TourGenerator.generateTours(orders, method);
+        ArrayList<Tour> tours = TourGenerator.generateTours(orders, settings);
 
         for (Tour t : tours) {
             if (t.getOrders().size() < TourGenerator.MIN_ORDERS_PER_TOUR)
@@ -30,8 +32,10 @@ public class TourGeneratorTest {
 
     @Test
     void TestOrdersPerTourDoesNotExceedLimit(){
-        TourGenerator.planningMethod method = TourGenerator.planningMethod.leastTime;
         ArrayList<Order> orders = new ArrayList<>();
+
+        TourGeneratorSettings settings = new TourGeneratorSettings();
+        settings.method = TourGeneratorSettings.planningMethod.leastTime;
 
         for (int i = 0; i < 100; i++) {
             Order order = new Order();
@@ -39,7 +43,7 @@ public class TourGeneratorTest {
             orders.add(order);
         }
 
-        ArrayList<Tour> tours = TourGenerator.generateTours(orders, method);
+        ArrayList<Tour> tours = TourGenerator.generateTours(orders, settings);
 
         for (Tour t : tours) {
             if (t.getOrders().size() > TourGenerator.MAX_ORDERS_PER_TOUR)
@@ -49,8 +53,10 @@ public class TourGeneratorTest {
 
     @Test
     void TestTourRegionsMatchOrderRegions() {
-        TourGenerator.planningMethod method = TourGenerator.planningMethod.leastTime;
         ArrayList<Order> orders = new ArrayList<>();
+
+        TourGeneratorSettings settings = new TourGeneratorSettings();
+        settings.method = TourGeneratorSettings.planningMethod.leastTime;
 
         for (int i = 0; i < 100; i++) {
             Order order = new Order();
@@ -59,7 +65,7 @@ public class TourGeneratorTest {
             orders.add(order);
         }
 
-        ArrayList<Tour> tours = TourGenerator.generateTours(orders, method);
+        ArrayList<Tour> tours = TourGenerator.generateTours(orders, settings);
 
         for (Tour t : tours) {
             for (Order o : t.getOrders()) {
@@ -71,8 +77,10 @@ public class TourGeneratorTest {
 
     @Test
     void TestTourDatesMatchOrderDates() {
-        TourGenerator.planningMethod method = TourGenerator.planningMethod.leastTime;
         ArrayList<Order> orders = new ArrayList<>();
+
+        TourGeneratorSettings settings = new TourGeneratorSettings();
+        settings.method = TourGeneratorSettings.planningMethod.leastTime;
 
         for (int i = 0; i < 100; i++) {
             Order order = new Order();
@@ -81,7 +89,7 @@ public class TourGeneratorTest {
             orders.add(order);
         }
 
-        ArrayList<Tour> tours = TourGenerator.generateTours(orders, method);
+        ArrayList<Tour> tours = TourGenerator.generateTours(orders, settings);
 
         for (Tour t : tours) {
             for (Order o : t.getOrders()) {
@@ -95,13 +103,15 @@ public class TourGeneratorTest {
         since all orders don't have to be assigned a tour.
     @Test
     void TestAllOrdersAssignedToTour() {
-        TourGenerator.planningMethod method = TourGenerator.planningMethod.leastTime;
         ArrayList<Order> orders = new ArrayList<>();
+
+        TourGeneratorSettings settings = new TourGeneratorSettings();
+        settings.method = TourGeneratorSettings.planningMethod.leastTime;
 
         Order order = new Order();
         orders.add(order);
 
-        ArrayList<Tour> tours = TourGenerator.generateTours(orders, method);
+        ArrayList<Tour> tours = TourGenerator.generateTours(orders, settings);
 
         for (Order o : orders) {
             boolean hasBeenAssigned = false;
