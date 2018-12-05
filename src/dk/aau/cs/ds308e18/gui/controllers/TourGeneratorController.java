@@ -17,7 +17,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -31,7 +30,7 @@ public class TourGeneratorController {
     @FXML private DatePicker datePicker;
     @FXML private CheckBox allDatesCheckBox;
     @FXML private TextField breakTimeField;
-    @FXML private Checkbox forceOrdersCheckBox;
+    @FXML private CheckBox forceOrdersCheckBox;
 
     private ObservableList<String> regions = FXCollections.observableArrayList();
 
