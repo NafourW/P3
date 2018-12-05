@@ -95,7 +95,7 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="breakTimeField">
+                  <TextField fx:id="breakTimeField" text="0">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
