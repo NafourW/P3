@@ -82,7 +82,7 @@ public class DatabaseSetup {
                 stmt.executeUpdate();
             }
         } catch(SQLException e) {
-            System.out.println("The table already exists.");
+            System.out.println("The order table already exists.");
         }
     }
 
@@ -108,7 +108,7 @@ public class DatabaseSetup {
                 stmt.executeUpdate();
             }
         } catch(SQLException e) {
-            System.out.println("The table already exists.");
+            System.out.println("The tour table already exists.");
         }
     }
 
@@ -129,7 +129,7 @@ public class DatabaseSetup {
                 stmt.executeUpdate();
             }
         } catch(SQLException e) {
-            System.out.println("The table already exists.");
+            System.out.println("The ware table already exists.");
         }
     }
 
@@ -163,7 +163,7 @@ public class DatabaseSetup {
                 stmt.executeUpdate();
             }
         } catch(SQLException e) {
-            System.out.println("The table already exists.");
+            System.out.println("The warelist table already exists.");
         }
     }
 
@@ -188,7 +188,7 @@ public class DatabaseSetup {
                 dbImpo.importRegionNames();
             }
         } catch(SQLException e) {
-            System.out.println("The table already exists.");
+            System.out.println("The region table already exists.");
         }
     }
 }
