@@ -7,6 +7,7 @@ import dk.aau.cs.ds308e18.model.Order;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class OrderManagement {
@@ -62,6 +63,11 @@ public class OrderManagement {
     }
 
     public static ArrayList<Order> getUnassignedOrders() {
+        return Main.dbExport.exportUnassignedOrders();
+    }
+
+    public static ArrayList<Order> getUnassignedOrders(String region, LocalDate date) {
+        //TODO: if region and/or date is not null, filter orders
         return Main.dbExport.exportUnassignedOrders();
     }
 }

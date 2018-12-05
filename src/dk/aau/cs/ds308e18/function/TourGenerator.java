@@ -17,7 +17,7 @@ public class TourGenerator {
     public static final int MIN_ORDERS_PER_TOUR = 2;
     public static final int MAX_ORDERS_PER_TOUR = 20;
 
-    public static ArrayList<Tour> generateTours(ArrayList<Order> orders){
+    public static ArrayList<Tour> generateTours(ArrayList<Order> orders, planningMethod method){
         ArrayList<Tour> generatedTours = new ArrayList<>();
         ArrayList<Tour> filledTours = new ArrayList<>();
 
