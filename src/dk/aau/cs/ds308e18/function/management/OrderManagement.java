@@ -66,7 +66,7 @@ public class OrderManagement {
         return Main.dbExport.exportUnassignedOrders();
     }
 
-    public static ArrayList<Order> getUnassignedOrdersFiltered(String region, LocalDate date) {
+    public static ArrayList<Order> getUnassignedOrdersFiltered(String region, String date) {
         return Main.dbExport.exportUnassignedOrdersFiltered(region, date);
     }
 }

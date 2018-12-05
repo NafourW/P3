@@ -83,7 +83,7 @@ public class DatabaseExport {
     Export all orders that are unassigned to a tour (tourID = 0).
     If region or date are not null, the orders get filtered.
     */
-    public ArrayList<Order> exportUnassignedOrdersFiltered(String region, LocalDate date) {
+    public ArrayList<Order> exportUnassignedOrdersFiltered(String region, String date) {
         String qWhere  = (region != null || date != null) ? "WHERE tourID = 0 AND " : "";
         String qAnd    = (region != null && date != null) ? " AND " : "";
 
