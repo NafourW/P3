@@ -22,23 +22,35 @@ public class GraphhopperTest {
 
     public static void main(String[] args) throws MalformedURLException {
 
+        //Strings for building the API URL
         String vehicle = "car";
+        String key = "1095aac7-8a71-4c56-b725-eca17fdf1284";
+        String linkGeocode = "https://graphhopper.com/api/1/geocode?q=";
+        String address = "selma lagerløfs vej 300";
+        address = address.replaceAll("\\s", "%20");
+        String linkEnd = "&locale=en&debug=true&key=";
 
         // create singleton
         GraphHopper hopper = new GraphHopper().forServer();
 
         ClassLoader classLoader = GraphhopperTest.class.getClassLoader();
 
+        //Load map
         //File osm = new File("C:/Users/the_p/Desktop/graphhopper/europe_denmark.osm");
 
         //hopper.setOSMFile(osm.getAbsolutePath());
 
 
+        //BBuild link for API request
+        StringBuilder sb = new StringBuilder();
+        sb.append(linkGeocode).append(address).append(linkEnd).append(key);
+        System.out.println(sb.toString());
+
         // URL TING
-        URL url = new URL("https://graphhopper.com/api/1/geocode?q=Aalborg&locale=en&debug=true&key=[YOUR_KEY]");
+        URL url = new URL(sb.toString());
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))) {
-            for (String line; (line = reader.readLine()) != null;) {
+            for (String line; (line = reader.readLine()) != null; ) {
                 System.out.println(line);
             }
         } catch (IOException e) {
@@ -55,7 +67,7 @@ public class GraphhopperTest {
         hopper.importOrLoad();
 
         // simple configuration of the request object, see the GraphHopperServlet classs for more possibilities.
-        GHRequest req = new GHRequest(/* latFrom, lonFrom, latTo, lonTo */).
+        GHRequest req = new GHRequest(). /* latFrom, lonFrom, latTo, lonTo */
                 setWeighting("fastest").
                 setVehicle(vehicle).
                 setLocale(Locale.US);
