@@ -18,6 +18,8 @@ public class GraphhopperTest {
 
     public static void main(String[] args) {
 
+        String vehicle = "truck";
+
         // create singleton
         GraphHopper hopper = new GraphHopper().forServer();
 
@@ -30,7 +32,7 @@ public class GraphhopperTest {
 
         // where to store graphhopper files?
         hopper.setGraphHopperLocation("resources/graphFolder");
-        hopper.setEncodingManager(new EncodingManager("car"));
+        hopper.setEncodingManager(new EncodingManager(vehicle));
 
         // now this can take minutes if it imports or a few seconds for loading
         // of course this is dependent on the area you import
@@ -39,7 +41,7 @@ public class GraphhopperTest {
         // simple configuration of the request object, see the GraphHopperServlet classs for more possibilities.
         GHRequest req = new GHRequest(/* latFrom, lonFrom, latTo, lonTo */).
                 setWeighting("fastest").
-                setVehicle("car").
+                setVehicle(vehicle).
                 setLocale(Locale.US);
         GHResponse rsp = hopper.route(req);
 
