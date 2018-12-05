@@ -5,7 +5,6 @@ import dk.aau.cs.ds308e18.model.Tour;
 import dk.aau.cs.ds308e18.model.Ware;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class DatabaseExport {
@@ -47,7 +46,7 @@ public class DatabaseExport {
             if (conn != null) {
                 Statement stmt = conn.createStatement();
                 String sql = "SELECT * FROM orders " + extraParameters;
-                System.out.println(sql);
+                //System.out.println(sql);
                 ResultSet orders = stmt.executeQuery(sql);
 
                 // As long as there is a "next row" in the table, create an order based on that row
@@ -87,8 +86,8 @@ public class DatabaseExport {
         String qWhere  = (region != null || date != null) ? "WHERE tourID = 0 AND " : "";
         String qAnd    = (region != null && date != null) ? " AND " : "";
 
-        String qRegion = (region != null) ? "route = " + region     : "";
-        String qDate   = (date != null)   ? "orderDate = " + date   : "";
+        String qRegion = (region != null) ? "route = "     + "'" + region + "'" : "";
+        String qDate   = (date != null)   ? "orderDate = " + "'" + date   + "'" : "";
 
         return exportOrders(qWhere + qRegion + qAnd + qDate);
     }
