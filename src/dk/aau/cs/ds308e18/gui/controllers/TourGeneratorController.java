@@ -72,7 +72,7 @@ public class TourGeneratorController {
             LocalDate date = (allDatesCheckBox.isSelected()) ? null :datePicker.getValue();
 
             System.out.println("Fetching orders...");
-            ArrayList<Order> orders = OrderManagement.getUnassignedOrders(region, date);
+            ArrayList<Order> orders = OrderManagement.getUnassignedOrdersFiltered(region, date);
 
             //Get settings
             TourGeneratorSettings settings = new TourGeneratorSettings();

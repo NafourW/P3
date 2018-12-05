@@ -59,15 +59,14 @@ public class OrderManagement {
     }
 
     public static ArrayList<Order> getOrders() {
-        return Main.dbExport.exportOrders();
+        return Main.dbExport.exportAllOrders();
     }
 
     public static ArrayList<Order> getUnassignedOrders() {
         return Main.dbExport.exportUnassignedOrders();
     }
 
-    public static ArrayList<Order> getUnassignedOrders(String region, LocalDate date) {
-        //TODO: if region and/or date is not null, filter orders
-        return Main.dbExport.exportUnassignedOrders();
+    public static ArrayList<Order> getUnassignedOrdersFiltered(String region, LocalDate date) {
+        return Main.dbExport.exportUnassignedOrdersFiltered(region, date);
     }
 }

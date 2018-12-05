@@ -5,6 +5,7 @@ import dk.aau.cs.ds308e18.model.Tour;
 import dk.aau.cs.ds308e18.model.Ware;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class DatabaseExport {
@@ -34,9 +35,10 @@ public class DatabaseExport {
     }
 
     /*
-    Export everything from the order table.
+    Export orders from the order table
+    extraParameters is added at the end of the query
     */
-    public ArrayList<Order> exportOrders() {
+    public ArrayList<Order> exportOrders(String extraParameters) {
         ArrayList<Order> orderList = new ArrayList<>();
 
         DatabaseConnection dbConn = new DatabaseConnection();
@@ -44,7 +46,9 @@ public class DatabaseExport {
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 Statement stmt = conn.createStatement();
-                ResultSet orders = stmt.executeQuery("SELECT * FROM orders");
+                String sql = "SELECT * FROM orders " + extraParameters;
+                System.out.println(sql);
+                ResultSet orders = stmt.executeQuery(sql);
 
                 // As long as there is a "next row" in the table, create an order based on that row
                 while (orders.next()) {
@@ -59,6 +63,34 @@ public class DatabaseExport {
         }
 
         return orderList;
+    }
+
+    /*
+    Export everything from the order table.
+    */
+    public ArrayList<Order> exportAllOrders() {
+        return exportOrders("");
+    }
+
+    /*
+    Export all orders that are unassigned to a tour (tourID = 0).
+    */
+    public ArrayList<Order> exportUnassignedOrders() {
+        return exportOrders("WHERE tourID = 0");
+    }
+
+    /*
+    Export all orders that are unassigned to a tour (tourID = 0).
+    If region or date are not null, the orders get filtered.
+    */
+    public ArrayList<Order> exportUnassignedOrdersFiltered(String region, LocalDate date) {
+        String qWhere  = (region != null || date != null) ? "WHERE tourID = 0 AND " : "";
+        String qAnd    = (region != null && date != null) ? " AND " : "";
+
+        String qRegion = (region != null) ? "route = " + region     : "";
+        String qDate   = (date != null)   ? "orderDate = " + date   : "";
+
+        return exportOrders(qWhere + qRegion + qAnd + qDate);
     }
 
     public ArrayList<Ware> exportWares() {
@@ -141,32 +173,6 @@ public class DatabaseExport {
         }
 
         return ordersOnTourList;
-    }
-
-    /*
-    Export all orders that are unassigned to a tour (tourID = 0).
-    */
-    public ArrayList<Order> exportUnassignedOrders() {
-        ArrayList<Order> orderList = new ArrayList<>();
-
-        DatabaseConnection dbConn = new DatabaseConnection();
-
-        try(Connection conn = dbConn.establishConnectionToDatabase()) {
-            if (conn != null) {
-                Statement stmt = conn.createStatement();
-                ResultSet orders = stmt.executeQuery("SELECT * FROM orders WHERE tourID = 0");
-
-                // As long as there is a "next row" in the table, create an order based on that row
-                while (orders.next()) {
-                    Order order = createOrderFromResultSet(orders);
-                    orderList.add(order);
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return orderList;
     }
 
     /*
