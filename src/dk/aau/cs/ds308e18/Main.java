@@ -18,7 +18,7 @@ public class Main extends Application {
     public static DatabaseImport dbImport;
     public static DatabaseExport dbExport;
     public static DatabaseSetup dbSetup;
-    public static GPS gps;
+    public static GPS gps = new GPS();
 
     public static void main(String[] args) {
         launch(args);

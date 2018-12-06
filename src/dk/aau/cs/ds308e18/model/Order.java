@@ -51,6 +51,7 @@ public class Order {
         address = "";
         zipCode = 0;
         date = LocalDate.now();
+        latLon = null;
 
         printed = false;
         expeditionStatus = "";
@@ -236,7 +237,7 @@ public class Order {
 
     public void setLatLon() {
         if (this.latLon == null) {
-            this.latLon = gps.GeocodeAddress(this.address);
+            this.latLon = gps.GeocodeAddress(address);
         }
     }
 

@@ -21,14 +21,14 @@ public class GPSTest {
 
     @Test
     public void GeocodeAddressTest() {
-        GHPoint ghPoint = new GHPoint(57.012281, 9.991705);
+        GHPoint ghPoint = new GHPoint(57.012281, 9.991705); //Coordinates from OpenStreetMap
         Order order = new Order();
         order.setAddress("selma lagerløfs vej 300");
 
         order.setLatLon();
 
-        Assertions.assertEquals(order.getLatLon().getLat(), ghPoint.getLat(), 0.003);
-        Assertions.assertEquals(order.getLatLon().getLon(), ghPoint.getLon(), 0.003);
+        Assertions.assertEquals(ghPoint.getLat(), order.getLatLon().getLat());
+        Assertions.assertEquals(ghPoint.getLon(), order.getLatLon().getLon());
 
         }
     }
