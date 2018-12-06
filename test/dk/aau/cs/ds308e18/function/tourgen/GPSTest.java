@@ -11,12 +11,12 @@ public class GPSTest {
     @Test
     public void setRouteTest() {
 
-        GHPoint ghPointStart = new GHPoint(57.0122, 9.9919);
+        GHPoint ghPointStart = new GHPoint(57.0122, 9.9919); //Coordinates from OpenStreetMap
         GHPoint ghPointEnd = new GHPoint(57.04663, 9.91138);
 
         gps.setRoute(ghPointStart, ghPointEnd);
 
-        Assertions.assertEquals(8700, gps.getDistance(), 200);
+        Assertions.assertEquals(8700, gps.getDistance(), 200); //Expected distance from OpenStreetMap
     }
 
     @Test
