@@ -32,7 +32,7 @@ public class Order {
     ArrayList<OrderLine> orderLines;
 
     public Order() {
-        id = null;
+        id = "";
         receipt = 0;
         pluckRoute = 0;
         orderReference = "";

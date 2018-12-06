@@ -62,7 +62,7 @@ public class DatabaseSetup {
                         "orderID INT PRIMARY KEY AUTO_INCREMENT," +
                         "tourID INT," +
                         "pluckRoute INT," +
-                        "id INT," +
+                        "id VARCHAR(255)," +
                         "orderReference VARCHAR(255)," +
                         "expeditionStatus VARCHAR(255)," +
                         "customerName VARCHAR(255)," +
