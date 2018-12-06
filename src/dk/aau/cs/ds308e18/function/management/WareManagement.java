@@ -71,11 +71,28 @@ public class WareManagement {
                     stmt.setString(1, ware.getWareNumber());
                     ResultSet rs1 = stmt.executeQuery();
 
-                    if(!(rs1.next())) {
+                    boolean rs1Found = false;
+                    boolean rs2Found = false;
+
+                    while(rs1.next()) {
+                        information.add(rs1.getString(1));
+                        information.add(rs1.getString(2));
+                        information.add(rs1.getString(3));
+                        rs1Found = true;
+                    }
+
+                    if(!rs1Found) {
                         stmt.setString(1, ware.getIndividual());
                         ResultSet rs2 = stmt.executeQuery();
 
-                        if(!(rs2.next())) {
+                        while(rs2.next()) {
+                            information.add(rs2.getString(1));
+                            information.add(rs2.getString(2));
+                            information.add(rs2.getString(3));
+                            rs2Found = true;
+                        }
+
+                        if(!rs2Found) {
                             stmt.setString(1, ware.getIndividualNumber());
                             ResultSet rs3 = stmt.executeQuery();
 
@@ -85,16 +102,6 @@ public class WareManagement {
                                 information.add(rs3.getString(3));
                             }
                         }
-                        while(rs2.next()) {
-                            information.add(rs2.getString(1));
-                            information.add(rs2.getString(2));
-                            information.add(rs2.getString(3));
-                        }
-                    }
-                    while(rs1.next()) {
-                        information.add(rs1.getString(1));
-                        information.add(rs1.getString(2));
-                        information.add(rs1.getString(3));
                     }
                 }
             }
