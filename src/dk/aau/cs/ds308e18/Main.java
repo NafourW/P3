@@ -1,5 +1,6 @@
 package dk.aau.cs.ds308e18;
 
+import dk.aau.cs.ds308e18.function.tourgen.GPS;
 import dk.aau.cs.ds308e18.gui.GUI;
 import dk.aau.cs.ds308e18.io.database.DatabaseExport;
 import dk.aau.cs.ds308e18.io.database.DatabaseImport;
@@ -17,6 +18,7 @@ public class Main extends Application {
     public static DatabaseImport dbImport;
     public static DatabaseExport dbExport;
     public static DatabaseSetup dbSetup;
+    public static GPS gps;
 
     public static void main(String[] args) {
         launch(args);

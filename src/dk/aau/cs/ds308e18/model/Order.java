@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import java.time.temporal.WeekFields;
 import java.util.ArrayList;
 
+import static dk.aau.cs.ds308e18.Main.gps;
+
 public class Order {
     private String id;
     private int receipt;
@@ -21,7 +23,7 @@ public class Order {
     private String address;
     private int zipCode;
     private LocalDate date;
-    private GHPoint latLon = new GHPoint();
+    private GHPoint latLon;
 
     private boolean printed;
     private String expeditionStatus;
@@ -232,9 +234,10 @@ public class Order {
         return latLon;
     }
 
-    public void setLatLon(double lat, double lon) {
-        this.latLon.lat = lat;
-        this.latLon.lon = lon;
+    public void setLatLon() {
+        if (this.latLon == null) {
+            this.latLon = gps.GeocodeAddress(this.address);
+        }
     }
 
     @Override

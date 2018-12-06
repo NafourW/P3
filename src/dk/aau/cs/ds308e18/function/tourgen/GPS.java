@@ -1,50 +1,39 @@
 package dk.aau.cs.ds308e18.function.tourgen;
 
+import com.graphhopper.GHRequest;
+import com.graphhopper.GHResponse;
+import com.graphhopper.GraphHopper;
 import com.graphhopper.util.shapes.GHPoint;
-import dk.aau.cs.ds308e18.model.Order;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import com.graphhopper.GHRequest;
-import com.graphhopper.GHResponse;
-import com.graphhopper.GraphHopper;
-import com.graphhopper.routing.util.EncodingManager;
-import com.graphhopper.util.GPXEntry;
-import com.graphhopper.util.Instruction;
-import com.graphhopper.util.InstructionList;
-import com.graphhopper.util.PointList;
-import com.graphhopper.util.shapes.GHPoint;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 // Graphopper API
 
 public class GPS {
     //Strings for building the API URL
-    private String key = "1095aac7-8a71-4c56-b725-eca17fdf1284";
-    private String linkGeocode = "https://graphhopper.com/api/1/geocode?q=";
-    private String linkEnd = "&locale=en&debug=true&key=";
+
     private String vehicle = "car";
     private GHResponse rsp;
 
     GraphHopper hopper = new GraphHopper().forServer();
 
 
-    GHPoint GeocodeAddress(Order order) throws MalformedURLException, ParseException {
-
+    public GHPoint GeocodeAddress(String address) {
+        String key = "1095aac7-8a71-4c56-b725-eca17fdf1284";
+        String linkGeocode = "https://graphhopper.com/api/1/geocode?q=";
+        String linkEnd = "&locale=en&debug=true&key=";
         StringBuilder jsonBuild = new StringBuilder();
         String json = "";
-        String tempAddress = order.getAddress();
+        String tempAddress = address;
         double lat;
         double lon;
 
@@ -56,7 +45,12 @@ public class GPS {
         sb.append(linkGeocode).append(tempAddress).append(linkEnd).append(key);
 
         // URL Request
-        URL url = new URL(sb.toString());
+        URL url = null;
+        try {
+            url = new URL(sb.toString());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))) {
             for (String line; (line = reader.readLine()) != null; ) {
                 jsonBuild.append(line);
@@ -68,7 +62,12 @@ public class GPS {
 
         //now parse
         JSONParser parser = new JSONParser();
-        Object jobj = parser.parse(json);
+        Object jobj = null;
+        try {
+            jobj = parser.parse(json);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         JSONObject jb = (JSONObject) jobj;
 
         //now read
@@ -84,8 +83,7 @@ public class GPS {
     }
 
 
-
-    public void setRoute (GHPoint addrese1, GHPoint addresse2) {
+    public void setRoute(GHPoint addrese1, GHPoint addresse2) {
         GHRequest req = new GHRequest(addrese1, addresse2). /* latFrom, lonFrom, latTo, lonTo */
                 setWeighting("fastest").
                 setVehicle(vehicle).
