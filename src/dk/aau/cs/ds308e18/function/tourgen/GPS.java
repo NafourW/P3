@@ -8,6 +8,7 @@ import com.graphhopper.util.GPXEntry;
 import com.graphhopper.util.Instruction;
 import com.graphhopper.util.InstructionList;
 import com.graphhopper.util.PointList;
+import com.graphhopper.util.shapes.GHPoint;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,8 +30,8 @@ public class GPS {
     GraphHopper hopper = new GraphHopper().forServer();
 
 
-    public void setRoute (String addrese1, String addresse2) {
-        GHRequest req = new GHRequest(). /* latFrom, lonFrom, latTo, lonTo */
+    public void setRoute (GHPoint addrese1, GHPoint addresse2) {
+        GHRequest req = new GHRequest(addrese1, addresse2). /* latFrom, lonFrom, latTo, lonTo */
                 setWeighting("fastest").
                 setVehicle(vehicle).
                 setLocale(Locale.US);
