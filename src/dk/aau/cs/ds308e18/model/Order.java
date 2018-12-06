@@ -1,5 +1,7 @@
 package dk.aau.cs.ds308e18.model;
 
+import com.graphhopper.util.shapes.GHPoint;
+
 import java.time.LocalDate;
 import java.time.temporal.WeekFields;
 import java.util.ArrayList;
@@ -19,6 +21,7 @@ public class Order {
     private String address;
     private int zipCode;
     private LocalDate date;
+    private GHPoint latLon = new GHPoint();
 
     private boolean printed;
     private String expeditionStatus;
@@ -223,6 +226,15 @@ public class Order {
 
     public void addOrderLine(OrderLine orderLine){
         orderLines.add(orderLine);
+    }
+
+    public GHPoint getLatLon() {
+        return latLon;
+    }
+
+    public void setLatLon(double lat, double lon) {
+        this.latLon.lat = lat;
+        this.latLon.lon = lon;
     }
 
     @Override
