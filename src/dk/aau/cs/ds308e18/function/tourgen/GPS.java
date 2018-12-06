@@ -3,7 +3,9 @@ package dk.aau.cs.ds308e18.function.tourgen;
 import com.graphhopper.GHRequest;
 import com.graphhopper.GHResponse;
 import com.graphhopper.GraphHopper;
+import com.graphhopper.routing.util.EncodingManager;
 import com.graphhopper.util.shapes.GHPoint;
+import dk.aau.cs.ds308e18.GraphhopperTest;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -25,6 +27,17 @@ public class GPS {
     private GHResponse rsp;
 
     GraphHopper hopper = new GraphHopper().forServer();
+
+    ClassLoader classLoader = GraphhopperTest.class.getClassLoader();
+
+
+
+    public GPS() {
+        // where to store graphhopper files?
+        hopper.setGraphHopperLocation("resources/graphFolder");
+        hopper.setEncodingManager(new EncodingManager(vehicle));
+        hopper.importOrLoad();
+    }
 
 
     public GHPoint GeocodeAddress(String address) {
