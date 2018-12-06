@@ -107,12 +107,10 @@ public class EditOrderController implements ISelectionController {
         ArrayList<OrderLine> orderLines = new ArrayList<OrderLine>();
         orderLines.addAll(orderLineTable.getItems());
         selectedOrder.setOrderLines(orderLines);
-
-        OrderManagement.overrideOrder(selectedOrder);
     }
 
     @FXML
-    private void  cancelOrderButtonAction(ActionEvent event){
+    private void cancelOrderButtonAction(ActionEvent event){
 
     }
 
@@ -123,6 +121,7 @@ public class EditOrderController implements ISelectionController {
 
     @FXML
     private void addOrderButtonAction(ActionEvent event) throws IOException {
+        transferFieldsToOrder();
         OrderManagement.createOrder(selectedOrder);
         Main.gui.changeView("OrderList");
     }
@@ -130,6 +129,7 @@ public class EditOrderController implements ISelectionController {
     @FXML
     private void doneButtonAction(ActionEvent event) throws IOException {
         transferFieldsToOrder();
+        OrderManagement.overrideOrder(selectedOrder);
         Main.gui.changeView("OrderList");
     }
 

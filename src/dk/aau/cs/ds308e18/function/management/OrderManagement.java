@@ -22,27 +22,7 @@ public class OrderManagement {
                 PreparedStatement stmt = conn.prepareStatement("INSERT INTO orders (" +
                         "pluckRoute, id, orderReference, expeditionStatus, customerName, orderDate, address, " +
                         "zipCode, receipt, pickup, warehouse, category, fleetOwner, printed, " +
-                        "route, FV, project, tourID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-                //TODO Fix det her med en hjælpe funktion
-                stmt.setString(1, String.valueOf(order.getPluckRoute()));
-                stmt.setString(2, String.valueOf(order.getID()));
-                stmt.setString(3, String.valueOf(order.getOrderReference()));
-                stmt.setString(4, String.valueOf(order.getExpeditionStatus()));
-                stmt.setString(5, String.valueOf(order.getCustomerName()));
-                stmt.setString(6, String.valueOf(order.getDate()));
-                stmt.setString(7, String.valueOf(order.getAddress()));
-                stmt.setString(8, String.valueOf(order.getZipCode()));
-                stmt.setString(9, String.valueOf(order.getReceipt()));
-                stmt.setString(10, String.valueOf(order.isPickup()));
-                stmt.setString(11, String.valueOf(order.getWarehouse()));
-                stmt.setString(12, String.valueOf(order.getCategory()));
-                stmt.setString(13, String.valueOf(order.getFleetOwner()));
-                stmt.setString(14, String.valueOf(order.isPrinted()));
-                stmt.setString(15, String.valueOf(order.getRegion()));
-                stmt.setString(16, String.valueOf(order.isFV()));
-                stmt.setString(17, String.valueOf(order.getProject()));
-                stmt.setString(18, String.valueOf(order.getTourID()));
+                        "route, FV, project, tourID) VALUES (" + getOrderValuesString(order) + ")");
 
                 stmt.executeUpdate();
             }
@@ -56,6 +36,31 @@ public class OrderManagement {
     */
     public static void overrideOrder(Order order) {
         //TODO: hjælp
+    }
+
+    private static String getOrderValuesString(Order order) {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(order.getPluckRoute())                  .append(", ")
+          .append("'").append(order.getID())              .append("', ")
+          .append("'").append(order.getOrderReference())  .append("', ")
+          .append("'").append(order.getExpeditionStatus()).append("', ")
+          .append("'").append(order.getCustomerName())    .append("', ")
+          .append("'").append(order.getDate())            .append("', ")
+          .append("'").append(order.getAddress())         .append("', ")
+          .append(order.getZipCode())                     .append(", ")
+          .append(order.getReceipt())                     .append(", ")
+          .append(order.isPickup())                       .append(", ")
+          .append("'").append(order.getWarehouse())       .append("', ")
+          .append("'").append(order.getCategory())        .append("', ")
+          .append("'").append(order.getFleetOwner())      .append("', ")
+          .append(order.isPrinted())                      .append(", ")
+          .append("'").append(order.getRegion())          .append("', ")
+          .append(order.isFV())                           .append(", ")
+          .append("'").append(order.getProject())         .append("', ")
+          .append(order.getTourID());
+
+        return sb.toString();
     }
 
     public static ArrayList<Order> getOrders() {

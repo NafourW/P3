@@ -6,6 +6,15 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import com.graphhopper.GHRequest;
+import com.graphhopper.GHResponse;
+import com.graphhopper.GraphHopper;
+import com.graphhopper.routing.util.EncodingManager;
+import com.graphhopper.util.GPXEntry;
+import com.graphhopper.util.Instruction;
+import com.graphhopper.util.InstructionList;
+import com.graphhopper.util.PointList;
+import com.graphhopper.util.shapes.GHPoint;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,14 +22,23 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
 // Graphopper API
 
 public class GPS {
     //Strings for building the API URL
-    String vehicle = "car";
     private String key = "1095aac7-8a71-4c56-b725-eca17fdf1284";
     private String linkGeocode = "https://graphhopper.com/api/1/geocode?q=";
     private String linkEnd = "&locale=en&debug=true&key=";
+    private String vehicle = "car";
+    private GHResponse rsp;
+
+    GraphHopper hopper = new GraphHopper().forServer();
+
 
     GHPoint GeocodeAddress(Order order) throws MalformedURLException, ParseException {
 
@@ -63,5 +81,23 @@ public class GPS {
         lon = (double) ghPoint.get("lng");
 
         return new GHPoint(lat, lon);
+    }
+
+
+
+    public void setRoute (GHPoint addrese1, GHPoint addresse2) {
+        GHRequest req = new GHRequest(addrese1, addresse2). /* latFrom, lonFrom, latTo, lonTo */
+                setWeighting("fastest").
+                setVehicle(vehicle).
+                setLocale(Locale.US);
+        rsp = hopper.route(req);
+    }
+
+    public double getDistance() {
+        return rsp.getDistance();
+    }
+
+    public long getMillis() {
+        return rsp.getMillis();
     }
 }
