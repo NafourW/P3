@@ -45,14 +45,4 @@ public class GPS {
     public long getMillis() {
         return rsp.getMillis();
     }
-
-       /*
-    public void setDistance(double distance) {
-        this.distance = distance;
-    }
-
-    public void setMillis(long millis) {
-        this.millis = millis;
-    }
-    */
 }
