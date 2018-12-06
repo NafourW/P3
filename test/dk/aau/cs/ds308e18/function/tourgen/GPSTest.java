@@ -12,6 +12,6 @@ public class GPSTest {
         GHPoint ghPointStart = new GHPoint();
         GHPoint ghPointEnd = new GHPoint(2314414, 4134134);
 
-        gps.setRoute();
+        gps.setRoute(ghPointStart, ghPointEnd);
     }
 }
