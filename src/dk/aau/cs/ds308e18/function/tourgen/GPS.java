@@ -24,13 +24,11 @@ import java.util.Map;
 public class GPS {
 
     private String vehicle = "car";
-    private double distance;
-    private long millis;
     private GHResponse rsp;
 
     GraphHopper hopper = new GraphHopper().forServer();
 
-    
+
     public void setRoute (String addrese1, String addresse2) {
         GHRequest req = new GHRequest(). /* latFrom, lonFrom, latTo, lonTo */
                 setWeighting("fastest").
