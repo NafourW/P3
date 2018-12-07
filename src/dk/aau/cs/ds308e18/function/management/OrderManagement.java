@@ -22,7 +22,7 @@ public class OrderManagement {
                 PreparedStatement stmt = conn.prepareStatement("INSERT INTO orders (" +
                         "pluckRoute, id, orderReference, expeditionStatus, customerName, orderDate, address, " +
                         "zipCode, receipt, pickup, warehouse, category, fleetOwner, printed, " +
-                        "route, FV, project, tourID) VALUES (" + getOrderValuesString(order) + ")");
+                        "route, FV, project, tourID, liftAlone, liftingTools, moveTime) VALUES (" + getOrderValuesString(order) + ")");
 
                 stmt.executeUpdate();
             }
@@ -58,10 +58,10 @@ public class OrderManagement {
           .append("'").append(order.getRegion())          .append("', ")
           .append(order.isFV())                           .append(", ")
           .append("'").append(order.getProject())         .append("', ")
-          .append(order.getTourID())                      .append("',")
+          .append(order.getTourID())                      .append(",")
           .append("'").append(order.isTotalLiftAlone())   .append("',")
           .append("'").append(order.isTotalLiftingTools()).append("',")
-          .append("'").append(order.getTotalTime());
+          .append(order.getTotalTime());
 
         return sb.toString();
     }

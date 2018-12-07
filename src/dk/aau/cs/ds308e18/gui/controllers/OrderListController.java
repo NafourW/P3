@@ -37,6 +37,9 @@ public class OrderListController {
     @FXML private TableColumn<Order, String> FleetOwner;
     @FXML private TableColumn<Order, Boolean> Printed;
     @FXML private TableColumn<Order, String> Project;
+    @FXML private TableColumn<Order, Integer> TotalTime;
+    @FXML private TableColumn<Order, Boolean> TotalLiftAlone;
+    @FXML private TableColumn<Order, Boolean> TotalLiftingTools;
 
     private TableManager<Order> orderListManager;
 

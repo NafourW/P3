@@ -43,6 +43,9 @@
             <TableColumn fx:id="FleetOwner" prefWidth="90.0" text="%label_order_fleet_owner" />
             <TableColumn fx:id="Printed" prefWidth="66.0" text="%label_order_printed" />
             <TableColumn fx:id="Project" prefWidth="66.0" text="%label_order_project" />
+            <TableColumn fx:id="TotalTime" text="total time" />
+            <TableColumn fx:id="TotalLiftAlone" text="total lift alone" />
+            <TableColumn fx:id="TotalLiftingTools" text="total lifting tools" />
          </columns>
       </TableView>
       <HBox alignment="BOTTOM_LEFT">
