@@ -13,7 +13,6 @@ public class GPSTest {
     @Test
     public void setRouteTest() {
 
-
         GHPoint ghPointStart = new GHPoint(57.0467, 9.9114); //Coordinates from OpenStreetMap
         GHPoint ghPointEnd = new GHPoint(57.0120, 9.9930);
 
@@ -21,6 +20,19 @@ public class GPSTest {
 
         Assertions.assertEquals(8500, gps.getDistance(), 200); //Expected distance from OpenStreetMap, 200 m delta
         Assertions.assertEquals(780000, gps.getMillis(), 300000); //Expected time from OpenStreetMap, 5 min delta
+    }
+
+    @Test
+    public void setRouteTest2() {
+
+        GHPoint ghPointStart = new GHPoint(56.4490, 9.3658); // Coordinates from OpenStreetMap
+        GHPoint ghPointEnd = new GHPoint(55.4719, 9.4813);
+
+        gps.setRoute(ghPointStart, ghPointEnd);
+
+        Assertions.assertEquals(120000, gps.getDistance(), 200); //Expected distance from OpenStreetMap, 200 m delta
+        Assertions.assertEquals(5760000, gps.getMillis(), 300000); //Expected time from OpenStreetMap, 5 min delta
+
     }
 
     @Test
