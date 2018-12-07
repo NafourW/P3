@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
@@ -12,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e18.gui.controllers.EditTourController">
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e18.gui.controllers.EditTourController">
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
@@ -24,44 +29,25 @@
          <VBox.margin>
             <Insets bottom="20.0" />
          </VBox.margin></Label>
-      <ScrollPane VBox.vgrow="ALWAYS">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-        </content>
+      <TableView fx:id="tourOrdersTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="OrderID" prefWidth="75.0" text="%label_order_id" />
+            <TableColumn fx:id="CustomerName" prefWidth="182.0" text="%label_order_customer_name" />
+            <TableColumn fx:id="Address" prefWidth="263.0" text="%label_order_address" />
+            <TableColumn fx:id="ZipCode" minWidth="0.0" prefWidth="63.0" text="%label_order_zip_code" />
+        </columns>
          <VBox.margin>
             <Insets bottom="20.0" />
          </VBox.margin>
-      </ScrollPane>
+      </TableView>
       <HBox>
          <children>
             <VBox>
                <children>
                   <HBox>
                      <children>
-                        <Label prefWidth="200.0" text="%label_tour_driver" />
-                        <ComboBox prefWidth="150.0" />
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="94.0">
-                     <children>
-                        <Label prefWidth="200.0" text="%label_tour_date" />
-                        <ComboBox prefWidth="150.0" />
-                     </children>
-                  </HBox>
-               </children>
-               <HBox.margin>
-                  <Insets right="20.0" />
-               </HBox.margin>
-            </VBox>
-            <VBox>
-               <children>
-                  <HBox>
-                     <children>
-                        <Label prefWidth="200.0" text="%label_tour_region" />
-                        <DatePicker />
+                        <Label prefWidth="100.0" text="%label_tour_date" />
+                        <DatePicker fx:id="datePicker" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="10.0" />
@@ -69,15 +55,43 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="69.0">
                      <children>
-                        <Label prefWidth="200.0" text="%label_tour_consignor" />
-                        <CheckBox mnemonicParsing="false" />
+                        <Label prefWidth="100.0" text="%label_tour_region" />
+                        <ComboBox fx:id="regionComboBox" prefWidth="150.0" />
                      </children>
                   </HBox>
                </children>
+               <HBox.margin>
+                  <Insets right="60.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox>
+               <children>
+                  <HBox>
+                     <children>
+                        <Label prefWidth="100.0" text="%label_tour_driver" />
+                        <TextField fx:id="driverTextField" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="94.0">
+                     <children>
+                        <Label prefWidth="100.0" text="%label_tour_consignor" />
+                        <CheckBox fx:id="consignorCheckBox" mnemonicParsing="false">
+                           <HBox.margin>
+                              <Insets top="8.0" />
+                           </HBox.margin></CheckBox>
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
             </VBox>
          </children>
          <VBox.margin>
-            <Insets bottom="20.0" />
+            <Insets bottom="20.0" left="20.0" />
          </VBox.margin>
       </HBox>
       <HBox alignment="BOTTOM_LEFT">
