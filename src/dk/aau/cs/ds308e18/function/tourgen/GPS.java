@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.Time;
 import java.util.Locale;
 
 // Graphopper API
@@ -108,7 +109,7 @@ public class GPS {
         return rsp.getDistance();
     }
 
-    public long getMillis() {
-        return rsp.getMillis();
+    public Time getMillis() {
+        return new Time(rsp.getMillis());
     }
 }
