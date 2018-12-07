@@ -28,6 +28,7 @@ public class Tour {
         tourDate = LocalDate.now();
         packingDate = LocalDate.now();
         orders = new ArrayList<>();
+        consignor = false;
     }
 
     public void addOrder(Order order) {
@@ -98,6 +99,10 @@ public class Tour {
         return driver;
     }
 
+    public void setDriver(String driver) {
+        this.driver = driver;
+    }
+
     public String getRegion() {
         return region;
     }
@@ -112,6 +117,10 @@ public class Tour {
 
     public Boolean getConsignor() {
         return consignor;
+    }
+
+    public void setConsignor(Boolean consignor) {
+        this.consignor = consignor;
     }
 
     public String getStatus() {

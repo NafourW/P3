@@ -44,6 +44,13 @@ public class TourManagement {
     }
 
     /*
+    Replace a tour in the database with this tour (both should have the same tourID)
+    */
+    public static void overrideTour(Tour tour) {
+        //TODO: hjælp
+    }
+
+    /*
     Select and return the last tourID in the tour table given by createTour.
     (createTour automatically assigns a tourID to a tour but this number is not given to the tour object.
     That is what this method makes sure happens.)
