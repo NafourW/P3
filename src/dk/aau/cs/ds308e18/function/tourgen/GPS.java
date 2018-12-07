@@ -28,7 +28,7 @@ public class GPS {
 
     GraphHopper hopper = new GraphHopper().forServer();
 
-    ClassLoader classLoader = GraphhopperTest.class.getClassLoader();
+    ClassLoader classLoader = GPS.class.getClassLoader();
 
 
 
