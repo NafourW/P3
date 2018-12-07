@@ -20,6 +20,7 @@ import java.io.IOException;
 public class EditTourController implements ISelectionController {
 
     @FXML private Button removeOrderButton;
+    @FXML private Button moveOrderToTourButton;
 
     @FXML private TableView<Order> tourOrdersTable;
     @FXML private TableColumn<Tour, Integer> OrderID;
@@ -40,6 +41,7 @@ public class EditTourController implements ISelectionController {
     @FXML
     private void initialize(){
         removeOrderButton.setDisable(true);
+        moveOrderToTourButton.setDisable(true);
 
         regions.addAll(Main.dbExport.exportRegionNames());
         regionComboBox.setItems(regions);
@@ -56,9 +58,17 @@ public class EditTourController implements ISelectionController {
         selectedTour.setConsignor(consignorCheckBox.isSelected());
     }
 
-    @FXML
-    private void addOrderButtonAction(ActionEvent event) {
+    private void refreshOrderList() {
+        tourOrdersManager.clearItems();
 
+        for (Order order : selectedTour.getOrders())
+            tourOrdersManager.addItem(order);
+    }
+
+    @FXML
+    private void addOrderButtonAction(ActionEvent event) throws IOException{
+        Main.gui.changeView("AddOrderToTour", selectedTour, false);
+        refreshOrderList();
     }
 
     @FXML
@@ -92,8 +102,7 @@ public class EditTourController implements ISelectionController {
 
             consignorCheckBox.setSelected(selectedTour.getConsignor());
 
-            for (Order order : selectedTour.getOrders())
-                tourOrdersManager.addItem(order);
+            refreshOrderList();
         }
     }
 }

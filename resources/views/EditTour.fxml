@@ -104,7 +104,7 @@
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin></Button>
-            <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#moveOrderToTourButtonAction" prefHeight="40.0" prefWidth="120.0" text="%button_move_order_to_tour">
+            <Button fx:id="moveOrderToTourButton" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#moveOrderToTourButtonAction" prefHeight="40.0" prefWidth="120.0" text="%button_move_order_to_tour">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin></Button>
