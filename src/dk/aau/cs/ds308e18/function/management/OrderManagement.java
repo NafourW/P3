@@ -58,7 +58,10 @@ public class OrderManagement {
           .append("'").append(order.getRegion())          .append("', ")
           .append(order.isFV())                           .append(", ")
           .append("'").append(order.getProject())         .append("', ")
-          .append(order.getTourID());
+          .append(order.getTourID())                      .append("',")
+          .append("'").append(order.isTotalLiftAlone())   .append("',")
+          .append("'").append(order.isTotalLiftingTools()).append("',")
+          .append("'").append(order.getTotalTime());
 
         return sb.toString();
     }

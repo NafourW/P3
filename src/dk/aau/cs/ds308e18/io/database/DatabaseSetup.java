@@ -77,7 +77,10 @@ public class DatabaseSetup {
                         "printed VARCHAR(255)," +
                         "route VARCHAR(255)," +
                         "FV VARCHAR(255)," +
-                        "project VARCHAR(255))";
+                        "project VARCHAR(255)," +
+                        "liftAlone VARCHAR(255)," +
+                        "liftingTools VARCHAR(255)," +
+                        "moveTime FLOAT)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
             }
