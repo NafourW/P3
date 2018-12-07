@@ -80,7 +80,7 @@ public class DatabaseSetup {
                         "project VARCHAR(255)," +
                         "liftAlone VARCHAR(255)," +
                         "liftingTools VARCHAR(255)," +
-                        "moveTime FLOAT)";
+                        "moveTime INT)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
             }
@@ -161,7 +161,7 @@ public class DatabaseSetup {
                         "wareType VARCHAR(255)," +
                         "liftAlone VARCHAR(255)," +
                         "liftingTools VARCHAR(255)," +
-                        "moveTime FLOAT)";
+                        "moveTime INT)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
             }
