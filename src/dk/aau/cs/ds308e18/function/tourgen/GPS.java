@@ -109,8 +109,7 @@ public class GPS {
         return rsp.getDistance();
     }
 
-    public Time getMillis() {
-        System.out.println(rsp.getMillis());
-        return new Time(rsp.getMillis());
+    public long getMillis() {
+        return rsp.getMillis();
     }
 }

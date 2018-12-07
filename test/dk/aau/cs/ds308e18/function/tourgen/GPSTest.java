@@ -20,9 +20,7 @@ public class GPSTest {
         gps.setRoute(ghPointStart, ghPointEnd);
 
         Assertions.assertEquals(8500, gps.getDistance(), 200); //Expected distance from OpenStreetMap, 200 m delta
-
-        Time time = new Time(0,13,0);
-        Assertions.assertEquals(time, gps.getMillis()); //Expected time from OpenStreetMap
+        Assertions.assertEquals(780000, gps.getMillis(), 300000); //Expected time from OpenStreetMap, 5 min delta
     }
 
     @Test
