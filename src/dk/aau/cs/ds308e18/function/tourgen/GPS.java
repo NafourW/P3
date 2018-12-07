@@ -5,7 +5,6 @@ import com.graphhopper.GHResponse;
 import com.graphhopper.GraphHopper;
 import com.graphhopper.routing.util.EncodingManager;
 import com.graphhopper.util.shapes.GHPoint;
-import dk.aau.cs.ds308e18.GraphhopperTest;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -16,7 +15,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.Time;
 import java.util.Locale;
 
 // Graphopper API
@@ -28,10 +26,6 @@ public class GPS {
     private GHResponse rsp;
 
     GraphHopper hopper = new GraphHopper().forServer();
-
-    ClassLoader classLoader = GPS.class.getClassLoader();
-
-
 
     public GPS() {
         // where to store graphhopper files?
@@ -65,16 +59,19 @@ public class GPS {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))) {
-            for (String line; (line = reader.readLine()) != null; ) {
-                jsonBuild.append(line);
+        //Read response from URL
+        if (url != null) {
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))) {
+                for (String line; (line = reader.readLine()) != null; ) {
+                    jsonBuild.append(line);
+                }
+                json = jsonBuild.toString();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            json = jsonBuild.toString();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
 
-        //now parse
+        //Parse read string to Json
         JSONParser parser = new JSONParser();
         Object jobj = null;
         try {
@@ -84,7 +81,7 @@ public class GPS {
         }
         JSONObject jb = (JSONObject) jobj;
 
-        //now read
+        //Read Json response
         JSONArray hits = (JSONArray) jb.get("hits");
         JSONObject hitsIndent = (JSONObject) hits.get(0);
         JSONObject ghPoint = (JSONObject) hitsIndent.get("point");
@@ -97,6 +94,7 @@ public class GPS {
     }
 
 
+    //Create route between 2 points
     public void setRoute(GHPoint addrese1, GHPoint addresse2) {
         GHRequest req = new GHRequest(addrese1, addresse2). /* latFrom, lonFrom, latTo, lonTo */
                 setWeighting("fastest").
@@ -105,10 +103,12 @@ public class GPS {
         rsp = hopper.route(req);
     }
 
+    //return distance in meters
     public double getDistance() {
         return rsp.getDistance();
     }
 
+    //Return time in milliseconds
     public long getMillis() {
         return rsp.getMillis();
     }

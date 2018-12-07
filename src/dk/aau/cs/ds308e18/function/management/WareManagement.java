@@ -116,7 +116,6 @@ public class WareManagement {
                             totalMoveTime += Integer.valueOf(rs2.getString(3));
                             rs2Found = true;
 
-
                         }
 
                         if(!rs2Found) {
