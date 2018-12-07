@@ -1,7 +1,9 @@
 package dk.aau.cs.ds308e18.function.tourgen;
 
 import dk.aau.cs.ds308e18.function.management.TourManagement;
+import dk.aau.cs.ds308e18.function.management.WareManagement;
 import dk.aau.cs.ds308e18.model.Order;
+import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Tour;
 
 import java.time.LocalDate;
@@ -13,8 +15,8 @@ public class TourGenerator {
     public static final int MAX_ORDERS_PER_TOUR = 20;
 
     public static ArrayList<Tour> generateTours(ArrayList<Order> orders, TourGeneratorSettings settings){
-        ArrayList<Tour> generatedTours = new ArrayList<>();
-        ArrayList<Tour> filledTours = new ArrayList<>();
+        ArrayList<Tour> generatedTours = new ArrayList<>(); //
+        ArrayList<Tour> filledTours = new ArrayList<>(); //
 
         //currently focused tour
         Tour tour = null;

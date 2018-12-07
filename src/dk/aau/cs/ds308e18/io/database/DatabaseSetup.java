@@ -11,11 +11,11 @@ public class DatabaseSetup {
     // Run this function to make sure a database and corresponding tables are created.
     private void databaseSetup() {
         createDatabase();
-        createOrderTable();
         createTourTable();
         createWareTable();
         createWareListTable();
         createRegionTable();
+        createOrderTable();
     }
 
     /*

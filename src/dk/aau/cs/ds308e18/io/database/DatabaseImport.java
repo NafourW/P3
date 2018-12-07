@@ -10,6 +10,7 @@ import dk.aau.cs.ds308e18.io.ReadFile;
 import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.function.management.WareManagement;
 import dk.aau.cs.ds308e18.model.Order;
+import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Ware;
 
 public class DatabaseImport {
@@ -71,6 +72,26 @@ public class DatabaseImport {
             if (conn != null) {
                 // For every order, put the order in the database
                 for (Order order : orderList) {
+
+                    //for each order, get the corresponding order line with wares
+                    ArrayList<OrderLine> orderLines = order.getOrderLines();
+
+                    ArrayList<Integer> orderResults = WareManagement.getOrderlineWare(orderLines);
+
+                    if (orderResults.get(0) > 0){
+                        order.setTotalLiftAlone(true);
+                    } else {
+                        order.setTotalLiftAlone(false);
+                    }
+
+                    if (orderResults.get(1) > 0){
+                        order.setTotalLiftingTools(true);
+                    } else {
+                        order.setTotalLiftingTools(false);
+                    }
+
+                    order.setTotalTime(orderResults.get(2));
+
                     orderMan.createOrder(order);
                 }
                 System.out.println("Orders imported.");

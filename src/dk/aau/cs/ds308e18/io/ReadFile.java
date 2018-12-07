@@ -1,5 +1,6 @@
 package dk.aau.cs.ds308e18.io;
 
+import dk.aau.cs.ds308e18.function.management.WareManagement;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Ware;
@@ -153,6 +154,7 @@ public class ReadFile {//Class that reads CSV files
                                     Items[5], preparing, Items[7], Items[8], Items[9]);
 
                             order.addOrderLine(orderline);
+
                         }
                     } catch (IOException e){
                         e.printStackTrace();

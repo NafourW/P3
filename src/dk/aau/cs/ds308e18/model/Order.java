@@ -34,6 +34,34 @@ public class Order {
     private int orderID;
     private int tourID;
 
+    private int totalTime;
+    private boolean totalLiftAlone;
+    private boolean totalLiftingTools;
+
+    public int getTotalTime() {
+        return totalTime;
+    }
+
+    public void setTotalTime(int totalTime) {
+        this.totalTime = totalTime;
+    }
+
+    public boolean isTotalLiftAlone() {
+        return totalLiftAlone;
+    }
+
+    public void setTotalLiftAlone(boolean totalLiftAlone) {
+        this.totalLiftAlone = totalLiftAlone;
+    }
+
+    public boolean isTotalLiftingTools() {
+        return totalLiftingTools;
+    }
+
+    public void setTotalLiftingTools(boolean totalLiftingTools) {
+        this.totalLiftingTools = totalLiftingTools;
+    }
+
     ArrayList<OrderLine> orderLines;
 
     public Order() {

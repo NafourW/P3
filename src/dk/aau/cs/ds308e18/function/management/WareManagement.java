@@ -49,11 +49,15 @@ public class WareManagement {
         }
     }
 
-    public static ArrayList<String> getOrderlineWare(ArrayList<OrderLine> orderWareList) {
-        ArrayList<String> information = new ArrayList<>();
+    public static ArrayList<Integer> getOrderlineWare(ArrayList<OrderLine> orderWareList) {
+        ArrayList<Integer> information = new ArrayList<>();
 
         DatabaseConnection dbConn = new DatabaseConnection();
         String sql = "SELECT liftAlone, liftingTools, moveTime FROM warelist WHERE wareNumber = ?";
+
+        int liftAlone = 1;
+        int liftingTools = 0;
+        int totalMoveTime = 0;
 
         /*
         warenumber = warenumber
@@ -75,9 +79,20 @@ public class WareManagement {
                     boolean rs2Found = false;
 
                     while(rs1.next()) {
+                        /*
                         information.add(rs1.getString(1));
                         information.add(rs1.getString(2));
                         information.add(rs1.getString(3));
+                        */
+                        if (rs1.getString(1).equals("false")){
+                            liftAlone = 0;
+                        }
+                        if (rs1.getString(2).equals("true")){
+                            liftingTools = 1;
+                        }
+
+                        totalMoveTime += Integer.valueOf(rs1.getString(3));
+
                         rs1Found = true;
                     }
 
@@ -86,10 +101,22 @@ public class WareManagement {
                         ResultSet rs2 = stmt.executeQuery();
 
                         while(rs2.next()) {
+                            /*
                             information.add(rs2.getString(1));
                             information.add(rs2.getString(2));
                             information.add(rs2.getString(3));
+                            */
+                            if (rs2.getString(1).equals("false")){
+                                liftAlone = 0;
+                            }
+                            if (rs2.getString(2).equals("true")){
+                                liftingTools = 1;
+                            }
+
+                            totalMoveTime += Integer.valueOf(rs2.getString(3));
                             rs2Found = true;
+
+
                         }
 
                         if(!rs2Found) {
@@ -97,9 +124,21 @@ public class WareManagement {
                             ResultSet rs3 = stmt.executeQuery();
 
                             while(rs3.next()) {
+                                /*
                                 information.add(rs3.getString(1));
                                 information.add(rs3.getString(2));
                                 information.add(rs3.getString(3));
+                                */
+                                if (rs3.getString(1).equals("false")){
+                                    liftAlone = 0;
+                                }
+                                if (rs3.getString(2).equals("true")){
+                                    liftingTools = 1;
+                                }
+
+                                totalMoveTime += Integer.valueOf(rs3.getString(3));
+
+
                             }
                         }
                     }
@@ -109,6 +148,10 @@ public class WareManagement {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        information.add(liftAlone);
+        information.add(liftingTools);
+        information.add(totalMoveTime);
 
         return information;
     }
