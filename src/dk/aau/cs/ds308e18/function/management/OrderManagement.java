@@ -35,7 +35,44 @@ public class OrderManagement {
     Replace an order in the database with this order (both should have the same orderID)
     */
     public static void overrideOrder(Order order) {
-        //TODO: hjælp
+
+        DatabaseConnection dbConn = new DatabaseConnection();
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if(conn != null) {
+                String sql = "UPDATE orders SET pluckRoute = ?, id = ?, orderReference = ?, expeditionStatus = ?, " +
+                        "customerName = ?, orderDate = ?, address = ?, zipCode = ?, receipt = ?, pickup = ?, warehouse = ? " +
+                        "category = ?, fleetOwner = ?, printed = ?, route = ?, FV = ?, project = ?, liftAlone = ?, " +
+                        "liftingTools = ?, moveTime = ? WHERE orderID = ?";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+
+                //TODO HJÆÆÆÆÆÆLP DEN HER stmt.set...
+                stmt.setInt(1, order.getPluckRoute());
+                stmt.setString(2, order.getID());
+                stmt.setString(3, order.getOrderReference());
+                stmt.setString(4, order.getExpeditionStatus());
+                stmt.setString(5, order.getCustomerName());
+                stmt.setString(6, String.valueOf(order.getDate()));
+                stmt.setString(7, order.getAddress());
+                stmt.setInt(8, order.getZipCode());
+                stmt.setInt(9, order.getReceipt());
+                stmt.setString(10, String.valueOf(order.isPickup()));
+                stmt.setString(11, order.getWarehouse());
+                stmt.setString(12, order.getCategory());
+                stmt.setString(14, order.getFleetOwner());
+                stmt.setString(15, String.valueOf(order.isPrinted()));
+                stmt.setString(16, order.getRegion());
+                stmt.setString(17, String.valueOf(order.isFV()));
+                stmt.setString(18, order.getProject());
+                stmt.setString(19, String.valueOf(order.isTotalLiftAlone()));
+                stmt.setString(20, String.valueOf(order.isTotalLiftingTools()));
+                stmt.setInt(21, order.getTotalTime());
+                stmt.setInt(22, order.getOrderID());
+
+                stmt.executeUpdate();
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     private static String getOrderValuesString(Order order) {
