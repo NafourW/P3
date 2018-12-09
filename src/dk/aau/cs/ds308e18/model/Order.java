@@ -21,7 +21,6 @@ public class Order {
     private String customerName;
     private String region;
     private String address;
-    private boolean hasAddress;
     private int zipCode;
     private LocalDate date;
     private GHPoint latLon;
@@ -78,7 +77,6 @@ public class Order {
         customerName = "";
         region = "";
         address = "";
-        hasAddress = false;
 
         zipCode = 0;
         date = LocalDate.now();
