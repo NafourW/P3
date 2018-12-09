@@ -1,7 +1,11 @@
 package dk.aau.cs.ds308e18.model;
 
 import com.graphhopper.util.shapes.GHPoint;
+import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.temporal.WeekFields;
 import java.util.ArrayList;
@@ -187,9 +191,27 @@ public class Order {
     }
 
     public void setAddress(String address) {
-        if (address != this.address) {
+        if (address != this.address) { // TODO check om addresse eksistere i DataBase
             this.latLon = gps.GeocodeAddress(address);
+            saveLatLonInDataBase(address);
             this.address = address;
+        }
+    }
+
+    public void saveLatLonInDataBase(String address) {
+        String sql = "INSERT INTO addresses (address, latitude, longtitude) VALUES (?, ?, ?)";
+        DatabaseConnection dbConn = new DatabaseConnection();
+        try (Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.setString(1, String.valueOf(address));
+                stmt.setString(2, String.valueOf(this.latLon.lat));
+                stmt.setString(3, String.valueOf(this.latLon.lon));
+
+                stmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
