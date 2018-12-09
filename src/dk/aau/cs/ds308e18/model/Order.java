@@ -21,6 +21,7 @@ public class Order {
     private String customerName;
     private String region;
     private String address;
+    private boolean hasAddress;
     private int zipCode;
     private LocalDate date;
     private GHPoint latLon;
@@ -77,6 +78,8 @@ public class Order {
         customerName = "";
         region = "";
         address = "";
+        hasAddress = false;
+
         zipCode = 0;
         date = LocalDate.now();
         latLon = null;
@@ -186,7 +189,10 @@ public class Order {
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        if (address != this.address) {
+            this.latLon = gps.GeocodeAddress(address);
+            this.address = address;
+        }
     }
 
     public int getZipCode() {
@@ -261,12 +267,6 @@ public class Order {
 
     public GHPoint getLatLon() {
         return latLon;
-    }
-
-    public void setLatLon() {
-        if (this.latLon == null) {
-            this.latLon = gps.GeocodeAddress(address);
-        }
     }
 
     @Override
