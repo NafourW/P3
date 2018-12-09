@@ -41,6 +41,8 @@ public class GPSTest {
         Order order = new Order();
         order.setAddress("selma lagerløfs vej 300");
 
+        order.setLatLon();
+
         Assertions.assertEquals(ghPoint.getLat(), order.getLatLon().getLat());
         Assertions.assertEquals(ghPoint.getLon(), order.getLatLon().getLon());
 
