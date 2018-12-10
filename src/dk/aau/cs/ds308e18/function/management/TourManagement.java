@@ -181,6 +181,11 @@ public class TourManagement {
 
                 ResultSet rs = stmt.executeQuery();
 
+                /*
+                The resultSet starts from 0 which contains nothing.
+                That's why rs.next() is called before creating the tour.
+                */
+                rs.next();
                 return Main.dbExport.createTourFromResultSet(rs);
             }
         } catch (SQLException e) {
