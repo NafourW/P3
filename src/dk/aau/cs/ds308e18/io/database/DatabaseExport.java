@@ -182,9 +182,14 @@ public class DatabaseExport {
         Tour tour = new Tour();
 
         try {
-            tour.setTourId  (resultSet.getInt   (1));
-            tour.setTourDate(resultSet.getDate  (2).toLocalDate());
-            tour.setRegion  (resultSet.getString(5));
+            tour.setTourId      (resultSet.getInt    (1));
+            tour.setTourDate    (resultSet.getDate   (2).toLocalDate());
+            tour.setPackingDate (resultSet.getDate   (3).toLocalDate());
+            tour.setID          (resultSet.getInt    (4));
+            tour.setRegion      (resultSet.getString (5));
+            tour.setDriver      (resultSet.getString (6));
+            tour.setStatus      (resultSet.getString (7));
+            tour.setConsignor   (resultSet.getBoolean(8));
         }
         catch (SQLException e) {
             e.printStackTrace();

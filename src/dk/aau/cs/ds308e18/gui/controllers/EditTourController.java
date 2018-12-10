@@ -73,7 +73,7 @@ public class EditTourController implements ISelectionController {
 
     @FXML
     private void removeOrderButtonAction(ActionEvent event) {
-
+        
     }
 
     @FXML

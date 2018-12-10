@@ -25,9 +25,12 @@ public class Tour {
 
     public Tour() {
         id = 0;
-        tourDate = LocalDate.now();
-        packingDate = LocalDate.now();
+        tourDate = LocalDate.EPOCH;
+        packingDate = LocalDate.EPOCH;
         orders = new ArrayList<>();
+        region = "";
+        regionDetail = "";
+        driver = "";
         consignor = false;
     }
 
@@ -95,6 +98,10 @@ public class Tour {
         return packingDate;
     }
 
+    public void setPackingDate(LocalDate packingDate) {
+        this.packingDate = packingDate;
+    }
+
     public String getDriver() {
         return driver;
     }
@@ -115,6 +122,10 @@ public class Tour {
         return id;
     }
 
+    public void setID(int id) {
+        this.id = id;
+    }
+
     public Boolean getConsignor() {
         return consignor;
     }
@@ -125,6 +136,10 @@ public class Tour {
 
     public String getStatus() {
         return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getRegionDetail() {
