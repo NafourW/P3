@@ -3,6 +3,7 @@ package dk.aau.cs.ds308e18.io;
 import com.graphhopper.util.shapes.GHPoint;
 import com.mysql.jdbc.exceptions.MySQLDataException;
 import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
+import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Ware;
@@ -126,70 +127,75 @@ public class ReadFile {//Class that reads CSV files
 
                     order.setLatLon(new GHPoint(lat, lon));
                     }
-
-                String orderLinePath = sourcePath + "/" + order.getID() + "_ordrelinjer.csv";
-
-                Path path = Paths.get(orderLinePath);
-
-                if (Files.exists(path)){
-                    try (BufferedReader br2 = new BufferedReader(new FileReader(orderLinePath))){
-                        while ((line = br2.readLine()) != null){
-
-                            String[] Items = line.split(cvsSplitBy, -1);
-
-                            if(Items[0].matches("^[^\\d].*")){
-                                continue;
-                            }
-
-                            //Order = Items[0]
-                            //Varenummer = Items[1]
-                            //Varenavn = Items[2]
-
-                            int labels; //Convert content inside the list to integer
-                            if(Items[3].matches("[0-9]+") && Items[3].length() > 2)
-                                labels = Integer.valueOf(Items[3]);
-                            else
-                                labels = 0;
-
-                            int delivered; //Convert content inside the list to integer
-                            if(Items[4].matches("[0-9]+") && Items[4].length() > 2)
-                                delivered = Integer.valueOf(Items[4]);
-                            else
-                                delivered = 0;
-
-                            //Inidivid = Items[5]
-
-                            boolean preparing;
-                            preparing = Items[6].toLowerCase().equals("ja");
-
-                            //Individ varenummer = Items[7]
-                            //Model = Items[8]
-                            //Navn = Items[9]
-
-                            OrderLine orderline = new OrderLine(Items[0], Items[1], Items[2], labels, delivered,
-                                    Items[5], preparing, Items[7], Items[8], Items[9]);
-
-                            order.addOrderLine(orderline);
-
-                        }
-                    } catch (IOException e){
-                        e.printStackTrace();
-                    }
-                }
-                /*
-                ArrayList<OrderLine> orderLines = order.getOrderLines();
-
-                for (OrderLine ol: orderLines) {
-                    System.out.println("Order: " + ol.getOrder() + " Warenumber: " + ol.getWareNumber() +
-                            " Individual: " + ol.getIndividual() + " Name: " + ol.getName());
-                }
-                */
                 orderList.add(order);
             }
         } catch (IOException e){
             e.printStackTrace();
         }
         return orderList;
+    }
+
+    public ArrayList<OrderLine> orderLines(String sourPath){
+        ArrayList<OrderLine> orderLines = new ArrayList<>();
+
+        String line = "";
+
+        String cvsSplitBy = ";";
+
+        ArrayList<Order> orderList = OrderManagement.getOrders();
+
+        for (Order order : orderList){
+
+            String directory = sourPath + "/" + order.getID() + "_ordrelinjer.csv";
+
+            Path path = Paths.get(directory);
+
+            if (Files.exists(path)){
+                try (BufferedReader br = new BufferedReader(new FileReader(directory))){
+                    while ((line = br.readLine()) != null){
+                        String[] Items = line.split(cvsSplitBy, -1);
+
+                        if (Items[0].matches("^[^\\d].*")){
+                            continue;
+                        }
+
+                        //Order = Items[0]
+                        //Varenummer = Items[1]
+                        //Varenavn = Items[2]
+
+                        int labels; //Convert content inside the list to integer
+                        if(Items[3].matches("[0-9]+") && Items[3].length() > 2)
+                            labels = Integer.valueOf(Items[3]);
+                        else
+                            labels = 0;
+
+                        int delivered; //Convert content inside the list to integer
+                        if(Items[4].matches("[0-9]+") && Items[4].length() > 2)
+                            delivered = Integer.valueOf(Items[4]);
+                        else
+                            delivered = 0;
+
+                        //Inidivid = Items[5]
+
+                        boolean preparing;
+                        preparing = Items[6].toLowerCase().equals("ja");
+
+                        //Individ varenummer = Items[7]
+                        //Model = Items[8]
+                        //Navn = Items[9]
+
+                        OrderLine orderLine = new OrderLine(Items[0], Items[1], Items[2], labels, delivered, Items[5],
+                                preparing, Items[7], Items[8], Items[9]);
+
+                        orderLines.add(orderLine);
+                    }
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return orderLines;
     }
 
     public ArrayList<Ware> wareTypes(String sourcePath){

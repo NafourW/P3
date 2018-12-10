@@ -2,6 +2,7 @@ package dk.aau.cs.ds308e18.model;
 
 public class OrderLine {
     private String order;
+    private int orderID;
     private String wareNumber;
     private String wareName;
     private int labels;
@@ -45,4 +46,8 @@ public class OrderLine {
     public String getModel() { return model; }
 
     public String getName() { return name; }
+
+    public void setOrderID() {
+        this.orderID = orderID;
+    }
 }
