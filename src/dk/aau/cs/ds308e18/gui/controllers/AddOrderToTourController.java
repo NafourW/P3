@@ -63,10 +63,14 @@ public class AddOrderToTourController implements ISelectionController {
     @FXML
     private void doneButtonAction(ActionEvent event) throws IOException {
 
-        //TODO: should the orders' tourIDs get changed here??
         for (Order o : orderListTable.getSelectionModel().getSelectedItems())
             selectedTour.addOrder(o);
 
+        Main.gui.changeView("EditTour", selectedTour, false);
+    }
+
+    @FXML
+    private void cancelButtonAction(ActionEvent event) throws IOException {
         Main.gui.changeView("EditTour", selectedTour, false);
     }
 

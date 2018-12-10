@@ -7,6 +7,7 @@ import dk.aau.cs.ds308e18.gui.ISelectionController;
 import dk.aau.cs.ds308e18.gui.TableManager;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -37,6 +38,7 @@ public class EditTourController implements ISelectionController {
     private ObservableList<String> regions = FXCollections.observableArrayList();
 
     private Tour selectedTour;
+    private Order selectedOrder;
 
     @FXML
     private void initialize(){
@@ -49,6 +51,12 @@ public class EditTourController implements ISelectionController {
         //setup tables
         tourOrdersManager = new TableManager<>(tourOrdersTable);
         tourOrdersManager.setupColumns();
+
+        //disable remove/movetotour buttons
+        setOrderButtonsDisabled(true);
+
+        //setup onOrderSelected method
+        tourOrdersTable.getSelectionModel().selectedItemProperty().addListener(this::onOrderSelected);
     }
 
     private void transferFieldsToTour() {
@@ -56,6 +64,8 @@ public class EditTourController implements ISelectionController {
         selectedTour.setRegion(regionComboBox.getValue());
         selectedTour.setDriver(driverTextField.getText());
         selectedTour.setConsignor(consignorCheckBox.isSelected());
+
+        TourManagement.overrideTour(selectedTour);
     }
 
     private void refreshOrderList() {
@@ -65,15 +75,39 @@ public class EditTourController implements ISelectionController {
             tourOrdersManager.addItem(order);
     }
 
+    /*
+    Called when an order is selected in the order list
+    */
+    private void onOrderSelected(ObservableValue<? extends Order> obs, Order oldSelection, Order newSelection) {
+        //the selected item is assigned to selectedTour
+        selectedOrder = newSelection;
+
+        //if the same thing was selected: do nothing
+        if (oldSelection == newSelection)
+            return;
+
+        //enable/disable tour buttons,
+        //depending on whether a tour is selected
+        setOrderButtonsDisabled((selectedOrder == null));
+    }
+
+    private void setOrderButtonsDisabled(boolean disabled) {
+        removeOrderButton.setDisable(disabled);
+        moveOrderToTourButton.setDisable(disabled);
+    }
+
     @FXML
     private void addOrderButtonAction(ActionEvent event) throws IOException{
+        transferFieldsToTour();
         Main.gui.changeView("AddOrderToTour", selectedTour, false);
         refreshOrderList();
     }
 
     @FXML
     private void removeOrderButtonAction(ActionEvent event) {
-        
+        OrderManagement.setTourID(0, selectedOrder.getOrderID());
+        selectedTour.getOrders().remove(selectedOrder);
+        refreshOrderList();
     }
 
     @FXML
@@ -84,7 +118,6 @@ public class EditTourController implements ISelectionController {
     @FXML
     private void doneButtonAction(ActionEvent event) throws IOException {
         transferFieldsToTour();
-        TourManagement.overrideTour(selectedTour);
         Main.gui.changeView("TourList");
     }
 

@@ -54,7 +54,12 @@
                <children>
                   <HBox alignment="BOTTOM_RIGHT">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#doneButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_done">
+                        <Button mnemonicParsing="false" onAction="#doneButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_add_order">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button layoutX="670.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_cancel">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>

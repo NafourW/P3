@@ -109,30 +109,9 @@ public class TourManagement {
                 if(!(tour.getOrders().isEmpty())) {
                     ArrayList<Order> orderList = tour.getOrders();
                     for(Order order : orderList) {
-                        updateTourID(tour.getTourID(), order.getOrderID());
+                        OrderManagement.setTourID(tour.getTourID(), order.getOrderID());
                     }
                 }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /*
-    Helping method.
-    Excutes the actul update for each order passed from the previous method.
-    */
-    private static void updateTourID(int tourID, int orderID) {
-        DatabaseConnection dbConn = new DatabaseConnection();
-        try(Connection conn = dbConn.establishConnectionToDatabase()) {
-            if (conn != null) {
-                String sql = "UPDATE orders SET tourID = ? WHERE orderID = ?";
-                PreparedStatement stmt = conn.prepareStatement(sql);
-
-                stmt.setInt(1, tourID);
-                stmt.setInt(2, orderID);
-
-                stmt.executeUpdate();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -154,7 +133,7 @@ public class TourManagement {
                 // If there are any orders in the tour - set their tourID to 0
                 if(!(tour.getOrders().isEmpty())) {
                     for(Order order : tour.getOrders()) {
-                        updateTourID(0, order.getOrderID());
+                        OrderManagement.setTourID(0, order.getOrderID());
                     }
                 }
 

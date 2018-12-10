@@ -103,6 +103,26 @@ public class OrderManagement {
         return sb.toString();
     }
 
+    /*
+    Set the tour ID for an order with a specific order ID
+    */
+    public static void setTourID(int tourID, int orderID) {
+        DatabaseConnection dbConn = new DatabaseConnection();
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "UPDATE orders SET tourID = ? WHERE orderID = ?";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+
+                stmt.setInt(1, tourID);
+                stmt.setInt(2, orderID);
+
+                stmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static ArrayList<Order> getOrders() {
         return Main.dbExport.exportAllOrders();
     }
