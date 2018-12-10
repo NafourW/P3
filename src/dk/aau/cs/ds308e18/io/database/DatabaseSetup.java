@@ -152,7 +152,7 @@ public class DatabaseSetup {
                 stmt.executeUpdate();
             }
         } catch(SQLException e) {
-            System.out.println("The ware table already exists.");
+            System.out.println("The addresses table already exists.");
         }
     }
 
