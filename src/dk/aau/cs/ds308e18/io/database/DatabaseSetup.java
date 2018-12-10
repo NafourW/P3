@@ -104,7 +104,6 @@ public class DatabaseSetup {
                         "packingDate VARCHAR(255)," +
                         "id INT," +
                         "region VARCHAR(255)," +
-                        "regionDetail VARCHAR(255)," +
                         "driver VARCHAR(255)," +
                         "status VARCHAR(255)," +
                         "consignor VARCHAR(255))";

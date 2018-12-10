@@ -15,8 +15,8 @@ public class TourManagement {
     */
     public static void createTour(Tour tour) {
         DatabaseConnection dbConn = new DatabaseConnection();
-        String sql = "INSERT INTO tours (tourDate, packingDate, id, region, regionDetail, " +
-                "driver, status, consignor) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO tours (tourDate, packingDate, id, region, " +
+                "driver, status, consignor) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
@@ -25,10 +25,9 @@ public class TourManagement {
                 stmt.setString(2, String.valueOf(tour.getPackingDate()));
                 stmt.setString(3, String.valueOf(tour.getID()));
                 stmt.setString(4, String.valueOf(tour.getRegion()));
-                stmt.setString(5, String.valueOf(tour.getRegionDetail()));
-                stmt.setString(6, String.valueOf(tour.getDriver()));
-                stmt.setString(7, String.valueOf(tour.getStatus()));
-                stmt.setString(8, String.valueOf(tour.getConsignor()));
+                stmt.setString(5, String.valueOf(tour.getDriver()));
+                stmt.setString(6, String.valueOf(tour.getStatus()));
+                stmt.setString(7, String.valueOf(tour.getConsignor()));
 
                 stmt.executeUpdate();
             }
@@ -47,7 +46,31 @@ public class TourManagement {
     Replace a tour in the database with this tour (both should have the same tourID)
     */
     public static void overrideTour(Tour tour) {
-        //TODO: hjælp
+        DatabaseConnection dbConn = new DatabaseConnection();
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if(conn != null) {
+                String sql = "UPDATE tours SET tourDate = ?, packingDate = ?, id = ?, region = ?, " +
+                        "driver = ?, status = ?, consignor = ? WHERE tourID = ?";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+
+                //TODO HJÆÆÆÆÆÆLP (også) DEN HER stmt.set...
+                stmt.setString(1, String.valueOf(tour.getTourDate()));
+                stmt.setString(2, String.valueOf(tour.getPackingDate()));
+                stmt.setInt(3, tour.getID());
+                stmt.setString(4, tour.getRegion());
+                stmt.setString(5, tour.getDriver());
+                stmt.setString(6, tour.getStatus());
+                stmt.setBoolean(7, tour.getConsignor());
+                stmt.setInt(8, tour.getTourID());
+
+                stmt.executeUpdate();
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+
+        //Assign the tourID of the tour to all orders under the tour.
+        updateOrderTourID(tour);
     }
 
     /*
