@@ -66,12 +66,12 @@ public class AddOrderToTourController implements ISelectionController {
         for (Order o : orderListTable.getSelectionModel().getSelectedItems())
             selectedTour.addOrder(o);
 
-        Main.gui.changeView("EditTour", selectedTour, false);
+        Main.gui.goToPreviousView();
     }
 
     @FXML
     private void cancelButtonAction(ActionEvent event) throws IOException {
-        Main.gui.changeView("EditTour", selectedTour, false);
+        Main.gui.goToPreviousView();
     }
 
     @Override

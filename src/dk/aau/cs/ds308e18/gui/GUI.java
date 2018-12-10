@@ -23,6 +23,10 @@ public class GUI {
 
     private Stage window;
     private String currentView;
+    private Object currentSelection;
+
+    private String previousView;
+    private Object previousSelection;
 
     public GUI(){
         initLanguage();
@@ -93,7 +97,11 @@ public class GUI {
     Change the current application view by loading FXML and replacing the scene's root
     */
     public void changeView(String view) throws IOException{
+        previousView = currentView;
+        previousSelection = currentSelection;
+
         currentView = view;
+        currentSelection = null;
 
         //Load the view
         Parent root = FXMLLoader.load(getClass().getResource("/views/" + currentView + ".fxml"), localStrings);
@@ -110,7 +118,11 @@ public class GUI {
     and false when "edit x" was picked
     */
     public void changeView(String view, Object selection, boolean isNew) throws IOException{
+        previousView = currentView;
+        previousSelection = currentSelection;
+
         currentView = view;
+        currentSelection = selection;
 
         //Get the view
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/" + currentView + ".fxml"), localStrings);
@@ -133,6 +145,17 @@ public class GUI {
     */
     public void refreshView() throws IOException{
         changeView(currentView);
+    }
+
+    public void goToPreviousView() throws IOException{
+        if (previousSelection != null)
+            changeView(previousView, previousSelection, false);
+        else
+            changeView(previousView);
+    }
+
+    public Object getPreviousSelection() {
+        return previousSelection;
     }
 
     /*

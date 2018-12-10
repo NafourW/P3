@@ -100,7 +100,6 @@ public class EditTourController implements ISelectionController {
     private void addOrderButtonAction(ActionEvent event) throws IOException{
         transferFieldsToTour();
         Main.gui.changeView("AddOrderToTour", selectedTour, false);
-        refreshOrderList();
     }
 
     @FXML
@@ -111,8 +110,9 @@ public class EditTourController implements ISelectionController {
     }
 
     @FXML
-    private void moveOrderToTourButtonAction(ActionEvent event) {
-
+    private void moveOrderToTourButtonAction(ActionEvent event) throws IOException{
+        transferFieldsToTour();
+        Main.gui.changeView("MoveOrderToTour", selectedOrder, false);
     }
 
     @FXML

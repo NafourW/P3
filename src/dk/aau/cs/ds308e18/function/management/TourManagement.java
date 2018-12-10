@@ -167,6 +167,11 @@ public class TourManagement {
         }
     }
 
+    public static Tour getTourFromTourID(int tourID){
+        //TODO: Daniél, hjælp pls
+        return null;
+    }
+
     public static ArrayList<Tour> getTours(){
         return Main.dbExport.exportTours();
     }
