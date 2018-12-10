@@ -85,7 +85,7 @@ public class GPS {
         JSONArray hits = null;
         if (jb != null) hits = (JSONArray) jb.get("hits");
         JSONObject hitsIndent = null;
-        if (hits != null) hitsIndent = (JSONObject) hits.get(0);
+        if (hits.size() > 0) hitsIndent = (JSONObject) hits.get(0);
         JSONObject ghPoint = null;
         if (hitsIndent != null) ghPoint = (JSONObject) hitsIndent.get("point");
 
@@ -96,7 +96,8 @@ public class GPS {
 
             return new GHPoint(lat, lon);
         }
-        return null; //TODO: Bad address skal også have en adresse
+        //bad address returns default point
+        return new GHPoint(0,0);
     }
 
 

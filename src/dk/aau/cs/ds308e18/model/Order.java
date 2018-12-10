@@ -84,7 +84,7 @@ public class Order {
 
         zipCode = 0;
         date = LocalDate.now();
-        latLon = null;
+        latLon = new GHPoint(0,0);
 
         printed = false;
         expeditionStatus = "";
