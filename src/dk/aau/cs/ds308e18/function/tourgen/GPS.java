@@ -82,15 +82,21 @@ public class GPS {
         JSONObject jb = (JSONObject) jobj;
 
         //Read Json response
-        JSONArray hits = (JSONArray) jb.get("hits");
-        JSONObject hitsIndent = (JSONObject) hits.get(0);
-        JSONObject ghPoint = (JSONObject) hitsIndent.get("point");
+        JSONArray hits = null;
+        if (jb != null) hits = (JSONArray) jb.get("hits");
+        JSONObject hitsIndent = null;
+        if (hits != null) hitsIndent = (JSONObject) hits.get(0);
+        JSONObject ghPoint = null;
+        if (hitsIndent != null) ghPoint = (JSONObject) hitsIndent.get("point");
 
         //Set the order's point
-        lat = (double) ghPoint.get("lat");
-        lon = (double) ghPoint.get("lng");
+        if (ghPoint != null) {
+            lat = (double) ghPoint.get("lat");
+            lon = (double) ghPoint.get("lng");
 
-        return new GHPoint(lat, lon);
+            return new GHPoint(lat, lon);
+        }
+        return null; //TODO: Bad address skal også have en adresse
     }
 
 
