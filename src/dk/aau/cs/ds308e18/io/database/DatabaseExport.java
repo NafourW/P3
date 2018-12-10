@@ -148,7 +148,7 @@ public class DatabaseExport {
     /*
     Find all orders on a specific tour. Return a list of those orders.
     */
-    private ArrayList<Order> ordersOnTour(Tour tour) {
+    public static ArrayList<Order> ordersOnTour(Tour tour) {
         ArrayList<Order> ordersOnTourList = new ArrayList<>();
         DatabaseConnection dbConn = new DatabaseConnection();
 
@@ -163,7 +163,7 @@ public class DatabaseExport {
 
                 // As long as there is a "next row" in the table, create an order based on that row
                 while (ordersOnTour.next()) {
-                    Order order = createOrderFromResultSet(ordersOnTour);
+                    Order order = DatabaseExport.createOrderFromResultSet(ordersOnTour);
                     ordersOnTourList.add(order);
                 }
             }
@@ -178,7 +178,7 @@ public class DatabaseExport {
     Create a tour based on a ResultSet from a SQL Query.
     Return it.
     */
-    public Tour createTourFromResultSet(ResultSet resultSet) {
+    public static Tour createTourFromResultSet(ResultSet resultSet) {
         Tour tour = new Tour();
 
         try {
@@ -202,7 +202,7 @@ public class DatabaseExport {
     Create an order based on a ResultSet from a SQL Query.
     Return it.
     */
-    private Order createOrderFromResultSet(ResultSet resultSet) {
+    private static Order createOrderFromResultSet(ResultSet resultSet) {
         Order order = new Order();
 
         try {

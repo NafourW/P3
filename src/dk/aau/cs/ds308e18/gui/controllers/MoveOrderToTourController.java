@@ -63,10 +63,10 @@ public class MoveOrderToTourController implements ISelectionController {
     private void moveButtonAction(ActionEvent event) throws IOException {
         OrderManagement.setTourID(selectedTour.getTourID(), selectedOrder.getOrderID());
 
-        //Hacky stuff
-        //Tour previousTour = (Tour)Main.gui.getPreviousSelection();
-        //Main.gui.changeView("EditTour", TourManagement.getTourFromTourID(previousTour.getTourID()), false);
-        Main.gui.changeView("TourList");
+        //Hacky stuff, but it works
+        Tour previousTour = (Tour)Main.gui.getPreviousSelection();
+        previousTour = TourManagement.getTourFromTourID(previousTour.getTourID());
+        Main.gui.changeView("EditTour", previousTour, false);
     }
 
     @FXML

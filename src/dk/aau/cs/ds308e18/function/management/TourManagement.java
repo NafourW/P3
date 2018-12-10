@@ -186,7 +186,15 @@ public class TourManagement {
                 That's why rs.next() is called before creating the tour.
                 */
                 rs.next();
-                return Main.dbExport.createTourFromResultSet(rs);
+                Tour tour = Main.dbExport.createTourFromResultSet(rs);
+
+                // Find all orders with that tourID and put them on the tour
+                ArrayList<Order> ordersOnTour = Main.dbExport.ordersOnTour(tour);
+                for(Order order : ordersOnTour) {
+                    tour.addOrder(order);
+                }
+
+                return tour;
             }
         } catch (SQLException e) {
             e.printStackTrace();
