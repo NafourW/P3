@@ -199,7 +199,7 @@ public class Order {
     }
 
     public void saveLatLonInDataBase(String address) {
-        String sql = "INSERT INTO addresses (address, latitude, longtitude) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO addresses (address, latitude, longitude) VALUES (?, ?, ?)";
         DatabaseConnection dbConn = new DatabaseConnection();
         try (Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {

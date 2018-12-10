@@ -15,6 +15,7 @@ public class DatabaseSetup {
         createWareTable();
         createWareListTable();
         createRegionTable();
+        createAddressesTable();
         createOrderTable();
     }
 
@@ -128,6 +129,25 @@ public class DatabaseSetup {
                         "orderID INT," +
                         "wareID INT," +
                         "amount INT)";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.executeUpdate();
+            }
+        } catch(SQLException e) {
+            System.out.println("The ware table already exists.");
+        }
+    }
+
+    /*
+    Create a table called "addresses" that holds addresses and their latitude and longitude.
+    */
+    private void createAddressesTable() {
+        DatabaseConnection dbConn = new DatabaseConnection();
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "CREATE TABLE addresses (" +
+                        "address VARCHAR(255)," +
+                        "latitude VARCHAR(255)," +
+                        "longitude VARCHAR(255))";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
             }
