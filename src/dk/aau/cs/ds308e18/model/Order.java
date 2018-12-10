@@ -192,10 +192,17 @@ public class Order {
 
     public void setAddress(String address) {
         if (address != this.address) { // TODO check om addresse eksistere i DataBase
-            this.latLon = gps.GeocodeAddress(address);
-            saveLatLonInDataBase(address);
             this.address = address;
         }
+    }
+
+    public void requestLatLonFromAddress() {
+        this.latLon = gps.GeocodeAddress(address);
+        saveLatLonInDataBase(address);
+    }
+
+    public void setLatLon(GHPoint latLon) {
+        this.latLon = latLon;
     }
 
     public void saveLatLonInDataBase(String address) {

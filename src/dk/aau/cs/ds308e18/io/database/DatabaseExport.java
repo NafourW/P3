@@ -210,6 +210,8 @@ public class DatabaseExport {
             order.setCustomerName    (resultSet.getString (7));
             order.setDate            (resultSet.getDate   (8).toLocalDate());
             order.setAddress         (resultSet.getString (9));
+            //TODO: get latLon from database
+            //order.setLatLon();
             order.setZipCode         (resultSet.getInt    (10));
             order.setReceipt         (resultSet.getInt    (11));
             order.setPickup          (resultSet.getBoolean(12));

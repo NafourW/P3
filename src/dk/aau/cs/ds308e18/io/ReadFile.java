@@ -100,6 +100,7 @@ public class ReadFile {//Class that reads CSV files
                 order.setCustomerName    (Order[5]);
                 order.setDate            (date);
                 order.setAddress         (Order[7]);
+                order.requestLatLonFromAddress();
                 order.setZipCode         (zipCode);
                 order.setReceipt         (receipt);
                 order.setPickup          (pickup);
