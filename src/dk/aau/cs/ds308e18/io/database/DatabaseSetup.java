@@ -144,7 +144,7 @@ public class DatabaseSetup {
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 String sql = "CREATE TABLE addresses (" +
-                        "address VARCHAR(255)," +
+                        "address VARCHAR(255) UNIQUE ," +
                         "latitude VARCHAR(255)," +
                         "longitude VARCHAR(255))";
                 PreparedStatement stmt = conn.prepareStatement(sql);

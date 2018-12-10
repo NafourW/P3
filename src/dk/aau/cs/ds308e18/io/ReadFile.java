@@ -1,6 +1,8 @@
 package dk.aau.cs.ds308e18.io;
 
 import com.graphhopper.util.shapes.GHPoint;
+import com.mysql.jdbc.exceptions.MySQLDataException;
+import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Ware;
@@ -111,6 +113,7 @@ public class ReadFile {//Class that reads CSV files
                 order.setFV              (FV);
                 order.setProject         (Order[19]);
 
+
                 //Check if there are coordinates for the order
                 //If there are no coordinates
                 if (Order[20].equals("") || Order[21].equals(""))
@@ -122,7 +125,7 @@ public class ReadFile {//Class that reads CSV files
                     double lon = Double.valueOf(Order[21]);
 
                     order.setLatLon(new GHPoint(lat, lon));
-                }
+                    }
 
                 String orderLinePath = sourcePath + "/" + order.getID() + "_ordrelinjer.csv";
 

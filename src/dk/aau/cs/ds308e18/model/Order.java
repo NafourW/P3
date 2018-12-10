@@ -1,6 +1,7 @@
 package dk.aau.cs.ds308e18.model;
 
 import com.graphhopper.util.shapes.GHPoint;
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 
 import java.sql.Connection;
@@ -191,7 +192,7 @@ public class Order {
     }
 
     public void setAddress(String address) {
-        if (address != this.address) { // TODO check om addresse eksistere i DataBase
+        if (address != this.address) {
             this.address = address;
         }
     }
@@ -216,9 +217,13 @@ public class Order {
                 stmt.setString(2, String.valueOf(this.latLon.lat));
                 stmt.setString(3, String.valueOf(this.latLon.lon));
 
+
                 stmt.executeUpdate();
             }
-        } catch (SQLException e) {
+        }
+        catch (MySQLIntegrityConstraintViolationException e) { // Hvis adressen eksistere i DataBasen fanges exception skyldet af at databasen er unique.
+        }
+        catch (SQLException e) {
             e.printStackTrace();
         }
     }
