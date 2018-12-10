@@ -178,7 +178,7 @@ public class DatabaseExport {
     Create a tour based on a ResultSet from a SQL Query.
     Return it.
     */
-    private Tour createTourFromResultSet(ResultSet resultSet) {
+    public Tour createTourFromResultSet(ResultSet resultSet) {
         Tour tour = new Tour();
 
         try {

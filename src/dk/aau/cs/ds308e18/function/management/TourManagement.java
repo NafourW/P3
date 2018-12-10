@@ -167,8 +167,26 @@ public class TourManagement {
         }
     }
 
+    /*
+    Create tour object from a given tourID.
+    */
     public static Tour getTourFromTourID(int tourID){
-        //TODO: Daniél, hjælp pls
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "SELECT * FROM tours WHERE tourID = ?";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.setInt(1, tourID);
+
+                ResultSet rs = stmt.executeQuery();
+
+                return Main.dbExport.createTourFromResultSet(rs);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         return null;
     }
 
