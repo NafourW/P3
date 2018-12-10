@@ -16,6 +16,7 @@ public class DatabaseSetup {
         createWareListTable();
         createRegionTable();
         createAddressesTable();
+        createOrderLineTable();
         createOrderTable();
     }
 
@@ -152,6 +153,30 @@ public class DatabaseSetup {
             }
         } catch(SQLException e) {
             System.out.println("The addresses table already exists.");
+        }
+    }
+
+    private void createOrderLineTable() {
+        DatabaseConnection dbConn = new DatabaseConnection();
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "CREATE TABLE orderlines(" +
+                        "orderID INT," +
+                        "orderReference VARCHAR(255)," +
+                        "wareNumber VARCHAR(255)," +
+                        "wareName VARCHAR(255)," +
+                        "labels INT," +
+                        "delivered INT," +
+                        "individual VARCHAR(255)," +
+                        "preparing VARCHAR(255)," +
+                        "individualNumber VARCHAR(255)," +
+                        "model VARCHAR(255)," +
+                        "name VARCHAR(255))";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            System.out.println("The orderline table already exists.");
         }
     }
 
