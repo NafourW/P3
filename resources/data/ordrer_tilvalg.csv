@@ -1,127 +1,1001 @@
-ï»¿M;Plukrute;Ordre;Returordre reference;Ekspeditionsstatus;Navn;Ã˜nsket modtagelsesdato;Gadenavn;Postnummer;FÃ¸lgeseddel;Afhentning;Afhentningsdato;Leverings UGE;Lagersted;Ordrekategori;FlÃ¥deejer;Udskrevet;Rute;FV;Projekt
-false;350592;0726936;;FuldfÃ¸rt;VEDBÃ†K KÃ˜LETEKNIK;13-06-2018;Kongevejen 227;2830;3868167;Nej;;;004;Service;;Nej;Nord SjÃ¦lland;Ja;
-false;350247;0727308;;FuldfÃ¸rt;Coolers KÃ¸leteknik Ivs;14-06-2018;Grevindevej 5;4682;3863372;Nej;;;004;Service;;Nej;Syd SjÃ¦lland;Nej;
-false;350237;0728450;;FuldfÃ¸rt;COMBIKÃ˜L I/S;19-06-2018;Skagen Landevej 841;9800;3863213;Nej;;;004;Service;;Nej;Nord Jylland;Nej;
-false;350238;0728335;;FuldfÃ¸rt;CLIMATE A/S;19-06-2018;Farum Gydevej 77;3520;3863264;Nej;;;004;Service;;Nej;Nord SjÃ¦lland;Nej;
-false;350054;0729254;;FuldfÃ¸rt;Blue Water Shipping;21-06-2018;Herluf Trollesvej 3Port 1-8;9850;3856958;Nej;;;004;NykÃ¸b;;Nej;Nord Jylland;Ja;
-false;350585;0730071;;FuldfÃ¸rt;VOLVO TRUCK CENTER DANMARK A/S;25-06-2018;TaastrupgÃ¥rdsvej 32;2630;3868168;Nej;;;004;Service;;Nej;KÃ¸benhavn;Nej;
-false;350791;0729787;;FuldfÃ¸rt;CARRIER REFRIGERATION KOLDING;25-06-2018;Dieselvej 7;6000;3869572;Nej;;;004;Service;;Nej;SÃ¸nderjylland;Nej;
-false;350549;0730333;;FuldfÃ¸rt;FERIECENTER NORDSÃ˜EN;26-06-2018;HÃ¸kervej 5;9492;3867842;Nej;;;004;Service;;Nej;Nord Jylland;Nej;
-false;350015;0730264;;FuldfÃ¸rt;FULLRATE A/S;26-06-2018;Jagtvej 169B;2100;3856739;Nej;;;004;Service;;Nej;KÃ¸benhavn;Nej;
-false;350705;0730452;;FuldfÃ¸rt;CLIMATE A/S;26-06-2018;Farum Gydevej 77;3520;3869222;Nej;;;004;Service;;Nej;Nord SjÃ¦lland;Nej;
-false;350249;0731067;;FuldfÃ¸rt;LÃ˜RSLEV HVIDEVARESERVICE - 12912;28-06-2018;MÃ¸lgÃ¥rdsvej 201;9800;3863283;Nej;;;004;Service;;Nej;Nord Jylland;Nej;
-false;350966;0731118;;FuldfÃ¸rt;MARTIN ELKÃ†R (Rynkeby);28-06-2018;Holmegaardsvej 53;4684;3871511;Nej;;;004;Service;;Nej;Syd SjÃ¦lland;Nej;
-false;350037;0731504;;FuldfÃ¸rt;Ã…BYBRO BAGEREN;29-06-2018;Ã˜stergade 10;9440;3863059;Nej;;;004;Service;;Nej;Nord Jylland;Ja;
-false;350044;0731542;;FuldfÃ¸rt;RESTAURANT COLOSSEUM;29-06-2018;SÃ¸nder Havnegade 24;6400;3856940;Nej;;;004;Service;;Nej;SÃ¸nderjylland;Nej;
-false;350002;0731431;;FuldfÃ¸rt;CLIMATE A/S;29-06-2018;Farum Gydevej 77;3520;3856716;Nej;;;004;Service;;Nej;Nord SjÃ¦lland;Nej;
-false;350003;0731439;;FuldfÃ¸rt;A.P. KÃ˜LESERVICE ApS;29-06-2018;Valseholmen 6-8;2650;3856725;Nej;;;004;Service;;Nej;KÃ¸benhavn;Nej;
-false;350006;0731446;;FuldfÃ¸rt;CLIMATE A/S;29-06-2018;Farum Gydevej 77;3520;3856728;Nej;;;004;Service;;Nej;Nord SjÃ¦lland;Nej;
-false;350009;0731449;;FuldfÃ¸rt;CLIMATE A/S;29-06-2018;Farum Gydevej 77;3520;3856730;Nej;;;004;Service;;Nej;Nord SjÃ¦lland;Nej;
-false;350091;0731598;;FuldfÃ¸rt;VOJENS KÃ˜LETEKNIK;29-06-2018;Roskildevej 519ATT: 0138Vojens KÃ¸leteknikKasper Pedersen ;2605;3863286;Nej;;;004;Service;;Nej;KÃ¸benhavn;Nej;
-false;350094;0731611;;FuldfÃ¸rt;Emmerys;29-06-2018;Jagtvej 109, st;2200;3863291;Nej;;;004;Service;;Nej;KÃ¸benhavn;Nej;
-false;350173;0731719;;FuldfÃ¸rt;7-ELEVEN - 467;29-06-2018;GrenÃ¥vej 189;8240;3863374;Nej;;;004;Service;;Nej;Ã˜st Jylland;Nej;
-false;350208;0731753;;FuldfÃ¸rt;Wedofood;02-07-2018;Gammel Kongevej 176;1850;3863376;Nej;;;004;Service;;Nej;KÃ¸benhavn;Ja;
-false;350209;0731766;;FuldfÃ¸rt;Kemp & Lauritzen A/S;02-07-2018;Stamholmen 110;2650;3863294;Nej;;;004;Service;;Nej;KÃ¸benhavn;Nej;
-false;350220;0731797;;FuldfÃ¸rt;Thomas Harm;02-07-2018;Kostervej 80B, Koster;4780;3863303;Nej;;;004;Reservedele;;Nej;Syd SjÃ¦lland;Nej;
-false;350098;0731616;;FuldfÃ¸rt;Hallernes SmÃ¸rrebrÃ¸d;02-07-2018;Tivoli Food HallBernstorffsgade 3;1577;3863391;Nej;;;004;NykÃ¸b;;Nej;KÃ¸benhavn;Ja;
-false;350172;0731715;;FuldfÃ¸rt;BFGS SIA;02-07-2018;Kooperativa 4a-37;LV-1067;3862893;Nej;;;004;NykÃ¸b;;Nej;Eksport;Ja;
-false;350274;0731885;;FuldfÃ¸rt;CLIMATE A/S;02-07-2018;Farum Gydevej 77;3520;3865362;Nej;;;004;Service;;Nej;Nord SjÃ¦lland;Nej;
-false;350275;0731972;;FuldfÃ¸rt;VM ELEKTRO A/S;02-07-2018;GÃ¥rsdalvej 20, Ravnstrup KONTO: 73198;8800;3863516;Nej;;;004;Service;;Nej;Ã˜st Jylland;Nej;
-false;350289;0731999;;FuldfÃ¸rt;RP Maskinservice ApS;02-07-2018;Bizonvej 7;9293;3863737;Nej;;;004;Service;;Nej;Nord Jylland;Nej;
-false;350302;0732023;;FuldfÃ¸rt;HolbÃ¦k KÃ¸l;02-07-2018;SÃ¸ndergade 18;4534;3863649;Nej;;;004;Service;;Nej;Vest SjÃ¦lland;Nej;
-false;350313;0732069;;FuldfÃ¸rt;Restaurant Tight;02-07-2018;HyskenstrÃ¦de 10;1207;3863735;Nej;;;004;Reservedele;;Nej;KÃ¸benhavn;Ja;
-false;350333;0732100;;FuldfÃ¸rt;BRÃ˜NDUM ELEKTRO;02-07-2018;TagtÃ¦kkervej 21;8800;3865318;Nej;;;004;Service;;Nej;Ã˜st Jylland;Nej;
-false;350385;0732206;;FuldfÃ¸rt;Climate A/S;02-07-2018;JegindÃ¸vej 4;8800;3865499;Nej;;;004;Service;;Nej;Ã˜st Jylland;Nej;
-false;350396;0731885;;FuldfÃ¸rt;CLIMATE A/S;02-07-2018;Farum Gydevej 77;3520;3865357;Nej;;;004;Service;;Nej;Nord SjÃ¦lland;Nej;
-false;350398;0732232;;FuldfÃ¸rt;Ã˜stjysk KÃ¸leteknik ApS;03-07-2018;Bakketoften 13 F;8541;3865810;Nej;;;004;Service;;Nej;Djursland;Nej;
-false;350422;0732276;;FuldfÃ¸rt;Kemp og Lauritzen A/S;03-07-2018;Albuen 60;6000;3865799;Nej;;;004;Service;;Nej;SÃ¸nderjylland;Nej;
-false;350437;0732334;;FuldfÃ¸rt;H.C.Andersen Huset;03-07-2018;Nyvej 18;3360;3865812;Nej;;;004;Service;;Nej;Nord SjÃ¦lland;Nej;
-false;350458;0732402;;FuldfÃ¸rt;OK PLUS - 063231-5;03-07-2018;Ilskovvej 4;7451;3866028;Nej;;;004;Reservedele;;Nej;Vest Jylland;Ja;
-false;350488;0732459;;FuldfÃ¸rt;CLIMATE A/S;03-07-2018;Farum Gydevej 77;3520;3866245;Nej;;;004;Service;;Nej;Nord SjÃ¦lland;Nej;
-false;350510;0732492;;FuldfÃ¸rt;HJ StorkÃ¸kkenservice;03-07-2018;Trekronergade 149 E;2500;3867847;Nej;;;004;Reservedele;;Nej;KÃ¸benhavn;Nej;
-false;350525;0732521;;FuldfÃ¸rt;Coolers KÃ¸leteknik Ivs;03-07-2018;Grevindevej 5;4682;3868120;Nej;;;004;Service;;Nej;Syd SjÃ¦lland;Nej;
-false;350535;0732543;;FuldfÃ¸rt;Coolers KÃ¸leteknik Ivs;04-07-2018;Grevindevej 5;4682;3867841;Nej;;;004;Service;;Nej;Syd SjÃ¦lland;Nej;
-false;350567;0732583;;FuldfÃ¸rt;VM ELEKTRO A/S;04-07-2018;GÃ¥rsdalvej 20, Ravnstrup KONTO: 73198;8800;3868046;Nej;;;004;Service;;Nej;Ã˜st Jylland;Nej;
-false;350576;0732635;;FuldfÃ¸rt;Coolers KÃ¸leteknik Ivs;04-07-2018;Grevindevej 5;4682;3868131;Nej;;;004;Service;;Nej;Syd SjÃ¦lland;Nej;
-false;350596;0732667;;FuldfÃ¸rt;SKIPPERS KÃ˜LETEKNIK;04-07-2018;NÃ¸rremarksvej 53;9270;3868218;Nej;;;004;Reservedele;;Nej;Midt Nord Jylland;Nej;
-false;350623;0732705;;FuldfÃ¸rt;HolbÃ¦k KÃ¸l;04-07-2018;SÃ¸ndergade 18;4534;3868343;Nej;;;004;Service;;Nej;Vest SjÃ¦lland;Nej;
-false;350661;0732770;;FuldfÃ¸rt;CLIMATE A/S;04-07-2018;Farum Gydevej 77;3520;3868610;Nej;;;004;Service;;Nej;Nord SjÃ¦lland;Nej;
-false;350664;0732788;;FuldfÃ¸rt;MÃ…LÃ˜V SKOLE;04-07-2018;Kratvej 14;2760;3869311;Nej;;;004;Reservedele;;Nej;KÃ¸benhavn;Nej;
-false;350675;0732806;;FuldfÃ¸rt;Stig Pedersen;04-07-2018;Reimersvej 16MÃ¥ sÃ¦ttes i Carport;8963;3869315;Nej;;;004;Reservedele;;Nej;Djursland;Nej;
-false;350680;0732821;;FuldfÃ¸rt;NORDIC COOLING SOLUTIONS AB;04-07-2018;NorsavÃ¤gen 38;SE-731 98;3869256;Nej;;;004;Reservedele;;Nej;;Nej;
-false;350691;0732846;;FuldfÃ¸rt;VIBOCOLD A/S;04-07-2018;LivÃ¸vej 22;8800;3869372;Nej;;;004;NykÃ¸b;;Nej;Ã˜st Jylland;Nej;
-false;350694;0732850;;FuldfÃ¸rt;FUGLSANGCENTRET;04-07-2018;SÃ¸ndermarksvej 150;7000;3869303;Nej;;;004;Service;;Nej;SÃ¸nderjylland;Ja;
-false;350508;0732413;;FuldfÃ¸rt;FIRST CHOICE CATERING SPARES LTD;04-07-2018;BLAKENEY WAYKINGSWOOD LAKESIDECANNOCK;BGWS11 8LD;3868068;Nej;;;004;NykÃ¸b;;Nej;;Nej;
-false;350354;0732041;;FuldfÃ¸rt;CINEMA 3 SKIVE;04-07-2018;Skyttevej 12;7800;3865500;Nej;;;004;Reservedele;;Nej;Mors Thy;Nej;
-false;350312;0731710;;FuldfÃ¸rt;JYSKE STORKÃ˜KKEN APS;05-07-2018;Priorsvej 21;8600;3863751;Nej;;;004;NykÃ¸b;;Nej;Syd Ã˜st Jylland;Ja;
-false;350809;0732959;;FuldfÃ¸rt;VM ELEKTRO A/S;05-07-2018;GÃ¥rsdalvej 20, Ravnstrup KONTO: 73198;8800;3869610;Nej;;;004;Service;;Nej;Ã˜st Jylland;Nej;
-false;350850;0733041;;FuldfÃ¸rt;AGRI-TEKNIK APS;05-07-2018;Stenbro AllÃ© 11;6650;3869890;Nej;;;004;Service;;Nej;Vest Jylland;Nej;
-false;350865;0733059;;FuldfÃ¸rt;Marielyst El ApS;05-07-2018;Marielyst Strandvej 5A;4873;3869903;Nej;;;004;Service;;Nej;Syd SjÃ¦lland;Nej;
-false;350901;0733166;;FuldfÃ¸rt;BILKA - 1654;05-07-2018;Niels Bohrs Alle 150;5230;3871084;Nej;;;004;Service;;Nej;Midt Nord Fyn;Nej;
-false;350671;0729791;;FuldfÃ¸rt;BOUTIQUE MELANGE;05-07-2018;Havstokken 8, VorupÃ¸r;7700;3868634;Nej;;;004;NykÃ¸b;;Nej;Fragt;Ja;
-false;350655;0732668;;FuldfÃ¸rt;Min KÃ¸bmand Knebel;05-07-2018;Knebel Bygade 27;8420;3869373;Nej;;;004;NykÃ¸b;;Nej;Djursland;Ja;
-false;350584;0732658;;FuldfÃ¸rt;MIN KÃ˜BMAND - 050137-9;05-07-2018;Storegade 68;8765;3868217;Nej;;;004;NykÃ¸b;;Nej;Syd Ã˜st Jylland;Nej;
-false;350905;0733183;;FuldfÃ¸rt;ROSENHÃ˜J BOLDKLUB;06-07-2018;KettegÃ¥rds AllÃ© 4;2650;3871071;Nej;;;004;NykÃ¸b;;Nej;KÃ¸benhavn;Ja;
-false;350916;0733219;;FuldfÃ¸rt;CLIMATE A/S;06-07-2018;Farum Gydevej 77;3520;3871077;Nej;;;004;Service;;Nej;Nord SjÃ¦lland;Nej;
-false;350917;0733224;;FuldfÃ¸rt;WESTCOOL GMBH;06-07-2018;Am Sportplatz 3a;DE-40882;3871085;Nej;;;004;Service;;Nej;;Nej;
-false;350918;0733234;;FuldfÃ¸rt;ANGELO KÃ˜LETEKNIK A/S;06-07-2018;Vestermarken 17;8260;3871149;Nej;;;004;Service;;Nej;Ã˜st Jylland;Nej;
-false;350930;0733248;;FuldfÃ¸rt;SÃ˜RENS STORKÃ˜KKEN- OG;06-07-2018;HVIDEVARESERVICE Ã…sedamsvej 11;3760;3871305;Nej;;;004;Service;;Nej;Bornholm;Ja;
-false;350946;0732902;;FuldfÃ¸rt;DINO POLSKA S.A.;06-07-2018;ul. Ostrowska 122;PL-63-700;3871772;Nej;;;004;NykÃ¸b;;Nej;;Nej;
-false;350951;0733285;;FuldfÃ¸rt;SkÃ¦rbÃ¦k Festudlejning;06-07-2018;Ã…benrÃ¥vej 28;6780;3871307;Nej;;;004;Service;;Nej;Vest Jylland;Ja;
-false;350963;0733288;;FuldfÃ¸rt;ORIGINAL COFFEE;06-07-2018;Hellerupstandvej 149;2900;3871481;Nej;;;004;Service;;Nej;Nord SjÃ¦lland;Nej;
-false;350983;0733353;;FuldfÃ¸rt;MG KÃ¸leteknik;06-07-2018;Fruenshave 16;8732;3871721;Nej;;;004;Service;;Nej;Syd Ã˜st Jylland;Nej;
-false;351001;0733398;;Aktiveret;Climate A/S;06-07-2018;JegindÃ¸vej 4;8800;;Nej;;;004;Service;;Nej;Ã˜st Jylland;Nej;
-false;351004;0733399;;Aktiveret;CLIMATE A/S;06-07-2018;Farum Gydevej 77;3520;;Nej;;;004;Service;;Nej;Nord SjÃ¦lland;Nej;
-false;351028;0733480;;Aktiveret;HolbÃ¦k KÃ¸l;06-07-2018;SÃ¸ndergade 18;4534;;Nej;;;004;Service;;Nej;Vest SjÃ¦lland;Nej;
-false;351009;0733353;;FuldfÃ¸rt;MG KÃ¸leteknik;06-07-2018;Fruenshave 16;8732;3871721;Nej;;;004;Service;;Nej;Syd Ã˜st Jylland;Nej;
-false;351011;0733412;;FuldfÃ¸rt;TORVEGRILLEN;09-07-2018;Ã˜stergade 2A;5610;3871724;Nej;;;004;NykÃ¸b;;Nej;Syd Fyn;Ja;
-false;350993;0733276;;FuldfÃ¸rt;Circle K - 333  COCO;09-07-2018;Nyborgvej 121;5000;3871579;Nej;;;000;NykÃ¸b;;Nej;Midt Nord Fyn;Nej;
-false;351008;0733361;;Aktiveret;Stay Cafe;10-07-2018;Axeltorv 3,;6000;;Nej;;;001;Levering;RU HORECA;Nej;SÃ¸nderjylland;Nej;
-false;350986;0733358;;Aktiveret;SUSHI LOVERS;10-07-2018;Ordrupvej 66;2920;;Nej;;;000;NykÃ¸b;;Nej;Nord SjÃ¦lland;Ja;
-false;351000;0733350;;Aktiveret;SHELL Ã˜STBIRK;11-07-2018;VESTBIRKVEJ 14;8752;;Nej;;;001;Levering;RU;Nej;Syd Ã˜st Jylland;Nej;
-false;350779;0732522;;Aktiveret;ELLINOR PEDERSEN;11-07-2018;Tornsangervej 15Ravnstrup;8800;;Ja;11-07-2018;;;Levering;VIBOCOLD;Nej;Afhentning;Nej;
-false;351030;0733486;0733488;Aktiveret;CENTER KIOSKEN;11-07-2018;VÃ†REBROVEJ 72;2880;;Nej;;;000;Levering;UNILEVER S;Nej;Nord SjÃ¦lland;Nej;
-false;351031;0733488;0733486;Aktiveret;CENTER KIOSKEN;11-07-2018;VÃ†REBROVEJ 72;2880;;Ja;11-07-2018;;000;Afhentning;UNILEVER S;Nej;Nord SjÃ¦lland;Nej;
-false;351035;0733271;;Aktiveret;FITNESS DK;11-07-2018;Ã˜stergade 30;9800;;Ja;11-07-2018;;000;Afhentning;NUTRAMINO;Nej;Nord Jylland;Nej;
-false;351036;0733275;;Aktiveret;FITNESS DK;11-07-2018;Struervej 141;7500;;Ja;11-07-2018;;000;Afhentning;NUTRAMINO;Nej;Nord Vest Jylland;Nej;
-false;351037;0733060;;Aktiveret;KVICKLY - 2000;11-07-2018;Ringvej Syd 100;8260;;Ja;11-07-2018;;000;Afhentning;DRAGSBAEK;Nej;Ã˜st Jylland;Nej;
-false;351010;0733408;;Aktiveret;BROGAARDEN;11-07-2018;FREDERIKSBORGVEJ 23;2970;;Ja;11-07-2018;;000;Afhentning;UNILEVER S;Nej;Nord SjÃ¦lland;Nej;
-false;351002;0733368;;Aktiveret;CIRCLE K MOTORVEJSCENTER SKÃ†RUP VEST;12-07-2018;Ã˜STJYSKE MOTORVEJ 616A;7000;;Nej;;;001;Levering;RU;Nej;SÃ¸nderjylland;Nej;
-false;351003;0733369;;Aktiveret;SPAR BORUP;12-07-2018;HOVEDGADEN 12;4140;;Ja;12-07-2018;;000;Afhentning;RU;Nej;Vest SjÃ¦lland;Nej;
-false;350439;0730465;;FuldfÃ¸rt;TRELDEVEJENS GRILL;12-07-2018;Treldevej 5;7000;3865836;Nej;;;004;NykÃ¸b;;Nej;SÃ¸nderjylland;Ja;
-false;334948;0697508;;Aktiveret;GRAM-COMMERCIAL A/S;12-07-2018;Varemodtagelsesafd. HAL 103Metalparken 23;6500;;Nej;;;004;Service;;Nej;SÃ¸nderjylland;Nej;
-false;350987;0733319;;Aktiveret;BENT BRANDT A/S;13-07-2018;Langdyssen 7Lisbjerg;8200;;Nej;;;000;NykÃ¸b;;Nej;Ã˜st Jylland;Nej;
-false;350990;0724844;;Aktiveret;GEBR. BRUYNINCKX N.V.;13-07-2018;Kerkstraat 89;BE 2490;;Nej;;28,00;000;NykÃ¸b;;Nej;Eksport;Ja;
-false;351012;0721932;;Aktiveret;BLUE WATER SHIPPING;13-07-2018;Kertemindevej 1;9220;;Nej;;28,00;000;NykÃ¸b;;Nej;Nord Jylland;Ja;
-false;351014;0722367;;Aktiveret;BLUE WATER SHIPPING;13-07-2018;Kertemindevej 1;9220;;Nej;;28,00;000;NykÃ¸b;;Nej;Nord Jylland;Ja;
-false;350677;0732208;;Aktiveret;HAVI LOGISTICS APS;16-07-2018;Transitvej 60;7100;;Nej;;;004;Service;;Nej;SÃ¸nderjylland;Nej;
-false;350674;0732208;;Aktiveret;HAVI LOGISTICS APS;16-07-2018;Transitvej 60;7100;;Nej;;;004;Service;;Nej;SÃ¸nderjylland;Nej;
-false;351033;0733460;;Aktiveret;Svend Michelsen Chokolade;17-07-2018;Frederiksberggade 36;1459;;Nej;;;000;NykÃ¸b;;Nej;KÃ¸benhavn;Nej;
-false;351022;0733453;;Aktiveret;Svend Michelsen Chokolade;17-07-2018;Frederiksberggade 36;1459;;Nej;;;000;NykÃ¸b;BENTBRANDT;Nej;KÃ¸benhavn;Nej;
-false;350533;0725449;;FuldfÃ¸rt;Dinero Regnskab ApS;02-08-2018;Vesterbrogade 1L, 6. sal;1620;3867797;Nej;;;004;NykÃ¸b;;Nej;KÃ¸benhavn;Ja;
-false;349653;0730656;;Aktiveret;7-ELEVEN - 624;06-08-2018;John F Kennedys Plads 3, Aalborg BanegÃ¥rd;9000;;Nej;;;004;;;Nej;Nord Jylland;Nej;5112-02
-false;350501;0730656;;Aktiveret;7-ELEVEN - 624;06-08-2018;John F Kennedys Plads 3, Aalborg BanegÃ¥rd;9000;;Nej;;;004;;;Nej;Nord Jylland;Nej;5112-02
-false;351005;0733385;;Aktiveret;SUPERBRUGSEN SÃ˜NDERSÃ˜;09-08-2018;TOFTEKÃ†R 4;5471;;Nej;;;001;Levering;RU;Nej;Midt Nord Fyn;Nej;
-false;351007;0733386;;Aktiveret;SUPERBRUGSEN SÃ˜NDERSÃ˜;13-08-2018;TOFTEKÃ†R 4;5471;;Ja;13-08-2018;;000;Afhentning;RU;Nej;Midt Nord Fyn;Nej;
-false;334949;0697510;;Aktiveret;GRAM-COMMERCIAL A/S;13-08-2018;Varemodtagelsesafd. HAL 103Metalparken 23;6500;;Nej;;;004;Service;;Nej;SÃ¸nderjylland;Nej;
-false;351052;0733558;;Aktiveret;Unilever IS;19-09-2018;Ã˜restads Boulevard 73;2300;;Nej;;;000;Ombytning;UNILEVER S;Nej;KÃ¸benhavn;Nej;
-false;351053;0733559;;Aktiveret;Unilever IS;19-09-2018;Ã˜restads Boulevard 73;2300;;Ja;19-09-2018;;000;Afhentning;UNILEVER S;Nej;KÃ¸benhavn;Nej;
-false;351040;0733525;;FuldfÃ¸rt;Fiskehuset EnÃ¸;19-09-2018;Ved Broen 5;4736;3872158;Nej;;;000;Ombytning;RU HORECA;Nej;Syd SjÃ¦lland;Nej;
-false;351041;0733548;;Aktiveret;Fiskehuset EnÃ¸;19-09-2018;Ved Broen 5;4736;;Nej;;;000;Ombytning;RU HORECA;Nej;Syd SjÃ¦lland;Nej;
-false;351043;0733549;;Aktiveret;Fiskehuset EnÃ¸;19-09-2018;Ved Broen 5;4736;;Ja;19-09-2018;;000;Afhentning;;Nej;Syd SjÃ¦lland;Nej;
-false;351044;0733550;;Aktiveret;Unilever IS;19-09-2018;Ã˜restads Boulevard 73;2300;;Nej;;;000;Ombytning;UNILEVER S;Nej;KÃ¸benhavn;Nej;
-false;351045;0733551;;Aktiveret;Unilever IS;19-09-2018;Ã˜restads Boulevard 73;2300;;Nej;;;000;Ombytning;;Nej;KÃ¸benhavn;Nej;
-false;351046;0733552;;Aktiveret;Unilever IS;19-09-2018;Ã˜restads Boulevard 73;2300;;Nej;;;000;Ombytning;UNILEVER S;Nej;KÃ¸benhavn;Nej;
-false;351047;0733553;;Aktiveret;Unilever IS;19-09-2018;Ã˜restads Boulevard 73;2300;;Nej;19-09-2018;;000;Ombytning;UNILEVER S;Nej;KÃ¸benhavn;Nej;
-false;351048;0733554;;Aktiveret;Unilever IS;19-09-2018;Ã˜restads Boulevard 73;2300;;Nej;;;000;Ombytning;UNILEVER S;Nej;KÃ¸benhavn;Nej;
-false;351049;0733555;;FuldfÃ¸rt;Unilever IS;19-09-2018;Ã˜restads Boulevard 73;2300;3872165;Ja;19-09-2018;;000;Afhentning;UNILEVER S;Nej;KÃ¸benhavn;Nej;
-false;351051;0733557;;Aktiveret;KVICKLY - 7590;21-09-2018;Dannebrogsgade 64;9000;;Ja;21-09-2018;;000;Afhentning;AQUA;Nej;Nord Jylland;Nej;
-false;350998;0733362;;Aktiveret;BELLA CENTER;24-09-2018;Center Boulevard 5;2300;;Nej;26-09-2018;;000;Levering;VIBOCOLD;Nej;KÃ¸benhavn;Nej;
-false;351057;0733612;;Aktiveret;LOKOMOTIV VÃ†RKSTEDET;02-10-2018;(CPH VISION) Otto Bussesvej 5A;2450;;Nej;;;000;Levering;VIBOCOLD;Nej;KÃ¸benhavn;Nej;
-false;350997;0733364;;Aktiveret;Messe C Fredericia;08-10-2018;Vestre ringvej 101;7000;;Nej;10-10-2018;;000;Levering;VIBOCOLD;Nej;SÃ¸nderjylland;Nej;
-false;351058;0733613;;FuldfÃ¸rt;Co-Ro  A/S DK;11-10-2018;EllekÃ¦r 1;3600;3872166;Ja;14-08-2018;;000;Afhentning;CADISO;Nej;Nord SjÃ¦lland;Nej;
-false;351054;0733607;0733606;Aktiveret;Unilever IS;19-10-2018;Ã˜restads Boulevard 73;2300;;Ja;19-10-2018;;000;Afhentning;UNILEVER S;Nej;KÃ¸benhavn;Nej;
-false;351055;0733606;0733607;Aktiveret;Unilever IS;19-10-2018;Ã˜restads Boulevard 73;2300;;Nej;;;000;Ombytning;UNILEVER S;Nej;KÃ¸benhavn;Nej;
-false;351056;0733606;0733607;Aktiveret;Unilever IS;19-10-2018;Ã˜restads Boulevard 73;2300;;Nej;;;000;Ombytning;UNILEVER S;Nej;KÃ¸benhavn;Nej;
-false;350995;0733376;;Aktiveret;RIBE FRITIDSCENTER;22-10-2018;Sportsvej 8;6760;;Nej;24-10-2018;;000;Levering;VIBOCOLD;Nej;Vest Jylland;Nej;
-false;351020;0733442;;Aktiveret;MCH;08-11-2018;Vardevej 1;7400;;Nej;20-11-2018;;000;Levering;VIBOCOLD;Nej;Vest Jylland;Nej;
+M;Plukrute;Ordre;Returordre reference;Ekspeditionsstatus;Navn;Ønsket modtagelsesdato;Gadenavn;Postnummer;Følgeseddel;Afhentning;Afhentningsdato;Leverings UGE;Lagersted;Ordrekategori;Flådeejer;Udskrevet;Rute;FV;Projekt;Latitude;Longitude
+FALSK;350592;726936;;Fuldført;VEDBÆK KØLETEKNIK;13-06-2018;Kongevejen 227;2830;3868167;Nej;;;4;Service;;Nej;Nord Sjælland;Ja;Kongevejen 227;57.056546;10.346448
+FALSK;350247;727308;;Fuldført;Coolers Køleteknik Ivs;14-06-2018;Grevindevej 5;4682;3863372;Nej;;;4;Service;;Nej;Syd Sjælland;Nej;Grevindevej 5;55.377545;12.075425
+FALSK;350237;728450;;Fuldført;COMBIKØL I/S;19-06-2018;Skagen Landevej 841;9800;3863213;Nej;;;4;Service;;Nej;Nord Jylland;Nej;Skagen Landevej 841;57.565742;10.109837
+FALSK;350238;728335;;Fuldført;CLIMATE A/S;19-06-2018;Farum Gydevej 77;3520;3863264;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Farum Gydevej 77;55.82088;12.362469
+FALSK;350054;729254;;Fuldført;Blue Water Shipping;21-06-2018;Herluf Trollesvej 3Port 1-8;9850;3856958;Nej;;;4;Nykøb;;Nej;Nord Jylland;Ja;Herluf Trollesvej 3Port 1-8;0;0
+FALSK;350585;730071;;Fuldført;VOLVO TRUCK CENTER DANMARK A/S;25-06-2018;Taastrupgårdsvej 32;2630;3868168;Nej;;;4;Service;;Nej;København;Nej;Taastrupgårdsvej 32;55.655321;12.285316
+FALSK;350791;729787;;Fuldført;CARRIER REFRIGERATION KOLDING;25-06-2018;Dieselvej 7;6000;3869572;Nej;;;4;Service;;Nej;Sønderjylland;Nej;Dieselvej 7;55.7467609;9.588188
+FALSK;350549;730333;;Fuldført;FERIECENTER NORDSØEN;26-06-2018;Høkervej 5;9492;3867842;Nej;;;4;Service;;Nej;Nord Jylland;Nej;Høkervej 5;57.252529;9.580707
+FALSK;350015;730264;;Fuldført;FULLRATE A/S;26-06-2018;Jagtvej 169B;2100;3856739;Nej;;;4;Service;;Nej;København;Nej;Jagtvej 169B;55.706185;12.561566
+FALSK;350705;730452;;Fuldført;CLIMATE A/S;26-06-2018;Farum Gydevej 77;3520;3869222;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Farum Gydevej 77;55.82088;12.362469
+FALSK;350249;731067;;Fuldført;LØRSLEV HVIDEVARESERVICE - 12912;28-06-2018;Mølgårdsvej 201;9800;3863283;Nej;;;4;Service;;Nej;Nord Jylland;Nej;Mølgårdsvej 201;57.439716;10.105198
+FALSK;350966;731118;;Fuldført;MARTIN ELKÆR (Rynkeby);28-06-2018;Holmegaardsvej 53;4684;3871511;Nej;;;4;Service;;Nej;Syd Sjælland;Nej;Holmegaardsvej 53;55.277032;11.815399
+FALSK;350037;731504;;Fuldført;ÅBYBRO BAGEREN;29-06-2018;Østergade 10;9440;3863059;Nej;;;4;Service;;Nej;Nord Jylland;Ja;Østergade 10;55.6799766;12.5834713
+FALSK;350044;731542;;Fuldført;RESTAURANT COLOSSEUM;29-06-2018;Sønder Havnegade 24;6400;3856940;Nej;;;4;Service;;Nej;Sønderjylland;Nej;Sønder Havnegade 24;54.909429;9.785777
+FALSK;350002;731431;;Fuldført;CLIMATE A/S;29-06-2018;Farum Gydevej 77;3520;3856716;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Farum Gydevej 77;55.82088;12.362469
+FALSK;350003;731439;;Fuldført;A.P. KØLESERVICE ApS;29-06-2018;Valseholmen 6-8;2650;3856725;Nej;;;4;Service;;Nej;København;Nej;Valseholmen 6-8;54.39856;11.12285
+FALSK;350006;731446;;Fuldført;CLIMATE A/S;29-06-2018;Farum Gydevej 77;3520;3856728;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Farum Gydevej 77;55.82088;12.362469
+FALSK;350009;731449;;Fuldført;CLIMATE A/S;29-06-2018;Farum Gydevej 77;3520;3856730;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Farum Gydevej 77;55.82088;12.362469
+FALSK;350091;731598;;Fuldført;VOJENS KØLETEKNIK;29-06-2018;Roskildevej 519ATT: 0138Vojens KøleteknikKasper Pedersen;2605;3863286;Nej;;;4;Service;;Nej;København;Nej;Roskildevej 519ATT: 0138Vojens KøleteknikKasper Pe...;0;0
+FALSK;350094;731611;;Fuldført;Emmerys;29-06-2018;Jagtvej 109;;;;;;;;;;;;Jagtvej 109, st;35.6595989;139.6987616
+FALSK;350173;731719;;Fuldført;7-ELEVEN - 467;29-06-2018;Grenåvej 189;8240;3863374;Nej;;;4;Service;;Nej;Øst Jylland;Nej;Grenåvej 189;56.195432;10.21929
+FALSK;350208;731753;;Fuldført;Wedofood;02-07-2018;Gammel Kongevej 176;1850;3863376;Nej;;;4;Service;;Nej;København;Ja;Gammel Kongevej 176;55.678288;12.533999
+FALSK;350209;731766;;Fuldført;Kemp & Lauritzen A/S;02-07-2018;Stamholmen 110;2650;3863294;Nej;;;4;Service;;Nej;København;Nej;Stamholmen 110;55.613585;12.466355
+FALSK;350220;731797;;Fuldført;Thomas Harm;02-07-2018;Kostervej 80B;;;;;;;;;;;;Kostervej 80B, Koster;54.980383;12.187425
+FALSK;350098;731616;;Fuldført;Hallernes Smørrebrød;02-07-2018;Tivoli Food HallBernstorffsgade 3;1577;3863391;Nej;;;4;Nykøb;;Nej;København;Ja;Tivoli Food HallBernstorffsgade 3;0;0
+FALSK;350172;731715;;Fuldført;BFGS SIA;02-07-2018;Kooperativa 4a-37;LV-1067;3862893;Nej;;;4;Nykøb;;Nej;Eksport;Ja;Kooperativa 4a-37;13.6285903;-86.4832543
+FALSK;350274;731885;;Fuldført;CLIMATE A/S;02-07-2018;Farum Gydevej 77;3520;3865362;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Farum Gydevej 77;55.82088;12.362469
+FALSK;350275;731972;;Fuldført;VM ELEKTRO A/S;02-07-2018;Gårsdalvej 20;;;;;;;;;;;;Gårsdalvej 20, Ravnstrup KONTO: 73198;0;0
+FALSK;350289;731999;;Fuldført;RP Maskinservice ApS;02-07-2018;Bizonvej 7;9293;3863737;Nej;;;4;Service;;Nej;Nord Jylland;Nej;Bizonvej 7;56.896543;10.102237
+FALSK;350302;732023;;Fuldført;Holbæk Køl;02-07-2018;Søndergade 18;4534;3863649;Nej;;;4;Service;;Nej;Vest Sjælland;Nej;Søndergade 18;56.134882;8.975906
+FALSK;350313;732069;;Fuldført;Restaurant Tight;02-07-2018;Hyskenstræde 10;1207;3863735;Nej;;;4;Reservedele;;Nej;København;Ja;Hyskenstræde 10;55.678134;12.576461
+FALSK;350333;732100;;Fuldført;BRØNDUM ELEKTRO;02-07-2018;Tagtækkervej 21;8800;3865318;Nej;;;4;Service;;Nej;Øst Jylland;Nej;Tagtækkervej 21;56.471117;9.401773
+FALSK;350385;732206;;Fuldført;Climate A/S;02-07-2018;Jegindøvej 4;8800;3865499;Nej;;;4;Service;;Nej;Øst Jylland;Nej;Jegindøvej 4;56.695516;8.2117
+FALSK;350396;731885;;Fuldført;CLIMATE A/S;02-07-2018;Farum Gydevej 77;3520;3865357;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Farum Gydevej 77;55.82088;12.362469
+FALSK;350398;732232;;Fuldført;Østjysk Køleteknik ApS;03-07-2018;Bakketoften 13 F;8541;3865810;Nej;;;4;Service;;Nej;Djursland;Nej;Bakketoften 13 F;56.255985;10.299008
+FALSK;350422;732276;;Fuldført;Kemp og Lauritzen A/S;03-07-2018;Albuen 60;6000;3865799;Nej;;;4;Service;;Nej;Sønderjylland;Nej;Albuen 60;55.514295;9.453461
+FALSK;350437;732334;;Fuldført;H.C.Andersen Huset;03-07-2018;Nyvej 18;3360;3865812;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Nyvej 18;55.6753109;12.5394713
+FALSK;350458;732402;;Fuldført;OK PLUS - 063231-5;03-07-2018;Ilskovvej 4;7451;3866028;Nej;;;4;Reservedele;;Nej;Vest Jylland;Ja;Ilskovvej 4;56.200505;9.020099
+FALSK;350488;732459;;Fuldført;CLIMATE A/S;03-07-2018;Farum Gydevej 77;3520;3866245;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Farum Gydevej 77;55.82088;12.362469
+FALSK;350510;732492;;Fuldført;HJ Storkøkkenservice;03-07-2018;Trekronergade 149 E;2500;3867847;Nej;;;4;Reservedele;;Nej;København;Nej;Trekronergade 149 E;55.652043;12.521074
+FALSK;350525;732521;;Fuldført;Coolers Køleteknik Ivs;03-07-2018;Grevindevej 5;4682;3868120;Nej;;;4;Service;;Nej;Syd Sjælland;Nej;Grevindevej 5;55.377545;12.075425
+FALSK;350535;732543;;Fuldført;Coolers Køleteknik Ivs;04-07-2018;Grevindevej 5;4682;3867841;Nej;;;4;Service;;Nej;Syd Sjælland;Nej;Grevindevej 5;55.377545;12.075425
+FALSK;350567;732583;;Fuldført;VM ELEKTRO A/S;04-07-2018;Gårsdalvej 20;;;;;;;;;;;;Gårsdalvej 20, Ravnstrup KONTO: 73198;0;0
+FALSK;350576;732635;;Fuldført;Coolers Køleteknik Ivs;04-07-2018;Grevindevej 5;4682;3868131;Nej;;;4;Service;;Nej;Syd Sjælland;Nej;Grevindevej 5;55.377545;12.075425
+FALSK;350596;732667;;Fuldført;SKIPPERS KØLETEKNIK;04-07-2018;Nørremarksvej 53;9270;3868218;Nej;;;4;Reservedele;;Nej;Midt Nord Jylland;Nej;Nørremarksvej 53;57.017099;10.053476
+FALSK;350623;732705;;Fuldført;Holbæk Køl;04-07-2018;Søndergade 18;4534;3868343;Nej;;;4;Service;;Nej;Vest Sjælland;Nej;Søndergade 18;56.134882;8.975906
+FALSK;350661;732770;;Fuldført;CLIMATE A/S;04-07-2018;Farum Gydevej 77;3520;3868610;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Farum Gydevej 77;55.82088;12.362469
+FALSK;350664;732788;;Fuldført;MÅLØV SKOLE;04-07-2018;Kratvej 14;2760;3869311;Nej;;;4;Reservedele;;Nej;København;Nej;Kratvej 14;56.14643;9.809343
+FALSK;350675;732806;;Fuldført;Stig Pedersen;04-07-2018;Reimersvej 16Må sættes i Carport;8963;3869315;Nej;;;4;Reservedele;;Nej;Djursland;Nej;Reimersvej 16Må sættes i Carport;0;0
+FALSK;350680;732821;;Fuldført;NORDIC COOLING SOLUTIONS AB;04-07-2018;Norsavägen 38;SE-731 98;3869256;Nej;;;4;Reservedele;;Nej;;Nej;Norsavägen 38;3.2519224;31.2703544
+FALSK;350691;732846;;Fuldført;VIBOCOLD A/S;04-07-2018;Livøvej 22;8800;3869372;Nej;;;4;Nykøb;;Nej;Øst Jylland;Nej;Livøvej 22;57.007125;8.961579
+FALSK;350694;732850;;Fuldført;FUGLSANGCENTRET;04-07-2018;Søndermarksvej 150;7000;3869303;Nej;;;4;Service;;Nej;Sønderjylland;Ja;Søndermarksvej 150;55.409166;11.39057
+FALSK;350508;732413;;Fuldført;FIRST CHOICE CATERING SPARES LTD;04-07-2018;BLAKENEY WAYKINGSWOOD LAKESIDECANNOCK;BGWS11 8LD;3868068;Nej;;;4;Nykøb;;Nej;;Nej;BLAKENEY WAYKINGSWOOD LAKESIDECANNOCK;0;0
+FALSK;350354;732041;;Fuldført;CINEMA 3 SKIVE;04-07-2018;Skyttevej 12;7800;3865500;Nej;;;4;Reservedele;;Nej;Mors Thy;Nej;Skyttevej 12;55.295229;9.048198
+FALSK;350312;731710;;Fuldført;JYSKE STORKØKKEN APS;05-07-2018;Priorsvej 21;8600;3863751;Nej;;;4;Nykøb;;Nej;Syd Øst Jylland;Ja;Priorsvej 21;56.201158;9.569745
+FALSK;350809;732959;;Fuldført;VM ELEKTRO A/S;05-07-2018;Gårsdalvej 20;;;;;;;;;;;;Gårsdalvej 20, Ravnstrup KONTO: 73198;0;0
+FALSK;350850;733041;;Fuldført;AGRI-TEKNIK APS;05-07-2018;Stenbro Allé 11;6650;3869890;Nej;;;4;Service;;Nej;Vest Jylland;Nej;Stenbro Allé 11;55.502045;9.026726
+FALSK;350865;733059;;Fuldført;Marielyst El ApS;05-07-2018;Marielyst Strandvej 5A;4873;3869903;Nej;;;4;Service;;Nej;Syd Sjælland;Nej;Marielyst Strandvej 5A;54.697955;11.94875
+FALSK;350901;733166;;Fuldført;BILKA - 1654;05-07-2018;Niels Bohrs Alle 150;5230;3871084;Nej;;;4;Service;;Nej;Midt Nord Fyn;Nej;Niels Bohrs Alle 150;55.377048;10.432013
+FALSK;350671;729791;;Fuldført;BOUTIQUE MELANGE;05-07-2018;Havstokken 8;;;;;;;;;;;;Havstokken 8, Vorupør;56.958448;8.365921
+FALSK;350655;732668;;Fuldført;Min Købmand Knebel;05-07-2018;Knebel Bygade 27;8420;3869373;Nej;;;4;Nykøb;;Nej;Djursland;Ja;Knebel Bygade 27;56.212825;10.486859
+FALSK;350584;732658;;Fuldført;MIN KØBMAND - 050137-9;05-07-2018;Storegade 68;8765;3868217;Nej;;;4;Nykøb;;Nej;Syd Øst Jylland;Nej;Storegade 68;55.6197354;8.4834346
+FALSK;350905;733183;;Fuldført;ROSENHØJ BOLDKLUB;06-07-2018;Kettegårds Allé 4;2650;3871071;Nej;;;4;Nykøb;;Nej;København;Ja;Kettegårds Allé 4;44.5324621;10.4771891
+FALSK;350916;733219;;Fuldført;CLIMATE A/S;06-07-2018;Farum Gydevej 77;3520;3871077;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Farum Gydevej 77;55.82088;12.362469
+FALSK;350917;733224;;Fuldført;WESTCOOL GMBH;06-07-2018;Am Sportplatz 3a;DE-40882;3871085;Nej;;;4;Service;;Nej;;Nej;Am Sportplatz 3a;51.35142585;13.50021197
+FALSK;350918;733234;;Fuldført;ANGELO KØLETEKNIK A/S;06-07-2018;Vestermarken 17;8260;3871149;Nej;;;4;Service;;Nej;Øst Jylland;Nej;Vestermarken 17;56.444483;10.670525
+FALSK;350930;733248;;Fuldført;SØRENS STORKØKKEN- OG;06-07-2018;HVIDEVARESERVICE Åsedamsvej 11;3760;3871305;Nej;;;4;Service;;Nej;Bornholm;Ja;HVIDEVARESERVICE Åsedamsvej 11;55.145364;14.927995
+FALSK;350946;732902;;Fuldført;DINO POLSKA S.A.;06-07-2018;ul. Ostrowska 122;PL-63-700;3871772;Nej;;;4;Nykøb;;Nej;;Nej;ul. Ostrowska 122;42.012386;20.9826302
+FALSK;350951;733285;;Fuldført;Skærbæk Festudlejning;06-07-2018;Åbenråvej 28;6780;3871307;Nej;;;4;Service;;Nej;Vest Jylland;Ja;Åbenråvej 28;55.154883;8.779777
+FALSK;350963;733288;;Fuldført;ORIGINAL COFFEE;06-07-2018;Hellerupstandvej 149;2900;3871481;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Hellerupstandvej 149;25.5922081;-80.3611202
+FALSK;350983;733353;;Fuldført;MG Køleteknik;06-07-2018;Fruenshave 16;8732;3871721;Nej;;;4;Service;;Nej;Syd Øst Jylland;Nej;Fruenshave 16;55.942962;9.954685
+FALSK;351001;733398;;Aktiveret;Climate A/S;06-07-2018;Jegindøvej 4;8800;;Nej;;;4;Service;;Nej;Øst Jylland;Nej;Jegindøvej 4;56.695516;8.2117
+FALSK;351004;733399;;Aktiveret;CLIMATE A/S;06-07-2018;Farum Gydevej 77;3520;;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Farum Gydevej 77;55.82088;12.362469
+FALSK;351028;733480;;Aktiveret;Holbæk Køl;06-07-2018;Søndergade 18;4534;;Nej;;;4;Service;;Nej;Vest Sjælland;Nej;Søndergade 18;56.134882;8.975906
+FALSK;351009;733353;;Fuldført;MG Køleteknik;06-07-2018;Fruenshave 16;8732;3871721;Nej;;;4;Service;;Nej;Syd Øst Jylland;Nej;Fruenshave 16;55.942962;9.954685
+FALSK;351011;733412;;Fuldført;TORVEGRILLEN;09-07-2018;Østergade 2A;5610;3871724;Nej;;;4;Nykøb;;Nej;Syd Fyn;Ja;Østergade 2A;55.96397;11.850674
+FALSK;350993;733276;;Fuldført;Circle K - 333  COCO;09-07-2018;Nyborgvej 121;5000;3871579;Nej;;;0;Nykøb;;Nej;Midt Nord Fyn;Nej;Nyborgvej 121;55.393257;10.414103
+FALSK;351008;733361;;Aktiveret;Stay Cafe;10-07-2018;Axeltorv 3;;;;;;;;;;;;Axeltorv 3,;56.03621815;12.61053295
+FALSK;350986;733358;;Aktiveret;SUSHI LOVERS;10-07-2018;Ordrupvej 66;2920;;Nej;;;0;Nykøb;;Nej;Nord Sjælland;Ja;Ordrupvej 66;55.820578;11.404508
+FALSK;351000;733350;;Aktiveret;SHELL ØSTBIRK;11-07-2018;VESTBIRKVEJ 14;8752;;Nej;;;1;Levering;RU;Nej;Syd Øst Jylland;Nej;VESTBIRKVEJ 14;55.967193;9.747113
+FALSK;350779;732522;;Aktiveret;ELLINOR PEDERSEN;11-07-2018;Tornsangervej 15Ravnstrup;8800;;Ja;11-07-2018;;;Levering;VIBOCOLD;Nej;Afhentning;Nej;Tornsangervej 15Ravnstrup;57.4505367;9.9657284
+FALSK;351030;733486;733488;Aktiveret;CENTER KIOSKEN;11-07-2018;VÆREBROVEJ 72;2880;;Nej;;;0;Levering;UNILEVER S;Nej;Nord Sjælland;Nej;VÆREBROVEJ 72;55.758458;12.439345
+FALSK;351031;733488;733486;Aktiveret;CENTER KIOSKEN;11-07-2018;VÆREBROVEJ 72;2880;;Ja;11-07-2018;;0;Afhentning;UNILEVER S;Nej;Nord Sjælland;Nej;VÆREBROVEJ 72;55.758458;12.439345
+FALSK;351035;733271;;Aktiveret;FITNESS DK;11-07-2018;Østergade 30;9800;;Ja;11-07-2018;;0;Afhentning;NUTRAMINO;Nej;Nord Jylland;Nej;Østergade 30;55.610332;11.767448
+FALSK;351036;733275;;Aktiveret;FITNESS DK;11-07-2018;Struervej 141;7500;;Ja;11-07-2018;;0;Afhentning;NUTRAMINO;Nej;Nord Vest Jylland;Nej;Struervej 141;56.375057;8.61354
+FALSK;351037;733060;;Aktiveret;KVICKLY - 2000;11-07-2018;Ringvej Syd 100;8260;;Ja;11-07-2018;;0;Afhentning;DRAGSBAEK;Nej;Øst Jylland;Nej;Ringvej Syd 100;55.5782998;9.752646555
+FALSK;351010;733408;;Aktiveret;BROGAARDEN;11-07-2018;FREDERIKSBORGVEJ 23;2970;;Ja;11-07-2018;;0;Afhentning;UNILEVER S;Nej;Nord Sjælland;Nej;FREDERIKSBORGVEJ 23;55.876193;12.476767
+FALSK;351002;733368;;Aktiveret;CIRCLE K MOTORVEJSCENTER SKÆRUP VEST;12-07-2018;ØSTJYSKE MOTORVEJ 616A;7000;;Nej;;;1;Levering;RU;Nej;Sønderjylland;Nej;ØSTJYSKE MOTORVEJ 616A;55.642924;9.558623
+FALSK;351003;733369;;Aktiveret;SPAR BORUP;12-07-2018;HOVEDGADEN 12;4140;;Ja;12-07-2018;;0;Afhentning;RU;Nej;Vest Sjælland;Nej;HOVEDGADEN 12;55.799645;11.552052
+FALSK;350439;730465;;Fuldført;TRELDEVEJENS GRILL;12-07-2018;Treldevej 5;7000;3865836;Nej;;;4;Nykøb;;Nej;Sønderjylland;Ja;Treldevej 5;55.573816;9.767483
+FALSK;334948;697508;;Aktiveret;GRAM-COMMERCIAL A/S;12-07-2018;Varemodtagelsesafd. HAL 103Metalparken 23;6500;;Nej;;;4;Service;;Nej;Sønderjylland;Nej;Varemodtagelsesafd. HAL 103Metalparken 23;0;0
+FALSK;350987;733319;;Aktiveret;BENT BRANDT A/S;13-07-2018;Langdyssen 7Lisbjerg;8200;;Nej;;;0;Nykøb;;Nej;Øst Jylland;Nej;Langdyssen 7Lisbjerg;56.4167976;8.4839481
+FALSK;350990;724844;;Aktiveret;GEBR. BRUYNINCKX N.V.;13-07-2018;Kerkstraat 89;BE 2490;;Nej;;28;;;;;;;Kerkstraat 89;50.9355046;2.9312514
+FALSK;351012;721932;;Aktiveret;BLUE WATER SHIPPING;13-07-2018;Kertemindevej 1;9220;;Nej;;28;;;;;;;Kertemindevej 1;57.049805;10.039545
+FALSK;351014;722367;;Aktiveret;BLUE WATER SHIPPING;13-07-2018;Kertemindevej 1;9220;;Nej;;28;;;;;;;Kertemindevej 1;57.049805;10.039545
+FALSK;350677;732208;;Aktiveret;HAVI LOGISTICS APS;16-07-2018;Transitvej 60;7100;;Nej;;;4;Service;;Nej;Sønderjylland;Nej;Transitvej 60;55.745229;9.595396
+FALSK;350674;732208;;Aktiveret;HAVI LOGISTICS APS;16-07-2018;Transitvej 60;7100;;Nej;;;4;Service;;Nej;Sønderjylland;Nej;Transitvej 60;55.745229;9.595396
+FALSK;351033;733460;;Aktiveret;Svend Michelsen Chokolade;17-07-2018;Frederiksberggade 36;1459;;Nej;;;0;Nykøb;;Nej;København;Nej;Frederiksberggade 36;55.843227;9.229327
+FALSK;351022;733453;;Aktiveret;Svend Michelsen Chokolade;17-07-2018;Frederiksberggade 36;1459;;Nej;;;0;Nykøb;BENTBRANDT;Nej;København;Nej;Frederiksberggade 36;55.843227;9.229327
+FALSK;350533;725449;;Fuldført;Dinero Regnskab ApS;02-08-2018;Vesterbrogade 1L;;;;;;;;;;;;Vesterbrogade 1L, 6. sal;50.6714691;-120.3389504
+FALSK;349653;730656;;Aktiveret;7-ELEVEN - 624;06-08-2018;John F Kennedys Plads 3;;;;;;;;;;;;John F Kennedys Plads 3, Aalborg Banegård;57.042866;9.917273
+FALSK;350501;730656;;Aktiveret;7-ELEVEN - 624;06-08-2018;John F Kennedys Plads 3;;;;;;;;;;;;John F Kennedys Plads 3, Aalborg Banegård;57.042866;9.917273
+FALSK;351005;733385;;Aktiveret;SUPERBRUGSEN SØNDERSØ;09-08-2018;TOFTEKÆR 4;5471;;Nej;;;1;Levering;RU;Nej;Midt Nord Fyn;Nej;TOFTEKÆR 4;55.59987935;12.05732058
+FALSK;351007;733386;;Aktiveret;SUPERBRUGSEN SØNDERSØ;13-08-2018;TOFTEKÆR 4;5471;;Ja;13-08-2018;;0;Afhentning;RU;Nej;Midt Nord Fyn;Nej;TOFTEKÆR 4;55.59987935;12.05732058
+FALSK;334949;697510;;Aktiveret;GRAM-COMMERCIAL A/S;13-08-2018;Varemodtagelsesafd. HAL 103Metalparken 23;6500;;Nej;;;4;Service;;Nej;Sønderjylland;Nej;Varemodtagelsesafd. HAL 103Metalparken 23;0;0
+FALSK;351052;733558;;Aktiveret;Unilever IS;19-09-2018;Ørestads Boulevard 73;2300;;Nej;;;0;Ombytning;UNILEVER S;Nej;København;Nej;Ørestads Boulevard 73;55.632249;12.581176
+FALSK;351053;733559;;Aktiveret;Unilever IS;19-09-2018;Ørestads Boulevard 73;2300;;Ja;19-09-2018;;0;Afhentning;UNILEVER S;Nej;København;Nej;Ørestads Boulevard 73;55.632249;12.581176
+FALSK;351040;733525;;Fuldført;Fiskehuset Enø;19-09-2018;Ved Broen 5;4736;3872158;Nej;;;0;Ombytning;RU HORECA;Nej;Syd Sjælland;Nej;Ved Broen 5;55.094956;10.242594
+FALSK;351041;733548;;Aktiveret;Fiskehuset Enø;19-09-2018;Ved Broen 5;4736;;Nej;;;0;Ombytning;RU HORECA;Nej;Syd Sjælland;Nej;Ved Broen 5;55.094956;10.242594
+FALSK;351043;733549;;Aktiveret;Fiskehuset Enø;19-09-2018;Ved Broen 5;4736;;Ja;19-09-2018;;0;Afhentning;;Nej;Syd Sjælland;Nej;Ved Broen 5;55.094956;10.242594
+FALSK;351044;733550;;Aktiveret;Unilever IS;19-09-2018;Ørestads Boulevard 73;2300;;Nej;;;0;Ombytning;UNILEVER S;Nej;København;Nej;Ørestads Boulevard 73;55.632249;12.581176
+FALSK;351045;733551;;Aktiveret;Unilever IS;19-09-2018;Ørestads Boulevard 73;2300;;Nej;;;0;Ombytning;;Nej;København;Nej;Ørestads Boulevard 73;55.632249;12.581176
+FALSK;351046;733552;;Aktiveret;Unilever IS;19-09-2018;Ørestads Boulevard 73;2300;;Nej;;;0;Ombytning;UNILEVER S;Nej;København;Nej;Ørestads Boulevard 73;55.632249;12.581176
+FALSK;351047;733553;;Aktiveret;Unilever IS;19-09-2018;Ørestads Boulevard 73;2300;;Nej;19-09-2018;;0;Ombytning;UNILEVER S;Nej;København;Nej;Ørestads Boulevard 73;55.632249;12.581176
+FALSK;351048;733554;;Aktiveret;Unilever IS;19-09-2018;Ørestads Boulevard 73;2300;;Nej;;;0;Ombytning;UNILEVER S;Nej;København;Nej;Ørestads Boulevard 73;55.632249;12.581176
+FALSK;351049;733555;;Fuldført;Unilever IS;19-09-2018;Ørestads Boulevard 73;2300;3872165;Ja;19-09-2018;;0;Afhentning;UNILEVER S;Nej;København;Nej;Ørestads Boulevard 73;55.632249;12.581176
+FALSK;351051;733557;;Aktiveret;KVICKLY - 7590;21-09-2018;Dannebrogsgade 64;9000;;Ja;21-09-2018;;0;Afhentning;AQUA;Nej;Nord Jylland;Nej;Dannebrogsgade 64;57.054493;9.905686
+FALSK;350998;733362;;Aktiveret;BELLA CENTER;24-09-2018;Center Boulevard 5;2300;;Nej;26-09-2018;;0;Levering;VIBOCOLD;Nej;København;Nej;Center Boulevard 5;29.70665395;-95.39513255
+FALSK;351057;733612;;Aktiveret;LOKOMOTIV VÆRKSTEDET;02-10-2018;(CPH VISION) Otto Bussesvej 5A;2450;;Nej;;;0;Levering;VIBOCOLD;Nej;København;Nej;(CPH VISION) Otto Bussesvej 5A;0;0
+FALSK;350997;733364;;Aktiveret;Messe C Fredericia;08-10-2018;Vestre ringvej 101;7000;;Nej;10-10-2018;;0;Levering;VIBOCOLD;Nej;Sønderjylland;Nej;Vestre ringvej 101;55.579994;9.725026
+FALSK;351058;733613;;Fuldført;Co-Ro  A/S DK;11-10-2018;Ellekær 1;3600;3872166;Ja;14-08-2018;;0;Afhentning;CADISO;Nej;Nord Sjælland;Nej;Ellekær 1;55.801403;12.210476
+FALSK;351054;733607;733606;Aktiveret;Unilever IS;19-10-2018;Ørestads Boulevard 73;2300;;Ja;19-10-2018;;0;Afhentning;UNILEVER S;Nej;København;Nej;Ørestads Boulevard 73;55.632249;12.581176
+FALSK;351055;733606;733607;Aktiveret;Unilever IS;19-10-2018;Ørestads Boulevard 73;2300;;Nej;;;0;Ombytning;UNILEVER S;Nej;København;Nej;Ørestads Boulevard 73;55.632249;12.581176
+FALSK;351056;733606;733607;Aktiveret;Unilever IS;19-10-2018;Ørestads Boulevard 73;2300;;Nej;;;0;Ombytning;UNILEVER S;Nej;København;Nej;Ørestads Boulevard 73;55.632249;12.581176
+FALSK;350995;733376;;Aktiveret;RIBE FRITIDSCENTER;22-10-2018;Sportsvej 8;6760;;Nej;24-10-2018;;0;Levering;VIBOCOLD;Nej;Vest Jylland;Nej;Sportsvej 8;56.2798778;9.823302
+FALSK;351020;733442;;Aktiveret;MCH;08-11-2018;Vardevej 1;7400;;Nej;20-11-2018;;0;Levering;VIBOCOLD;Nej;Vest Jylland;Nej;Vardevej 1;56.1235213;8.951331545
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
