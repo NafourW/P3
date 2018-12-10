@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
+import dk.aau.cs.ds308e18.function.management.OrderLineManagement;
 import dk.aau.cs.ds308e18.io.ReadFile;
 import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.function.management.WareManagement;
@@ -95,6 +96,33 @@ public class DatabaseImport {
                     orderMan.createOrder(order);
                 }
                 System.out.println("Orders imported.");
+                conn.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void importOrderLines(String sourcePath) {
+        System.out.println("Importing Order lines...");
+        ReadFile readFileObject = new ReadFile();
+
+        DatabaseConnection dbConn = new DatabaseConnection();
+        OrderLineManagement orderLineManagement = new OrderLineManagement();
+
+        // Grab order lines from "orderLineTypes" method and put them into "orderLineList"
+        ArrayList<OrderLine> orderLineList = readFileObject.orderLines(sourcePath);
+
+        try {
+            Connection conn = dbConn.establishConnectionToDatabase();
+
+            if (conn != null) {
+
+                // For every ware, put the ware in the database
+                for (OrderLine orderLine : orderLineList) {
+                    orderLineManagement.createOrderLine(orderLine);
+                }
+                System.out.println("Order lines imported.");
                 conn.close();
             }
         } catch (SQLException e) {

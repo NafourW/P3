@@ -11,7 +11,7 @@ public class OrderLine {
     private boolean preparing;
     private String individualNumber;
     private String model;
-    private String name;
+    private String fullName;
 
     public OrderLine(String order, String wareNumber, String wareName, int labels, int delivered, String individual,
                      boolean preparing, String individualNumber, String model, String name) {
@@ -24,7 +24,7 @@ public class OrderLine {
         this.preparing = preparing;
         this.individualNumber = individualNumber;
         this.model = model;
-        this.name = name;
+        this.fullName = name;
     }
 
     public String getOrder() { return order; }
@@ -45,9 +45,13 @@ public class OrderLine {
 
     public String getModel() { return model; }
 
-    public String getName() { return name; }
+    public String getFullName() { return fullName; }
 
     public void setOrderID() {
         this.orderID = orderID;
+    }
+
+    public int getOrderID() {
+        return orderID;
     }
 }
