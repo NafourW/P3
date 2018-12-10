@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.List;
 
-public class CSVUtils {//This class does csv file operations
-    private static final char DEFAULT_SEPARATOR = ';';
+public class CSVUtils {//This class generates CSV files
+        private static final char DEFAULT_SEPARATOR = ';'; //The separator used for CSV files
 
     public static void writeLine(Writer w, List<String> values) throws IOException {
         writeLine(w, values, DEFAULT_SEPARATOR, ' ');

@@ -94,6 +94,10 @@ public class EditOrderController implements ISelectionController {
         commentsArea.setText("");
 
         orderLineTable.getItems().addAll(selectedOrder.getOrderLines());
+
+        ArrayList<OrderLine> orderLines = new ArrayList<OrderLine>();
+        orderLines.addAll(orderLineTable.getItems());
+        selectedOrder.setOrderLines(orderLines);
     }
 
     private void populateWareFields(){
