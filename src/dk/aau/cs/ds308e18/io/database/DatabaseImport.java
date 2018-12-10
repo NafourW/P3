@@ -26,7 +26,7 @@ public class DatabaseImport {
         DatabaseConnection dbConn = new DatabaseConnection();
 
         // Read Regions from the regions.txt file and place them in the regions arraylist
-        try(BufferedReader reader = new BufferedReader(new FileReader("resources/regions.txt"))) {
+        try(BufferedReader reader = new BufferedReader(new FileReader("resources/data/regions.txt"))) {
             String line;
             while((line = reader.readLine()) != null) {
                 regions.add(line);

@@ -203,6 +203,7 @@ public class Order {
 
     public void setLatLon(GHPoint latLon) {
         this.latLon = latLon;
+        saveLatLonInDataBase(address);
     }
 
     public void saveLatLonInDataBase(String address) {

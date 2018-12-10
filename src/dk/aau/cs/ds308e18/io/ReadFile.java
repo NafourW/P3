@@ -1,5 +1,6 @@
 package dk.aau.cs.ds308e18.io;
 
+import com.graphhopper.util.shapes.GHPoint;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Ware;
@@ -99,7 +100,6 @@ public class ReadFile {//Class that reads CSV files
                 order.setCustomerName    (Order[5]);
                 order.setDate            (date);
                 order.setAddress         (Order[7]);
-                order.requestLatLonFromAddress();
                 order.setZipCode         (zipCode);
                 order.setReceipt         (receipt);
                 order.setPickup          (pickup);
@@ -110,6 +110,19 @@ public class ReadFile {//Class that reads CSV files
                 order.setRegion          (Order[17]);
                 order.setFV              (FV);
                 order.setProject         (Order[19]);
+
+                //Check if there are coordinates for the order
+                //If there are no coordinates
+                if (Order[20].equals("") || Order[21].equals(""))
+                    //Get coordinates from the internet
+                    order.requestLatLonFromAddress();
+                else {
+                    //Read the coordinates from file
+                    double lat = Double.valueOf(Order[20]);
+                    double lon = Double.valueOf(Order[21]);
+
+                    order.setLatLon(new GHPoint(lat, lon));
+                }
 
                 String orderLinePath = sourcePath + "/" + order.getID() + "_ordrelinjer.csv";
 
