@@ -25,8 +25,8 @@ public class Tour {
 
     public Tour() {
         id = 0;
-        tourDate = LocalDate.EPOCH;
-        packingDate = LocalDate.EPOCH;
+        tourDate = LocalDate.now();
+        packingDate = LocalDate.now();
         orders = new ArrayList<>();
         region = "";
         regionDetail = "";
