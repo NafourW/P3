@@ -3,6 +3,7 @@ package dk.aau.cs.ds308e18.gui.controllers;
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.gui.ISelectionController;
+import dk.aau.cs.ds308e18.gui.TableManager;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
 import javafx.collections.FXCollections;
@@ -53,10 +54,27 @@ public class EditOrderController implements ISelectionController {
 
     @FXML private TableView<OrderLine> orderLineTable;
 
+    @FXML private TableColumn<OrderLine, String> ;
+    @FXML private TableColumn<OrderLine, String> ;
+    @FXML private TableColumn<OrderLine, String> ;
+    @FXML private TableColumn<OrderLine, String> ;
+    @FXML private TableColumn<OrderLine, String> ;
+    @FXML private TableColumn<OrderLine, String> ;
+    @FXML private TableColumn<OrderLine, String> ;
+    @FXML private TableColumn<OrderLine, String> ;
+    @FXML private TableColumn<OrderLine, String> ;
+
+    private TableManager<OrderLine> orderLineTableManager;
+
     private Order selectedOrder;
 
     @FXML
     public void initialize() {
+
+        orderLineTableManager = new TableManager<>(orderLineTable);
+        orderLineTableManager.setMultiSelectEnabled(true);
+        orderLineTableManager.setupColumns();
+
         removeWareButton.setDisable(true);
 
         regions.addAll(Main.dbExport.exportRegionNames());
