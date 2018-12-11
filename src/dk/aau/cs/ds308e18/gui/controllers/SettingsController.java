@@ -2,6 +2,7 @@ package dk.aau.cs.ds308e18.gui.controllers;
 
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.function.management.TourManagement;
+import dk.aau.cs.ds308e18.io.ExportFile;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -93,8 +94,14 @@ public class SettingsController {
     }
 
     @FXML
-    private void exportDataButtonAction(ActionEvent event) {
-
+    private void exportDataButtonAction(ActionEvent event) throws IOException{
+        ExportFile exportFile = new ExportFile();
+        try{
+            exportFile.ExportTourList(Main.dbExport.exportTours(), destinationPath);
+        }
+        catch (Exception e) {
+            System.out.println("export failed: " + e.toString());
+        }
     }
 
     @FXML

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -9,7 +13,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e18.gui.controllers.WareListController">
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.cs.ds308e18.gui.controllers.WareListController">
    <children>
       <Label text="%label_list_of_wares">
          <VBox.margin>
@@ -23,11 +27,11 @@
          <content>
             <TableView fx:id="wareListTable" prefHeight="200.0" prefWidth="200.0">
               <columns>
-                <TableColumn fx:id="WareNumber" prefWidth="100.0" text="varenummer" />
+                <TableColumn fx:id="WareNumber" prefWidth="160.0" text="varenummer" />
                   <TableColumn fx:id="WareType" prefWidth="75.0" text="varetype" />
-                  <TableColumn fx:id="WareName" prefWidth="120.0" text="varenavn" />
+                  <TableColumn fx:id="WareName" prefWidth="370.0" text="varenavn" />
                   <TableColumn fx:id="SearchName" prefWidth="120.0" text="søgenavn" />
-                <TableColumn fx:id="Supplier" prefWidth="120.0" text="leverandør" />
+                <TableColumn fx:id="Supplier" prefWidth="90.0" text="leverandør" />
                   <TableColumn fx:id="GrossHeight" prefWidth="50.0" text="højde" />
                   <TableColumn fx:id="GrossDepth" prefWidth="50.0" text="dybde" />
                   <TableColumn fx:id="GrossWidth" prefWidth="50.0" text="bredde" />

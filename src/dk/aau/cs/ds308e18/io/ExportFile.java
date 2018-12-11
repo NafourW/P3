@@ -13,9 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ExportFile {
-    public void ExportTourList(String path) throws Exception{
-
-        ArrayList<Tour> tours = TourManagement.getTours();
+    public void ExportTourList(ArrayList<Tour> tours, String path) throws IOException{
 
         String exportPath = path + "/Ture.csv";
         FileWriter writer = new FileWriter(exportPath);
@@ -34,7 +32,7 @@ public class ExportFile {
         writer.close();
     }
 
-    public void ExportTourOrderList(String path) throws Exception{
+    public void ExportTourOrderList(String path) throws IOException{
         /* The method above has to run first before running this method.
          * This method reads the file made by the method from above and go through the tours within the file.
          * For each tour in the file, a new file is created with the corresponding id for the tour and the orders
