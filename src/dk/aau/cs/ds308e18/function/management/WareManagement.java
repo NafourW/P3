@@ -159,62 +159,6 @@ public class WareManagement {
         return information;
     }
 
-    public void orderLineInfo(ArrayList<OrderLine> orderLines){
-
-        float totalTime = 0;
-        boolean LiftAlone = true;
-        boolean LiftEquipment = false;
-
-        ArrayList<Ware> wares = WareManagement.getWares();
-
-        for (OrderLine orderLine : orderLines){
-
-            for (Ware ware : wares){
-                if (orderLine.getWareNumber().equals(ware.getWareName())){
-
-                    infoToOrderLine(orderLine, ware, totalTime, LiftAlone, LiftEquipment); //using the method below this method
-
-
-                } else if (orderLine.getIndividual().equals(ware.getWareName())){
-
-                    infoToOrderLine(orderLine, ware, totalTime, LiftAlone, LiftEquipment); //using the method below this method
-                    totalTime += orderLine.getMoveTime();
-
-
-                } else if (orderLine.getIndividualNumber().equals(ware.getWareName())){
-
-                    infoToOrderLine(orderLine, ware, totalTime, LiftAlone, LiftEquipment); //using the method below this method
-                    totalTime += orderLine.getMoveTime();
-
-                } else if (orderLine.getModel().equals(ware.getWareName())){
-
-                    infoToOrderLine(orderLine, ware, totalTime, LiftAlone, LiftEquipment); //using the method below this method
-                    totalTime += orderLine.getMoveTime();
-                }
-            }
-        }
-    }
-
-    //this method gets information from wares and add them to the order line
-    private void infoToOrderLine(OrderLine orderLine, Ware ware, float totalTime, boolean LiftAlone, boolean LiftEquipment){
-
-        orderLine.setMoveTime(ware.getMoveTime() * orderLine.getLabels());
-
-        orderLine.setLiftAlone(ware.isLiftAlone());
-
-        orderLine.setLiftEquipment(ware.isLiftingTools());
-
-        totalTime += orderLine.getMoveTime();
-
-        if (!orderLine.isLiftAlone()){
-            LiftAlone = false;
-        }
-
-        if (orderLine.isLiftEquipment()){
-            LiftEquipment = true;
-        }
-    }
-
     public static ArrayList<Ware> getWares(){
         return Main.dbExport.exportWares();
     }
