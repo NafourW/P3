@@ -132,32 +132,34 @@ public class EditOrderController implements ISelectionController {
     }
 
     @FXML
-    private void cancelOrderButtonAction(ActionEvent event){
-
+    private void cancelOrderButtonAction(ActionEvent event) throws IOException{
+        OrderManagement.deleteOrderFromDatabase(selectedOrder);
+        Main.gui.goToPreviousView();
     }
 
     @FXML
     private void viewWareListButtonAction(ActionEvent event) throws IOException {
         Main.gui.changeView("WareList");
+        Main.gui.goToPreviousView();
     }
 
     @FXML
     private void addOrderButtonAction(ActionEvent event) throws IOException {
         transferFieldsToOrder();
         OrderManagement.createOrder(selectedOrder);
-        Main.gui.changeView("OrderList");
+        Main.gui.goToPreviousView();
     }
 
     @FXML
     private void doneButtonAction(ActionEvent event) throws IOException {
         transferFieldsToOrder();
         OrderManagement.overrideOrder(selectedOrder);
-        Main.gui.changeView("OrderList");
+        Main.gui.goToPreviousView();
     }
 
     @FXML
     private void backButtonAction(ActionEvent event) throws IOException{
-        Main.gui.changeView("OrderList");
+        Main.gui.goToPreviousView();
     }
 
     @FXML

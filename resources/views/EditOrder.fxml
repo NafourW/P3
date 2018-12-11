@@ -237,7 +237,7 @@
          <children>
             <VBox fx:id="buttonBarLeft" alignment="BOTTOM_LEFT" HBox.hgrow="ALWAYS">
                <children>
-                  <Button fx:id="cancelOrderButton" mnemonicParsing="false" onAction="#cancelOrderButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_cancel_order" />
+                  <Button fx:id="cancelOrderButton" mnemonicParsing="false" onAction="#cancelOrderButtonAction" prefHeight="50.0" prefWidth="120.0" styleClass="button-red" text="%button_cancel_order" />
                </children>
             </VBox>
             <Button mnemonicParsing="false" onAction="#viewWareListButtonAction" prefHeight="50.0" prefWidth="120.0" text="%button_view_ware_list" />

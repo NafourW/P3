@@ -163,4 +163,24 @@ public class OrderManagement {
     public static ArrayList<Order> getUnassignedOrdersFiltered(String region, String date) {
         return Main.dbExport.exportUnassignedOrdersFiltered(region, date);
     }
+
+    /*
+    Delete the specific order from the database.
+    */
+    public static void deleteOrderFromDatabase(Order order) {
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "DELETE FROM orders WHERE orderID = ?";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+
+                stmt.setInt(1, order.getOrderID());
+
+                stmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
