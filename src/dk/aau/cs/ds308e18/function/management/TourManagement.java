@@ -59,7 +59,7 @@ public class TourManagement {
                 stmt.setInt(3, tour.getID());
                 stmt.setString(4, tour.getRegion());
                 stmt.setString(5, tour.getDriver());
-                stmt.setString(6, tour.getStatus());
+                stmt.setString(6, tour.getStatus().toString());
                 stmt.setBoolean(7, tour.getConsignor());
                 stmt.setInt(8, tour.getTourID());
 

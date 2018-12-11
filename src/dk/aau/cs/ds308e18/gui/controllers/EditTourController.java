@@ -106,7 +106,7 @@ public class EditTourController implements ISelectionController {
     @FXML
     private void removeOrderButtonAction(ActionEvent event) {
         OrderManagement.setTourID(0, selectedOrder.getOrderID());
-        selectedTour.getOrders().remove(selectedOrder);
+        selectedTour.removeOrder(selectedOrder);
         refreshOrderList();
     }
 

@@ -27,7 +27,7 @@ public class TourListController {
     @FXML private TableColumn<Tour, LocalDate> TourDate;
     @FXML private TableColumn<Tour, String> Region;
     @FXML private TableColumn<Tour, String> Driver;
-    @FXML private TableColumn<Tour, Boolean> Status;
+    @FXML private TableColumn<Tour, Tour.tourStatus> Status;
     @FXML private TableColumn<Tour, Boolean> Consignor;
     @FXML private TableColumn<Tour, Integer> OrderAmount;
 

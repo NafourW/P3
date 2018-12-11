@@ -1,11 +1,15 @@
 package dk.aau.cs.ds308e18.model;
 
+import dk.aau.cs.ds308e18.Main;
+import dk.aau.cs.ds308e18.function.tourgen.TourGenerator;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Tour {
 
     public enum tourStatus{
+        invalid,
         invalidEmpty,
         valid,
         validFull,
@@ -19,7 +23,7 @@ public class Tour {
     private String region;
     private String regionDetail;
     private String driver;
-    private String status;
+    private tourStatus status;
     private Boolean consignor;
 
     //Used in our database to see which tour an order belongs to.
@@ -36,12 +40,28 @@ public class Tour {
         region = "";
         regionDetail = "";
         driver = "";
-        status = "";
+        status = tourStatus.invalidEmpty;
         consignor = false;
     }
 
     public void addOrder(Order order) {
         orders.add(order);
+
+        if (orders.size() > 0)
+            status = tourStatus.valid;
+
+        if (orders.size() >= TourGenerator.MAX_ORDERS_PER_TOUR)
+            status = tourStatus.validFull;
+    }
+
+    public void removeOrder(Order order) {
+        orders.remove(order);
+
+        if (orders.size() < TourGenerator.MAX_ORDERS_PER_TOUR)
+            status = tourStatus.valid;
+
+        if (orders.size() < 1)
+            status = tourStatus.invalidEmpty;
     }
 
     /*
@@ -114,12 +134,41 @@ public class Tour {
         this.consignor = consignor;
     }
 
-    public String getStatus() {
+    public tourStatus getStatus() {
         return status;
     }
-
-    public void setStatus(String status) {
+    public void setStatus(tourStatus status) {
         this.status = status;
+    }
+
+    public String getLocalizedStatusString() {
+        return Main.gui.getLocalString("value_tour_status_" + status.toString());
+    }
+    public void setStatus(String status) {
+        switch (status.toLowerCase()) {
+            case "invalid":
+            case "ugyldig":
+                this.status = tourStatus.invalid;
+                break;
+            case "invalid - empty":
+            case "ugyldig - tom":
+                this.status = tourStatus.invalidEmpty;
+                break;
+            case "valid":
+            case "gyldig":
+            case "fuldført":
+                this.status = tourStatus.valid;
+                break;
+            case "valid - full":
+            case "gyldig - fuld":
+                this.status = tourStatus.validFull;
+                break;
+            case "valid - released":
+            case "gyldig - frigivet":
+            case "frigivet":
+                this.status = tourStatus.validReleased;
+                break;
+        }
     }
 
     public String getRegionDetail() {

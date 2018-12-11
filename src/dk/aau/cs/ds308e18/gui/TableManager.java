@@ -33,10 +33,16 @@ public class TableManager<S> {
     public void setupColumns() {
         ObservableList<TableColumn> columns = table.getColumns();
         for (int i = 0; i < table.getColumns().size(); i++){
-            if (columns.get(i).getId().equals("Category"))
-                columns.get(i).setCellValueFactory(new PropertyValueFactory<>("LocalizedCategoryString"));
-            else
-                columns.get(i).setCellValueFactory(new PropertyValueFactory<>(columns.get(i).getId()));
+            switch (columns.get(i).getId()) {
+                case "Status":
+                    columns.get(i).setCellValueFactory(new PropertyValueFactory<>("LocalizedStatusString"));
+                    break;
+                case "Category":
+                    columns.get(i).setCellValueFactory(new PropertyValueFactory<>("LocalizedCategoryString"));
+                    break;
+                default:
+                    columns.get(i).setCellValueFactory(new PropertyValueFactory<>(columns.get(i).getId()));
+            }
         }
     }
 

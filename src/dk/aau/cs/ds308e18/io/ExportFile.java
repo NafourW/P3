@@ -24,7 +24,7 @@ public class ExportFile {
             //append the information of the tour to the file
             CSVUtils.writeLine(writer, Arrays.asList(tour.getTourDate().toString(), String.valueOf(tour.getTourID()),
                     tour.getRegion(), tour.getDriver(), tour.getPackingDate().toString(),
-                    tour.getStatus(), tour.getConsignor().toString()));
+                    tour.getStatus().toString(), tour.getConsignor().toString()));
 
         }
     }
