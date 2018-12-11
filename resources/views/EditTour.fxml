@@ -31,10 +31,12 @@
          </VBox.margin></Label>
       <TableView fx:id="tourOrdersTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn fx:id="OrderID" prefWidth="75.0" text="%label_order_id" />
-            <TableColumn fx:id="CustomerName" prefWidth="182.0" text="%label_order_customer_name" />
-            <TableColumn fx:id="Address" prefWidth="263.0" text="%label_order_address" />
-            <TableColumn fx:id="ZipCode" minWidth="0.0" prefWidth="63.0" text="%label_order_zip_code" />
+          <TableColumn fx:id="OrderID" prefWidth="70.0" text="%label_order_id" />
+            <TableColumn fx:id="Date" prefWidth="75.0" text="%label_order_date" />
+            <TableColumn fx:id="CustomerName" prefWidth="200.0" text="%label_order_customer_name" />
+            <TableColumn fx:id="Address" prefWidth="260.0" text="%label_order_address" />
+            <TableColumn fx:id="ZipCode" minWidth="0.0" prefWidth="70.0" text="%label_order_zip_code" />
+            <TableColumn fx:id="Region" prefWidth="75.0" text="%label_order_region" />
         </columns>
          <VBox.margin>
             <Insets bottom="20.0" />
