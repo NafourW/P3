@@ -22,6 +22,7 @@ public class EditOrderController implements ISelectionController {
     @FXML private HBox buttonBar;
     @FXML private VBox buttonBarLeft;
 
+    @FXML private Label titleLabel;
     @FXML private Button removeWareButton;
     @FXML private Button cancelOrderButton;
     @FXML private Button addOrderButton;
@@ -181,6 +182,7 @@ public class EditOrderController implements ISelectionController {
         }
         else {
             buttonBar.getChildren().remove(addOrderButton);
+            titleLabel.setText(Main.gui.getLocalString("label_title_edit_order"));
         }
     }
 }
