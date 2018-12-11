@@ -42,7 +42,7 @@ public class OrderManagement {
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if(conn != null) {
                 String sql = "UPDATE orders SET pluckRoute = ?, id = ?, orderReference = ?, expeditionStatus = ?, " +
-                        "customerName = ?, orderDate = ?, address = ?, zipCode = ?, receipt = ?, pickup = ?, warehouse = ? " +
+                        "customerName = ?, orderDate = ?, address = ?, zipCode = ?, receipt = ?, pickup = ?, warehouse = ?, " +
                         "category = ?, fleetOwner = ?, printed = ?, route = ?, FV = ?, project = ?, liftAlone = ?, " +
                         "liftingTools = ?, moveTime = ? WHERE orderID = ?";
                 PreparedStatement stmt = conn.prepareStatement(sql);
@@ -60,15 +60,15 @@ public class OrderManagement {
                 stmt.setString(10, String.valueOf(order.isPickup()));
                 stmt.setString(11, order.getWarehouse());
                 stmt.setString(12, order.getCategory().toString());
-                stmt.setString(14, order.getFleetOwner());
-                stmt.setString(15, String.valueOf(order.isPrinted()));
-                stmt.setString(16, order.getRegion());
-                stmt.setString(17, String.valueOf(order.isFV()));
-                stmt.setString(18, order.getProject());
-                stmt.setString(19, String.valueOf(order.isTotalLiftAlone()));
-                stmt.setString(20, String.valueOf(order.isTotalLiftingTools()));
-                stmt.setInt(21, order.getTotalTime());
-                stmt.setInt(22, order.getOrderID());
+                stmt.setString(13, order.getFleetOwner());
+                stmt.setString(14, String.valueOf(order.isPrinted()));
+                stmt.setString(15, order.getRegion());
+                stmt.setString(16, String.valueOf(order.isFV()));
+                stmt.setString(17, order.getProject());
+                stmt.setString(18, String.valueOf(order.isTotalLiftAlone()));
+                stmt.setString(19, String.valueOf(order.isTotalLiftingTools()));
+                stmt.setInt(20, order.getTotalTime());
+                stmt.setInt(21, order.getOrderID());
 
                 stmt.executeUpdate();
             }
