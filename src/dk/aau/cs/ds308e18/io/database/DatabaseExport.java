@@ -206,7 +206,7 @@ public class DatabaseExport {
         Tour tour = new Tour();
 
         try {
-            tour.setTourId      (resultSet.getInt    (1));
+            tour.setTourID      (resultSet.getInt    (1));
             tour.setTourDate    (resultSet.getDate   (2).toLocalDate());
             tour.setPackingDate (resultSet.getDate   (3).toLocalDate());
             tour.setID          (resultSet.getInt    (4));
@@ -226,7 +226,7 @@ public class DatabaseExport {
     Create an order based on a ResultSet from a SQL Query.
     Return it.
     */
-    private static Order createOrderFromResultSet(ResultSet resultSet) {
+    public static Order createOrderFromResultSet(ResultSet resultSet) {
         Order order = new Order();
 
         try {
@@ -263,7 +263,7 @@ public class DatabaseExport {
     Create a ware based on a ResultSet from a SQL Query.
     Return it.
     */
-    private Ware createWareFromResultSet(ResultSet resultSet) {
+    public static Ware createWareFromResultSet(ResultSet resultSet) {
         Ware ware = new Ware();
 
         try {

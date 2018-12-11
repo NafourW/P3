@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import static dk.aau.cs.ds308e18.Main.gps;
 
 public class Order {
-    private String id;
     private int receipt;
     private int pluckRoute;
     private String orderReference;
@@ -36,8 +35,13 @@ public class Order {
     private boolean pickup;
     private boolean FV;
 
-    private int orderID;
+    // Used in our database to see which tours,
+    // orders and orderlines belong to each other.
     private int tourID;
+    private int orderID;
+
+    //Used for Vibocold's order IDs.
+    private String id;
 
     private int totalTime;
     private boolean totalLiftAlone;
@@ -99,6 +103,9 @@ public class Order {
         orderLines = new ArrayList<>();
     }
 
+    /*
+    Used in our database to see which order an orderline belongs to.
+    */
     public int getOrderID() {
         return orderID;
     }
@@ -107,6 +114,16 @@ public class Order {
         this.orderID = orderID;
     }
 
+    /*
+    Used in our database to see which tour an order belongs to.
+    */
+    public int getTourID() {return tourID;}
+
+    public void setTourID(int tourID) {this.tourID = tourID;}
+
+    /*
+    Used for Vibocold's tour IDs.
+    */
     public String getID() {
         return id;
     }
@@ -281,10 +298,6 @@ public class Order {
     public void setFV(boolean FV) {
         this.FV = FV;
     }
-
-    public int getTourID() {return tourID;}
-
-    public void setTourID(int tourID) {this.tourID = tourID;}
 
     public ArrayList<OrderLine> getOrderLines() {
         return orderLines;

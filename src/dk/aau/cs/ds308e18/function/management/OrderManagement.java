@@ -2,10 +2,13 @@ package dk.aau.cs.ds308e18.function.management;
 
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
+import dk.aau.cs.ds308e18.io.database.DatabaseExport;
 import dk.aau.cs.ds308e18.model.Order;
+import dk.aau.cs.ds308e18.model.Tour;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -121,6 +124,33 @@ public class OrderManagement {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    /*
+    Get all orders on a specific tour through the tourID on a tour.
+    Returns an arraylist of all orders.
+    */
+    public static ArrayList<Order> getOrdersOnTour(Tour tour) {
+        DatabaseConnection dbConn = new DatabaseConnection();
+        ArrayList<Order> ordersOnTour = new ArrayList<>();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "SELECT * FROM orders WHERE tourID = ?";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.setInt(1, tour.getTourID());
+
+                ResultSet resultSet = stmt.executeQuery();
+                while(resultSet.next()) {
+                    ordersOnTour.add(DatabaseExport.createOrderFromResultSet(resultSet));
+                }
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return ordersOnTour;
     }
 
     public static ArrayList<Order> getOrders() {

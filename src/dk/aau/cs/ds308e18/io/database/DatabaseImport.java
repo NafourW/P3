@@ -16,9 +16,6 @@ import dk.aau.cs.ds308e18.model.Ware;
 
 public class DatabaseImport {
 
-    //TODO ADD FINALLY TO ALL TRY-CATCH (CLOSE CONNECTION)
-    //TODO Check Mac'en
-
     /*
     ....
     */
@@ -61,15 +58,13 @@ public class DatabaseImport {
         System.out.println("Importing Orders...");
 
         DatabaseConnection dbConn = new DatabaseConnection();
-        OrderManagement orderMan = new OrderManagement();
 
         ReadFile readFileObject = new ReadFile();
 
         // Grab orders from "orderFile" method and put them into "orderList"
         ArrayList<Order> orderList = readFileObject.orderFile(sourcePath);
-        try {
-            Connection conn = dbConn.establishConnectionToDatabase();
 
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 // For every order, put the order in the database
                 for (Order order : orderList) {
@@ -93,10 +88,9 @@ public class DatabaseImport {
 
                     order.setTotalTime(orderResults.get(2));
 
-                    orderMan.createOrder(order);
+                    OrderManagement.createOrder(order);
                 }
                 System.out.println("Orders imported.");
-                conn.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -108,22 +102,18 @@ public class DatabaseImport {
         ReadFile readFileObject = new ReadFile();
 
         DatabaseConnection dbConn = new DatabaseConnection();
-        OrderLineManagement orderLineManagement = new OrderLineManagement();
 
         // Grab order lines from "orderLineTypes" method and put them into "orderLineList"
         ArrayList<OrderLine> orderLineList = readFileObject.orderLines(sourcePath);
 
-        try {
-            Connection conn = dbConn.establishConnectionToDatabase();
-
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
 
                 // For every ware, put the ware in the database
                 for (OrderLine orderLine : orderLineList) {
-                    orderLineManagement.createOrderLine(orderLine);
+                    OrderLineManagement.createOrderLine(orderLine);
                 }
                 System.out.println("Order lines imported.");
-                conn.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -138,22 +128,18 @@ public class DatabaseImport {
         ReadFile readFileObject = new ReadFile();
 
         DatabaseConnection dbConn = new DatabaseConnection();
-        WareManagement wareMan = new WareManagement();
 
         // Grab wares from "wareTypes" method and put them into "wareList"
         ArrayList<Ware> wareList = readFileObject.wareTypes(sourcePath);
 
-        try {
-            Connection conn = dbConn.establishConnectionToDatabase();
-
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
 
                 // For every ware, put the ware in the database
                 for (Ware ware : wareList) {
-                    wareMan.createWare(ware);
+                    WareManagement.createWare(ware);
                 }
                 System.out.println("Wares imported.");
-                conn.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();

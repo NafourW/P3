@@ -2,7 +2,6 @@ package dk.aau.cs.ds308e18.model;
 
 public class OrderLine {
     private String order;
-    private int orderID;
     private String wareNumber;
     private String wareName;
     private int labels;
@@ -12,6 +11,9 @@ public class OrderLine {
     private String individualNumber;
     private String model;
     private String fullName;
+
+    //Used in our database to see which order an orderline belongs to.
+    private int orderID;
 
     public OrderLine() {
         this.order = "";
@@ -86,11 +88,14 @@ public class OrderLine {
 
     public String getFullName() { return fullName; }
 
-    public void setOrderID() {
-        this.orderID = orderID;
-    }
-
+    /*
+    Used in our database to see which order an orderline belongs to.
+    */
     public int getOrderID() {
         return orderID;
+    }
+
+    public void setOrderID() {
+        this.orderID = orderID;
     }
 }

@@ -11,14 +11,17 @@ public class Tour {
 
     private LocalDate tourDate;
     private LocalDate packingDate;
-    private int id;
     private String region;
     private String regionDetail;
     private String driver;
     private String status;
     private Boolean consignor;
 
+    //Used in our database to see which tour an order belongs to.
     private int tourID;
+
+    //Used for Vibocold's tour IDs.
+    private int id;
 
     String directory = "resources/GenerateTour.csv";
     float breakTime;
@@ -78,6 +81,29 @@ public class Tour {
 
     }
     */
+
+    /*
+    Used in our database to see which tour an order belongs to.
+    */
+    public int getTourID() {
+        return tourID;
+    }
+
+    public void setTourID(int tourID) {
+        this.tourID = tourID;
+    }
+
+    /*
+    Used for Vibocold's tour IDs.
+    */
+    public int getID() {
+        return id;
+    }
+
+    public void setID(int id) {
+        this.id = id;
+    }
+
     public ArrayList<Order> getOrders() {
         return orders;
     }
@@ -118,14 +144,6 @@ public class Tour {
         this.region = region;
     }
 
-    public int getID() {
-        return id;
-    }
-
-    public void setID(int id) {
-        this.id = id;
-    }
-
     public Boolean getConsignor() {
         return consignor;
     }
@@ -146,11 +164,5 @@ public class Tour {
         return regionDetail;
     }
 
-    public int getTourID() {
-        return tourID;
-    }
 
-    public void setTourId(int tourID) {
-        this.tourID = tourID;
-    }
 }
