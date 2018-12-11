@@ -17,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class EditTourController implements ISelectionController {
 
@@ -25,9 +26,11 @@ public class EditTourController implements ISelectionController {
 
     @FXML private TableView<Order> tourOrdersTable;
     @FXML private TableColumn<Tour, Integer> OrderID;
+    @FXML private TableColumn<Tour, LocalDate> Date;
     @FXML private TableColumn<Tour, String> CustomerName;
     @FXML private TableColumn<Tour, String> Address;
     @FXML private TableColumn<Tour, Integer> ZipCode;
+    @FXML private TableColumn<Tour, String> Region;
 
     @FXML private DatePicker datePicker;
     @FXML private ComboBox<String> regionComboBox;

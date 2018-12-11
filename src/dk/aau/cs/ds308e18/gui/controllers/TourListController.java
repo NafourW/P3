@@ -13,6 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class TourListController {
 
@@ -22,8 +23,8 @@ public class TourListController {
     @FXML private Button releaseTourButton;
 
     @FXML private TableView<Tour> tourListTable;
-    @FXML private TableColumn<Tour, String> TourDate;
     @FXML private TableColumn<Tour, Integer> TourID;
+    @FXML private TableColumn<Tour, LocalDate> TourDate;
     @FXML private TableColumn<Tour, String> Region;
     @FXML private TableColumn<Tour, String> Driver;
     @FXML private TableColumn<Tour, Boolean> Status;
@@ -32,6 +33,7 @@ public class TourListController {
 
     @FXML private TableView<Order> tourOrdersTable;
     @FXML private TableColumn<Tour, Integer> OrderID;
+    @FXML private TableColumn<Tour, LocalDate> Date;
     @FXML private TableColumn<Tour, String> CustomerName;
     @FXML private TableColumn<Tour, String> Address;
     @FXML private TableColumn<Tour, Integer> ZipCode;
