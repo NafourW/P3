@@ -15,7 +15,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
-import java.time.LocalDate;
 
 public class MoveOrderToTourController implements ISelectionController {
 

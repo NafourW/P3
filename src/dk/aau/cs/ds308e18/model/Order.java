@@ -224,6 +224,7 @@ public class Order {
         saveLatLonInDataBase(address);
     }
 
+    //TODO This method shouldn't be here. Database related functions should be in IO or MANAGEMENT.
     public void saveLatLonInDataBase(String address) {
         String sql = "INSERT INTO addresses (address, latitude, longitude) VALUES (?, ?, ?)";
         DatabaseConnection dbConn = new DatabaseConnection();
