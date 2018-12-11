@@ -13,18 +13,57 @@ public class OrderLine {
     private String model;
     private String fullName;
 
-    public OrderLine(String order, String wareNumber, String wareName, int labels, int delivered, String individual,
-                     boolean preparing, String individualNumber, String model, String name) {
+    public OrderLine() {
+        this.order = "";
+        this.wareNumber = "";
+        this.wareName = "";
+        this.labels = 0;
+        this.delivered = 0;
+        this.individual = "";
+        this.preparing = false;
+        this.individualNumber = "";
+        this.model = "";
+        this.fullName = "";
+    }
+
+    public void setOrder(String order) {
         this.order = order;
+    }
+
+    public void setWareNumber(String wareNumber) {
         this.wareNumber = wareNumber;
+    }
+
+    public void setWareName(String wareName) {
         this.wareName = wareName;
+    }
+
+    public void setLabels(int labels) {
         this.labels = labels;
+    }
+
+    public void setDelivered(int delivered) {
         this.delivered = delivered;
+    }
+
+    public void setIndividual(String individual) {
         this.individual = individual;
+    }
+
+    public void setPreparing(boolean preparing) {
         this.preparing = preparing;
+    }
+
+    public void setIndividualNumber(String individualNumber) {
         this.individualNumber = individualNumber;
+    }
+
+    public void setModel(String model) {
         this.model = model;
-        this.fullName = name;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getOrder() { return order; }
