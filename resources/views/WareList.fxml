@@ -27,18 +27,18 @@
          <content>
             <TableView fx:id="wareListTable" prefHeight="200.0" prefWidth="200.0">
               <columns>
-                <TableColumn fx:id="WareNumber" prefWidth="160.0" text="varenummer" />
-                  <TableColumn fx:id="WareType" prefWidth="75.0" text="varetype" />
-                  <TableColumn fx:id="WareName" prefWidth="370.0" text="varenavn" />
-                  <TableColumn fx:id="SearchName" prefWidth="120.0" text="søgenavn" />
-                <TableColumn fx:id="Supplier" prefWidth="90.0" text="leverandør" />
-                  <TableColumn fx:id="GrossHeight" prefWidth="50.0" text="højde" />
-                  <TableColumn fx:id="GrossDepth" prefWidth="50.0" text="dybde" />
-                  <TableColumn fx:id="GrossWidth" prefWidth="50.0" text="bredde" />
-                  <TableColumn fx:id="WareGroup" prefWidth="75.0" text="varegruppe" />
-                  <TableColumn fx:id="LiftAlone" prefWidth="75.0" text="Løft alene" />
-                  <TableColumn fx:id="LiftingTools" prefWidth="75.0" text="Løfteanordning" />
-                  <TableColumn fx:id="MoveTime" prefWidth="75.0" text="Flytte tid" />
+                <TableColumn fx:id="WareNumber" prefWidth="160.0" text="%label_ware_number" />
+                  <TableColumn fx:id="WareType" prefWidth="75.0" text="%label_ware_type" />
+                  <TableColumn fx:id="WareName" prefWidth="370.0" text="%label_ware_name" />
+                  <TableColumn fx:id="SearchName" prefWidth="120.0" text="%label_ware_search_name" />
+                <TableColumn fx:id="Supplier" prefWidth="90.0" text="%label_ware_supplier" />
+                  <TableColumn fx:id="GrossHeight" prefWidth="50.0" text="%label_ware_height" />
+                  <TableColumn fx:id="GrossDepth" prefWidth="50.0" text="%label_ware_length" />
+                  <TableColumn fx:id="GrossWidth" prefWidth="50.0" text="%label_ware_width" />
+                  <TableColumn fx:id="WareGroup" prefWidth="75.0" text="%label_ware_group" />
+                  <TableColumn fx:id="LiftAlone" prefWidth="75.0" text="%label_ware_lift_alone" />
+                  <TableColumn fx:id="LiftingTools" prefWidth="75.0" text="%label_ware_lifting_tools" />
+                  <TableColumn fx:id="MoveTime" prefWidth="75.0" text="%label_ware_move_time" />
               </columns>
             </TableView>
          </content>
