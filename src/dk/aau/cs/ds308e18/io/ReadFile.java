@@ -151,7 +151,7 @@ public class ReadFile {//Class that reads CSV files
 
             Path path = Paths.get(directory);
 
-            if (Files.exists(path)){
+            if (Files.exists(path)){//TODO Skip
 
                 try (BufferedReader br = new BufferedReader(new FileReader(directory))){
 
@@ -211,10 +211,6 @@ public class ReadFile {//Class that reads CSV files
                     e.printStackTrace();
                 }
             }
-        }
-
-        for (OrderLine orderLine : orderLines){
-            System.out.println(orderLine.getOrderID());
         }
 
         return orderLines;
