@@ -22,9 +22,8 @@ public class OrderLineManagement {
         DatabaseConnection dbConn = new DatabaseConnection();
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if(conn != null) {
-                PreparedStatement stmt = conn.prepareStatement("INSERT INTO orderLines (" +
-                        "orderID, wareNumber, wareName, labels, delivered, individual," +
-                        "preparing, individualNumber, model, fullName) VALUES (" + getOrderLineValuesString(orderLine) + ")");
+                String sql = "INSERT INTO orderlines (orderID, orderReference, wareNumber, wareName, labels, delivered, individual, preparing, individualNumber, model, fullName) VALUES (" + getOrderLineValuesString(orderLine) + ")";
+                PreparedStatement stmt = conn.prepareStatement(sql);
 
                 stmt.executeUpdate();
             }
@@ -37,6 +36,7 @@ public class OrderLineManagement {
         StringBuilder sb = new StringBuilder();
 
         sb.append(orderLine.getOrderID())                           .append(", ")
+                .append("'").append(orderLine.getOrder())           .append("', ")
                 .append("'").append(orderLine.getWareNumber())      .append("', ")
                 .append("'").append(orderLine.getWareName())        .append("', ")
                 .append(orderLine.getLabels())                      .append(", ")
@@ -45,8 +45,7 @@ public class OrderLineManagement {
                 .append("'").append(orderLine.isPreparing())        .append("', ")
                 .append("'").append(orderLine.getIndividualNumber()).append("', ")
                 .append("'").append(orderLine.getModel())           .append("', ")
-                .append("'").append(orderLine.getFullName())        .append("', ");
-
+                .append("'").append(orderLine.getFullName())        .append("'");
         return sb.toString();
     }
 

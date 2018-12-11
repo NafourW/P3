@@ -26,6 +26,7 @@ public class OrderLine {
         this.individualNumber = "";
         this.model = "";
         this.fullName = "";
+        this.orderID = 0;
     }
 
     public void setOrder(String order) {
