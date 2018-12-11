@@ -24,12 +24,16 @@ public class GPS {
 
     private String vehicle = "car";
     private GHResponse rsp;
+    //private PathWrapper path;
 
-    GraphHopper hopper = new GraphHopper().forServer();
+    private GraphHopper hopper = new GraphHopper().forServer();
 
     public GPS() {
         // where to store graphhopper files?
-        hopper.setGraphHopperLocation("resources/graphFolder");
+        hopper.setOSMFile("C:/Users/the_p/Desktop/graphhopper_real/europe_denmark.osm");
+        //hopper.setDataReaderFile("C:/Users/the_p/Desktop/graphhopper-0.8/denmark-latest.osm.pbf");
+        //hopper.setCHEnabled(false);
+        hopper.setGraphHopperLocation("resources/graphhopper_map");
         hopper.setEncodingManager(new EncodingManager(vehicle));
         hopper.importOrLoad();
     }
@@ -97,26 +101,29 @@ public class GPS {
             return new GHPoint(lat, lon);
         }
         //bad address returns default point
-        return new GHPoint(0,0);
+        return new GHPoint(0, 0);
     }
 
 
     //Create route between 2 points
-    public void setRoute(GHPoint addrese1, GHPoint addresse2) {
-        GHRequest req = new GHRequest(addrese1, addresse2). /* latFrom, lonFrom, latTo, lonTo */
+    public void setRoute(GHPoint address1, GHPoint address2) {
+        GHRequest req = new GHRequest(address1, address2). // latFrom, lonFrom, latTo, lonTo
                 setWeighting("fastest").
                 setVehicle(vehicle).
                 setLocale(Locale.US);
         rsp = hopper.route(req);
+        //path = rsp.getBest();
     }
 
     //return distance in meters
-    public double getDistance() {
+    public double getDistance(GHPoint address1, GHPoint address2) {
+        setRoute(address1, address2);
         return rsp.getDistance();
     }
 
     //Return time in milliseconds
-    public long getMillis() {
+    public long getMillis(GHPoint address1, GHPoint address2) {
+        setRoute(address1, address2);
         return rsp.getMillis();
     }
 }
