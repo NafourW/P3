@@ -131,7 +131,6 @@ public class OrderManagement {
     Returns an arraylist of all orders.
     */
     public static ArrayList<Order> getOrdersOnTour(Tour tour) {
-        DatabaseExport dbExport = new DatabaseExport();
         DatabaseConnection dbConn = new DatabaseConnection();
         ArrayList<Order> ordersOnTour = new ArrayList<>();
 
@@ -143,7 +142,7 @@ public class OrderManagement {
 
                 ResultSet resultSet = stmt.executeQuery();
                 while(resultSet.next()) {
-                    ordersOnTour.add(dbExport.createOrderFromResultSet(resultSet));
+                    ordersOnTour.add(DatabaseExport.createOrderFromResultSet(resultSet));
                 }
 
             }
