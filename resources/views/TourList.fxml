@@ -42,7 +42,7 @@
                         <TableColumn fx:id="Region" prefWidth="90.0" text="%label_tour_region" />
                         <TableColumn fx:id="Driver" prefWidth="65.0" text="%label_tour_driver" />
                         <TableColumn fx:id="Consignor" prefWidth="72.0" text="%label_tour_consignor" />
-                        <TableColumn fx:id="Status" prefWidth="100.0" text="%label_tour_status" />
+                        <TableColumn fx:id="LocalizedStatusString" prefWidth="100.0" text="%label_tour_status" />
                         <TableColumn fx:id="OrderAmount" prefWidth="65.0" text="%label_tour_order_amount" />
                     </columns>
                   </TableView>

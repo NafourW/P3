@@ -39,7 +39,7 @@
             <TableColumn fx:id="OrderReference" prefWidth="66.0" text="%label_order_reference" />
             <TableColumn fx:id="Receipt" prefWidth="66.0" text="%label_order_receipt" />
             <TableColumn fx:id="Warehouse" prefWidth="50.0" text="%label_order_warehouse" />
-            <TableColumn fx:id="Category" prefWidth="87.0" text="%label_order_category" />
+            <TableColumn fx:id="LocalizedCategoryString" prefWidth="87.0" text="%label_order_category" />
             <TableColumn fx:id="FleetOwner" prefWidth="90.0" text="%label_order_fleet_owner" />
             <TableColumn fx:id="Printed" prefWidth="66.0" text="%label_order_printed" />
             <TableColumn fx:id="Project" prefWidth="66.0" text="%label_order_project" />

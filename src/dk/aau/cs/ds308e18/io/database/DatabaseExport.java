@@ -212,7 +212,7 @@ public class DatabaseExport {
             tour.setID          (resultSet.getInt    (4));
             tour.setRegion      (resultSet.getString (5));
             tour.setDriver      (resultSet.getString (6));
-            tour.setStatus      (resultSet.getString (7));
+            tour.setStatus      (Tour.tourStatus.valueOf(resultSet.getString (7)));
             tour.setConsignor   (resultSet.getBoolean(8));
         }
         catch (SQLException e) {
