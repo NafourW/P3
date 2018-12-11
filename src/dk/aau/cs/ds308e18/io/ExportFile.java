@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ExportFile {
-    public void ExportTourList(ArrayList<Tour> tours, String path) throws IOException{
+    public void ExportTourList(ArrayList<Tour> tours, String path) throws IOException {
 
         String exportPath = path + "/Ture.csv";
         FileWriter writer = new FileWriter(exportPath);
@@ -23,15 +23,17 @@ public class ExportFile {
                 "Turstatus", "Consignor - egen vogn"));
 
         //Go through each tour in the list of tours
-        for (Tour tour: tours){
+        for (Tour tour : tours) {
 
             //append the information of the tour to the file
             CSVUtils.writeLine(writer, Arrays.asList(tour.getTourDate().toString(), String.valueOf(tour.getTourID()),
                     tour.getRegion(), tour.getDriver(), tour.getPackingDate().toString(),
                     tour.getStatus(), tour.getConsignor().toString()));
 
+        }
+    }
 
-    public void ExportTourOrderList(String path) throws Exception{
+    public void ExportTourOrderList(Tour tour, String path) throws Exception{
         /* The method above has to run first before running this method.
          * This method reads the file made by the method from above and go through the tours within the file.
          * For each tour in the file, a new file is created with the corresponding id for the tour and the orders
@@ -50,7 +52,7 @@ public class ExportFile {
                     "Pakkedato", "Lagersted", "Ordrekategori", "Flådeejer", "Udskrevet", "Projekt"));
 
             //go through each order within the tour
-            for (Order order: orders){
+            for (Order order: tour.getOrders()){
 
                 //write the information of the order in the list of orders
                 CSVUtils.writeLine(writer, Arrays.asList(String.valueOf(order.getPluckRoute()), order.getID(),
