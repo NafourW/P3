@@ -205,8 +205,6 @@ public class ReadFile {//Class that reads CSV files
                         orderLine.setModel(Items[8]);
                         orderLine.setFullName(Items[9]);
 
-                        System.out.println(orderLine.getLabels() + "   " + orderLine.getDelivered());
-
                         orderLines.add(orderLine);
                     }
                 } catch (Exception e){
