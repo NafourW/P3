@@ -171,7 +171,7 @@ public class DatabaseSetup {
                         "preparing VARCHAR(255)," +
                         "individualNumber VARCHAR(255)," +
                         "model VARCHAR(255)," +
-                        "name VARCHAR(255))";
+                        "fullName VARCHAR(255))";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
             }
