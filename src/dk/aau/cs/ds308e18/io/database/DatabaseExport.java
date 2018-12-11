@@ -202,7 +202,7 @@ public class DatabaseExport {
     Create an order based on a ResultSet from a SQL Query.
     Return it.
     */
-    private Order createOrderFromResultSet(ResultSet resultSet) {
+    public Order createOrderFromResultSet(ResultSet resultSet) {
         Order order = new Order();
 
         try {
