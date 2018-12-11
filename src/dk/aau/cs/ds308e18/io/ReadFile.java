@@ -213,10 +213,6 @@ public class ReadFile {//Class that reads CSV files
             }
         }
 
-        for (OrderLine orderLine : orderLines){
-            System.out.println(orderLine.getOrderID());
-        }
-
         return orderLines;
     }
 
