@@ -26,7 +26,7 @@ In order to compile the application these libraries must be present:
 
    can be downloaded from Maven (mysql:mysql-connector-java:5.1.40)
 
-2. [graphhopper-tools-0.4.1-jar-with-dependencies.jar](https://cdn.discordapp.com/attachments/493773814711189514/519472014063304704/graphhopper-tools-0.4.1-jar-with-dependencies.jar)
+2. [graphhopper-tools-0.8.2-jar-with-dependencies.jar](https://cdn.discordapp.com/attachments/493773814711189514/522025135813820417/graphhopper-tools-0.8.2-jar-with-dependencies.jar)
 
 3. [json-simple-1.1.1.jar](https://cdn.discordapp.com/attachments/493773814711189514/520185506865348618/json-simple-1.1.1.jar)
 
