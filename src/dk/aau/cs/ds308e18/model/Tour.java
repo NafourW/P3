@@ -47,6 +47,9 @@ public class Tour {
     public void addOrder(Order order) {
         orders.add(order);
 
+        if (status == tourStatus.validReleased)
+            return;
+
         if (orders.size() > 0)
             status = tourStatus.valid;
 
@@ -56,6 +59,9 @@ public class Tour {
 
     public void removeOrder(Order order) {
         orders.remove(order);
+
+        if (status == tourStatus.validReleased)
+            return;
 
         if (orders.size() < TourGenerator.MAX_ORDERS_PER_TOUR)
             status = tourStatus.valid;
@@ -146,18 +152,9 @@ public class Tour {
     }
     public void setStatus(String status) {
         switch (status.toLowerCase()) {
-            case "invalid":
-            case "ugyldig":
-                this.status = tourStatus.invalid;
-                break;
             case "invalid - empty":
             case "ugyldig - tom":
                 this.status = tourStatus.invalidEmpty;
-                break;
-            case "valid":
-            case "gyldig":
-            case "fuldført":
-                this.status = tourStatus.valid;
                 break;
             case "valid - full":
             case "gyldig - fuld":
@@ -167,6 +164,15 @@ public class Tour {
             case "gyldig - frigivet":
             case "frigivet":
                 this.status = tourStatus.validReleased;
+                break;
+                case "invalid":
+            case "ugyldig":
+                this.status = tourStatus.invalid;
+                break;
+            case "valid":
+            case "gyldig":
+            case "fuldført":
+                this.status = tourStatus.valid;
                 break;
         }
     }

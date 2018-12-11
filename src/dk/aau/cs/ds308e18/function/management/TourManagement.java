@@ -27,7 +27,7 @@ public class TourManagement {
                 stmt.setString(4, String.valueOf(tour.getRegion()));
                 stmt.setString(5, String.valueOf(tour.getDriver()));
                 stmt.setString(6, String.valueOf(tour.getStatus()));
-                stmt.setString(7, String.valueOf(tour.getConsignor()));
+                stmt.setBoolean(7, tour.getConsignor());
 
                 stmt.executeUpdate();
             }
@@ -59,7 +59,7 @@ public class TourManagement {
                 stmt.setInt(3, tour.getID());
                 stmt.setString(4, tour.getRegion());
                 stmt.setString(5, tour.getDriver());
-                stmt.setString(6, tour.getStatus().toString());
+                stmt.setString(6, String.valueOf(tour.getStatus()));
                 stmt.setBoolean(7, tour.getConsignor());
                 stmt.setInt(8, tour.getTourID());
 

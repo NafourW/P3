@@ -33,16 +33,7 @@ public class TableManager<S> {
     public void setupColumns() {
         ObservableList<TableColumn> columns = table.getColumns();
         for (int i = 0; i < table.getColumns().size(); i++){
-            switch (columns.get(i).getId()) {
-                case "Status":
-                    columns.get(i).setCellValueFactory(new PropertyValueFactory<>("LocalizedStatusString"));
-                    break;
-                case "Category":
-                    columns.get(i).setCellValueFactory(new PropertyValueFactory<>("LocalizedCategoryString"));
-                    break;
-                default:
-                    columns.get(i).setCellValueFactory(new PropertyValueFactory<>(columns.get(i).getId()));
-            }
+            columns.get(i).setCellValueFactory(new PropertyValueFactory<>(columns.get(i).getId()));
         }
     }
 
@@ -68,6 +59,14 @@ public class TableManager<S> {
 
     public void clearItems() {
         table.getItems().clear();
+    }
+
+    public void refresh() {
+        ObservableList<TableColumn> columns = table.getColumns();
+        for (int i = 0; i < table.getColumns().size(); i++){
+            columns.get(i).setVisible(false);
+            columns.get(i).setVisible(true);
+        }
     }
 
     public void clearSelection() {

@@ -33,7 +33,7 @@ public class OrderListController {
     @FXML private TableColumn<Order, String> OrderReference;
     @FXML private TableColumn<Order, Integer> Receipt;
     @FXML private TableColumn<Order, String> Warehouse;
-    @FXML private TableColumn<Order, Order.orderCategory> Category;
+    @FXML private TableColumn<Order, String> LocalizedCategoryString;
     @FXML private TableColumn<Order, String> FleetOwner;
     @FXML private TableColumn<Order, Boolean> Printed;
     @FXML private TableColumn<Order, String> Project;

@@ -27,7 +27,7 @@ public class TourListController {
     @FXML private TableColumn<Tour, LocalDate> TourDate;
     @FXML private TableColumn<Tour, String> Region;
     @FXML private TableColumn<Tour, String> Driver;
-    @FXML private TableColumn<Tour, Tour.tourStatus> Status;
+    @FXML private TableColumn<Tour, String> LocalizedStatusString;
     @FXML private TableColumn<Tour, Boolean> Consignor;
     @FXML private TableColumn<Tour, Integer> OrderAmount;
 
@@ -62,10 +62,16 @@ public class TourListController {
     }
 
     private void setTourButtonsDisabled(boolean disabled) {
-        editTourButton.setDisable(disabled);
+        editTourButton.setDisable(disabled ||
+                selectedTour.getStatus() == Tour.tourStatus.validReleased);
+
         deleteTourButton.setDisable(disabled);
+
+        releaseTourButton.setDisable(disabled ||
+                selectedTour.getOrders().size() < 1 ||
+                selectedTour.getStatus() == Tour.tourStatus.validReleased);
+
         printTourButton.setDisable(disabled);
-        releaseTourButton.setDisable(disabled);
     }
 
     /*
@@ -150,6 +156,11 @@ public class TourListController {
 
     @FXML
     private void releaseTourButtonAction(ActionEvent event) {
+        selectedTour.setStatus(Tour.tourStatus.validReleased);
+        tourListManager.refresh();
 
+        TourManagement.overrideTour(selectedTour);
+
+        setTourButtonsDisabled(false);
     }
 }
