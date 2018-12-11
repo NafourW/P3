@@ -1,11 +1,16 @@
 package dk.aau.cs.ds308e18.function.management;
 
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
+import dk.aau.cs.ds308e18.io.database.DatabaseExport;
+import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
+import dk.aau.cs.ds308e18.model.Ware;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class OrderLineManagement {
 
@@ -42,5 +47,31 @@ public class OrderLineManagement {
                 .append("'").append(orderLine.getFullName())        .append("', ");
 
         return sb.toString();
+    }
+
+    /*
+    Get all the wares on an order.
+    Returns an arraylist of all the wares on the order from the database.
+    */
+    public static ArrayList<Ware> getWaresOnOrder(Order order) {
+        DatabaseConnection dbConn = new DatabaseConnection();
+        ArrayList<Ware> waresOnOrder = new ArrayList<>();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "SELECT * FROM orderlines WHERE orderID = ?";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.setInt(1, order.getOrderID());
+
+                ResultSet resultSet = stmt.executeQuery();
+                while(resultSet.next()) {
+                    waresOnOrder.add(DatabaseExport.createWareFromResultSet(resultSet));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return waresOnOrder;
     }
 }
