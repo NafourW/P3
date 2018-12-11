@@ -184,8 +184,18 @@ public class ReadFile {//Class that reads CSV files
                         //Model = Items[8]
                         //Navn = Items[9]
 
-                        OrderLine orderLine = new OrderLine(Items[0], Items[1], Items[2], labels, delivered, Items[5],
-                                preparing, Items[7], Items[8], Items[9]);
+                        OrderLine orderLine = new OrderLine();
+
+                        orderLine.setOrder(Items[0]);
+                        orderLine.setWareNumber(Items[1]);
+                        orderLine.setWareName(Items[2]);
+                        orderLine.setLabels(labels);
+                        orderLine.setDelivered(delivered);
+                        orderLine.setIndividual(Items[5]);
+                        orderLine.setPreparing(preparing);
+                        orderLine.setIndividualNumber(Items[7]);
+                        orderLine.setModel(Items[8]);
+                        orderLine.setFullName(Items[9]);
 
                         orderLines.add(orderLine);
                     }
