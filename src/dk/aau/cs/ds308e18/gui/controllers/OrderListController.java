@@ -29,6 +29,7 @@ public class OrderListController {
     @FXML private TableColumn<Order, String> Address;
     @FXML private TableColumn<Order, Integer> ZipCode;
     @FXML private TableColumn<Order, String> CustomerName;
+    @FXML private TableColumn<Order, Integer> OrderLineAmount;
     @FXML private TableColumn<Order, Integer> PluckRoute;
     @FXML private TableColumn<Order, String> OrderReference;
     @FXML private TableColumn<Order, Integer> Receipt;

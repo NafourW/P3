@@ -195,16 +195,16 @@
                      <content>
                         <TableView fx:id="orderLineTable" prefHeight="200.0" prefWidth="200.0">
                            <columns>
-                              <TableColumn fx:id="Labels" prefWidth="75.0" text="Labels" />
-                              <TableColumn fx:id="Delivered" prefWidth="120.0" text="Leveret" />
-                              <TableColumn fx:id="WareNumber" prefWidth="100.0" text="Varenummer" />
-                              <TableColumn fx:id="WareName" prefWidth="75.0" text="Varenavn" />
-                              <TableColumn fx:id="Individual" prefWidth="120.0" text="Individ" />
-                              <TableColumn fx:id="IndividualWareNumber" prefWidth="120.0" text="Individ varenummer" />
-                              <TableColumn fx:id="Model" prefWidth="50.0" text="Model" />
-                              <TableColumn fx:id="Name" prefWidth="50.0" text="Navn" />
-                              <TableColumn fx:id="LiftAlone" prefWidth="50.0" text="Løft alene" />
-                              <TableColumn fx:id="MoveTime" prefWidth="75.0" text="Flytte tid" />
+                              <TableColumn fx:id="WareName" prefWidth="200.0" text="Varenavn" />
+                              <TableColumn fx:id="WareNumber" prefWidth="200.0" text="Varenummer" />
+                              <TableColumn fx:id="Individual" prefWidth="200.0" text="Individ" />
+                              <TableColumn fx:id="IndividualNumber" prefWidth="200.0" text="Individ varenummer" />
+                              <TableColumn fx:id="Model" prefWidth="200.0" text="Model" />
+                              <TableColumn fx:id="FullName" prefWidth="200.0" text="Fuldt Navn" />
+                              <TableColumn fx:id="Labels" prefWidth="60.0" text="Labels" />
+                              <TableColumn fx:id="Delivered" prefWidth="60.0" text="Leveret" />
+                              <TableColumn fx:id="LiftAlone" prefWidth="60.0" text="Løft alene" />
+                              <TableColumn fx:id="MoveTime" prefWidth="60.0" text="Flytte tid" />
                            </columns>
                         </TableView>
                      </content>

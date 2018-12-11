@@ -256,6 +256,10 @@ public class Order {
         }
     }
 
+    public int getOrderLineAmount() {
+        return orderLines.size();
+    }
+
     public void requestLatLonFromAddress() {
         this.latLon = gps.GeocodeAddress(address);
         saveLatLonInDataBase(address);

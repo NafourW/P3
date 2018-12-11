@@ -35,6 +35,7 @@
             <TableColumn fx:id="Address" prefWidth="195.0" text="%label_order_address" />
             <TableColumn fx:id="ZipCode" prefWidth="38.0" text="%label_order_zip_code" />
             <TableColumn fx:id="CustomerName" prefWidth="187.0" text="%label_order_customer_name" />
+            <TableColumn fx:id="OrderLineAmount" prefWidth="66.0" text="%label_order_orderline_amount" />
             <TableColumn fx:id="PluckRoute" prefWidth="66.0" text="%label_order_pluck_route" />
             <TableColumn fx:id="OrderReference" prefWidth="66.0" text="%label_order_reference" />
             <TableColumn fx:id="Receipt" prefWidth="66.0" text="%label_order_receipt" />

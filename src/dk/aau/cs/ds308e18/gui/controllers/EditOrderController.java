@@ -1,6 +1,7 @@
 package dk.aau.cs.ds308e18.gui.controllers;
 
 import dk.aau.cs.ds308e18.Main;
+import dk.aau.cs.ds308e18.function.management.OrderLineManagement;
 import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.gui.ISelectionController;
 import dk.aau.cs.ds308e18.gui.TableManager;
@@ -60,7 +61,7 @@ public class EditOrderController implements ISelectionController {
     @FXML private TableColumn<OrderLine, String> WareNumber;
     @FXML private TableColumn<OrderLine, String> WareName;
     @FXML private TableColumn<OrderLine, String> Individual;
-    @FXML private TableColumn<OrderLine, String> IndividualWareNumber;
+    @FXML private TableColumn<OrderLine, String> IndividualNumber;
     @FXML private TableColumn<OrderLine, String> Model;
     @FXML private TableColumn<OrderLine, String> Name;
     @FXML private TableColumn<OrderLine, String> LiftAlone;
@@ -94,11 +95,8 @@ public class EditOrderController implements ISelectionController {
 
         commentsArea.setText("");
 
-        orderLineTable.getItems().addAll(selectedOrder.getOrderLines());
-
-        ArrayList<OrderLine> orderLines = new ArrayList<OrderLine>();
-        orderLines.addAll(orderLineTable.getItems());
-        selectedOrder.setOrderLines(orderLines);
+        orderLineTableManager.clearItems();
+        orderLineTableManager.addItems(selectedOrder.getOrderLines());
     }
 
     private void populateWareFields(){
@@ -176,6 +174,7 @@ public class EditOrderController implements ISelectionController {
     public void setSelectedObject(Object obj, boolean isNew) {
         selectedOrder = (Order)obj;
         populateOrderFields();
+        populateWareFields();
         if (isNew) {
             buttonBarLeft.getChildren().remove(cancelOrderButton);
             buttonBar.getChildren().remove(doneButton);

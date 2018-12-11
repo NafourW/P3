@@ -50,29 +50,29 @@ public class OrderLineManagement {
     }
 
     /*
-    Get all the wares on an order.
-    Returns an arraylist of all the wares on the order from the database.
+    Get all the orderlines on an order.
+    Returns an arraylist of all the orderlines on the order from the database.
     */
-    public static ArrayList<Ware> getWaresOnOrder(Order order) {
+    public static ArrayList<OrderLine> getOrderLinesOnOrder(Order order) {
         DatabaseConnection dbConn = new DatabaseConnection();
-        ArrayList<Ware> waresOnOrder = new ArrayList<>();
+        ArrayList<OrderLine> orderLinesOnOrder = new ArrayList<>();
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
-                String sql = "SELECT * FROM orderlines WHERE orderID = ?";
+                String sql = "SELECT * FROM orderlines WHERE orderReference = ?";
                 PreparedStatement stmt = conn.prepareStatement(sql);
-                stmt.setInt(1, order.getOrderID());
+                stmt.setString(1, order.getID());
 
                 ResultSet resultSet = stmt.executeQuery();
                 while(resultSet.next()) {
-                    waresOnOrder.add(DatabaseExport.createWareFromResultSet(resultSet));
+                    orderLinesOnOrder.add(DatabaseExport.createOrderLineFromResultSet(resultSet));
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return waresOnOrder;
+        return orderLinesOnOrder;
     }
 
     public static ArrayList<OrderLine> getOrderLines() {

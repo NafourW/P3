@@ -1,5 +1,7 @@
 package dk.aau.cs.ds308e18.io.database;
 
+import dk.aau.cs.ds308e18.function.management.OrderLineManagement;
+import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Tour;
@@ -251,6 +253,10 @@ public class DatabaseExport {
             order.setRegion          (resultSet.getString (17));
             order.setFV              (resultSet.getBoolean(18));
             order.setProject         (resultSet.getString (19));
+
+            ArrayList<OrderLine> orderLines = OrderLineManagement.getOrderLinesOnOrder(order);
+            for (OrderLine orderLine : orderLines)
+                order.addOrderLine(orderLine);
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -290,19 +296,19 @@ public class DatabaseExport {
         return ware;
     }
 
-    private OrderLine createOrderLineFromResultSet(ResultSet resultSet) {
+    public static OrderLine createOrderLineFromResultSet(ResultSet resultSet) {
         OrderLine orderLine = new OrderLine();
 
         try {
-            orderLine.setWareNumber      (resultSet.getString (1));
-            orderLine.setWareName        (resultSet.getString (2));
-            orderLine.setLabels          (resultSet.getInt    (3));
-            orderLine.setDelivered       (resultSet.getInt    (4));
-            orderLine.setIndividual      (resultSet.getString (5));
-            orderLine.setPreparing       (resultSet.getBoolean(6));
-            orderLine.setIndividualNumber(resultSet.getString (7));
-            orderLine.setModel           (resultSet.getString (8));
-            orderLine.setFullName        (resultSet.getString (9));
+            orderLine.setWareNumber      (resultSet.getString (3));
+            orderLine.setWareName        (resultSet.getString (4));
+            orderLine.setLabels          (resultSet.getInt    (5));
+            orderLine.setDelivered       (resultSet.getInt    (6));
+            orderLine.setIndividual      (resultSet.getString (7));
+            orderLine.setPreparing       (resultSet.getBoolean(8));
+            orderLine.setIndividualNumber(resultSet.getString (9));
+            orderLine.setModel           (resultSet.getString (10));
+            orderLine.setFullName        (resultSet.getString (11));
         }
         catch (SQLException e) {
             e.printStackTrace();
