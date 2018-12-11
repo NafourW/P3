@@ -1,11 +1,16 @@
 package dk.aau.cs.ds308e18.model;
 
-import java.io.File;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Tour {
+
+    public enum tourStatus{
+        invalidEmpty,
+        valid,
+        validFull,
+        validReleased
+    }
 
     ArrayList<Order> orders;
 
@@ -23,9 +28,6 @@ public class Tour {
     //Used for Vibocold's tour IDs.
     private int id;
 
-    String directory = "resources/GenerateTour.csv";
-    float breakTime;
-
     public Tour() {
         id = 0;
         tourDate = LocalDate.now();
@@ -34,53 +36,13 @@ public class Tour {
         region = "";
         regionDetail = "";
         driver = "";
+        status = "";
         consignor = false;
     }
 
     public void addOrder(Order order) {
         orders.add(order);
     }
-
-    void CreateCSVFile(String tourName){
-        File csvFile = new File(tourName + ".csv");
-        try {
-            csvFile.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /*
-
-    void generateTour(String directory) throws IOException {//Only generate one tour plan
-
-        FileWriter writer = new FileWriter(directory);
-
-        List<Order> orders = Arrays.asList(
-                new Order(),
-                new Order(),
-                new Order()
-        );
-
-
-        CSVUtils.writeLine(writer, Arrays.asList("", "", ""));
-
-        for (Order o : orders){
-            List<String> list = new ArrayList<>();
-
-            list.add(o.);
-            list.add(o.);
-            list.add(o.);
-
-
-            CSVUtils.writeLine(writer, list);
-        }
-
-        writer.flush();
-        writer.close();
-
-    }
-    */
 
     /*
     Used in our database to see which tour an order belongs to.
@@ -163,6 +125,5 @@ public class Tour {
     public String getRegionDetail() {
         return regionDetail;
     }
-
 
 }

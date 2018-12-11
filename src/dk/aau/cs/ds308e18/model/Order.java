@@ -2,6 +2,7 @@ package dk.aau.cs.ds308e18.model;
 
 import com.graphhopper.util.shapes.GHPoint;
 import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 
 import java.sql.Connection;
@@ -14,13 +15,22 @@ import java.util.ArrayList;
 import static dk.aau.cs.ds308e18.Main.gps;
 
 public class Order {
+    public enum orderCategory{
+        delivery,
+        pickUp,
+        newPurchase,
+        service,
+        exchange,
+        spareParts,
+    }
+
     private int receipt;
     private int pluckRoute;
     private String orderReference;
     private String warehouse;
     private String fleetOwner;
     private String project;
-    private String category;
+    private orderCategory category;
 
     private String customerName;
     private String region;
@@ -81,7 +91,7 @@ public class Order {
         warehouse = "";
         fleetOwner = "";
         project = "";
-        category = "";
+        category = orderCategory.delivery;
 
         customerName = "";
         region = "";
@@ -180,12 +190,44 @@ public class Order {
         this.project = project;
     }
 
-    public String getCategory() {
+    public orderCategory getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(orderCategory category) {
         this.category = category;
+    }
+
+    public String getLocalizedCategoryString() {
+        return Main.gui.getLocalString("value_order_category_" + category.toString());
+    }
+
+    public void setCategory(String category) {
+        switch (category.toLowerCase()) {
+            case "levering":
+            case "delivery":
+                this.category = orderCategory.delivery;
+                break;
+            case "afhentning":
+            case "pickup":
+                this.category = orderCategory.pickUp;
+                break;
+            case "nykøb":
+            case "newpurchase":
+                this.category = orderCategory.newPurchase;
+                break;
+            case "ombytning":
+            case "exchange":
+                this.category = orderCategory.exchange;
+                break;
+            case "reservedele":
+            case "spareparts":
+                this.category = orderCategory.spareParts;
+                break;
+            case "service":
+                this.category = orderCategory.service;
+                break;
+        }
     }
 
     public String getCustomerName() {

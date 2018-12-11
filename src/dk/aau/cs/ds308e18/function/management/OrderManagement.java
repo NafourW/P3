@@ -59,7 +59,7 @@ public class OrderManagement {
                 stmt.setInt(9, order.getReceipt());
                 stmt.setString(10, String.valueOf(order.isPickup()));
                 stmt.setString(11, order.getWarehouse());
-                stmt.setString(12, order.getCategory());
+                stmt.setString(12, order.getCategory().toString());
                 stmt.setString(14, order.getFleetOwner());
                 stmt.setString(15, String.valueOf(order.isPrinted()));
                 stmt.setString(16, order.getRegion());

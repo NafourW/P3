@@ -56,8 +56,8 @@ public class ExportFile {
                     order.getOrderReference(), order.getExpeditionStatus(), order.getCustomerName(),
                     order.getDate().toString(), String.valueOf(order.getReceipt()), String.valueOf(order.getPluckRoute()),
                     order.getAddress(), String.valueOf(order.getZipCode()), String.valueOf(order.getReceipt()),
-                    order.getCategory(), order.getDate().toString(), String.valueOf(order.getWeekNumber()),
-                    order.getDate().toString(), order.getWarehouse(), order.getCategory(),
+                    order.getCategory().toString(), order.getDate().toString(), String.valueOf(order.getWeekNumber()),
+                    order.getDate().toString(), order.getWarehouse(), order.getCategory().toString(),
                     order.getFleetOwner(), String.valueOf(order.isPrinted()), order.getProject()));
 
             //ending appending to the file of list of orders
