@@ -11,6 +11,9 @@ public class OrderLine {
     private String individualNumber;
     private String model;
     private String fullName;
+    private float moveTime;
+    private boolean LiftAlone;
+    private boolean LiftEquipment;
 
     //Used in our database to see which order an orderline belongs to.
     private int orderID;
@@ -99,4 +102,16 @@ public class OrderLine {
     public void setOrderID() {
         this.orderID = orderID;
     }
+
+    public float getMoveTime() { return moveTime; }
+
+    public void setMoveTime(float moveTime) { this.moveTime = moveTime; }
+
+    public boolean isLiftAlone() { return LiftAlone; }
+
+    public void setLiftAlone(boolean liftAlone) { LiftAlone = liftAlone; }
+
+    public boolean isLiftEquipment() { return LiftEquipment; }
+
+    public void setLiftEquipment(boolean liftEquipment) { LiftEquipment = liftEquipment; }
 }

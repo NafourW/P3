@@ -136,6 +136,7 @@ public class ReadFile {//Class that reads CSV files
     }
 
     public ArrayList<OrderLine> orderLines(String sourPath){
+
         ArrayList<OrderLine> orderLines = new ArrayList<>();
 
         String line = "";
@@ -151,8 +152,11 @@ public class ReadFile {//Class that reads CSV files
             Path path = Paths.get(directory);
 
             if (Files.exists(path)){
+
                 try (BufferedReader br = new BufferedReader(new FileReader(directory))){
+
                     while ((line = br.readLine()) != null){
+
                         String[] Items = line.split(cvsSplitBy, -1);
 
                         if (Items[0].matches("^[^\\d].*")){
@@ -160,20 +164,24 @@ public class ReadFile {//Class that reads CSV files
                         }
 
                         //Order = Items[0]
-                        //Varenummer = Items[1]
-                        //Varenavn = Items[2]
+                        //WareNumber = Items[1]
+                        //WareName = Items[2]
 
+                        String labelsString = Items[3].replace(",00","");
                         int labels; //Convert content inside the list to integer
-                        if(Items[3].matches("[0-9]+") && Items[3].length() > 2)
-                            labels = Integer.valueOf(Items[3]);
-                        else
-                            labels = 0;
 
-                        int delivered; //Convert content inside the list to integer
-                        if(Items[4].matches("[0-9]+") && Items[4].length() > 2)
-                            delivered = Integer.valueOf(Items[4]);
+                        if(Items[3].isEmpty())
+                            labels = 0;
                         else
+                            labels = Integer.valueOf(labelsString);
+
+                        String deliveredString = Items[4].replace(",00", "");
+                        int delivered; //Convert content inside the list to integer
+
+                        if(Items[4].isEmpty())
                             delivered = 0;
+                        else
+                            delivered = Integer.valueOf(deliveredString);
 
                         //Inidivid = Items[5]
 
@@ -197,12 +205,18 @@ public class ReadFile {//Class that reads CSV files
                         orderLine.setModel(Items[8]);
                         orderLine.setFullName(Items[9]);
 
+                        System.out.println(orderLine.getLabels() + "   " + orderLine.getDelivered());
+
                         orderLines.add(orderLine);
                     }
                 } catch (Exception e){
                     e.printStackTrace();
                 }
             }
+        }
+
+        for (OrderLine orderLine : orderLines){
+            System.out.println(orderLine.getOrderID());
         }
 
         return orderLines;
