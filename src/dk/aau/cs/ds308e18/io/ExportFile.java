@@ -18,21 +18,20 @@ public class ExportFile {
         String exportPath = path + "/Ture.csv";
         FileWriter writer = new FileWriter(exportPath);
 
+        //write the attributes of data (first row of the table)
         CSVUtils.writeLine(writer, Arrays.asList("Turdato", "Tur", "Rute", "RuteBeskrivelse", "Chauffør", "Pakkedato",
                 "Turstatus", "Consignor - egen vogn"));
 
-        //Go through
+        //Go through each tour in the list of tours
         for (Tour tour: tours){
+
+            //append the information of the tour to the file
             CSVUtils.writeLine(writer, Arrays.asList(tour.getTourDate().toString(), String.valueOf(tour.getTourID()),
                     tour.getRegion(), tour.getDriver(), tour.getPackingDate().toString(),
                     tour.getStatus(), tour.getConsignor().toString()));
-        }
 
-        writer.flush();
-        writer.close();
-    }
 
-    public void ExportTourOrderList(String path) throws IOException{
+    public void ExportTourOrderList(String path) throws Exception{
         /* The method above has to run first before running this method.
          * This method reads the file made by the method from above and go through the tours within the file.
          * For each tour in the file, a new file is created with the corresponding id for the tour and the orders
@@ -40,46 +39,34 @@ public class ExportFile {
          *
          */
 
-        String toursFile = path + "/Ture.csv";
+            String orderExportPath = path + "/" + tour.getTourID() + ".csv"; //create a file for these orders
 
-        String line = "";
+            FileWriter writer1 = new FileWriter(orderExportPath); //ready to append the file
 
-        String csvSplitBy = ";";
+            //write first row of the table (attritubes)
+            CSVUtils.writeLine(writer1, Arrays.asList("M", "Plukrute", "Ordre", "Returordre reference",
+                    "Ekspeditionsstatus", "Leveringsnavn", "Ønsket modtagelsesdato", "Følgeseddel", "Plukrute2",
+                    "Gadenavn", "Postnummer", "Følgeseddel3", "Afhentning", "Afhentningsdato", "Leverungs Uge",
+                    "Pakkedato", "Lagersted", "Ordrekategori", "Flådeejer", "Udskrevet", "Projekt"));
 
-        try (BufferedReader br = new BufferedReader(new FileReader(toursFile))){
+            //go through each order within the tour
+            for (Order order: orders){
 
-            while ((line = br.readLine()) != null){
-
-                String[] Tour = line.split(csvSplitBy, -1);
-
-                if (Tour[0].contains("Turdato")){
-                    continue;
-                }
-
-                String exportPath = path + "/" + Tour[1] + ".csv";
-
-                FileWriter writer = new FileWriter(exportPath);
-
-                CSVUtils.writeLine(writer, Arrays.asList("M", "Plukrute", "Ordre", "Returordre reference",
-                        "Ekspeditionsstatus", "Leveringsnavn", "Ønsket modtagelsesdato", "Følgeseddel", "Plukrute2",
-                        "Gadenavn", "Postnummer", "Følgeseddel3", "Afhentning", "Afhentningsdato", "Leverungs Uge",
-                        "Pakkedato", "Lagersted", "Ordrekategori", "Flådeejer", "Udskrevet", "Projekt"));
-
-                ArrayList<Order> orders = new ArrayList<>();
-
-
-                for (Order order : orders){
-                    CSVUtils.writeLine(writer, Arrays.asList(String.valueOf(order.getPluckRoute()), order.getID(),
-                            order.getOrderReference(), order.getExpeditionStatus(), order.getCustomerName(),
-                            order.getDate().toString(), String.valueOf(order.getReceipt()), String.valueOf(order.getPluckRoute()),
-                            order.getAddress(), String.valueOf(order.getZipCode()), String.valueOf(order.getReceipt()),
-                            order.getCategory(), order.getDate().toString(), String.valueOf(order.getWeekNumber()),
-                            order.getDate().toString(), order.getWarehouse(), order.getCategory(),
-                            order.getFleetOwner(), String.valueOf(order.isPrinted()), order.getProject()));
-                }
+                //write the information of the order in the list of orders
+                CSVUtils.writeLine(writer, Arrays.asList(String.valueOf(order.getPluckRoute()), order.getID(),
+                        order.getOrderReference(), order.getExpeditionStatus(), order.getCustomerName(),
+                        order.getDate().toString(), String.valueOf(order.getReceipt()), String.valueOf(order.getPluckRoute()),
+                        order.getAddress(), String.valueOf(order.getZipCode()), String.valueOf(order.getReceipt()),
+                        order.getCategory(), order.getDate().toString(), String.valueOf(order.getWeekNumber()),
+                        order.getDate().toString(), order.getWarehouse(), order.getCategory(),
+                        order.getFleetOwner(), String.valueOf(order.isPrinted()), order.getProject()));
             }
-        } catch (IOException e){
-            e.printStackTrace();
+            //ending appending to the file of list of orders
+            writer1.flush();
+            writer1.close();
         }
+        //ending appending to the file of list of tours
+        writer.flush();
+        writer.close();
     }
 }

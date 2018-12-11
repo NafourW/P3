@@ -239,7 +239,7 @@ public class DatabaseExport {
     Create a ware based on a ResultSet from a SQL Query.
     Return it.
     */
-    private Ware createWareFromResultSet(ResultSet resultSet) {
+    public static Ware createWareFromResultSet(ResultSet resultSet) {
         Ware ware = new Ware();
 
         try {

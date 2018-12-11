@@ -49,6 +49,10 @@ public class WareManagement {
         }
     }
 
+    /*
+    Now does the same as the getWaresOnOrder in OrderLineManagement.
+    We should remove it when we know it works.
+    */
     public static ArrayList<Integer> getOrderlineWare(ArrayList<OrderLine> orderWareList) {
         ArrayList<Integer> information = new ArrayList<>();
 
