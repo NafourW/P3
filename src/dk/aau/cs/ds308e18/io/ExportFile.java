@@ -1,11 +1,10 @@
 package dk.aau.cs.ds308e18.io;
 
-import dk.aau.cs.ds308e18.function.management.OrderManagement;
-import dk.aau.cs.ds308e18.function.management.TourManagement;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
