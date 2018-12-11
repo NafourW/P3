@@ -36,7 +36,7 @@ public class TourManagement {
         }
 
         //Assign the tourID created by the database to the tour object.
-        tour.setTourId(assignTourID());
+        tour.setTourID(assignTourID());
 
         //Assign the tourID of the tour to all orders under the tour.
         updateOrderTourID(tour);

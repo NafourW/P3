@@ -182,7 +182,7 @@ public class DatabaseExport {
         Tour tour = new Tour();
 
         try {
-            tour.setTourId      (resultSet.getInt    (1));
+            tour.setTourID      (resultSet.getInt    (1));
             tour.setTourDate    (resultSet.getDate   (2).toLocalDate());
             tour.setPackingDate (resultSet.getDate   (3).toLocalDate());
             tour.setID          (resultSet.getInt    (4));
