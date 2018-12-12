@@ -18,7 +18,7 @@
          <children>
             <Label text="%label_list_of_unplaced_orders">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Arial Bold" size="24.0" />
                </font>
                <VBox.margin>
                   <Insets bottom="10.0" />
