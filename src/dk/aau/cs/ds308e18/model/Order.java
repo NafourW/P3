@@ -358,6 +358,10 @@ public class Order {
         orderLines.add(orderLine);
     }
 
+    public void removeOrderLine(OrderLine orderLine) {
+        orderLines.remove(orderLine);
+    }
+
     public GHPoint getLatLon() {
         return latLon;
     }

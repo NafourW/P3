@@ -60,9 +60,6 @@ public class WareListController {
 
     @FXML
     private void backButtonAction(ActionEvent event) throws IOException {
-        //if from order
-        //Main.gui.changeView("EditOrder");
-        //else
-        Main.gui.changeView("MainMenu");
+        Main.gui.goToPreviousView();
     }
 }

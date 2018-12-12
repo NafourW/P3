@@ -7,6 +7,7 @@ import dk.aau.cs.ds308e18.gui.ISelectionController;
 import dk.aau.cs.ds308e18.gui.TableManager;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -73,6 +74,7 @@ public class EditOrderController implements ISelectionController {
     private TableManager<OrderLine> orderLineTableManager;
 
     private Order selectedOrder;
+    private OrderLine selectedOrderLine;
 
     @FXML
     public void initialize() {
@@ -85,6 +87,9 @@ public class EditOrderController implements ISelectionController {
 
         regions.addAll(Main.dbExport.exportRegionNames());
         regionComboBox.setItems(regions);
+
+        //setup onOrderLineSelected method
+        orderLineTable.getSelectionModel().selectedItemProperty().addListener(this::onOrderLineSelected);
     }
 
     private void populateOrderFields(){
@@ -98,6 +103,10 @@ public class EditOrderController implements ISelectionController {
 
         commentsArea.setText("");
 
+        refreshOrderLineList();
+    }
+
+    private void refreshOrderLineList() {
         orderLineTableManager.clearItems();
         orderLineTableManager.addItems(selectedOrder.getOrderLines());
     }
@@ -131,48 +140,72 @@ public class EditOrderController implements ISelectionController {
 
         ArrayList<OrderLine> orderLines = new ArrayList<OrderLine>();
         orderLines.addAll(orderLineTable.getItems());
+
         selectedOrder.setOrderLines(orderLines);
+        OrderManagement.overrideOrder(selectedOrder);
+    }
+
+    /*
+    Called when an orderline is selected in the orderline list
+    */
+    private void onOrderLineSelected(ObservableValue<? extends OrderLine> obs, OrderLine oldSelection, OrderLine newSelection) {
+        //the selected item is assigned to selectedOrderLine
+        selectedOrderLine = newSelection;
+
+        //if the same thing was selected: do nothing
+        if (oldSelection == newSelection)
+            return;
+
+        //enable/disable remove button,
+        //depending on whether an orderline is selected
+        removeWareButton.setDisable((selectedOrderLine == null));
     }
 
     @FXML
     private void cancelOrderButtonAction(ActionEvent event) throws IOException{
         OrderManagement.deleteOrderFromDatabase(selectedOrder);
-        Main.gui.goToPreviousView();
+        Main.gui.changeView("OrderList");
     }
 
     @FXML
     private void viewWareListButtonAction(ActionEvent event) throws IOException {
         Main.gui.changeView("WareList");
-        Main.gui.goToPreviousView();
     }
 
     @FXML
     private void addOrderButtonAction(ActionEvent event) throws IOException {
         transferFieldsToOrder();
         OrderManagement.createOrder(selectedOrder);
-        Main.gui.goToPreviousView();
+        Main.gui.changeView("OrderList");
     }
 
     @FXML
     private void doneButtonAction(ActionEvent event) throws IOException {
         transferFieldsToOrder();
-        OrderManagement.overrideOrder(selectedOrder);
-        Main.gui.goToPreviousView();
+        Main.gui.changeView("OrderList");
     }
 
     @FXML
     private void backButtonAction(ActionEvent event) throws IOException{
-        Main.gui.goToPreviousView();
+        Main.gui.changeView("OrderList");
     }
 
     @FXML
     private void addWareToOrderButtonAction(ActionEvent event) {
+        OrderLine newOrderLine = new OrderLine();
 
+        newOrderLine.setOrder(selectedOrder.getID());
+        newOrderLine.setWareNumber(wareNumberField.getText());
+        newOrderLine.setWareName(wareNameField.getText());
+
+        selectedOrder.addOrderLine(newOrderLine);
+        refreshOrderLineList();
     }
 
     @FXML
     private void removeWareButtonAction(ActionEvent event) {
-
+        selectedOrder.removeOrderLine(selectedOrderLine);
+        refreshOrderLineList();
     }
 
     @Override
