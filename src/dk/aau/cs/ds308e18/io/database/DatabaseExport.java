@@ -7,6 +7,7 @@ import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Tour;
 import dk.aau.cs.ds308e18.model.Ware;
 
+import javax.xml.crypto.Data;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -316,5 +317,25 @@ public class DatabaseExport {
         }
 
         return orderLine;
+    }
+
+    public static int getAmount(String parameter) {
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "SELECT COUNT(*) FROM " + parameter;
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                ResultSet resultSet = stmt.executeQuery();
+
+                while(resultSet.next()) {
+                    return resultSet.getInt(1);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return 0;
     }
 }
