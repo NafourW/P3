@@ -194,10 +194,10 @@
                               <TableColumn fx:id="WareNumber" prefWidth="72.0" text="Varenummer" />
                               <TableColumn fx:id="Individual" prefWidth="56.0" text="Individ" />
                               <TableColumn fx:id="IndividualNumber" prefWidth="132.0" text="Individ varenummer" />
-                              <TableColumn fx:id="Model" prefWidth="667.0" text="Model" />
-                              <TableColumn fx:id="FullName" prefWidth="200.0" text="Fuldt Navn" />
-                              <TableColumn fx:id="Labels" prefWidth="60.0" text="Labels" />
-                              <TableColumn fx:id="Delivered" prefWidth="60.0" text="Leveret" />
+                              <TableColumn fx:id="Model" prefWidth="82.0" text="Model" />
+                              <TableColumn fx:id="FullName" prefWidth="67.0" text="Fuldt Navn" />
+                              <TableColumn fx:id="Labels" prefWidth="40.0" text="Labels" />
+                              <TableColumn fx:id="Delivered" prefWidth="281.0" text="Leveret" />
                               <TableColumn fx:id="MoveTime" prefWidth="60.0" text="Flytte tid" />
                               <TableColumn fx:id="LiftAlone" prefWidth="60.0" text="Løft alene" />
                               <TableColumn fx:id="LiftEquipment" prefWidth="75.0" text="Løftanordning" />

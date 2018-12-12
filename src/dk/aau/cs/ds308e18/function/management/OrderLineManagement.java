@@ -79,6 +79,7 @@ public class OrderLineManagement {
         return Main.dbExport.exportOrderLines();
     }
 
+
     public void orderLineInfo(ArrayList<OrderLine> orderLines){
 
         float totalTime = 0;
@@ -90,49 +91,82 @@ public class OrderLineManagement {
         for (OrderLine orderLine : orderLines){
 
             for (Ware ware : wares){
+                /*
+                 * Because of the way the test data was setup, we have to go through four different columns
+                 * in order to find the corresponding ware type for the specific order line. Therefore, the
+                 * four if statements are made.
+                 */
+
                 if (orderLine.getWareNumber().equals(ware.getWareName())){
 
-                    infoToOrderLine(orderLine, ware, totalTime, LiftAlone, LiftEquipment); //using the method below this method
+                    infoToOrderLine(orderLine, ware); //using the method below this method
+
+                    totalTime += orderLine.getMoveTime();
+
+                    if (!orderLine.isLiftAlone()){
+                        LiftAlone = false;
+                    }
+
+                    if (orderLine.isLiftEquipment()){
+                        LiftEquipment = true;
+                    }
 
 
                 } else if (orderLine.getIndividual().equals(ware.getWareName())){
 
-                    infoToOrderLine(orderLine, ware, totalTime, LiftAlone, LiftEquipment); //using the method below this method
+                    infoToOrderLine(orderLine, ware); //using the method below this method
+
                     totalTime += orderLine.getMoveTime();
+
+                    if (!orderLine.isLiftAlone()){
+                        LiftAlone = false;
+                    }
+
+                    if (orderLine.isLiftEquipment()){
+                        LiftEquipment = true;
+                    }
 
 
                 } else if (orderLine.getIndividualNumber().equals(ware.getWareName())){
 
-                    infoToOrderLine(orderLine, ware, totalTime, LiftAlone, LiftEquipment); //using the method below this method
+                    infoToOrderLine(orderLine, ware); //using the method below this method
+
                     totalTime += orderLine.getMoveTime();
+
+                    if (!orderLine.isLiftAlone()){
+                        LiftAlone = false;
+                    }
+
+                    if (orderLine.isLiftEquipment()){
+                        LiftEquipment = true;
+                    }
 
                 } else if (orderLine.getModel().equals(ware.getWareName())){
 
-                    infoToOrderLine(orderLine, ware, totalTime, LiftAlone, LiftEquipment); //using the method below this method
+                    infoToOrderLine(orderLine, ware); //using the method below this method
+
                     totalTime += orderLine.getMoveTime();
+
+                    if (!orderLine.isLiftAlone()){
+                        LiftAlone = false;
+                    }
+
+                    if (orderLine.isLiftEquipment()){
+                        LiftEquipment = true;
+                    }
                 }
             }
         }
     }
 
     //this method gets information from wares and add them to the order line
-    private void infoToOrderLine(OrderLine orderLine, Ware ware, float totalTime, boolean LiftAlone, boolean LiftEquipment){
+    private void infoToOrderLine(OrderLine orderLine, Ware ware){
 
         orderLine.setMoveTime(ware.getMoveTime() * orderLine.getLabels());
 
         orderLine.setLiftAlone(ware.isLiftAlone());
 
         orderLine.setLiftEquipment(ware.isLiftingTools());
-
-        totalTime += orderLine.getMoveTime();
-
-        if (!orderLine.isLiftAlone()){
-            LiftAlone = false;
-        }
-
-        if (orderLine.isLiftEquipment()){
-            LiftEquipment = true;
-        }
     }
 
 
