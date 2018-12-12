@@ -4,12 +4,16 @@ import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.gui.TableManager;
 import dk.aau.cs.ds308e18.model.Order;
+import javafx.animation.PauseTransition;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -57,7 +61,17 @@ public class OrderListController {
         //setup onOrderSelected method
         orderListTable.getSelectionModel().selectedItemProperty().addListener(this::onOrderSelected);
 
-        refreshOrderList();
+        //load table inside scene for quicker scene swap
+        loadOrderTransition();
+    }
+
+    private void loadOrderTransition() {
+        PauseTransition pauseTransition = new PauseTransition(Duration.seconds(0.09));
+        pauseTransition.setOnFinished(event -> {
+            refreshOrderList();
+        });
+
+        pauseTransition.play();
     }
 
     /*

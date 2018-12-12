@@ -105,16 +105,16 @@ public class SettingsController {
             @Override protected String call() throws Exception {
                 setButtonsDisabled(true);
 
-                updateMessage("Importing Wares... ");
+                updateMessage(Main.gui.getLocalString("message_progress_importing_wares"));
                 Main.dbImport.importWares(sourcePath);
 
-                updateMessage("Importing Orders... ");
+                updateMessage(Main.gui.getLocalString("message_progress_importing_orders"));
                 Main.dbImport.importOrders(sourcePath);
 
-                updateMessage("Importing Orderlines... ");
+                updateMessage(Main.gui.getLocalString("message_progress_importing_orderlines"));
                 Main.dbImport.importOrderLines(sourcePath);
 
-                updateMessage("Import done.");
+                updateMessage(Main.gui.getLocalString("message_progress_import_done"));
                 setButtonsDisabled(false);
                 return "";
             }
@@ -144,7 +144,7 @@ public class SettingsController {
         Task<String> exportTask = new Task<String>() {
             @Override protected String call() throws Exception {
                 setButtonsDisabled(true);
-                updateMessage("Exporting...");
+                updateMessage(Main.gui.getLocalString("message_progress_exporting"));
 
                 ExportFile exportFile = new ExportFile();
                 try{
@@ -154,7 +154,7 @@ public class SettingsController {
                     System.out.println("export failed: " + e.toString());
                 }
 
-                updateMessage("Export done.");
+                updateMessage(Main.gui.getLocalString("message_progress_export_done"));
                 setButtonsDisabled(false);
                 return "";
             }
