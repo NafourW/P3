@@ -57,8 +57,6 @@ public class DatabaseExport {
                     Order order = createOrderFromResultSet(orders);
                     orderList.add(order);
                 }
-
-                conn.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
