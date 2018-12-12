@@ -41,6 +41,7 @@ public class WareListController {
         for (Ware ware : WareManagement.getWares()) {
             wareListManager.addItem(ware);
         }
+        wareListTable.setSelectionModel(null);
     }
 
     @FXML
