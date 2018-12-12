@@ -4,6 +4,10 @@ import com.graphhopper.util.shapes.GHPoint;
 import dk.aau.cs.ds308e18.model.Order;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.fail;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GPSTest {
     private GPS gps = new GPS();
@@ -39,9 +43,80 @@ public class GPSTest {
         Assertions.assertEquals(ghPoint.getLon(), order.getLatLon().getLon());
     }
 
+    public ArrayList<Integer> milliConverter(double ms){
+
+        ArrayList<Integer> timeArray = new ArrayList<>();
+
+        double all = ms;
+        int hours = 0;
+        int minutes = 0;
+        int seconds = 0;
+
+        // millis -> timer
+
+        all = all / 1000 / 60 / 60;
+
+        // calculates hours on given millis
+
+        if (all >= 1) {
+            while(all > 1){
+                all--;
+                hours += 1;
+
+            }
+        }
+
+        all = all * 60;
+
+        // calculates minutes on given millis
+
+        if (all >= 1) {
+            while(all > 1){
+                all--;
+                minutes += 1;
+
+            }
+        }
+
+        // calculates seconds on given millis
+
+        all = all * 60;
+
+        if (all >= 1) {
+            while(all > 1){
+                all--;
+                seconds += 1;
+
+            }
+        }
+
+        timeArray.add(hours);
+        timeArray.add(minutes);
+        timeArray.add(seconds);
+
+        return timeArray;
+    }
+
     @Test
-    public void milliConverter(double ms){
-        
+    public void milliConverterTest(){
+        ArrayList<Integer> test1;
+        test1 = milliConverter(4000000);
+
+        if (test1.get(0) != 1){
+            fail("Failed converting hours");
+
+        }
+
+        if (test1.get(1) != 6){
+            fail("Failed converting minutes");
+
+        }
+
+        if (test1.get(2) > 45 || test1.get(2) < 35){
+            fail("Failed converting hours");
+
+        }
+
     }
 
 }
