@@ -72,12 +72,15 @@ public class OrderManagement {
                 stmt.setInt(21, order.getOrderID());
 
                 stmt.executeUpdate();
-
-                OrderLineManagement.overrideOrderLine(order);
             }
         } catch(SQLException e) {
             e.printStackTrace();
         }
+
+        /*
+        Also override the orderline to make sure it matches the new order.
+        */
+        OrderLineManagement.overrideOrderLine(order);
     }
 
     private static String getOrderValuesString(Order order) {
