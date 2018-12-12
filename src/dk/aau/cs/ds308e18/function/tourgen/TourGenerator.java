@@ -1,7 +1,9 @@
 package dk.aau.cs.ds308e18.function.tourgen;
 
+import com.graphhopper.util.shapes.GHPoint;
 import dk.aau.cs.ds308e18.function.management.TourManagement;
 import dk.aau.cs.ds308e18.model.Order;
+import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Tour;
 
 import java.time.LocalDate;
@@ -18,6 +20,16 @@ public class TourGenerator {
 
         //currently focused tour
         Tour tour = null;
+
+        long availableTime = settings.workTime - settings.breakTime;
+
+        //Total travel time before adding another order
+        long totalTimeBefore = 0;
+
+        //Total travel time after adding another order
+        long totalTimeAfter = 0;
+
+        Order previousOrder;
 
         //iterate through each order
         for (Order o : orders) {
@@ -48,8 +60,20 @@ public class TourGenerator {
                 generatedTours.add(tour);
             }
 
+            if (totalTimeAfter >= availableTime){
+
+                long overTime = totalTimeAfter - availableTime;
+                long spareTime = availableTime - totalTimeBefore;
+
+                if (overTime <= spareTime){
+                }
+            } else {
+                continue;
+            }
+
             //add the order to the tour
             tour.addOrder(o);
+            previousOrder = o;
 
             //if the tour is full, move it to the filled tours list
             if (tour.getOrders().size() >= MAX_ORDERS_PER_TOUR){
@@ -82,5 +106,28 @@ public class TourGenerator {
         }
 
         return generatedTours;
+    }
+
+    public static long orderTime(boolean isFromStart, GHPoint start, Order location1, Order location2){
+
+        GPS gps = new GPS();
+
+        long time = 0;
+
+        if (isFromStart/*if it's the beginning of the tour*/){
+            long timeTravelTo = gps.getMillis(start, location1.getLatLon());
+
+            long timeTravelBack = gps.getMillis(location1.getLatLon(), start);
+
+            time = timeTravelTo + location1.getTotalTime() + timeTravelBack;
+
+        } else if (!isFromStart){
+            long timeTravelTo = gps.getMillis(location1.getLatLon(), location2.getLatLon());
+
+            long timeTravelBack = gps.getMillis(location2.getLatLon(), start);
+
+            time = timeTravelTo + location2.getTotalTime() + timeTravelBack;
+        }
+        return time;
     }
 }

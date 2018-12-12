@@ -1,8 +1,12 @@
 package dk.aau.cs.ds308e18.gui.controllers;
 
 import dk.aau.cs.ds308e18.Main;
+import dk.aau.cs.ds308e18.function.management.OrderLineManagement;
+import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.function.management.TourManagement;
+import dk.aau.cs.ds308e18.function.management.WareManagement;
 import dk.aau.cs.ds308e18.io.ExportFile;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -40,6 +44,8 @@ public class SettingsController {
     @FXML private Label importProgressLabel;
     @FXML private Label exportProgressLabel;
 
+    @FXML private Label statsLabel;
+
     private String sourcePath;
     private String destinationPath;
 
@@ -55,6 +61,8 @@ public class SettingsController {
         Preferences prefs = Preferences.userNodeForPackage(dk.aau.cs.ds308e18.Main.class);
         setSourcePath(prefs.get("dataImportSourceDirectory", ""));
         setDestinationPath(prefs.get("dataExportDestinationDirectory", ""));
+
+        updateStatsLabel();
     }
 
     private void setSourcePath(String path) {
@@ -84,6 +92,27 @@ public class SettingsController {
         backButton.setDisable(disabled);
     }
 
+    private void updateStatsLabel() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(Main.gui.getLocalString("label_settings_stats_tours"))
+                .append(" ")
+                .append(TourManagement.getTours().size())
+                .append("     ")
+                .append(Main.gui.getLocalString("label_settings_stats_orders"))
+                .append(" ")
+                .append(OrderManagement.getOrders().size())
+                .append("     ")
+                .append(Main.gui.getLocalString("label_settings_stats_orderlines"))
+                .append(" ")
+                .append(OrderLineManagement.getOrderLines().size())
+                .append("     ")
+                .append(Main.gui.getLocalString("label_settings_stats_wares"))
+                .append(" ")
+                .append(WareManagement.getWares().size());
+
+        statsLabel.setText(stringBuilder.toString());
+    }
+
     @FXML
     private void backButtonAction(ActionEvent event) throws IOException{
         Main.gui.changeView("MainMenu");
@@ -100,7 +129,7 @@ public class SettingsController {
     }
 
     @FXML
-    private void importDataButtonAction(ActionEvent event) {
+    private void importDataButtonAction(ActionEvent event){
         Task<String> importTask = new Task<String>() {
             @Override protected String call() throws Exception {
                 setButtonsDisabled(true);
@@ -119,6 +148,8 @@ public class SettingsController {
                 return "";
             }
         };
+
+        importTask.setOnSucceeded(e -> updateStatsLabel());
 
         importProgressLabel.textProperty().bind(importTask.messageProperty());
 
@@ -183,15 +214,19 @@ public class SettingsController {
     private void clearAllToursButtonAction(ActionEvent event) {
         boolean confirmed = Main.gui.showYesNoDialog("label_are_you_sure", "message_clear_tours_confirmation");
         //Delete all tours
-        if (confirmed)
+        if (confirmed) {
             TourManagement.deleteAllTours();
+            updateStatsLabel();
+        }
     }
 
     @FXML
     private void refreshDatabaseButtonAction(ActionEvent event) {
         boolean confirmed = Main.gui.showYesNoDialog("label_are_you_sure", "message_refresh_database_confirmation");
         // Reload database
-        if(confirmed)
+        if(confirmed) {
             Main.dbSetup.reloadDatabase();
+            updateStatsLabel();
+        }
     }
 }

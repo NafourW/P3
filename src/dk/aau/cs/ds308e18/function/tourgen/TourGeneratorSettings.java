@@ -8,6 +8,7 @@ public class TourGeneratorSettings {
     }
 
     public planningMethod method;
+    public int workTime;
     public int breakTime;
     public boolean forceOrdersOnTour;
 }

@@ -117,11 +117,9 @@ public class OrderLineManagement {
     }
 
 
-    public void orderLineInfo(ArrayList<OrderLine> orderLines){
+    public static int orderLoadTime(ArrayList<OrderLine> orderLines){
 
-        float totalTime = 0;
-        boolean LiftAlone = true;
-        boolean LiftEquipment = false;
+        int totalTime = 0;
 
         ArrayList<Ware> wares = WareManagement.getWares();
 
@@ -134,45 +132,98 @@ public class OrderLineManagement {
                  * four if statements are made.
                  */
 
+                // if-statements checks if the ware in orderline has been found
+                // in the list of existing ware types
                 if (orderLine.getWareNumber().equals(ware.getWareName())){
 
-                    infoToOrderLine(orderLine, ware); //using the method below this method
+                    orderLine.setMoveTime(ware.getMoveTime() * orderLine.getLabels());
 
                     totalTime += orderLine.getMoveTime();
-
-                    if (!orderLine.isLiftAlone()){
-                        LiftAlone = false;
-                    }
-
-                    if (orderLine.isLiftEquipment()){
-                        LiftEquipment = true;
-                    }
-
 
                 } else if (orderLine.getIndividual().equals(ware.getWareName())){
 
-                    infoToOrderLine(orderLine, ware); //using the method below this method
+                    orderLine.setMoveTime(ware.getMoveTime() * orderLine.getLabels());
 
                     totalTime += orderLine.getMoveTime();
+
+                } else if (orderLine.getIndividualNumber().equals(ware.getWareName())){
+
+                    orderLine.setMoveTime(ware.getMoveTime() * orderLine.getLabels());
+
+                    totalTime += orderLine.getMoveTime();
+
+                } else if (orderLine.getModel().equals(ware.getWareName())){
+
+                    orderLine.setMoveTime(ware.getMoveTime() * orderLine.getLabels());
+
+                    totalTime += orderLine.getMoveTime();
+                }
+            }
+        }
+        return totalTime;
+    }
+
+    public static boolean isLiftAlone(ArrayList<OrderLine> orderLines){
+        boolean LiftAlone = true;
+
+        ArrayList<Ware> wares = WareManagement.getWares();
+
+        for (OrderLine orderLine : orderLines){
+
+            for (Ware ware : wares){
+
+                if (orderLine.getWareNumber().equals(ware.getWareName())){
 
                     if (!orderLine.isLiftAlone()){
                         LiftAlone = false;
                     }
+
+                } else if (orderLine.getIndividual().equals(ware.getWareName())){
+
+                    if (!orderLine.isLiftAlone()){
+                        LiftAlone = false;
+                    }
+
+                } else if (orderLine.getIndividualNumber().equals(ware.getWareName())){
+
+                    if (!orderLine.isLiftAlone()){
+                        LiftAlone = false;
+                    }
+
+                } else if (orderLine.getModel().equals(ware.getWareName())){
+
+                    if (!orderLine.isLiftAlone()){
+                        LiftAlone = false;
+                    }
+                }
+            }
+        }
+
+        return  LiftAlone;
+    }
+
+    public static boolean isLiftEquipment(ArrayList<OrderLine> orderLines){
+        boolean LiftEquipment = false;
+
+        ArrayList<Ware> wares = WareManagement.getWares();
+
+        for (OrderLine orderLine : orderLines){
+
+            for (Ware ware : wares){
+
+                if (orderLine.getWareNumber().equals(ware.getWareName())){
 
                     if (orderLine.isLiftEquipment()){
                         LiftEquipment = true;
                     }
 
+                } else if (orderLine.getIndividual().equals(ware.getWareName())){
+
+                    if (orderLine.isLiftEquipment()){
+                        LiftEquipment = true;
+                    }
 
                 } else if (orderLine.getIndividualNumber().equals(ware.getWareName())){
-
-                    infoToOrderLine(orderLine, ware); //using the method below this method
-
-                    totalTime += orderLine.getMoveTime();
-
-                    if (!orderLine.isLiftAlone()){
-                        LiftAlone = false;
-                    }
 
                     if (orderLine.isLiftEquipment()){
                         LiftEquipment = true;
@@ -180,31 +231,22 @@ public class OrderLineManagement {
 
                 } else if (orderLine.getModel().equals(ware.getWareName())){
 
-                    infoToOrderLine(orderLine, ware); //using the method below this method
-
-                    totalTime += orderLine.getMoveTime();
-
-                    if (!orderLine.isLiftAlone()){
-                        LiftAlone = false;
-                    }
-
                     if (orderLine.isLiftEquipment()){
                         LiftEquipment = true;
                     }
                 }
             }
         }
+        return LiftEquipment;
     }
 
-    //this method gets information from wares and add them to the order line
-    private void infoToOrderLine(OrderLine orderLine, Ware ware){
+    /*
+        if (!orderLine.isLiftAlone()){
+            LiftAlone = false;
+        }
 
-        orderLine.setMoveTime(ware.getMoveTime() * orderLine.getLabels());
-
-        orderLine.setLiftAlone(ware.isLiftAlone());
-
-        orderLine.setLiftEquipment(ware.isLiftingTools());
-    }
-
-
+        if (orderLine.isLiftEquipment()){
+            LiftEquipment = true;
+        }
+        */
 }

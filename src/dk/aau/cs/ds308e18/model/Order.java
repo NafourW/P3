@@ -3,6 +3,7 @@ package dk.aau.cs.ds308e18.model;
 import com.graphhopper.util.shapes.GHPoint;
 import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import dk.aau.cs.ds308e18.Main;
+import dk.aau.cs.ds308e18.function.management.OrderLineManagement;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 
 import java.sql.Connection;
