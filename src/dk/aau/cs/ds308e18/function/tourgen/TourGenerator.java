@@ -29,6 +29,8 @@ public class TourGenerator {
         //Total travel time after adding another order
         long totalTimeAfter = 0;
 
+        Order previousOrder;
+
         //iterate through each order
         for (Order o : orders) {
             //get the order's date
@@ -63,16 +65,17 @@ public class TourGenerator {
                 long overTime = totalTimeAfter - availableTime;
                 long spareTime = availableTime - totalTimeBefore;
 
-                if (overTime >= spareTime){
+                if (overTime <= spareTime){
                     tour.addOrder(o);
+                    previousOrder = o;
                 }
             } else {
                 continue;
             }
 
-
             //add the order to the tour
             tour.addOrder(o);
+            previousOrder = o;
 
             //if the tour is full, move it to the filled tours list
             if (tour.getOrders().size() >= MAX_ORDERS_PER_TOUR){
