@@ -72,6 +72,7 @@ public class OrderListController {
         pauseTransition.setOnFinished(event -> {
             refreshOrderList();
             loadingImage.setImage(null);
+            loadingImage.setDisable(true);
         });
 
         pauseTransition.play();

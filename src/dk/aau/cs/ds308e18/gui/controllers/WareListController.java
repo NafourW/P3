@@ -57,6 +57,7 @@ public class WareListController {
                 wareListManager.addItem(ware);
             }
             loadingImage.setImage(null);
+            loadingImage.setDisable(true);
         });
 
         pauseTransition.play();
