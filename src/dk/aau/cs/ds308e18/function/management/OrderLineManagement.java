@@ -14,15 +14,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class OrderLineManagement {
-
     /*
-   Insert an order into the order table.
+   Insert an orderline into the orderline table.
    */
     public static void createOrderLine(OrderLine orderLine) {
         DatabaseConnection dbConn = new DatabaseConnection();
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if(conn != null) {
-                String sql = "INSERT INTO orderlines (orderID, orderReference, wareNumber, wareName, labels, delivered, individual, preparing, individualNumber, model, fullName) VALUES (" + getOrderLineValuesString(orderLine) + ")";
+                String sql = "INSERT INTO orderlines (orderID, orderReference, wareNumber, wareName, " +
+                        "labels, delivered, individual, preparing, individualNumber, model, fullName) " +
+                        "VALUES (" + getOrderLineValuesString(orderLine) + ")";
                 PreparedStatement stmt = conn.prepareStatement(sql);
 
                 stmt.executeUpdate();
@@ -91,43 +92,27 @@ public class OrderLineManagement {
             if (conn != null) {
                 String sql = "DELETE FROM orderlines WHERE orderReference = ?";
 
-                String sql2 = "INSERT INTO orderlines (orderReference, wareNumber, wareName, " +
-                        "labels, delivered, individual, preparing, individualNumber, model, fullName) " +
-                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
                 /*
                 Delete orderlines from database.
                 */
-                for(OrderLine orderLine : dbExport.exportOrderLines()) {
-                    PreparedStatement stmt = conn.prepareStatement(sql);
-                    stmt.setString(1, orderLine.getOrder());
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.setString(1, order.getID());
 
-                    stmt.executeUpdate();
-                }
-
-                /*
-                Import updated orderlines from order object to database.
-                */
-                for(OrderLine orderLine : order.getOrderLines()) {
-                    PreparedStatement stmt = conn.prepareStatement(sql2);
-
-                    //TODO HJÆÆÆÆÆÆÆLP
-                    stmt.setString(1, orderLine.getOrder());
-                    stmt.setString(2, orderLine.getWareNumber());
-                    stmt.setString(3, orderLine.getWareName());
-                    stmt.setString(4, String.valueOf(orderLine.getLabels()));
-                    stmt.setString(5, String.valueOf(orderLine.getDelivered()));
-                    stmt.setString(6, orderLine.getIndividual());
-                    stmt.setString(7, String.valueOf(orderLine.isPreparing()));
-                    stmt.setString(8, orderLine.getIndividualNumber());
-                    stmt.setString(9, orderLine.getModel());
-                    stmt.setString(10, orderLine.getFullName());
-
-                    stmt.executeUpdate();
-                }
+                stmt.executeUpdate();
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+
+        /*
+        Import updated orderlines from order object to database.
+        */
+        importUpdatedOrderLines(order);
+    }
+
+    private static void importUpdatedOrderLines(Order order) {
+        for(OrderLine orderLine : order.getOrderLines()) {
+            createOrderLine(orderLine);
         }
     }
 
