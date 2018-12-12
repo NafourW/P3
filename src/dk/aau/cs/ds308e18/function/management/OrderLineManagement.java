@@ -111,6 +111,8 @@ public class OrderLineManagement {
 
     private static void importUpdatedOrderLines(Order order) {
         for(OrderLine orderLine : order.getOrderLines()) {
+
+            // Set the orderReference to the given order because
             orderLine.setOrder(order.getID());
             createOrderLine(orderLine);
         }

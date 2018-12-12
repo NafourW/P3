@@ -6,6 +6,7 @@ import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.function.management.TourManagement;
 import dk.aau.cs.ds308e18.function.management.WareManagement;
 import dk.aau.cs.ds308e18.io.ExportFile;
+import dk.aau.cs.ds308e18.io.database.DatabaseExport;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -96,19 +97,19 @@ public class SettingsController {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(Main.gui.getLocalString("label_settings_stats_tours"))
                 .append(" ")
-                .append(TourManagement.getTours().size())
+                .append(DatabaseExport.getAmount("tours"))
                 .append("     ")
                 .append(Main.gui.getLocalString("label_settings_stats_orders"))
                 .append(" ")
-                .append(OrderManagement.getOrders().size())
+                .append(DatabaseExport.getAmount("orders"))
                 .append("     ")
                 .append(Main.gui.getLocalString("label_settings_stats_orderlines"))
                 .append(" ")
-                .append(OrderLineManagement.getOrderLines().size())
+                .append(DatabaseExport.getAmount("orderlines"))
                 .append("     ")
                 .append(Main.gui.getLocalString("label_settings_stats_wares"))
                 .append(" ")
-                .append(WareManagement.getWares().size());
+                .append(DatabaseExport.getAmount("warelist"));
 
         statsLabel.setText(stringBuilder.toString());
     }
