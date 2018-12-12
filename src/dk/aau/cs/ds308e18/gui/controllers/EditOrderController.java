@@ -64,8 +64,11 @@ public class EditOrderController implements ISelectionController {
     @FXML private TableColumn<OrderLine, String> IndividualNumber;
     @FXML private TableColumn<OrderLine, String> Model;
     @FXML private TableColumn<OrderLine, String> Name;
-    @FXML private TableColumn<OrderLine, String> LiftAlone;
     @FXML private TableColumn<OrderLine, String> MoveTime;
+    @FXML private TableColumn<OrderLine, String> LiftAlone;
+    @FXML private TableColumn<OrderLine, String> LiftEquipment;
+
+
 
     private TableManager<OrderLine> orderLineTableManager;
 
