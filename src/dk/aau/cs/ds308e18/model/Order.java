@@ -54,9 +54,9 @@ public class Order {
     //Used for Vibocold's order IDs.
     private String id;
 
-    private int totalTime = OrderLineManagement.orderLoadTime(getOrderLines());
-    private boolean totalLiftAlone = OrderLineManagement.isLiftAlone(getOrderLines());
-    private boolean totalLiftingTools = OrderLineManagement.isLiftEquipment(getOrderLines());
+    private int totalTime;
+    private boolean totalLiftAlone;
+    private boolean totalLiftingTools;
 
     public int getTotalTime() {
         return totalTime;
