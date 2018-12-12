@@ -22,6 +22,8 @@ public class OrderListController {
 
     @FXML private Button editOrderButton;
 
+    @FXML private ImageView loadingImage;
+
     @FXML private TableView<Order> orderListTable;
 
     //Columns
@@ -69,6 +71,7 @@ public class OrderListController {
         PauseTransition pauseTransition = new PauseTransition(Duration.seconds(0.09));
         pauseTransition.setOnFinished(event -> {
             refreshOrderList();
+            loadingImage.setImage(null);
         });
 
         pauseTransition.play();
