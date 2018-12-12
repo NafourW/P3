@@ -142,7 +142,6 @@ public class EditOrderController implements ISelectionController {
         orderLines.addAll(orderLineTable.getItems());
 
         selectedOrder.setOrderLines(orderLines);
-        OrderManagement.overrideOrder(selectedOrder);
     }
 
     /*
@@ -182,6 +181,7 @@ public class EditOrderController implements ISelectionController {
     @FXML
     private void doneButtonAction(ActionEvent event) throws IOException {
         transferFieldsToOrder();
+        OrderManagement.overrideOrder(selectedOrder);
         Main.gui.changeView("OrderList");
     }
 
