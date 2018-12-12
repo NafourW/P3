@@ -3,6 +3,7 @@ package dk.aau.cs.ds308e18.model;
 import com.graphhopper.util.shapes.GHPoint;
 import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import dk.aau.cs.ds308e18.Main;
+import dk.aau.cs.ds308e18.function.management.OrderLineManagement;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 
 import java.sql.Connection;
@@ -53,9 +54,9 @@ public class Order {
     //Used for Vibocold's order IDs.
     private String id;
 
-    private int totalTime;
-    private boolean totalLiftAlone;
-    private boolean totalLiftingTools;
+    private int totalTime = OrderLineManagement.orderLoadTime(getOrderLines());
+    private boolean totalLiftAlone = OrderLineManagement.isLiftAlone(getOrderLines());
+    private boolean totalLiftingTools = OrderLineManagement.isLiftEquipment(getOrderLines());
 
     public int getTotalTime() {
         return totalTime;
