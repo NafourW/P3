@@ -79,22 +79,37 @@ public class OrderLineManagement {
         return Main.dbExport.exportOrderLines();
     }
 
-    
+
     /*
-    Overrides an orderline information with new orderline object information.
-    References the orderline through its orderID.
+    Overrides orderline information on an order.
     */
     public static void overrideOrderLine(Order order) {
         DatabaseConnection dbConn = new DatabaseConnection();
+        DatabaseExport dbExport = new DatabaseExport();
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
-                String sql = "UPDATE orderlines SET orderReference = ?, wareNumber = ?, " +
-                        "wareName = ?, labels = ?, delivered = ?, individual = ?, preparing = ?, " +
-                        "individualNumber = ?, model = ?, fullName = ? WHERE orderID = ?";
+                String sql = "DELETE FROM orderlines WHERE orderID = ?";
 
-                for(OrderLine orderLine : order.getOrderLines()) {
+                String sql2 = "INSERT INTO orderlines VALUES (orderReference = ?, wareNumber = ?, " +
+                        "wareName = ?, labels = ?, delivered = ?, individual = ?, preparing = ?, " +
+                        "individualNumber = ?, model = ?, fullName = ?";
+
+                /*
+                Delete orderlines from database.
+                */
+                for(OrderLine orderLine : dbExport.exportOrderLines()) {
                     PreparedStatement stmt = conn.prepareStatement(sql);
+                    stmt.setInt(1, order.getOrderID());
+
+                    stmt.executeUpdate();
+                }
+
+                /*
+                Import updated orderlines from order object to database.
+                */
+                for(OrderLine orderLine : order.getOrderLines()) {
+                    PreparedStatement stmt = conn.prepareStatement(sql2);
 
                     //TODO HJÆÆÆÆÆÆÆLP
                     stmt.setString(1, orderLine.getOrder());
