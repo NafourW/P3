@@ -256,6 +256,8 @@ public class DatabaseExport {
             order.setTotalLiftingTools(resultSet.getBoolean(21));
             order.setTotalTime        (resultSet.getInt    (22));
 
+            order.setLatLon(getLatLonFromAddress(order.getAddress()));
+
             ArrayList<OrderLine> orderLines = OrderLineManagement.getOrderLinesOnOrder(order);
             for (OrderLine orderLine : orderLines)
                 order.addOrderLine(orderLine);
@@ -265,6 +267,31 @@ public class DatabaseExport {
         }
 
         return order;
+    }
+
+    public static double[] getLatLonFromAddress(String address) {
+        double[] latLon = new double[2];
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "SELECT * FROM addresses WHERE address = ?";
+
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.setString(1, address);
+
+                ResultSet addressValues = stmt.executeQuery();
+
+                while (addressValues.next()) {
+                    latLon[0] = addressValues.getDouble(2);
+                    latLon[1] = addressValues.getDouble(3);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return latLon;
     }
 
     /*

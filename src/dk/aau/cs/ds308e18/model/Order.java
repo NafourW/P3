@@ -262,8 +262,12 @@ public class Order {
     }
 
     public void requestLatLonFromAddress() {
-        this.latLon = gps.GeocodeAddress(address);
+        this.latLon = gps.GeocodeAddress(address);;
         saveLatLonInDataBase(address);
+    }
+
+    public void setLatLon(double[] latLon) {
+        setLatLon(new GHPoint(latLon[0], latLon[1]));
     }
 
     public void setLatLon(GHPoint latLon) {

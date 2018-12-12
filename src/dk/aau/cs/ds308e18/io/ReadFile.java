@@ -126,7 +126,7 @@ public class ReadFile {//Class that reads CSV files
                     double lon = Double.valueOf(Order[21]);
 
                     order.setLatLon(new GHPoint(lat, lon));
-                    }
+                }
                 orderList.add(order);
             }
         } catch (IOException e){
