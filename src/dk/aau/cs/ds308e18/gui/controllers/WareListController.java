@@ -42,6 +42,9 @@ public class WareListController {
 
         //load table inside scene for quicker scene swap
         loadWareTransition();
+
+
+        wareListTable.setSelectionModel(null);
     }
 
     private void loadWareTransition() {

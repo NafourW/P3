@@ -29,7 +29,7 @@ public class GPSTest {
     }
 
     @Test
-    public void GeocodeAddressTest() {
+    public void geocodeAddressTest() {
         GHPoint ghPoint = new GHPoint(57.012281, 9.991705); //Coordinates from OpenStreetMap
         Order order = new Order();
         order.setAddress("selma lagerløfs vej 300");
@@ -38,4 +38,10 @@ public class GPSTest {
         Assertions.assertEquals(ghPoint.getLat(), order.getLatLon().getLat());
         Assertions.assertEquals(ghPoint.getLon(), order.getLatLon().getLon());
     }
+
+    @Test
+    public void milliConverter(double ms){
+        
+    }
+
 }
