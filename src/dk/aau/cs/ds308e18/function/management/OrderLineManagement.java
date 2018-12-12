@@ -86,7 +86,6 @@ public class OrderLineManagement {
     */
     public static void overrideOrderLine(Order order) {
         DatabaseConnection dbConn = new DatabaseConnection();
-        DatabaseExport dbExport = new DatabaseExport();
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
@@ -112,6 +111,7 @@ public class OrderLineManagement {
 
     private static void importUpdatedOrderLines(Order order) {
         for(OrderLine orderLine : order.getOrderLines()) {
+            orderLine.setOrder(order.getID());
             createOrderLine(orderLine);
         }
     }

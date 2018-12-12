@@ -38,7 +38,6 @@ public class OrderManagement {
     Replace an order in the database with this order (both should have the same orderID)
     */
     public static void overrideOrder(Order order) {
-
         DatabaseConnection dbConn = new DatabaseConnection();
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if(conn != null) {
