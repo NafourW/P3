@@ -4,10 +4,12 @@ import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.function.management.WareManagement;
 import dk.aau.cs.ds308e18.gui.TableManager;
 import dk.aau.cs.ds308e18.model.Ware;
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -38,9 +40,19 @@ public class WareListController {
         wareListManager.setMultiSelectEnabled(true);
         wareListManager.setupColumns();
 
-        for (Ware ware : WareManagement.getWares()) {
-            wareListManager.addItem(ware);
-        }
+        //load table inside scene for quicker scene swap
+        loadWareTransition();
+    }
+
+    private void loadWareTransition() {
+        PauseTransition pauseTransition = new PauseTransition(Duration.seconds(0.09));
+        pauseTransition.setOnFinished(event -> {
+            for (Ware ware : WareManagement.getWares()) {
+                wareListManager.addItem(ware);
+            }
+        });
+
+        pauseTransition.play();
     }
 
     @FXML

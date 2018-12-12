@@ -5,12 +5,14 @@ import dk.aau.cs.ds308e18.function.management.TourManagement;
 import dk.aau.cs.ds308e18.gui.TableManager;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
+import javafx.animation.PauseTransition;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -58,7 +60,17 @@ public class TourListController {
         //setup onTourSelected method
         tourListTable.getSelectionModel().selectedItemProperty().addListener(this::onTourSelected);
 
-        refreshTourList();
+        //load table inside scene for quicker scene swap
+        loadTourTransition();
+    }
+
+    private void loadTourTransition() {
+        PauseTransition pauseTransition = new PauseTransition(Duration.seconds(0.09));
+        pauseTransition.setOnFinished(event -> {
+            refreshTourList();
+        });
+
+        pauseTransition.play();
     }
 
     private void setTourButtonsDisabled(boolean disabled) {
