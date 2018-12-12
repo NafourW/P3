@@ -77,9 +77,7 @@ public class SettingsController {
 
     @FXML
     private void importDataButtonAction(ActionEvent event) {
-        Main.dbImport.importWares(sourcePath);
-        Main.dbImport.importOrders(sourcePath);
-        Main.dbImport.importOrderLines(sourcePath);
+        Main.dbImport.importAll(sourcePath);
     }
 
     @FXML

@@ -51,7 +51,11 @@ public class DatabaseImport {
         }
     }
 
-
+    public void importAll(String sourcePath){
+        importWares(sourcePath);
+        importOrders(sourcePath);
+        importOrderLines(sourcePath);
+    }
 
     /*
     ....
