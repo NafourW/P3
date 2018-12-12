@@ -4,6 +4,7 @@ import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 import dk.aau.cs.ds308e18.io.database.DatabaseExport;
 import dk.aau.cs.ds308e18.model.Order;
+import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Tour;
 
 import java.sql.Connection;
@@ -71,6 +72,8 @@ public class OrderManagement {
                 stmt.setInt(21, order.getOrderID());
 
                 stmt.executeUpdate();
+
+                OrderLineManagement.overrideOrderLine(order);
             }
         } catch(SQLException e) {
             e.printStackTrace();
