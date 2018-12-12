@@ -230,27 +230,30 @@ public class DatabaseExport {
         Order order = new Order();
 
         try {
-            order.setOrderID         (resultSet.getInt    (1));
-            order.setTourID          (resultSet.getInt    (2));
-            order.setPluckRoute      (resultSet.getInt    (3));
-            order.setID              (resultSet.getString (4));
-            order.setOrderReference  (resultSet.getString (5));
-            order.setExpeditionStatus(resultSet.getString (6));
-            order.setCustomerName    (resultSet.getString (7));
-            order.setDate            (resultSet.getDate   (8).toLocalDate());
-            order.setAddress         (resultSet.getString (9));
+            order.setOrderID          (resultSet.getInt    (1));
+            order.setTourID           (resultSet.getInt    (2));
+            order.setPluckRoute       (resultSet.getInt    (3));
+            order.setID               (resultSet.getString (4));
+            order.setOrderReference   (resultSet.getString (5));
+            order.setExpeditionStatus (resultSet.getString (6));
+            order.setCustomerName     (resultSet.getString (7));
+            order.setDate             (resultSet.getDate   (8).toLocalDate());
+            order.setAddress          (resultSet.getString (9));
             //TODO: get latLon from database
             //order.setLatLon();
-            order.setZipCode         (resultSet.getInt    (10));
-            order.setReceipt         (resultSet.getInt    (11));
-            order.setPickup          (resultSet.getBoolean(12));
-            order.setWarehouse       (resultSet.getString (13));
-            order.setCategory        (resultSet.getString (14));
-            order.setFleetOwner      (resultSet.getString (15));
-            order.setPrinted         (resultSet.getBoolean(16));
-            order.setRegion          (resultSet.getString (17));
-            order.setFV              (resultSet.getBoolean(18));
-            order.setProject         (resultSet.getString (19));
+            order.setZipCode          (resultSet.getInt    (10));
+            order.setReceipt          (resultSet.getInt    (11));
+            order.setPickup           (resultSet.getBoolean(12));
+            order.setWarehouse        (resultSet.getString (13));
+            order.setCategory         (resultSet.getString (14));
+            order.setFleetOwner       (resultSet.getString (15));
+            order.setPrinted          (resultSet.getBoolean(16));
+            order.setRegion           (resultSet.getString (17));
+            order.setFV               (resultSet.getBoolean(18));
+            order.setProject          (resultSet.getString (19));
+            order.setTotalLiftAlone   (resultSet.getBoolean(20));
+            order.setTotalLiftingTools(resultSet.getBoolean(21));
+            order.setTotalTime        (resultSet.getInt    (22));
 
             ArrayList<OrderLine> orderLines = OrderLineManagement.getOrderLinesOnOrder(order);
             for (OrderLine orderLine : orderLines)
