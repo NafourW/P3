@@ -79,6 +79,40 @@ public class OrderLineManagement {
         return Main.dbExport.exportOrderLines();
     }
 
+    /*
+    Overrides an orderline information with new orderline object information.
+    References the orderline through its orderID.
+    */
+    public static void overrideOrderLine(OrderLine orderLine) {
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "UPDATE orderlines SET orderReference = ?, wareNumber = ?, " +
+                        "wareName = ?, labels = ?, delivered = ?, individual = ?, preparing = ?, " +
+                        "individualNumber = ?, model = ?, fullName = ? WHERE orderID = ?";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+
+                //TODO HJÆÆÆÆÆÆÆLP
+                stmt.setString(1, orderLine.getOrder());
+                stmt.setString(2, orderLine.getWareNumber());
+                stmt.setString(3, orderLine.getWareName());
+                stmt.setString(4, String.valueOf(orderLine.getLabels()));
+                stmt.setString(5, String.valueOf(orderLine.getDelivered()));
+                stmt.setString(6, orderLine.getIndividual());
+                stmt.setString(7, String.valueOf(orderLine.isPreparing()));
+                stmt.setString(8, orderLine.getIndividualNumber());
+                stmt.setString(9, orderLine.getModel());
+                stmt.setString(10, orderLine.getFullName());
+                stmt.setInt(11, orderLine.getOrderID());
+
+                stmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void orderLineInfo(ArrayList<OrderLine> orderLines){
 

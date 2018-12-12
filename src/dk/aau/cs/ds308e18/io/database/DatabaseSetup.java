@@ -12,7 +12,6 @@ public class DatabaseSetup {
     private void databaseSetup() {
         createDatabase();
         createTourTable();
-        createWareTable();
         createWareListTable();
         createRegionTable();
         createAddressesTable();
@@ -113,27 +112,6 @@ public class DatabaseSetup {
             }
         } catch(SQLException e) {
             System.out.println("The tour table already exists.");
-        }
-    }
-
-    /*
-    Create a table called "wares" that holds the ID for the order that the ware is on
-    and an ID that references a ware in the "warelist" table seen below.
-    Lastly it holds an amount of that specific ware.
-    */
-    private void createWareTable() {
-        DatabaseConnection dbConn = new DatabaseConnection();
-        try(Connection conn = dbConn.establishConnectionToDatabase()) {
-            if (conn != null) {
-                String sql = "CREATE TABLE wares (" +
-                        "orderID INT," +
-                        "wareID INT," +
-                        "amount INT)";
-                PreparedStatement stmt = conn.prepareStatement(sql);
-                stmt.executeUpdate();
-            }
-        } catch(SQLException e) {
-            System.out.println("The ware table already exists.");
         }
     }
 
