@@ -80,15 +80,15 @@ public class EditTourController implements ISelectionController {
     Called when an order is selected in the order list
     */
     private void onOrderSelected(ObservableValue<? extends Order> obs, Order oldSelection, Order newSelection) {
-        //the selected item is assigned to selectedTour
+        //the selected item is assigned to selectedOrder
         selectedOrder = newSelection;
 
         //if the same thing was selected: do nothing
         if (oldSelection == newSelection)
             return;
 
-        //enable/disable tour buttons,
-        //depending on whether a tour is selected
+        //enable/disable order buttons,
+        //depending on whether an order is selected
         setOrderButtonsDisabled((selectedOrder == null));
     }
 

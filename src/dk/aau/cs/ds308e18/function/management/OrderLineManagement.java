@@ -80,6 +80,58 @@ public class OrderLineManagement {
     }
 
 
+    /*
+    Overrides orderline information on an order.
+    */
+    public static void overrideOrderLine(Order order) {
+        DatabaseConnection dbConn = new DatabaseConnection();
+        DatabaseExport dbExport = new DatabaseExport();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "DELETE FROM orderlines WHERE orderID = ?";
+
+                String sql2 = "INSERT INTO orderlines VALUES (orderReference = ?, wareNumber = ?, " +
+                        "wareName = ?, labels = ?, delivered = ?, individual = ?, preparing = ?, " +
+                        "individualNumber = ?, model = ?, fullName = ?)";
+
+                /*
+                Delete orderlines from database.
+                */
+                for(OrderLine orderLine : dbExport.exportOrderLines()) {
+                    PreparedStatement stmt = conn.prepareStatement(sql);
+                    stmt.setInt(1, order.getOrderID());
+
+                    stmt.executeUpdate();
+                }
+
+                /*
+                Import updated orderlines from order object to database.
+                */
+                for(OrderLine orderLine : order.getOrderLines()) {
+                    PreparedStatement stmt = conn.prepareStatement(sql2);
+
+                    //TODO HJÆÆÆÆÆÆÆLP
+                    stmt.setString(1, orderLine.getOrder());
+                    stmt.setString(2, orderLine.getWareNumber());
+                    stmt.setString(3, orderLine.getWareName());
+                    stmt.setString(4, String.valueOf(orderLine.getLabels()));
+                    stmt.setString(5, String.valueOf(orderLine.getDelivered()));
+                    stmt.setString(6, orderLine.getIndividual());
+                    stmt.setString(7, String.valueOf(orderLine.isPreparing()));
+                    stmt.setString(8, orderLine.getIndividualNumber());
+                    stmt.setString(9, orderLine.getModel());
+                    stmt.setString(10, orderLine.getFullName());
+
+                    stmt.executeUpdate();
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public void orderLineInfo(ArrayList<OrderLine> orderLines){
 
         float totalTime = 0;
