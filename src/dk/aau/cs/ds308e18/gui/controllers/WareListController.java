@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -16,6 +17,8 @@ import java.io.IOException;
 public class WareListController {
 
     @FXML private TableView<Ware> wareListTable;
+
+    @FXML private ImageView loadingImage;
 
     @FXML private TableColumn<Ware, String> WareNumber;
     @FXML private TableColumn<Ware, String> WareType;
@@ -53,6 +56,7 @@ public class WareListController {
             for (Ware ware : WareManagement.getWares()) {
                 wareListManager.addItem(ware);
             }
+            loadingImage.setImage(null);
         });
 
         pauseTransition.play();
