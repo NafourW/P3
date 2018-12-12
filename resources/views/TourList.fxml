@@ -47,7 +47,10 @@
                <children>
                   <HBox>
                      <children>
-                        <Button minHeight="50.0" minWidth="120.0" mnemonicParsing="false" onAction="#createEmptyTourButtonAction" text="%button_create_empty_tour" textAlignment="CENTER" />
+                        <Button minHeight="50.0" minWidth="120.0" mnemonicParsing="false" onAction="#createEmptyTourButtonAction" text="%button_create_empty_tour" textAlignment="CENTER">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin></Button>
                         <Button minHeight="50.0" minWidth="120.0" mnemonicParsing="false" onAction="#generateToursButtonAction" text="%button_generate_tours" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets right="10.0" />
