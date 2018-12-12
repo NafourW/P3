@@ -29,8 +29,10 @@ public class TourGeneratorController {
     @FXML private CheckBox allRegionsCheckBox;
     @FXML private DatePicker datePicker;
     @FXML private CheckBox allDatesCheckBox;
-    @FXML private TextField breakTimeField;
     @FXML private CheckBox forceOrdersCheckBox;
+
+    @FXML private TextField breakTimeField;
+    @FXML private TextField workTimeField;
 
     private ObservableList<String> regions = FXCollections.observableArrayList();
 
@@ -50,6 +52,9 @@ public class TourGeneratorController {
 
         allDatesCheckBox.setSelected(true);
         allDatesCheckBoxAction(null);
+
+        workTimeField.setText(String.valueOf(TourGenerator.DEFAULT_WORK_TIME));
+        breakTimeField.setText(String.valueOf(TourGenerator.DEFAULT_BREAK_TIME));
     }
 
     @FXML
@@ -77,6 +82,7 @@ public class TourGeneratorController {
             //Get settings
             TourGeneratorSettings settings = new TourGeneratorSettings();
             settings.method = planningChoiceBox.getValue();
+            settings.workTime = Integer.valueOf(workTimeField.getText());
             settings.breakTime = Integer.valueOf(breakTimeField.getText());
             settings.forceOrdersOnTour = forceOrdersCheckBox.isSelected();
 

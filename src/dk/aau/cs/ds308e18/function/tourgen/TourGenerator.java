@@ -14,6 +14,9 @@ public class TourGenerator {
     public static final int MIN_ORDERS_PER_TOUR = 2;
     public static final int MAX_ORDERS_PER_TOUR = 20;
 
+    public static final int DEFAULT_WORK_TIME = 480;
+    public static final int DEFAULT_BREAK_TIME = 45;
+
     public static ArrayList<Tour> generateTours(ArrayList<Order> orders, TourGeneratorSettings settings){
         ArrayList<Tour> generatedTours = new ArrayList<>();
         ArrayList<Tour> filledTours = new ArrayList<>();

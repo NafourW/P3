@@ -87,6 +87,16 @@
             </VBox>
             <VBox>
                <children>
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="150.0" text="%label_tourgen_work_time">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="workTimeField" layoutX="10.0" layoutY="45.0">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </TextField>
                   <Label prefHeight="25.0" prefWidth="150.0" text="%label_tourgen_break_time">
                      <font>
                         <Font size="14.0" />
@@ -95,12 +105,15 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="breakTimeField" text="0">
+                  <TextField fx:id="breakTimeField">
                      <VBox.margin>
-                        <Insets bottom="20.0" />
+                        <Insets />
                      </VBox.margin>
                   </TextField>
-                  <CheckBox fx:id="forceOrdersCheckBox" mnemonicParsing="false" text="%label_tourgen_force_orders_on_tours" />
+                  <CheckBox fx:id="forceOrdersCheckBox" mnemonicParsing="false" text="%label_tourgen_force_orders_on_tours">
+                     <VBox.margin>
+                        <Insets top="59.0" />
+                     </VBox.margin></CheckBox>
                </children>
             </VBox>
          </children>
