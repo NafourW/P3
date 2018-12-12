@@ -94,6 +94,10 @@ public class DatabaseImport {
 
                     order.setTotalTime(orderResults.get(2));
 
+                    order.setTotalTime(OrderLineManagement.orderLoadTime(orderLines));
+                    order.setTotalLiftAlone(OrderLineManagement.isLiftAlone(orderLines));
+                    order.setTotalLiftingTools(OrderLineManagement.isLiftEquipment(orderLines));
+
                     OrderManagement.createOrder(order);
                 }
                 System.out.println("Orders imported.");
