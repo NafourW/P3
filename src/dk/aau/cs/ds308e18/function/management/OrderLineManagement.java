@@ -89,18 +89,18 @@ public class OrderLineManagement {
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
-                String sql = "DELETE FROM orderlines WHERE orderID = ?";
+                String sql = "DELETE FROM orderlines WHERE orderReference = ?";
 
-                String sql2 = "INSERT INTO orderlines VALUES (orderReference = ?, wareNumber = ?, " +
-                        "wareName = ?, labels = ?, delivered = ?, individual = ?, preparing = ?, " +
-                        "individualNumber = ?, model = ?, fullName = ?)";
+                String sql2 = "INSERT INTO orderlines (orderReference, wareNumber, wareName, " +
+                        "labels, delivered, individual, preparing, individualNumber, model, fullName) " +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                 /*
                 Delete orderlines from database.
                 */
                 for(OrderLine orderLine : dbExport.exportOrderLines()) {
                     PreparedStatement stmt = conn.prepareStatement(sql);
-                    stmt.setInt(1, order.getOrderID());
+                    stmt.setString(1, orderLine.getOrder());
 
                     stmt.executeUpdate();
                 }
