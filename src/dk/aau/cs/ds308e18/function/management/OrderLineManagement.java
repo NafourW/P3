@@ -93,7 +93,7 @@ public class OrderLineManagement {
 
                 String sql2 = "INSERT INTO orderlines VALUES (orderReference = ?, wareNumber = ?, " +
                         "wareName = ?, labels = ?, delivered = ?, individual = ?, preparing = ?, " +
-                        "individualNumber = ?, model = ?, fullName = ?";
+                        "individualNumber = ?, model = ?, fullName = ?)";
 
                 /*
                 Delete orderlines from database.
@@ -122,7 +122,6 @@ public class OrderLineManagement {
                     stmt.setString(8, orderLine.getIndividualNumber());
                     stmt.setString(9, orderLine.getModel());
                     stmt.setString(10, orderLine.getFullName());
-                    stmt.setInt(11, orderLine.getOrderID());
 
                     stmt.executeUpdate();
                 }
