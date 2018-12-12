@@ -66,8 +66,6 @@ public class TourGenerator {
                 long spareTime = availableTime - totalTimeBefore;
 
                 if (overTime <= spareTime){
-                    tour.addOrder(o);
-                    previousOrder = o;
                 }
             } else {
                 continue;
