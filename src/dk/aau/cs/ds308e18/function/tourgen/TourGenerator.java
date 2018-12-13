@@ -83,8 +83,10 @@ public class TourGenerator {
         ArrayList<Tour> invalidTours = new ArrayList<>();
 
         for (Tour t : processedTours) {
-            //If tour does not have enough orders, and we don't force all orders on tours
-            if (t.getOrders().size() < MIN_ORDERS_PER_TOUR && !settings.forceOrdersOnTour) {
+            //If tour doesn't have any orders
+            //Or if tour does not have enough orders, and we don't force all orders on tours
+            if ((t.getOrders().size() < 1) ||
+                    (t.getOrders().size() < MIN_ORDERS_PER_TOUR && !settings.forceOrdersOnTour)) {
                 //Mark as invalid
                 invalidTours.add(t);
             }
@@ -126,8 +128,8 @@ public class TourGenerator {
             long timeTravelBack = 0;
 
             try {
-                timeTravelTo   = gps.getMillis(previousPoint, o.getLatLon());
-                timeTravelBack = gps.getMillis(o.getLatLon(), startPoint);
+                timeTravelTo   = gps.getMillis(previousPoint, o.getLatLon()) / 60000;
+                timeTravelBack = gps.getMillis(o.getLatLon(), startPoint)    / 60000;
             }
             catch (RuntimeException e) {
                 System.out.println("Can't get millis for: " + o);

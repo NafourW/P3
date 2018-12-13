@@ -40,6 +40,7 @@ public class TourGeneratorController {
     public void initialize() {
         planningChoiceBox.getItems().setAll(TourGeneratorSettings.planningMethod.values());
         planningChoiceBox.setValue(TourGeneratorSettings.planningMethod.leastTime);
+        planningChoiceBox.setDisable(true);
 
         regions.addAll(Main.dbExport.exportRegionNames());
         regionChoiceBox.setItems(regions);
