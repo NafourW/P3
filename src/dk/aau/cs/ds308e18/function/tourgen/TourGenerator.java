@@ -181,11 +181,9 @@ public class TourGenerator {
         //Add the current order to list
         outputList.add(currentOrder);
 
-        //Remove the order from the list
-        //orderList.remove(currentOrder);
-
         //For the current order find the one closest to it
         for (Order nextOrder : orderList) {
+            //Check at den næste ordre ikke er tilføjet før
             if (outputList.contains(nextOrder)) {
                 //Do nothing
             } else if (bestTime > gps.getMillis(currentOrder.getLatLon(), nextOrder.getLatLon())) {
