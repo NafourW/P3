@@ -186,9 +186,8 @@ public class TourGenerator {
 
         //For the current order find the one closest to it
         for (Order nextOrder : orderList) {
-            System.out.println(orderIndex);
             if (outputList.contains(nextOrder)) {
-                //
+                //Do nothing
             } else if (bestTime > gps.getMillis(currentOrder.getLatLon(), nextOrder.getLatLon())) {
                 bestTime = gps.getMillis(currentOrder.getLatLon(), nextOrder.getLatLon());
                 nextOrderIndex = orderIndex;
@@ -219,8 +218,8 @@ public class TourGenerator {
             orderIndex++;
         }
         //Get rest of orders in sequence
-        sortOrdersByTime(orderList.get(indexFirstOrder), orderList, outputList);
 
-        return outputList;
+        return sortOrdersByTime(orderList.get(indexFirstOrder), orderList, outputList);
+
     }
 }
