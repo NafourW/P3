@@ -136,7 +136,7 @@ public class TourGenerator {
                 System.out.println(o.getLatLon());
             }
 
-            totalTimeAfter += timeTravelTo + o.getTotalTime() + timeTravelBack;
+            totalTimeAfter -= timeTravelTo + o.getTotalTime() + timeTravelBack;
 
             if (totalTimeAfter >= availableTime){
                 //Set timeBefore to the new value
