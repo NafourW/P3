@@ -4,23 +4,27 @@ import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class TourGeneratorTest {
 
-    @BeforeAll @AfterAll
+    @BeforeAll
+    @AfterAll
     static void RefreshDatabaseBefore() {
         DatabaseSetup databaseSetup = new DatabaseSetup();
         databaseSetup.reloadDatabase();
     }
-    
+
     @Test
-    void TestToursHaveAtLeastMinimumOrders(){
+    void TestToursHaveAtLeastMinimumOrders() {
         ArrayList<Order> orders = new ArrayList<>();
 
         TourGeneratorSettings settings = new TourGeneratorSettings();
@@ -41,7 +45,7 @@ public class TourGeneratorTest {
     }
 
     @Test
-    void TestOrdersPerTourDoesNotExceedLimit(){
+    void TestOrdersPerTourDoesNotExceedLimit() {
         ArrayList<Order> orders = new ArrayList<>();
 
         TourGeneratorSettings settings = new TourGeneratorSettings();
@@ -136,5 +140,42 @@ public class TourGeneratorTest {
             if (!hasBeenAssigned)
                 fail("Order has not been assigned to a tour");
         }
+    }
+
+    @Test
+    void firstOrderTest() {
+        TourGenerator tg = new TourGenerator();
+        Order orderAAB = new Order();
+        Order orderSkagen = new Order();
+        Order orderHJ = new Order();
+        Order orderStovring = new Order();
+        List<Order> orderList = new ArrayList<>();
+        List<Order> correctList = new ArrayList<>();
+
+        orderStovring.setAddress("Hobrovej 55");
+        orderStovring.setZipCode(9530);
+        orderAAB.setAddress("selma lagerløfs vej 300");
+        orderAAB.setZipCode(9000);
+        orderSkagen.setAddress("Hans ruths vej 1");
+        orderSkagen.setZipCode(9990);
+        orderHJ.setAddress("Kærparken 9");
+        orderHJ.setZipCode(9800);
+
+        orderAAB.requestLatLonFromAddress();
+        orderHJ.requestLatLonFromAddress();
+        orderSkagen.requestLatLonFromAddress();
+        orderStovring.requestLatLonFromAddress();
+
+        orderList.add(orderSkagen);
+        orderList.add(orderAAB);
+        orderList.add(orderStovring);
+        orderList.add(orderHJ);
+
+        correctList.add(orderStovring);
+        correctList.add(orderAAB);
+        correctList.add(orderHJ);
+        correctList.add(orderSkagen);
+
+        Assertions.assertEquals(correctList, tg.firstOrder(orderList));
     }
 }

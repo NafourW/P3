@@ -181,18 +181,22 @@ public class TourGenerator {
         //Add the current order to list
         outputList.add(currentOrder);
 
+        //Remove the order from the list
+        //orderList.remove(currentOrder);
+
         //For the current order find the one closest to it
-        for (Order o : orderList) {
-            if (o.equals(currentOrder)) {
-                //do nothing
-            } else if (bestTime > gps.getMillis(currentOrder.getLatLon(), o.getLatLon())) {
-                bestTime = gps.getMillis(currentOrder.getLatLon(), o.getLatLon());
+        for (Order nextOrder : orderList) {
+            System.out.println(orderIndex);
+            if (outputList.contains(nextOrder)) {
+                //
+            } else if (bestTime > gps.getMillis(currentOrder.getLatLon(), nextOrder.getLatLon())) {
+                bestTime = gps.getMillis(currentOrder.getLatLon(), nextOrder.getLatLon());
                 nextOrderIndex = orderIndex;
             }
             orderIndex++;
         }
         //Recursively call function to get full list of orders in sequence
-        if (outputList.size() != orderList.size()) {
+        if (outputList.size() < orderList.size()) {
             sortOrdersByTime(orderList.get(nextOrderIndex), orderList, outputList);
         }
         return outputList;
