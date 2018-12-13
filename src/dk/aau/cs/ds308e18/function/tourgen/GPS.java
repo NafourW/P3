@@ -29,23 +29,22 @@ public class GPS {
     private GraphHopper hopper = new GraphHopper().forServer();
 
     public GPS() {
-        // where to store graphhopper files?
+        // Store and load graphhopper files
         hopper.setOSMFile("C:/Users/the_p/Desktop/graphhopper_real/europe_denmark.osm");
-        //hopper.setDataReaderFile("C:/Users/the_p/Desktop/graphhopper-0.8/denmark-latest.osm.pbf");
-        //hopper.setCHEnabled(false);
         hopper.setGraphHopperLocation("resources/graphhopper_map");
         hopper.setEncodingManager(new EncodingManager(vehicle));
         hopper.importOrLoad();
     }
 
 
-    public GHPoint GeocodeAddress(String address) {
+    //Return Lattitude, Longtitude based on address from API
+    public GHPoint GeocodeAddress(String address, int zipCode) {
         String key = "1095aac7-8a71-4c56-b725-eca17fdf1284";
         String linkGeocode = "https://graphhopper.com/api/1/geocode?q=";
         String linkEnd = "&locale=en&debug=true&key=";
         StringBuilder jsonBuild = new StringBuilder();
         String json = "";
-        String tempAddress = address;
+        String tempAddress = address + " " + zipCode;
         double lat;
         double lon;
 
@@ -56,7 +55,7 @@ public class GPS {
         StringBuilder sb = new StringBuilder();
         sb.append(linkGeocode).append(tempAddress).append(linkEnd).append(key);
 
-        // URL Request
+        //URL Request
         URL url = null;
         try {
             url = new URL(sb.toString());
@@ -87,16 +86,19 @@ public class GPS {
 
         //Read Json response
         JSONArray hits = null;
+        //Enter Json "hits"
         if (jb != null) hits = (JSONArray) jb.get("hits");
-        JSONObject hitsIndent = null;
-        if (hits.size() > 0) hitsIndent = (JSONObject) hits.get(0);
-        JSONObject ghPoint = null;
-        if (hitsIndent != null) ghPoint = (JSONObject) hitsIndent.get("point");
+        JSONObject firstCase = null;
+        //Enter the first case (could be more than 1)
+        if (hits.size() > 0) firstCase = (JSONObject) hits.get(0);
+        JSONObject point = null;
+        //Enter point
+        if (firstCase != null) point = (JSONObject) firstCase.get("point");
 
         //Set the order's point
-        if (ghPoint != null) {
-            lat = (double) ghPoint.get("lat");
-            lon = (double) ghPoint.get("lng");
+        if (point != null) {
+            lat = (double) point.get("lat");
+            lon = (double) point.get("lng");
 
             return new GHPoint(lat, lon);
         }

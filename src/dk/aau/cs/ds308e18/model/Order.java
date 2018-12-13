@@ -262,7 +262,7 @@ public class Order {
     }
 
     public void requestLatLonFromAddress() {
-        this.latLon = gps.GeocodeAddress(address);;
+        this.latLon = gps.GeocodeAddress(address, zipCode);;
         saveLatLonInDataBase(address);
     }
 

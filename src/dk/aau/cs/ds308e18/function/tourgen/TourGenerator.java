@@ -3,11 +3,11 @@ package dk.aau.cs.ds308e18.function.tourgen;
 import com.graphhopper.util.shapes.GHPoint;
 import dk.aau.cs.ds308e18.function.management.TourManagement;
 import dk.aau.cs.ds308e18.model.Order;
-import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Tour;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TourGenerator {
 
@@ -17,7 +17,9 @@ public class TourGenerator {
     public static final int DEFAULT_WORK_TIME = 480;
     public static final int DEFAULT_BREAK_TIME = 45;
 
-    public static ArrayList<Tour> generateTours(ArrayList<Order> orders, TourGeneratorSettings settings){
+    GPS gps = new GPS();
+
+    public static ArrayList<Tour> generateTours(ArrayList<Order> orders, TourGeneratorSettings settings) {
         ArrayList<Tour> initialTours = new ArrayList<>();
         ArrayList<Tour> processedTours = new ArrayList<>();
 
@@ -89,8 +91,7 @@ public class TourGenerator {
                     (t.getOrders().size() < MIN_ORDERS_PER_TOUR && !settings.forceOrdersOnTour)) {
                 //Mark as invalid
                 invalidTours.add(t);
-            }
-            else{
+            } else {
                 //Update tour ids on orders
                 TourManagement.createTour(t);
             }
@@ -104,7 +105,7 @@ public class TourGenerator {
         return processedTours;
     }
 
-    private static ArrayList<Tour> processTour(Tour initialTour, TourGeneratorSettings settings){
+    private static ArrayList<Tour> processTour(Tour initialTour, TourGeneratorSettings settings) {
         GPS gps = new GPS();
 
         ArrayList<Tour> processedTours = new ArrayList<>();
@@ -128,22 +129,20 @@ public class TourGenerator {
             long timeTravelBack = 0;
 
             try {
-                timeTravelTo   = gps.getMillis(previousPoint, o.getLatLon()) / 60000;
-                timeTravelBack = gps.getMillis(o.getLatLon(), startPoint)    / 60000;
-            }
-            catch (RuntimeException e) {
+                timeTravelTo = gps.getMillis(previousPoint, o.getLatLon()) / 60000;
+                timeTravelBack = gps.getMillis(o.getLatLon(), startPoint) / 60000;
+            } catch (RuntimeException e) {
                 System.out.println("Can't get millis for: " + o);
                 System.out.println(o.getLatLon());
             }
 
             totalTimeAfter -= timeTravelTo + o.getTotalTime() + timeTravelBack;
 
-            if (totalTimeAfter >= availableTime){
+            if (totalTimeAfter >= availableTime) {
                 //Set timeBefore to the new value
                 totalTimeBefore = totalTimeAfter;
 
-            }
-            else {
+            } else {
                 ordersThatDoNotFit.add(o);
                 //Reset timeAfter to the previous value
                 totalTimeAfter = totalTimeBefore;
@@ -171,5 +170,53 @@ public class TourGenerator {
         processedTours.add(initialTour);
 
         return processedTours;
+    }
+
+    //Returns a sorted list of orders based on time bewtween them. Parameter outputList should be empty when initially called
+    private List<Order> sortOrdersByTime(Order currentOrder, List<Order> orderList, List<Order> outputList) {
+        long bestTime = Long.MAX_VALUE;
+        int orderIndex = 0;
+        int nextOrderIndex = 0;
+
+        //Add the current order to list
+        outputList.add(currentOrder);
+
+        //For the current order find the one closest to it
+        for (Order o : orderList) {
+            if (o.equals(currentOrder)) {
+                //do nothing
+            } else if (bestTime > gps.getMillis(currentOrder.getLatLon(), o.getLatLon())) {
+                bestTime = gps.getMillis(currentOrder.getLatLon(), o.getLatLon());
+                nextOrderIndex = orderIndex;
+            }
+            orderIndex++;
+        }
+        //Recursively call function to get full list of orders in sequence
+        if (outputList.size() != orderList.size()) {
+            sortOrdersByTime(orderList.get(nextOrderIndex), orderList, outputList);
+        }
+        return outputList;
+    }
+
+    //Finds the first order for a tour and then sorts the sequence of the orders
+    public List<Order> firstOrder(List<Order> orderList) {
+        GHPoint vibocold = new GHPoint(56.448789, 9.33946);
+        long bestTime = Long.MAX_VALUE;
+        int orderIndex = 0;
+        int indexFirstOrder = 0;
+        List<Order> outputList = new ArrayList<>();
+
+        //Find shortest time from vibocold to order
+        for (Order order : orderList) {
+            if (bestTime > gps.getMillis(vibocold, order.getLatLon())) {
+                bestTime = gps.getMillis(vibocold, order.getLatLon());
+                indexFirstOrder = orderIndex;
+            }
+            orderIndex++;
+        }
+        //Get rest of orders in sequence
+        sortOrdersByTime(orderList.get(indexFirstOrder), orderList, outputList);
+
+        return outputList;
     }
 }
