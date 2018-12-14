@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -127,7 +128,7 @@
                                     <Label text="%label_ware_number" />
                                     <TextField fx:id="wareNumberField" GridPane.columnIndex="1">
                                        <GridPane.margin>
-                                          <Insets bottom="5.0" />
+                                          <Insets bottom="5.0" top="3.0" />
                                        </GridPane.margin></TextField>
                                     <Label text="%label_ware_amount" GridPane.rowIndex="1">
                                        <GridPane.margin>
@@ -148,11 +149,16 @@
                         <VBox HBox.hgrow="ALWAYS">
                            <children>
                               <Label text="%label_order_additional_comments" />
-                              <TextArea fx:id="commentsArea" maxWidth="400.0">
+                              <TextArea fx:id="commentsArea" maxWidth="400.0" prefHeight="105.0" prefWidth="215.0">
                                  <VBox.margin>
                                     <Insets />
                                  </VBox.margin>
                               </TextArea>
+                              <CheckBox mnemonicParsing="false" text="%label_order_2person">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </CheckBox>
                            </children>
                            <HBox.margin>
                               <Insets left="40.0" />
@@ -176,13 +182,13 @@
                   <TableColumn fx:id="WareNumber" prefWidth="72.0" text="Varenummer" />
                   <TableColumn fx:id="Individual" prefWidth="56.0" text="Individ" />
                   <TableColumn fx:id="IndividualNumber" prefWidth="132.0" text="Individ varenummer" />
-                  <TableColumn fx:id="Model" prefWidth="82.0" text="Model" />
-                  <TableColumn fx:id="FullName" prefWidth="67.0" text="Fuldt Navn" />
-                  <TableColumn fx:id="Labels" prefWidth="40.0" text="Labels" />
-                  <TableColumn fx:id="Delivered" prefWidth="281.0" text="Leveret" />
-                  <TableColumn fx:id="MoveTime" prefWidth="60.0" text="Flytte tid" />
-                  <TableColumn fx:id="LiftAlone" prefWidth="60.0" text="Løft alene" />
-                  <TableColumn fx:id="LiftEquipment" prefWidth="75.0" text="Løftanordning" />
+                  <TableColumn fx:id="Model" prefWidth="48.0" text="Model" />
+                  <TableColumn fx:id="FullName" prefWidth="71.0" text="Fuldt Navn" />
+                  <TableColumn fx:id="Labels" prefWidth="42.0" text="Labels" />
+                  <TableColumn fx:id="Delivered" prefWidth="49.0" text="Leveret" />
+                  <TableColumn fx:id="MoveTime" prefWidth="55.0" text="Flytte tid" />
+                  <TableColumn fx:id="LiftAlone" prefWidth="76.0" text="Løft alene" />
+                  <TableColumn fx:id="LiftEquipment" prefWidth="103.0" text="Løftanordning" />
                </columns>
             </TableView>
          </content>
