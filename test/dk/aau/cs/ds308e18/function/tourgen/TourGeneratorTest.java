@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,7 @@ public class TourGeneratorTest {
 
     @BeforeAll
     @AfterAll
-    static void RefreshDatabaseBefore() {
+    static void RefreshDatabaseBefore() throws IOException {
         DatabaseSetup databaseSetup = new DatabaseSetup();
         databaseSetup.reloadDatabase();
     }

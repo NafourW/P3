@@ -15,11 +15,8 @@ public class DatabaseConnection {
     Without this function, the rest in the class won't work.
     */
     public Connection establishConnectionToDatabase() {
-        String host = "jdbc:mysql://localhost:3306/vibocold_db";
-        String uName = "root";
-        String uPass = "";
         try {
-            return DriverManager.getConnection(host, uName, uPass);
+            return DriverManager.getConnection(DatabaseSetup.getHost(), DatabaseSetup.getUserName(), DatabaseSetup.getPassword());
         } catch (SQLException e) {
             System.out.println("Couldn't establish a connection.\n" +
                     "Try restarting the Database");

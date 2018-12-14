@@ -1,11 +1,52 @@
 package dk.aau.cs.ds308e18.io.database;
 
+import dk.aau.cs.ds308e18.io.GetProperties;
+
+import java.io.IOException;
 import java.sql.*;
+import java.util.Properties;
 
 public class DatabaseSetup {
+    private static String host;
+    private static String userName;
+    private static String password;
 
-    public DatabaseSetup() {
+    public DatabaseSetup() throws IOException{
+        loadConfiguration();
         databaseSetup();
+    }
+
+    private void loadConfiguration() throws IOException {
+        Properties properties = GetProperties.getProperties("mySQL");
+
+        String address      = properties.getProperty("address",      "localhost");
+        String port         = properties.getProperty("port",         "3306");
+        String dataBaseName = properties.getProperty("databaseName", "vibocold_db");
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("jdbc:mysql://")
+                .append(address)
+                .append(":")
+                .append(port)
+                .append("/")
+                .append(dataBaseName);
+
+        host = stringBuilder.toString();
+
+        userName = properties.getProperty("userName", "root");
+        password = properties.getProperty("password", "");
+    }
+
+    public static String getHost(){
+        return host;
+    }
+
+    public static String getUserName(){
+        return userName;
+    }
+
+    public static String getPassword(){
+        return password;
     }
 
     // Run this function to make sure a database and corresponding tables are created.

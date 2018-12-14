@@ -25,11 +25,11 @@ public class Main extends Application {
     }
 
     @Override
-    public void init() {
+    public void init() throws IOException{
         //Initialize database
+        dbSetup = new DatabaseSetup();
         dbImport = new DatabaseImport();
         dbExport = new DatabaseExport();
-        dbSetup = new DatabaseSetup();
 
         //Initialize GUI
         gui = new GUI();
