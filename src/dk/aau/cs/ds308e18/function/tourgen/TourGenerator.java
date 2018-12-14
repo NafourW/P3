@@ -33,15 +33,15 @@ public class TourGenerator {
         //iterate through each order
         for (Order o : orders) {
             //get the order's date
-            LocalDate orderDate = o.getDate();
+            int orderWeek = o.getWeekNumber();
             String orderRegion = o.getRegion();
 
             boolean assignedToPrevioustour = false;
 
             //iterate through each tour
             for (Tour t : initialTours) {
-                //this date was already used by a previous tour, and that tour has the same date/region,
-                if (orderDate.equals(t.getTourDate()) && orderRegion.equals(t.getRegion())) {
+                //if this week was already used by a previous tour, and that tour has the same region,
+                if (orderWeek == t.getWeekNumber() && orderRegion.equals(t.getRegion())) {
                     //use the previous tour
                     tour = t;
                     assignedToPrevioustour = true;
@@ -53,7 +53,7 @@ public class TourGenerator {
             if (!assignedToPrevioustour) {
                 //make a new tour
                 tour = new Tour();
-                tour.setTourDate(orderDate);
+                tour.setTourDate(o.getDate());
                 tour.setRegion(orderRegion);
                 //add it to the list of generated tours
                 initialTours.add(tour);

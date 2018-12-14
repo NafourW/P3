@@ -4,6 +4,7 @@ import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.function.tourgen.TourGenerator;
 
 import java.time.LocalDate;
+import java.time.temporal.WeekFields;
 import java.util.ArrayList;
 
 public class Tour {
@@ -145,6 +146,12 @@ public class Tour {
     }
     public void setStatus(tourStatus status) {
         this.status = status;
+    }
+
+    public int getWeekNumber() {
+        WeekFields weekFields = WeekFields.ISO;
+        int weekNumber = tourDate.get(weekFields.weekOfWeekBasedYear());
+        return weekNumber;
     }
 
     public String getLocalizedStatusString() {
