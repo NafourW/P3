@@ -43,7 +43,6 @@ public class GPS {
         hopper.importOrLoad();
     }
 
-
     //Return Lattitude, Longtitude based on address from API
     public GHPoint GeocodeAddress(String address, int zipCode) {
         String linkGeocode = "https://graphhopper.com/api/1/geocode?q=";

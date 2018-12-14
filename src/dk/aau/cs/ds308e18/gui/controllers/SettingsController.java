@@ -197,12 +197,7 @@ public class SettingsController {
                 updateMessage(Main.gui.getLocalString("message_progress_exporting"));
 
                 ExportFile exportFile = new ExportFile();
-                try{
-                    exportFile.ExportTourList(Main.dbExport.exportTours(), destinationPath);
-                }
-                catch (Exception e) {
-                    System.out.println("export failed: " + e.toString());
-                }
+                exportFile.ExportData(destinationPath);
 
                 updateMessage(Main.gui.getLocalString("message_progress_export_done"));
                 setButtonsDisabled(false);
