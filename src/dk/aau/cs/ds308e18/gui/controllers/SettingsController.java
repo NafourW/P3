@@ -8,6 +8,8 @@ import dk.aau.cs.ds308e18.function.management.WareManagement;
 import dk.aau.cs.ds308e18.io.ExportFile;
 import dk.aau.cs.ds308e18.io.database.DatabaseExport;
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -39,6 +41,8 @@ public class SettingsController {
     @FXML private Button refreshDatabaseButton;
     @FXML private Button backButton;
 
+    @FXML private TextField ghKeyTextField;
+
     @FXML private TextField sourceField;
     @FXML private TextField destinationField;
 
@@ -52,6 +56,8 @@ public class SettingsController {
 
     private ObservableList<Locale> languages = FXCollections.observableArrayList();
 
+    private Preferences prefs;
+
     @FXML
     public void initialize() {
         //Add english and danish to language combobox
@@ -59,9 +65,18 @@ public class SettingsController {
         languageSelector.setItems(languages);
 
         //Use previous values for import/export directories
-        Preferences prefs = Preferences.userNodeForPackage(dk.aau.cs.ds308e18.Main.class);
+        prefs = Preferences.userNodeForPackage(dk.aau.cs.ds308e18.Main.class);
         setSourcePath(prefs.get("dataImportSourceDirectory", ""));
         setDestinationPath(prefs.get("dataExportDestinationDirectory", ""));
+
+        ghKeyTextField.setText(prefs.get("graphhopperKey", ""));
+
+        ghKeyTextField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                setGHKey(newValue);
+            }
+        });
 
         updateStatsLabel();
     }
@@ -70,7 +85,6 @@ public class SettingsController {
         sourcePath = path;
         sourceField.setText(path);
 
-        Preferences prefs = Preferences.userNodeForPackage(dk.aau.cs.ds308e18.Main.class);
         prefs.put("dataImportSourceDirectory", path);
     }
 
@@ -78,12 +92,16 @@ public class SettingsController {
         destinationPath = path;
         destinationField.setText(path);
 
-        Preferences prefs = Preferences.userNodeForPackage(dk.aau.cs.ds308e18.Main.class);
         prefs.put("dataExportDestinationDirectory", path);
+    }
+
+    private void setGHKey(String key) {
+        prefs.put("graphhopperKey", key);
     }
 
     private void setButtonsDisabled(boolean disabled) {
         languageSelector.setDisable(disabled);
+        ghKeyTextField.setDisable(disabled);
         importDataButton.setDisable(disabled);
         exportDataButton.setDisable(disabled);
         sourceBrowseButton.setDisable(disabled);

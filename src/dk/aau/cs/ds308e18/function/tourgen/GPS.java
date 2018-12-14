@@ -18,6 +18,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.prefs.Preferences;
 
 // Graphopper API
 
@@ -28,11 +29,15 @@ public class GPS {
     private GHResponse rsp;
     //private PathWrapper path;
 
+    private String ghKey;
+
     private GraphHopper hopper = new GraphHopper().forServer();
 
     public GPS() {
+        Preferences prefs = Preferences.userNodeForPackage(dk.aau.cs.ds308e18.Main.class);
+        ghKey = prefs.get("graphhopperKey", "");
+
         // Store and load graphhopper files
-        hopper.setOSMFile("C:/Users/the_p/Desktop/graphhopper_real/europe_denmark.osm");
         hopper.setGraphHopperLocation("resources/graphhopper_map");
         hopper.setEncodingManager(new EncodingManager(vehicle));
         hopper.importOrLoad();
@@ -41,7 +46,6 @@ public class GPS {
 
     //Return Lattitude, Longtitude based on address from API
     public GHPoint GeocodeAddress(String address, int zipCode) {
-        String key = "1095aac7-8a71-4c56-b725-eca17fdf1284";
         String linkGeocode = "https://graphhopper.com/api/1/geocode?q=";
         String linkEnd = "&locale=en&debug=true&key=";
         StringBuilder jsonBuild = new StringBuilder();
@@ -55,7 +59,7 @@ public class GPS {
 
         //Build link for API request
         StringBuilder sb = new StringBuilder();
-        sb.append(linkGeocode).append(tempAddress).append(linkEnd).append(key);
+        sb.append(linkGeocode).append(tempAddress).append(linkEnd).append(ghKey);
 
         //URL Request
         URL url = null;

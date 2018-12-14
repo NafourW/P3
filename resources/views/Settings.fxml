@@ -26,15 +26,67 @@
       </Label>
       <HBox>
          <children>
-            <Label prefHeight="30.0" prefWidth="150.0" text="%label_settings_language">
-               <HBox.margin>
-                  <Insets right="10.0" />
-               </HBox.margin>
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <ComboBox fx:id="languageSelector" onAction="#languageComboBoxAction" prefHeight="30.0" prefWidth="150.0" promptText="%label_settings_choose_language" />
+            <VBox>
+               <children>
+                  <HBox prefHeight="40.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="150.0" text="%label_settings_language">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="languageSelector" onAction="#languageComboBoxAction" prefHeight="30.0" prefWidth="150.0" promptText="%label_settings_choose_language">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="40.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="150.0" text="GraphHopper key">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="ghKeyTextField" prefHeight="30.0" prefWidth="300.0">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_RIGHT" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="clearAllToursButton" mnemonicParsing="false" onAction="#clearAllToursButtonAction" prefHeight="40.0" prefWidth="180.0" styleClass="button-red" text="%button_settings_clear_all_tours">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="refreshDatabaseButton" mnemonicParsing="false" onAction="#refreshDatabaseButtonAction" prefHeight="40.0" prefWidth="180.0" styleClass="button-red" text="Refresh Database">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
          </children>
          <VBox.margin>
             <Insets bottom="50.0" left="20.0" right="20.0" />
@@ -136,22 +188,6 @@
             <Insets bottom="50.0" left="20.0" right="20.0" />
          </VBox.margin>
       </VBox>
-      <Button fx:id="clearAllToursButton" mnemonicParsing="false" onAction="#clearAllToursButtonAction" prefHeight="40.0" prefWidth="180.0" styleClass="button-red" text="%button_settings_clear_all_tours">
-         <font>
-            <Font size="18.0" />
-         </font>
-         <VBox.margin>
-            <Insets left="20.0" />
-         </VBox.margin>
-      </Button>
-      <Button fx:id="refreshDatabaseButton" layoutX="40.0" layoutY="452.0" mnemonicParsing="false" onAction="#refreshDatabaseButtonAction" prefHeight="40.0" prefWidth="180.0" styleClass="button-red" text="Refresh Database">
-         <font>
-            <Font size="18.0" />
-         </font>
-         <VBox.margin>
-            <Insets left="20.0" top="10.0" />
-         </VBox.margin>
-      </Button>
       <HBox alignment="BOTTOM_LEFT" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets left="20.0" right="20.0" />
