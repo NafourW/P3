@@ -115,16 +115,8 @@ public class EditOrderController implements ISelectionController {
         //wareTypeComboBox;
         //searchNameComboBox;
         wareNameField.setText("");
-        supplierField.setText("");
-
         wareNumberField.setText("");
-        lengthField.setText("");
-        widthField.setText("");
-        heightField.setText("");
-        weightField.setText("");
-
         amountField.setText("");
-        priceField.setText("");
     }
 
     private void transferFieldsToOrder() {
