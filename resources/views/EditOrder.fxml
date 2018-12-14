@@ -178,17 +178,17 @@
          <content>
             <TableView fx:id="orderLineTable" prefHeight="156.0" prefWidth="395.0">
                <columns>
-                  <TableColumn fx:id="WareName" prefWidth="73.0" text="Varenavn" />
-                  <TableColumn fx:id="WareNumber" prefWidth="72.0" text="Varenummer" />
-                  <TableColumn fx:id="Individual" prefWidth="56.0" text="Individ" />
-                  <TableColumn fx:id="IndividualNumber" prefWidth="132.0" text="Individ varenummer" />
-                  <TableColumn fx:id="Model" prefWidth="48.0" text="Model" />
-                  <TableColumn fx:id="FullName" prefWidth="71.0" text="Fuldt Navn" />
-                  <TableColumn fx:id="Labels" prefWidth="42.0" text="Labels" />
-                  <TableColumn fx:id="Delivered" prefWidth="49.0" text="Leveret" />
-                  <TableColumn fx:id="MoveTime" prefWidth="55.0" text="Flytte tid" />
-                  <TableColumn fx:id="LiftAlone" prefWidth="76.0" text="Løft alene" />
-                  <TableColumn fx:id="LiftEquipment" prefWidth="103.0" text="Løftanordning" />
+                  <TableColumn fx:id="WareName" prefWidth="73.0" text="%label_wareName" />
+                  <TableColumn fx:id="WareNumber" prefWidth="72.0" text="%label_wareNumber" />
+                  <TableColumn fx:id="Individual" prefWidth="56.0" text="%label_individual" />
+                  <TableColumn fx:id="IndividualNumber" prefWidth="132.0" text="%label_individualNumber" />
+                  <TableColumn fx:id="Model" prefWidth="48.0" text="%label_model" />
+                  <TableColumn fx:id="FullName" prefWidth="71.0" text="%label_fullName" />
+                  <TableColumn fx:id="Labels" prefWidth="42.0" text="%label_labels" />
+                  <TableColumn fx:id="Delivered" prefWidth="49.0" text="%label_delivered" />
+                  <TableColumn fx:id="MoveTime" prefWidth="55.0" text="%label_moveTime" />
+                  <TableColumn fx:id="LiftAlone" prefWidth="76.0" text="%label_liftAlone" />
+                  <TableColumn fx:id="LiftEquipment" prefWidth="103.0" text="%label_liftEquipment" />
                </columns>
             </TableView>
          </content>
