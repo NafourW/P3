@@ -17,6 +17,7 @@ public class TourGenerator {
     public static final int DEFAULT_WORK_TIME = 480;
     public static final int DEFAULT_BREAK_TIME = 45;
 
+
     GPS gps = new GPS();
 
     public static ArrayList<Tour> generateTours(ArrayList<Order> orders, TourGeneratorSettings settings) {
