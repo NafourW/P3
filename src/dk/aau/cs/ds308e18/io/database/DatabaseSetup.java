@@ -1,11 +1,56 @@
 package dk.aau.cs.ds308e18.io.database;
 
+import dk.aau.cs.ds308e18.io.GetProperties;
+
+import java.io.IOException;
 import java.sql.*;
+import java.util.Properties;
 
 public class DatabaseSetup {
+    private static String host;
+    private static String databaseName;
+    private static String userName;
+    private static String password;
 
-    public DatabaseSetup() {
+    public DatabaseSetup() throws IOException{
+        loadConfiguration();
         databaseSetup();
+    }
+
+    private void loadConfiguration() throws IOException {
+        Properties properties = GetProperties.getProperties("mySQL");
+
+        String address      = properties.getProperty("address",      "localhost");
+        String port         = properties.getProperty("port",         "3306");
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("jdbc:mysql://")
+                .append(address)
+                .append(":")
+                .append(port)
+                .append("/");
+
+        host = stringBuilder.toString();
+        databaseName = properties.getProperty("databaseName", "vibocold_db");
+
+        userName = properties.getProperty("userName", "root");
+        password = properties.getProperty("password", "");
+    }
+
+    public static String getHost(){
+        return host;
+    }
+
+    public static String getHostWithDatabase() {return host + databaseName;}
+
+    public static String getDatabaseName() {return databaseName;}
+
+    public static String getUserName(){
+        return userName;
+    }
+
+    public static String getPassword(){
+        return password;
     }
 
     // Run this function to make sure a database and corresponding tables are created.
@@ -24,12 +69,9 @@ public class DatabaseSetup {
     If it already exists, it'll print a response.
     */
     private void createDatabase() {
-        String host = "jdbc:mysql://localhost:3306/";
-        String uName = "root";
-        String uPass = "";
-        try(Connection conn = DriverManager.getConnection(host, uName, uPass)) {
+        try(Connection conn = DriverManager.getConnection(getHost(), getUserName(), getPassword())) {
             Statement stmt = conn.createStatement();
-            stmt.executeUpdate("CREATE DATABASE vibocold_db");
+            stmt.executeUpdate("CREATE DATABASE " + getDatabaseName());
         } catch(SQLException e) {
             System.out.println("The database already exists.");
         }
@@ -41,7 +83,7 @@ public class DatabaseSetup {
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 Statement stmt = conn.createStatement();
-                stmt.executeUpdate("DROP DATABASE vibocold_db");
+                stmt.executeUpdate("DROP DATABASE " + getDatabaseName());
             }
         } catch (SQLException e) {
             e.printStackTrace();

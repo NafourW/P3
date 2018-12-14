@@ -152,12 +152,16 @@ public class TourListController {
 
     @FXML
     private void deleteTourButtonAction(ActionEvent event) {
-        TourManagement.removeTour(selectedTour);
-        tourListManager.removeItem(selectedTour);
+        boolean confirmed = Main.gui.showYesNoDialog("label_tourDel_confirmation_title", "message_tourDel_confirmation");
 
-        if (tourListManager.getItems().size() < 1) {
-            onTourSelected(null, selectedTour,null);
-            tourListManager.clearSelection();
+        if (confirmed){
+            TourManagement.removeTour(selectedTour);
+            tourListManager.removeItem(selectedTour);
+
+            if (tourListManager.getItems().size() < 1) {
+                onTourSelected(null, selectedTour,null);
+                tourListManager.clearSelection();
+            }
         }
     }
 

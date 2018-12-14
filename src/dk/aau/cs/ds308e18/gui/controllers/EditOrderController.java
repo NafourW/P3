@@ -162,8 +162,12 @@ public class EditOrderController implements ISelectionController {
 
     @FXML
     private void cancelOrderButtonAction(ActionEvent event) throws IOException{
-        OrderManagement.deleteOrderFromDatabase(selectedOrder);
-        Main.gui.changeView("OrderList");
+        boolean confirmed = Main.gui.showYesNoDialog("label_orderDel_confirmation_title", "message_orderDel_confirmation");
+
+        if (confirmed){
+            OrderManagement.deleteOrderFromDatabase(selectedOrder);
+            Main.gui.changeView("OrderList");
+        }
     }
 
     @FXML

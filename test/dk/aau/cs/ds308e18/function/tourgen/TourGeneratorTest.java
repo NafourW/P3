@@ -8,17 +8,19 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import static dk.aau.cs.ds308e18.function.tourgen.TourGenerator.firstOrder;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class TourGeneratorTest {
 
     @BeforeAll
     @AfterAll
-    static void RefreshDatabaseBefore() {
+    static void RefreshDatabaseBefore() throws IOException {
         DatabaseSetup databaseSetup = new DatabaseSetup();
         databaseSetup.reloadDatabase();
     }
@@ -149,8 +151,8 @@ public class TourGeneratorTest {
         Order orderSkagen = new Order();
         Order orderHJ = new Order();
         Order orderStovring = new Order();
-        List<Order> orderList = new ArrayList<>();
-        List<Order> correctList = new ArrayList<>();
+        Tour orderList = new Tour();
+        Tour correctList = new Tour();
 
         orderStovring.setAddress("Hobrovej 55");
         orderStovring.setZipCode(9530);
@@ -166,16 +168,17 @@ public class TourGeneratorTest {
         orderSkagen.requestLatLonFromAddress();
         orderStovring.requestLatLonFromAddress();
 
-        orderList.add(orderSkagen);
-        orderList.add(orderAAB);
-        orderList.add(orderStovring);
-        orderList.add(orderHJ);
+        orderList.addOrder(orderSkagen);
+        orderList.addOrder(orderAAB);
+        orderList.addOrder(orderStovring);
+        orderList.addOrder(orderHJ);
 
-        correctList.add(orderStovring);
-        correctList.add(orderAAB);
-        correctList.add(orderHJ);
-        correctList.add(orderSkagen);
 
-        Assertions.assertEquals(correctList, tg.firstOrder(orderList));
+        correctList.addOrder(orderStovring);
+        correctList.addOrder(orderAAB);
+        correctList.addOrder(orderHJ);
+        correctList.addOrder(orderSkagen);
+
+        Assertions.assertEquals(correctList.getOrders().toString(), firstOrder(orderList).getOrders().toString());
     }
 }

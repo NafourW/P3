@@ -5,6 +5,7 @@ import com.graphhopper.GHResponse;
 import com.graphhopper.GraphHopper;
 import com.graphhopper.routing.util.EncodingManager;
 import com.graphhopper.util.shapes.GHPoint;
+import dk.aau.cs.ds308e18.model.Order;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -15,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Locale;
 
 // Graphopper API
