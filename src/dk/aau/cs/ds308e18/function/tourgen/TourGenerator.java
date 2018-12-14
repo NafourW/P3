@@ -17,8 +17,6 @@ public class TourGenerator {
     public static final int DEFAULT_WORK_TIME = 480;
     public static final int DEFAULT_BREAK_TIME = 45;
 
-    GPS gps = new GPS();
-
     public static ArrayList<Tour> generateTours(ArrayList<Order> orders, TourGeneratorSettings settings) {
         ArrayList<Tour> initialTours = new ArrayList<>();
         ArrayList<Tour> processedTours = new ArrayList<>();
@@ -73,7 +71,7 @@ public class TourGenerator {
 
         for (Tour initialTour : initialTours) {
             //Process the initial tour, and add the results to the list of processed tours
-            processedTours.addAll(processTour(initialTour, settings));
+            processedTours.addAll(processTour(firstOrder(initialTour), settings));
         }
 
         /*
@@ -173,7 +171,8 @@ public class TourGenerator {
     }
 
     //Returns a sorted list of orders based on time bewtween them. Parameter outputList should be empty when initially called
-    private List<Order> sortOrdersByTime(Order currentOrder, List<Order> orderList, List<Order> outputList) {
+    private static List<Order> sortOrdersByTime(Order currentOrder, List<Order> orderList, List<Order> outputList) {
+        GPS gps = new GPS();
         long bestTime = Long.MAX_VALUE;
         int orderIndex = 0;
         int nextOrderIndex = 0;
@@ -199,25 +198,34 @@ public class TourGenerator {
         return outputList;
     }
 
+    //Package private
     //Finds the first order for a tour and then sorts the sequence of the orders
-    public List<Order> firstOrder(List<Order> orderList) {
+    static Tour firstOrder(Tour tour) {
+        GPS gps = new GPS();
         GHPoint vibocold = new GHPoint(56.448789, 9.33946);
         long bestTime = Long.MAX_VALUE;
         int orderIndex = 0;
         int indexFirstOrder = 0;
+        //List to contain the correct sequence of orders
         List<Order> outputList = new ArrayList<>();
+        //List to temporary contain orders from the tour in order to pass them on after being cleared
+        List<Order> tempOrderList = new ArrayList<>(tour.getOrders());
 
         //Find shortest time from vibocold to order
-        for (Order order : orderList) {
+        for (Order order : tour.getOrders()) {
             if (bestTime > gps.getMillis(vibocold, order.getLatLon())) {
                 bestTime = gps.getMillis(vibocold, order.getLatLon());
                 indexFirstOrder = orderIndex;
             }
             orderIndex++;
         }
-        //Get rest of orders in sequence
 
-        return sortOrdersByTime(orderList.get(indexFirstOrder), orderList, outputList);
+        //Re-add order in the corrct sequence
+        tour.getOrders().clear();
+        for (Order order : sortOrdersByTime(tempOrderList.get(indexFirstOrder), tempOrderList, outputList)) {
+            tour.addOrder(order);
+        }
 
+        return tour;
     }
 }
