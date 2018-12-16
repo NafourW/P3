@@ -1,11 +1,10 @@
 package dk.aau.cs.ds308e18.function.tourgen;
 
-import com.graphhopper.GHRequest;
-import com.graphhopper.GHResponse;
-import com.graphhopper.GraphHopper;
+import com.graphhopper.*;
+import com.graphhopper.reader.osm.GraphHopperOSM;
 import com.graphhopper.routing.util.EncodingManager;
+import com.graphhopper.storage.GraphHopperStorage;
 import com.graphhopper.util.shapes.GHPoint;
-import dk.aau.cs.ds308e18.model.Order;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -16,7 +15,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Locale;
 import java.util.prefs.Preferences;
 
@@ -27,11 +25,11 @@ public class GPS {
 
     private String vehicle = "car";
     private GHResponse rsp;
-    //private PathWrapper path;
+    private PathWrapper path;
 
     private String ghKey;
 
-    private GraphHopper hopper = new GraphHopper().forServer();
+    private GraphHopper hopper = new GraphHopper().forDesktop();
 
     public GPS() {
         Preferences prefs = Preferences.userNodeForPackage(dk.aau.cs.ds308e18.Main.class);
@@ -113,24 +111,34 @@ public class GPS {
 
 
     //Create route between 2 points
-    public void setRoute(GHPoint address1, GHPoint address2) {
+    private void setRoute(GHPoint address1, GHPoint address2) {
         GHRequest req = new GHRequest(address1, address2). // latFrom, lonFrom, latTo, lonTo
                 setWeighting("fastest").
                 setVehicle(vehicle).
                 setLocale(Locale.US);
         rsp = hopper.route(req);
-        //path = rsp.getBest();
+
+        //Use the best path
+        path = rsp.getBest();
     }
 
     //return distance in meters
     public double getDistance(GHPoint address1, GHPoint address2) {
-        setRoute(address1, address2);
-        return rsp.getDistance();
+        if (address1.equals(address2)) {
+            return 0;
+        } else {
+            setRoute(address1, address2);
+            return path.getDistance();
+        }
     }
 
     //Return time in milliseconds
     public long getMillis(GHPoint address1, GHPoint address2) {
-        setRoute(address1, address2);
-        return rsp.getMillis();
+        if (address1.equals(address2)) {
+            return 0;
+        } else {
+            setRoute(address1, address2);
+            return path.getTime();
+        }
     }
 }
