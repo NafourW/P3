@@ -1,5 +1,6 @@
 package dk.aau.cs.ds308e18.function.tourgen;
 
+import com.graphhopper.util.shapes.GHPoint;
 import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
@@ -32,9 +33,10 @@ public class TourGeneratorTest {
         TourGeneratorSettings settings = new TourGeneratorSettings();
         settings.method = TourGeneratorSettings.planningMethod.leastTime;
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 5; i++) {
             Order order = new Order();
             order.setDate(LocalDate.now());
+            order.setLatLon(new GHPoint(57.0122539,9.9910615));
             orders.add(order);
         }
 
@@ -53,9 +55,10 @@ public class TourGeneratorTest {
         TourGeneratorSettings settings = new TourGeneratorSettings();
         settings.method = TourGeneratorSettings.planningMethod.leastTime;
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 5; i++) {
             Order order = new Order();
             order.setDate(LocalDate.now());
+            order.setLatLon(new GHPoint(57.0122539,9.9910615));
             orders.add(order);
         }
 
@@ -74,9 +77,10 @@ public class TourGeneratorTest {
         TourGeneratorSettings settings = new TourGeneratorSettings();
         settings.method = TourGeneratorSettings.planningMethod.leastTime;
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 5; i++) {
             Order order = new Order();
             order.setDate(LocalDate.now());
+            order.setLatLon(new GHPoint(57.0122539,9.9910615));
             order.setRegion("København");
             orders.add(order);
         }
@@ -98,9 +102,10 @@ public class TourGeneratorTest {
         TourGeneratorSettings settings = new TourGeneratorSettings();
         settings.method = TourGeneratorSettings.planningMethod.leastTime;
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 5; i++) {
             Order order = new Order();
             order.setDate(LocalDate.now());
+            order.setLatLon(new GHPoint(57.0122539,9.9910615));
             order.setRegion("København");
             orders.add(order);
         }
@@ -123,9 +128,10 @@ public class TourGeneratorTest {
         settings.method = TourGeneratorSettings.planningMethod.leastTime;
         settings.forceOrdersOnTour = true;
 
-        for (int i = 0; i < TourGenerator.MAX_ORDERS_PER_TOUR + 1; i++) {
+        for (int i = 0; i < 5 + 1; i++) {
             Order order = new Order();
             order.setDate(LocalDate.now());
+            order.setLatLon(new GHPoint(57.0122539,9.9910615));
             order.setRegion("København");
             orders.add(order);
         }
