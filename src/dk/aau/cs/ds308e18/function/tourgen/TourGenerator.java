@@ -172,6 +172,7 @@ public class TourGenerator {
             }
         }
 
+        print("Checking for orders that don't fit...");
         //If there are orders that don't fit on the tour
         if (ordersThatDoNotFit.size() > 0) {
             print("Splitting excess orders...");
@@ -188,9 +189,11 @@ public class TourGenerator {
                 newTour.addOrder(excessOrder);
             }
 
+            print("Recursively processing tour... (" + tourCounter + ")");
             processedTours.addAll(processTour(initialTour, settings));
         }
 
+        print("Adding tour " + tourCounter + " to processed tour list");
         //Add the tour to the processed tour list
         processedTours.add(initialTour);
 
