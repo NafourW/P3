@@ -11,10 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
@@ -45,6 +42,8 @@ public class SettingsController {
     @FXML private Label importProgressLabel;
     @FXML private Label exportProgressLabel;
 
+    @FXML private CheckBox darkModeCheckBox;
+
     @FXML private Label statsLabel;
 
     private String sourcePath;
@@ -73,6 +72,8 @@ public class SettingsController {
                 setGHKey(newValue);
             }
         });
+
+        darkModeCheckBox.setSelected(Main.gui.isDarkMode());
 
         updateStatsLabel();
     }
@@ -238,5 +239,12 @@ public class SettingsController {
             Main.dbSetup.reloadDatabase();
             updateStatsLabel();
         }
+    }
+
+    @FXML
+    private void darkModeCheckBoxAction(ActionEvent event) {
+        Main.gui.setDarkMode(darkModeCheckBox.isSelected());
+
+        prefs.putBoolean("darkMode", darkModeCheckBox.isSelected());
     }
 }

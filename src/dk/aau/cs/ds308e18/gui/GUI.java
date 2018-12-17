@@ -28,6 +28,8 @@ public class GUI {
     private String previousView;
     private Object previousSelection;
 
+    private boolean darkMode;
+
     public GUI(){
         initLanguage();
     }
@@ -57,6 +59,8 @@ public class GUI {
     */
     public void initStyle() {
         this.window.getScene().getStylesheets().add("styles/default.css");
+        if (darkMode)
+            this.window.getScene().getStylesheets().add("styles/dark-mode.css");
     }
 
     /*
@@ -74,6 +78,19 @@ public class GUI {
     public void setLanguage(String language) {
         Locale locale = new Locale(language);
         setLanguage(locale);
+    }
+
+    public boolean isDarkMode() {
+        return darkMode;
+    }
+
+    public void setDarkMode(boolean dark) {
+        darkMode = dark;
+
+        if (darkMode)
+            this.window.getScene().getStylesheets().add("styles/dark-mode.css");
+        else
+            this.window.getScene().getStylesheets().remove("styles/dark-mode.css");
     }
 
     /*

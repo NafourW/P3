@@ -5,8 +5,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
+import java.util.prefs.Preferences;
 
 public class MainMenuController {
+    @FXML
+    public void initialize() {
+        Preferences prefs = Preferences.userNodeForPackage(dk.aau.cs.ds308e18.Main.class);
+        Main.gui.setDarkMode(prefs.getBoolean("darkMode", false));
+    }
+
     @FXML
     private void toursButtonAction(ActionEvent event) throws IOException {
         Main.gui.changeView("TourList");
