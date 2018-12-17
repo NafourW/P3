@@ -6,6 +6,7 @@ import dk.aau.cs.ds308e18.io.database.DatabaseExport;
 import dk.aau.cs.ds308e18.io.database.DatabaseImport;
 import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
 import javafx.application.Application;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -49,8 +50,12 @@ public class Main extends Application {
         primaryStage.setMinWidth(850);
         primaryStage.setMinHeight(700);
 
-        primaryStage.setWidth(1500);
-        primaryStage.setHeight(860);
+        Screen screen = Screen.getPrimary();
+        double scale = screen.getOutputScaleX();
+        if (scale <= 1.25) {
+            primaryStage.setWidth(1500);
+            primaryStage.setHeight(860);
+        }
 
         //Display main menu
         gui.changeView("MainMenu");
