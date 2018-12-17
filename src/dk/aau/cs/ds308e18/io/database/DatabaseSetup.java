@@ -210,7 +210,6 @@ public class DatabaseSetup {
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 String sql = "CREATE TABLE warelist (" +
-                        "wareID INT PRIMARY KEY AUTO_INCREMENT," +
                         "supplier VARCHAR(255)," +
                         "wareNumber VARCHAR(255)," +
                         "height INT," +
@@ -244,7 +243,6 @@ public class DatabaseSetup {
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 String sql = "CREATE TABLE regions (" +
-                        "id INT PRIMARY KEY AUTO_INCREMENT," +
                         "regionName VARCHAR(255))";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
