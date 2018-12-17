@@ -20,6 +20,7 @@ public class TourGenerator {
     private Consumer<String> progressMessage;
     private int tourCounter = 0;
     private int recursionLevel = 0;
+    GPS gps = new GPS();
 
     public TourGenerator () {
     }
@@ -121,7 +122,6 @@ public class TourGenerator {
     }
 
     private ArrayList<Tour> processTour(Tour initialTour, TourGeneratorSettings settings) {
-        GPS gps = new GPS();
 
         recursionLevel++;
         tourCounter++;
@@ -205,7 +205,6 @@ public class TourGenerator {
 
     //Returns a sorted list of orders based on time bewtween them. Parameter outputList should be empty when initially called
     private List<Order> sortOrdersByTime(Order currentOrder, List<Order> orderList, List<Order> outputList) {
-        GPS gps = new GPS();
         long bestTime = Long.MAX_VALUE;
         int orderIndex = 0;
         int nextOrderIndex = 0;
@@ -234,7 +233,6 @@ public class TourGenerator {
     //Package private
     //Finds the first order for a tour and then sorts the sequence of the orders
     Tour firstOrder(Tour tour) {
-        GPS gps = new GPS();
         GHPoint vibocold = new GHPoint(56.448789, 9.33946);
         long bestTime = Long.MAX_VALUE;
         int orderIndex = 0;
