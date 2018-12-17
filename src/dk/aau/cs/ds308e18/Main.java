@@ -45,11 +45,16 @@ public class Main extends Application {
 
         //Setup main window
         primaryStage.setTitle(gui.getLocalString("label_title_app"));
+
         primaryStage.setMinWidth(850);
         primaryStage.setMinHeight(700);
 
+        primaryStage.setWidth(1500);
+        primaryStage.setHeight(860);
+
         //Display main menu
         gui.changeView("MainMenu");
+
         primaryStage.show();
     }
 }
