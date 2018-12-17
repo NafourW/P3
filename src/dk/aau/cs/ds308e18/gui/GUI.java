@@ -85,12 +85,13 @@ public class GUI {
     }
 
     public void setDarkMode(boolean dark) {
-        darkMode = dark;
-
-        if (darkMode)
+        if (dark && !darkMode)
             this.window.getScene().getStylesheets().add("styles/dark-mode.css");
-        else
+
+        if (!dark && darkMode)
             this.window.getScene().getStylesheets().remove("styles/dark-mode.css");
+
+        darkMode = dark;
     }
 
     /*
