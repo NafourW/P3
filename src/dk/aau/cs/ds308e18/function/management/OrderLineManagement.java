@@ -15,8 +15,8 @@ import java.util.ArrayList;
 
 public class OrderLineManagement {
     /*
-   Insert an orderline into the orderline table.
-   */
+    Insert an orderline into the orderline table.
+    */
     public static void createOrderLine(OrderLine orderLine) {
         DatabaseConnection dbConn = new DatabaseConnection();
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
@@ -79,7 +79,6 @@ public class OrderLineManagement {
     public static ArrayList<OrderLine> getOrderLines() {
         return Main.dbExport.exportOrderLines();
     }
-
 
     /*
     Overrides orderline information on an order.
@@ -241,14 +240,4 @@ public class OrderLineManagement {
         }
         return LiftEquipment;
     }
-
-    /*
-        if (!orderLine.isLiftAlone()){
-            LiftAlone = false;
-        }
-
-        if (orderLine.isLiftEquipment()){
-            LiftEquipment = true;
-        }
-        */
 }

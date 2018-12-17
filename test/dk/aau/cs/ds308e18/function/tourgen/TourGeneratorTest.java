@@ -12,7 +12,6 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 import static dk.aau.cs.ds308e18.function.tourgen.TourGenerator.firstOrder;
 import static org.junit.jupiter.api.Assertions.fail;

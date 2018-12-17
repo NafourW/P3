@@ -1,7 +1,6 @@
 package dk.aau.cs.ds308e18.gui.controllers;
 
 import dk.aau.cs.ds308e18.Main;
-import dk.aau.cs.ds308e18.function.management.OrderLineManagement;
 import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.gui.ISelectionController;
 import dk.aau.cs.ds308e18.gui.TableManager;
@@ -68,8 +67,6 @@ public class EditOrderController implements ISelectionController {
     @FXML private TableColumn<OrderLine, String> MoveTime;
     @FXML private TableColumn<OrderLine, String> LiftAlone;
     @FXML private TableColumn<OrderLine, String> LiftEquipment;
-
-
 
     private TableManager<OrderLine> orderLineTableManager;
 

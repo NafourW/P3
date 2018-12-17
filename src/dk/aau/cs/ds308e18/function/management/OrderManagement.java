@@ -1,10 +1,10 @@
 package dk.aau.cs.ds308e18.function.management;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 import dk.aau.cs.ds308e18.io.database.DatabaseExport;
 import dk.aau.cs.ds308e18.model.Order;
-import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Tour;
 
 import java.sql.Connection;
@@ -14,7 +14,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class OrderManagement {
-
     /*
     Insert an order into the order table.
     */
@@ -185,6 +184,29 @@ public class OrderManagement {
                 stmt.executeUpdate();
             }
         } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //TODO This method (possibly) shouldn't be here. (It was moved here from Order)
+    // Database related functions should be in IO or MANAGEMENT.
+    public static void saveLatLonInDataBase(String address, double lat, double lon) {
+        String sql = "INSERT INTO addresses (address, latitude, longitude) VALUES (?, ?, ?)";
+        DatabaseConnection dbConn = new DatabaseConnection();
+        try (Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.setString(1, String.valueOf(address));
+                stmt.setString(2, String.valueOf(lat));
+                stmt.setString(3, String.valueOf(lon));
+
+
+                stmt.executeUpdate();
+            }
+        }
+        catch (MySQLIntegrityConstraintViolationException e) { // Hvis adressen eksistere i DataBasen fanges exception skyldet af at databasen er unique.
+        }
+        catch (SQLException e) {
             e.printStackTrace();
         }
     }

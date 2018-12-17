@@ -1,14 +1,9 @@
 package dk.aau.cs.ds308e18.model;
 
 import com.graphhopper.util.shapes.GHPoint;
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import dk.aau.cs.ds308e18.Main;
-import dk.aau.cs.ds308e18.function.management.OrderLineManagement;
-import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
+import dk.aau.cs.ds308e18.function.management.OrderManagement;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.temporal.WeekFields;
 import java.util.ArrayList;
@@ -16,6 +11,7 @@ import java.util.ArrayList;
 import static dk.aau.cs.ds308e18.Main.gps;
 
 public class Order {
+    //All of the possible order categories
     public enum orderCategory{
         delivery,
         pickUp,
@@ -263,7 +259,7 @@ public class Order {
 
     public void requestLatLonFromAddress() {
         this.latLon = gps.GeocodeAddress(address, zipCode);;
-        saveLatLonInDataBase(address);
+        OrderManagement.saveLatLonInDataBase(address, this.latLon.lat, this.latLon.lon);
     }
 
     public void setLatLon(double[] latLon) {
@@ -272,29 +268,7 @@ public class Order {
 
     public void setLatLon(GHPoint latLon) {
         this.latLon = latLon;
-        saveLatLonInDataBase(address);
-    }
-
-    //TODO This method shouldn't be here. Database related functions should be in IO or MANAGEMENT.
-    public void saveLatLonInDataBase(String address) {
-        String sql = "INSERT INTO addresses (address, latitude, longitude) VALUES (?, ?, ?)";
-        DatabaseConnection dbConn = new DatabaseConnection();
-        try (Connection conn = dbConn.establishConnectionToDatabase()) {
-            if (conn != null) {
-                PreparedStatement stmt = conn.prepareStatement(sql);
-                stmt.setString(1, String.valueOf(address));
-                stmt.setString(2, String.valueOf(this.latLon.lat));
-                stmt.setString(3, String.valueOf(this.latLon.lon));
-
-
-                stmt.executeUpdate();
-            }
-        }
-        catch (MySQLIntegrityConstraintViolationException e) { // Hvis adressen eksistere i DataBasen fanges exception skyldet af at databasen er unique.
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
+        OrderManagement.saveLatLonInDataBase(address, this.latLon.lat, this.latLon.lon);
     }
 
     public int getZipCode() {

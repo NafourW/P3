@@ -9,7 +9,6 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class TourManagement {
-
     /*
     Insert a tour into the database.
     */

@@ -12,7 +12,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class WareManagement {
-
     /*
     ....
     */
@@ -140,7 +139,6 @@ public class WareManagement {
                                 }
 
                                 totalMoveTime += Integer.valueOf(rs3.getString(3));
-
 
                             }
                         }

@@ -1,13 +1,11 @@
 package dk.aau.cs.ds308e18.io.database;
 
 import dk.aau.cs.ds308e18.function.management.OrderLineManagement;
-import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Tour;
 import dk.aau.cs.ds308e18.model.Ware;
 
-import javax.xml.crypto.Data;
 import java.sql.*;
 import java.util.ArrayList;
 
