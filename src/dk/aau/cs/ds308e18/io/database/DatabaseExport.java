@@ -300,21 +300,21 @@ public class DatabaseExport {
         Ware ware = new Ware();
 
         try {
-            ware.setSupplier    (resultSet.getString (2));
-            ware.setWareNumber  (resultSet.getString (3));
-            ware.setHeight      (resultSet.getInt    (4));
-            ware.setDepth       (resultSet.getInt    (5));
-            ware.setGrossHeight (resultSet.getInt    (6));
-            ware.setGrossDepth  (resultSet.getInt    (7));
-            ware.setGrossWidth  (resultSet.getInt    (8));
-            ware.setWidth       (resultSet.getInt    (9));
-            ware.setWareName    (resultSet.getString (10));
-            ware.setSearchName  (resultSet.getString (11));
-            ware.setWareGroup   (resultSet.getInt    (12));
-            ware.setWareType    (resultSet.getString (13));
-            ware.setLiftAlone   (resultSet.getBoolean(14));
-            ware.setLiftingTools(resultSet.getBoolean(15));
-            ware.setMoveTime    (resultSet.getFloat  (16));
+            ware.setSupplier    (resultSet.getString (1));
+            ware.setWareNumber  (resultSet.getString (2));
+            ware.setHeight      (resultSet.getInt    (3));
+            ware.setDepth       (resultSet.getInt    (4));
+            ware.setGrossHeight (resultSet.getInt    (5));
+            ware.setGrossDepth  (resultSet.getInt    (6));
+            ware.setGrossWidth  (resultSet.getInt    (7));
+            ware.setWidth       (resultSet.getInt    (8));
+            ware.setWareName    (resultSet.getString (9));
+            ware.setSearchName  (resultSet.getString (10));
+            ware.setWareGroup   (resultSet.getInt    (11));
+            ware.setWareType    (resultSet.getString (12));
+            ware.setLiftAlone   (resultSet.getBoolean(13));
+            ware.setLiftingTools(resultSet.getBoolean(14));
+            ware.setMoveTime    (resultSet.getFloat  (15));
         }
         catch (SQLException e) {
             e.printStackTrace();
