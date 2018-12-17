@@ -140,12 +140,16 @@ public class TourGenerator {
         GHPoint startPoint = new GHPoint(56.448789, 9.33946);
         GHPoint previousPoint = startPoint;
 
+        print("Getting list of tour " + tourCounter + "'s orders...");
+        ArrayList<Order> orders = initialTour.getOrders();
+
+        print("Going through tour " + tourCounter + "'s orders... (there are " + orders.size() + " orders)");
         //Go through all orders, and check if there is enough time for them
-        for (Order o : initialTour.getOrders()) {
+        for (Order o : orders) {
             long timeTravelTo = 0;
             long timeTravelBack = 0;
 
-            print("Checking order time...");
+            print("Checking order time... (order " + o.getID() + ", tour " + tourCounter + ")");
 
             try {
                 timeTravelTo = gps.getMillis(previousPoint, o.getLatLon()) / 60000;
