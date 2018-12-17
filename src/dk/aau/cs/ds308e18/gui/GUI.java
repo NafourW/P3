@@ -164,7 +164,26 @@ public class GUI {
     and the program waits until the new window is closed.
     */
     public void openWindow(String view, String titleKey) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("/views/" + view + ".fxml"), localStrings);
+        openWindowWithObject(view, titleKey, null);
+    }
+
+    /*
+    Same as above, except an object is passed to the window's controller
+    */
+    public void openWindowWithObject(String view, String titleKey, Object obj) throws IOException{
+        //Get the view
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/" + view + ".fxml"), localStrings);
+
+        //Load the view
+        Parent root = fxmlLoader.load();
+
+        if (obj != null) {
+            //Get the view's controller
+            ISelectionController controller = fxmlLoader.getController();
+
+            //Pass the selected object to the controller
+            controller.setSelectedObject(obj, true);
+        }
 
         Scene newScene = new Scene(root);
         Stage newWindow = new Stage();

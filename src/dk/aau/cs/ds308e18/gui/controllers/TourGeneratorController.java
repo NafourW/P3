@@ -15,6 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -70,45 +71,24 @@ public class TourGeneratorController {
     }
 
     @FXML
-    private void generateToursButtonAction(ActionEvent event) {
-        Task<String> generateTourTask = new Task<String>() {
-            @Override protected String call() throws Exception {
-
-                setInteractionsDisabled(true);
-
-                //Get orders
-                String region = (allRegionsCheckBox.isSelected()) ? null : regionChoiceBox.getValue();
-                String date = (allDatesCheckBox.isSelected()) ? null :datePicker.getValue().toString();
-
-                System.out.println("Fetching orders...");
-                ArrayList<Order> orders = OrderManagement.getUnassignedOrdersFiltered(region, date);
-
-                //Get settings
-                TourGeneratorSettings settings = new TourGeneratorSettings();
-                settings.method = planningChoiceBox.getValue();
-                settings.workTime = Integer.valueOf(workTimeField.getText());
-                settings.breakTime = Integer.valueOf(breakTimeField.getText());
-                settings.forceOrdersOnTour = forceOrdersCheckBox.isSelected();
-
-                //Generate tours
-                System.out.println("Generating tours...");
-                ArrayList<Tour> tours = TourGenerator.generateTours(orders, settings);
-
-                System.out.println("Generated " + tours.size() + " tours:");
-                for (Tour tour : tours)
-                    System.out.println(tour.getTourDate() + " - " + tour.getOrders().size() + " orders");
-
-                return "";
-            }
-        };
+    private void generateToursButtonAction(ActionEvent event) throws IOException {
         boolean confirmed = Main.gui.showYesNoDialog("label_tourgen_confirmation_title", "message_tourgen_confirmation");
 
         if (confirmed) {
-            generateTourTask.setOnSucceeded(e -> close());
+            setInteractionsDisabled(true);
 
-            Thread th = new Thread(generateTourTask);
-            th.setDaemon(true);
-            th.start();
+            //Get settings
+            TourGeneratorSettings settings = new TourGeneratorSettings();
+            settings.method = planningChoiceBox.getValue();
+            settings.region = (allRegionsCheckBox.isSelected()) ? null : regionChoiceBox.getValue();
+            settings.date = (allDatesCheckBox.isSelected()) ? null :datePicker.getValue().toString();
+            settings.workTime = Integer.valueOf(workTimeField.getText());
+            settings.breakTime = Integer.valueOf(breakTimeField.getText());
+            settings.forceOrdersOnTour = forceOrdersCheckBox.isSelected();
+
+            Main.gui.openWindowWithObject("GeneratorProgress", "Generating", settings);
+
+            close();
         }
     }
 
