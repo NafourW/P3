@@ -5,9 +5,9 @@ import dk.aau.cs.ds308e18.function.management.TourManagement;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class TourGenerator {
 
@@ -17,7 +17,16 @@ public class TourGenerator {
     public static final int DEFAULT_WORK_TIME = 480;
     public static final int DEFAULT_BREAK_TIME = 45;
 
-    public static ArrayList<Tour> generateTours(ArrayList<Order> orders, TourGeneratorSettings settings) {
+    Consumer<String> progressMessage;
+
+    public TourGenerator () {
+    }
+
+    public TourGenerator (Consumer<String> progressMessage) {
+        this.progressMessage = progressMessage;
+    }
+
+    public ArrayList<Tour> generateTours(ArrayList<Order> orders, TourGeneratorSettings settings) {
         ArrayList<Tour> initialTours = new ArrayList<>();
         ArrayList<Tour> processedTours = new ArrayList<>();
 
@@ -26,6 +35,8 @@ public class TourGenerator {
         LAV EN TUR FOR HVER DATO/REGION COMBO
         OG SMID ALLE ORDRER IND PÅ TURENE
         */
+
+        print("Creating initial tours...");
 
         //currently focused tour
         Tour tour = null;
@@ -69,6 +80,8 @@ public class TourGenerator {
         OG SPLIT DEM, HVIS DER IKKE ER
         */
 
+        print("Splitting tours...");
+
         for (Tour initialTour : initialTours) {
             //Process the initial tour, and add the results to the list of processed tours
             processedTours.addAll(processTour(firstOrder(initialTour), settings));
@@ -79,6 +92,8 @@ public class TourGenerator {
         DISCARD ALLE TURE HVOR DER IKKE ER NOK ORDRER
         (MED MINDRE FORCE ER SLÅET TIL)
         */
+
+        print("Discarding invalid tours...");
 
         ArrayList<Tour> invalidTours = new ArrayList<>();
 
@@ -103,8 +118,10 @@ public class TourGenerator {
         return processedTours;
     }
 
-    private static ArrayList<Tour> processTour(Tour initialTour, TourGeneratorSettings settings) {
+    private ArrayList<Tour> processTour(Tour initialTour, TourGeneratorSettings settings) {
         GPS gps = new GPS();
+
+        print("Processing tour...");
 
         ArrayList<Tour> processedTours = new ArrayList<>();
         ArrayList<Order> ordersThatDoNotFit = new ArrayList<>();
@@ -125,6 +142,8 @@ public class TourGenerator {
         for (Order o : initialTour.getOrders()) {
             long timeTravelTo = 0;
             long timeTravelBack = 0;
+
+            print("Checking order time...");
 
             try {
                 timeTravelTo = gps.getMillis(previousPoint, o.getLatLon()) / 60000;
@@ -149,6 +168,8 @@ public class TourGenerator {
 
         //If there are orders that don't fit on the tour
         if (ordersThatDoNotFit.size() > 0) {
+            print("Splitting excess orders...");
+
             //Create a new tour with the same date/region and add it to the processed tour list
             Tour newTour = new Tour();
             newTour.setTourDate(initialTour.getTourDate());
@@ -171,7 +192,7 @@ public class TourGenerator {
     }
 
     //Returns a sorted list of orders based on time bewtween them. Parameter outputList should be empty when initially called
-    private static List<Order> sortOrdersByTime(Order currentOrder, List<Order> orderList, List<Order> outputList) {
+    private List<Order> sortOrdersByTime(Order currentOrder, List<Order> orderList, List<Order> outputList) {
         GPS gps = new GPS();
         long bestTime = Long.MAX_VALUE;
         int orderIndex = 0;
@@ -200,7 +221,7 @@ public class TourGenerator {
 
     //Package private
     //Finds the first order for a tour and then sorts the sequence of the orders
-    static Tour firstOrder(Tour tour) {
+    Tour firstOrder(Tour tour) {
         GPS gps = new GPS();
         GHPoint vibocold = new GHPoint(56.448789, 9.33946);
         long bestTime = Long.MAX_VALUE;
@@ -227,5 +248,10 @@ public class TourGenerator {
         }
 
         return tour;
+    }
+
+    private void print(String output) {
+        if (progressMessage != null)
+            progressMessage.accept(output);
     }
 }

@@ -26,12 +26,13 @@ public class GeneratorProgressController implements ISelectionController {
         Task<String> generateTourTask = new Task<String>() {
             @Override protected String call() throws Exception {
             //Get orders
-            System.out.println("Fetching orders...");
+            updateMessage("Fetching orders...");
             ArrayList<Order> orders = OrderManagement.getUnassignedOrdersFiltered(settings.region, settings.date);
 
             //Generate tours
-            System.out.println("Generating tours...");
-            ArrayList<Tour> tours = TourGenerator.generateTours(orders, settings);
+            updateMessage("Generating tours...");
+            TourGenerator tourGenerator = new TourGenerator(this::updateMessage);
+            ArrayList<Tour> tours = tourGenerator.generateTours(orders, settings);
 
             System.out.println("Generated " + tours.size() + " tours:");
             for (Tour tour : tours)
@@ -42,6 +43,8 @@ public class GeneratorProgressController implements ISelectionController {
         };
 
         generateTourTask.setOnSucceeded(e -> close());
+
+        progressLabel.textProperty().bind(generateTourTask.messageProperty());
 
         Thread th = new Thread(generateTourTask);
         th.setDaemon(true);

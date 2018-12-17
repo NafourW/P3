@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import static dk.aau.cs.ds308e18.function.tourgen.TourGenerator.firstOrder;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class TourGeneratorTest {
@@ -39,7 +38,8 @@ public class TourGeneratorTest {
             orders.add(order);
         }
 
-        ArrayList<Tour> tours = TourGenerator.generateTours(orders, settings);
+        TourGenerator tourGenerator = new TourGenerator();
+        ArrayList<Tour> tours = tourGenerator.generateTours(orders, settings);
 
         for (Tour t : tours) {
             if (t.getOrders().size() < TourGenerator.MIN_ORDERS_PER_TOUR)
@@ -61,7 +61,8 @@ public class TourGeneratorTest {
             orders.add(order);
         }
 
-        ArrayList<Tour> tours = TourGenerator.generateTours(orders, settings);
+        TourGenerator tourGenerator = new TourGenerator();
+        ArrayList<Tour> tours = tourGenerator.generateTours(orders, settings);
 
         for (Tour t : tours) {
             if (t.getOrders().size() > TourGenerator.MAX_ORDERS_PER_TOUR)
@@ -84,7 +85,8 @@ public class TourGeneratorTest {
             orders.add(order);
         }
 
-        ArrayList<Tour> tours = TourGenerator.generateTours(orders, settings);
+        TourGenerator tourGenerator = new TourGenerator();
+        ArrayList<Tour> tours = tourGenerator.generateTours(orders, settings);
 
         for (Tour t : tours) {
             for (Order o : t.getOrders()) {
@@ -109,7 +111,8 @@ public class TourGeneratorTest {
             orders.add(order);
         }
 
-        ArrayList<Tour> tours = TourGenerator.generateTours(orders, settings);
+        TourGenerator tourGenerator = new TourGenerator();
+        ArrayList<Tour> tours = tourGenerator.generateTours(orders, settings);
 
         for (Tour t : tours) {
             for (Order o : t.getOrders()) {
@@ -135,7 +138,8 @@ public class TourGeneratorTest {
             orders.add(order);
         }
 
-        ArrayList<Tour> tours = TourGenerator.generateTours(orders, settings);
+        TourGenerator tourGenerator = new TourGenerator();
+        ArrayList<Tour> tours = tourGenerator.generateTours(orders, settings);
 
         for (Order o : orders) {
             boolean hasBeenAssigned = false;
@@ -151,7 +155,7 @@ public class TourGeneratorTest {
 
     @Test
     void firstOrderTest() {
-        TourGenerator tg = new TourGenerator();
+        TourGenerator tourGenerator = new TourGenerator();
         Order orderAAB = new Order();
         Order orderSkagen = new Order();
         Order orderHJ = new Order();
@@ -184,6 +188,6 @@ public class TourGeneratorTest {
         correctList.addOrder(orderHJ);
         correctList.addOrder(orderSkagen);
 
-        Assertions.assertEquals(correctList.getOrders().toString(), firstOrder(orderList).getOrders().toString());
+        Assertions.assertEquals(correctList.getOrders().toString(), tourGenerator.firstOrder(orderList).getOrders().toString());
     }
 }

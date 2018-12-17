@@ -147,20 +147,20 @@ public class SettingsController {
     private void importDataButtonAction(ActionEvent event){
         Task<String> importTask = new Task<String>() {
             @Override protected String call() throws Exception {
-                setButtonsDisabled(true);
+            setButtonsDisabled(true);
 
-                updateMessage(Main.gui.getLocalString("message_progress_importing_wares"));
-                Main.dbImport.importWares(sourcePath);
+            updateMessage(Main.gui.getLocalString("message_progress_importing_wares"));
+            Main.dbImport.importWares(sourcePath);
 
-                updateMessage(Main.gui.getLocalString("message_progress_importing_orders"));
-                Main.dbImport.importOrders(sourcePath);
+            updateMessage(Main.gui.getLocalString("message_progress_importing_orders"));
+            Main.dbImport.importOrders(sourcePath);
 
-                updateMessage(Main.gui.getLocalString("message_progress_importing_orderlines"));
-                Main.dbImport.importOrderLines(sourcePath);
+            updateMessage(Main.gui.getLocalString("message_progress_importing_orderlines"));
+            Main.dbImport.importOrderLines(sourcePath);
 
-                updateMessage(Main.gui.getLocalString("message_progress_import_done"));
-                setButtonsDisabled(false);
-                return "";
+            updateMessage(Main.gui.getLocalString("message_progress_import_done"));
+            setButtonsDisabled(false);
+            return "";
             }
         };
 
