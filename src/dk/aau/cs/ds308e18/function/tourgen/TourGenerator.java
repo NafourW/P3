@@ -17,7 +17,8 @@ public class TourGenerator {
     public static final int DEFAULT_WORK_TIME = 480;
     public static final int DEFAULT_BREAK_TIME = 45;
 
-    Consumer<String> progressMessage;
+    private Consumer<String> progressMessage;
+    private int tourCounter = 0;
 
     public TourGenerator () {
     }
@@ -121,7 +122,8 @@ public class TourGenerator {
     private ArrayList<Tour> processTour(Tour initialTour, TourGeneratorSettings settings) {
         GPS gps = new GPS();
 
-        print("Processing tour...");
+        tourCounter++;
+        print("Processing tour " + tourCounter + " ...");
 
         ArrayList<Tour> processedTours = new ArrayList<>();
         ArrayList<Order> ordersThatDoNotFit = new ArrayList<>();
