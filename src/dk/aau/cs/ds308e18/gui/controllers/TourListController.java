@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -23,6 +24,8 @@ public class TourListController {
     @FXML private Button deleteTourButton;
     @FXML private Button printTourButton;
     @FXML private Button releaseTourButton;
+
+    @FXML private ImageView loadingImage;
 
     @FXML private TableView<Tour> tourListTable;
     @FXML private TableColumn<Tour, Integer> TourID;
@@ -68,6 +71,8 @@ public class TourListController {
         PauseTransition pauseTransition = new PauseTransition(Duration.seconds(0.09));
         pauseTransition.setOnFinished(event -> {
             refreshTourList();
+            loadingImage.setImage(null);
+            loadingImage.setDisable(true);
         });
 
         pauseTransition.play();
