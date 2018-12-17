@@ -19,6 +19,7 @@ public class TourGenerator {
 
     private Consumer<String> progressMessage;
     private int tourCounter = 0;
+    private int recursionLevel = 0;
 
     public TourGenerator () {
     }
@@ -122,6 +123,7 @@ public class TourGenerator {
     private ArrayList<Tour> processTour(Tour initialTour, TourGeneratorSettings settings) {
         GPS gps = new GPS();
 
+        recursionLevel++;
         tourCounter++;
         print("Processing tour " + tourCounter + " ...");
 
@@ -193,10 +195,11 @@ public class TourGenerator {
             processedTours.addAll(processTour(initialTour, settings));
         }
 
-        print("Adding tour " + tourCounter + " to processed tour list");
+        print("Adding tour " + tourCounter + " to processed tour list (recursion level " + recursionLevel + ")");
         //Add the tour to the processed tour list
         processedTours.add(initialTour);
 
+        recursionLevel--;
         return processedTours;
     }
 
