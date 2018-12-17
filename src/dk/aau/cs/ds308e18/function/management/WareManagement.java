@@ -82,11 +82,6 @@ public class WareManagement {
                     boolean rs2Found = false;
 
                     while(rs1.next()) {
-                        /*
-                        information.add(rs1.getString(1));
-                        information.add(rs1.getString(2));
-                        information.add(rs1.getString(3));
-                        */
                         if (rs1.getString(1).equals("false")){
                             liftAlone = 0;
                         }
@@ -104,11 +99,6 @@ public class WareManagement {
                         ResultSet rs2 = stmt.executeQuery();
 
                         while(rs2.next()) {
-                            /*
-                            information.add(rs2.getString(1));
-                            information.add(rs2.getString(2));
-                            information.add(rs2.getString(3));
-                            */
                             if (rs2.getString(1).equals("false")){
                                 liftAlone = 0;
                             }
@@ -126,11 +116,6 @@ public class WareManagement {
                             ResultSet rs3 = stmt.executeQuery();
 
                             while(rs3.next()) {
-                                /*
-                                information.add(rs3.getString(1));
-                                information.add(rs3.getString(2));
-                                information.add(rs3.getString(3));
-                                */
                                 if (rs3.getString(1).equals("false")){
                                     liftAlone = 0;
                                 }

@@ -204,7 +204,7 @@ public class OrderManagement {
                 stmt.executeUpdate();
             }
         }
-        catch (MySQLIntegrityConstraintViolationException e) { // Hvis adressen eksistere i DataBasen fanges exception skyldet af at databasen er unique.
+        catch (MySQLIntegrityConstraintViolationException e) { // Hvis adressen eksisterer i DataBasen fanges exception skyldet af at addressen er unique.
         }
         catch (SQLException e) {
             e.printStackTrace();

@@ -99,21 +99,13 @@ public class TourManagement {
     Update tourID for orders on the given tour to match them.
     */
     private static void updateOrderTourID(Tour tour) {
-        DatabaseConnection dbConn = new DatabaseConnection();
 
-        try(Connection conn = dbConn.establishConnectionToDatabase()) {
-            if (conn != null) {
-
-                // If there are any orders on the tour - update their tourID
-                if(!(tour.getOrders().isEmpty())) {
-                    ArrayList<Order> orderList = tour.getOrders();
-                    for(Order order : orderList) {
-                        OrderManagement.setTourID(tour.getTourID(), order.getOrderID());
-                    }
-                }
+        // If there are any orders on the tour - update their tourID
+        if(!(tour.getOrders().isEmpty())) {
+            ArrayList<Order> orderList = tour.getOrders();
+            for(Order order : orderList) {
+                OrderManagement.setTourID(tour.getTourID(), order.getOrderID());
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 
@@ -122,24 +114,12 @@ public class TourManagement {
     Sets all Order's orderIDs on the tour to 0 and delete the tour from the database.
     */
     public static void removeTour(Tour tour){
-        DatabaseConnection dbConn = new DatabaseConnection();
 
-        try(Connection conn = dbConn.establishConnectionToDatabase()) {
-            if (conn != null) {
-                String sql = "UPDATE orders SET tourID = 0 WHERE orderID = ?";
-                PreparedStatement stmt = conn.prepareStatement(sql);
-
-                // If there are any orders in the tour - set their tourID to 0
-                if(!(tour.getOrders().isEmpty())) {
-                    for(Order order : tour.getOrders()) {
-                        OrderManagement.setTourID(0, order.getOrderID());
-                    }
-                }
-
-
+        // If there are any orders in the tour - set their tourID to 0
+        if(!(tour.getOrders().isEmpty())) {
+            for(Order order : tour.getOrders()) {
+                OrderManagement.setTourID(0, order.getOrderID());
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
 
         // Delete the tour from the database
