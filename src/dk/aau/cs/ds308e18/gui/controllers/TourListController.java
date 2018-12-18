@@ -42,6 +42,7 @@ public class TourListController {
     @FXML private TableColumn<Tour, String> CustomerName;
     @FXML private TableColumn<Tour, String> Address;
     @FXML private TableColumn<Tour, Integer> ZipCode;
+    @FXML private TableColumn<Tour, Integer> totalTime;
 
     private TableManager<Tour> tourListManager;
     private TableManager<Order> tourOrdersManager;
