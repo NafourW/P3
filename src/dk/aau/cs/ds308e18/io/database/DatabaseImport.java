@@ -65,10 +65,10 @@ public class DatabaseImport {
 
         DatabaseConnection dbConn = new DatabaseConnection();
 
-        ReadFile readFileObject = new ReadFile();
+        ReadFile readFile = new ReadFile();
 
         // Grab orders from file and put them into a list
-        ArrayList<Order> orderList = readFileObject.getOrdersFromFile(sourcePath);
+        ArrayList<Order> orderList = readFile.getOrdersFromFile(sourcePath);
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {

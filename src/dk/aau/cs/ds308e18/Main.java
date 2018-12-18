@@ -10,12 +10,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Main extends Application {
-    //Used by view-controllers to access GUI methods
-    public static GUI gui;
-
     //Used for interacting with the database
     public static Database dbSetup;
-    public static GPS gps = new GPS();
+
+    //Used for getting coordinates and time between them
+    public static GPS gps;
+
+    //Used by view-controllers to access GUI methods
+    public static GUI gui;
 
     public static void main(String[] args) {
         launch(args);
@@ -25,6 +27,9 @@ public class Main extends Application {
     public void init() throws IOException{
         //Initialize database
         dbSetup = new Database();
+
+        //Initialize GPS
+        gps = new GPS();
 
         //Initialize GUI
         gui = new GUI();

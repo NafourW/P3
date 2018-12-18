@@ -1,6 +1,7 @@
 package dk.aau.cs.ds308e18.function.tourgen;
 
 import com.graphhopper.util.shapes.GHPoint;
+import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.Database;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
@@ -20,6 +21,7 @@ public class TourGeneratorTest {
 
     @BeforeAll
     static void RefreshDatabaseBefore() throws IOException {
+        Main.gps = new GPS();
         dbSetup = new Database();
         dbSetup.reloadDatabase();
 
@@ -212,10 +214,10 @@ public class TourGeneratorTest {
         orderHJ.setAddress("Kærparken 9");
         orderHJ.setZipCode(9800);
 
-        orderAAB.requestLatLonFromAddress();
-        orderHJ.requestLatLonFromAddress();
-        orderSkagen.requestLatLonFromAddress();
-        orderStovring.requestLatLonFromAddress();
+        orderAAB.setLatLon     (Main.gps.GeocodeAddress(orderAAB.getAddress(),      orderAAB.getZipCode()));
+        orderHJ.setLatLon      (Main.gps.GeocodeAddress(orderHJ.getAddress(),       orderHJ.getZipCode()));
+        orderSkagen.setLatLon  (Main.gps.GeocodeAddress(orderSkagen.getAddress(),   orderSkagen.getZipCode()));
+        orderStovring.setLatLon(Main.gps.GeocodeAddress(orderStovring.getAddress(), orderStovring.getZipCode()));
 
         orderList.addOrder(orderSkagen);
         orderList.addOrder(orderAAB);

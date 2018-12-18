@@ -1,6 +1,7 @@
 package dk.aau.cs.ds308e18.io.files;
 
 import com.graphhopper.util.shapes.GHPoint;
+import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Ware;
@@ -22,6 +23,7 @@ public class ReadFile {//Class that reads CSV files
         // Path to the file with orders
         String path = sourcePath + "/ordrer_tilvalg.csv";
 
+        // List of orders that is returned
         ArrayList<Order> orderList = new ArrayList<>();
 
         // This string will be filled with read line
@@ -30,7 +32,7 @@ public class ReadFile {//Class that reads CSV files
         // Split the read line when encountering ';' which is used in the CSV file to distinguish new information
         String cvsSplitBy = ";";
 
-        //create a buffered reader to read the file
+        // Create a buffered reader to read the file
         try (BufferedReader br = new BufferedReader(new FileReader(path))){
 
             // While the line read by the buffered reader is not empty(null)
@@ -46,12 +48,6 @@ public class ReadFile {//Class that reads CSV files
 
                 int pluckRoute = Integer.valueOf(Order[1]);
                 int id = Integer.valueOf(Order[2]);
-
-                // Returordre reference = Order[3]
-                // Ekspeditionsstatus = Order[4]
-                // Navn = Order[5]
-                // Ønsket modtagelsesdato = Order[6]
-                // Gadenavn = Order[7]
 
                 LocalDate date;
                 try {
@@ -79,16 +75,8 @@ public class ReadFile {//Class that reads CSV files
                 boolean pickup; //Convert content inside the list to boolean
                 pickup = Order[10].toLowerCase().equals("ja");
 
-                // Afhentningsdato = Order[11]
-                // Leverings UGE = Order[12]
-                // Lagersted = Order[13]
-                // Ordrekategori = Order[14]
-                // Flådeejer = Order[15]
-
                 boolean printed; //Convert content inside the list to boolean
                 printed = Order[16].toLowerCase().equals("ja");
-
-                // Rute = Order[17]
 
                 boolean FV; //Convert content inside the list to boolean
                 FV = Order[18].toLowerCase().equals("ja");
@@ -113,12 +101,11 @@ public class ReadFile {//Class that reads CSV files
                 order.setFV              (FV);
                 order.setProject         (Order[19]);
 
-
                 //Check if there are coordinates for the order
                 //If there are no coordinates
                 if (Order[20].equals("") || Order[21].equals(""))
                     //Get coordinates from the internet
-                    order.requestLatLonFromAddress();
+                    order.setLatLon(Main.gps.GeocodeAddress(order.getAddress(), zipCode));
                 else {
                     //Read the coordinates from file
                     double lat = Double.valueOf(Order[20]);
@@ -157,10 +144,6 @@ public class ReadFile {//Class that reads CSV files
                         continue;
                     }
 
-                    //Order = Items[0]
-                    //WareNumber = Items[1]
-                    //WareName = Items[2]
-
                     String labelsString = Items[3].replace(",00","");
                     int labels; //Convert content inside the list to integer
 
@@ -177,14 +160,8 @@ public class ReadFile {//Class that reads CSV files
                     else
                         delivered = Integer.valueOf(deliveredString);
 
-                    //Inidivid = Items[5]
-
                     boolean preparing;
                     preparing = Items[6].toLowerCase().equals("ja");
-
-                    //Individ varenummer = Items[7]
-                    //Model = Items[8]
-                    //Navn = Items[9]
 
                     OrderLine orderLine = new OrderLine();
 
@@ -233,8 +210,6 @@ public class ReadFile {//Class that reads CSV files
                     supplier = Long.valueOf(Type[0]);
                 else
                     supplier = 0;
-
-                //Varenummer = Type[1]
 
                 int height; //Convert content inside the list to integer
                 if(Type[2].matches("[0-9]+") && Type[2].length() > 2)
@@ -293,16 +268,11 @@ public class ReadFile {//Class that reads CSV files
                 else
                     width = 0;
 
-                //Varenavn = Type[8]
-                //Søgenavn = Type[9]
-
                 int wareGroup; //Convert content inside the list to integer
                 if(Type[10].matches("[0-9]+") && Type[10].length() > 2)
                     wareGroup = Integer.valueOf(Type[10]);
                 else
                     wareGroup = 0;
-
-                //Varetype = Type[11]
 
                 boolean liftAlone; //Convert content inside the list to boolean
                 liftAlone = Type[12].toLowerCase().equals("ja");
@@ -316,7 +286,6 @@ public class ReadFile {//Class that reads CSV files
 
                 moveTimeString = Type[14].replace(",00","");
                 moveTimeString2 = moveTimeString.replace(".","");
-
 
                 if(Type[14].isEmpty())
                     moveTime = 0;

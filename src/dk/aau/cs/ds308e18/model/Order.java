@@ -257,11 +257,6 @@ public class Order {
         return orderLines.size();
     }
 
-    public void requestLatLonFromAddress() {
-        this.latLon = gps.GeocodeAddress(address, zipCode);;
-        OrderManagement.saveLatLonInDataBase(address, this.latLon.lat, this.latLon.lon);
-    }
-
     public void setLatLon(double lat, double lon) {
         setLatLon(new GHPoint(lat, lon));
     }

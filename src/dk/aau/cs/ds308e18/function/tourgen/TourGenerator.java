@@ -1,6 +1,7 @@
 package dk.aau.cs.ds308e18.function.tourgen;
 
 import com.graphhopper.util.shapes.GHPoint;
+import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.function.management.TourManagement;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
@@ -20,7 +21,6 @@ public class TourGenerator {
     private Consumer<String> progressMessage;
     private int tourCounter = 0;
     private int recursionLevel = 0;
-    GPS gps = new GPS();
 
     public TourGenerator () {
     }
@@ -207,8 +207,8 @@ public class TourGenerator {
             //Check at den næste ordre ikke er tilføjet før
             if (outputList.contains(nextOrder)) {
                 //Do nothing
-            } else if (bestTime > gps.getMillis(currentOrder.getLatLon(), nextOrder.getLatLon())) {
-                bestTime = gps.getMillis(currentOrder.getLatLon(), nextOrder.getLatLon());
+            } else if (bestTime > Main.gps.getMillis(currentOrder.getLatLon(), nextOrder.getLatLon())) {
+                bestTime = Main.gps.getMillis(currentOrder.getLatLon(), nextOrder.getLatLon());
                 nextOrderIndex = orderIndex;
             }
             orderIndex++;
@@ -234,8 +234,8 @@ public class TourGenerator {
 
         //Find shortest time from vibocold to order
         for (Order order : tour.getOrders()) {
-            if (bestTime > gps.getMillis(vibocold, order.getLatLon())) {
-                bestTime = gps.getMillis(vibocold, order.getLatLon());
+            if (bestTime > Main.gps.getMillis(vibocold, order.getLatLon())) {
+                bestTime = Main.gps.getMillis(vibocold, order.getLatLon());
                 indexFirstOrder = orderIndex;
             }
             orderIndex++;
@@ -257,8 +257,8 @@ public class TourGenerator {
         print("Checking order time... (order " + order.getID() + ", tour " + tourCounter + ")");
 
         try {
-            timeTravelTo = gps.getMillis(previousPoint, order.getLatLon()) / 60000;
-            timeTravelBack = gps.getMillis(order.getLatLon(), startPoint) / 60000;
+            timeTravelTo = Main.gps.getMillis(previousPoint, order.getLatLon()) / 60000;
+            timeTravelBack = Main.gps.getMillis(order.getLatLon(), startPoint) / 60000;
         } catch (RuntimeException e) {
             System.out.println("Can't get millis for: " + order);
             System.out.println(order.getLatLon());

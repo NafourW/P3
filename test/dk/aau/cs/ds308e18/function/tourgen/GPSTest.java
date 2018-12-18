@@ -46,14 +46,14 @@ public class GPSTest {
         Order order = new Order();
         order.setAddress("selma lagerløfs vej 300");
         order.setZipCode(9220);
-        order.requestLatLonFromAddress();
+        order.setLatLon(gps.GeocodeAddress(order.getAddress(), order.getZipCode()));
 
         Assertions.assertEquals(ghPoint.getLat(), order.getLatLon().getLat());
         Assertions.assertEquals(ghPoint.getLon(), order.getLatLon().getLon());
 
         Order orderBadAddress = new Order();
         orderBadAddress.setAddress("Herluf Trollesvej 3Port 1-8");
-        orderBadAddress.requestLatLonFromAddress();
+        orderBadAddress.setLatLon(gps.GeocodeAddress(orderBadAddress.getAddress(), orderBadAddress.getZipCode()));
         GHPoint ghPoint00 = new GHPoint(0, 0);
 
         Assertions.assertEquals(ghPoint00.getLat(), orderBadAddress.getLatLon().lat);
