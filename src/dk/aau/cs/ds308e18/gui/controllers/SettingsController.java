@@ -105,6 +105,7 @@ public class SettingsController {
         destinationBrowseButton.setDisable(disabled);
         clearAllToursButton.setDisable(disabled);
         refreshDatabaseButton.setDisable(disabled);
+        darkModeCheckBox.setDisable(disabled);
         backButton.setDisable(disabled);
     }
 

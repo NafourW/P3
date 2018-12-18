@@ -74,30 +74,6 @@ public class DatabaseImport {
             if (conn != null) {
                 // For every order, put the order in the database
                 for (Order order : orderList) {
-
-                    //for each order, get the corresponding order line with wares
-                    ArrayList<OrderLine> orderLines = order.getOrderLines();
-
-                    ArrayList<Integer> orderResults = WareManagement.getOrderlineWare(orderLines);
-
-                    if (orderResults.get(0) > 0){
-                        order.setTotalLiftAlone(true);
-                    } else {
-                        order.setTotalLiftAlone(false);
-                    }
-
-                    if (orderResults.get(1) > 0){
-                        order.setTotalLiftingTools(true);
-                    } else {
-                        order.setTotalLiftingTools(false);
-                    }
-
-                    order.setTotalTime(orderResults.get(2));
-
-                    order.setTotalTime(OrderLineManagement.orderLoadTime(orderLines));
-                    order.setTotalLiftAlone(OrderLineManagement.isLiftAlone(orderLines));
-                    order.setTotalLiftingTools(OrderLineManagement.isLiftEquipment(orderLines));
-
                     OrderManagement.createOrder(order);
                 }
                 System.out.println("Orders imported.");
@@ -109,19 +85,31 @@ public class DatabaseImport {
 
     public void importOrderLines(String sourcePath) {
         System.out.println("Importing Order lines...");
+
         ReadFile readFileObject = new ReadFile();
-
         DatabaseConnection dbConn = new DatabaseConnection();
-
-        // Grab order lines from "orderLineTypes" method and put them into "orderLineList"
-        ArrayList<OrderLine> orderLineList = readFileObject.orderLines(sourcePath);
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
+                for (Order order : OrderManagement.getOrders()) {
+                    // Read orderlines from files that correspond to this order
+                    ArrayList<OrderLine> orderLineList = readFileObject.orderLines(order, sourcePath);
 
-                // For every ware, put the ware in the database
-                for (OrderLine orderLine : orderLineList) {
-                    OrderLineManagement.createOrderLine(orderLine);
+                    // Insert the orderlines into the database
+                    for (OrderLine orderLine : orderLineList) {
+                        order.addOrderLine(orderLine);
+                        OrderLineManagement.createOrderLine(orderLine);
+                    }
+
+                    // Get the ware moving values from the wares that belong to the order
+                    ArrayList<Integer> orderResults = WareManagement.getWareMovingValues(orderLineList);
+
+                    // Use the values to set total values for the orders
+                    order.setTotalLiftAlone(orderResults.get(0) > 0);
+                    order.setTotalLiftingTools(orderResults.get(1) > 0);
+                    order.setTotalTime(orderResults.get(2));
+
+                    OrderManagement.overrideOrder(order);
                 }
                 System.out.println("Order lines imported.");
             }

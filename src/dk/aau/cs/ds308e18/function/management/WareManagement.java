@@ -49,84 +49,38 @@ public class WareManagement {
     }
 
     /*
-    Now does the same as the getWaresOnOrder in OrderLineManagement.
-    We should remove it when we know it works.
+    Returns liftAlone, liftingTools and totalMoveTime, based on the values from the wares
+    in the list of orderlines that is given.
     */
-    public static ArrayList<Integer> getOrderlineWare(ArrayList<OrderLine> orderWareList) {
+    public static ArrayList<Integer> getWareMovingValues(ArrayList<OrderLine> orderLineList) {
         ArrayList<Integer> information = new ArrayList<>();
 
         DatabaseConnection dbConn = new DatabaseConnection();
-        String sql = "SELECT liftAlone, liftingTools, moveTime FROM warelist WHERE wareNumber = ?";
+        String sql = "SELECT liftAlone, liftingTools, moveTime FROM warelist WHERE wareNumber = ? OR wareNumber = ?  OR wareNumber = ?";
 
         int liftAlone = 1;
         int liftingTools = 0;
         int totalMoveTime = 0;
 
-        /*
-        warenumber = warenumber
-        individual = warenumber
-        individual warenumber = warenumber
-         */
-
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
 
             if (conn != null) {
                 PreparedStatement stmt = conn.prepareStatement(sql);
-                for(OrderLine ware : orderWareList) {
 
-                    //TODO Send help to this function
-                    stmt.setString(1, ware.getWareNumber());
-                    ResultSet rs1 = stmt.executeQuery();
+                for(OrderLine orderLine : orderLineList) {
+                    stmt.setString(1, orderLine.getWareNumber());
+                    stmt.setString(2, orderLine.getIndividual());
+                    stmt.setString(3, orderLine.getIndividualNumber());
+                    ResultSet rs = stmt.executeQuery();
 
-                    boolean rs1Found = false;
-                    boolean rs2Found = false;
-
-                    while(rs1.next()) {
-                        if (rs1.getString(1).equals("false")){
+                    while(rs.next()) {
+                        if (rs.getString(1).equals("false"))
                             liftAlone = 0;
-                        }
-                        if (rs1.getString(2).equals("true")){
+
+                        if (rs.getString(2).equals("true"))
                             liftingTools = 1;
-                        }
 
-                        totalMoveTime += Integer.valueOf(rs1.getString(3));
-
-                        rs1Found = true;
-                    }
-
-                    if(!rs1Found) {
-                        stmt.setString(1, ware.getIndividual());
-                        ResultSet rs2 = stmt.executeQuery();
-
-                        while(rs2.next()) {
-                            if (rs2.getString(1).equals("false")){
-                                liftAlone = 0;
-                            }
-                            if (rs2.getString(2).equals("true")){
-                                liftingTools = 1;
-                            }
-
-                            totalMoveTime += Integer.valueOf(rs2.getString(3));
-                            rs2Found = true;
-
-                        }
-
-                        if(!rs2Found) {
-                            stmt.setString(1, ware.getIndividualNumber());
-                            ResultSet rs3 = stmt.executeQuery();
-
-                            while(rs3.next()) {
-                                if (rs3.getString(1).equals("false")){
-                                    liftAlone = 0;
-                                }
-                                if (rs3.getString(2).equals("true")){
-                                    liftingTools = 1;
-                                }
-
-                                totalMoveTime += Integer.valueOf(rs3.getString(3));
-
-                            }
-                        }
+                        totalMoveTime += Integer.valueOf(rs.getString(3));
                     }
                 }
             }

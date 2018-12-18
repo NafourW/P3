@@ -135,81 +135,75 @@ public class ReadFile {//Class that reads CSV files
         return orderList;
     }
 
-    public ArrayList<OrderLine> orderLines(String sourPath){
+    public ArrayList<OrderLine> orderLines(Order order, String sourPath){
 
         ArrayList<OrderLine> orderLines = new ArrayList<>();
 
         String line = "";
-
         String cvsSplitBy = ";";
 
-        ArrayList<Order> orderList = OrderManagement.getOrders();
+        String directory = sourPath + "/" + order.getID() + "_ordrelinjer.csv";
 
-        for (Order order : orderList){
+        Path path = Paths.get(directory);
 
-            String directory = sourPath + "/" + order.getID() + "_ordrelinjer.csv";
+        if (Files.exists(path)){//TODO Skip
 
-            Path path = Paths.get(directory);
+            try (BufferedReader br = new BufferedReader(new FileReader(directory))){
 
-            if (Files.exists(path)){//TODO Skip
+                while ((line = br.readLine()) != null){
 
-                try (BufferedReader br = new BufferedReader(new FileReader(directory))){
+                    String[] Items = line.split(cvsSplitBy, -1);
 
-                    while ((line = br.readLine()) != null){
-
-                        String[] Items = line.split(cvsSplitBy, -1);
-
-                        if (Items[0].matches("^[^\\d].*")){
-                            continue;
-                        }
-
-                        //Order = Items[0]
-                        //WareNumber = Items[1]
-                        //WareName = Items[2]
-
-                        String labelsString = Items[3].replace(",00","");
-                        int labels; //Convert content inside the list to integer
-
-                        if(Items[3].isEmpty())
-                            labels = 0;
-                        else
-                            labels = Integer.valueOf(labelsString);
-
-                        String deliveredString = Items[4].replace(",00", "");
-                        int delivered; //Convert content inside the list to integer
-
-                        if(Items[4].isEmpty())
-                            delivered = 0;
-                        else
-                            delivered = Integer.valueOf(deliveredString);
-
-                        //Inidivid = Items[5]
-
-                        boolean preparing;
-                        preparing = Items[6].toLowerCase().equals("ja");
-
-                        //Individ varenummer = Items[7]
-                        //Model = Items[8]
-                        //Navn = Items[9]
-
-                        OrderLine orderLine = new OrderLine();
-
-                        orderLine.setOrder(Items[0]);
-                        orderLine.setWareNumber(Items[1]);
-                        orderLine.setWareName(Items[2]);
-                        orderLine.setLabels(labels);
-                        orderLine.setDelivered(delivered);
-                        orderLine.setIndividual(Items[5]);
-                        orderLine.setPreparing(preparing);
-                        orderLine.setIndividualNumber(Items[7]);
-                        orderLine.setModel(Items[8]);
-                        orderLine.setFullName(Items[9]);
-
-                        orderLines.add(orderLine);
+                    if (Items[0].matches("^[^\\d].*")){
+                        continue;
                     }
-                } catch (Exception e){
-                    e.printStackTrace();
+
+                    //Order = Items[0]
+                    //WareNumber = Items[1]
+                    //WareName = Items[2]
+
+                    String labelsString = Items[3].replace(",00","");
+                    int labels; //Convert content inside the list to integer
+
+                    if(Items[3].isEmpty())
+                        labels = 0;
+                    else
+                        labels = Integer.valueOf(labelsString);
+
+                    String deliveredString = Items[4].replace(",00", "");
+                    int delivered; //Convert content inside the list to integer
+
+                    if(Items[4].isEmpty())
+                        delivered = 0;
+                    else
+                        delivered = Integer.valueOf(deliveredString);
+
+                    //Inidivid = Items[5]
+
+                    boolean preparing;
+                    preparing = Items[6].toLowerCase().equals("ja");
+
+                    //Individ varenummer = Items[7]
+                    //Model = Items[8]
+                    //Navn = Items[9]
+
+                    OrderLine orderLine = new OrderLine();
+
+                    orderLine.setOrder(Items[0]);
+                    orderLine.setWareNumber(Items[1]);
+                    orderLine.setWareName(Items[2]);
+                    orderLine.setLabels(labels);
+                    orderLine.setDelivered(delivered);
+                    orderLine.setIndividual(Items[5]);
+                    orderLine.setPreparing(preparing);
+                    orderLine.setIndividualNumber(Items[7]);
+                    orderLine.setModel(Items[8]);
+                    orderLine.setFullName(Items[9]);
+
+                    orderLines.add(orderLine);
                 }
+            } catch (Exception e){
+                e.printStackTrace();
             }
         }
 
