@@ -148,7 +148,8 @@ public class DatabaseSetup {
                         "region VARCHAR(255)," +
                         "driver VARCHAR(255)," +
                         "status VARCHAR(255)," +
-                        "consignor VARCHAR(255))";
+                        "consignor VARCHAR(255)," +
+                        "tourTime INT)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
             }

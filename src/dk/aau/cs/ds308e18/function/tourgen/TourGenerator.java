@@ -108,7 +108,7 @@ public class TourGenerator {
                 //Mark as invalid
                 invalidTours.add(t);
             } else {
-                //Update tour ids on orders
+                //Add tour to database
                 TourManagement.createTour(t);
             }
         }
@@ -161,9 +161,9 @@ public class TourGenerator {
                 System.out.println(o.getLatLon());
             }
 
-            totalTimeAfter -= timeTravelTo + o.getTotalTime() + timeTravelBack;
+            totalTimeAfter += timeTravelTo + o.getTotalTime() + timeTravelBack;
 
-            if (totalTimeAfter >= availableTime) {
+            if (totalTimeAfter < availableTime) {
                 //Set timeBefore to the new value
                 totalTimeBefore = totalTimeAfter;
 
@@ -194,6 +194,9 @@ public class TourGenerator {
             print("Recursively processing tour... (" + tourCounter + ")");
             processedTours.addAll(processTour(initialTour, settings));
         }
+
+        //Update tourTime on initialTour
+        initialTour.setTourTime((int)totalTimeAfter);
 
         print("Adding tour " + tourCounter + " to processed tour list (recursion level " + recursionLevel + ")");
         //Add the tour to the processed tour list

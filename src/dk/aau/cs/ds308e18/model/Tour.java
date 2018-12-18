@@ -27,6 +27,8 @@ public class Tour {
     private tourStatus status;
     private Boolean consignor;
 
+    private int tourTime;
+
     //Used in our database to see which tour an order belongs to.
     private int tourID;
 
@@ -188,4 +190,11 @@ public class Tour {
         return regionDetail;
     }
 
+    public int getTourTime() {
+        return tourTime;
+    }
+
+    public void setTourTime(int tourTime) {
+        this.tourTime = tourTime;
+    }
 }

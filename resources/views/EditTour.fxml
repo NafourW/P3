@@ -37,7 +37,7 @@
             <TableColumn fx:id="Address" prefWidth="260.0" text="%label_order_address" />
             <TableColumn fx:id="ZipCode" minWidth="0.0" prefWidth="70.0" text="%label_order_zip_code" />
             <TableColumn fx:id="Region" prefWidth="120.0" text="%label_order_region" />
-            <TableColumn fx:id="totalTime" prefWidth="120.0" text="%label_order_total_time" />
+            <TableColumn fx:id="TotalTime" prefWidth="120.0" text="%label_order_total_time" />
         </columns>
          <VBox.margin>
             <Insets bottom="20.0" />

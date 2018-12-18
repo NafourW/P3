@@ -36,7 +36,7 @@ public class GeneratorProgressController implements ISelectionController {
 
             System.out.println("Generated " + tours.size() + " tours:");
             for (Tour tour : tours)
-                System.out.println(tour.getTourDate() + " - " + tour.getOrders().size() + " orders");
+                System.out.println(tour.getTourDate() + " - " + tour.getOrders().size() + " orders, time: " + tour.getTourTime());
 
             return "";
             }

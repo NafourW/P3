@@ -29,7 +29,7 @@ public class EditTourController implements ISelectionController {
     @FXML private TableColumn<Tour, String> Address;
     @FXML private TableColumn<Tour, Integer> ZipCode;
     @FXML private TableColumn<Tour, String> Region;
-    @FXML private TableColumn<Tour, Integer> totalTime;
+    @FXML private TableColumn<Tour, Integer> TotalTime;
 
     @FXML private DatePicker datePicker;
     @FXML private ComboBox<String> regionComboBox;

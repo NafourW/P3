@@ -50,6 +50,7 @@
                               <TableColumn fx:id="Consignor" prefWidth="72.0" text="%label_tour_consignor" />
                               <TableColumn fx:id="LocalizedStatusString" prefWidth="100.0" text="%label_tour_status" />
                               <TableColumn fx:id="OrderAmount" prefWidth="65.0" text="%label_tour_order_amount" />
+                              <TableColumn fx:id="TourTime" prefWidth="65.0" text="%label_tour_total_time" />
                           </columns>
                         </TableView>
                      </content>
@@ -131,7 +132,7 @@
                         <TableColumn fx:id="CustomerName" prefWidth="200.0" text="%label_order_customer_name" />
                         <TableColumn fx:id="Address" prefWidth="200.0" text="%label_order_address" />
                         <TableColumn fx:id="ZipCode" prefWidth="75.0" text="%label_order_zip_code" />
-                        <TableColumn fx:id="totalTime" prefWidth="75.0" text="%label_order_total_time" />
+                        <TableColumn fx:id="TotalTime" prefWidth="75.0" text="%label_order_total_time" />
                      </columns>
                   </TableView>
                </content>

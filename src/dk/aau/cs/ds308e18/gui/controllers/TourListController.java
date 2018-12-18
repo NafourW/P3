@@ -35,6 +35,7 @@ public class TourListController {
     @FXML private TableColumn<Tour, String> LocalizedStatusString;
     @FXML private TableColumn<Tour, Boolean> Consignor;
     @FXML private TableColumn<Tour, Integer> OrderAmount;
+    @FXML private TableColumn<Tour, Integer> TourTime;
 
     @FXML private TableView<Order> tourOrdersTable;
     @FXML private TableColumn<Tour, Integer> OrderID;
@@ -42,7 +43,7 @@ public class TourListController {
     @FXML private TableColumn<Tour, String> CustomerName;
     @FXML private TableColumn<Tour, String> Address;
     @FXML private TableColumn<Tour, Integer> ZipCode;
-    @FXML private TableColumn<Tour, Integer> totalTime;
+    @FXML private TableColumn<Tour, Integer> TotalTime;
 
     private TableManager<Tour> tourListManager;
     private TableManager<Order> tourOrdersManager;

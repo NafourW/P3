@@ -15,7 +15,7 @@ public class TourManagement {
     public static void createTour(Tour tour) {
         DatabaseConnection dbConn = new DatabaseConnection();
         String sql = "INSERT INTO tours (tourDate, packingDate, id, region, " +
-                "driver, status, consignor) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                "driver, status, consignor, tourTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
@@ -27,6 +27,7 @@ public class TourManagement {
                 stmt.setString(5, String.valueOf(tour.getDriver()));
                 stmt.setString(6, String.valueOf(tour.getStatus()));
                 stmt.setBoolean(7, tour.getConsignor());
+                stmt.setInt(8, tour.getTourTime());
 
                 stmt.executeUpdate();
             }
@@ -49,7 +50,7 @@ public class TourManagement {
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if(conn != null) {
                 String sql = "UPDATE tours SET tourDate = ?, packingDate = ?, id = ?, region = ?, " +
-                        "driver = ?, status = ?, consignor = ? WHERE tourID = ?";
+                        "driver = ?, status = ?, consignor = ?, tourTime = ? WHERE tourID = ?";
                 PreparedStatement stmt = conn.prepareStatement(sql);
 
                 //TODO HJÆÆÆÆÆÆLP (også) DEN HER stmt.set...
@@ -60,7 +61,8 @@ public class TourManagement {
                 stmt.setString(5, tour.getDriver());
                 stmt.setString(6, String.valueOf(tour.getStatus()));
                 stmt.setBoolean(7, tour.getConsignor());
-                stmt.setInt(8, tour.getTourID());
+                stmt.setInt(8, tour.getTourTime());
+                stmt.setInt(9, tour.getTourID());
 
                 stmt.executeUpdate();
             }
