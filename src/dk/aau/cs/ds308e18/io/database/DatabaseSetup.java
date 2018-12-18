@@ -12,8 +12,13 @@ public class DatabaseSetup {
     private static String userName;
     private static String password;
 
+    public static DatabaseImport dbImport;
+    public static DatabaseExport dbExport;
+
     public DatabaseSetup() throws IOException{
         loadConfiguration();
+        dbImport = new DatabaseImport();
+        dbExport = new DatabaseExport();
         databaseSetup();
     }
 
@@ -239,7 +244,6 @@ public class DatabaseSetup {
     */
     private void createRegionTable() {
         DatabaseConnection dbConn = new DatabaseConnection();
-        DatabaseImport dbImpo = new DatabaseImport();
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
@@ -251,7 +255,7 @@ public class DatabaseSetup {
                 /* Import region names into the table ONLY if doesn't exist
                 to avoid importing the names every time the program is executed.
                 */
-                dbImpo.importRegionNames();
+                dbImport.importRegionNames();
             }
         } catch(SQLException e) {
             System.out.println("The region table already exists.");

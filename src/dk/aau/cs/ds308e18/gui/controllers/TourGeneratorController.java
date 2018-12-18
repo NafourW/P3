@@ -4,6 +4,7 @@ import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.function.tourgen.TourGenerator;
 import dk.aau.cs.ds308e18.function.tourgen.TourGeneratorSettings;
+import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 import javafx.collections.FXCollections;
@@ -44,7 +45,7 @@ public class TourGeneratorController {
         planningChoiceBox.setValue(TourGeneratorSettings.planningMethod.leastTime);
         planningChoiceBox.setDisable(true);
 
-        regions.addAll(Main.dbExport.exportRegionNames());
+        regions.addAll(DatabaseSetup.dbExport.exportRegionNames());
         regionChoiceBox.setItems(regions);
         regionChoiceBox.getSelectionModel().selectFirst();
 

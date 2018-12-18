@@ -4,6 +4,7 @@ import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.gui.ISelectionController;
 import dk.aau.cs.ds308e18.gui.TableManager;
+import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
 import javafx.beans.value.ObservableValue;
@@ -82,7 +83,7 @@ public class EditOrderController implements ISelectionController {
 
         removeWareButton.setDisable(true);
 
-        regions.addAll(Main.dbExport.exportRegionNames());
+        regions.addAll(DatabaseSetup.dbExport.exportRegionNames());
         regionComboBox.setItems(regions);
 
         //setup onOrderLineSelected method

@@ -17,15 +17,15 @@ false;350002;0731431;;Fuldført;CLIMATE A/S;29-06-2018;Farum Gydevej 77;3520;385
 false;350003;0731439;;Fuldført;A.P. KØLESERVICE ApS;29-06-2018;Valseholmen 6-8;2650;3856725;Nej;;;4;Service;;Nej;København;Nej;Valseholmen 6-8;55.610647;12.4648488
 false;350006;0731446;;Fuldført;CLIMATE A/S;29-06-2018;Farum Gydevej 77;3520;3856728;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Farum Gydevej 77;55.82088;12.362469
 false;350009;0731449;;Fuldført;CLIMATE A/S;29-06-2018;Farum Gydevej 77;3520;3856730;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Farum Gydevej 77;55.82088;12.362469
-false;350091;0731598;;Fuldført;VOJENS KØLETEKNIK;29-06-2018;Roskildevej 519ATT: 0138Vojens KøleteknikKasper Pedersen;2605;3863286;Nej;;;4;Service;;Nej;København;Nej;Roskildevej 519ATT: 0138Vojens KøleteknikKasper Pe...;56.448789;9.33946
+false;350091;0731598;;Fuldført;VOJENS KØLETEKNIK;29-06-2018;Roskildevej 519ATT: 0138Vojens KøleteknikKasper Pedersen;2605;3863286;Nej;;;4;Service;;Nej;København;Nej;Roskildevej 519;55.6723766;12.4872983
 false;350094;0731611;;Fuldført;Emmerys;29-06-2018;Jagtvej 109;;;;;;;;;;;;Jagtvej 109, st;57.0415435;9.8813351
 false;350173;0731719;;Fuldført;7-ELEVEN - 467;29-06-2018;Grenåvej 189;8240;3863374;Nej;;;4;Service;;Nej;Øst Jylland;Nej;Grenåvej 189;56.195432;10.21929
 false;350208;0731753;;Fuldført;Wedofood;02-07-2018;Gammel Kongevej 176;1850;3863376;Nej;;;4;Service;;Nej;København;Ja;Gammel Kongevej 176;55.678288;12.533999
 false;350209;0731766;;Fuldført;Kemp & Lauritzen A/S;02-07-2018;Stamholmen 110;2650;3863294;Nej;;;4;Service;;Nej;København;Nej;Stamholmen 110;55.613585;12.466355
 false;350220;0731797;;Fuldført;Thomas Harm;02-07-2018;Kostervej 80B;;;;;;;;;;;;Kostervej 80B, Koster;54.980383;12.187425
-false;350098;0731616;;Fuldført;Hallernes Smørrebrød;02-07-2018;Tivoli Food HallBernstorffsgade 3;1577;3863391;Nej;;;4;Nykøb;;Nej;København;Ja;Tivoli Food HallBernstorffsgade 3;56.448789;9.33946
+false;350098;0731616;;Fuldført;Hallernes Smørrebrød;02-07-2018;Tivoli Food HallBernstorffsgade 3;1577;3863391;Nej;;;4;Nykøb;;Nej;København;Ja;Bernstorffsgade 3;55.67381;12.5636203
 false;350274;0731885;;Fuldført;CLIMATE A/S;02-07-2018;Farum Gydevej 77;3520;3865362;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Farum Gydevej 77;55.82088;12.362469
-false;350275;0731972;;Fuldført;VM ELEKTRO A/S;02-07-2018;Gårsdalvej 20;;;;;;;;;;;;Gårsdalvej 20, Ravnstrup KONTO: 73198;56.448789;9.33946
+false;350275;0731972;;Fuldført;VM ELEKTRO A/S;02-07-2018;Gårsdalvej 20;;;;;;;;;;;;Gårsdalvej 20, Ravnstrup KONTO: 73198;56.443044;9.2900433
 false;350289;0731999;;Fuldført;RP Maskinservice ApS;02-07-2018;Bizonvej 7;9293;3863737;Nej;;;4;Service;;Nej;Nord Jylland;Nej;Bizonvej 7;56.896543;10.102237
 false;350302;0732023;;Fuldført;Holbæk Køl;02-07-2018;Søndergade 18;4534;3863649;Nej;;;4;Service;;Nej;Vest Sjælland;Nej;Søndergade 18;56.134882;8.975906
 false;350313;0732069;;Fuldført;Restaurant Tight;02-07-2018;Hyskenstræde 10;1207;3863735;Nej;;;4;Reservedele;;Nej;København;Ja;Hyskenstræde 10;55.678134;12.576461
@@ -40,19 +40,18 @@ false;350488;0732459;;Fuldført;CLIMATE A/S;03-07-2018;Farum Gydevej 77;3520;386
 false;350510;0732492;;Fuldført;HJ Storkøkkenservice;03-07-2018;Trekronergade 149 E;2500;3867847;Nej;;;4;Reservedele;;Nej;København;Nej;Trekronergade 149 E;55.652043;12.521074
 false;350525;0732521;;Fuldført;Coolers Køleteknik Ivs;03-07-2018;Grevindevej 5;4682;3868120;Nej;;;4;Service;;Nej;Syd Sjælland;Nej;Grevindevej 5;55.377545;12.075425
 false;350535;0732543;;Fuldført;Coolers Køleteknik Ivs;04-07-2018;Grevindevej 5;4682;3867841;Nej;;;4;Service;;Nej;Syd Sjælland;Nej;Grevindevej 5;55.377545;12.075425
-false;350567;0732583;;Fuldført;VM ELEKTRO A/S;04-07-2018;Gårsdalvej 20;;;;;;;;;;;;Gårsdalvej 20, Ravnstrup KONTO: 73198;56.448789;9.33946
+false;350567;0732583;;Fuldført;VM ELEKTRO A/S;04-07-2018;Gårsdalvej 20;;;;;;;;;;;;Gårsdalvej 20, Ravnstrup KONTO: 73198;56.443044;9.2900433
 false;350576;0732635;;Fuldført;Coolers Køleteknik Ivs;04-07-2018;Grevindevej 5;4682;3868131;Nej;;;4;Service;;Nej;Syd Sjælland;Nej;Grevindevej 5;55.377545;12.075425
 false;350596;0732667;;Fuldført;SKIPPERS KØLETEKNIK;04-07-2018;Nørremarksvej 53;9270;3868218;Nej;;;4;Reservedele;;Nej;Midt Nord Jylland;Nej;Nørremarksvej 53;57.017099;10.053476
 false;350623;0732705;;Fuldført;Holbæk Køl;04-07-2018;Søndergade 18;4534;3868343;Nej;;;4;Service;;Nej;Vest Sjælland;Nej;Søndergade 18;56.134882;8.975906
 false;350661;0732770;;Fuldført;CLIMATE A/S;04-07-2018;Farum Gydevej 77;3520;3868610;Nej;;;4;Service;;Nej;Nord Sjælland;Nej;Farum Gydevej 77;55.82088;12.362469
 false;350664;0732788;;Fuldført;MÅLØV SKOLE;04-07-2018;Kratvej 14;2760;3869311;Nej;;;4;Reservedele;;Nej;København;Nej;Kratvej 14;56.14643;9.809343
-false;350675;0732806;;Fuldført;Stig Pedersen;04-07-2018;Reimersvej 16Må sættes i Carport;8963;3869315;Nej;;;4;Reservedele;;Nej;Djursland;Nej;Reimersvej 16Må sættes i Carport;56.448789;9.33946
+false;350675;0732806;;Fuldført;Stig Pedersen;04-07-2018;Reimersvej 16Må sættes i Carport;8963;3869315;Nej;;;4;Reservedele;;Nej;Djursland;Nej;Reimersvej 16;56.8841326;9.8869082
 false;350691;0732846;;Fuldført;VIBOCOLD A/S;04-07-2018;Livøvej 22;8800;3869372;Nej;;;4;Nykøb;;Nej;Øst Jylland;Nej;Livøvej 22;57.007125;8.961579
 false;350694;0732850;;Fuldført;FUGLSANGCENTRET;04-07-2018;Søndermarksvej 150;7000;3869303;Nej;;;4;Service;;Nej;Sønderjylland;Ja;Søndermarksvej 150;55.409166;11.39057
-false;350508;0732413;;Fuldført;FIRST CHOICE CATERING SPARES LTD;04-07-2018;BLAKENEY WAYKINGSWOOD LAKESIDECANNOCK;BGWS11 8LD;3868068;Nej;;;4;Nykøb;;Nej;;Nej;BLAKENEY WAYKINGSWOOD LAKESIDECANNOCK;56.448789;9.33946
 false;350354;0732041;;Fuldført;CINEMA 3 SKIVE;04-07-2018;Skyttevej 12;7800;3865500;Nej;;;4;Reservedele;;Nej;Mors Thy;Nej;Skyttevej 12;55.295229;9.048198
 false;350312;0731710;;Fuldført;JYSKE STORKØKKEN APS;05-07-2018;Priorsvej 21;8600;3863751;Nej;;;4;Nykøb;;Nej;Syd Øst Jylland;Ja;Priorsvej 21;56.201158;9.569745
-false;350809;0732959;;Fuldført;VM ELEKTRO A/S;05-07-2018;Gårsdalvej 20;;;;;;;;;;;;Gårsdalvej 20, Ravnstrup KONTO: 73198;56.448789;9.33946
+false;350809;0732959;;Fuldført;VM ELEKTRO A/S;05-07-2018;Gårsdalvej 20;;;;;;;;;;;;Gårsdalvej 20, Ravnstrup KONTO: 73198;56.443044;9.2900433
 false;350850;0733041;;Fuldført;AGRI-TEKNIK APS;05-07-2018;Stenbro Allé 11;6650;3869890;Nej;;;4;Service;;Nej;Vest Jylland;Nej;Stenbro Allé 11;55.502045;9.026726
 false;350865;0733059;;Fuldført;Marielyst El ApS;05-07-2018;Marielyst Strandvej 5A;4873;3869903;Nej;;;4;Service;;Nej;Syd Sjælland;Nej;Marielyst Strandvej 5A;54.697955;11.94875
 false;350901;0733166;;Fuldført;BILKA - 1654;05-07-2018;Niels Bohrs Alle 150;5230;3871084;Nej;;;4;Service;;Nej;Midt Nord Fyn;Nej;Niels Bohrs Alle 150;55.377048;10.432013
@@ -85,7 +84,7 @@ false;351010;0733408;;Aktiveret;BROGAARDEN;11-07-2018;FREDERIKSBORGVEJ 23;2970;;
 false;351002;0733368;;Aktiveret;CIRCLE K MOTORVEJSCENTER SKÆRUP VEST;12-07-2018;ØSTJYSKE MOTORVEJ 616A;7000;;Nej;;;1;Levering;RU;Nej;Sønderjylland;Nej;ØSTJYSKE MOTORVEJ 616A;55.642924;9.558623
 false;351003;0733369;;Aktiveret;SPAR BORUP;12-07-2018;HOVEDGADEN 12;4140;;Ja;12-07-2018;;0;Afhentning;RU;Nej;Vest Sjælland;Nej;HOVEDGADEN 12;55.799645;11.552052
 false;350439;0730465;;Fuldført;TRELDEVEJENS GRILL;12-07-2018;Treldevej 5;7000;3865836;Nej;;;4;Nykøb;;Nej;Sønderjylland;Ja;Treldevej 5;55.573816;9.767483
-false;334948;0697508;;Aktiveret;GRAM-COMMERCIAL A/S;12-07-2018;Varemodtagelsesafd. HAL 103Metalparken 23;6500;;Nej;;;4;Service;;Nej;Sønderjylland;Nej;Varemodtagelsesafd. HAL 103Metalparken 23;56.448789;9.33946
+false;334948;0697508;;Aktiveret;GRAM-COMMERCIAL A/S;12-07-2018;Varemodtagelsesafd. HAL 103Metalparken 23;6500;;Nej;;;4;Service;;Nej;Sønderjylland;Nej;Metalparken 23;55.2398659;9.2963401
 false;350987;0733319;;Aktiveret;BENT BRANDT A/S;13-07-2018;Langdyssen 7Lisbjerg;8200;;Nej;;;0;Nykøb;;Nej;Øst Jylland;Nej;Langdyssen 7Lisbjerg;56.4167976;8.4839481
 false;351012;0721932;;Aktiveret;BLUE WATER SHIPPING;13-07-2018;Kertemindevej 1;9220;;Nej;;28;;;;;;;Kertemindevej 1;57.049805;10.039545
 false;351014;0722367;;Aktiveret;BLUE WATER SHIPPING;13-07-2018;Kertemindevej 1;9220;;Nej;;28;;;;;;;Kertemindevej 1;57.049805;10.039545
@@ -98,7 +97,7 @@ false;349653;0730656;;Aktiveret;7-ELEVEN - 624;06-08-2018;John F Kennedys Plads 
 false;350501;0730656;;Aktiveret;7-ELEVEN - 624;06-08-2018;John F Kennedys Plads 3;;;;;;;;;;;;John F Kennedys Plads 3, Aalborg Banegård;57.042866;9.917273
 false;351005;0733385;;Aktiveret;SUPERBRUGSEN SØNDERSØ;09-08-2018;TOFTEKÆR 4;5471;;Nej;;;1;Levering;RU;Nej;Midt Nord Fyn;Nej;TOFTEKÆR 4;55.59987935;12.05732058
 false;351007;0733386;;Aktiveret;SUPERBRUGSEN SØNDERSØ;13-08-2018;TOFTEKÆR 4;5471;;Ja;13-08-2018;;0;Afhentning;RU;Nej;Midt Nord Fyn;Nej;TOFTEKÆR 4;55.59987935;12.05732058
-false;334949;0697510;;Aktiveret;GRAM-COMMERCIAL A/S;13-08-2018;Varemodtagelsesafd. HAL 103Metalparken 23;6500;;Nej;;;4;Service;;Nej;Sønderjylland;Nej;Varemodtagelsesafd. HAL 103Metalparken 23;56.448789;9.33946
+false;334949;0697510;;Aktiveret;GRAM-COMMERCIAL A/S;13-08-2018;Varemodtagelsesafd. HAL 103Metalparken 23;6500;;Nej;;;4;Service;;Nej;Sønderjylland;Nej;Metalparken 23;55.2398659;9.2963401
 false;351052;0733558;;Aktiveret;Unilever IS;19-09-2018;Ørestads Boulevard 73;2300;;Nej;;;0;Ombytning;UNILEVER S;Nej;København;Nej;Ørestads Boulevard 73;55.632249;12.581176
 false;351053;0733559;;Aktiveret;Unilever IS;19-09-2018;Ørestads Boulevard 73;2300;;Ja;19-09-2018;;0;Afhentning;UNILEVER S;Nej;København;Nej;Ørestads Boulevard 73;55.632249;12.581176
 false;351040;0733525;;Fuldført;Fiskehuset Enø;19-09-2018;Ved Broen 5;4736;3872158;Nej;;;0;Ombytning;RU HORECA;Nej;Syd Sjælland;Nej;Ved Broen 5;55.094956;10.242594
@@ -112,7 +111,7 @@ false;351048;0733554;;Aktiveret;Unilever IS;19-09-2018;Ørestads Boulevard 73;23
 false;351049;0733555;;Fuldført;Unilever IS;19-09-2018;Ørestads Boulevard 73;2300;3872165;Ja;19-09-2018;;0;Afhentning;UNILEVER S;Nej;København;Nej;Ørestads Boulevard 73;55.632249;12.581176
 false;351051;0733557;;Aktiveret;KVICKLY - 7590;21-09-2018;Dannebrogsgade 64;9000;;Ja;21-09-2018;;0;Afhentning;AQUA;Nej;Nord Jylland;Nej;Dannebrogsgade 64;57.054493;9.905686
 false;350998;0733362;;Aktiveret;BELLA CENTER;24-09-2018;Center Boulevard 5;2300;;Nej;26-09-2018;;0;Levering;VIBOCOLD;Nej;København;Nej;Center Boulevard 5;55.6395824;12.5759532
-false;351057;0733612;;Aktiveret;LOKOMOTIV VÆRKSTEDET;02-10-2018;(CPH VISION) Otto Bussesvej 5A;2450;;Nej;;;0;Levering;VIBOCOLD;Nej;København;Nej;(CPH VISION) Otto Bussesvej 5A;56.448789;9.33946
+false;351057;0733612;;Aktiveret;LOKOMOTIV VÆRKSTEDET;02-10-2018;(CPH VISION) Otto Bussesvej 5A;2450;;Nej;;;0;Levering;VIBOCOLD;Nej;København;Nej;Otto Bussesvej 5A;55.6591436;12.5455907
 false;350997;0733364;;Aktiveret;Messe C Fredericia;08-10-2018;Vestre ringvej 101;7000;;Nej;10-10-2018;;0;Levering;VIBOCOLD;Nej;Sønderjylland;Nej;Vestre ringvej 101;55.579994;9.725026
 false;351058;0733613;;Fuldført;Co-Ro  A/S DK;11-10-2018;Ellekær 1;3600;3872166;Ja;14-08-2018;;0;Afhentning;CADISO;Nej;Nord Sjælland;Nej;Ellekær 1;55.801403;12.210476
 false;351054;0733607;0733606;Aktiveret;Unilever IS;19-10-2018;Ørestads Boulevard 73;2300;;Ja;19-10-2018;;0;Afhentning;UNILEVER S;Nej;København;Nej;Ørestads Boulevard 73;55.632249;12.581176

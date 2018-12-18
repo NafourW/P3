@@ -2,6 +2,7 @@ package dk.aau.cs.ds308e18.function.management;
 
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
+import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
 import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Ware;
 
@@ -97,6 +98,6 @@ public class WareManagement {
     }
 
     public static ArrayList<Ware> getWares(){
-        return Main.dbExport.exportWares();
+        return DatabaseSetup.dbExport.exportWares();
     }
 }

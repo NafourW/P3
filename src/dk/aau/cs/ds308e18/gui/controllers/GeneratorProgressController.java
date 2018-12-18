@@ -2,6 +2,7 @@ package dk.aau.cs.ds308e18.gui.controllers;
 
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.function.management.OrderManagement;
+import dk.aau.cs.ds308e18.function.management.TourManagement;
 import dk.aau.cs.ds308e18.function.tourgen.TourGenerator;
 import dk.aau.cs.ds308e18.function.tourgen.TourGeneratorSettings;
 import dk.aau.cs.ds308e18.gui.ISelectionController;
@@ -35,8 +36,12 @@ public class GeneratorProgressController implements ISelectionController {
             ArrayList<Tour> tours = tourGenerator.generateTours(orders, settings);
 
             System.out.println("Generated " + tours.size() + " tours:");
-            for (Tour tour : tours)
+            for (Tour tour : tours) {
                 System.out.println(tour.getTourDate() + " - " + tour.getOrders().size() + " orders, time: " + tour.getTourTime());
+
+                //Add tour to database
+                TourManagement.createTour(tour);
+            }
 
             return "";
             }

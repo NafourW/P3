@@ -4,6 +4,7 @@ import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationExceptio
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 import dk.aau.cs.ds308e18.io.database.DatabaseExport;
+import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 
@@ -157,15 +158,15 @@ public class OrderManagement {
     }
 
     public static ArrayList<Order> getOrders() {
-        return Main.dbExport.exportAllOrders();
+        return DatabaseSetup.dbExport.exportAllOrders();
     }
 
     public static ArrayList<Order> getUnassignedOrders() {
-        return Main.dbExport.exportUnassignedOrders();
+        return DatabaseSetup.dbExport.exportUnassignedOrders();
     }
 
     public static ArrayList<Order> getUnassignedOrdersFiltered(String region, String date) {
-        return Main.dbExport.exportUnassignedOrdersFiltered(region, date);
+        return DatabaseSetup.dbExport.exportUnassignedOrdersFiltered(region, date);
     }
 
     /*

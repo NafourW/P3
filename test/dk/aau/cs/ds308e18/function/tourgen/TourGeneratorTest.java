@@ -1,6 +1,8 @@
 package dk.aau.cs.ds308e18.function.tourgen;
 
 import com.graphhopper.util.shapes.GHPoint;
+import dk.aau.cs.ds308e18.io.database.DatabaseExport;
+import dk.aau.cs.ds308e18.io.database.DatabaseImport;
 import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
@@ -16,12 +18,19 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class TourGeneratorTest {
+    static DatabaseSetup dbSetup;
 
     @BeforeAll
-    @AfterAll
     static void RefreshDatabaseBefore() throws IOException {
-        DatabaseSetup databaseSetup = new DatabaseSetup();
-        databaseSetup.reloadDatabase();
+        dbSetup = new DatabaseSetup();
+        dbSetup.reloadDatabase();
+
+        DatabaseSetup.dbImport.importAll("resources/data");
+    }
+
+    @AfterAll
+    static void RefreshDatabaseAfter() throws IOException {
+        dbSetup.reloadDatabase();
     }
 
     @Test
@@ -31,10 +40,12 @@ public class TourGeneratorTest {
         TourGeneratorSettings settings = new TourGeneratorSettings();
         settings.method = TourGeneratorSettings.planningMethod.leastTime;
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 100; i++) {
             Order order = new Order();
             order.setDate(LocalDate.now());
             order.setLatLon(new GHPoint(57.0122539,9.9910615));
+            order.setRegion("København");
+            order.setTotalTime(100);
             orders.add(order);
         }
 
@@ -48,16 +59,19 @@ public class TourGeneratorTest {
     }
 
     @Test
-    void TestOrdersPerTourDoesNotExceedLimit() {
+    void TestOrdersPerTourDoesNotExceedTimeLimit() {
         ArrayList<Order> orders = new ArrayList<>();
 
         TourGeneratorSettings settings = new TourGeneratorSettings();
         settings.method = TourGeneratorSettings.planningMethod.leastTime;
+        settings.workTime = 480;
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 100; i++) {
             Order order = new Order();
             order.setDate(LocalDate.now());
             order.setLatLon(new GHPoint(57.0122539,9.9910615));
+            order.setRegion("København");
+            order.setTotalTime(100);
             orders.add(order);
         }
 
@@ -65,8 +79,8 @@ public class TourGeneratorTest {
         ArrayList<Tour> tours = tourGenerator.generateTours(orders, settings);
 
         for (Tour t : tours) {
-            if (t.getOrders().size() > TourGenerator.MAX_ORDERS_PER_TOUR)
-                fail("Tour has too many orders (" + t.getOrders().size() + "/" + TourGenerator.MAX_ORDERS_PER_TOUR + ")");
+            if (t.getTourTime() > settings.workTime)
+                fail("Tour time exceeds work time (" + t.getTourTime() + "/" + settings.workTime + ")");
         }
     }
 
@@ -77,11 +91,12 @@ public class TourGeneratorTest {
         TourGeneratorSettings settings = new TourGeneratorSettings();
         settings.method = TourGeneratorSettings.planningMethod.leastTime;
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 100; i++) {
             Order order = new Order();
             order.setDate(LocalDate.now());
             order.setLatLon(new GHPoint(57.0122539,9.9910615));
             order.setRegion("København");
+            order.setTotalTime(100);
             orders.add(order);
         }
 
@@ -103,11 +118,12 @@ public class TourGeneratorTest {
         TourGeneratorSettings settings = new TourGeneratorSettings();
         settings.method = TourGeneratorSettings.planningMethod.leastTime;
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 100; i++) {
             Order order = new Order();
             order.setDate(LocalDate.now());
             order.setLatLon(new GHPoint(57.0122539,9.9910615));
             order.setRegion("København");
+            order.setTotalTime(100);
             orders.add(order);
         }
 
@@ -130,11 +146,12 @@ public class TourGeneratorTest {
         settings.method = TourGeneratorSettings.planningMethod.leastTime;
         settings.forceOrdersOnTour = true;
 
-        for (int i = 0; i < 5 + 1; i++) {
+        for (int i = 0; i < 100 + 1; i++) {
             Order order = new Order();
             order.setDate(LocalDate.now());
             order.setLatLon(new GHPoint(57.0122539,9.9910615));
             order.setRegion("København");
+            order.setTotalTime(100);
             orders.add(order);
         }
 
@@ -150,6 +167,47 @@ public class TourGeneratorTest {
             }
             if (!hasBeenAssigned)
                 fail("Order has not been assigned to a tour");
+        }
+    }
+
+    @Test
+    void TestOrderOnlyAssignedToSingleTour() {
+        TourGeneratorSettings settings = new TourGeneratorSettings();
+        settings.method = TourGeneratorSettings.planningMethod.leastTime;
+
+        ArrayList<Order> orders = DatabaseSetup.dbExport.exportUnassignedOrders();
+
+        /*
+        for (int i = 0; i < 100 + 1; i++) {
+            Order order = new Order();
+            order.setDate(LocalDate.now());
+            order.setLatLon(new GHPoint(57.0122539,9.9910615));
+            order.setRegion("København");
+            order.setTotalTime(100);
+            orders.add(order);
+        }
+        */
+
+        System.out.println(orders.size());
+
+        TourGenerator tourGenerator = new TourGenerator();
+        ArrayList<Tour> tours = tourGenerator.generateTours(orders, settings);
+
+        for (Tour t : tours) {
+            if (t.getOrders().size() < 1)
+                fail("fail army");
+        }
+
+        for (Order o : orders) {
+            boolean foundInTour = false;
+            for (Tour t : tours) {
+                if (t.getOrders().contains(o)) {
+                    if (foundInTour)
+                        fail("Order was already found in different tour.");
+                    else
+                        foundInTour = true;
+                }
+            }
         }
     }
 

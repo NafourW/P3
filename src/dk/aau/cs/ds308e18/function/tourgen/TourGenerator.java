@@ -35,8 +35,8 @@ public class TourGenerator {
 
         /*
         STEP 1:
-        LAV EN TUR FOR HVER DATO/REGION COMBO
-        OG SMID ALLE ORDRER IND PÅ TURENE
+        CREATE A TOUR FOR EACH DATE/REGION COMBO
+        AND PUT ALL ORDERS IN ONE OF THE TOURS
         */
 
         print("Creating initial tours...");
@@ -79,8 +79,8 @@ public class TourGenerator {
 
         /*
         STEP 2:
-        FIND UD AF OM DER ER NOK TID PÅ HVER TUR
-        OG SPLIT DEM, HVIS DER IKKE ER
+        CALCULATE IF THERE IS ENOUGH TIME ON EACH TOUR
+        AND SPLIT THEM, IF THERE ISN'T
         */
 
         print("Splitting tours...");
@@ -92,8 +92,8 @@ public class TourGenerator {
 
         /*
         STEP 3:
-        DISCARD ALLE TURE HVOR DER IKKE ER NOK ORDRER
-        (MED MINDRE FORCE ER SLÅET TIL)
+        DISCARD ALL TOURS WHERE THERE AREN'T ENOUGH ORDERS
+        (UNLESS FORCE ORDERS IS ENABLED)
         */
 
         print("Discarding invalid tours...");
@@ -107,9 +107,6 @@ public class TourGenerator {
                     (t.getOrders().size() < MIN_ORDERS_PER_TOUR && !settings.forceOrdersOnTour)) {
                 //Mark as invalid
                 invalidTours.add(t);
-            } else {
-                //Add tour to database
-                TourManagement.createTour(t);
             }
         }
 
@@ -148,31 +145,24 @@ public class TourGenerator {
         print("Going through tour " + tourCounter + "'s orders... (there are " + orders.size() + " orders)");
         //Go through all orders, and check if there is enough time for them
         for (Order o : orders) {
-            long timeTravelTo = 0;
-            long timeTravelBack = 0;
+            totalTimeAfter += calculateOrderTime(o, previousPoint, startPoint);
 
-            print("Checking order time... (order " + o.getID() + ", tour " + tourCounter + ")");
-
-            try {
-                timeTravelTo = gps.getMillis(previousPoint, o.getLatLon()) / 60000;
-                timeTravelBack = gps.getMillis(o.getLatLon(), startPoint) / 60000;
-            } catch (RuntimeException e) {
-                System.out.println("Can't get millis for: " + o);
-                System.out.println(o.getLatLon());
-            }
-
-            totalTimeAfter += timeTravelTo + o.getTotalTime() + timeTravelBack;
-
-            if (totalTimeAfter < availableTime) {
+            if (totalTimeAfter <= availableTime) {
                 //Set timeBefore to the new value
                 totalTimeBefore = totalTimeAfter;
-
             } else {
-                ordersThatDoNotFit.add(o);
                 //Reset timeAfter to the previous value
                 totalTimeAfter = totalTimeBefore;
+
+                //Mark order to be removed
+                ordersThatDoNotFit.add(o);
             }
+
+            previousPoint = o.getLatLon();
         }
+
+        //Update tourTime on initialTour
+        initialTour.setTourTime((int)totalTimeAfter);
 
         print("Checking for orders that don't fit...");
         //If there are orders that don't fit on the tour
@@ -194,9 +184,6 @@ public class TourGenerator {
             print("Recursively processing tour... (" + tourCounter + ")");
             processedTours.addAll(processTour(initialTour, settings));
         }
-
-        //Update tourTime on initialTour
-        initialTour.setTourTime((int)totalTimeAfter);
 
         print("Adding tour " + tourCounter + " to processed tour list (recursion level " + recursionLevel + ")");
         //Add the tour to the processed tour list
@@ -261,6 +248,23 @@ public class TourGenerator {
         }
 
         return tour;
+    }
+
+    long calculateOrderTime(Order order, GHPoint previousPoint, GHPoint startPoint) {
+        long timeTravelTo = 0;
+        long timeTravelBack = 0;
+
+        print("Checking order time... (order " + order.getID() + ", tour " + tourCounter + ")");
+
+        try {
+            timeTravelTo = gps.getMillis(previousPoint, order.getLatLon()) / 60000;
+            timeTravelBack = gps.getMillis(order.getLatLon(), startPoint) / 60000;
+        } catch (RuntimeException e) {
+            System.out.println("Can't get millis for: " + order);
+            System.out.println(order.getLatLon());
+        }
+
+        return timeTravelTo + order.getTotalTime() + timeTravelBack;
     }
 
     private void print(String output) {

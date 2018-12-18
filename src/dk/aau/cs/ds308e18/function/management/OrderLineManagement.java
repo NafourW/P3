@@ -3,6 +3,7 @@ package dk.aau.cs.ds308e18.function.management;
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 import dk.aau.cs.ds308e18.io.database.DatabaseExport;
+import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Ware;
@@ -77,7 +78,7 @@ public class OrderLineManagement {
     }
 
     public static ArrayList<OrderLine> getOrderLines() {
-        return Main.dbExport.exportOrderLines();
+        return DatabaseSetup.dbExport.exportOrderLines();
     }
 
     /*
