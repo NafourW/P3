@@ -1,4 +1,4 @@
-package dk.aau.cs.ds308e18.io;
+package dk.aau.cs.ds308e18.io.files;
 
 import com.graphhopper.util.shapes.GHPoint;
 import dk.aau.cs.ds308e18.model.Order;

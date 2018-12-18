@@ -1,4 +1,4 @@
-package dk.aau.cs.ds308e18.io;
+package dk.aau.cs.ds308e18.io.files;
 
 import java.io.IOException;
 import java.io.Writer;

@@ -3,7 +3,7 @@ package dk.aau.cs.ds308e18.io.database;
 import dk.aau.cs.ds308e18.function.management.OrderLineManagement;
 import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.function.management.WareManagement;
-import dk.aau.cs.ds308e18.io.ReadFile;
+import dk.aau.cs.ds308e18.io.files.ReadFile;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Ware;

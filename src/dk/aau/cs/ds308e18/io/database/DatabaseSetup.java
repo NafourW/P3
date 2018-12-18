@@ -1,6 +1,6 @@
 package dk.aau.cs.ds308e18.io.database;
 
-import dk.aau.cs.ds308e18.io.GetProperties;
+import dk.aau.cs.ds308e18.io.files.GetProperties;
 
 import java.io.IOException;
 import java.sql.*;

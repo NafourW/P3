@@ -2,7 +2,7 @@ package dk.aau.cs.ds308e18.gui.controllers;
 
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.function.management.TourManagement;
-import dk.aau.cs.ds308e18.io.ExportFile;
+import dk.aau.cs.ds308e18.io.files.ExportFile;
 import dk.aau.cs.ds308e18.io.database.DatabaseExport;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
