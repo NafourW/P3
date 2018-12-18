@@ -145,7 +145,7 @@ public class ReadFile {//Class that reads CSV files
 
         Path path = Paths.get(directory);
 
-        if (Files.exists(path)){//TODO Skip
+        if (Files.exists(path)){
 
             try (BufferedReader br = new BufferedReader(new FileReader(directory))){
 
