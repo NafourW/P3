@@ -262,6 +262,10 @@ public class Order {
         OrderManagement.saveLatLonInDataBase(address, this.latLon.lat, this.latLon.lon);
     }
 
+    public void setLatLon(double lat, double lon) {
+        setLatLon(new GHPoint(lat, lon));
+    }
+
     public void setLatLon(double[] latLon) {
         setLatLon(new GHPoint(latLon[0], latLon[1]));
     }

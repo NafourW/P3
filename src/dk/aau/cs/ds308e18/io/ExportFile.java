@@ -1,6 +1,5 @@
 package dk.aau.cs.ds308e18.io;
 
-import dk.aau.cs.ds308e18.function.management.TourManagement;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Tour;
@@ -8,10 +7,11 @@ import dk.aau.cs.ds308e18.model.Tour;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ExportFile {
-    public void ExportData(String path) {
+    public void ExportData(ArrayList<Tour> tours, String path) {
         String toursPath = path + "/Ture.csv";
         try (BufferedWriter toursWriter = new BufferedWriter(new FileWriter(toursPath))) {
             //write the attributes of data (first row of the table)
@@ -20,7 +20,7 @@ public class ExportFile {
                     "Turstatus", "Consignor - egen vogn"));
 
             //Go through each tour in the list of tours
-            for (Tour tour : TourManagement.getTours()) {
+            for (Tour tour : tours) {
                 //append the information of the tour to the file
                 CSVUtils.writeLine(toursWriter, Arrays.asList(
                         tour.getTourDate().toString(),

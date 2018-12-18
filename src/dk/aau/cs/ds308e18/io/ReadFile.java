@@ -1,7 +1,6 @@
 package dk.aau.cs.ds308e18.io;
 
 import com.graphhopper.util.shapes.GHPoint;
-import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
 import dk.aau.cs.ds308e18.model.Ware;
@@ -19,9 +18,9 @@ import java.util.ArrayList;
 
 public class ReadFile {//Class that reads CSV files
 
-    public ArrayList<Order> orderFile(String sourcePath){
-        // Directory for the file with orders
-        String directory = sourcePath + "/ordrer_tilvalg.csv";
+    public ArrayList<Order> getOrdersFromFile(String sourcePath){
+        // Path to the file with orders
+        String path = sourcePath + "/ordrer_tilvalg.csv";
 
         ArrayList<Order> orderList = new ArrayList<>();
 
@@ -32,7 +31,7 @@ public class ReadFile {//Class that reads CSV files
         String cvsSplitBy = ";";
 
         //create a buffered reader to read the file
-        try (BufferedReader br = new BufferedReader(new FileReader(directory))){
+        try (BufferedReader br = new BufferedReader(new FileReader(path))){
 
             // While the line read by the buffered reader is not empty(null)
             while ((line = br.readLine()) != null){
@@ -135,7 +134,7 @@ public class ReadFile {//Class that reads CSV files
         return orderList;
     }
 
-    public ArrayList<OrderLine> orderLines(Order order, String sourPath){
+    public ArrayList<OrderLine> getOrderLinesFromFile(Order order, String sourPath){
 
         ArrayList<OrderLine> orderLines = new ArrayList<>();
 
@@ -210,7 +209,7 @@ public class ReadFile {//Class that reads CSV files
         return orderLines;
     }
 
-    public ArrayList<Ware> wareTypes(String sourcePath){
+    public ArrayList<Ware> getWaresFromFile(String sourcePath){
 
         ArrayList<Ware> wareTypes = new ArrayList<>();
 
@@ -347,12 +346,6 @@ public class ReadFile {//Class that reads CSV files
         } catch (IOException e){
             e.printStackTrace();
         }
-        /*
-        for (Ware w: wareTypes) {
-            System.out.println("Gross Height: " + w.getGrossHeight() + " Gross Depth: " + w.getGrossDepth() +
-                    " Gross Width: " + w.getGrossWidth() + " Move time: " + w.getMoveTime());
-        }
-        */
         return wareTypes;
     }
 }

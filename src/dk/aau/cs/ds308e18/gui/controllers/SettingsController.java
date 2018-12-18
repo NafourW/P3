@@ -195,7 +195,7 @@ public class SettingsController {
                 updateMessage(Main.gui.getLocalString("message_progress_exporting"));
 
                 ExportFile exportFile = new ExportFile();
-                exportFile.ExportData(destinationPath);
+                exportFile.ExportData(TourManagement.getTours(), destinationPath);
 
                 updateMessage(Main.gui.getLocalString("message_progress_export_done"));
                 setButtonsDisabled(false);

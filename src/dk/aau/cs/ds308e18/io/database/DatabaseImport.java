@@ -67,8 +67,8 @@ public class DatabaseImport {
 
         ReadFile readFileObject = new ReadFile();
 
-        // Grab orders from "orderFile" method and put them into "orderList"
-        ArrayList<Order> orderList = readFileObject.orderFile(sourcePath);
+        // Grab orders from file and put them into a list
+        ArrayList<Order> orderList = readFileObject.getOrdersFromFile(sourcePath);
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
@@ -93,7 +93,7 @@ public class DatabaseImport {
             if (conn != null) {
                 for (Order order : OrderManagement.getOrders()) {
                     // Read orderlines from files that correspond to this order
-                    ArrayList<OrderLine> orderLineList = readFileObject.orderLines(order, sourcePath);
+                    ArrayList<OrderLine> orderLineList = readFileObject.getOrderLinesFromFile(order, sourcePath);
 
                     // Insert the orderlines into the database
                     for (OrderLine orderLine : orderLineList) {
@@ -109,6 +109,7 @@ public class DatabaseImport {
                     order.setTotalLiftingTools(orderResults.get(1) > 0);
                     order.setTotalTime(orderResults.get(2));
 
+                    //Update the order in the database
                     OrderManagement.overrideOrder(order);
                 }
                 System.out.println("Order lines imported.");
@@ -127,8 +128,8 @@ public class DatabaseImport {
 
         DatabaseConnection dbConn = new DatabaseConnection();
 
-        // Grab wares from "wareTypes" method and put them into "wareList"
-        ArrayList<Ware> wareList = readFileObject.wareTypes(sourcePath);
+        // Grab wares from "getWaresFromFile" method and put them into "wareList"
+        ArrayList<Ware> wareList = readFileObject.getWaresFromFile(sourcePath);
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {

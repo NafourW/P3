@@ -238,8 +238,6 @@ public class DatabaseExport {
             order.setCustomerName     (resultSet.getString (7));
             order.setDate             (resultSet.getDate   (8).toLocalDate());
             order.setAddress          (resultSet.getString (9));
-            //TODO: get latLon from database
-            //order.setLatLon();
             order.setZipCode          (resultSet.getInt    (10));
             order.setReceipt          (resultSet.getInt    (11));
             order.setPickup           (resultSet.getBoolean(12));
@@ -254,7 +252,7 @@ public class DatabaseExport {
             order.setTotalLiftingTools(resultSet.getBoolean(21));
             order.setTotalTime        (resultSet.getInt    (22));
 
-            order.setLatLon(getLatLonFromAddress(order.getAddress()));
+            order.setLatLon           (getLatLonFromAddress(order.getAddress()));
 
             ArrayList<OrderLine> orderLines = OrderLineManagement.getOrderLinesOnOrder(order);
             for (OrderLine orderLine : orderLines)
