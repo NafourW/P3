@@ -180,11 +180,6 @@ public class TourGeneratorTest {
         TourGenerator tourGenerator = new TourGenerator();
         ArrayList<Tour> tours = tourGenerator.generateTours(orders, settings);
 
-        for (Tour t : tours) {
-            if (t.getOrders().size() < 1)
-                fail("fail army");
-        }
-
         for (Order o : orders) {
             boolean foundInTour = false;
             for (Tour t : tours) {
