@@ -175,17 +175,6 @@ public class TourGeneratorTest {
 
         ArrayList<Order> orders = Database.dbExport.exportUnassignedOrders();
 
-        /*
-        for (int i = 0; i < 100 + 1; i++) {
-            Order order = new Order();
-            order.setDate(LocalDate.now());
-            order.setLatLon(new GHPoint(57.0122539,9.9910615));
-            order.setRegion("København");
-            order.setTotalTime(100);
-            orders.add(order);
-        }
-        */
-
         System.out.println(orders.size());
 
         TourGenerator tourGenerator = new TourGenerator();

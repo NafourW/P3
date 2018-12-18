@@ -35,12 +35,13 @@ public class GeneratorProgressController implements ISelectionController {
             TourGenerator tourGenerator = new TourGenerator(this::updateMessage);
             ArrayList<Tour> tours = tourGenerator.generateTours(orders, settings);
 
-            System.out.println("Generated " + tours.size() + " tours:");
             for (Tour tour : tours) {
-                System.out.println(tour.getTourDate() + " - " + tour.getOrders().size() + " orders, time: " + tour.getTourTime());
-
-                //Add tour to database
-                TourManagement.createTour(tour);
+                //Fix weird bug where tours already have a tourID,
+                //even though that shouldn't be able to happen
+                if (tour.getTourID() == 0) {
+                    //Add tour to database
+                    TourManagement.createTour(tour);
+                }
             }
 
             return "";

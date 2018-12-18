@@ -37,6 +37,7 @@ public class Tour {
 
     public Tour() {
         id = 0;
+        tourID = 0;
         tourDate = LocalDate.now();
         packingDate = LocalDate.now();
         orders = new ArrayList<>();
