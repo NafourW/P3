@@ -1,9 +1,17 @@
+#logo {
+    visibility: hidden;
+}
+
+#logo-dark {
+    visibility: inherit;
+}
+
 .root {
-    -fx-base: #3f474f;
-    -fx-accent: #e7eff7 ;
+    -fx-base: #202835;
+    -fx-accent: #004477;
+    -fx-border-color: #000000;
     -fx-default-button: #7f878f ;
-    -fx-focus-color: #efefef;
-    -fx-faint-focus-color: #efefef22;
+    -fx-focus-color: #000000;
     -fx-focused-text-base-color : ladder(
             -fx-selection-bar,
             -fx-light-text-color 45%,
@@ -11,8 +19,31 @@
             -fx-dark-text-color 59%,
             -fx-mid-text-color 60%
     );
-    -fx-focused-mark-color : -fx-focused-text-base-color ;
+    -fx-focused-mark-color : -fx-focused-text-base-color;
+}
 
+.bordered-box {
+    -fx-border-color: #202835;
+}
+
+.table-view{
+    -fx-background-color: #2b2f34;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: #aaa;
+}
+
+.table-row-cell{
+    -fx-background-color: #333b43;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #2b2f34;
+}
+
+.table-row-cell:focused {
+    -fx-background-color: #004477;
 }
 
 .text-input:focused {
@@ -23,4 +54,36 @@
             -fx-dark-text-color  59%,
             -fx-mid-text-color   60%
     );
+}
+
+.button-blue {
+    -fx-background-color:
+            linear-gradient(#00346f 0%, #003061 50%, #002347 80%);
+    -fx-text-fill: white;
+}
+
+.button-blue:hover {
+    -fx-background-color:
+            linear-gradient(#004c80 0%, #003569 50%, #00264a 80%);
+}
+
+.button-blue:pressed {
+    -fx-background-color:
+            linear-gradient(#002852 0%, #002041 80%);
+}
+
+.button-red {
+    -fx-background-color:
+            linear-gradient(#8b0300 0%, #690300 50%, #530300 80%);
+    -fx-text-fill: white;
+}
+
+.button-red:hover {
+    -fx-background-color:
+            linear-gradient(#a80800 0%, #901100 50%, #720700 80%);
+}
+
+.button-red:pressed {
+    -fx-background-color:
+            linear-gradient(#431019 0%, #351019 80%);
 }

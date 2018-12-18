@@ -204,12 +204,16 @@ public class GUI {
         }
 
         Scene newScene = new Scene(root);
-        Stage newWindow = new Stage();
+        newScene.getStylesheets().add("styles/default.css");
+        if (darkMode)
+            newScene.getStylesheets().add("styles/dark-mode.css");
 
-        newWindow.initModality(Modality.APPLICATION_MODAL);
+        Stage newWindow = new Stage();
         newWindow.setScene(newScene);
+        newWindow.initModality(Modality.APPLICATION_MODAL);
         newWindow.setResizable(false);
         newWindow.setTitle(getLocalString(titleKey));
+
         newWindow.showAndWait();
     }
 

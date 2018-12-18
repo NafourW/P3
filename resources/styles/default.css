@@ -1,37 +1,44 @@
+#logo {
+    visibility: inherit;
+}
+
+#logo-dark {
+    visibility: hidden;
+}
+
 .button-blue {
     -fx-background-color:
-        linear-gradient(#fafdfe, #e8f5fc),
         linear-gradient(#24547c 0%, #004477 50%, #00346f 80%);
     -fx-text-fill: white;
 }
 
 .button-blue:hover {
     -fx-background-color:
-        linear-gradient(#fafdfe, #e8f5fc),
         linear-gradient(#16709a 0%, #006791 50%, #004c80 80%);
 }
 
 .button-blue:pressed {
     -fx-background-color:
-        linear-gradient(#fafdfe, #e8f5fc),
         linear-gradient(#003867 0%, #002852 80%);
 }
 
 .button-red {
     -fx-background-color:
-            linear-gradient(#fafdfe, #e8f5fc),
             linear-gradient(#a80800 0%, #970300 50%, #8b0300 80%);
     -fx-text-fill: white;
 }
 
 .button-red:hover {
     -fx-background-color:
-            linear-gradient(#fafdfe, #e8f5fc),
             linear-gradient(#cf2400 0%, #a80800 50%, #a80800 80%);
 }
 
 .button-red:pressed {
     -fx-background-color:
-            linear-gradient(#fafdfe, #e8f5fc),
             linear-gradient(#521516 0%, #431019 80%);
+}
+
+.bordered-box {
+    -fx-border-color: #aaa;
+    -fx-border-width: 2px;
 }
