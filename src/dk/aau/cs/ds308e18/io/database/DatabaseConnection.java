@@ -16,7 +16,7 @@ public class DatabaseConnection {
     */
     public Connection establishConnectionToDatabase() {
         try {
-            return DriverManager.getConnection(DatabaseSetup.getHostWithDatabase(), DatabaseSetup.getUserName(), DatabaseSetup.getPassword());
+            return DriverManager.getConnection(Database.getHostWithDatabase(), Database.getUserName(), Database.getPassword());
         } catch (SQLException e) {
             System.out.println("Couldn't establish a connection.\n" +
                     "Try restarting the Database");

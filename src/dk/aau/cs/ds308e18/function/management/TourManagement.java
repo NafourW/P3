@@ -1,8 +1,7 @@
 package dk.aau.cs.ds308e18.function.management;
 
-import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
-import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
+import dk.aau.cs.ds308e18.io.database.Database;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 
@@ -168,10 +167,10 @@ public class TourManagement {
                 That's why rs.next() is called before creating the tour.
                 */
                 rs.next();
-                Tour tour = DatabaseSetup.dbExport.createTourFromResultSet(rs);
+                Tour tour = Database.dbExport.createTourFromResultSet(rs);
 
                 // Find all orders with that tourID and put them on the tour
-                ArrayList<Order> ordersOnTour = DatabaseSetup.dbExport.ordersOnTour(tour);
+                ArrayList<Order> ordersOnTour = Database.dbExport.ordersOnTour(tour);
                 for(Order order : ordersOnTour) {
                     tour.addOrder(order);
                 }
@@ -186,14 +185,14 @@ public class TourManagement {
     }
 
     public static ArrayList<Tour> getTours(){
-        return DatabaseSetup.dbExport.exportTours();
+        return Database.dbExport.exportTours();
     }
 
     /*
     Execute removeTour on all tours in the database
     */
     public static void deleteAllTours() {
-        for (Tour tour : DatabaseSetup.dbExport.exportTours()) {
+        for (Tour tour : Database.dbExport.exportTours()) {
             removeTour(tour);
         }
     }

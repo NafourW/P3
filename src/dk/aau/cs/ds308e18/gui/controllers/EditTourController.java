@@ -5,7 +5,7 @@ import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.function.management.TourManagement;
 import dk.aau.cs.ds308e18.gui.ISelectionController;
 import dk.aau.cs.ds308e18.gui.TableManager;
-import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
+import dk.aau.cs.ds308e18.io.database.Database;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 import javafx.beans.value.ObservableValue;
@@ -48,7 +48,7 @@ public class EditTourController implements ISelectionController {
         removeOrderButton.setDisable(true);
         moveOrderToTourButton.setDisable(true);
 
-        regions.addAll(DatabaseSetup.dbExport.exportRegionNames());
+        regions.addAll(Database.dbExport.exportRegionNames());
         regionComboBox.setItems(regions);
 
         //setup tables

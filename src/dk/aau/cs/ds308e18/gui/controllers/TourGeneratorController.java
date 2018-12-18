@@ -1,15 +1,11 @@
 package dk.aau.cs.ds308e18.gui.controllers;
 
 import dk.aau.cs.ds308e18.Main;
-import dk.aau.cs.ds308e18.function.management.OrderManagement;
 import dk.aau.cs.ds308e18.function.tourgen.TourGenerator;
 import dk.aau.cs.ds308e18.function.tourgen.TourGeneratorSettings;
-import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
-import dk.aau.cs.ds308e18.model.Order;
-import dk.aau.cs.ds308e18.model.Tour;
+import dk.aau.cs.ds308e18.io.database.Database;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -18,7 +14,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class TourGeneratorController {
 
@@ -45,7 +40,7 @@ public class TourGeneratorController {
         planningChoiceBox.setValue(TourGeneratorSettings.planningMethod.leastTime);
         planningChoiceBox.setDisable(true);
 
-        regions.addAll(DatabaseSetup.dbExport.exportRegionNames());
+        regions.addAll(Database.dbExport.exportRegionNames());
         regionChoiceBox.setItems(regions);
         regionChoiceBox.getSelectionModel().selectFirst();
 

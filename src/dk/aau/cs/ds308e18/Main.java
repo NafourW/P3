@@ -2,7 +2,7 @@ package dk.aau.cs.ds308e18;
 
 import dk.aau.cs.ds308e18.function.tourgen.GPS;
 import dk.aau.cs.ds308e18.gui.GUI;
-import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
+import dk.aau.cs.ds308e18.io.database.Database;
 import javafx.application.Application;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -14,7 +14,7 @@ public class Main extends Application {
     public static GUI gui;
 
     //Used for interacting with the database
-    public static DatabaseSetup dbSetup;
+    public static Database dbSetup;
     public static GPS gps = new GPS();
 
     public static void main(String[] args) {
@@ -24,7 +24,7 @@ public class Main extends Application {
     @Override
     public void init() throws IOException{
         //Initialize database
-        dbSetup = new DatabaseSetup();
+        dbSetup = new Database();
 
         //Initialize GUI
         gui = new GUI();

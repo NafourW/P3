@@ -1,7 +1,7 @@
 package dk.aau.cs.ds308e18.function.tourgen;
 
 import com.graphhopper.util.shapes.GHPoint;
-import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
+import dk.aau.cs.ds308e18.io.database.Database;
 import dk.aau.cs.ds308e18.model.Order;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -14,11 +14,11 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 public class GPSTest {
     private GPS gps = new GPS();
-    private static DatabaseSetup dbSetup;
+    private static Database dbSetup;
 
     @BeforeAll
     public static void setupDB() throws IOException {
-        dbSetup = new DatabaseSetup();
+        dbSetup = new Database();
     }
 
     @Test

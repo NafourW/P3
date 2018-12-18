@@ -1,9 +1,7 @@
 package dk.aau.cs.ds308e18.function.tourgen;
 
 import com.graphhopper.util.shapes.GHPoint;
-import dk.aau.cs.ds308e18.io.database.DatabaseExport;
-import dk.aau.cs.ds308e18.io.database.DatabaseImport;
-import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
+import dk.aau.cs.ds308e18.io.database.Database;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 import org.junit.jupiter.api.AfterAll;
@@ -18,14 +16,14 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class TourGeneratorTest {
-    static DatabaseSetup dbSetup;
+    static Database dbSetup;
 
     @BeforeAll
     static void RefreshDatabaseBefore() throws IOException {
-        dbSetup = new DatabaseSetup();
+        dbSetup = new Database();
         dbSetup.reloadDatabase();
 
-        DatabaseSetup.dbImport.importAll("resources/data");
+        Database.dbImport.importAll("resources/data");
     }
 
     @AfterAll
@@ -175,7 +173,7 @@ public class TourGeneratorTest {
         TourGeneratorSettings settings = new TourGeneratorSettings();
         settings.method = TourGeneratorSettings.planningMethod.leastTime;
 
-        ArrayList<Order> orders = DatabaseSetup.dbExport.exportUnassignedOrders();
+        ArrayList<Order> orders = Database.dbExport.exportUnassignedOrders();
 
         /*
         for (int i = 0; i < 100 + 1; i++) {

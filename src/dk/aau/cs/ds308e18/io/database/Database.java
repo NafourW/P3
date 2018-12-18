@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
 
-public class DatabaseSetup {
+public class Database {
     private static String host;
     private static String databaseName;
     private static String userName;
@@ -15,7 +15,7 @@ public class DatabaseSetup {
     public static DatabaseImport dbImport;
     public static DatabaseExport dbExport;
 
-    public DatabaseSetup() throws IOException{
+    public Database() throws IOException{
         loadConfiguration();
         dbImport = new DatabaseImport();
         dbExport = new DatabaseExport();

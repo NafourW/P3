@@ -1,10 +1,9 @@
 package dk.aau.cs.ds308e18.function.management;
 
 import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
-import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 import dk.aau.cs.ds308e18.io.database.DatabaseExport;
-import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
+import dk.aau.cs.ds308e18.io.database.Database;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 
@@ -158,15 +157,15 @@ public class OrderManagement {
     }
 
     public static ArrayList<Order> getOrders() {
-        return DatabaseSetup.dbExport.exportAllOrders();
+        return Database.dbExport.exportAllOrders();
     }
 
     public static ArrayList<Order> getUnassignedOrders() {
-        return DatabaseSetup.dbExport.exportUnassignedOrders();
+        return Database.dbExport.exportUnassignedOrders();
     }
 
     public static ArrayList<Order> getUnassignedOrdersFiltered(String region, String date) {
-        return DatabaseSetup.dbExport.exportUnassignedOrdersFiltered(region, date);
+        return Database.dbExport.exportUnassignedOrdersFiltered(region, date);
     }
 
     /*

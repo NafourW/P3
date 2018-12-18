@@ -2,7 +2,7 @@ package dk.aau.cs.ds308e18.gui.controllers;
 
 import dk.aau.cs.ds308e18.Main;
 import dk.aau.cs.ds308e18.function.management.TourManagement;
-import dk.aau.cs.ds308e18.io.database.DatabaseSetup;
+import dk.aau.cs.ds308e18.io.database.Database;
 import dk.aau.cs.ds308e18.io.files.ExportFile;
 import dk.aau.cs.ds308e18.io.database.DatabaseExport;
 import javafx.beans.value.ChangeListener;
@@ -153,13 +153,13 @@ public class SettingsController {
             setButtonsDisabled(true);
 
             updateMessage(Main.gui.getLocalString("message_progress_importing_wares"));
-            DatabaseSetup.dbImport.importWares(sourcePath);
+            Database.dbImport.importWares(sourcePath);
 
             updateMessage(Main.gui.getLocalString("message_progress_importing_orders"));
-            DatabaseSetup.dbImport.importOrders(sourcePath);
+            Database.dbImport.importOrders(sourcePath);
 
             updateMessage(Main.gui.getLocalString("message_progress_importing_orderlines"));
-            DatabaseSetup.dbImport.importOrderLines(sourcePath);
+            Database.dbImport.importOrderLines(sourcePath);
 
             updateMessage(Main.gui.getLocalString("message_progress_import_done"));
             setButtonsDisabled(false);
