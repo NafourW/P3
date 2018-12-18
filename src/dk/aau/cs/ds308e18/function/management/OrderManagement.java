@@ -147,7 +147,6 @@ public class OrderManagement {
                 while(resultSet.next()) {
                     ordersOnTour.add(DatabaseExport.createOrderFromResultSet(resultSet));
                 }
-
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -187,9 +186,7 @@ public class OrderManagement {
             e.printStackTrace();
         }
     }
-
-    //TODO This method (possibly) shouldn't be here. (It was moved here from Order)
-    // Database related functions should be in IO or MANAGEMENT.
+    
     public static void saveLatLonInDataBase(String address, double lat, double lon) {
         String sql = "INSERT INTO addresses (address, latitude, longitude) VALUES (?, ?, ?)";
         DatabaseConnection dbConn = new DatabaseConnection();

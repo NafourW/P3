@@ -5,7 +5,6 @@ import dk.aau.cs.ds308e18.io.database.DatabaseExport;
 import dk.aau.cs.ds308e18.io.database.Database;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.OrderLine;
-import dk.aau.cs.ds308e18.model.Ware;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -33,6 +32,9 @@ public class OrderLineManagement {
         }
     }
 
+    /*
+    Returns a string with the orderline's values, formatted for an SQL statement
+    */
     private static String getOrderLineValuesString(OrderLine orderLine) {
         StringBuilder sb = new StringBuilder();
 
@@ -102,12 +104,12 @@ public class OrderLineManagement {
             e.printStackTrace();
         }
 
-        /*
-        Import updated orderlines from order object to database.
-        */
         importUpdatedOrderLines(order);
     }
 
+    /*
+    Import updated orderlines from order object to database.
+    */
     private static void importUpdatedOrderLines(Order order) {
         for(OrderLine orderLine : order.getOrderLines()) {
 
@@ -115,129 +117,5 @@ public class OrderLineManagement {
             orderLine.setOrder(order.getID());
             createOrderLine(orderLine);
         }
-    }
-
-
-    public static int orderLoadTime(ArrayList<OrderLine> orderLines){
-
-        int totalTime = 0;
-
-        ArrayList<Ware> wares = WareManagement.getWares();
-
-        for (OrderLine orderLine : orderLines){
-
-            for (Ware ware : wares){
-                /*
-                 * Because of the way the test data was setup, we have to go through four different columns
-                 * in order to find the corresponding ware type for the specific order line. Therefore, the
-                 * four if statements are made.
-                 */
-
-                // if-statements checks if the ware in orderline has been found
-                // in the list of existing ware types
-                if (orderLine.getWareNumber().equals(ware.getWareName())){
-
-                    orderLine.setMoveTime(ware.getMoveTime() * orderLine.getLabels());
-
-                    totalTime += orderLine.getMoveTime();
-
-                } else if (orderLine.getIndividual().equals(ware.getWareName())){
-
-                    orderLine.setMoveTime(ware.getMoveTime() * orderLine.getLabels());
-
-                    totalTime += orderLine.getMoveTime();
-
-                } else if (orderLine.getIndividualNumber().equals(ware.getWareName())){
-
-                    orderLine.setMoveTime(ware.getMoveTime() * orderLine.getLabels());
-
-                    totalTime += orderLine.getMoveTime();
-
-                } else if (orderLine.getModel().equals(ware.getWareName())){
-
-                    orderLine.setMoveTime(ware.getMoveTime() * orderLine.getLabels());
-
-                    totalTime += orderLine.getMoveTime();
-                }
-            }
-        }
-        return totalTime;
-    }
-
-    public static boolean isLiftAlone(ArrayList<OrderLine> orderLines){
-        boolean LiftAlone = true;
-
-        ArrayList<Ware> wares = WareManagement.getWares();
-
-        for (OrderLine orderLine : orderLines){
-
-            for (Ware ware : wares){
-
-                if (orderLine.getWareNumber().equals(ware.getWareName())){
-
-                    if (!orderLine.isLiftAlone()){
-                        LiftAlone = false;
-                    }
-
-                } else if (orderLine.getIndividual().equals(ware.getWareName())){
-
-                    if (!orderLine.isLiftAlone()){
-                        LiftAlone = false;
-                    }
-
-                } else if (orderLine.getIndividualNumber().equals(ware.getWareName())){
-
-                    if (!orderLine.isLiftAlone()){
-                        LiftAlone = false;
-                    }
-
-                } else if (orderLine.getModel().equals(ware.getWareName())){
-
-                    if (!orderLine.isLiftAlone()){
-                        LiftAlone = false;
-                    }
-                }
-            }
-        }
-
-        return  LiftAlone;
-    }
-
-    public static boolean isLiftEquipment(ArrayList<OrderLine> orderLines){
-        boolean LiftEquipment = false;
-
-        ArrayList<Ware> wares = WareManagement.getWares();
-
-        for (OrderLine orderLine : orderLines){
-
-            for (Ware ware : wares){
-
-                if (orderLine.getWareNumber().equals(ware.getWareName())){
-
-                    if (orderLine.isLiftEquipment()){
-                        LiftEquipment = true;
-                    }
-
-                } else if (orderLine.getIndividual().equals(ware.getWareName())){
-
-                    if (orderLine.isLiftEquipment()){
-                        LiftEquipment = true;
-                    }
-
-                } else if (orderLine.getIndividualNumber().equals(ware.getWareName())){
-
-                    if (orderLine.isLiftEquipment()){
-                        LiftEquipment = true;
-                    }
-
-                } else if (orderLine.getModel().equals(ware.getWareName())){
-
-                    if (orderLine.isLiftEquipment()){
-                        LiftEquipment = true;
-                    }
-                }
-            }
-        }
-        return LiftEquipment;
     }
 }
