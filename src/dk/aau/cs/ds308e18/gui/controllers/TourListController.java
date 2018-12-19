@@ -82,17 +82,26 @@ public class TourListController {
         pauseTransition.play();
     }
 
+    /*
+    Disables or enables the tour related buttons, depending on if a tour is selected
+    */
     private void setTourButtonsDisabled(boolean disabled) {
+        //disable these if no tour selected,
+        //enable if tour selected
+        deleteTourButton.setDisable(disabled);
+        printTourButton.setDisable(disabled);
+
+        //do the same for the following, but with extra critera
+
+        //if the selected tour has been released, we shouldn't be able to edit it
         editTourButton.setDisable(disabled ||
                 selectedTour.getStatus() == Tour.tourStatus.validReleased);
 
-        deleteTourButton.setDisable(disabled);
-
+        //if the selected tour has been released, or if it doesn't have enough orders
+        //we shouldn't be able to release it
         releaseTourButton.setDisable(disabled ||
                 selectedTour.getOrders().size() < 1 ||
                 selectedTour.getStatus() == Tour.tourStatus.validReleased);
-
-        printTourButton.setDisable(disabled);
     }
 
     /*
@@ -176,7 +185,7 @@ public class TourListController {
 
     @FXML
     private void printTourButtonAction(ActionEvent event) {
-
+        //should print a tour plan for the selected tour
     }
 
     @FXML
