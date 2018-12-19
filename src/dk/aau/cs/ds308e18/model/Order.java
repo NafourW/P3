@@ -308,6 +308,10 @@ public class Order {
         orderLines.remove(orderLine);
     }
 
+    public int getOrderLineAmount() {
+        return orderLines.size();
+    }
+
     public GHPoint getLatLon() {
         return latLon;
     }
