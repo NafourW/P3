@@ -80,7 +80,7 @@ public class TourGeneratorController {
             TourGeneratorSettings settings = new TourGeneratorSettings();
             settings.method = planningChoiceBox.getValue();
             settings.region = (allRegionsCheckBox.isSelected()) ? null : regionChoiceBox.getValue();
-            settings.date = (allDatesCheckBox.isSelected()) ? null :datePicker.getValue().toString();
+            settings.date = (allDatesCheckBox.isSelected()) ? null : datePicker.getValue().toString();
             settings.workTime = Integer.valueOf(workTimeField.getText());
             settings.breakTime = Integer.valueOf(breakTimeField.getText());
             settings.forceOrdersOnTour = forceOrdersCheckBox.isSelected();
