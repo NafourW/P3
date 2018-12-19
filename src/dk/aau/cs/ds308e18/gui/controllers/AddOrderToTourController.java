@@ -73,6 +73,9 @@ public class AddOrderToTourController implements ISelectionController {
         Main.gui.goToPreviousView();
     }
 
+    /*
+    From the ISelectionController interface
+    */
     @Override
     public void setSelectedObject(Object obj, boolean isNew) {
         selectedTour = (Tour)obj;

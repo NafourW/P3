@@ -66,6 +66,10 @@ public class EditTourController implements ISelectionController {
         tourOrdersTable.getSelectionModel().selectedItemProperty().addListener(this::onOrderSelected);
     }
 
+    /*
+    All of the data in the user modifiable fields are transfered to the selected tour,
+    and the tour is updated with the changes in the database
+    */
     private void transferFieldsToTour() {
         selectedTour.setTourDate(datePicker.getValue());
         selectedTour.setRegion(regionComboBox.getValue());
@@ -128,6 +132,9 @@ public class EditTourController implements ISelectionController {
         Main.gui.changeView("TourList");
     }
 
+    /*
+    From the ISelectionController interface
+    */
     @Override
     public void setSelectedObject(Object obj, boolean isNew) {
         selectedTour = (Tour)obj;

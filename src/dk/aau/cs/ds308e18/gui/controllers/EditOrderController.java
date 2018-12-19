@@ -120,6 +120,10 @@ public class EditOrderController implements ISelectionController {
         amountField.setText("");
     }
 
+    /*
+    All of the data in the user modifiable fields are transfered to the selected order,
+    and the order is updated with the changes in the database
+    */
     private void transferFieldsToOrder() {
         selectedOrder.setCustomerName(customerNameField.getText());
         selectedOrder.setAddress(addressField.getText());
@@ -127,14 +131,13 @@ public class EditOrderController implements ISelectionController {
 
         selectedOrder.setDate(datePicker.getValue());
         selectedOrder.setRegion(regionComboBox.getValue());
-        //orderCategoryComboBox;
-
-        commentsArea.getText();
 
         ArrayList<OrderLine> orderLines = new ArrayList<OrderLine>();
         orderLines.addAll(orderLineTable.getItems());
 
         selectedOrder.setOrderLines(orderLines);
+
+        OrderManagement.overrideOrder(selectedOrder);
     }
 
     /*
@@ -171,14 +174,12 @@ public class EditOrderController implements ISelectionController {
     @FXML
     private void addOrderButtonAction(ActionEvent event) throws IOException {
         transferFieldsToOrder();
-        OrderManagement.createOrder(selectedOrder);
         Main.gui.changeView("OrderList");
     }
 
     @FXML
     private void doneButtonAction(ActionEvent event) throws IOException {
         transferFieldsToOrder();
-        OrderManagement.overrideOrder(selectedOrder);
         Main.gui.changeView("OrderList");
     }
 
@@ -205,6 +206,9 @@ public class EditOrderController implements ISelectionController {
         refreshOrderLineList();
     }
 
+    /*
+    From the ISelectionController interface
+    */
     @Override
     public void setSelectedObject(Object obj, boolean isNew) {
         selectedOrder = (Order)obj;

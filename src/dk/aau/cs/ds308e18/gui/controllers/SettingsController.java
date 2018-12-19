@@ -68,6 +68,7 @@ public class SettingsController {
         setSourcePath(prefs.get("dataImportSourceDirectory", ""));
         setDestinationPath(prefs.get("dataExportDestinationDirectory", ""));
 
+        //Use previous value for GraphHopper key
         ghKeyTextField.setText(prefs.get("graphhopperKey", ""));
 
         ghKeyTextField.textProperty().addListener(new ChangeListener<String>() {

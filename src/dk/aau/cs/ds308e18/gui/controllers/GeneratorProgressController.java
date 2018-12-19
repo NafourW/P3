@@ -61,6 +61,9 @@ public class GeneratorProgressController implements ISelectionController {
         th.start();
     }
 
+    /*
+    From the ISelectionController interface
+    */
     @Override
     public void setSelectedObject(Object obj, boolean isNew) {
         settings = (TourGeneratorSettings)obj;

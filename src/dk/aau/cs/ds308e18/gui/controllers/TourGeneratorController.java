@@ -85,6 +85,7 @@ public class TourGeneratorController {
             settings.breakTime = Integer.valueOf(breakTimeField.getText());
             settings.forceOrdersOnTour = forceOrdersCheckBox.isSelected();
 
+            //Open progress window and pass settings to it
             Main.gui.openWindowWithObject("GeneratorProgress", "Generating", settings);
 
             close();
