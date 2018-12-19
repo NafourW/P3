@@ -22,6 +22,9 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.prefs.Preferences;
 
+/*
+The Settings menu, where the application can be configured, and the data can be imported/exported.
+*/
 public class SettingsController {
 
     @FXML private VBox settingMenuID;

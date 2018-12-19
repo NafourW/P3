@@ -15,6 +15,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/*
+The Tour Generator window, where the tour generation can be configured
+*/
 public class TourGeneratorController {
 
     @FXML private VBox root;

@@ -14,6 +14,9 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 
+/*
+The Ware menu, where all of the wares can be viewed.
+*/
 public class WareListController {
 
     @FXML private ImageView loadingImage;
@@ -35,27 +38,33 @@ public class WareListController {
 
     private TableManager<Ware> wareListManager;
 
-    private Ware selectedWare;
-
     @FXML
     public void initialize() {
         wareListManager = new TableManager<>(wareListTable);
         wareListManager.setMultiSelectEnabled(true);
         wareListManager.setupColumns();
 
+        wareListTable.setSelectionModel(null);
+
         //load table inside scene for quicker scene swap
         loadWareTransition();
-
-
-        wareListTable.setSelectionModel(null);
     }
 
+    /*
+    Pauses the application for a very short time,
+    so that the contents inside the table are loaded AFTER the view is loaded,
+    which let's us show a loading icon in the mean time.
+    If we don't do this, the application will freeze BEFORE the view is loaded,
+    without any loading indication, and makes it feel unresponsive.
+    */
     private void loadWareTransition() {
         PauseTransition pauseTransition = new PauseTransition(Duration.seconds(0.09));
         pauseTransition.setOnFinished(event -> {
-            for (Ware ware : WareManagement.getWares()) {
+            //load the wares into the ware list
+            for (Ware ware : WareManagement.getWares())
                 wareListManager.addItem(ware);
-            }
+
+            //after the table contents have been loaded, we disable the loading icon
             loadingImage.setImage(null);
             loadingImage.setDisable(true);
         });

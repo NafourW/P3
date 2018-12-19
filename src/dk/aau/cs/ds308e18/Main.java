@@ -46,9 +46,12 @@ public class Main extends Application {
         //Setup main window
         primaryStage.setTitle(gui.getLocalString("label_title_app"));
 
+        //Set minimum window size, so the GUI elements are never forced to overlap
         primaryStage.setMinWidth(850);
         primaryStage.setMinHeight(700);
 
+        //If dpi scaling is 125% or lower on the operating system,
+        //use a bigger resolution for the main window
         Screen screen = Screen.getPrimary();
         double scale = screen.getOutputScaleX();
         if (scale <= 1.25) {

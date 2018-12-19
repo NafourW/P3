@@ -18,6 +18,10 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/*
+The Tour menu, where all of the tours can be managed.
+There are two tables, one for all of the tours, and one for the orders on the currently selected tour.
+*/
 public class TourListController {
 
     @FXML private Button editTourButton;
@@ -71,10 +75,20 @@ public class TourListController {
         loadTourTransition();
     }
 
+    /*
+    Pauses the application for a very short time,
+    so that the contents inside the table are loaded AFTER the view is loaded,
+    which let's us show a loading icon in the mean time.
+    If we don't do this, the application will freeze BEFORE the view is loaded,
+    without any loading indication, and makes it feel unresponsive.
+    */
     private void loadTourTransition() {
         PauseTransition pauseTransition = new PauseTransition(Duration.seconds(0.09));
         pauseTransition.setOnFinished(event -> {
+            //load the tours into the tour list
             refreshTourList();
+
+            //after the table contents have been loaded, we disable the loading icon
             loadingImage.setImage(null);
             loadingImage.setDisable(true);
         });
@@ -132,6 +146,9 @@ public class TourListController {
         }
     }
 
+    /*
+    Clears the table, loads all tours into it, and clears selection
+    */
     private void refreshTourList() {
         tourListManager.clearItems();
         tourListManager.addItems(TourManagement.getTours());
@@ -147,7 +164,10 @@ public class TourListController {
 
     @FXML
     private void generateToursButtonAction(ActionEvent event) throws IOException {
+        //Open the tour generator window
         Main.gui.openWindow("TourGenerator", "label_tourgen_title");
+
+        //Refresh the tour list after the window has closed
         refreshTourList();
     }
 
@@ -158,8 +178,13 @@ public class TourListController {
 
     @FXML
     private void createEmptyTourButtonAction(ActionEvent event) {
+        //Create new tour object
         Tour tour = new Tour();
-        tourListTable.getItems().add(tour);
+
+        //Add tour to tour list
+        tourListManager.addItem(tour);
+
+        //Add tour to database
         TourManagement.createTour(tour);
     }
 
@@ -170,12 +195,17 @@ public class TourListController {
 
     @FXML
     private void deleteTourButtonAction(ActionEvent event) {
+        //Show confirmation dialog
         boolean confirmed = Main.gui.showYesNoDialog("label_tourDel_confirmation_title", "message_tourDel_confirmation");
 
         if (confirmed){
+            //Remove tour from database
             TourManagement.removeTour(selectedTour);
+
+            //Remove tour from tour list
             tourListManager.removeItem(selectedTour);
 
+            //If there are no more tours in the list, clear selection
             if (tourListManager.getItems().size() < 1) {
                 onTourSelected(null, selectedTour,null);
                 tourListManager.clearSelection();
@@ -190,11 +220,16 @@ public class TourListController {
 
     @FXML
     private void releaseTourButtonAction(ActionEvent event) {
+        //Set tour status to released
         selectedTour.setStatus(Tour.tourStatus.validReleased);
+
+        //Refresh tour list
         tourListManager.refresh();
 
+        //Update tour status in database
         TourManagement.overrideTour(selectedTour);
 
+        //Disable certain tour buttons, since tour is released
         setTourButtonsDisabled(false);
     }
 }

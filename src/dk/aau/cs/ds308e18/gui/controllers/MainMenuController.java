@@ -7,6 +7,9 @@ import javafx.fxml.FXML;
 import java.io.IOException;
 import java.util.prefs.Preferences;
 
+/*
+The main menu, where the sub-menus can be accessed.
+*/
 public class MainMenuController {
     @FXML
     public void initialize() {

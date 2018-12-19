@@ -16,6 +16,10 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
+/*
+This view is used when moving an order from one tour to another.
+It is accessed from the EditTour view
+*/
 public class MoveOrderToTourController implements ISelectionController {
 
     @FXML private VBox root;

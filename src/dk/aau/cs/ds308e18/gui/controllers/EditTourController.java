@@ -18,6 +18,9 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/*
+The Edit Tour menu, where the currently selected tour can be modified
+*/
 public class EditTourController implements ISelectionController {
 
     @FXML private Button removeOrderButton;

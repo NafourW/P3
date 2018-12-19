@@ -19,6 +19,9 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/*
+The Edit Order menu, where the currently selected order can be modified
+*/
 public class EditOrderController implements ISelectionController {
 
     @FXML private HBox buttonBar;

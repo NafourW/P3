@@ -17,6 +17,9 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/*
+The Order menu, where all of the unassigned orders can be managed.
+*/
 public class OrderListController {
 
     @FXML private Button editOrderButton;
@@ -65,10 +68,20 @@ public class OrderListController {
         loadOrderTransition();
     }
 
+    /*
+    Pauses the application for a very short time,
+    so that the contents inside the table are loaded AFTER the view is loaded,
+    which let's us show a loading icon in the mean time.
+    If we don't do this, the application will freeze BEFORE the view is loaded,
+    without any loading indication, and makes it feel unresponsive.
+    */
     private void loadOrderTransition() {
         PauseTransition pauseTransition = new PauseTransition(Duration.seconds(0.09));
         pauseTransition.setOnFinished(event -> {
+            //load the orders into the order list
             refreshOrderList();
+
+            //after the table contents have been loaded, we disable the loading icon
             loadingImage.setImage(null);
             loadingImage.setDisable(true);
         });
@@ -104,13 +117,19 @@ public class OrderListController {
 
     @FXML
     private void generateToursButtonAction(ActionEvent event) throws IOException {
+        //Open the tour generator window
         Main.gui.openWindow("TourGenerator", "label_tourgen_title");
+
+        //Refresh the tour list after the window has closed
         refreshOrderList();
     }
 
     @FXML
     private void createOrderButtonAction(ActionEvent event) throws IOException{
+        //Create new order object
         selectedOrder = new Order();
+
+        //Open edit order view with the new order selected
         Main.gui.changeView("EditOrder", selectedOrder, true);
     }
 

@@ -15,6 +15,10 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/*
+This view is used when adding an additional order from to a tour.
+It is accessed from the EditTour view
+*/
 public class AddOrderToTourController implements ISelectionController {
 
     @FXML private VBox root;

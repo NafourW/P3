@@ -16,6 +16,10 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
+/*
+The Tour Generator progress window, which shows what the tour generator is currently doing.
+This is also where the actual tour generation method is called from.
+*/
 public class GeneratorProgressController implements ISelectionController {
     TourGeneratorSettings settings;
 
