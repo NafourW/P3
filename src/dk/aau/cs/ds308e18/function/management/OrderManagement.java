@@ -2,14 +2,11 @@ package dk.aau.cs.ds308e18.function.management;
 
 import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
-import dk.aau.cs.ds308e18.io.database.DatabaseExport;
 import dk.aau.cs.ds308e18.io.database.Database;
 import dk.aau.cs.ds308e18.model.Order;
-import dk.aau.cs.ds308e18.model.Tour;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 

@@ -100,6 +100,7 @@ public class Tour {
         return orders;
     }
 
+    //Used in GUI
     public int getOrderAmount() {
         return orders.size();
     }
@@ -157,6 +158,7 @@ public class Tour {
         return weekNumber;
     }
 
+    //Used in GUI
     public String getLocalizedStatusString() {
         return Main.gui.getLocalString("value_tour_status_" + status.toString());
     }

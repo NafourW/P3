@@ -8,8 +8,6 @@ import java.time.LocalDate;
 import java.time.temporal.WeekFields;
 import java.util.ArrayList;
 
-import static dk.aau.cs.ds308e18.Main.gps;
-
 public class Order {
     //All of the possible order categories
     public enum orderCategory{
@@ -167,12 +165,13 @@ public class Order {
         return category;
     }
 
-    public void setCategory(orderCategory category) {
-        this.category = category;
-    }
-
+    //used in GUI
     public String getLocalizedCategoryString() {
         return Main.gui.getLocalString("value_order_category_" + category.toString());
+    }
+
+    public void setCategory(orderCategory category) {
+        this.category = category;
     }
 
     public void setCategory(String category) {
@@ -308,6 +307,7 @@ public class Order {
         orderLines.remove(orderLine);
     }
 
+    //used in GUI
     public int getOrderLineAmount() {
         return orderLines.size();
     }

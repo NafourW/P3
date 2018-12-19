@@ -2,7 +2,6 @@ package dk.aau.cs.ds308e18.function.tourgen;
 
 import com.graphhopper.util.shapes.GHPoint;
 import dk.aau.cs.ds308e18.Main;
-import dk.aau.cs.ds308e18.function.management.TourManagement;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 

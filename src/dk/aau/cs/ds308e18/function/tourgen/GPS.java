@@ -1,9 +1,7 @@
 package dk.aau.cs.ds308e18.function.tourgen;
 
 import com.graphhopper.*;
-import com.graphhopper.reader.osm.GraphHopperOSM;
 import com.graphhopper.routing.util.EncodingManager;
-import com.graphhopper.storage.GraphHopperStorage;
 import com.graphhopper.util.shapes.GHPoint;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
