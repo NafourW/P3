@@ -19,6 +19,7 @@ public class OrderManagement {
     */
     public static void createOrder(Order order) {
         DatabaseConnection dbConn = new DatabaseConnection();
+
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if(conn != null) {
                 PreparedStatement stmt = conn.prepareStatement("INSERT INTO orders (" +
@@ -38,6 +39,7 @@ public class OrderManagement {
     */
     public static void overrideOrder(Order order) {
         DatabaseConnection dbConn = new DatabaseConnection();
+
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if(conn != null) {
                 String sql = "UPDATE orders SET pluckRoute = ?, id = ?, orderReference = ?, expeditionStatus = ?, " +
@@ -46,7 +48,6 @@ public class OrderManagement {
                         "liftingTools = ?, moveTime = ? WHERE orderID = ?";
                 PreparedStatement stmt = conn.prepareStatement(sql);
 
-                //TODO HJÆÆÆÆÆÆLP DEN HER stmt.set...
                 stmt.setInt(1, order.getPluckRoute());
                 stmt.setString(2, order.getID());
                 stmt.setString(3, order.getOrderReference());
@@ -81,6 +82,9 @@ public class OrderManagement {
         OrderLineManagement.overrideOrderLine(order);
     }
 
+    /*
+    Returns a string with the order's values, formatted for an SQL statement
+    */
     private static String getOrderValuesString(Order order) {
         StringBuilder sb = new StringBuilder();
 
@@ -114,6 +118,7 @@ public class OrderManagement {
     */
     public static void setTourID(int tourID, int orderID) {
         DatabaseConnection dbConn = new DatabaseConnection();
+
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 String sql = "UPDATE orders SET tourID = ? WHERE orderID = ?";
@@ -141,9 +146,14 @@ public class OrderManagement {
             if (conn != null) {
                 String sql = "SELECT * FROM orders WHERE tourID = ?";
                 PreparedStatement stmt = conn.prepareStatement(sql);
+
                 stmt.setInt(1, tour.getTourID());
 
                 ResultSet resultSet = stmt.executeQuery();
+
+                /*
+                Create order objects based on the result set and add them to the arraylist.
+                */
                 while(resultSet.next()) {
                     ordersOnTour.add(DatabaseExport.createOrderFromResultSet(resultSet));
                 }
@@ -155,14 +165,23 @@ public class OrderManagement {
         return ordersOnTour;
     }
 
+    /*
+    Return all orders from the database.
+    */
     public static ArrayList<Order> getOrders() {
         return Database.dbExport.exportAllOrders();
     }
 
+    /*
+    Return all unassigned orders (orders not currently on a tour) from the database.
+    */
     public static ArrayList<Order> getUnassignedOrders() {
         return Database.dbExport.exportUnassignedOrders();
     }
 
+    /*
+    Return all unassigned orders with a specific region and date.
+    */
     public static ArrayList<Order> getUnassignedOrdersFiltered(String region, String date) {
         return Database.dbExport.exportUnassignedOrdersFiltered(region, date);
     }
@@ -186,22 +205,27 @@ public class OrderManagement {
             e.printStackTrace();
         }
     }
-    
+
+    /*
+    Insert Lat and Lon values in the database for a given address.
+    */
     public static void saveLatLonInDataBase(String address, double lat, double lon) {
-        String sql = "INSERT INTO addresses (address, latitude, longitude) VALUES (?, ?, ?)";
         DatabaseConnection dbConn = new DatabaseConnection();
+
         try (Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
+                String sql = "INSERT INTO addresses (address, latitude, longitude) VALUES (?, ?, ?)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
+
                 stmt.setString(1, String.valueOf(address));
                 stmt.setString(2, String.valueOf(lat));
                 stmt.setString(3, String.valueOf(lon));
 
-
                 stmt.executeUpdate();
             }
         }
-        catch (MySQLIntegrityConstraintViolationException e) { // Hvis adressen eksisterer i DataBasen fanges exception skyldet af at addressen er unique.
+        // Hvis adressen eksisterer i Databasen fanges exception skyldet af at addressen er unique.
+        catch (MySQLIntegrityConstraintViolationException e) {
         }
         catch (SQLException e) {
             e.printStackTrace();

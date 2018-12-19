@@ -64,9 +64,14 @@ public class OrderLineManagement {
             if (conn != null) {
                 String sql = "SELECT * FROM orderlines WHERE orderReference = ?";
                 PreparedStatement stmt = conn.prepareStatement(sql);
+
                 stmt.setString(1, order.getID());
 
                 ResultSet resultSet = stmt.executeQuery();
+
+                /*
+                Create orderLine objects based on the result set and add them to the arraylist.
+                */
                 while(resultSet.next()) {
                     orderLinesOnOrder.add(DatabaseExport.createOrderLineFromResultSet(resultSet));
                 }
@@ -78,12 +83,16 @@ public class OrderLineManagement {
         return orderLinesOnOrder;
     }
 
+    /*
+    Return all OrderLines in the database in an arraylist.
+    */
     public static ArrayList<OrderLine> getOrderLines() {
         return Database.dbExport.exportOrderLines();
     }
 
     /*
     Overrides orderline information on an order.
+    Deletes them from the database and import the updated ones.
     */
     public static void overrideOrderLine(Order order) {
         DatabaseConnection dbConn = new DatabaseConnection();
@@ -104,6 +113,9 @@ public class OrderLineManagement {
             e.printStackTrace();
         }
 
+        /*
+        Import the updated orderlines to the database.
+        */
         importUpdatedOrderLines(order);
     }
 
@@ -111,6 +123,8 @@ public class OrderLineManagement {
     Import updated orderlines from order object to database.
     */
     private static void importUpdatedOrderLines(Order order) {
+
+
         for(OrderLine orderLine : order.getOrderLines()) {
 
             // Set the orderReference to the given order because

@@ -56,7 +56,8 @@ public class WareManagement {
         ArrayList<Integer> information = new ArrayList<>();
 
         DatabaseConnection dbConn = new DatabaseConnection();
-        String sql = "SELECT liftAlone, liftingTools, moveTime FROM warelist WHERE wareNumber = ? OR wareNumber = ?  OR wareNumber = ?";
+        String sql = "SELECT liftAlone, liftingTools, moveTime FROM warelist " +
+                "WHERE wareNumber = ? OR wareNumber = ?  OR wareNumber = ?";
 
         int liftAlone = 1;
         int liftingTools = 0;

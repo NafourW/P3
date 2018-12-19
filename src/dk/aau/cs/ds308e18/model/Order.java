@@ -54,31 +54,7 @@ public class Order {
     private boolean totalLiftAlone;
     private boolean totalLiftingTools;
 
-    public int getTotalTime() {
-        return totalTime;
-    }
-
-    public void setTotalTime(int totalTime) {
-        this.totalTime = totalTime;
-    }
-
-    public boolean isTotalLiftAlone() {
-        return totalLiftAlone;
-    }
-
-    public void setTotalLiftAlone(boolean totalLiftAlone) {
-        this.totalLiftAlone = totalLiftAlone;
-    }
-
-    public boolean isTotalLiftingTools() {
-        return totalLiftingTools;
-    }
-
-    public void setTotalLiftingTools(boolean totalLiftingTools) {
-        this.totalLiftingTools = totalLiftingTools;
-    }
-
-    ArrayList<OrderLine> orderLines;
+    private ArrayList<OrderLine> orderLines;
 
     public Order() {
         id = "";
@@ -248,17 +224,9 @@ public class Order {
     }
 
     public void setAddress(String address) {
-        if (address != this.address) {
+        if (!this.address.equals(address)) {
             this.address = address;
         }
-    }
-
-    public int getOrderLineAmount() {
-        return orderLines.size();
-    }
-
-    public void setLatLon(double lat, double lon) {
-        setLatLon(new GHPoint(lat, lon));
     }
 
     public void setLatLon(double[] latLon) {
@@ -342,6 +310,30 @@ public class Order {
 
     public GHPoint getLatLon() {
         return latLon;
+    }
+
+    public int getTotalTime() {
+        return totalTime;
+    }
+
+    public void setTotalTime(int totalTime) {
+        this.totalTime = totalTime;
+    }
+
+    public boolean isTotalLiftAlone() {
+        return totalLiftAlone;
+    }
+
+    public void setTotalLiftAlone(boolean totalLiftAlone) {
+        this.totalLiftAlone = totalLiftAlone;
+    }
+
+    public boolean isTotalLiftingTools() {
+        return totalLiftingTools;
+    }
+
+    public void setTotalLiftingTools(boolean totalLiftingTools) {
+        this.totalLiftingTools = totalLiftingTools;
     }
 
     @Override

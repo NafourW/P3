@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class DatabaseImport {
 
     /*
-    ....
+    Import region names from...
     */
     public void importRegionNames() {
         ArrayList<String> regions = new ArrayList<>();
@@ -97,7 +97,11 @@ public class DatabaseImport {
 
                     // Insert the orderlines into the database
                     for (OrderLine orderLine : orderLineList) {
+
+                        // Add orderline to order object.
                         order.addOrderLine(orderLine);
+
+                        // Add orderline to database.
                         OrderLineManagement.createOrderLine(orderLine);
                     }
 
