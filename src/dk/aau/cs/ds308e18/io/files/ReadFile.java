@@ -317,4 +317,21 @@ public class ReadFile {//Class that reads CSV files
         }
         return wareTypes;
     }
+
+    public ArrayList<String> getRegionsFromFile() {
+        ArrayList<String> regions = new ArrayList<>();
+        String path = "resources/data/regions.txt";
+
+        // Read Regions from the regions.txt file and place them in the regions arraylist
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                regions.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return regions;
+    }
 }

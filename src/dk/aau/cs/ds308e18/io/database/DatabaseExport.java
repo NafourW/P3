@@ -12,7 +12,8 @@ import java.util.ArrayList;
 public class DatabaseExport {
 
     /*
-    ....
+    Export regions from the region table.
+    Return the regions as an arraylist of Strings.
     */
     public ArrayList<String> exportRegionNames() {
         ArrayList<String> regionList = new ArrayList<>();
@@ -36,22 +37,22 @@ public class DatabaseExport {
     }
 
     /*
-    Export orders from the order table
-    extraParameters is added at the end of the query
+    Export orders from the order table.
+    extraParameters is added at the end of the query to select orders with a specification.
+    Used by other export order methods.
     */
-    public ArrayList<Order> exportOrders(String extraParameters) {
-        ArrayList<Order> orderList = new ArrayList<>();
-
+    private ArrayList<Order> exportOrders(String extraParameters) {
         DatabaseConnection dbConn = new DatabaseConnection();
+        ArrayList<Order> orderList = new ArrayList<>();
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 Statement stmt = conn.createStatement();
                 String sql = "SELECT * FROM orders " + extraParameters;
-                //System.out.println(sql);
+
                 ResultSet orders = stmt.executeQuery(sql);
 
-                // As long as there is a "next row" in the table, create an order based on that row
+                // Create an order based on each row in the result set.
                 while (orders.next()) {
                     Order order = createOrderFromResultSet(orders);
                     orderList.add(order);
@@ -80,7 +81,8 @@ public class DatabaseExport {
 
     /*
     Export all orders that are unassigned to a tour (tourID = 0).
-    If region or date are not null, the orders get filtered.
+    If region or date are not null, the orders get filtered and the method
+    returns orders with the given region and/or date.
     */
     public ArrayList<Order> exportUnassignedOrdersFiltered(String region, String date) {
         String qWhere  = (region != null || date != null) ? "WHERE tourID = 0 AND " : "";
@@ -92,16 +94,20 @@ public class DatabaseExport {
         return exportOrders(qWhere + qRegion + qAnd + qDate);
     }
 
+    /*
+    Export orderlines from the Database.
+    Return them in an arraylist of orderlines.
+    */
     public ArrayList<OrderLine> exportOrderLines() {
-        ArrayList<OrderLine> orderLineList = new ArrayList<>();
         DatabaseConnection dbConn = new DatabaseConnection();
+        ArrayList<OrderLine> orderLineList = new ArrayList<>();
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 Statement stmt = conn.createStatement();
                 ResultSet orderLines = stmt.executeQuery("SELECT * FROM orderlines");
 
-                // As long as there is a "next row" in the table, create an order based on that row
+                // Create an orderline based on each row in the result set.
                 while (orderLines.next()) {
                     OrderLine orderLine = createOrderLineFromResultSet(orderLines);
                     orderLineList.add(orderLine);
@@ -110,21 +116,24 @@ public class DatabaseExport {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return orderLineList;
-
-
     }
 
+    /*
+    Export wares from the Database.
+    Return them in an arraylist of wares.
+    */
     public ArrayList<Ware> exportWares() {
-        ArrayList<Ware> wareList = new ArrayList<>();
         DatabaseConnection dbConn = new DatabaseConnection();
+        ArrayList<Ware> wareList = new ArrayList<>();
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 Statement stmt = conn.createStatement();
                 ResultSet wares = stmt.executeQuery("SELECT * FROM warelist");
 
-                // As long as there is a "next row" in the table, create an order based on that row
+                // Create an ware based on each row in the result set.
                 while (wares.next()) {
                     Ware ware = createWareFromResultSet(wares);
                     wareList.add(ware);
@@ -137,23 +146,24 @@ public class DatabaseExport {
     }
 
     /*
-    Export everything from the tour table.
-    Print them in the terminal
+    Export tours from the Database.
+    Place orders on all the tours.
+    Return them in an arraylist of tours.
     */
     public ArrayList<Tour> exportTours() {
-        ArrayList<Tour> tourList = new ArrayList<>();
-
         DatabaseConnection dbConn = new DatabaseConnection();
+        ArrayList<Tour> tourList = new ArrayList<>();
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 Statement stmt = conn.createStatement();
                 ResultSet tours = stmt.executeQuery("SELECT * FROM tours");
 
+                // Create a tour based on each row in the result set.
                 while (tours.next()) {
                     Tour tour = createTourFromResultSet(tours);
 
-                    // Find all orders with that tourID and put them on the tour
+                    // Find all orders with that tourID and put them on the tour object
                     ArrayList<Order> ordersOnTour = ordersOnTour(tour);
                     for(Order order : ordersOnTour) {
                         tour.addOrder(order);
@@ -165,21 +175,61 @@ public class DatabaseExport {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return tourList;
+    }
+
+    /*
+    Create tour object from a given tourID.
+    */
+    public static Tour getTourFromTourID(int tourID){
+        DatabaseConnection dbConn = new DatabaseConnection();
+
+        try(Connection conn = dbConn.establishConnectionToDatabase()) {
+            if (conn != null) {
+                String sql = "SELECT * FROM tours WHERE tourID = ?";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+
+                stmt.setInt(1, tourID);
+
+                ResultSet rs = stmt.executeQuery();
+
+                /*
+                The resultSet starts from 0 which contains nothing.
+                That's why rs.next() is called before creating the tour.
+                */
+                // Create a tour based on each row in the result set.
+                while(rs.next()) {
+                    Tour tour = createTourFromResultSet(rs);
+
+                    // Find all orders with that tourID and put them on the tour
+                    ArrayList<Order> ordersOnTour = ordersOnTour(tour);
+                    for(Order order : ordersOnTour) {
+                        tour.addOrder(order);
+                    }
+
+                    return tour;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     /*
     Find all orders on a specific tour. Return a list of those orders.
     */
-    public static ArrayList<Order> ordersOnTour(Tour tour) {
-        ArrayList<Order> ordersOnTourList = new ArrayList<>();
+    private static ArrayList<Order> ordersOnTour(Tour tour) {
         DatabaseConnection dbConn = new DatabaseConnection();
+        ArrayList<Order> ordersOnTourList = new ArrayList<>();
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 String sql = "SELECT * FROM orders WHERE tourID = ?";
-
                 PreparedStatement stmt = conn.prepareStatement(sql);
+
                 stmt.setInt(1, tour.getTourID());
                 
                 ResultSet ordersOnTour = stmt.executeQuery();
@@ -201,7 +251,7 @@ public class DatabaseExport {
     Create a tour based on a ResultSet from a SQL Query.
     Return it.
     */
-    public static Tour createTourFromResultSet(ResultSet resultSet) {
+    private static Tour createTourFromResultSet(ResultSet resultSet) {
         Tour tour = new Tour();
 
         try {
@@ -226,7 +276,7 @@ public class DatabaseExport {
     Create an order based on a ResultSet from a SQL Query.
     Return it.
     */
-    public static Order createOrderFromResultSet(ResultSet resultSet) {
+    private static Order createOrderFromResultSet(ResultSet resultSet) {
         Order order = new Order();
 
         try {
@@ -266,7 +316,7 @@ public class DatabaseExport {
         return order;
     }
 
-    public static double[] getLatLonFromAddress(String address) {
+    private static double[] getLatLonFromAddress(String address) {
         double[] latLon = new double[2];
         DatabaseConnection dbConn = new DatabaseConnection();
 
@@ -295,7 +345,7 @@ public class DatabaseExport {
     Create a ware based on a ResultSet from a SQL Query.
     Return it.
     */
-    public static Ware createWareFromResultSet(ResultSet resultSet) {
+    private static Ware createWareFromResultSet(ResultSet resultSet) {
         Ware ware = new Ware();
 
         try {
@@ -322,6 +372,10 @@ public class DatabaseExport {
         return ware;
     }
 
+    /*
+    Create an orderline based on a ResultSet from a SQL Query.
+    Return it.
+    */
     public static OrderLine createOrderLineFromResultSet(ResultSet resultSet) {
         OrderLine orderLine = new OrderLine();
 
@@ -343,15 +397,20 @@ public class DatabaseExport {
         return orderLine;
     }
 
-    public static int getAmount(String parameter) {
+    /*
+    Return amount of rows by a given name of a table.
+    */
+    public static int getAmount(String tableName) {
         DatabaseConnection dbConn = new DatabaseConnection();
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
-                String sql = "SELECT COUNT(*) FROM " + parameter;
+                String sql = "SELECT COUNT(*) FROM " + tableName;
                 PreparedStatement stmt = conn.prepareStatement(sql);
+
                 ResultSet resultSet = stmt.executeQuery();
 
+                // Return the number given by the SQL Query.
                 while(resultSet.next()) {
                     return resultSet.getInt(1);
                 }

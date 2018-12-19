@@ -42,12 +42,14 @@ public class OrderManagement {
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if(conn != null) {
+                // "UPDATE" updates a row in the Database.
                 String sql = "UPDATE orders SET pluckRoute = ?, id = ?, orderReference = ?, expeditionStatus = ?, " +
                         "customerName = ?, orderDate = ?, address = ?, zipCode = ?, receipt = ?, pickup = ?, warehouse = ?, " +
                         "category = ?, fleetOwner = ?, printed = ?, route = ?, FV = ?, project = ?, liftAlone = ?, " +
                         "liftingTools = ?, moveTime = ? WHERE orderID = ?";
                 PreparedStatement stmt = conn.prepareStatement(sql);
 
+                // Set the question marks in String sql to the corresponding order information
                 stmt.setInt(1, order.getPluckRoute());
                 stmt.setString(2, order.getID());
                 stmt.setString(3, order.getOrderReference());
@@ -76,9 +78,8 @@ public class OrderManagement {
             e.printStackTrace();
         }
 
-        /*
-        Also override the orderline to make sure it matches the new order.
-        */
+
+        // Override the orderline to make sure it matches the new order.
         OrderLineManagement.overrideOrderLine(order);
     }
 
@@ -132,37 +133,6 @@ public class OrderManagement {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    /*
-    Get all orders on a specific tour through the tourID on a tour.
-    Returns an arraylist of all orders.
-    */
-    public static ArrayList<Order> getOrdersOnTour(Tour tour) {
-        DatabaseConnection dbConn = new DatabaseConnection();
-        ArrayList<Order> ordersOnTour = new ArrayList<>();
-
-        try(Connection conn = dbConn.establishConnectionToDatabase()) {
-            if (conn != null) {
-                String sql = "SELECT * FROM orders WHERE tourID = ?";
-                PreparedStatement stmt = conn.prepareStatement(sql);
-
-                stmt.setInt(1, tour.getTourID());
-
-                ResultSet resultSet = stmt.executeQuery();
-
-                /*
-                Create order objects based on the result set and add them to the arraylist.
-                */
-                while(resultSet.next()) {
-                    ordersOnTour.add(DatabaseExport.createOrderFromResultSet(resultSet));
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return ordersOnTour;
     }
 
     /*

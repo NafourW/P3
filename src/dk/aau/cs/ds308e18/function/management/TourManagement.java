@@ -2,6 +2,7 @@ package dk.aau.cs.ds308e18.function.management;
 
 import dk.aau.cs.ds308e18.io.database.DatabaseConnection;
 import dk.aau.cs.ds308e18.io.database.Database;
+import dk.aau.cs.ds308e18.io.database.DatabaseExport;
 import dk.aau.cs.ds308e18.model.Order;
 import dk.aau.cs.ds308e18.model.Tour;
 
@@ -53,7 +54,6 @@ public class TourManagement {
                         "driver = ?, status = ?, consignor = ?, tourTime = ? WHERE tourID = ?";
                 PreparedStatement stmt = conn.prepareStatement(sql);
 
-                //TODO HJÆÆÆÆÆÆLP (også) DEN HER stmt.set...
                 stmt.setString(1, String.valueOf(tour.getTourDate()));
                 stmt.setString(2, String.valueOf(tour.getPackingDate()));
                 stmt.setInt(3, tour.getID());
@@ -94,6 +94,7 @@ public class TourManagement {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return 0;
     }
 
@@ -151,37 +152,8 @@ public class TourManagement {
     /*
     Create tour object from a given tourID.
     */
-    public static Tour getTourFromTourID(int tourID){
-        DatabaseConnection dbConn = new DatabaseConnection();
-
-        try(Connection conn = dbConn.establishConnectionToDatabase()) {
-            if (conn != null) {
-                String sql = "SELECT * FROM tours WHERE tourID = ?";
-                PreparedStatement stmt = conn.prepareStatement(sql);
-                stmt.setInt(1, tourID);
-
-                ResultSet rs = stmt.executeQuery();
-
-                /*
-                The resultSet starts from 0 which contains nothing.
-                That's why rs.next() is called before creating the tour.
-                */
-                rs.next();
-                Tour tour = Database.dbExport.createTourFromResultSet(rs);
-
-                // Find all orders with that tourID and put them on the tour
-                ArrayList<Order> ordersOnTour = Database.dbExport.ordersOnTour(tour);
-                for(Order order : ordersOnTour) {
-                    tour.addOrder(order);
-                }
-
-                return tour;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return null;
+    public static Tour getTourFromTourID(int tourID) {
+        return DatabaseExport.getTourFromTourID(tourID);
     }
 
     public static ArrayList<Tour> getTours(){

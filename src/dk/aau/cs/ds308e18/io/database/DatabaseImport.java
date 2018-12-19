@@ -18,29 +18,30 @@ import java.util.ArrayList;
 
 public class DatabaseImport {
 
+    // Import wares, orders and orderlines.
+    public void importAll(String sourcePath){
+        importWares(sourcePath);
+        importOrders(sourcePath);
+        importOrderLines(sourcePath);
+    }
+
     /*
-    Import region names from...
+    Read regions.txt and add the regions to an arraylist.
+    Import region names from the arraylist and add them to the Database.
     */
-    public void importRegionNames() {
-        ArrayList<String> regions = new ArrayList<>();
+    void importRegionNames() {
         DatabaseConnection dbConn = new DatabaseConnection();
+        ReadFile readFile = new ReadFile();
 
-        // Read Regions from the regions.txt file and place them in the regions arraylist
-        try(BufferedReader reader = new BufferedReader(new FileReader("resources/data/regions.txt"))) {
-            String line;
-            while((line = reader.readLine()) != null) {
-                regions.add(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        // Grab regions from file and put them in a list.
+        ArrayList<String> regions = readFile.getRegionsFromFile();
 
-        // Insert all regions from the arraylist
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
                 String sql = "INSERT INTO regions (regionName) VALUES (?)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
-                
+
+                // For every region, put the region in the database.
                 for(String region : regions) {
                     stmt.setString(1, region);
                     stmt.executeUpdate();
@@ -51,20 +52,14 @@ public class DatabaseImport {
         }
     }
 
-    public void importAll(String sourcePath){
-        importWares(sourcePath);
-        importOrders(sourcePath);
-        importOrderLines(sourcePath);
-    }
-
     /*
-    ....
+    Use ReadFile class to read order files and store them in an arraylist of orders.
+    Import orders in arraylist to the Database.
     */
     public void importOrders(String sourcePath) {
         System.out.println("Importing Orders...");
 
         DatabaseConnection dbConn = new DatabaseConnection();
-
         ReadFile readFile = new ReadFile();
 
         // Grab orders from file and put them into a list
@@ -83,17 +78,25 @@ public class DatabaseImport {
         }
     }
 
+    /*
+    Use ReadFile class to read orderline files and store them in an arraylist of orderlines.
+    Import the orderlines in the Database.
+    Override the orderline's orderID with the corresponding order's ID in the Database.
+    */
     public void importOrderLines(String sourcePath) {
         System.out.println("Importing Order lines...");
 
-        ReadFile readFileObject = new ReadFile();
+        ReadFile readFile = new ReadFile();
         DatabaseConnection dbConn = new DatabaseConnection();
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
+
+                // The database already has all orders stored, therefore we use OrderManagement to retrieve orders.
                 for (Order order : OrderManagement.getOrders()) {
+
                     // Read orderlines from files that correspond to this order
-                    ArrayList<OrderLine> orderLineList = readFileObject.getOrderLinesFromFile(order, sourcePath);
+                    ArrayList<OrderLine> orderLineList = readFile.getOrderLinesFromFile(order, sourcePath);
 
                     // Insert the orderlines into the database
                     for (OrderLine orderLine : orderLineList) {
@@ -113,7 +116,7 @@ public class DatabaseImport {
                     order.setTotalLiftingTools(orderResults.get(1) > 0);
                     order.setTotalTime(orderResults.get(2));
 
-                    //Update the order in the database
+                    //Update the order and orderline in the database
                     OrderManagement.overrideOrder(order);
                 }
                 System.out.println("Order lines imported.");
@@ -124,16 +127,17 @@ public class DatabaseImport {
     }
 
     /*
-    ....
+    Use ReadFile class to read ware files and store them in an arraylist of wares.
+    Import the wares in the Database.
     */
     public void importWares(String sourcePath) {
         System.out.println("Importing Wares...");
-        ReadFile readFileObject = new ReadFile();
 
         DatabaseConnection dbConn = new DatabaseConnection();
+        ReadFile readFile = new ReadFile();
 
         // Grab wares from "getWaresFromFile" method and put them into "wareList"
-        ArrayList<Ware> wareList = readFileObject.getWaresFromFile(sourcePath);
+        ArrayList<Ware> wareList = readFile.getWaresFromFile(sourcePath);
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
