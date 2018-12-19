@@ -19,14 +19,6 @@ public class TableManager<S> {
     }
 
     /*
-    Makes the TableColumn automatically retrieve data from the table item
-    using the .get[x]() method from S where [x] is replaced with the getter String
-    */
-    public void setupColumn(TableColumn col, String getter) {
-        col.setCellValueFactory(new PropertyValueFactory<>(getter));
-    }
-
-    /*
     Makes the TableColumns automatically retrieve data from the table item
     Uses the .get[x]() method from the item's class where [x] is replaced with the column id
     */
