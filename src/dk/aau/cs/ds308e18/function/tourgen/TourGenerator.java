@@ -204,7 +204,7 @@ public class TourGenerator {
 
         //For the current order find the one closest to it
         for (Order nextOrder : orderList) {
-            //Check at den næste ordre ikke er tilføjet før
+            //Check the next order has not been added before
             if (outputList.contains(nextOrder)) {
                 //Do nothing
             } else if (bestTime > Main.gps.getMillis(currentOrder.getLatLon(), nextOrder.getLatLon())) {
