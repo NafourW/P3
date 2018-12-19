@@ -13,39 +13,54 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class GPSTest {
+    //Used for getting coordinates and time between them
     private GPS gps = new GPS();
+
+    //Used for interacting with the database
     private static Database dbSetup;
 
+    //Setup database before the tests start running
     @BeforeAll
     public static void setupDB() throws IOException {
         dbSetup = new Database();
     }
 
+    //First test on setting up a route
     @Test
     public void setRouteTest() {
+        //Two locations in form of GHPoints from graphhopper
         GHPoint ghPointStart = new GHPoint(57.0467, 9.9114); //Coordinates from OpenStreetMap
         GHPoint ghPointEnd = new GHPoint(57.0120, 9.9930);
 
+        //Assertions to make sure the methods getDistance and getMillis work as expected.
+        //We use delta because the two maps are not exact and use different weigting (The routes may differ slightly)
         Assertions.assertEquals(8500, gps.getDistance(ghPointStart, ghPointEnd), 200); //Expected distance from OpenStreetMap, 200 m delta
         Assertions.assertEquals(780000, gps.getMillis(ghPointStart, ghPointEnd), 300000); //Expected time from OpenStreetMap, 5 min delta
     }
 
+    //Second test on settung up a route
     @Test
     public void setRouteTest2() {
-
+        //Two locations in form of GHPoints from graphhopper
         GHPoint ghPointStart = new GHPoint(56.4490, 9.3658); // Coordinates from OpenStreetMap
         GHPoint ghPointEnd = new GHPoint(55.4719, 9.4813);
 
+        //Assertions to make sure the methods getDistance and getMillis work as expected.
+        //We use delta because the two maps are not exact and use different weigting (The routes may differ slightly)
         Assertions.assertEquals(120000, gps.getDistance(ghPointStart, ghPointEnd), 200); //Expected distance from OpenStreetMap, 200 m delta
         Assertions.assertEquals(5760000, gps.getMillis(ghPointStart, ghPointEnd), 300000); //Expected time from OpenStreetMap, 5 min delta
     }
 
+    //Testing the geocode (can we translate an adress into two geographical points.
     @Test
     public void geocodeAddressTest() {
+        //Create geocode translation
         GHPoint ghPoint = new GHPoint(57.012281, 9.991705); //Coordinates from OpenStreetMap
+        //Create and setup of an order
         Order order = new Order();
         order.setAddress("selma lagerløfs vej 300");
         order.setZipCode(9220);
+        //Set order's point to the response from geocode API, given the address and zipcode
         order.setLatLon(gps.GeocodeAddress(order.getAddress(), order.getZipCode()));
 
         Assertions.assertEquals(ghPoint.getLat(), order.getLatLon().getLat());
