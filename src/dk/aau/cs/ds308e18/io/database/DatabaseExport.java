@@ -192,15 +192,15 @@ public class DatabaseExport {
 
                 stmt.setInt(1, tourID);
 
-                ResultSet rs = stmt.executeQuery();
+                ResultSet resultSet = stmt.executeQuery();
 
                 /*
                 The resultSet starts from 0 which contains nothing.
                 That's why rs.next() is called before creating the tour.
                 */
                 // Create a tour based on each row in the result set.
-                while(rs.next()) {
-                    Tour tour = createTourFromResultSet(rs);
+                while(resultSet.next()) {
+                    Tour tour = createTourFromResultSet(resultSet);
 
                     // Find all orders with that tourID and put them on the tour
                     ArrayList<Order> ordersOnTour = ordersOnTour(tour);
@@ -232,11 +232,11 @@ public class DatabaseExport {
 
                 stmt.setInt(1, tour.getTourID());
                 
-                ResultSet ordersOnTour = stmt.executeQuery();
+                ResultSet resultSet = stmt.executeQuery();
 
                 // As long as there is a "next row" in the table, create an order based on that row
-                while (ordersOnTour.next()) {
-                    Order order = DatabaseExport.createOrderFromResultSet(ordersOnTour);
+                while (resultSet.next()) {
+                    Order order = DatabaseExport.createOrderFromResultSet(resultSet);
                     ordersOnTourList.add(order);
                 }
             }
@@ -333,11 +333,12 @@ public class DatabaseExport {
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.setString(1, address);
 
-                ResultSet addressValues = stmt.executeQuery();
+                ResultSet resultSet = stmt.executeQuery();
 
-                while (addressValues.next()) {
-                    latLon[0] = addressValues.getDouble(2);
-                    latLon[1] = addressValues.getDouble(3);
+                // Put the exported values in the array.
+                while (resultSet.next()) {
+                    latLon[0] = resultSet.getDouble(2);
+                    latLon[1] = resultSet.getDouble(3);
                 }
             }
         } catch (SQLException e) {

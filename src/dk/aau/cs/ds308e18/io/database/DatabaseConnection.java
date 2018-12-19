@@ -12,7 +12,6 @@ public class DatabaseConnection {
     For every method, it's needed to call this function for the SQL statements to work.
 
     The Local Database has to be up and running for this function to work.
-    Without this function, the rest in the class won't work.
     */
     public Connection establishConnectionToDatabase() {
         try {

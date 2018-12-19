@@ -69,9 +69,7 @@ public class OrderLineManagement {
 
                 ResultSet resultSet = stmt.executeQuery();
 
-                /*
-                Create orderLine objects based on the result set and add them to the arraylist.
-                */
+                // Create orderLine objects based on the result set and add them to the arraylist.
                 while(resultSet.next()) {
                     orderLinesOnOrder.add(DatabaseExport.createOrderLineFromResultSet(resultSet));
                 }
@@ -94,7 +92,7 @@ public class OrderLineManagement {
     Overrides orderline information on an order.
     Deletes them from the database and import the updated ones.
     */
-    public static void overrideOrderLine(Order order) {
+    static void overrideOrderLine(Order order) {
         DatabaseConnection dbConn = new DatabaseConnection();
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
@@ -123,7 +121,6 @@ public class OrderLineManagement {
     Import updated orderlines from order object to database.
     */
     private static void importUpdatedOrderLines(Order order) {
-
 
         for(OrderLine orderLine : order.getOrderLines()) {
 

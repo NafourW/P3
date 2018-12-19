@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class WareManagement {
     /*
-    ....
+    Insert a ware into the ware table in the Database..
     */
     public static void createWare(Ware ware) {
         DatabaseConnection dbConn = new DatabaseConnection();
@@ -52,7 +52,8 @@ public class WareManagement {
                 .append(ware.getWareGroup())              .append(", ")
                 .append("'").append(ware.getWareType())   .append("', ")
                 .append("'").append(ware.isLiftAlone())   .append("', ")
-                .append("'").append(ware.isLiftingTools()).append("'");
+                .append("'").append(ware.isLiftingTools()).append("',")
+                .append(ware.getMoveTime());
 
         return sb.toString();
     }
@@ -62,11 +63,8 @@ public class WareManagement {
     in the list of orderlines that is given.
     */
     public static ArrayList<Integer> getWareMovingValues(ArrayList<OrderLine> orderLineList) {
-        ArrayList<Integer> information = new ArrayList<>();
-
         DatabaseConnection dbConn = new DatabaseConnection();
-        String sql = "SELECT liftAlone, liftingTools, moveTime FROM warelist " +
-                "WHERE wareNumber = ? OR wareNumber = ?  OR wareNumber = ?";
+        ArrayList<Integer> information = new ArrayList<>();
 
         int liftAlone = 1;
         int liftingTools = 0;
@@ -75,22 +73,31 @@ public class WareManagement {
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
 
             if (conn != null) {
+                String sql = "SELECT liftAlone, liftingTools, moveTime FROM warelist " +
+                        "WHERE wareNumber = ? OR wareNumber = ?  OR wareNumber = ?";
                 PreparedStatement stmt = conn.prepareStatement(sql);
 
+                // For every orderline - get their liftAlone, liftingTools and moveTime
                 for(OrderLine orderLine : orderLineList) {
+
+                    // Set the WHERE criteria
                     stmt.setString(1, orderLine.getWareNumber());
                     stmt.setString(2, orderLine.getIndividual());
                     stmt.setString(3, orderLine.getIndividualNumber());
-                    ResultSet rs = stmt.executeQuery();
 
-                    while(rs.next()) {
-                        if (rs.getString(1).equals("false"))
+                    ResultSet resultSet = stmt.executeQuery();
+
+                    // For every row in the resultSet...
+                    while(resultSet.next()) {
+                        // Set the liftAlone and liftingTools accordingly
+                        if (resultSet.getString(1).equals("false"))
                             liftAlone = 0;
 
-                        if (rs.getString(2).equals("true"))
+                        if (resultSet.getString(2).equals("true"))
                             liftingTools = 1;
 
-                        totalMoveTime += Integer.valueOf(rs.getString(3));
+                        // Add the moveTime of every row in the resultSet to the totalMoveTime
+                        totalMoveTime += resultSet.getInt(3);
                     }
                 }
             }
@@ -99,6 +106,7 @@ public class WareManagement {
             e.printStackTrace();
         }
 
+        // Add the information to the arraylist and return them
         information.add(liftAlone);
         information.add(liftingTools);
         information.add(totalMoveTime);
@@ -106,6 +114,7 @@ public class WareManagement {
         return information;
     }
 
+    // Export all wares from the Database and return them as an arraylist of wares.
     public static ArrayList<Ware> getWares(){
         return Database.dbExport.exportWares();
     }

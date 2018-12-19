@@ -42,22 +42,25 @@ public class Database {
         password = properties.getProperty("password", "");
     }
 
-    public static String getHost(){
+    private String getHost(){
         return host;
     }
 
-    public static String getHostWithDatabase() {return host + databaseName;}
+    static String getHostWithDatabase() {return host + databaseName;}
 
-    public static String getDatabaseName() {return databaseName;}
+    private String getDatabaseName() {return databaseName;}
 
-    public static String getUserName(){
+    static String getUserName(){
         return userName;
     }
 
-    public static String getPassword(){
+    static String getPassword(){
         return password;
     }
 
+    /*
+    Creates all the tables in the Database needed in the system.
+    */
     // Run this function to make sure a database and corresponding tables are created.
     private void databaseSetup() {
         createDatabase();
@@ -70,13 +73,15 @@ public class Database {
     }
 
     /*
-    Create a database called "vibocold_db".
+    Create a database based on the Database name in the mySQL property file.
     If it already exists, it'll print a response.
     */
     private void createDatabase() {
         try(Connection conn = DriverManager.getConnection(getHost(), getUserName(), getPassword())) {
+            String sql = "CREATE DATABASE " + getDatabaseName();
             Statement stmt = conn.createStatement();
-            stmt.executeUpdate("CREATE DATABASE " + getDatabaseName());
+
+            stmt.executeUpdate(sql);
         } catch(SQLException e) {
             System.out.println("The database already exists.");
         }
@@ -87,8 +92,10 @@ public class Database {
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
+                String sql = "DROP DATABASE " + getDatabaseName();
                 Statement stmt = conn.createStatement();
-                stmt.executeUpdate("DROP DATABASE " + getDatabaseName());
+
+                stmt.executeUpdate(sql);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -130,6 +137,7 @@ public class Database {
                         "liftingTools VARCHAR(255)," +
                         "moveTime INT)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
+
                 stmt.executeUpdate();
             }
         } catch(SQLException e) {
@@ -156,6 +164,7 @@ public class Database {
                         "consignor VARCHAR(255)," +
                         "tourTime INT)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
+
                 stmt.executeUpdate();
             }
         } catch(SQLException e) {
@@ -175,6 +184,7 @@ public class Database {
                         "latitude VARCHAR(255)," +
                         "longitude VARCHAR(255))";
                 PreparedStatement stmt = conn.prepareStatement(sql);
+
                 stmt.executeUpdate();
             }
         } catch(SQLException e) {
@@ -182,6 +192,10 @@ public class Database {
         }
     }
 
+    /*
+    Create a table called "orderlines" that holds all the attributes associated with the class "orderline".
+    If it already exists, it'll print a response.
+    */
     private void createOrderLineTable() {
         DatabaseConnection dbConn = new DatabaseConnection();
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
@@ -240,7 +254,8 @@ public class Database {
     }
 
     /*
-    ....
+    Create a table called "regions" with a column named regionName.
+    If it already exists, it'll print a response.
     */
     private void createRegionTable() {
         DatabaseConnection dbConn = new DatabaseConnection();

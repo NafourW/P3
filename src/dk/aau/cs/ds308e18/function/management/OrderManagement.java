@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class OrderManagement {
     /*
-    Insert an order into the order table.
+    Insert an order into the order table in the Database.
     */
     public static void createOrder(Order order) {
         DatabaseConnection dbConn = new DatabaseConnection();
@@ -77,7 +77,6 @@ public class OrderManagement {
         } catch(SQLException e) {
             e.printStackTrace();
         }
-
 
         // Override the orderline to make sure it matches the new order.
         OrderLineManagement.overrideOrderLine(order);
