@@ -55,8 +55,8 @@ public class EditOrderController implements ISelectionController {
     @FXML private TextField amountField;
     @FXML private TextField priceField;
 
+    //ORDER LINE table and columns
     @FXML private TableView<OrderLine> orderLineTable;
-
     @FXML private TableColumn<OrderLine, String> Labels;
     @FXML private TableColumn<OrderLine, String> Delivered;
     @FXML private TableColumn<OrderLine, String> WareNumber;

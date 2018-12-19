@@ -23,9 +23,8 @@ public class OrderListController {
 
     @FXML private ImageView loadingImage;
 
+    //ORDER LIST table and columns
     @FXML private TableView<Order> orderListTable;
-
-    //Columns
     @FXML private TableColumn<Order, Integer> OrderID;
     @FXML private TableColumn<Order, Integer> ID;
     @FXML private TableColumn<Order, LocalDate> Date;

@@ -27,6 +27,7 @@ public class TourListController {
 
     @FXML private ImageView loadingImage;
 
+    //TOUR LIST table and columns
     @FXML private TableView<Tour> tourListTable;
     @FXML private TableColumn<Tour, Integer> TourID;
     @FXML private TableColumn<Tour, LocalDate> TourDate;
@@ -37,6 +38,7 @@ public class TourListController {
     @FXML private TableColumn<Tour, Integer> OrderAmount;
     @FXML private TableColumn<Tour, Integer> TourTime;
 
+    //TOUR ORDERS table and columns
     @FXML private TableView<Order> tourOrdersTable;
     @FXML private TableColumn<Tour, Integer> OrderID;
     @FXML private TableColumn<Tour, LocalDate> Date;

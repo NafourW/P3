@@ -19,9 +19,8 @@ public class AddOrderToTourController implements ISelectionController {
 
     @FXML private VBox root;
 
+    //ORDER LIST table and columns
     @FXML private TableView<Order> orderListTable;
-
-    //Columns
     @FXML private TableColumn<Order, Integer> OrderID;
     @FXML private TableColumn<Order, Integer> ID;
     @FXML private TableColumn<Order, LocalDate> Date;

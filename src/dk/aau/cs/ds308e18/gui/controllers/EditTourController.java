@@ -23,6 +23,7 @@ public class EditTourController implements ISelectionController {
     @FXML private Button removeOrderButton;
     @FXML private Button moveOrderToTourButton;
 
+    //TOUR ORDERS table and columns
     @FXML private TableView<Order> tourOrdersTable;
     @FXML private TableColumn<Tour, Integer> OrderID;
     @FXML private TableColumn<Tour, LocalDate> Date;

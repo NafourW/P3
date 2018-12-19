@@ -20,6 +20,7 @@ public class MoveOrderToTourController implements ISelectionController {
 
     @FXML private VBox root;
 
+    //TOUR LIST table and columns
     @FXML private TableView<Tour> tourListTable;
     @FXML private TableColumn<Tour, String> TourDate;
     @FXML private TableColumn<Tour, Integer> TourID;

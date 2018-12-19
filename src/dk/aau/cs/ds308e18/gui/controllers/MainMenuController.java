@@ -10,6 +10,7 @@ import java.util.prefs.Preferences;
 public class MainMenuController {
     @FXML
     public void initialize() {
+        //Checks if dark mode is enabled in the user preferences and enables dark mode
         Preferences prefs = Preferences.userNodeForPackage(dk.aau.cs.ds308e18.Main.class);
         Main.gui.setDarkMode(prefs.getBoolean("darkMode", false));
     }

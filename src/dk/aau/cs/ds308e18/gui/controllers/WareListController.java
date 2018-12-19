@@ -16,10 +16,10 @@ import java.io.IOException;
 
 public class WareListController {
 
-    @FXML private TableView<Ware> wareListTable;
-
     @FXML private ImageView loadingImage;
 
+    //WARE LIST table and columns
+    @FXML private TableView<Ware> wareListTable;
     @FXML private TableColumn<Ware, String> WareNumber;
     @FXML private TableColumn<Ware, String> WareType;
     @FXML private TableColumn<Ware, String> WareName;
