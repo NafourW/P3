@@ -22,12 +22,18 @@ public class Database {
         databaseSetup();
     }
 
+    /*
+    Loads database configuration from mySQL.properties file
+    */
     private void loadConfiguration() throws IOException {
+        //get properties from mySQL.properties file
         Properties properties = GetProperties.getProperties("mySQL");
 
-        String address      = properties.getProperty("address",      "localhost");
-        String port         = properties.getProperty("port",         "3306");
+        //get address and port from properties
+        String address = properties.getProperty("address","localhost");
+        String port    = properties.getProperty("port",   "3306");
 
+        //build host string using the strings above
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("jdbc:mysql://")
                 .append(address)
@@ -35,11 +41,13 @@ public class Database {
                 .append(port)
                 .append("/");
 
+        //set host string
         host = stringBuilder.toString();
-        databaseName = properties.getProperty("databaseName", "vibocold_db");
 
-        userName = properties.getProperty("userName", "root");
-        password = properties.getProperty("password", "");
+        //set the remaining strings directly from the properties
+        databaseName = properties.getProperty("databaseName", "vibocold_db");
+        userName     = properties.getProperty("userName",     "root");
+        password     = properties.getProperty("password",     "");
     }
 
     private String getHost(){
