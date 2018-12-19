@@ -4,7 +4,9 @@
 
 ## Setup
 
-#### Running the software:
+#### Running the software :
+
+This program requires at least Java version 10.0
 
 In order to run the application, a local MySQL database is needed.
 

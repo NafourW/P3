@@ -63,20 +63,27 @@ public class GPSTest {
         //Set order's point to the response from geocode API, given the address and zipcode
         order.setLatLon(gps.GeocodeAddress(order.getAddress(), order.getZipCode()));
 
+        //Test if the response from the geocode API matches the geocode translation.
         Assertions.assertEquals(ghPoint.getLat(), order.getLatLon().getLat());
         Assertions.assertEquals(ghPoint.getLon(), order.getLatLon().getLon());
 
+        //Create order with a bad address name
         Order orderBadAddress = new Order();
         orderBadAddress.setAddress("Herluf Trollesvej 3Port 1-8");
+        //Set order's point to the response from geocode API, given the address
         orderBadAddress.setLatLon(gps.GeocodeAddress(orderBadAddress.getAddress(), orderBadAddress.getZipCode()));
+        //Create a geocode with 0,0
         GHPoint ghPoint00 = new GHPoint(0, 0);
 
+        ////Test if the response from the geocode API matches the geocode translation from a bad address
         Assertions.assertEquals(ghPoint00.getLat(), orderBadAddress.getLatLon().lat);
         Assertions.assertEquals(ghPoint00.getLon(), orderBadAddress.getLatLon().lon);
     }
 
+    //A test method created to test convertion of millis (Not called outside of this class)
     public ArrayList<Integer> milliConverter(double ms) {
 
+        //Create empty array to store the time
         ArrayList<Integer> timeArray = new ArrayList<>();
 
         double all = ms;
@@ -122,6 +129,7 @@ public class GPSTest {
             }
         }
 
+        //Add the three integers to the empty integer array
         timeArray.add(hours);
         timeArray.add(minutes);
         timeArray.add(seconds);
@@ -129,21 +137,25 @@ public class GPSTest {
         return timeArray;
     }
 
+    //A test for running the method above
     @Test
     public void milliConverterTest() {
         ArrayList<Integer> test1;
         test1 = milliConverter(4000000);
 
+        //If the first integer in the array is not equal to 1, the test will fail
         if (test1.get(0) != 1) {
             fail("Failed converting hours");
 
         }
 
+        //If the second integer in the array is not equal to 6, the test will fail
         if (test1.get(1) != 6) {
             fail("Failed converting minutes");
 
         }
 
+        //If the third integer in the array is bigger than 45 or less than 35 the test will fail
         if (test1.get(2) > 45 || test1.get(2) < 35) {
             fail("Failed converting hours");
 
