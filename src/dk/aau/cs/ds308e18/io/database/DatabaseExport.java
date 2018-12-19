@@ -303,10 +303,13 @@ public class DatabaseExport {
             order.setTotalLiftingTools(resultSet.getBoolean(21));
             order.setTotalTime        (resultSet.getInt    (22));
 
-            order.setLatLon           (getLatLonFromAddress(order.getAddress()));
+            order.setLatLon           (exportLatLonFromAddress(order.getAddress()));
 
+            // Get orderlines from a given order.
             ArrayList<OrderLine> orderLines = OrderLineManagement.getOrderLinesOnOrder(order);
             for (OrderLine orderLine : orderLines)
+
+                // Add orderline to order object.
                 order.addOrderLine(orderLine);
         }
         catch (SQLException e) {
@@ -316,7 +319,10 @@ public class DatabaseExport {
         return order;
     }
 
-    private static double[] getLatLonFromAddress(String address) {
+    /*
+    Export latitude and longitude from a given address from Address table.
+    */
+    private static double[] exportLatLonFromAddress(String address) {
         double[] latLon = new double[2];
         DatabaseConnection dbConn = new DatabaseConnection();
 

@@ -15,20 +15,12 @@ public class TourManagement {
     */
     public static void createTour(Tour tour) {
         DatabaseConnection dbConn = new DatabaseConnection();
-        String sql = "INSERT INTO tours (tourDate, packingDate, id, region, " +
-                "driver, status, consignor, tourTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
+                String sql = "INSERT INTO tours (tourDate, packingDate, id, region, " +
+                        "driver, status, consignor, tourTime) VALUES (" + getTourValuesString(tour) + ")";
                 PreparedStatement stmt = conn.prepareStatement(sql);
-                stmt.setString(1, String.valueOf(tour.getTourDate()));
-                stmt.setString(2, String.valueOf(tour.getPackingDate()));
-                stmt.setString(3, String.valueOf(tour.getID()));
-                stmt.setString(4, String.valueOf(tour.getRegion()));
-                stmt.setString(5, String.valueOf(tour.getDriver()));
-                stmt.setString(6, String.valueOf(tour.getStatus()));
-                stmt.setBoolean(7, tour.getConsignor());
-                stmt.setInt(8, tour.getTourTime());
 
                 stmt.executeUpdate();
             }
@@ -44,7 +36,25 @@ public class TourManagement {
     }
 
     /*
-    Replace a tour in the database with this tour (both should have the same tourID)
+    Returns a string with the tour's values, formatted for an SQL statement
+    */
+    private static String getTourValuesString(Tour tour) {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("'").append(tour.getTourDate())                .append("', ")
+                .append("'").append(tour.getPackingDate())       .append("', ")
+                .append(tour.getID())                            .append(", ")
+                .append("'").append(tour.getRegion())            .append("', ")
+                .append("'").append(tour.getDriver())            .append("', ")
+                .append("'").append(tour.getStatus())            .append("', ")
+                .append("'").append(tour.getConsignor())         .append("', ")
+                .append(tour.getTourTime());
+
+        return sb.toString();
+    }
+
+    /*
+    Override a tour in the database with a given tour (both should have the same tourID).
     */
     public static void overrideTour(Tour tour) {
         DatabaseConnection dbConn = new DatabaseConnection();
@@ -81,15 +91,17 @@ public class TourManagement {
     */
     private static int assignTourID() {
         DatabaseConnection dbConn = new DatabaseConnection();
-        String sql = "SELECT tourID FROM tours ORDER BY tourID DESC LIMIT 1";
 
         try (Connection conn = dbConn.establishConnectionToDatabase()) {
             if (conn != null) {
+                String sql = "SELECT tourID FROM tours ORDER BY tourID DESC LIMIT 1";
                 Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(sql);
 
-                if(rs.next())
-                    return rs.getInt(1);
+                ResultSet resultSet = stmt.executeQuery(sql);
+
+                // Return the tourID of the last tour in the Database.
+                while(resultSet.next())
+                    return resultSet.getInt(1);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -105,6 +117,8 @@ public class TourManagement {
 
         // If there are any orders on the tour - update their tourID
         if(!(tour.getOrders().isEmpty())) {
+
+            // Find orders on tour - set the tourID of the order to the tour's tourID
             ArrayList<Order> orderList = tour.getOrders();
             for(Order order : orderList) {
                 OrderManagement.setTourID(tour.getTourID(), order.getOrderID());
@@ -164,6 +178,8 @@ public class TourManagement {
     Execute removeTour on all tours in the database
     */
     public static void deleteAllTours() {
+
+        // Export all tours and call removeTour on them.
         for (Tour tour : Database.dbExport.exportTours()) {
             removeTour(tour);
         }

@@ -17,35 +17,44 @@ public class WareManagement {
     */
     public static void createWare(Ware ware) {
         DatabaseConnection dbConn = new DatabaseConnection();
-        String sql = "INSERT INTO warelist (supplier, wareNumber, height, depth, grossHeight, " +
-                "grossDepth, grossWidth, width, wareName, searchName, wareGroup, wareType, " +
-                "liftAlone, liftingTools, moveTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try(Connection conn = dbConn.establishConnectionToDatabase()) {
 
             if (conn != null) {
+                String sql = "INSERT INTO warelist (supplier, wareNumber, height, depth, grossHeight, " +
+                        "grossDepth, grossWidth, width, wareName, searchName, wareGroup, wareType, " +
+                        "liftAlone, liftingTools, moveTime) VALUES (" + getWareValuesString(ware) + ")";
                 PreparedStatement stmt = conn.prepareStatement(sql);
-                stmt.setString(1, String.valueOf(ware.getSupplier()));
-                stmt.setString(2, String.valueOf(ware.getWareNumber()));
-                stmt.setString(3, String.valueOf(ware.getHeight()));
-                stmt.setString(4, String.valueOf(ware.getDepth()));
-                stmt.setString(5, String.valueOf(ware.getGrossHeight()));
-                stmt.setString(6, String.valueOf(ware.getGrossDepth()));
-                stmt.setString(7, String.valueOf(ware.getGrossWidth()));
-                stmt.setString(8, String.valueOf(ware.getWidth()));
-                stmt.setString(9, String.valueOf(ware.getWareName()));
-                stmt.setString(10, String.valueOf(ware.getSearchName()));
-                stmt.setString(11, String.valueOf(ware.getWareGroup()));
-                stmt.setString(12, String.valueOf(ware.getWareType()));
-                stmt.setString(13, String.valueOf(ware.isLiftAlone()));
-                stmt.setString(14, String.valueOf(ware.isLiftingTools()));
-                stmt.setString(15, String.valueOf(ware.getMoveTime()));
 
                 stmt.executeUpdate();
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    /*
+    Returns a string with the order's values, formatted for an SQL statement
+    */
+    private static String getWareValuesString(Ware ware) {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("'").append(ware.getSupplier())         .append("', ")
+                .append("'").append(ware.getWareNumber()) .append("', ")
+                .append(ware.getHeight())                 .append(", ")
+                .append(ware.getDepth())                  .append(", ")
+                .append(ware.getGrossHeight())            .append(", ")
+                .append(ware.getGrossDepth())             .append(", ")
+                .append(ware.getGrossWidth())             .append(", ")
+                .append(ware.getWidth())                  .append(", ")
+                .append("'").append(ware.getWareName())   .append("', ")
+                .append("'").append(ware.getSearchName()) .append("', ")
+                .append(ware.getWareGroup())              .append(", ")
+                .append("'").append(ware.getWareType())   .append("', ")
+                .append("'").append(ware.isLiftAlone())   .append("', ")
+                .append("'").append(ware.isLiftingTools()).append("'");
+
+        return sb.toString();
     }
 
     /*

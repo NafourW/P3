@@ -252,7 +252,8 @@ public class Database {
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.executeUpdate();
 
-                /* Import region names into the table ONLY if doesn't exist
+                /*
+                Import region names into the table ONLY if doesn't exist
                 to avoid importing the names every time the program is executed.
                 */
                 dbImport.importRegionNames();
