@@ -88,6 +88,7 @@ public class TourGeneratorController {
             //Open progress window and pass settings to it
             Main.gui.openWindowWithObject("GeneratorProgress", "Generating", settings);
 
+            //Close window after progress window closes
             close();
         }
     }

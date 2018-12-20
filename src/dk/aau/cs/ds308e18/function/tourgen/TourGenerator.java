@@ -144,6 +144,7 @@ public class TourGenerator {
         print("Going through tour " + tourCounter + "'s orders... (there are " + orders.size() + " orders)");
         //Go through all orders, and check if there is enough time for them
         for (Order o : orders) {
+            //Add this order's time to the total tour time
             totalTimeAfter += calculateOrderTime(o, previousPoint, startPoint);
 
             if (totalTimeAfter <= availableTime) {
@@ -157,6 +158,7 @@ public class TourGenerator {
                 ordersThatDoNotFit.add(o);
             }
 
+            //Keep this order's location and use it for the next calculation
             previousPoint = o.getLatLon();
         }
 
